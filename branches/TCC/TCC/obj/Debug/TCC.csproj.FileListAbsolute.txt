@@ -1,0 +1,5 @@
+C:\Users\Kaue\Desktop\TCC\TCC\TCC\bin\TCC.dll
+C:\Users\Kaue\Desktop\TCC\TCC\TCC\bin\TCC.pdb
+C:\Users\Kaue\Desktop\TCC\TCC\TCC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Desktop\TCC\TCC\TCC\obj\Debug\TCC.dll
+C:\Users\Kaue\Desktop\TCC\TCC\TCC\obj\Debug\TCC.pdb
