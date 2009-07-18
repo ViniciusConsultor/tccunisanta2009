@@ -1,0 +1,8 @@
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.UI.Inicio.resources
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.Cache
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\bin\Debug\TCC.exe
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\bin\Debug\TCC.pdb
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.exe
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.pdb
