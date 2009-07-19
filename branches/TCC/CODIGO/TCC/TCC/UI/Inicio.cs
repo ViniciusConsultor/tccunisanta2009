@@ -43,21 +43,22 @@ namespace TCC.UI
             BUSINESS.rSubMenu regraSubMenu = new TCC.BUSINESS.rSubMenu();
             DataTable dtMenu;
             DataTable dtSubMenu;
-            ToolStripMenuItem itemMenuP;
+            ToolStripMenuItem[] itemMenuP;
             try
             {
                 dtMenu = regraMenu.BuscaMenuDefault();
-                foreach (DataRow linha in dtMenu.Rows)
+                itemMenuP= new ToolStripMenuItem[dtMenu.Rows.Count];
+                for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
-                    dtSubMenu = regraSubMenu.BuscaSubMenuDefault(Convert.ToInt32(linha["id_menu"]));
-                    itemMenuP = new ToolStripMenuItem(linha["dsc_menu"].ToString());
-                    foreach (DataRow linhaSubMenu in dtSubMenu.Rows)
+                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["dsc_menu"].ToString());
+                    dtSubMenu = regraSubMenu.BuscaSubMenuDefault(Convert.ToInt32(dtMenu.Rows[contador]["id_menu"]));
+                    foreach (DataRow linha in dtSubMenu.Rows)
                     {
-
+                        itemMenuP[contador].DropDownItems.Add(linha["dsc_sub"].ToString());
                     }
                     //TODO: Descobrir como inserir items dentro de item.
                     //--------------------------------------------------
-                    this.mnuPrincipal.Items.Add(subMenus.Items);
+                    this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { itemMenuP[contador] });
                 }
             }
             catch (Exception ex)
@@ -69,6 +70,9 @@ namespace TCC.UI
             {
                 regraMenu = null;
                 dtMenu = null;
+                regraSubMenu = null;
+                dtSubMenu = null;
+                itemMenuP = null;
             }
         }
     }
