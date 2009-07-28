@@ -1,0 +1,8 @@
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.Properties.Resources.resources
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadMenu.resources
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.csproj.GenerateResource.Cache
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.exe
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.pdb
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.exe
+C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.pdb
