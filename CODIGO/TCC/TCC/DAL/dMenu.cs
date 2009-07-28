@@ -18,7 +18,7 @@ namespace TCC.DAL
             {
                 //TODO: Passar essa query para um procedure.
                 //------------------------------------------
-                query.Append(" SELECT m.id_menu, m.dsc_menu ");
+                query.Append(" SELECT m.id_menu, m.dsc_menu, m.end_menu ");
                 query.Append(" FROM Menu m");
                 query.Append(" INNER JOIN PerfilMenu pm ");
                 query.Append(" ON m.id_menu = pm.id_menu ");

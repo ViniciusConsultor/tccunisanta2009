@@ -19,7 +19,7 @@ namespace TCC.DAL
             {
                 //TODO: passar para procedure.
                 //----------------------------
-                query.Append(" SELECT sm.id_sub, sm.dsc_sub ");
+                query.Append(" SELECT sm.id_sub, sm.dsc_sub, sm.end_sub ");
                 query.Append(" FROM Submenu sm ");
                 query.Append(" INNER JOIN Menusubmenu msm ");
                 query.Append(" ON sm.id_sub = msm.id_sub ");
