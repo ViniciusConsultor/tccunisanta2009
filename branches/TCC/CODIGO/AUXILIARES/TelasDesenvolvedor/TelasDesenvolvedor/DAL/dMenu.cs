@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TelasDesenvolvedor.MODEL;
+using System.Data.SqlClient;
 
 namespace TelasDesenvolvedor.DAL
 {
@@ -21,11 +22,18 @@ namespace TelasDesenvolvedor.DAL
                 {
                     flgAt = 0;
                 }
-                sql.Append(" INSERT INTO Menu ");
-                sql.Append(" (id_menu, dsc_menu, end_menu, dat_atl, flg_ativo) ");
-                sql.Append(" VALUES (" + model.IdMenu + ", '" + model.DscMenu + "', '" + model.EndMenu + "', '" + model.DatAtl.ToString("yyyy-MM-dd") + "', " + flgAt + ")");
-
-                base.InsereDados(sql.ToString());
+                SqlParameter[] parametros = new SqlParameter[5];
+                parametros[0] = new SqlParameter("@id_menu", model.IdMenu);
+                parametros[0].SqlDbType = System.Data.SqlDbType.Int;
+                parametros[1] = new SqlParameter("@dsc_menu", model.DscMenu);
+                parametros[1].SqlDbType = System.Data.SqlDbType.VarChar;
+                parametros[2] = new SqlParameter("@end_menu", model.EndMenu);
+                parametros[2].SqlDbType = System.Data.SqlDbType.VarChar;
+                parametros[3] = new SqlParameter("@dat_atl", model.DatAtl);
+                parametros[3].SqlDbType = System.Data.SqlDbType.DateTime;
+                parametros[4] = new SqlParameter("@flg_ativo", flgAt);
+                parametros[4].SqlDbType = System.Data.SqlDbType.Bit;
+                base.InsereDados("sp_cadastra_menu", parametros);
             }
             catch (Exception ex)
             {
@@ -35,6 +43,6 @@ namespace TelasDesenvolvedor.DAL
             {
                 sql = null;
             }
-        }
+        }        
     }
 }
