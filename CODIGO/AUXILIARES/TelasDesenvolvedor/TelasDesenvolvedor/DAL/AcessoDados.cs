@@ -47,15 +47,21 @@ namespace TelasDesenvolvedor.DAL
         }
         #endregion Execute Sql
 
-        protected bool InsereDados(string query)
+        protected bool InsereDados(string nomeProc, SqlParameter[] parametros)
         {
             try
             {
-                comando = new SqlCommand(query, ConectaBanco.Conexao);
+                comando = new SqlCommand();
+                //comando = new SqlCommand(query, ConectaBanco.Conexao);
+                comando.Connection = ConectaBanco.Conexao;
+                comando.CommandText = nomeProc;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddRange(parametros);
+
                 comando.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
