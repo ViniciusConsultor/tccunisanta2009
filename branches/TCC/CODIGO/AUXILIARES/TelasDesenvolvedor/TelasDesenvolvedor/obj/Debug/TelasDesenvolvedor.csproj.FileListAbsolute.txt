@@ -6,3 +6,12 @@ C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvol
 C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.pdb
 C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.exe
 C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.pdb
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.exe
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.pdb
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.Properties.Resources.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadMenu.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadSubMenu.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.csproj.GenerateResource.Cache
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.exe
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.pdb
