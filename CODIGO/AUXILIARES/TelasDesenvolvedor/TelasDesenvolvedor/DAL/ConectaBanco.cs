@@ -7,7 +7,7 @@ namespace TelasDesenvolvedor.DAL
 {
     class ConectaBanco
     {
-        private static SqlConnection conexao = new SqlConnection(@"Data Source=KAUE-PC\;Initial Catalog=Megatechdatabase;Integrated Security=True");
+        private static SqlConnection conexao = new SqlConnection(@"Data Source=QUARTO\;Initial Catalog=Megatechdatabase;Integrated Security=True");
 
         public static SqlConnection Conexao
         {
