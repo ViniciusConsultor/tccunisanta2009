@@ -48,12 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUSINESS\rCadColaborador.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
+    <Compile Include="DAL\dCadColaborador.cs" />
     <Compile Include="DAL\dMenu.cs" />
     <Compile Include="DAL\dSubMenu.cs" />
+    <Compile Include="MODEL\mCadColaborador.cs" />
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
     <Compile Include="Program.cs" />
@@ -62,6 +65,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadColaborador.resx">
+      <DependentUpon>frmCadColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadMenu.resx">
       <DependentUpon>frmCadMenu.cs</DependentUpon>
@@ -81,6 +87,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\frmCadColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadColaborador.Designer.cs">
+      <DependentUpon>frmCadColaborador.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadMenu.cs">
       <SubType>Form</SubType>

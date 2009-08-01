@@ -58,6 +58,9 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblSexo = new System.Windows.Forms.Label();
             this.CbSexo = new System.Windows.Forms.ComboBox();
+            this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnApaga = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblIdColaborador
@@ -304,11 +307,43 @@
             this.CbSexo.Size = new System.Drawing.Size(155, 21);
             this.CbSexo.TabIndex = 4;
             // 
+            // btnConfirma
+            // 
+            this.btnConfirma.Location = new System.Drawing.Point(281, 220);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.TabIndex = 5;
+            this.btnConfirma.Text = "Confirma";
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(443, 220);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 5;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            // 
+            // btnApaga
+            // 
+            this.btnApaga.Location = new System.Drawing.Point(362, 220);
+            this.btnApaga.Name = "btnApaga";
+            this.btnApaga.Size = new System.Drawing.Size(75, 23);
+            this.btnApaga.TabIndex = 5;
+            this.btnApaga.Text = "Apaga";
+            this.btnApaga.UseVisualStyleBackColor = true;
+            this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
+            // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 266);
+            this.Controls.Add(this.btnApaga);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.CbSexo);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtEstado);
@@ -340,7 +375,7 @@
             this.Controls.Add(this.lblCdUsuario);
             this.Controls.Add(this.lblIdColaborador);
             this.Name = "frmCadColaborador";
-            this.Text = "frmCadColaborador";
+            this.Text = "Cadastro Colaborador";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +413,8 @@
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.ComboBox CbSexo;
+        private System.Windows.Forms.Button btnConfirma;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnApaga;
     }
 }

@@ -15,3 +15,4 @@ C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\Telas
 C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.csproj.GenerateResource.Cache
 C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.exe
 C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.pdb
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadColaborador.resources
