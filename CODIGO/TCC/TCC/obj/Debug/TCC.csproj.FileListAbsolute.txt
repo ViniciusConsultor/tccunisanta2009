@@ -7,3 +7,4 @@ C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\bin\Debug\TCC.pdb
 C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.exe
 C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.pdb
 C:\Users\Kaue\Desktop\TCC\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.UI.frmCadUsuario.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\TCC\TCC\obj\Debug\TCC.exe
