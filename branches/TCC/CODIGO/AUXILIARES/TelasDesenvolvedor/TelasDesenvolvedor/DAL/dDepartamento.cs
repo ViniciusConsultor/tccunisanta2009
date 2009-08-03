@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TelasDesenvolvedor.MODEL;
 using System.Data.SqlClient;
+using TelasDesenvolvedor.MODEL;
 
 namespace TelasDesenvolvedor.DAL
 {
-    class dMenu : AcessoDados
+    class dDepartamento : AcessoDados
     {
-        public void CadastraMenu(mMenu model)
+        public void CadastraDepartamento(mDepartamento model)
         {
-            StringBuilder sql = new StringBuilder();
+            ModelAuxiliar mod = new ModelAuxiliar(model.GetType(), model);
             try
             {
-                ModelAuxiliar mod = new ModelAuxiliar(model.GetType(), model);
                 SqlParameter[] parametros = mod.BuscaNomeParametros();
-                base.InsereDados("sp_insert_menu", parametros);
+                base.InsereDados("sp_insert_departamento", parametros);
             }
             catch (Exception ex)
             {
@@ -23,8 +22,8 @@ namespace TelasDesenvolvedor.DAL
             }
             finally
             {
-                sql = null;
+
             }
-        }        
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace TelasDesenvolvedor.UI
     public partial class frmCadColaborador : Form
     {
 
-          #region Atributos
+        #region Atributos
         DAL.AcessoDados dal;
         #endregion Atributos
 
@@ -57,6 +57,28 @@ namespace TelasDesenvolvedor.UI
                     controles.Text = string.Empty;
                 }
             }
+        }
+
+        private mCadColaborador PegaDadosTela()
+        {
+            mCadColaborador model = new mCadColaborador();
+            model.BairrEnd = txtBairro.Text;
+            model.Cep = txtCEP.Text;
+            model.Cidade = txtCidade.Text;
+            model.ComplEnd = txtComplemento.Text;
+            model.Cpf = txtCpf.Text;
+            model.DatNasc = new DateTime(Convert.ToInt32(txtDataYyyy.Text),Convert.ToInt32(txtDataMm.Text),Convert.ToInt32(txtDataDd.Text));
+            model.Estado = txtEstado.Text;
+            model.IdColab = Convert.ToInt32(txtCdColab.Text);
+            model.IdDepto = Convert.ToInt32(txtCdDepartamento.Text);
+            model.IdUsuario = Convert.ToInt32(txtCdUsuario.Text);
+            model.NomeColab = txtNome.Text;
+            model.NomeRua = txtRua.Text;
+            model.NroEnd = Convert.ToInt32(txtNumero.Text);
+            model.Sexo = Convert.ToChar(CbSexo.Text);
+            model.Rg = txtRg.Text;
+
+            return model;
         }
    }
 }

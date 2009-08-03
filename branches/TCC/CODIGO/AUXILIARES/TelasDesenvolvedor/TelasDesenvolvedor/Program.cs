@@ -16,7 +16,7 @@ namespace TelasDesenvolvedor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DAL.ConectaBanco.ConectaBancoDados();
-            Application.Run(new UI.frmCadMenu());
+            Application.Run(new UI.frmCadColaborador());
         }
     }
 }

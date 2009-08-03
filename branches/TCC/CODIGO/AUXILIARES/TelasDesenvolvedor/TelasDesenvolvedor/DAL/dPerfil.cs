@@ -4,19 +4,18 @@ using System.Text;
 using TelasDesenvolvedor.MODEL;
 using System.Data.SqlClient;
 
-
 namespace TelasDesenvolvedor.DAL
 {
-    class dCadColaborador  : AcessoDados
+    class dPerfil : AcessoDados
     {
-        public void CadastraColaborador(mCadColaborador model)
+        public void CadastraPerfil(mPerfil model)
         {
             StringBuilder sql = new StringBuilder();
             try
             {
                 ModelAuxiliar mod = new ModelAuxiliar(model.GetType(), model);
-                SqlParameter[] parametros = mod.BuscaNomeParametros();    
-                base.InsereDados("sp_insert_colaborador", parametros);
+                SqlParameter[] parametros = mod.BuscaNomeParametros();
+                base.InsereDados("sp_insert_perfil", parametros);
             }
             catch (Exception ex)
             {
@@ -26,6 +25,6 @@ namespace TelasDesenvolvedor.DAL
             {
                 sql = null;
             }
-        }        
+        }
     }
 }

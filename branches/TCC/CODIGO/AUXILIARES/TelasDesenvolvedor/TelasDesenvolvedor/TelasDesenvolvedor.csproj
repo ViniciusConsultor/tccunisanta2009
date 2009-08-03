@@ -49,15 +49,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUSINESS\rCadColaborador.cs" />
+    <Compile Include="BUSINESS\rDepartamento.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
+    <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
     <Compile Include="DAL\dCadColaborador.cs" />
+    <Compile Include="DAL\dDepartamento.cs" />
     <Compile Include="DAL\dMenu.cs" />
+    <Compile Include="DAL\dPerfil.cs" />
     <Compile Include="DAL\dSubMenu.cs" />
+    <Compile Include="MODEL\ColunasBancoDados.cs" />
     <Compile Include="MODEL\mCadColaborador.cs" />
+    <Compile Include="MODEL\mDepartamento.cs" />
     <Compile Include="MODEL\mMenu.cs" />
+    <Compile Include="MODEL\ModelAuxiliar.cs" />
+    <Compile Include="MODEL\mPerfil.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,8 +77,14 @@
     <EmbeddedResource Include="UI\frmCadColaborador.resx">
       <DependentUpon>frmCadColaborador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadDepartamento.resx">
+      <DependentUpon>frmCadDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadMenu.resx">
       <DependentUpon>frmCadMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadPerfil.resx">
+      <DependentUpon>frmCadPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadSubMenu.resx">
       <DependentUpon>frmCadSubMenu.cs</DependentUpon>
@@ -94,11 +108,23 @@
     <Compile Include="UI\frmCadColaborador.Designer.cs">
       <DependentUpon>frmCadColaborador.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmCadDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadDepartamento.Designer.cs">
+      <DependentUpon>frmCadDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmCadMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmCadMenu.Designer.cs">
       <DependentUpon>frmCadMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadPerfil.Designer.cs">
+      <DependentUpon>frmCadPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadSubMenu.cs">
       <SubType>Form</SubType>
