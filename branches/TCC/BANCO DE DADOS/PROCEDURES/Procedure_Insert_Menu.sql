@@ -1,5 +1,9 @@
-CREATE PROCEDURE sp_busca_id
-@nome_tabela varchar(50),
-@id_tabela varchar(50)
+CREATE PROCEDURE sp_insert_menu
+@id_menu INT,
+@dsc_menu VARCHAR(50),
+@end_menu VARCHAR(500),
+@dat_atl DATETIME,
+@flg_ativo BIT
 AS
-SELECT MAX(@id_tabela) from @nome_tabela
+INSERT INTO Menu(id_menu, dsc_menu, end_menu, dat_atl, flg_ativo)
+VALUES (@id_menu, @dsc_menu, @end_menu, @dat_atl, @flg_ativo)
