@@ -53,6 +53,7 @@
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
+    <Compile Include="BUSINESS\rUsuario.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
     <Compile Include="DAL\dCadColaborador.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="DAL\dMenu.cs" />
     <Compile Include="DAL\dPerfil.cs" />
     <Compile Include="DAL\dSubMenu.cs" />
+    <Compile Include="DAL\dUsuario.cs" />
     <Compile Include="MODEL\ColunasBancoDados.cs" />
     <Compile Include="MODEL\mCadColaborador.cs" />
     <Compile Include="MODEL\mDepartamento.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="MODEL\ModelAuxiliar.cs" />
     <Compile Include="MODEL\mPerfil.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
+    <Compile Include="MODEL\mUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadSubMenu.resx">
       <DependentUpon>frmCadSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -131,6 +137,12 @@
     </Compile>
     <Compile Include="UI\frmCadSubMenu.Designer.cs">
       <DependentUpon>frmCadSubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
