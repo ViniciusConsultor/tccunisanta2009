@@ -26,11 +26,11 @@ namespace TelasDesenvolvedor.UI
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
              mUsuario modelUsuario = new mUsuario();
-            BUSINESS.rMenu regraMenu = new BUSINESS.rMenu();
+            BUSINESS.rUsuario regraUsuario = new BUSINESS.rUsuario();
             try
             {
-                modelUsuario = this.PegaDadosTela();
-                regraUsuario.CadastraUsuariou(modelUsuario);
+                modelUsuario = this.pegaDadosTela();
+                regraUsuario.CadastraUsuario(modelUsuario);
                 MessageBox.Show("Cadastrado com sucesso!!");
             }
             catch (Exception ex)

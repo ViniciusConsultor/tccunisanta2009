@@ -28,3 +28,6 @@ C:\Users\Kaue\Codigos\tccunisanta2009\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\T
 C:\Users\Kaue\Codigos\tccunisanta2009\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\bin\Debug\TelasDesenvolvedor.pdb
 C:\Users\Kaue\Codigos\tccunisanta2009\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadDepartamento.resources
 C:\Users\Kaue\Codigos\tccunisanta2009\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadPerfil.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadDepartamento.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmCadPerfil.resources
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\TelasDesenvolvedor\TelasDesenvolvedor\obj\Debug\TelasDesenvolvedor.UI.frmUsuario.resources

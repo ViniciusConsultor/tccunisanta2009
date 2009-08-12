@@ -58,7 +58,7 @@ namespace TelasDesenvolvedor.MODEL
             set { descTipoUsuario = value; }
         }
 
-        [ColunasBancoDados("flg_admin", System.Data.SqlDbType.bit)]
+        [ColunasBancoDados("flg_admin", System.Data.SqlDbType.Bit)]
         public bool FlagAdm
         {
             get { return flagAdm; }
