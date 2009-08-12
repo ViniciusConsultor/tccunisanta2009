@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
+
 namespace TCC.UI
 {
     public partial class Inicio : Form
@@ -130,6 +132,19 @@ namespace TCC.UI
         }
         #endregion Carrega Menu Default
 
+
         #endregion Metodos
+
+        public void abreTela()
+        {
+
+            frmCadUsuario usuario = new frmCadUsuario();
+            usuario.ShowDialog();
+
+
+           
+            
+        
+        }
     }
 }
