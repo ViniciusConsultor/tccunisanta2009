@@ -54,6 +54,7 @@
     <Compile Include="DAL\dMenu.cs" />
     <Compile Include="DAL\dMenuSubMenu.cs" />
     <Compile Include="DAL\dSubMenu.cs" />
+    <Compile Include="MODEL\dLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,9 +102,6 @@
     <Compile Include="UI\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MODEL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
