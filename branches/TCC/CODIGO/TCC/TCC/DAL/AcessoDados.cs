@@ -10,7 +10,7 @@ namespace TCC.DAL
     {
         #region Atributos
 
-        private SqlConnection conexao = new SqlConnection(@"Data Source=QUARTO\;Initial Catalog=Megatechdatabase;Integrated Security=True");
+        private SqlConnection conexao = new SqlConnection(@"Data Source=Quarto\;Initial Catalog=Megatechdatabase;Integrated Security=True");
         private SqlDataAdapter dAdap;
 
         #endregion Atributos
