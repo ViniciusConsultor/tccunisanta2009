@@ -97,6 +97,9 @@
     <EmbeddedResource Include="UI\frmCadUsuario.resx">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInicial.resx">
+      <DependentUpon>frmInicial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +157,12 @@
     </Compile>
     <Compile Include="UI\frmCadUsuario.Designer.cs">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInicial.Designer.cs">
+      <DependentUpon>frmInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmLogin.cs">
       <SubType>Form</SubType>
