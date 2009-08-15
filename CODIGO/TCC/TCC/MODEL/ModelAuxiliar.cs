@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Reflection;
 
-namespace TelasDesenvolvedor.MODEL
+namespace TCC.MODEL
 {
     class ModelAuxiliar
     {

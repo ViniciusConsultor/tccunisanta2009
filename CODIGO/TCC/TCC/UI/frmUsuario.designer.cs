@@ -1,4 +1,4 @@
-﻿namespace TelasDesenvolvedor.UI
+﻿namespace TCC.UI
 {
     partial class frmUsuario
     {
