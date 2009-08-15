@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TelasDesenvolvedor.MODEL;
+using TCC.MODEL;
 
-namespace TelasDesenvolvedor.UI
+namespace TCC.UI
 {
     public partial class frmUsuario : Form
     {

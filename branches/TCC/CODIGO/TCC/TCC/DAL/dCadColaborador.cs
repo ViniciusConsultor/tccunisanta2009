@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TelasDesenvolvedor.MODEL;
+using TCC.MODEL;
 using System.Data.SqlClient;
 
 
-namespace TelasDesenvolvedor.DAL
+namespace TCC.DAL
 {
     class dCadColaborador  : AcessoDados
     {

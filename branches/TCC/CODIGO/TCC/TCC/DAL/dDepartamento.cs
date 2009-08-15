@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
-using TelasDesenvolvedor.MODEL;
+using TCC.MODEL;
 
-namespace TelasDesenvolvedor.DAL
+namespace TCC.DAL
 {
     class dDepartamento : AcessoDados
     {

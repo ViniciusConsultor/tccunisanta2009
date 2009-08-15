@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using TelasDesenvolvedor.DAL;
+using TCC.DAL;
+using TCC.MODEL;
 using System.Text;
 
-namespace TelasDesenvolvedor.BUSINESS
+namespace TCC.BUSINESS
 {
     class rDepartamento
     {
