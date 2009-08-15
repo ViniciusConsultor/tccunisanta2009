@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace TelasDesenvolvedor.DAL
+namespace TCC.DAL
 {
     class ConectaBanco
     {
-        private static SqlConnection conexao = new SqlConnection(@"Data Source=Quarto\;Initial Catalog=Megatechdatabase;Integrated Security=True");
+        private static SqlConnection conexao = new SqlConnection(@"Data Source=QUARTO\;Initial Catalog=Megatechdatabase;Integrated Security=True");
 
         public static SqlConnection Conexao
         {

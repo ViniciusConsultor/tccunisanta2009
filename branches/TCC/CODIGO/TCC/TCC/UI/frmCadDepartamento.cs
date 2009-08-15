@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TelasDesenvolvedor.UI
+namespace TCC.UI
 {
     public partial class frmCadDepartamento : Form
     {
@@ -23,7 +23,7 @@ namespace TelasDesenvolvedor.UI
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            BUSINESS.rDepartamento regraDep = new TelasDesenvolvedor.BUSINESS.rDepartamento();
+            BUSINESS.rDepartamento regraDep = new TCC.BUSINESS.rDepartamento();
             try
             {
                 regraDep.CadastraDepartamento(this.PegaDadosTela());
@@ -52,7 +52,7 @@ namespace TelasDesenvolvedor.UI
 
         private MODEL.mDepartamento PegaDadosTela()
         {
-            MODEL.mDepartamento model = new TelasDesenvolvedor.MODEL.mDepartamento();
+            MODEL.mDepartamento model = new TCC.MODEL.mDepartamento();
             try
             {
                 //model.DatAtl

@@ -55,8 +55,8 @@ namespace TCC.UI
         /// </summary>
         private void AbreConexaoBanco()
         {
-            DAL.AcessoDados dal = new DAL.AcessoDados();
-            if (dal.ConectaBanco() == false)
+            //DAL.ConectaBanco dal = new TCC.DAL.ConectaBanco();
+            if (TCC.DAL.ConectaBanco.ConectaBancoDados() == false)
             {
                 MessageBox.Show("Erro ao conectar ao abrir a conexão com banco de dados", "Atenção",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);

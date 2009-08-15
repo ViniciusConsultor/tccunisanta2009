@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using TCC.MODEL;
+using TCC.DAL;
 
 namespace TCC.BUSINESS
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace TelasDesenvolvedor.MODEL
+namespace TCC.MODEL
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     class ColunasBancoDados : Attribute

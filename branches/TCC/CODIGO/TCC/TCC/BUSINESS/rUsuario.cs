@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TelasDesenvolvedor.MODEL;
-using TelasDesenvolvedor.DAL;
+using TCC.MODEL;
+using TCC.DAL;
 
-namespace TelasDesenvolvedor.BUSINESS
+namespace TCC.BUSINESS
 {
     class rUsuario
     {
