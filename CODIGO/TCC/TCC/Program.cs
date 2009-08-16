@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using TCC.DAL;
 using System.Windows.Forms;
 
 namespace TCC
@@ -15,7 +14,15 @@ namespace TCC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Inicio());
+            if (ConectaBanco.ConectaBancoDados() == true)
+            {
+                Application.Run(new UI.frmInicial());
+            }
+            else
+            {
+                MessageBox.Show("Erro ao Abrir a conexão com o Banco de Dados", "Atenção", MessageBoxButtons.OK);
+                Application.Exit();
+            }
         }
     }
 }
