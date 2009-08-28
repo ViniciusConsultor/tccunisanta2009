@@ -12,11 +12,6 @@ namespace TCC.UI
 {
     public partial class frmCadColaborador : Form
     {
-
-        #region Atributos
-        DAL.AcessoDados dal;
-        #endregion Atributos
-
         public frmCadColaborador()
         {
             InitializeComponent();
