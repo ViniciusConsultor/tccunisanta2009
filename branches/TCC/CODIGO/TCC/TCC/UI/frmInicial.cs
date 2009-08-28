@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -16,7 +16,8 @@ namespace TCC.UI
         /// <summary>
         /// Dicionario de eventos da Classe inicial.
         /// </summary>
-        private Dictionary<string, object> dicEventos = new Dictionary<string, object>();
+        private Dictionary<string, object> _dicEventos = new Dictionary<string, object>();
+        private const string _NAMESPACEFORMS = "TCC.UI.";
         #endregion Atributos
 
         #region Construtor
@@ -27,6 +28,14 @@ namespace TCC.UI
         #endregion Construtor
 
         #region Eventos
+
+        #region Form Load
+        private void frmInicial_Load(object sender, EventArgs e)
+        {
+            this.CarregaMenuDefault();
+        }
+        #endregion Form Load
+
         #region newToolStripButton Click
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -126,5 +135,90 @@ namespace TCC.UI
         }
         #endregion CloseAllToolStripMenuItem Click
         #endregion Eventos
+
+        #region Metodos
+
+        #region Carrega Menu Default
+        /// <summary>
+        /// Carrega e popula o menu do form
+        /// </summary>
+        private void CarregaMenuDefault()
+        {
+            //Instanciando os objetos
+            //-----------------------
+            BUSINESS.rMenu regraMenu = new TCC.BUSINESS.rMenu();
+            BUSINESS.rSubMenu regraSubMenu = new TCC.BUSINESS.rSubMenu();
+            //Declarando DataTables onde serão armazenados os itens de Menu e os SubMenus
+            //---------------------------------------------------------------------------
+            DataTable dtMenu;
+            DataTable dtSubMenu;
+            //Array para armazenar os itens do menu
+            //-------------------------------------
+            ToolStripMenuItem[] itemMenuP;
+            try
+            {
+                //Busca e carrega o DataTable com os Menus
+                //----------------------------------------
+                dtMenu = regraMenu.BuscaMenuDefault();
+                //Declara o tamanhdo do Array
+                //---------------------------
+                itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
+                for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
+                {
+                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["dsc_menu"].ToString());
+                    dtSubMenu = regraSubMenu.BuscaSubMenuDefault(Convert.ToInt32(dtMenu.Rows[contador]["id_menu"]));
+                    this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { itemMenuP[contador] });
+                    //Verifica se existem SubMenus para aquele menu
+                    //---------------------------------------------
+                    if (dtSubMenu.Rows.Count > 0)
+                    {
+                        //Caso exista adicionas os menus na coleção e adiciona a chamada dos eventos
+                        //--------------------------------------------------------------------------
+                        for (int i = 0; i < dtSubMenu.Rows.Count; i++)
+                        {
+                            itemMenuP[contador].DropDownItems.Add(dtSubMenu.Rows[i]["dsc_sub"].ToString());
+                            itemMenuP[contador].DropDownItems[i].Click += new EventHandler(frmInicial_Click);
+                            _dicEventos.Add(dtSubMenu.Rows[i]["dsc_sub"].ToString(), dtSubMenu.Rows[i]["end_sub"]);
+                        }
+                    }
+                    else
+                    {
+                        //Caso não exista apenas adiciona o evento ao controle
+                        //----------------------------------------------------
+                        this.mnuPrincipal.Items[contador].Click +=new EventHandler(frmInicial_Click);
+                        _dicEventos.Add(dtMenu.Rows[contador]["dsc_menu"].ToString(), dtMenu.Rows[contador]["end_menu"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                regraMenu = null;
+                regraSubMenu = null;
+                itemMenuP = null;
+                dtMenu = null;
+                dtSubMenu = null;
+            }
+        }
+
+        void frmInicial_Click(object sender, EventArgs e)
+        {
+            Assembly ass = Assembly.GetExecutingAssembly();
+            if (this._dicEventos.ContainsKey(sender.ToString()) == true)
+            {
+                Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + this._dicEventos[sender.ToString()]);
+                objFormDinamico.MdiParent = this;
+                objFormDinamico.Show();
+            }
+        }
+        #endregion Carrega Menu Default
+
+        
+
+        #endregion Metodos
     }
 }

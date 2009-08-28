@@ -61,13 +61,90 @@ namespace TCC.DAL
                 comando.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
             finally
             {
                 comando = null;
+            }
+        }
+
+        protected DataTable BuscaDados(string nomeProc)
+        {
+            SqlDataReader dataR;
+            DataTable dt = new DataTable();
+            try
+            {
+                comando = new SqlCommand();
+                comando.Connection = ConectaBanco.Conexao;
+                comando.CommandText = nomeProc;
+                comando.CommandType = CommandType.StoredProcedure;
+                dataR = comando.ExecuteReader();
+                dt.Load(dataR);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataR = null;
+                dt = null;
+            }
+        }
+
+        protected DataTable BuscaDados(string nomeProc, SqlParameter parametro)
+        {
+            SqlDataReader dataR;
+            DataTable dt = new DataTable();
+            try
+            {
+                comando = new SqlCommand();
+                comando.Connection = ConectaBanco.Conexao;
+                comando.CommandText = nomeProc;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(parametro);
+                dataR = comando.ExecuteReader();
+                dt.Load(dataR);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataR = null;
+                dt = null;
+            }
+        }
+
+        protected DataTable BuscaDados(string nomeProc, SqlParameter[] parametros)
+        {
+            SqlDataReader dataR;
+            DataTable dt = new DataTable();
+            try
+            {
+                comando = new SqlCommand();
+                comando.Connection = ConectaBanco.Conexao;
+                comando.CommandText = nomeProc;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddRange(parametros);
+                dataR = comando.ExecuteReader();
+                dt.Load(dataR);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataR = null;
+                dt = null;
             }
         }
 
