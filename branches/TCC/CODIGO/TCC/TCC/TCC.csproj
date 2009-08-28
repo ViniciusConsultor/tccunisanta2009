@@ -108,6 +108,10 @@
       <DependentUpon>frmUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmVendaMotor.resx">
+      <DependentUpon>frmVendaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -163,6 +167,12 @@
     </Compile>
     <Compile Include="UI\frmUsuario.designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmVendaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmVendaMotor.Designer.cs">
+      <DependentUpon>frmVendaMotor.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
