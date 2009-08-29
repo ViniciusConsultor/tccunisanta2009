@@ -34,7 +34,14 @@ namespace TCC.BUSINESS
             try
             {
                 dt = dalUsu.BuscaIdMaximoUsuario();
-                idUsuario = Convert.ToInt32(dt.Rows[0]["id_usu"]);
+                if (dt.Rows[0]["id_usu"] == DBNull.Value || dt.Rows[0]["id_usu"] == null)
+                {
+                    idUsuario = 0;
+                }
+                else
+                {
+                    idUsuario = Convert.ToInt32(dt.Rows[0]["id_usu"]);
+                }
                 return ++idUsuario;
             }
             catch (Exception ex)
