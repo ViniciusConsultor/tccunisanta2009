@@ -8,70 +8,52 @@ namespace TCC.MODEL
     class mUsuario
     {
         private int idUsuario;
-        private string LoginUsuario;
-        private string DescUsuario;
-        private string Senha;
-        private char tipoUsuario;
-        private string descTipoUsuario;
-        private bool flagAdm;
-        private bool flagAtivo;
+        private string login;
+        private string senha;
+        private int idTipoUsuario;
+        private string obsUsuario;
+        private bool flgAtivo;
+
+        [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit)]
+        public bool FlgAtivo
+        {
+            get { return flgAtivo; }
+            set { flgAtivo = value; }
+        }
+
+        [ColunasBancoDados("obs_usu", System.Data.SqlDbType.VarChar)]
+        public string ObsUsuario
+        {
+            get { return obsUsuario; }
+            set { obsUsuario = value; }
+        }
+
+        [ColunasBancoDados("id_tipo_usuario", System.Data.SqlDbType.Int)]
+        public int IdTipoUsuario
+        {
+            get { return idTipoUsuario; }
+            set { idTipoUsuario = value; }
+        }
+
+        [ColunasBancoDados("senha", System.Data.SqlDbType.VarChar)]
+        public string Senha
+        {
+            get { return senha; }
+            set { senha = value; }
+        }
+
+        [ColunasBancoDados("login", System.Data.SqlDbType.VarChar)]
+        public string Login
+        {
+            get { return login; }
+            set { login = value; }
+        }
 
         [ColunasBancoDados("id_usu", System.Data.SqlDbType.Int)]
         public int IdUsuario
         {
             get { return idUsuario; }
             set { idUsuario = value; }
-        }
-        
-        [ColunasBancoDados("login", System.Data.SqlDbType.VarChar)]
-        public string LoginUsuario1
-        {
-            get { return LoginUsuario; }
-            set { LoginUsuario = value; }
-        }
-
-        [ColunasBancoDados("desc_usu", System.Data.SqlDbType.Char)]
-        public string DescUsuario1
-        {
-            get { return DescUsuario; }
-            set { DescUsuario = value; }
-        }
-
-        [ColunasBancoDados("senha", System.Data.SqlDbType.VarChar)]
-        public string Senha1
-        {
-            get { return Senha; }
-            set { Senha = value; }
-        }
-
-        [ColunasBancoDados("tipo", System.Data.SqlDbType.Char)]
-        public char TipoUsuario
-        {
-            get { return tipoUsuario; }
-            set { tipoUsuario = value; }
-        }
-
-        [ColunasBancoDados("desc_tipo", System.Data.SqlDbType.VarChar)]
-        public string DescTipoUsuario
-        {
-            get { return descTipoUsuario; }
-            set { descTipoUsuario = value; }
-        }
-
-        [ColunasBancoDados("flg_admin", System.Data.SqlDbType.Bit)]
-        public bool FlagAdm
-        {
-            get { return flagAdm; }
-            set { flagAdm = value; }
-        }
-
-        [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit)]
-        public bool FlagAtivo
-        {
-            get { return flagAtivo; }
-            set { flagAtivo = value; }
-        }
-  
-    
+        }        
     }
 }

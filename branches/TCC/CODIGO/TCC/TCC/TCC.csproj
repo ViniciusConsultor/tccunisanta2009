@@ -54,6 +54,7 @@
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
+    <Compile Include="BUSINESS\rTipoUsuario.cs" />
     <Compile Include="BUSINESS\rUsuario.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DAL\dMenuSubMenu.cs" />
     <Compile Include="DAL\dPerfil.cs" />
     <Compile Include="DAL\dSubMenu.cs" />
+    <Compile Include="DAL\dTipoUsuario.cs" />
     <Compile Include="DAL\dUsuario.cs" />
     <Compile Include="MODEL\ColunasBancoDados.cs" />
     <Compile Include="MODEL\dLogin.cs" />
@@ -78,6 +80,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBuscaTipoUsuario.resx">
+      <DependentUpon>frmBuscaTipoUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadColaborador.resx">
@@ -104,10 +110,6 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmUsuario.resx">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmVendaMotor.resx">
       <DependentUpon>frmVendaMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -125,6 +127,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\frmBuscaTipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBuscaTipoUsuario.Designer.cs">
+      <DependentUpon>frmBuscaTipoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadColaborador.cs">
       <SubType>Form</SubType>
@@ -161,12 +169,6 @@
     </Compile>
     <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmUsuario.designer.cs">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmVendaMotor.cs">
       <SubType>Form</SubType>
