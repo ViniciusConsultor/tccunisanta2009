@@ -42,7 +42,9 @@ namespace TCC.MODEL
             }
             finally
             {
-
+                param = null;
+                cols = null;
+                prop = null;
             }
         }
     }

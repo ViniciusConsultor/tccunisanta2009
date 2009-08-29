@@ -1,23 +1,23 @@
-
-create procedure sp_insert_colaborador
-@id_colab int,
-@id_usu int,
-@id_depto int,
-@nom_colab varchar(40),
-@dat_nasc datetime,
-@nom_rua varchar,
-@nro_end int,
-@compl_end varchar,
-@cep varchar,
-@bairr_end varchar(30),
-@cidade varchar(40),
-@estado char(2),
-@rg varchar(15),
-@cpf varchar(15),
-@sexo char(1),
-@dat_atl datetime,
-@flg_ativo bit
-as
-insert into Colaborador(id_colab, id_usu, id_depto, nom_colab, dat_nasc, nom_rua, nro_end, compl_end, cep, bairr_end, cidade, estado, rg, cpf, sexo, dat_atl, flg_ativo)
-values
-(@id_colab, @id_usu, @id_depto, @nom_colab, @dat_nasc, @nom_rua, @nro_end, @compl_end, @cep, @bairr_end, @cidade, @estado, @rg, @cpf, @sexo, @dat_atl, @flg_ativo)
+CREATE PROCEDURE sp_insert_colaborador
+@id_colab INT,
+@nom_colab VARCHAR(40),
+@dat_nasc DATETIME,
+@nom_rua VARCHAR(50),
+@nro_end INT,
+@compl_end VARCHAR(20),
+@cep VARCHAR(10),
+@bairr_end VARCHAR(30),
+@cidade VARCHAR(40),
+@rg VARCHAR(15),
+@cpf VARCHAR(15),
+@sexo CHAR(1),
+@dat_atl DATETIME,
+@flg_ativo BIT,
+@id_usu INT,
+@id_depto INT,
+@id_estado INT
+AS
+INSERT INTO 
+Colaborador(id_colab, nom_colab, dat_nasc, nom_rua, nro_end, compl_end, cep, bairr_end, cidade, rg, cpf, sexo, dat_atl, flg_ativo, id_usu, id_depto, id_estado)
+VALUES
+(@id_colab, @nom_colab, @dat_nasc, @nom_rua, @nro_end, @compl_end, @cep, @bairr_end, @cidade, @rg, @cpf, @sexo, @dat_atl, @flg_ativo, @id_usu, @id_depto, @id_estado)
