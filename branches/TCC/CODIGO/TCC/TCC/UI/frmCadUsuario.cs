@@ -108,7 +108,17 @@ namespace TCC.UI
         /// <returns>Senha Criptografada</returns>
         private string CriptografaSenha(string senha)
         {
-            return senha;
+            string criptografado;
+            try
+            {
+                byte[] b = ASCIIEncoding.ASCII.GetBytes(senha);
+                criptografado = Convert.ToBase64String(b);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return criptografado;
         }
         #endregion Criptografa Senha
 
