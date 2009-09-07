@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE sp_busca_submenu_default
 @id_menu AS INT
 AS

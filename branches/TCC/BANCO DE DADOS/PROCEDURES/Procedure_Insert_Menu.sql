@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE sp_insert_menu
 @id_menu INT,
 @dsc_menu VARCHAR(50),
