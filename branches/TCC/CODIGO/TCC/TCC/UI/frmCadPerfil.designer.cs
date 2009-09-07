@@ -57,6 +57,7 @@
             // 
             // txtIdPerfil
             // 
+            this.txtIdPerfil.Enabled = false;
             this.txtIdPerfil.Location = new System.Drawing.Point(129, 13);
             this.txtIdPerfil.Name = "txtIdPerfil";
             this.txtIdPerfil.Size = new System.Drawing.Size(68, 20);
@@ -112,6 +113,7 @@
             this.Controls.Add(this.lblIdPerfil);
             this.Name = "frmCadPerfil";
             this.Text = "frmCadPerfil";
+            this.Load += new System.EventHandler(this.frmCadPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

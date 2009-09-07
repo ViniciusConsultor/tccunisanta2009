@@ -163,7 +163,7 @@
             this.btnBuscaTipoUsuario.Name = "btnBuscaTipoUsuario";
             this.btnBuscaTipoUsuario.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaTipoUsuario.TabIndex = 15;
-            this.btnBuscaTipoUsuario.Text = "...";
+            this.btnBuscaTipoUsuario.Text = " ";
             this.btnBuscaTipoUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaTipoUsuario.Click += new System.EventHandler(this.btnBuscaTipoUsuario_Click);
             // 
