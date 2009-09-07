@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TCC.MODEL;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace TCC.DAL
@@ -10,11 +11,12 @@ namespace TCC.DAL
     {
         public void CadastraPerfil(mPerfil model)
         {
-            StringBuilder sql = new StringBuilder();
+            ModelAuxiliar mod;
+            SqlParameter[] parametros;
             try
             {
-                ModelAuxiliar mod = new ModelAuxiliar(model.GetType(), model);
-                SqlParameter[] parametros = mod.BuscaNomeParametros();
+                mod = new ModelAuxiliar(model.GetType(), model);
+                parametros = mod.BuscaNomeParametros();
                 base.InsereDados("sp_insert_perfil", parametros);
             }
             catch (Exception ex)
@@ -23,7 +25,22 @@ namespace TCC.DAL
             }
             finally
             {
-                sql = null;
+                mod = null;
+                parametros = null;
+            }
+
+        }
+
+        public DataTable BuscaIdMaximoPerfil()
+        {
+            try
+            {
+                return base.BuscaDados("sp_busca_maxPerfil");
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
             }
         }
     }

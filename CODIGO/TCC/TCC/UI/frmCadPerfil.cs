@@ -7,47 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.MODEL;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
     public partial class frmCadPerfil : Form
     {
+        #region Construtor
         public frmCadPerfil()
         {
             InitializeComponent();
         }
+        #endregion
+        #region Eventos
+        private void frmCadPerfil_Load(object sender, EventArgs e)
+        {
+            this.BuscaMaxDepto();
+        }
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
+            rPerfil regraPerfil = new rPerfil();
             mPerfil modelPerfil = new mPerfil();
-            BUSINESS.rPerfil regraPerfil = new BUSINESS.rPerfil();
             try
             {
                 modelPerfil = this.PegaDadosTela();
                 regraPerfil.cadastraPerfil(modelPerfil);
-                MessageBox.Show("Cadastrado com sucesso!");
+                this.LimpaControles();
+                this.BuscaMaxDepto();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
             }
-            finally
-            {
-                modelPerfil = null;
-            }
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            foreach (Control controles in this.Controls)
-            {
-                if (controles.GetType().Equals(new TextBox().GetType())==true)
-                {
-                    controles.Text = string.Empty;
-                }
-            }
+            this.LimpaControles();
         }
-
+        #endregion
+        #region Metodos
         private mPerfil PegaDadosTela()
         {
             mPerfil model = new mPerfil();
@@ -56,5 +57,38 @@ namespace TCC.UI
 
             return model;
         }
+
+        private void BuscaMaxDepto()
+        {
+            rPerfil regraPerfil = new rPerfil();
+            try
+            {
+                this.txtIdPerfil.Text = regraPerfil.BuscaIdMaximoPerfil().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraPerfil = null;
+            }
+        }
+
+        private void LimpaControles()
+        {
+            //Varre todos os controles da tela
+            //--------------------------------
+            foreach (Control controle in this.Controls)
+            {
+                //Se for do tipo TextBox apaga o conteudo escrito
+                //-----------------------------------------------
+                if (controle.GetType().Equals(new TextBox().GetType()) == true)
+                {
+                    controle.Text = string.Empty;
+                }
+            }
+        }
+        #endregion
     }
 }
