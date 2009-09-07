@@ -39,9 +39,9 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.txtTipoUsuario = new System.Windows.Forms.TextBox();
-            this.lblTipoUsuario = new System.Windows.Forms.Label();
-            this.btnBuscaTipoUsuario = new System.Windows.Forms.Button();
+            this.txtPerfilUsuario = new System.Windows.Forms.TextBox();
+            this.lblPerfilUsuario = new System.Windows.Forms.Label();
+            this.btnBuscaPerfilUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -140,41 +140,41 @@
             this.lblSenha.TabIndex = 11;
             this.lblSenha.Text = "Senha";
             // 
-            // txtTipoUsuario
+            // txtPerfilUsuario
             // 
-            this.txtTipoUsuario.Enabled = false;
-            this.txtTipoUsuario.Location = new System.Drawing.Point(110, 39);
-            this.txtTipoUsuario.Name = "txtTipoUsuario";
-            this.txtTipoUsuario.Size = new System.Drawing.Size(125, 20);
-            this.txtTipoUsuario.TabIndex = 14;
+            this.txtPerfilUsuario.Enabled = false;
+            this.txtPerfilUsuario.Location = new System.Drawing.Point(110, 39);
+            this.txtPerfilUsuario.Name = "txtPerfilUsuario";
+            this.txtPerfilUsuario.Size = new System.Drawing.Size(125, 20);
+            this.txtPerfilUsuario.TabIndex = 14;
             // 
-            // lblTipoUsuario
+            // lblPerfilUsuario
             // 
-            this.lblTipoUsuario.AutoSize = true;
-            this.lblTipoUsuario.Location = new System.Drawing.Point(36, 42);
-            this.lblTipoUsuario.Name = "lblTipoUsuario";
-            this.lblTipoUsuario.Size = new System.Drawing.Size(67, 13);
-            this.lblTipoUsuario.TabIndex = 13;
-            this.lblTipoUsuario.Text = "Tipo Usuário";
+            this.lblPerfilUsuario.AutoSize = true;
+            this.lblPerfilUsuario.Location = new System.Drawing.Point(36, 42);
+            this.lblPerfilUsuario.Name = "lblPerfilUsuario";
+            this.lblPerfilUsuario.Size = new System.Drawing.Size(69, 13);
+            this.lblPerfilUsuario.TabIndex = 13;
+            this.lblPerfilUsuario.Text = "Perfil Usuário";
             // 
-            // btnBuscaTipoUsuario
+            // btnBuscaPerfilUsuario
             // 
-            this.btnBuscaTipoUsuario.Location = new System.Drawing.Point(241, 37);
-            this.btnBuscaTipoUsuario.Name = "btnBuscaTipoUsuario";
-            this.btnBuscaTipoUsuario.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaTipoUsuario.TabIndex = 15;
-            this.btnBuscaTipoUsuario.Text = " ";
-            this.btnBuscaTipoUsuario.UseVisualStyleBackColor = true;
-            this.btnBuscaTipoUsuario.Click += new System.EventHandler(this.btnBuscaTipoUsuario_Click);
+            this.btnBuscaPerfilUsuario.Location = new System.Drawing.Point(241, 37);
+            this.btnBuscaPerfilUsuario.Name = "btnBuscaPerfilUsuario";
+            this.btnBuscaPerfilUsuario.Size = new System.Drawing.Size(24, 23);
+            this.btnBuscaPerfilUsuario.TabIndex = 15;
+            this.btnBuscaPerfilUsuario.Text = "...";
+            this.btnBuscaPerfilUsuario.UseVisualStyleBackColor = true;
+            this.btnBuscaPerfilUsuario.Click += new System.EventHandler(this.btnBuscaPerfilUsuario_Click);
             // 
             // frmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 233);
-            this.Controls.Add(this.btnBuscaTipoUsuario);
-            this.Controls.Add(this.txtTipoUsuario);
-            this.Controls.Add(this.lblTipoUsuario);
+            this.Controls.Add(this.btnBuscaPerfilUsuario);
+            this.Controls.Add(this.txtPerfilUsuario);
+            this.Controls.Add(this.lblPerfilUsuario);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.btnVoltar);
@@ -207,8 +207,8 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox txtTipoUsuario;
-        private System.Windows.Forms.Label lblTipoUsuario;
-        private System.Windows.Forms.Button btnBuscaTipoUsuario;
+        private System.Windows.Forms.TextBox txtPerfilUsuario;
+        private System.Windows.Forms.Label lblPerfilUsuario;
+        private System.Windows.Forms.Button btnBuscaPerfilUsuario;
     }
 }

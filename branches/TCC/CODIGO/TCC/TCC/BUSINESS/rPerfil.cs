@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Text;
 using System.Data;
 using TCC.MODEL;
@@ -55,6 +55,23 @@ namespace TCC.BUSINESS
             {
                 dalPerfil = null;
                 dt = null;
+            }
+        }
+
+        public DataTable BuscaPerfil(string Descricao)
+        {
+            dPerfil dal = new dPerfil();
+            try
+            {
+                return dal.BuscaPerfil(Descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
             }
         }
     }

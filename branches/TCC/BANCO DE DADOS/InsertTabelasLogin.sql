@@ -1,13 +1,16 @@
+USE Megatechdatabase
+go
+
 --INSERT TABELA DEPARTAMENTO
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 1);
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 1);
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 1);
 
 --INSERT TABELA TIPO_DE_USUÁRIO
-INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
+--INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
 
 --INSERT TABELA USUARIO
-INSERT INTO Usuario (id_usu, login, senha, id_tipo_usuario, obs_usu, flg_ativo) VALUES (1, 'kaue', '123', 1, 'SEI LA', 1);
+INSERT INTO Usuario (id_usu, login, senha, obs_usu, flg_ativo) VALUES (1, 'kaue', '123', 1, 'SEI LA', 1);
 
 --INSERT TABELA ESTADO
 INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (1, 'SP', 'SÃO PAULO');

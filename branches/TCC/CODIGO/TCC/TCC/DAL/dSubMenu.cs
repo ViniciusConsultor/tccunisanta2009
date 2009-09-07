@@ -13,16 +13,17 @@ namespace TCC.DAL
         /// </summary>
         /// <param name="idMenu">id do Menu para buscar os SubMenus</param>
         /// <returns>DataTable com os Submenus</returns>
-        public DataTable BuscaSubMenuDefault(int idMenu)
+        public DataTable BuscaSubMenu(int idMenu, int idPerfil)
         {
-            StringBuilder query = new StringBuilder();
-            SqlParameter parametro;
+            SqlParameter[] parametro = new SqlParameter[2];
             try
             {
-                parametro = new SqlParameter("@id_menu", idMenu);
-                parametro.SqlDbType = SqlDbType.Int;
+                parametro[0] = new SqlParameter("@id_menu", idMenu);
+                parametro[1] = new SqlParameter("@id_perfil", idPerfil);
+                parametro[0].SqlDbType = SqlDbType.Int;
+                parametro[1].SqlDbType = SqlDbType.Int;
 
-                return base.BuscaDados("sp_busca_submenu_default", parametro);
+                return base.BuscaDados("sp_busca_submenu", parametro);
             }
             catch (Exception ex)
             {
@@ -30,7 +31,6 @@ namespace TCC.DAL
             }
             finally
             {
-                query = null;
                 parametro = null;
             }
         }

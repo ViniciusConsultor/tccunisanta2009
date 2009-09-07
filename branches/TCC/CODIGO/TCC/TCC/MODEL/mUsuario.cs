@@ -28,13 +28,6 @@ namespace TCC.MODEL
             set { obsUsuario = value; }
         }
 
-        [ColunasBancoDados("id_tipo_usuario", System.Data.SqlDbType.Int)]
-        public int IdTipoUsuario
-        {
-            get { return idTipoUsuario; }
-            set { idTipoUsuario = value; }
-        }
-
         [ColunasBancoDados("senha", System.Data.SqlDbType.VarChar)]
         public string Senha
         {
