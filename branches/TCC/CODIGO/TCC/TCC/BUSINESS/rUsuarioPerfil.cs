@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Text;
 using TCC.MODEL;
 using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rMenu
+    class rUsuarioPerfil
     {
-        /// <summary>
-        /// Busca o menu de um usuario default(deslogado).
-        /// </summary>
-        /// <returns>DataTable com o menu de um usuario default</returns>
-        public DataTable BuscaMenuDefault(int idPerfil)
+        public void CadastraUsuarioPerfil(mUsuarioPerfil model)
         {
-            DAL.dMenu dal = new TCC.DAL.dMenu();
+            dUsuarioPerfil dal = new dUsuarioPerfil();
             try
             {
-                return dal.BuscaMenuDefault(idPerfil);
+                dal.CadastraUsuarioPerfil(model);
             }
             catch (Exception ex)
             {

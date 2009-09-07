@@ -56,6 +56,7 @@
     <Compile Include="BUSINESS\rSubMenu.cs" />
     <Compile Include="BUSINESS\rTipoUsuario.cs" />
     <Compile Include="BUSINESS\rUsuario.cs" />
+    <Compile Include="BUSINESS\rUsuarioPerfil.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
     <Compile Include="DAL\dCadColaborador.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="DAL\dSubMenu.cs" />
     <Compile Include="DAL\dTipoUsuario.cs" />
     <Compile Include="DAL\dUsuario.cs" />
+    <Compile Include="DAL\dUsuarioPerfil.cs" />
     <Compile Include="MODEL\ColunasBancoDados.cs" />
     <Compile Include="MODEL\dLogin.cs" />
     <Compile Include="MODEL\mCadColaborador.cs" />
@@ -75,11 +77,16 @@
     <Compile Include="MODEL\mPerfil.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
     <Compile Include="MODEL\mUsuario.cs" />
+    <Compile Include="MODEL\mUsuarioPerfil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaPerfil.resx">
+      <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmBuscaTipoUsuario.resx">
@@ -127,6 +134,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPerfil.Designer.cs">
+      <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmBuscaTipoUsuario.cs">
       <SubType>Form</SubType>
