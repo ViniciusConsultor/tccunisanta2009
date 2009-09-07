@@ -20,6 +20,16 @@ namespace TCC.UI
         private const string _NAMESPACEFORMS = "TCC.UI.";
         #endregion Atributos
 
+        #region Propriedades
+        public static int _idPerfil = 1;
+
+        public static int IdPerfil
+        {
+            get { return _idPerfil; }
+            set { _idPerfil = value; }
+        } 
+        #endregion Propriedades
+
         #region Construtor
         public frmInicial()
         {
@@ -32,7 +42,7 @@ namespace TCC.UI
         #region Form Load
         private void frmInicial_Load(object sender, EventArgs e)
         {
-            this.CarregaMenuDefault();
+            this.CarregaMenu(frmInicial._idPerfil);
         }
         #endregion Form Load
 
@@ -142,7 +152,7 @@ namespace TCC.UI
         /// <summary>
         /// Carrega e popula o menu do form
         /// </summary>
-        private void CarregaMenuDefault()
+        private void CarregaMenu(int idPerfil)
         {
             //Instanciando os objetos
             //-----------------------
@@ -159,14 +169,14 @@ namespace TCC.UI
             {
                 //Busca e carrega o DataTable com os Menus
                 //----------------------------------------
-                dtMenu = regraMenu.BuscaMenuDefault();
+                dtMenu = regraMenu.BuscaMenuDefault(idPerfil);
                 //Declara o tamanhdo do Array
                 //---------------------------
                 itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
                 for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
                     itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["dsc_menu"].ToString());
-                    dtSubMenu = regraSubMenu.BuscaSubMenuDefault(Convert.ToInt32(dtMenu.Rows[contador]["id_menu"]));
+                    dtSubMenu = regraSubMenu.BuscaSubMenu(Convert.ToInt32(dtMenu.Rows[contador]["id_menu"]), frmInicial._idPerfil);
                     this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { itemMenuP[contador] });
                     //Verifica se existem SubMenus para aquele menu
                     //---------------------------------------------

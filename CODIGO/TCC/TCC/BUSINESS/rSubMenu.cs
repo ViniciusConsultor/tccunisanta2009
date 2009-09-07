@@ -14,12 +14,12 @@ namespace TCC.BUSINESS
         /// </summary>
         /// <param name="idMenu">id do Menu para buscar os SubMenus</param>
         /// <returns>DataTable com os Submenus</returns>
-        public DataTable BuscaSubMenuDefault(int idMenu)
+        public DataTable BuscaSubMenu(int idMenu, int idPerfil)
         {
             DAL.dSubMenu dal = new TCC.DAL.dSubMenu();
             try
             {
-                return dal.BuscaSubMenuDefault(idMenu);
+                return dal.BuscaSubMenu(idMenu, idPerfil);
             }
             catch (Exception ex)
             {

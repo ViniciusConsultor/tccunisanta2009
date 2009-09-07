@@ -245,7 +245,6 @@ CREATE TABLE Usuario (
        id_usu               INTEGER NOT NULL,
        login                VARCHAR(20) NOT NULL,
        senha                VARCHAR(15) NOT NULL,
-       id_tipo_usuario      integer NOT NULL,
        obs_usu              varchar(100) NULL,
        flg_ativo            bit NULL
 )
@@ -254,21 +253,6 @@ go
 
 ALTER TABLE Usuario
        ADD PRIMARY KEY CLUSTERED (id_usu ASC)
-go
-
-
-DROP TABLE Tipousuario
-go
-
-CREATE TABLE Tipousuario (
-       id_tipo_usuario      integer NOT NULL,
-       dsc_tipo_usuario     varchar(500) NULL
-)
-go
-
-
-ALTER TABLE Tipousuario
-       ADD PRIMARY KEY CLUSTERED (id_tipo_usuario ASC)
 go
 
 
@@ -728,12 +712,6 @@ go
 ALTER TABLE Usuarioperfil
        ADD FOREIGN KEY (id_usu)
                              REFERENCES Usuario  (id_usu)
-go
-
-
-ALTER TABLE Usuario
-       ADD FOREIGN KEY (id_tipo_usuario)
-                             REFERENCES Tipousuario  (id_tipo_usuario)
 go
 
 

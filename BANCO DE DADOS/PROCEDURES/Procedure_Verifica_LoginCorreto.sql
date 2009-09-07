@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE verifica_loginCorreto
 @login VARCHAR(20),
 @senha VARCHAR(15)
@@ -10,8 +13,3 @@ PRINT 'true'
 --SELECT id_tipo_usuario FROM 
 ELSE
 PRINT 'false'
-
-exec verifica_loginCorreto aaa, teste
-
-
-select * from usuario

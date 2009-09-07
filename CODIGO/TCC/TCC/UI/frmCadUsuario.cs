@@ -21,6 +21,13 @@ namespace TCC.UI
 
         #region Eventos
 
+        #region Form Load
+        private void frmCadUsuario_Load(object sender, EventArgs e)
+        {
+            this.BuscaCodigoUsuarioMax();
+        }
+        #endregion Form Load
+
         #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
@@ -33,10 +40,14 @@ namespace TCC.UI
         {
             rUsuario regraUsu = new rUsuario();
             mUsuario modelUsu = new mUsuario();
+            rUsuarioPerfil regraUsuarioPerfil = new rUsuarioPerfil();
+            mUsuarioPerfil modelUsuarioPerfil = new mUsuarioPerfil();
             try
             {
                 modelUsu = this.PegaDadosTela();
                 regraUsu.CadastraUsuario(modelUsu);
+                modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
+                regraUsuarioPerfil.CadastraUsuarioPerfil(modelUsuarioPerfil);
                 this.LimpaControles();
                 this.BuscaCodigoUsuarioMax();
             }
@@ -47,18 +58,32 @@ namespace TCC.UI
             finally
             {
                 regraUsu = null;
+                regraUsuarioPerfil = null;
+                modelUsuarioPerfil = null;
+                modelUsu = null;
             }
         }
         #endregion btnAceitar Click
 
-        #region btnBuscaTipoUsuario Click
-        private void btnBuscaTipoUsuario_Click(object sender, EventArgs e)
+        #region btnBuscaPerfilUsuario Click
+        private void btnBuscaPerfilUsuario_Click(object sender, EventArgs e)
         {
-            frmBuscaTipoUsuario objFrmBusca = new frmBuscaTipoUsuario(this.txtTipoUsuario);
-            objFrmBusca.MdiParent = this.MdiParent;
-            objFrmBusca.Show();
+            BUSCA.frmBuscaPerfil buscar = new BUSCA.frmBuscaPerfil(this.txtPerfilUsuario);
+            try
+            {
+                buscar.MdiParent = this.MdiParent;
+                buscar.Show();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                buscar = null;
+            }
         }
-        #endregion btnBuscaTipoUsuario Click
+        #endregion btnBuscaPerfilUsuario Click
 
         #endregion Eventos
 
@@ -92,12 +117,23 @@ namespace TCC.UI
             model.Login = this.txtLogin.Text;
             model.ObsUsuario = this.txtObservacao.Text;
             model.Senha = this.CriptografaSenha(this.txtSenha.Text);
-            model.IdTipoUsuario = Convert.ToInt32(this.txtTipoUsuario.Text);
             model.FlgAtivo = true;
             return model;
             
         }
         #endregion Pega Dados Tela
+
+        #region Pega Dados Usuario Perfil
+        private mUsuarioPerfil PegaDadosUsuarioPerfil()
+        {
+            mUsuarioPerfil model = new mUsuarioPerfil();
+            model.IdPerfil = Convert.ToInt32(this.txtPerfilUsuario.Text);
+            model.IdUsuario = Convert.ToInt32(this.txtCodigo.Text);
+            model.DatTrans = DateTime.Now;
+            model.FlgAtivo = true;
+            return model;
+        }
+        #endregion Pega Dados Usuario Perfil
 
         //TODO: Pensar em colocar em uma classe auxiliar ou algo do tipo
         #region Criptografa Senha
@@ -122,11 +158,7 @@ namespace TCC.UI
         }
         #endregion Criptografa Senha
 
-        private void frmCadUsuario_Load(object sender, EventArgs e)
-        {
-            this.BuscaCodigoUsuarioMax();
-        }
-
+        #region Busca Codigo Usuario Max
         private void BuscaCodigoUsuarioMax()
         {
             rUsuario regraUsu = new rUsuario();
@@ -143,6 +175,7 @@ namespace TCC.UI
                 regraUsu = null;
             }
         }
+        #endregion Busca Codigo Usuario Max
 
         #endregion Metodos
     }
