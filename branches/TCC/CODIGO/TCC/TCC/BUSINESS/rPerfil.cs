@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using TCC.MODEL;
 using TCC.DAL;
 
@@ -24,6 +25,36 @@ namespace TCC.BUSINESS
             finally
             {
                 dalPerfil = null;
+            }
+        }
+
+        public int BuscaIdMaximoPerfil()
+        {
+            dPerfil dalPerfil = new dPerfil();
+            DataTable dt;
+            int idPerfil;
+            try
+            {
+                dt = dalPerfil.BuscaIdMaximoPerfil();
+                if (dt.Rows[0]["id_perfil"] == DBNull.Value || dt.Rows[0]["id_perfil"] == null)
+                {
+                    idPerfil = 0;
+                }
+                else
+                {
+                    idPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
+                }
+                return ++idPerfil;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dalPerfil = null;
+                dt = null;
             }
         }
     }
