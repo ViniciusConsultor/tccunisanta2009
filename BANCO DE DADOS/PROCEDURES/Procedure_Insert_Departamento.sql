@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE sp_insert_departamento
 @id_depto INT,
 @dsc_depto VARCHAR(30),

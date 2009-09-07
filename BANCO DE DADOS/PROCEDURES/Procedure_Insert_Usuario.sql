@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE sp_insert_usuario
 @id_usu INT,
 @login VARCHAR(20),

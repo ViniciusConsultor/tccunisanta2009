@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE sp_insert_colaborador
 @id_colab INT,
 @nom_colab VARCHAR(40),

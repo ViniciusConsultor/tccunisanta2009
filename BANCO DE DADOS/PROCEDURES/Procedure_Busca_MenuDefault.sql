@@ -1,3 +1,6 @@
+USE Megatechdatabase
+go
+
 CREATE PROCEDURE sp_busca_menu_default
 AS
 SELECT m.id_menu, m.dsc_menu, m.end_menu 
