@@ -7,17 +7,18 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rCliente
+    class rEstoque
     {
-        public void CadastraCliente(mCliente model)
+        public void cadstraEstoque(mEstoque model)
         {
-            dCliente dal = new dCliente();
+            dEstoque dal = new dEstoque();
             try
             {
-                dal.CadastraCliente(model);
+                dal.cadastraEstoque(model);
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
             finally
@@ -25,24 +26,23 @@ namespace TCC.BUSINESS
                 dal = null;
             }
         }
-
-        public int BuscaIdMaximoCliente()
+        public int BuscaIdMaximoEstoque()
         {
-            dCliente dal = new dCliente();
+            dEstoque dal = new dEstoque();
             DataTable dt;
-            int idCli;
+            int id_estoque;
             try
             {
-                dt = dal.BuscaIdMaximoCliente();
-                if (dt.Rows[0]["id_cli"] == DBNull.Value || dt.Rows[0]["id_cli"] == null)
+                dt = dal.BuscaIdMaximoEstoque();
+                if (dt.Rows[0]["id_estoque"] == DBNull.Value || dt.Rows[0]["id_estoque"] == null)
                 {
-                    idCli = 0;
+                    id_estoque = 0;
                 }
                 else
                 {
-                    idCli = Convert.ToInt32(dt.Rows[0]["id_cli"]);
+                    id_estoque = Convert.ToInt32(dt.Rows[0]["id_estoque"]);
                 }
-                return ++idCli;
+                return ++id_estoque;
             }
             catch (Exception ex)
             {

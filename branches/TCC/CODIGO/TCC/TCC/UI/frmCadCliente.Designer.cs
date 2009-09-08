@@ -45,16 +45,17 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblRg = new System.Windows.Forms.Label();
             this.txtRg = new System.Windows.Forms.TextBox();
             this.lblCnpj = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.btnInsere = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
-            this.btnDeleta = new System.Windows.Forms.Button();
+            this.btnVolta = new System.Windows.Forms.Button();
             this.lblTlefone = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtCep2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -68,6 +69,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(55, 12);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(70, 20);
@@ -149,8 +151,9 @@
             // txtCep
             // 
             this.txtCep.Location = new System.Drawing.Point(57, 109);
+            this.txtCep.MaxLength = 5;
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(111, 20);
+            this.txtCep.Size = new System.Drawing.Size(68, 20);
             this.txtCep.TabIndex = 6;
             this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
             // 
@@ -195,13 +198,14 @@
             this.lblEstado.TabIndex = 0;
             this.lblEstado.Text = "Estado";
             // 
-            // cmbEstado
+            // cboEstado
             // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(224, 138);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(149, 21);
-            this.cmbEstado.TabIndex = 9;
+            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Location = new System.Drawing.Point(224, 138);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(149, 21);
+            this.cboEstado.TabIndex = 9;
             // 
             // lblRg
             // 
@@ -243,24 +247,25 @@
             this.btnInsere.TabIndex = 12;
             this.btnInsere.Text = "Insere";
             this.btnInsere.UseVisualStyleBackColor = true;
+            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(269, 213);
+            this.btnLimpa.Location = new System.Drawing.Point(181, 213);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpa.TabIndex = 14;
+            this.btnLimpa.TabIndex = 13;
             this.btnLimpa.Text = "Limpa";
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
-            // btnDeleta
+            // btnVolta
             // 
-            this.btnDeleta.Location = new System.Drawing.Point(158, 213);
-            this.btnDeleta.Name = "btnDeleta";
-            this.btnDeleta.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleta.TabIndex = 13;
-            this.btnDeleta.Text = "Deleta";
-            this.btnDeleta.UseVisualStyleBackColor = true;
+            this.btnVolta.Location = new System.Drawing.Point(298, 213);
+            this.btnVolta.Name = "btnVolta";
+            this.btnVolta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolta.TabIndex = 14;
+            this.btnVolta.Text = "Volta";
+            this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // lblTlefone
             // 
@@ -278,15 +283,24 @@
             this.txtTelefone.Size = new System.Drawing.Size(128, 20);
             this.txtTelefone.TabIndex = 2;
             // 
+            // txtCep2
+            // 
+            this.txtCep2.Location = new System.Drawing.Point(131, 109);
+            this.txtCep2.MaxLength = 3;
+            this.txtCep2.Name = "txtCep2";
+            this.txtCep2.Size = new System.Drawing.Size(35, 20);
+            this.txtCep2.TabIndex = 15;
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 248);
-            this.Controls.Add(this.btnDeleta);
+            this.Controls.Add(this.txtCep2);
+            this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnInsere);
-            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtCnpj);
@@ -312,6 +326,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmCadCliente";
             this.Text = "Cadastro de Cliente";
+            this.Load += new System.EventHandler(this.frmCadCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,15 +351,16 @@
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label lblCnpj;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnInsere;
         private System.Windows.Forms.Button btnLimpa;
-        private System.Windows.Forms.Button btnDeleta;
+        private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Label lblTlefone;
         private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtCep2;
     }
 }

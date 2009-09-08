@@ -57,8 +57,9 @@ INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (1, 'D
 INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (2, 'USUARIO',	  'frmCadUsuario', GETDATE(), 1);
 INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (3, 'COLABORADOR',  'frmCadColaborador', GETDATE(), 1);
 INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (4, 'PERFIL',		  'frmCadPerfil', GETDATE(), 1);
-INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (5, 'PERFIL MENU',		  'frmCadPerfilMenu', GETDATE(), 1);
-frmCadPerfilMenu
+INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (5, 'PERFIL MENU',  'frmCadPerfilMenu', GETDATE(), 1);
+INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (6, 'FORNECEDOR',   'frmCadFornecedor', GETDATE(), 1);
+INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (7, 'CLIENTE',	  'frmCadCliente', GETDATE(), 1);
 
 --INSERT TABELA MENUSUBMENU
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 1, GETDATE(), 1);
@@ -66,6 +67,8 @@ INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 2, GE
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 3, GETDATE(), 1);
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 4, GETDATE(), 1);
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 5, GETDATE(), 1);
+INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 6, getdate(), 1);
+INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 7, getdate(), 1);
 
 --INSERT TABELA PERFILMENU
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_trans, flg_ativo) VALUES (1, 1, GETDATE(), 1);
