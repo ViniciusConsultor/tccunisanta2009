@@ -42,6 +42,31 @@ namespace TCC.DAL
                 throw ex;
             }
         }
+        public DataTable BuscarUsuario(string Descricao)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(Descricao) == true)
+                {
+                    return base.BuscaDados("sp_busca_usuario");
+                }
+                else
+                {
+                    param = new SqlParameter("@dsc_usuario", Descricao);
+                    param.SqlDbType = SqlDbType.VarChar;
+                    return base.BuscaDados("sp_busca_usuario", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
 
         public DataTable VerificaLoginUsuario(string login, string senha)
         {

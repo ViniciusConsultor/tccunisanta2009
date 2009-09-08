@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using TCC.MODEL;
 using TCC.DAL;
 
@@ -9,9 +10,9 @@ namespace TCC.BUSINESS
 {
     class rCadColaborador
     {
-        public void cadastraColaborador(mCadColaborador model)
+        public void cadastraColaborador(mColaborador model)
         {
-            dCadColaborador dalCadColaborador = new dCadColaborador();
+            dColaborador dalCadColaborador = new dColaborador();
             try
             {
                 dalCadColaborador.CadastraColaborador(model);
@@ -26,5 +27,33 @@ namespace TCC.BUSINESS
             }
         }
 
+        public int BuscaIDMaximoColaborador()
+        {
+            dColaborador dalColaborador = new dColaborador();
+            DataTable dt;
+            int idColaborador;
+            try
+            {
+                dt = dalColaborador.BuscaIDMaximoColaborador();
+                if (dt.Rows[0]["id_colab"] == DBNull.Value || dt.Rows[0]["id_colab"] == null)
+                {
+                    idColaborador = 0;
+                }
+                else
+                {
+                    idColaborador = Convert.ToInt32(dt.Rows[0]["id_colab"]);
+                }
+                return ++idColaborador;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dalColaborador = null;
+                dt = null;
+            }
+        }
     }
 }

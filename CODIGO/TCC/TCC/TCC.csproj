@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUSINESS\rCadColaborador.cs" />
+    <Compile Include="BUSINESS\rCliente.cs" />
     <Compile Include="BUSINESS\rDepartamento.cs" />
+    <Compile Include="BUSINESS\rEstado.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
@@ -61,8 +63,10 @@
     <Compile Include="BUSINESS\UTIL\Auxiliar.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
-    <Compile Include="DAL\dCadColaborador.cs" />
+    <Compile Include="DAL\dColaborador.cs" />
+    <Compile Include="DAL\dCliente.cs" />
     <Compile Include="DAL\dDepartamento.cs" />
+    <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\dMenu.cs" />
     <Compile Include="DAL\dMenuSubMenu.cs" />
     <Compile Include="DAL\dPerfil.cs" />
@@ -73,7 +77,7 @@
     <Compile Include="DAL\dUsuarioPerfil.cs" />
     <Compile Include="MODEL\ColunasBancoDados.cs" />
     <Compile Include="MODEL\dLogin.cs" />
-    <Compile Include="MODEL\mCadColaborador.cs" />
+    <Compile Include="MODEL\mColaborador.cs" />
     <Compile Include="MODEL\mDepartamento.cs" />
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\ModelAuxiliar.cs" />
@@ -93,12 +97,16 @@
       <DependentUpon>frmBuscaMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaDepartamento.resx">
+      <DependentUpon>frmBuscaDepartamento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaPerfil.resx">
       <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmBuscaTipoUsuario.resx">
-      <DependentUpon>frmBuscaTipoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaUsuario.resx">
+      <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadColaborador.resx">
@@ -153,17 +161,23 @@
     <Compile Include="UI\BUSCA\frmBuscaMenu.Designer.cs">
       <DependentUpon>frmBuscaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaDepartamento.Designer.cs">
+      <DependentUpon>frmBuscaDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\BUSCA\frmBuscaPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaPerfil.Designer.cs">
       <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\frmBuscaTipoUsuario.cs">
+    <Compile Include="UI\BUSCA\frmBuscaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\frmBuscaTipoUsuario.Designer.cs">
-      <DependentUpon>frmBuscaTipoUsuario.cs</DependentUpon>
+    <Compile Include="UI\BUSCA\frmBuscaUsuario.Designer.cs">
+      <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadColaborador.cs">
       <SubType>Form</SubType>
