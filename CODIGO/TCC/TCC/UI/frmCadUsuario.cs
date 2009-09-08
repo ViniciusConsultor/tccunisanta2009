@@ -116,7 +116,7 @@ namespace TCC.UI
             model.IdUsuario = Convert.ToInt32(this.txtCodigo.Text);
             model.Login = this.txtLogin.Text;
             model.ObsUsuario = this.txtObservacao.Text;
-            model.Senha = this.CriptografaSenha(this.txtSenha.Text);
+            model.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
             model.FlgAtivo = true;
             return model;
             
@@ -134,29 +134,6 @@ namespace TCC.UI
             return model;
         }
         #endregion Pega Dados Usuario Perfil
-
-        //TODO: Pensar em colocar em uma classe auxiliar ou algo do tipo
-        #region Criptografa Senha
-        /// <summary>
-        /// Criptografa a senha do usuario
-        /// </summary>
-        /// <param name="senha">Senha a ser Criptografada</param>
-        /// <returns>Senha Criptografada</returns>
-        private string CriptografaSenha(string senha)
-        {
-            string criptografado;
-            try
-            {
-                byte[] b = ASCIIEncoding.ASCII.GetBytes(senha);
-                criptografado = Convert.ToBase64String(b);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return criptografado;
-        }
-        #endregion Criptografa Senha
 
         #region Busca Codigo Usuario Max
         private void BuscaCodigoUsuarioMax()

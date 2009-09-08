@@ -13,12 +13,29 @@ namespace TCC.BUSINESS
         /// Busca o menu de um usuario default(deslogado).
         /// </summary>
         /// <returns>DataTable com o menu de um usuario default</returns>
-        public DataTable BuscaMenuDefault(int idPerfil)
+        public DataTable BuscaMenu(int idPerfil)
         {
             DAL.dMenu dal = new TCC.DAL.dMenu();
             try
             {
-                return dal.BuscaMenuDefault(idPerfil);
+                return dal.BuscaMenu(idPerfil);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
+            }
+        }
+
+        public DataTable TelaBuscaMenu(string Descricao)
+        {
+            dMenu dal = new dMenu();
+            try
+            {
+                return dal.TelaBuscaMenu(Descricao);
             }
             catch (Exception ex)
             {

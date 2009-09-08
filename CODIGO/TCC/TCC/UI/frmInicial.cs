@@ -46,6 +46,25 @@ namespace TCC.UI
         }
         #endregion Form Load
 
+        void frmInicial_Click(object sender, EventArgs e)
+        {
+            Assembly ass = Assembly.GetExecutingAssembly();
+            if (this._dicEventos.ContainsKey(sender.ToString()) == true)
+            {
+                Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + this._dicEventos[sender.ToString()]);
+                if (sender.ToString().Equals("LOGIN") == true)
+                {
+                    objFormDinamico.ShowDialog();
+                    this.CarregaMenu(frmInicial.IdPerfil);
+                }
+                else
+                {
+                    objFormDinamico.MdiParent = this;
+                    objFormDinamico.Show();
+                }
+            }
+        }
+
         #region newToolStripButton Click
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -148,7 +167,7 @@ namespace TCC.UI
 
         #region Metodos
 
-        #region Carrega Menu Default
+        #region Carrega Menu
         /// <summary>
         /// Carrega e popula o menu do form
         /// </summary>
@@ -167,9 +186,10 @@ namespace TCC.UI
             ToolStripMenuItem[] itemMenuP;
             try
             {
+                this.ApagaMenu();
                 //Busca e carrega o DataTable com os Menus
                 //----------------------------------------
-                dtMenu = regraMenu.BuscaMenuDefault(idPerfil);
+                dtMenu = regraMenu.BuscaMenu(idPerfil);
                 //Declara o tamanhdo do Array
                 //---------------------------
                 itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
@@ -215,19 +235,21 @@ namespace TCC.UI
             }
         }
 
-        void frmInicial_Click(object sender, EventArgs e)
+        #endregion Carrega Menu
+
+        #region Apaga Menu
+        private void ApagaMenu()
         {
-            Assembly ass = Assembly.GetExecutingAssembly();
-            if (this._dicEventos.ContainsKey(sender.ToString()) == true)
+            if (this.mnuPrincipal.Items.Count > 0)
             {
-                Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + this._dicEventos[sender.ToString()]);
-                objFormDinamico.MdiParent = this;
-                objFormDinamico.Show();
+                this.mnuPrincipal.Items.Clear();
+                if (this._dicEventos.Count > 0)
+                {
+                    this._dicEventos.Clear();
+                }
             }
         }
-        #endregion Carrega Menu Default
-
-        
+        #endregion Apaga Menu
 
         #endregion Metodos
     }

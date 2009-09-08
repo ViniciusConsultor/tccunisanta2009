@@ -53,10 +53,12 @@
     <Compile Include="BUSINESS\rDepartamento.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
+    <Compile Include="BUSINESS\rPerfilMenu.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
     <Compile Include="BUSINESS\rTipoUsuario.cs" />
     <Compile Include="BUSINESS\rUsuario.cs" />
     <Compile Include="BUSINESS\rUsuarioPerfil.cs" />
+    <Compile Include="BUSINESS\UTIL\Auxiliar.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
     <Compile Include="DAL\dCadColaborador.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="DAL\dMenu.cs" />
     <Compile Include="DAL\dMenuSubMenu.cs" />
     <Compile Include="DAL\dPerfil.cs" />
+    <Compile Include="DAL\dPerfilMenu.cs" />
     <Compile Include="DAL\dSubMenu.cs" />
     <Compile Include="DAL\dTipoUsuario.cs" />
     <Compile Include="DAL\dUsuario.cs" />
@@ -75,6 +78,7 @@
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\ModelAuxiliar.cs" />
     <Compile Include="MODEL\mPerfil.cs" />
+    <Compile Include="MODEL\mPerfilMenu.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
     <Compile Include="MODEL\mUsuario.cs" />
     <Compile Include="MODEL\mUsuarioPerfil.cs" />
@@ -83,6 +87,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaMenu.resx">
+      <DependentUpon>frmBuscaMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaPerfil.resx">
@@ -103,6 +111,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadPerfil.resx">
       <DependentUpon>frmCadPerfil.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadPerfilMenu.resx">
+      <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadUsuario.resx">
@@ -135,6 +147,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMenu.Designer.cs">
+      <DependentUpon>frmBuscaMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\BUSCA\frmBuscaPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +182,12 @@
     </Compile>
     <Compile Include="UI\frmCadPerfil.designer.cs">
       <DependentUpon>frmCadPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadPerfilMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadPerfilMenu.Designer.cs">
+      <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadUsuario.cs">
       <SubType>Form</SubType>

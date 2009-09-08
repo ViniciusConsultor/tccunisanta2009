@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 using TCC.MODEL;
 
 namespace TCC.DAL
@@ -22,7 +23,19 @@ namespace TCC.DAL
             }
             finally
             {
+                mod = null;
+            }
+        }
 
+        public DataTable BuscaIdMaximoDepartamento()
+        {
+            try
+            {
+                return base.BuscaDados("sp_busca_maxDepto");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
