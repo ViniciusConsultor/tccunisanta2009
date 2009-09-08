@@ -48,6 +48,7 @@
             // 
             // txtCodigoDepartamento
             // 
+            this.txtCodigoDepartamento.Enabled = false;
             this.txtCodigoDepartamento.Location = new System.Drawing.Point(140, 41);
             this.txtCodigoDepartamento.Name = "txtCodigoDepartamento";
             this.txtCodigoDepartamento.Size = new System.Drawing.Size(100, 20);

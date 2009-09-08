@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
@@ -18,7 +18,7 @@ namespace TCC.UI
 
         private void frmCadDepartamento_Load(object sender, EventArgs e)
         {
-
+            this.BuscaUltimoIdDepartamento();
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
@@ -27,6 +27,8 @@ namespace TCC.UI
             try
             {
                 regraDep.CadastraDepartamento(this.PegaDadosTela());
+                this.ApagaControles();
+                this.BuscaUltimoIdDepartamento();
             }
             catch (Exception ex)
             {
@@ -36,13 +38,7 @@ namespace TCC.UI
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            foreach (Control contr in this.Controls)
-            {
-                if (contr.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    contr.Text = string.Empty;
-                }
-            }
+            this.ApagaControles();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -55,15 +51,44 @@ namespace TCC.UI
             MODEL.mDepartamento model = new TCC.MODEL.mDepartamento();
             try
             {
-                //model.DatAtl
+                
                 model.DscDepto = this.txtDescricaoDepartamento.Text;
-                //model.FlgAtivo
+                model.FlgAtivo = true;
+                model.DatAtl = DateTime.Now;
                 model.IdDepto = Convert.ToInt32(this.txtCodigoDepartamento.Text);
                 return model;
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        private void BuscaUltimoIdDepartamento()
+        {
+            rDepartamento regraDepartamento = new rDepartamento();
+            try
+            {
+                this.txtCodigoDepartamento.Text = regraDepartamento.BuscaIdMaximoDepartamento().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraDepartamento = null;
+            }
+        }
+
+        private void ApagaControles()
+        {
+            foreach (Control contr in this.Controls)
+            {
+                if (contr.GetType().Equals(new TextBox().GetType()) == true)
+                {
+                    contr.Text = string.Empty;
+                }
             }
         }
     }

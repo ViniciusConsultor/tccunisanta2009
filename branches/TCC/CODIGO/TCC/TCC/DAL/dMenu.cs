@@ -12,7 +12,7 @@ namespace TCC.DAL
         /// Busca o menu de um usuario default(deslogado).
         /// </summary>
         /// <returns>DataTable com o menu de um usuario default</returns>
-        public DataTable BuscaMenuDefault(int idPerfil)
+        public DataTable BuscaMenu(int idPerfil)
         {
             SqlParameter param;
             try
@@ -20,6 +20,31 @@ namespace TCC.DAL
                 param = new SqlParameter("@id_perfil", idPerfil);
                 param.SqlDbType = SqlDbType.Int;
                 return base.BuscaDados("sp_busca_menu", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+        public DataTable TelaBuscaMenu(string Descricao)
+        {
+            SqlParameter param;
+            try
+            {
+                if (string.IsNullOrEmpty(Descricao) == true)
+                {
+                    return base.BuscaDados("sp_busca_todosMenus");
+                }
+                else
+                {
+                    param = new SqlParameter("@param", Descricao);
+                    return base.BuscaDados("sp_busca_menusParam", param);
+                }
             }
             catch (Exception ex)
             {
