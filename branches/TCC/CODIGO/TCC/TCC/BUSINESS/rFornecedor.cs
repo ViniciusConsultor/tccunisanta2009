@@ -7,14 +7,14 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rCliente
+    class rFornecedor
     {
-        public void CadastraCliente(mCliente model)
+        public void CadastraFornecedor(mFornecedor model)
         {
-            dCliente dal = new dCliente();
+            dFornecedor dal = new dFornecedor();
             try
             {
-                dal.CadastraCliente(model);
+                dal.CadastraFornecedor(model);
             }
             catch (Exception ex)
             {
@@ -26,23 +26,23 @@ namespace TCC.BUSINESS
             }
         }
 
-        public int BuscaIdMaximoCliente()
+        public int BuscaIdMaximoFornecedor()
         {
-            dCliente dal = new dCliente();
+            dFornecedor dal = new dFornecedor();
             DataTable dt;
-            int idCli;
+            int idFornecedor;
             try
             {
-                dt = dal.BuscaIdMaximoCliente();
-                if (dt.Rows[0]["id_cli"] == DBNull.Value || dt.Rows[0]["id_cli"] == null)
+                dt = dal.BuscaIdMaximoFornecedor();
+                if (dt.Rows[0]["id_fornecedor"] == DBNull.Value || dt.Rows[0]["id_fornecedor"] == null)
                 {
-                    idCli = 0;
+                    idFornecedor = 0;
                 }
                 else
                 {
-                    idCli = Convert.ToInt32(dt.Rows[0]["id_cli"]);
+                    idFornecedor = Convert.ToInt32(dt.Rows[0]["id_fornecedor"]);
                 }
-                return ++idCli;
+                return ++idFornecedor;
             }
             catch (Exception ex)
             {

@@ -7,17 +7,17 @@ using TCC.MODEL;
 
 namespace TCC.DAL
 {
-    class dCliente : AcessoDados
+    class dEstoque:AcessoDados
     {
-        public void CadastraCliente(mCliente model)
+        public void cadastraEstoque(mEstoque model)
         {
-            ModelAuxiliar mod;
+              ModelAuxiliar mod;
             SqlParameter[] parametros;
             try
             {
                 mod = new ModelAuxiliar(model.GetType(), model);
                 parametros = mod.BuscaNomeParametros();
-                base.InsereDados("sp_insert_cliente", parametros);
+                base.InsereDados("sp_insere_estoque", parametros);
             }
             catch (Exception ex)
             {
@@ -29,12 +29,11 @@ namespace TCC.DAL
                 parametros = null;
             }
         }
-
-        public DataTable BuscaIdMaximoCliente()
+        public DataTable BuscaIdMaximoEstoque()
         {
             try
             {
-                return base.BuscaDados("sp_busca_maxCliente");
+                return base.BuscaDados("sp_busca_maxEstoque");
             }
             catch (Exception ex)
             {

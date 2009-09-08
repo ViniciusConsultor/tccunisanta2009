@@ -10,21 +10,21 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadCliente : Form
+    public partial class frmCadFornecedor : Form
     {
-        public frmCadCliente()
+        public frmCadFornecedor()
         {
             InitializeComponent();
         }
 
-        private void BuscaEstados()
+        private void BuscaEstado()
         {
             rEstado regraEstado = new rEstado();
             try
             {
-                this.cboEstado.DisplayMember = "slg_estado";
-                this.cboEstado.ValueMember = "id_estado";
-                this.cboEstado.DataSource = regraEstado.BuscaEstado();
+                this.cboUf.DisplayMember = "slg_estado";
+                this.cboUf.ValueMember = "id_estado";
+                this.cboUf.DataSource = regraEstado.BuscaEstado();
             }
             catch (Exception ex)
             {
@@ -38,10 +38,10 @@ namespace TCC.UI
 
         private void BuscaIdMaximo()
         {
-            rCliente regra = new rCliente();
+            rFornecedor regra = new rFornecedor();
             try
             {
-                this.txtCodigo.Text = regra.BuscaIdMaximoCliente().ToString();
+                this.txtCodigoFornecedor.Text = regra.BuscaIdMaximoFornecedor().ToString();
             }
             catch (Exception ex)
             {
@@ -53,25 +53,23 @@ namespace TCC.UI
             }
         }
 
-        private mCliente PegaDadosTela()
+        private mFornecedor PegaDadosTela()
         {
-            mCliente model = new mCliente();
+            mFornecedor model = new mFornecedor();
             try
             {
                 model.Bairro = this.txtBairro.Text;
-                model.Cep = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                model.CepFornecedor = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
                 model.Cidade = this.txtCidade.Text;
                 model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
-                model.ComplementoEndereco = this.txtComplemento.Text;
+                model.Complemento = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                model.IdCliente = Convert.ToInt32(this.txtCodigo.Text);
-                model.IdEstado = Convert.ToInt32(this.cboEstado.SelectedValue);
-                model.NomeCliente = this.txtNome.Text;
-                model.NomeRua = this.txtRua.Text;
-                model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
-                model.Rg = Convert.ToInt32(this.txtRg.Text);
-                model.TelefoneCliente = this.txtTelefone.Text;
+                model.IdEstado = Convert.ToInt32(this.cboUf.SelectedValue);
+                model.IdFornecedor = Convert.ToInt32(this.txtCodigoFornecedor.Text);
+                model.NomeFornecedor = this.txtNomeFornecedor.Text;
+                model.NroFornecedor = Convert.ToInt32(this.txtNumeroEndereco.Text);
+                model.RuaFornecedor = this.txtRua.Text;
                 return model;
             }
             catch (Exception ex)
@@ -84,7 +82,7 @@ namespace TCC.UI
             }
         }
 
-        private void ApagaControles()
+        private void ApagaDadosTela()
         {
             foreach (Control controle in this.Controls)
             {
@@ -93,32 +91,24 @@ namespace TCC.UI
                     controle.Text = string.Empty;
                 }
             }
-            this.cboEstado.SelectedIndex = 0;
+            this.cboUf.SelectedIndex = 0;
         }
 
-        private void txtCep_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCep.Text.Length >= 5)
-            {
-                this.txtCep2.Focus();
-            }
-        }
-
-        private void frmCadCliente_Load(object sender, EventArgs e)
+        private void frmCadFornecedor_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
-            this.BuscaEstados();
+            this.BuscaEstado();
         }
 
         private void btnInsere_Click(object sender, EventArgs e)
         {
-            rCliente regra = new rCliente();
-            mCliente model;
+            rFornecedor regra = new rFornecedor();
+            mFornecedor model;
             try
             {
                 model = this.PegaDadosTela();
-                regra.CadastraCliente(model);
-                this.ApagaControles();
+                regra.CadastraFornecedor(model);
+                this.ApagaDadosTela();
                 this.BuscaIdMaximo();
             }
             catch (Exception ex)
@@ -131,5 +121,19 @@ namespace TCC.UI
                 model = null;
             }
         }
+
+        private void btnlimpar_Click(object sender, EventArgs e)
+        {
+            this.ApagaDadosTela();
+        }
+
+        private void txtCep_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtCep.Text.Length >= 5)
+            {
+                this.txtCep2.Focus();
+            }
+        }
+
     }
 }
