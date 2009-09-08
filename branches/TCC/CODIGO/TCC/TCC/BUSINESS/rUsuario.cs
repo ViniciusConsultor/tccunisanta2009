@@ -9,6 +9,7 @@ namespace TCC.BUSINESS
 {
     class rUsuario
     {
+        #region Cadastra Usuario
         public void CadastraUsuario(mUsuario model)
         {
             dUsuario dalUsuario = new dUsuario();
@@ -25,7 +26,9 @@ namespace TCC.BUSINESS
                 dalUsuario = null;
             }
         }
+        #endregion Cadastra Usuario
 
+        #region Busca Id Maximo Usuario
         public int BuscaIdMaximoUsuario()
         {
             dUsuario dalUsu = new dUsuario();
@@ -52,6 +55,24 @@ namespace TCC.BUSINESS
             {
                 dalUsu = null;
                 dt = null;
+            }
+        }
+        #endregion Busca Id Maximo Usuario
+
+        public DataTable VerificaLoginUsuario(string login, string senha)
+        {
+            dUsuario dal = new dUsuario();
+            try
+            {
+                return dal.VerificaLoginUsuario(login, senha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
             }
         }
     }

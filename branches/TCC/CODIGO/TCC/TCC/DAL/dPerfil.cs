@@ -4,8 +4,6 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using TCC.MODEL;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace TCC.DAL
 {
