@@ -10,7 +10,6 @@ namespace TCC.MODEL
         private int idUsuario;
         private string login;
         private string senha;
-        private int idTipoUsuario;
         private string obsUsuario;
         private bool flgAtivo;
 

@@ -51,7 +51,6 @@
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.lblRg = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.txtRg = new System.Windows.Forms.TextBox();
@@ -65,6 +64,9 @@
             this.txtDataYyyy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.btnBuscaUsuario = new System.Windows.Forms.Button();
+            this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblIdColaborador
@@ -79,7 +81,7 @@
             // lblCdUsuario
             // 
             this.lblCdUsuario.AutoSize = true;
-            this.lblCdUsuario.Location = new System.Drawing.Point(196, 13);
+            this.lblCdUsuario.Location = new System.Drawing.Point(183, 13);
             this.lblCdUsuario.Name = "lblCdUsuario";
             this.lblCdUsuario.Size = new System.Drawing.Size(79, 13);
             this.lblCdUsuario.TabIndex = 0;
@@ -106,7 +108,7 @@
             // lblDtNasc
             // 
             this.lblDtNasc.AutoSize = true;
-            this.lblDtNasc.Location = new System.Drawing.Point(281, 41);
+            this.lblDtNasc.Location = new System.Drawing.Point(312, 41);
             this.lblDtNasc.Name = "lblDtNasc";
             this.lblDtNasc.Size = new System.Drawing.Size(89, 13);
             this.lblDtNasc.TabIndex = 0;
@@ -159,6 +161,7 @@
             // 
             // txtCdColab
             // 
+            this.txtCdColab.Enabled = false;
             this.txtCdColab.Location = new System.Drawing.Point(118, 10);
             this.txtCdColab.Name = "txtCdColab";
             this.txtCdColab.Size = new System.Drawing.Size(59, 20);
@@ -166,32 +169,35 @@
             // 
             // txtCdUsuario
             // 
-            this.txtCdUsuario.Location = new System.Drawing.Point(281, 10);
+            this.txtCdUsuario.Enabled = false;
+            this.txtCdUsuario.Location = new System.Drawing.Point(268, 10);
             this.txtCdUsuario.Name = "txtCdUsuario";
-            this.txtCdUsuario.Size = new System.Drawing.Size(67, 20);
+            this.txtCdUsuario.Size = new System.Drawing.Size(50, 20);
             this.txtCdUsuario.TabIndex = 0;
             // 
             // txtCdDepartamento
             // 
+            this.txtCdDepartamento.Enabled = false;
             this.txtCdDepartamento.Location = new System.Drawing.Point(470, 12);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
-            this.txtCdDepartamento.Size = new System.Drawing.Size(79, 20);
+            this.txtCdDepartamento.Size = new System.Drawing.Size(50, 20);
             this.txtCdDepartamento.TabIndex = 0;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(65, 38);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(210, 20);
+            this.txtNome.Size = new System.Drawing.Size(241, 20);
             this.txtNome.TabIndex = 4;
             // 
             // txtDataDd
             // 
-            this.txtDataDd.Location = new System.Drawing.Point(376, 38);
+            this.txtDataDd.Location = new System.Drawing.Point(407, 38);
             this.txtDataDd.MaxLength = 2;
             this.txtDataDd.Name = "txtDataDd";
             this.txtDataDd.Size = new System.Drawing.Size(26, 20);
             this.txtDataDd.TabIndex = 5;
+            this.txtDataDd.TextChanged += new System.EventHandler(this.txtDataDd_TextChanged);
             // 
             // txtRua
             // 
@@ -253,13 +259,6 @@
             this.lblEstado.TabIndex = 2;
             this.lblEstado.Text = "Estado";
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(281, 145);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(162, 20);
-            this.txtEstado.TabIndex = 14;
-            // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
@@ -303,6 +302,7 @@
             // 
             // CbSexo
             // 
+            this.CbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbSexo.FormattingEnabled = true;
             this.CbSexo.Items.AddRange(new object[] {
             "M",
@@ -310,14 +310,14 @@
             this.CbSexo.Location = new System.Drawing.Point(65, 220);
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Size = new System.Drawing.Size(47, 21);
-            this.CbSexo.TabIndex = 16;
+            this.CbSexo.TabIndex = 17;
             // 
             // btnConfirma
             // 
             this.btnConfirma.Location = new System.Drawing.Point(281, 220);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirma.TabIndex = 17;
+            this.btnConfirma.TabIndex = 18;
             this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -327,40 +327,43 @@
             this.btnVoltar.Location = new System.Drawing.Point(443, 220);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 19;
+            this.btnVoltar.TabIndex = 20;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnApaga
             // 
             this.btnApaga.Location = new System.Drawing.Point(362, 220);
             this.btnApaga.Name = "btnApaga";
             this.btnApaga.Size = new System.Drawing.Size(75, 23);
-            this.btnApaga.TabIndex = 18;
+            this.btnApaga.TabIndex = 19;
             this.btnApaga.Text = "Limpar";
             this.btnApaga.UseVisualStyleBackColor = true;
             this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
             // 
             // txtDataMm
             // 
-            this.txtDataMm.Location = new System.Drawing.Point(416, 38);
+            this.txtDataMm.Location = new System.Drawing.Point(447, 38);
             this.txtDataMm.MaxLength = 2;
             this.txtDataMm.Name = "txtDataMm";
             this.txtDataMm.Size = new System.Drawing.Size(26, 20);
             this.txtDataMm.TabIndex = 6;
+            this.txtDataMm.TextChanged += new System.EventHandler(this.txtDataMm_TextChanged);
             // 
             // txtDataYyyy
             // 
-            this.txtDataYyyy.Location = new System.Drawing.Point(455, 38);
+            this.txtDataYyyy.Location = new System.Drawing.Point(486, 38);
             this.txtDataYyyy.MaxLength = 4;
             this.txtDataYyyy.Name = "txtDataYyyy";
             this.txtDataYyyy.Size = new System.Drawing.Size(63, 20);
             this.txtDataYyyy.TabIndex = 7;
+            this.txtDataYyyy.TextChanged += new System.EventHandler(this.txtDataYyyy_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(402, 41);
+            this.label1.Location = new System.Drawing.Point(433, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(12, 13);
             this.label1.TabIndex = 6;
@@ -369,17 +372,48 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(443, 41);
+            this.label2.Location = new System.Drawing.Point(474, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(12, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "/";
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.Location = new System.Drawing.Point(281, 148);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(162, 21);
+            this.cbEstado.TabIndex = 14;
+            // 
+            // btnBuscaUsuario
+            // 
+            this.btnBuscaUsuario.Location = new System.Drawing.Point(324, 8);
+            this.btnBuscaUsuario.Name = "btnBuscaUsuario";
+            this.btnBuscaUsuario.Size = new System.Drawing.Size(24, 23);
+            this.btnBuscaUsuario.TabIndex = 21;
+            this.btnBuscaUsuario.Text = "...";
+            this.btnBuscaUsuario.UseVisualStyleBackColor = true;
+            this.btnBuscaUsuario.Click += new System.EventHandler(this.btnBuscaUsuario_Click);
+            // 
+            // btnBuscaDepartamento
+            // 
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(525, 8);
+            this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
+            this.btnBuscaDepartamento.Size = new System.Drawing.Size(24, 23);
+            this.btnBuscaDepartamento.TabIndex = 22;
+            this.btnBuscaDepartamento.Text = "...";
+            this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
+            this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 266);
+            this.Controls.Add(this.btnBuscaDepartamento);
+            this.Controls.Add(this.btnBuscaUsuario);
+            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnApaga);
@@ -387,7 +421,6 @@
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.CbSexo);
             this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCpf);
@@ -419,6 +452,7 @@
             this.Controls.Add(this.lblIdColaborador);
             this.Name = "frmCadColaborador";
             this.Text = "Cadastro Colaborador";
+            this.Load += new System.EventHandler(this.frmCadColaborador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,7 +483,6 @@
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.TextBox txtRg;
@@ -463,5 +496,8 @@
         private System.Windows.Forms.TextBox txtDataYyyy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.Button btnBuscaUsuario;
+        private System.Windows.Forms.Button btnBuscaDepartamento;
     }
 }

@@ -57,6 +57,22 @@ namespace TCC.BUSINESS
                 dt = null;
             }
         }
+        public DataTable BuscaUsuario(string Descricao)
+        {
+            dUsuario dal = new dUsuario();
+            try
+            {
+                return dal.BuscarUsuario(Descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
+            }
+        }
         #endregion Busca Id Maximo Usuario
 
         public DataTable VerificaLoginUsuario(string login, string senha)

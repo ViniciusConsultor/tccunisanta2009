@@ -2,6 +2,7 @@
 using System.Text;
 using System.Data;
 using System.Collections.Generic;
+using System.Data;
 using TCC.DAL;
 using TCC.MODEL;
 
@@ -15,6 +16,22 @@ namespace TCC.BUSINESS
             try
             {
                 dal.CadastraDepartamento(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
+            }
+        }
+        public DataTable BuscaDepartamento(string Descricao)
+        {
+            dDepartamento dal = new dDepartamento();
+            try
+            {
+                return dal.BuscarDepartamento(Descricao);
             }
             catch (Exception ex)
             {
