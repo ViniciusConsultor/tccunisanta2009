@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using TCC.MODEL;
 
 namespace TCC.DAL
 {
-    class dCliente : AcessoDados
+    class dFornecedor : AcessoDados
     {
-        public void CadastraCliente(mCliente model)
+        public void CadastraFornecedor(mFornecedor model)
         {
             ModelAuxiliar mod;
             SqlParameter[] parametros;
@@ -17,7 +17,7 @@ namespace TCC.DAL
             {
                 mod = new ModelAuxiliar(model.GetType(), model);
                 parametros = mod.BuscaNomeParametros();
-                base.InsereDados("sp_insert_cliente", parametros);
+                base.InsereDados("sp_insert_fornecedor", parametros);
             }
             catch (Exception ex)
             {
@@ -30,11 +30,11 @@ namespace TCC.DAL
             }
         }
 
-        public DataTable BuscaIdMaximoCliente()
+        public DataTable BuscaIdMaximoFornecedor()
         {
             try
             {
-                return base.BuscaDados("sp_busca_maxCliente");
+                return base.BuscaDados("sp_busca_maxFornecedor");
             }
             catch (Exception ex)
             {
