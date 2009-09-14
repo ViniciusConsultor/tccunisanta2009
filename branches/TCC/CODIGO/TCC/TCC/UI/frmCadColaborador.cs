@@ -110,6 +110,20 @@ namespace TCC.UI
                 txtRua.Focus();
             }
         }
+        private void txtCEP_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtCEP.TextLength == 5)
+            {
+                this.txtCep2.Focus();
+            }
+        }
+        private void txtCep2_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtCep2.TextLength == 3)
+            {
+                this.txtBairro.Focus();
+            }
+        }
         #endregion
 
         #region Metodos
@@ -117,7 +131,7 @@ namespace TCC.UI
         {
             mColaborador model = new mColaborador();
             model.BairrEnd = txtBairro.Text;
-            model.Cep = txtCEP.Text;
+            model.Cep = txtCEP.Text+txtCep2.Text;
             model.Cidade = txtCidade.Text;
             model.ComplEnd = txtComplemento.Text;
             model.Cpf = txtCpf.Text;
@@ -191,6 +205,7 @@ namespace TCC.UI
             }
         }
         #endregion Limpa Controles        
+
         #endregion
     }
 }

@@ -40,7 +40,7 @@
             // lblIdPerfil
             // 
             this.lblIdPerfil.AutoSize = true;
-            this.lblIdPerfil.Location = new System.Drawing.Point(13, 13);
+            this.lblIdPerfil.Location = new System.Drawing.Point(47, 46);
             this.lblIdPerfil.Name = "lblIdPerfil";
             this.lblIdPerfil.Size = new System.Drawing.Size(66, 13);
             this.lblIdPerfil.TabIndex = 0;
@@ -49,7 +49,7 @@
             // lblDescPerfil
             // 
             this.lblDescPerfil.AutoSize = true;
-            this.lblDescPerfil.Location = new System.Drawing.Point(12, 42);
+            this.lblDescPerfil.Location = new System.Drawing.Point(32, 75);
             this.lblDescPerfil.Name = "lblDescPerfil";
             this.lblDescPerfil.Size = new System.Drawing.Size(81, 13);
             this.lblDescPerfil.TabIndex = 1;
@@ -58,44 +58,45 @@
             // txtIdPerfil
             // 
             this.txtIdPerfil.Enabled = false;
-            this.txtIdPerfil.Location = new System.Drawing.Point(129, 13);
+            this.txtIdPerfil.Location = new System.Drawing.Point(119, 43);
             this.txtIdPerfil.Name = "txtIdPerfil";
-            this.txtIdPerfil.Size = new System.Drawing.Size(68, 20);
-            this.txtIdPerfil.TabIndex = 2;
+            this.txtIdPerfil.Size = new System.Drawing.Size(100, 20);
+            this.txtIdPerfil.TabIndex = 0;
             // 
             // txtDescPerfil
             // 
-            this.txtDescPerfil.Location = new System.Drawing.Point(129, 42);
+            this.txtDescPerfil.Location = new System.Drawing.Point(119, 75);
+            this.txtDescPerfil.MaxLength = 30;
             this.txtDescPerfil.Name = "txtDescPerfil";
-            this.txtDescPerfil.Size = new System.Drawing.Size(143, 20);
-            this.txtDescPerfil.TabIndex = 3;
+            this.txtDescPerfil.Size = new System.Drawing.Size(100, 20);
+            this.txtDescPerfil.TabIndex = 1;
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(12, 137);
+            this.btnConfirma.Location = new System.Drawing.Point(35, 195);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirma.TabIndex = 4;
+            this.btnConfirma.TabIndex = 2;
             this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(103, 137);
+            this.btnLimpar.Location = new System.Drawing.Point(116, 195);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpar.TabIndex = 5;
-            this.btnLimpar.Text = "Apagar";
+            this.btnLimpar.TabIndex = 3;
+            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(193, 137);
+            this.btnVoltar.Location = new System.Drawing.Point(197, 195);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +113,7 @@
             this.Controls.Add(this.lblDescPerfil);
             this.Controls.Add(this.lblIdPerfil);
             this.Name = "frmCadPerfil";
-            this.Text = "frmCadPerfil";
+            this.Text = "Cad Perfil";
             this.Load += new System.EventHandler(this.frmCadPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

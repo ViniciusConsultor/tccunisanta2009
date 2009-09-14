@@ -47,21 +47,21 @@
             this.dgPerfil.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPerfil.ShowEditingIcon = false;
             this.dgPerfil.Size = new System.Drawing.Size(260, 177);
-            this.dgPerfil.TabIndex = 3;
+            this.dgPerfil.TabIndex = 0;
             // 
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(12, 12);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtFiltro.TabIndex = 5;
+            this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(197, 10);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -71,7 +71,7 @@
             this.btnOK.Location = new System.Drawing.Point(101, 229);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 6;
+            this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -86,7 +86,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgPerfil);
             this.Name = "frmBuscaPerfil";
-            this.Text = "frmBuscaPerfil";
+            this.Text = "Busca Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.dgPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,12 +38,12 @@ namespace TCC.DAL
             {
                 if (string.IsNullOrEmpty(Descricao) == true)
                 {
-                    return base.BuscaDados("sp_busca_todosMenus");
+                    return base.BuscaDados("sp_busca_menu");
                 }
                 else
                 {
                     param = new SqlParameter("@param", Descricao);
-                    return base.BuscaDados("sp_busca_menusParam", param);
+                    return base.BuscaDados("sp_busca_menu", param);
                 }
             }
             catch (Exception ex)

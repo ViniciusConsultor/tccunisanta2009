@@ -61,7 +61,10 @@ namespace TCC.UI
             {
                 if (controle.GetType().Equals(new TextBox().GetType()) == true)
                 {
-                    controle.Text = string.Empty;
+                    if (controle.Name.Equals("txtCdEstoque") == false)
+                    {
+                        controle.Text = string.Empty;
+                    }
                 }
             }
         }
