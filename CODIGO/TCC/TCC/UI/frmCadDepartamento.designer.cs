@@ -40,11 +40,11 @@
             // lblDepartamento
             // 
             this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.Location = new System.Drawing.Point(60, 44);
+            this.lblDepartamento.Location = new System.Drawing.Point(24, 44);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(74, 13);
+            this.lblDepartamento.Size = new System.Drawing.Size(110, 13);
             this.lblDepartamento.TabIndex = 0;
-            this.lblDepartamento.Text = "Departamento";
+            this.lblDepartamento.Text = "Codigo Departamento";
             // 
             // txtCodigoDepartamento
             // 
@@ -52,14 +52,15 @@
             this.txtCodigoDepartamento.Location = new System.Drawing.Point(140, 41);
             this.txtCodigoDepartamento.Name = "txtCodigoDepartamento";
             this.txtCodigoDepartamento.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoDepartamento.TabIndex = 1;
+            this.txtCodigoDepartamento.TabIndex = 0;
             // 
             // txtDescricaoDepartamento
             // 
             this.txtDescricaoDepartamento.Location = new System.Drawing.Point(140, 67);
+            this.txtDescricaoDepartamento.MaxLength = 30;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
             this.txtDescricaoDepartamento.Size = new System.Drawing.Size(100, 20);
-            this.txtDescricaoDepartamento.TabIndex = 3;
+            this.txtDescricaoDepartamento.TabIndex = 1;
             // 
             // lblDescricaoDepartamento
             // 
@@ -72,30 +73,30 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(15, 170);
+            this.btnConfirma.Location = new System.Drawing.Point(35, 196);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirma.TabIndex = 4;
+            this.btnConfirma.TabIndex = 2;
             this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(96, 170);
+            this.btnLimpar.Location = new System.Drawing.Point(116, 196);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpar.TabIndex = 5;
+            this.btnLimpar.TabIndex = 3;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(177, 170);
+            this.btnVoltar.Location = new System.Drawing.Point(197, 196);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -113,7 +114,7 @@
             this.Controls.Add(this.txtCodigoDepartamento);
             this.Controls.Add(this.lblDepartamento);
             this.Name = "frmCadDepartamento";
-            this.Text = "frmCadDepartamento";
+            this.Text = "Cad Departamento";
             this.Load += new System.EventHandler(this.frmCadDepartamento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

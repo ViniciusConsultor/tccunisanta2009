@@ -90,7 +90,10 @@ namespace TCC.UI
             {
                 if (controle.GetType().Equals(new TextBox().GetType()) == true)
                 {
-                    controle.Text = string.Empty;
+                    if (controle.Name.Equals("txtCodigo") == false)
+                    {
+                        controle.Text = string.Empty;
+                    }
                 }
             }
             this.cboEstado.SelectedIndex = 0;
@@ -98,12 +101,19 @@ namespace TCC.UI
 
         private void txtCep_TextChanged(object sender, EventArgs e)
         {
-            if (this.txtCep.Text.Length >= 5)
+            if (this.txtCep.TextLength == 5)
             {
                 this.txtCep2.Focus();
             }
         }
 
+        private void txtCep2_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtCep2.TextLength == 3)
+            {
+                this.txtBairro.Focus();
+            }
+        }
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
@@ -130,6 +140,11 @@ namespace TCC.UI
                 regra = null;
                 model = null;
             }
+        }
+
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            this.ApagaControles();
         }
     }
 }

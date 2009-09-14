@@ -151,7 +151,7 @@
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(38, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
             // frmInicial
@@ -165,7 +165,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuPrincipal;
             this.Name = "frmInicial";
-            this.Text = "frmInicial";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.frmInicial_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();

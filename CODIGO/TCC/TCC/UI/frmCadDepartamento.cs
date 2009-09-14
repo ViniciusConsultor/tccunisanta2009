@@ -87,7 +87,10 @@ namespace TCC.UI
             {
                 if (contr.GetType().Equals(new TextBox().GetType()) == true)
                 {
-                    contr.Text = string.Empty;
+                    if (contr.Name.Equals("txtCodigoDepartamento") == false)
+                    {
+                        contr.Text = string.Empty;
+                    }
                 }
             }
         }

@@ -41,29 +41,29 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(301, 97);
+            this.btnVolta.Location = new System.Drawing.Point(356, 112);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(75, 23);
             this.btnVolta.TabIndex = 5;
-            this.btnVolta.Text = "Volta";
+            this.btnVolta.Text = "Voltar";
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(183, 97);
+            this.btnLimpa.Location = new System.Drawing.Point(275, 112);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
             this.btnLimpa.TabIndex = 4;
-            this.btnLimpa.Text = "Limpa";
+            this.btnLimpa.Text = "Limpar";
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(66, 97);
+            this.btnInsere.Location = new System.Drawing.Point(194, 112);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(75, 23);
             this.btnInsere.TabIndex = 3;
-            this.btnInsere.Text = "Insere";
+            this.btnInsere.Text = "Confirmar";
             this.btnInsere.UseVisualStyleBackColor = true;
             // 
             // txtDescricaoTipoPeca
@@ -111,9 +111,9 @@
             this.lblcodigoTipoPeca.AutoSize = true;
             this.lblcodigoTipoPeca.Location = new System.Drawing.Point(9, 28);
             this.lblcodigoTipoPeca.Name = "lblcodigoTipoPeca";
-            this.lblcodigoTipoPeca.Size = new System.Drawing.Size(121, 13);
+            this.lblcodigoTipoPeca.Size = new System.Drawing.Size(106, 13);
             this.lblcodigoTipoPeca.TabIndex = 7;
-            this.lblcodigoTipoPeca.Text = "Codigo do Tipo da peça";
+            this.lblcodigoTipoPeca.Text = "Codigo Tipo da peça";
             // 
             // frmCadTipoPeca
             // 
@@ -130,7 +130,7 @@
             this.Controls.Add(this.txtCdTipoPeca);
             this.Controls.Add(this.lblcodigoTipoPeca);
             this.Name = "frmCadTipoPeca";
-            this.Text = "Cadastra Tipo da Peça";
+            this.Text = "Cadastro Tipo da Peça";
             this.Load += new System.EventHandler(this.frmCadTipoPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

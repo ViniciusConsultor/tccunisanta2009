@@ -37,7 +37,7 @@ INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (21, 'RS', 'RIO GR
 INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (22, 'RO', 'RONDÔNIA');
 INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (23, 'RR', 'RORAIMA');
 INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (24, 'SC', 'SANTA CATARINA');
-INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (25, 'TO', 'SÃO PAULO');
+INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (25, 'SP', 'SÃO PAULO');
 INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (26, 'SE', 'SERGIPE');
 INSERT INTO Estado (id_estado, slg_estado, nom_estado) VALUES (27, 'TO', 'TOCANTINS');
 
