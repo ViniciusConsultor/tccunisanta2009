@@ -2,7 +2,6 @@
 using System.Text;
 using System.Data;
 using System.Collections.Generic;
-using System.Data;
 using TCC.DAL;
 using TCC.MODEL;
 

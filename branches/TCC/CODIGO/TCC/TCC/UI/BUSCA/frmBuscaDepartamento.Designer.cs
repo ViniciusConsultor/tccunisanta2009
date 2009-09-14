@@ -40,7 +40,7 @@
             this.btnOK.Location = new System.Drawing.Point(105, 232);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 14;
+            this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -50,14 +50,14 @@
             this.txtFiltro.Location = new System.Drawing.Point(16, 15);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtFiltro.TabIndex = 13;
+            this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(201, 13);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -74,7 +74,7 @@
             this.dgDepartamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDepartamento.ShowEditingIcon = false;
             this.dgDepartamento.Size = new System.Drawing.Size(260, 177);
-            this.dgDepartamento.TabIndex = 11;
+            this.dgDepartamento.TabIndex = 0;
             // 
             // frmBuscaDepartamento
             // 
@@ -86,7 +86,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgDepartamento);
             this.Name = "frmBuscaDepartamento";
-            this.Text = "frmBuscaDepartamento";
+            this.Text = "Busca Depto.";
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

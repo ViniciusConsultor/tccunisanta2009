@@ -2,7 +2,6 @@
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data;
 using System.Collections.Generic;
 using TCC.MODEL;
 

@@ -59,14 +59,15 @@
             this.txtCodigo.Location = new System.Drawing.Point(110, 13);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(155, 20);
-            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(110, 65);
+            this.txtLogin.MaxLength = 20;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(155, 20);
-            this.txtLogin.TabIndex = 3;
+            this.txtLogin.TabIndex = 2;
             // 
             // lblLogin
             // 
@@ -80,10 +81,11 @@
             // txtObservacao
             // 
             this.txtObservacao.Location = new System.Drawing.Point(110, 117);
+            this.txtObservacao.MaxLength = 100;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(155, 66);
-            this.txtObservacao.TabIndex = 5;
+            this.txtObservacao.TabIndex = 4;
             // 
             // lblObservacao
             // 
@@ -99,8 +101,8 @@
             this.btnAceitar.Location = new System.Drawing.Point(28, 189);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceitar.TabIndex = 8;
-            this.btnAceitar.Text = "Gravar";
+            this.btnAceitar.TabIndex = 5;
+            this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -109,7 +111,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(109, 189);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpar.TabIndex = 9;
+            this.btnLimpar.TabIndex = 6;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -119,16 +121,17 @@
             this.btnVoltar.Location = new System.Drawing.Point(190, 189);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.TabIndex = 7;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(109, 91);
+            this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(156, 20);
-            this.txtSenha.TabIndex = 12;
+            this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblSenha
@@ -146,7 +149,7 @@
             this.txtPerfilUsuario.Location = new System.Drawing.Point(110, 39);
             this.txtPerfilUsuario.Name = "txtPerfilUsuario";
             this.txtPerfilUsuario.Size = new System.Drawing.Size(125, 20);
-            this.txtPerfilUsuario.TabIndex = 14;
+            this.txtPerfilUsuario.TabIndex = 0;
             // 
             // lblPerfilUsuario
             // 
@@ -162,7 +165,7 @@
             this.btnBuscaPerfilUsuario.Location = new System.Drawing.Point(241, 37);
             this.btnBuscaPerfilUsuario.Name = "btnBuscaPerfilUsuario";
             this.btnBuscaPerfilUsuario.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaPerfilUsuario.TabIndex = 15;
+            this.btnBuscaPerfilUsuario.TabIndex = 1;
             this.btnBuscaPerfilUsuario.Text = "...";
             this.btnBuscaPerfilUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaPerfilUsuario.Click += new System.EventHandler(this.btnBuscaPerfilUsuario_Click);

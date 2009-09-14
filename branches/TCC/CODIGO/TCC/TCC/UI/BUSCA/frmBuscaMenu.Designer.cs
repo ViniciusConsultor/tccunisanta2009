@@ -40,7 +40,7 @@
             this.btnOK.Location = new System.Drawing.Point(101, 230);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 10;
+            this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -50,14 +50,14 @@
             this.txtFiltro.Location = new System.Drawing.Point(12, 13);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtFiltro.TabIndex = 9;
+            this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(197, 11);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -74,7 +74,7 @@
             this.dgMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMenu.ShowEditingIcon = false;
             this.dgMenu.Size = new System.Drawing.Size(260, 177);
-            this.dgMenu.TabIndex = 7;
+            this.dgMenu.TabIndex = 0;
             // 
             // frmBuscaMenu
             // 
@@ -86,7 +86,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgMenu);
             this.Name = "frmBuscaMenu";
-            this.Text = "frmBuscaMenu";
+            this.Text = "Busca Menu";
             ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

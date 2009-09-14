@@ -67,6 +67,7 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.btnBuscaUsuario = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
+            this.txtCep2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblIdColaborador
@@ -186,9 +187,10 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(65, 38);
+            this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(241, 20);
-            this.txtNome.TabIndex = 4;
+            this.txtNome.TabIndex = 3;
             // 
             // txtDataDd
             // 
@@ -196,40 +198,46 @@
             this.txtDataDd.MaxLength = 2;
             this.txtDataDd.Name = "txtDataDd";
             this.txtDataDd.Size = new System.Drawing.Size(26, 20);
-            this.txtDataDd.TabIndex = 5;
+            this.txtDataDd.TabIndex = 4;
             this.txtDataDd.TextChanged += new System.EventHandler(this.txtDataDd_TextChanged);
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(65, 70);
+            this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(155, 20);
-            this.txtRua.TabIndex = 8;
+            this.txtRua.TabIndex = 7;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(281, 73);
+            this.txtNumero.MaxLength = 10;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(67, 20);
-            this.txtNumero.TabIndex = 9;
+            this.txtNumero.TabIndex = 8;
             // 
             // txtComplemento
             // 
             this.txtComplemento.Location = new System.Drawing.Point(449, 73);
+            this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(100, 20);
-            this.txtComplemento.TabIndex = 10;
+            this.txtComplemento.TabIndex = 9;
             // 
             // txtCEP
             // 
             this.txtCEP.Location = new System.Drawing.Point(65, 108);
+            this.txtCEP.MaxLength = 5;
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(155, 20);
-            this.txtCEP.TabIndex = 11;
+            this.txtCEP.Size = new System.Drawing.Size(70, 20);
+            this.txtCEP.TabIndex = 10;
+            this.txtCEP.TextChanged += new System.EventHandler(this.txtCEP_TextChanged);
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(281, 108);
+            this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(162, 20);
             this.txtBairro.TabIndex = 12;
@@ -237,7 +245,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(15, 148);
+            this.lblCidade.Location = new System.Drawing.Point(12, 148);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(40, 13);
             this.lblCidade.TabIndex = 2;
@@ -246,6 +254,7 @@
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(65, 145);
+            this.txtCidade.MaxLength = 40;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(155, 20);
             this.txtCidade.TabIndex = 13;
@@ -280,6 +289,7 @@
             // txtRg
             // 
             this.txtRg.Location = new System.Drawing.Point(65, 182);
+            this.txtRg.MaxLength = 15;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(155, 20);
             this.txtRg.TabIndex = 15;
@@ -287,6 +297,7 @@
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(281, 182);
+            this.txtCpf.MaxLength = 15;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(162, 20);
             this.txtCpf.TabIndex = 16;
@@ -307,14 +318,14 @@
             this.CbSexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.CbSexo.Location = new System.Drawing.Point(65, 220);
+            this.CbSexo.Location = new System.Drawing.Point(65, 217);
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Size = new System.Drawing.Size(47, 21);
             this.CbSexo.TabIndex = 17;
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(281, 220);
+            this.btnConfirma.Location = new System.Drawing.Point(312, 220);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
             this.btnConfirma.TabIndex = 18;
@@ -324,7 +335,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(443, 220);
+            this.btnVoltar.Location = new System.Drawing.Point(474, 220);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 20;
@@ -334,7 +345,7 @@
             // 
             // btnApaga
             // 
-            this.btnApaga.Location = new System.Drawing.Point(362, 220);
+            this.btnApaga.Location = new System.Drawing.Point(393, 220);
             this.btnApaga.Name = "btnApaga";
             this.btnApaga.Size = new System.Drawing.Size(75, 23);
             this.btnApaga.TabIndex = 19;
@@ -348,7 +359,7 @@
             this.txtDataMm.MaxLength = 2;
             this.txtDataMm.Name = "txtDataMm";
             this.txtDataMm.Size = new System.Drawing.Size(26, 20);
-            this.txtDataMm.TabIndex = 6;
+            this.txtDataMm.TabIndex = 5;
             this.txtDataMm.TextChanged += new System.EventHandler(this.txtDataMm_TextChanged);
             // 
             // txtDataYyyy
@@ -357,7 +368,7 @@
             this.txtDataYyyy.MaxLength = 4;
             this.txtDataYyyy.Name = "txtDataYyyy";
             this.txtDataYyyy.Size = new System.Drawing.Size(63, 20);
-            this.txtDataYyyy.TabIndex = 7;
+            this.txtDataYyyy.TabIndex = 6;
             this.txtDataYyyy.TextChanged += new System.EventHandler(this.txtDataYyyy_TextChanged);
             // 
             // label1
@@ -391,7 +402,7 @@
             this.btnBuscaUsuario.Location = new System.Drawing.Point(324, 8);
             this.btnBuscaUsuario.Name = "btnBuscaUsuario";
             this.btnBuscaUsuario.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaUsuario.TabIndex = 21;
+            this.btnBuscaUsuario.TabIndex = 1;
             this.btnBuscaUsuario.Text = "...";
             this.btnBuscaUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaUsuario.Click += new System.EventHandler(this.btnBuscaUsuario_Click);
@@ -401,16 +412,26 @@
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(525, 8);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaDepartamento.TabIndex = 22;
+            this.btnBuscaDepartamento.TabIndex = 2;
             this.btnBuscaDepartamento.Text = "...";
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
+            // 
+            // txtCep2
+            // 
+            this.txtCep2.Location = new System.Drawing.Point(141, 108);
+            this.txtCep2.MaxLength = 3;
+            this.txtCep2.Name = "txtCep2";
+            this.txtCep2.Size = new System.Drawing.Size(35, 20);
+            this.txtCep2.TabIndex = 11;
+            this.txtCep2.TextChanged += new System.EventHandler(this.txtCep2_TextChanged);
             // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 266);
+            this.ClientSize = new System.Drawing.Size(555, 259);
+            this.Controls.Add(this.txtCep2);
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnBuscaUsuario);
             this.Controls.Add(this.cbEstado);
@@ -451,7 +472,7 @@
             this.Controls.Add(this.lblCdUsuario);
             this.Controls.Add(this.lblIdColaborador);
             this.Name = "frmCadColaborador";
-            this.Text = "Cadastro Colaborador";
+            this.Text = "Cadastro de Colaborador";
             this.Load += new System.EventHandler(this.frmCadColaborador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -499,5 +520,6 @@
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Button btnBuscaUsuario;
         private System.Windows.Forms.Button btnBuscaDepartamento;
+        private System.Windows.Forms.TextBox txtCep2;
     }
 }
