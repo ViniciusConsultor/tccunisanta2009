@@ -7,10 +7,10 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rUsuario
+    class rUsuario : ComandosSql
     {
         #region Cadastra Usuario
-        public void CadastraUsuario(mUsuario model)
+        private void CadastraUsuario(mUsuario model)
         {
             dUsuario dalUsuario = new dUsuario();
             try
@@ -31,19 +31,18 @@ namespace TCC.BUSINESS
         #region Busca Id Maximo Usuario
         public int BuscaIdMaximoUsuario()
         {
-            dUsuario dalUsu = new dUsuario();
             DataTable dt;
             int idUsuario;
             try
             {
-                dt = dalUsu.BuscaIdMaximoUsuario();
-                if (dt.Rows[0]["id_usu"] == DBNull.Value || dt.Rows[0]["id_usu"] == null)
+                dt = base.BuscaIdMaximoTabelas("id_usu", "Usuario");
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idUsuario = 0;
                 }
                 else
                 {
-                    idUsuario = Convert.ToInt32(dt.Rows[0]["id_usu"]);
+                    idUsuario = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++idUsuario;
             }
@@ -53,7 +52,6 @@ namespace TCC.BUSINESS
             }
             finally
             {
-                dalUsu = null;
                 dt = null;
             }
         }
@@ -90,6 +88,75 @@ namespace TCC.BUSINESS
             {
                 dal = null;
             }
+        }
+
+        public void ValidaDados(mUsuario model)
+        {
+            if (string.IsNullOrEmpty(model.Login) == true)
+            {
+                throw new Exceptions.LoginVazioException();
+            }
+            else if (string.IsNullOrEmpty(model.Senha) == true)
+            {
+                throw new Exceptions.SenhaVaziaException();
+            }
+        }
+
+
+
+        public override void Insere(object model)
+        {
+            mUsuario modelUsu = (mUsuario)model;
+            try
+            {
+                this.ValidarInsere(model);
+                this.CadastraUsuario(modelUsu);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                modelUsu = null;
+            }
+        }
+
+        public override void ValidarInsere(object model)
+        {
+            mUsuario modelUsu = (mUsuario)model;
+            try
+            {
+                this.ValidaDados(modelUsu);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                modelUsu = null;
+            }
+        }
+
+        public override void Deleta(object model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarDeleta(object model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Altera(object model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(object model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
