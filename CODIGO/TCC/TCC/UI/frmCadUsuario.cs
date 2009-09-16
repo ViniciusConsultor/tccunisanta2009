@@ -45,11 +45,21 @@ namespace TCC.UI
             try
             {
                 modelUsu = this.PegaDadosTela();
-                regraUsu.CadastraUsuario(modelUsu);
+                regraUsu.Insere(modelUsu);
                 modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
                 regraUsuarioPerfil.CadastraUsuarioPerfil(modelUsuarioPerfil);
                 this.LimpaControles();
                 this.BuscaCodigoUsuarioMax();
+            }
+            catch (BUSINESS.Exceptions.LoginVazioException)
+            {
+                MessageBox.Show("É necessário preenchimento do campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtLogin.Focus();
+            }
+            catch (BUSINESS.Exceptions.SenhaVaziaException)
+            {
+                MessageBox.Show("É necessário preenchimento do campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtSenha.Focus();
             }
             catch (Exception ex)
             {
