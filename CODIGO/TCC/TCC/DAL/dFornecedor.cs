@@ -17,7 +17,7 @@ namespace TCC.DAL
             {
                 mod = new ModelAuxiliar(model.GetType(), model);
                 parametros = mod.BuscaNomeParametros();
-                base.InsereDados("sp_insert_fornecedor", parametros);
+                base.ExecutaProcedure("sp_insert_fornecedor", parametros);
             }
             catch (Exception ex)
             {

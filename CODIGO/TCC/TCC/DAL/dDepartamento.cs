@@ -15,7 +15,7 @@ namespace TCC.DAL
             try
             {
                 SqlParameter[] parametros = mod.BuscaNomeParametros();
-                base.InsereDados("sp_insert_departamento", parametros);
+                base.ExecutaProcedure("sp_insert_departamento", parametros);
             }
             catch (Exception ex)
             {

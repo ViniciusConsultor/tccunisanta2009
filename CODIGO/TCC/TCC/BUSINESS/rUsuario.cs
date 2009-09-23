@@ -102,7 +102,22 @@ namespace TCC.BUSINESS
             }
         }
 
-
+        public void DeletaUsuario(mUsuario model)
+        {
+            dUsuario dal = new dUsuario();
+            try
+            {
+                dal.DeletaUsuario(model.IdUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
+            }
+        }
 
         public override void Insere(object model)
         {
@@ -141,7 +156,8 @@ namespace TCC.BUSINESS
 
         public override void Deleta(object model)
         {
-            throw new NotImplementedException();
+            mUsuario modelo = (mUsuario)model;
+            this.DeletaUsuario(modelo);
         }
 
         public override void ValidarDeleta(object model)
