@@ -44,10 +44,14 @@ namespace TCC.UI
             mUsuarioPerfil modelUsuarioPerfil = new mUsuarioPerfil();
             try
             {
+                //Insere o usuário
+                //----------------
                 modelUsu = this.PegaDadosTela();
                 regraUsu.Insere(modelUsu);
+                //Insere associação usuarioPerfil
+                //-------------------------------
                 modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
-                regraUsuarioPerfil.CadastraUsuarioPerfil(modelUsuarioPerfil);
+                regraUsuarioPerfil.Insere(modelUsuarioPerfil);
                 this.LimpaControles();
                 this.BuscaCodigoUsuarioMax();
             }
@@ -60,6 +64,16 @@ namespace TCC.UI
             {
                 MessageBox.Show("É necessário preenchimento do campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtSenha.Focus();
+            }
+            catch (BUSINESS.Exceptions.PerfilSemIdExeception)
+            {
+                MessageBox.Show("Não é Possivel Cadastrar um usuário sem o Codigo do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                regraUsu.Deleta(modelUsu);
+                btnBuscaPerfilUsuario.Focus();
+            }
+            catch (BUSINESS.Exceptions.UsuarioSemIdException)
+            {
+                MessageBox.Show("Não é Possivel Cadastrar um usuário sem Codigo", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -140,7 +154,14 @@ namespace TCC.UI
         private mUsuarioPerfil PegaDadosUsuarioPerfil()
         {
             mUsuarioPerfil model = new mUsuarioPerfil();
-            model.IdPerfil = Convert.ToInt32(this.txtPerfilUsuario.Text);
+            if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == false)
+            {
+                model.IdPerfil = Convert.ToInt32(this.txtPerfilUsuario.Text);
+            }
+            else
+            {
+                throw new BUSINESS.Exceptions.PerfilSemIdExeception();
+            }
             model.IdUsuario = Convert.ToInt32(this.txtCodigo.Text);
             model.DatTrans = DateTime.Now;
             model.FlgAtivo = true;

@@ -47,7 +47,25 @@ namespace TCC.DAL
         }
         #endregion Execute Sql
 
-        protected bool InsereDados(string nomeProc, SqlParameter[] parametros)
+        protected bool ExecutaProcedure(string nomeProc, SqlParameter parametros)
+        {
+            SqlParameter[] param = new SqlParameter[1];
+            try
+            {
+                param[0] = parametros;
+                return this.ExecutaProcedure(nomeProc, param);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                comando = null;
+            }
+        }
+
+        protected bool ExecutaProcedure(string nomeProc, SqlParameter[] parametros)
         {
             try
             {
