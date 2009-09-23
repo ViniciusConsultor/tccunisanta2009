@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="BUSINESS\ComandosSql.cs" />
     <Compile Include="BUSINESS\Exceptions\LoginVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PerfilSemIdExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\SenhaVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\UsuarioSemIdException.cs" />
     <Compile Include="BUSINESS\rCadColaborador.cs" />
     <Compile Include="BUSINESS\rCliente.cs" />
     <Compile Include="BUSINESS\rDepartamento.cs" />

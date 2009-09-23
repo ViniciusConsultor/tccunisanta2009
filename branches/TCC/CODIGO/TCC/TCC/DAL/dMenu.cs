@@ -38,7 +38,7 @@ namespace TCC.DAL
             {
                 if (string.IsNullOrEmpty(Descricao) == true)
                 {
-                    return base.BuscaDados("sp_busca_menu");
+                    return base.BuscaDados("sp_busca_todosMenus");
                 }
                 else
                 {

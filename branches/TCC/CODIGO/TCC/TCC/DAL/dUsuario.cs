@@ -18,7 +18,7 @@ namespace TCC.DAL
             {
                 mod = new ModelAuxiliar(model.GetType(), model);
                 parametros = mod.BuscaNomeParametros();
-                base.InsereDados("sp_insert_usuario", parametros);
+                base.ExecutaProcedure("sp_insert_usuario", parametros);
             }
             catch (Exception ex)
             {
@@ -87,6 +87,24 @@ namespace TCC.DAL
             finally
             {
                 parametros = null;
+            }
+        }
+
+        public void DeletaUsuario(int idUsuario)
+        {
+            SqlParameter param = new SqlParameter("@id_usu", idUsuario);
+            param.SqlDbType = SqlDbType.Int;
+            try
+            {
+                base.ExecutaProcedure("sp_deleta_usuario", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
             }
         }
     }
