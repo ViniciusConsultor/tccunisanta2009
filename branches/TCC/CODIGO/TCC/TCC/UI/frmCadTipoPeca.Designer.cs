@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadTipoPeca));
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnInsere = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(356, 112);
+            this.btnVolta.Location = new System.Drawing.Point(414, 111);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(75, 23);
             this.btnVolta.TabIndex = 5;
@@ -50,7 +51,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(275, 112);
+            this.btnLimpa.Location = new System.Drawing.Point(333, 111);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
             this.btnLimpa.TabIndex = 4;
@@ -59,7 +60,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(194, 112);
+            this.btnInsere.Location = new System.Drawing.Point(252, 111);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(75, 23);
             this.btnInsere.TabIndex = 3;
@@ -68,7 +69,8 @@
             // 
             // txtDescricaoTipoPeca
             // 
-            this.txtDescricaoTipoPeca.Location = new System.Drawing.Point(136, 51);
+            this.txtDescricaoTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescricaoTipoPeca.Location = new System.Drawing.Point(194, 50);
             this.txtDescricaoTipoPeca.Name = "txtDescricaoTipoPeca";
             this.txtDescricaoTipoPeca.Size = new System.Drawing.Size(100, 20);
             this.txtDescricaoTipoPeca.TabIndex = 2;
@@ -77,7 +79,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(63, 54);
+            this.lblDescricao.Location = new System.Drawing.Point(121, 53);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
             this.lblDescricao.TabIndex = 13;
@@ -85,7 +87,8 @@
             // 
             // txtCdPeca
             // 
-            this.txtCdPeca.Location = new System.Drawing.Point(331, 25);
+            this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdPeca.Location = new System.Drawing.Point(389, 24);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
             this.txtCdPeca.TabIndex = 1;
@@ -93,7 +96,7 @@
             // lblCodigoPeca
             // 
             this.lblCodigoPeca.AutoSize = true;
-            this.lblCodigoPeca.Location = new System.Drawing.Point(242, 25);
+            this.lblCodigoPeca.Location = new System.Drawing.Point(300, 24);
             this.lblCodigoPeca.Name = "lblCodigoPeca";
             this.lblCodigoPeca.Size = new System.Drawing.Size(83, 13);
             this.lblCodigoPeca.TabIndex = 9;
@@ -101,7 +104,8 @@
             // 
             // txtCdTipoPeca
             // 
-            this.txtCdTipoPeca.Location = new System.Drawing.Point(136, 25);
+            this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdTipoPeca.Location = new System.Drawing.Point(194, 24);
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
             this.txtCdTipoPeca.Size = new System.Drawing.Size(100, 20);
             this.txtCdTipoPeca.TabIndex = 0;
@@ -109,7 +113,7 @@
             // lblcodigoTipoPeca
             // 
             this.lblcodigoTipoPeca.AutoSize = true;
-            this.lblcodigoTipoPeca.Location = new System.Drawing.Point(9, 28);
+            this.lblcodigoTipoPeca.Location = new System.Drawing.Point(67, 27);
             this.lblcodigoTipoPeca.Name = "lblcodigoTipoPeca";
             this.lblcodigoTipoPeca.Size = new System.Drawing.Size(106, 13);
             this.lblcodigoTipoPeca.TabIndex = 7;
@@ -119,7 +123,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 158);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(507, 158);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnInsere);
