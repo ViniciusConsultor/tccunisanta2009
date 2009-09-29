@@ -1,5 +1,7 @@
 USE Megatechdatabase
-go
+IF OBJECT_ID('sp_busca_perfil_param', 'P')IS NOT NULL
+	DROP PROCEDURE sp_busca_perfil_param;
+GO
 
 CREATE PROCEDURE sp_busca_perfil_param
 @dsc_perfil AS VARCHAR(30)

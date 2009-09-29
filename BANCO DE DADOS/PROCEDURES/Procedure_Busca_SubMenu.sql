@@ -1,5 +1,7 @@
 USE Megatechdatabase
-go
+IF OBJECT_ID('sp_busca_submenu', 'P')IS NOT NULL
+	DROP PROCEDURE sp_busca_submenu;
+GO
 
 CREATE PROCEDURE sp_busca_submenu
 @id_menu AS INT,

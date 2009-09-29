@@ -1,5 +1,7 @@
 USE Megatechdatabase
-go
+IF OBJECT_ID('sp_insert_usuarioPerfil', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_usuarioPerfil;
+GO
 
 CREATE PROCEDURE sp_insert_usuarioPerfil
 @id_usu INT,
