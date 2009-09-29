@@ -1,3 +1,8 @@
+USE Megatechdatabase
+IF OBJECT_ID('sp_insert_perfilMenu', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_perfilMenu;
+GO
+
 CREATE PROCEDURE sp_insert_perfilMenu
 @id_perfil INT,
 @id_menu INT,

@@ -1,5 +1,7 @@
 USE Megatechdatabase
-go
+IF OBJECT_ID('verifica_loginCorreto', 'P')IS NOT NULL
+	DROP PROCEDURE verifica_loginCorreto;
+GO
 
 CREATE PROCEDURE verifica_loginCorreto
 @login VARCHAR(20),

@@ -1,5 +1,6 @@
-set ANSI_NULLS ON
-set QUOTED_IDENTIFIER ON
+USE Megatechdatabase
+IF OBJECT_ID('sp_busca_maxEstoque', 'P')IS NOT NULL
+	DROP PROCEDURE sp_busca_maxEstoque;
 GO
 
 CREATE PROCEDURE [dbo].[sp_busca_maxEstoque]

@@ -79,8 +79,9 @@ namespace TCC.DAL
                 comando.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                throw ex;
                 return false;
             }
             finally

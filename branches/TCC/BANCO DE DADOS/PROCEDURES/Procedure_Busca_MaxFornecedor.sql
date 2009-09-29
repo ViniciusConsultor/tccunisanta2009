@@ -1,5 +1,7 @@
 USE Megatechdatabase
-go
+IF OBJECT_ID('sp_busca_maxFornecedor', 'P')IS NOT NULL
+	DROP PROCEDURE sp_busca_maxFornecedor;
+GO
 
 CREATE PROCEDURE sp_busca_maxFornecedor
 AS
