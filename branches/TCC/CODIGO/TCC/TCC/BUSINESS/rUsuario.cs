@@ -124,7 +124,7 @@ namespace TCC.BUSINESS
             mUsuario modelUsu = (mUsuario)model;
             try
             {
-                this.ValidarInsere(model);
+                //this.ValidarInsere(model);
                 this.CadastraUsuario(modelUsu);
             }
             catch (Exception ex)
