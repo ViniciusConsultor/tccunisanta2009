@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPerfil));
             this.lblIdPerfil = new System.Windows.Forms.Label();
             this.lblDescPerfil = new System.Windows.Forms.Label();
             this.txtIdPerfil = new System.Windows.Forms.TextBox();
@@ -40,7 +41,7 @@
             // lblIdPerfil
             // 
             this.lblIdPerfil.AutoSize = true;
-            this.lblIdPerfil.Location = new System.Drawing.Point(47, 46);
+            this.lblIdPerfil.Location = new System.Drawing.Point(76, 31);
             this.lblIdPerfil.Name = "lblIdPerfil";
             this.lblIdPerfil.Size = new System.Drawing.Size(66, 13);
             this.lblIdPerfil.TabIndex = 0;
@@ -49,7 +50,7 @@
             // lblDescPerfil
             // 
             this.lblDescPerfil.AutoSize = true;
-            this.lblDescPerfil.Location = new System.Drawing.Point(32, 75);
+            this.lblDescPerfil.Location = new System.Drawing.Point(61, 60);
             this.lblDescPerfil.Name = "lblDescPerfil";
             this.lblDescPerfil.Size = new System.Drawing.Size(81, 13);
             this.lblDescPerfil.TabIndex = 1;
@@ -57,15 +58,17 @@
             // 
             // txtIdPerfil
             // 
+            this.txtIdPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdPerfil.Enabled = false;
-            this.txtIdPerfil.Location = new System.Drawing.Point(119, 43);
+            this.txtIdPerfil.Location = new System.Drawing.Point(148, 28);
             this.txtIdPerfil.Name = "txtIdPerfil";
             this.txtIdPerfil.Size = new System.Drawing.Size(100, 20);
             this.txtIdPerfil.TabIndex = 0;
             // 
             // txtDescPerfil
             // 
-            this.txtDescPerfil.Location = new System.Drawing.Point(119, 75);
+            this.txtDescPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescPerfil.Location = new System.Drawing.Point(148, 60);
             this.txtDescPerfil.MaxLength = 30;
             this.txtDescPerfil.Name = "txtDescPerfil";
             this.txtDescPerfil.Size = new System.Drawing.Size(100, 20);
@@ -73,7 +76,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(35, 195);
+            this.btnConfirma.Location = new System.Drawing.Point(64, 180);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
             this.btnConfirma.TabIndex = 2;
@@ -83,7 +86,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(116, 195);
+            this.btnLimpar.Location = new System.Drawing.Point(145, 180);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 3;
@@ -93,7 +96,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(197, 195);
+            this.btnVoltar.Location = new System.Drawing.Point(226, 180);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 4;
@@ -104,7 +107,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(327, 245);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);

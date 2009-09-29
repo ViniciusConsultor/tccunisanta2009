@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadDepartamento));
             this.lblDepartamento = new System.Windows.Forms.Label();
             this.txtCodigoDepartamento = new System.Windows.Forms.TextBox();
             this.txtDescricaoDepartamento = new System.Windows.Forms.TextBox();
@@ -40,7 +41,7 @@
             // lblDepartamento
             // 
             this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.Location = new System.Drawing.Point(24, 44);
+            this.lblDepartamento.Location = new System.Drawing.Point(61, 47);
             this.lblDepartamento.Name = "lblDepartamento";
             this.lblDepartamento.Size = new System.Drawing.Size(110, 13);
             this.lblDepartamento.TabIndex = 0;
@@ -48,15 +49,17 @@
             // 
             // txtCodigoDepartamento
             // 
+            this.txtCodigoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoDepartamento.Enabled = false;
-            this.txtCodigoDepartamento.Location = new System.Drawing.Point(140, 41);
+            this.txtCodigoDepartamento.Location = new System.Drawing.Point(187, 44);
             this.txtCodigoDepartamento.Name = "txtCodigoDepartamento";
             this.txtCodigoDepartamento.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoDepartamento.TabIndex = 0;
             // 
             // txtDescricaoDepartamento
             // 
-            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(140, 67);
+            this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(187, 70);
             this.txtDescricaoDepartamento.MaxLength = 30;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
             this.txtDescricaoDepartamento.Size = new System.Drawing.Size(100, 20);
@@ -65,7 +68,7 @@
             // lblDescricaoDepartamento
             // 
             this.lblDescricaoDepartamento.AutoSize = true;
-            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(12, 70);
+            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(59, 73);
             this.lblDescricaoDepartamento.Name = "lblDescricaoDepartamento";
             this.lblDescricaoDepartamento.Size = new System.Drawing.Size(122, 13);
             this.lblDescricaoDepartamento.TabIndex = 2;
@@ -73,7 +76,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(35, 196);
+            this.btnConfirma.Location = new System.Drawing.Point(63, 144);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
             this.btnConfirma.TabIndex = 2;
@@ -83,7 +86,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(116, 196);
+            this.btnLimpar.Location = new System.Drawing.Point(144, 144);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 3;
@@ -93,7 +96,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(197, 196);
+            this.btnVoltar.Location = new System.Drawing.Point(225, 144);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 4;
@@ -105,7 +108,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(327, 195);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
