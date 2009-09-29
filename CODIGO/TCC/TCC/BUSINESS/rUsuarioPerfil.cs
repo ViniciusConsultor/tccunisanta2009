@@ -29,11 +29,11 @@ namespace TCC.BUSINESS
         {
             try
             {
-                if (model.IdPerfil == 0 || model.IdPerfil == null)
+                if (model.IdPerfil == 0)
                 {
                     throw new Exceptions.PerfilSemIdExeception();
                 }
-                else if (model.IdUsuario == 0 || model.IdUsuario == null)
+                else if (model.IdUsuario == 0)
                 {
                     throw new Exceptions.UsuarioSemIdException();
                 }

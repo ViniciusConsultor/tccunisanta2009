@@ -103,7 +103,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.Properties.Resources.Tela_Login;
             this.ClientSize = new System.Drawing.Size(292, 266);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnLimpar);
