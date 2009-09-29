@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCliente));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(5, 15);
+            this.lblCodigo.Location = new System.Drawing.Point(70, 11);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 0;
@@ -69,16 +70,17 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(53, 12);
+            this.txtCodigo.Location = new System.Drawing.Point(118, 12);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(70, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(70, 13);
             this.txtCodigo.TabIndex = 0;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(5, 46);
+            this.lblNome.Location = new System.Drawing.Point(71, 33);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 0;
@@ -86,16 +88,17 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(55, 43);
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Location = new System.Drawing.Point(117, 31);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(212, 20);
+            this.txtNome.Size = new System.Drawing.Size(128, 20);
             this.txtNome.TabIndex = 1;
             // 
             // lblRua
             // 
             this.lblRua.AutoSize = true;
-            this.lblRua.Location = new System.Drawing.Point(5, 76);
+            this.lblRua.Location = new System.Drawing.Point(111, 57);
             this.lblRua.Name = "lblRua";
             this.lblRua.Size = new System.Drawing.Size(27, 13);
             this.lblRua.TabIndex = 0;
@@ -103,16 +106,17 @@
             // 
             // txtRua
             // 
-            this.txtRua.Location = new System.Drawing.Point(55, 73);
+            this.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRua.Location = new System.Drawing.Point(144, 57);
             this.txtRua.MaxLength = 100;
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(128, 20);
+            this.txtRua.Size = new System.Drawing.Size(196, 20);
             this.txtRua.TabIndex = 3;
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(189, 76);
+            this.lblNumero.Location = new System.Drawing.Point(346, 59);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 0;
@@ -120,16 +124,17 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(241, 73);
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero.Location = new System.Drawing.Point(396, 57);
             this.txtNumero.MaxLength = 10;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(42, 20);
+            this.txtNumero.Size = new System.Drawing.Size(35, 20);
             this.txtNumero.TabIndex = 4;
             // 
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(289, 76);
+            this.lblComplemento.Location = new System.Drawing.Point(67, 86);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(71, 13);
             this.lblComplemento.TabIndex = 0;
@@ -137,16 +142,17 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(366, 73);
+            this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComplemento.Location = new System.Drawing.Point(144, 83);
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(90, 20);
+            this.txtComplemento.Size = new System.Drawing.Size(123, 20);
             this.txtComplemento.TabIndex = 5;
             // 
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(5, 112);
+            this.lblCep.Location = new System.Drawing.Point(272, 86);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 0;
@@ -154,7 +160,8 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(55, 109);
+            this.txtCep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCep.Location = new System.Drawing.Point(322, 83);
             this.txtCep.MaxLength = 5;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(68, 20);
@@ -164,7 +171,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(189, 112);
+            this.lblBairro.Location = new System.Drawing.Point(66, 112);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(34, 13);
             this.lblBairro.TabIndex = 0;
@@ -173,7 +180,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(5, 141);
+            this.lblCidade.Location = new System.Drawing.Point(176, 112);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(40, 13);
             this.lblCidade.TabIndex = 0;
@@ -181,15 +188,17 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(241, 109);
+            this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBairro.Location = new System.Drawing.Point(107, 110);
             this.txtBairro.MaxLength = 20;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(149, 20);
+            this.txtBairro.Size = new System.Drawing.Size(63, 20);
             this.txtBairro.TabIndex = 8;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(55, 138);
+            this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCidade.Location = new System.Drawing.Point(222, 110);
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(109, 20);
@@ -198,7 +207,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(189, 141);
+            this.lblEstado.Location = new System.Drawing.Point(337, 112);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 0;
@@ -207,16 +216,17 @@
             // cboEstado
             // 
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(241, 138);
+            this.cboEstado.Location = new System.Drawing.Point(383, 109);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(149, 21);
+            this.cboEstado.Size = new System.Drawing.Size(48, 21);
             this.cboEstado.TabIndex = 10;
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(5, 176);
+            this.lblRg.Location = new System.Drawing.Point(115, 138);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(23, 13);
             this.lblRg.TabIndex = 0;
@@ -224,7 +234,8 @@
             // 
             // txtRg
             // 
-            this.txtRg.Location = new System.Drawing.Point(53, 169);
+            this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRg.Location = new System.Drawing.Point(144, 136);
             this.txtRg.MaxLength = 15;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(111, 20);
@@ -233,7 +244,7 @@
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
-            this.lblCnpj.Location = new System.Drawing.Point(189, 176);
+            this.lblCnpj.Location = new System.Drawing.Point(261, 138);
             this.lblCnpj.Name = "lblCnpj";
             this.lblCnpj.Size = new System.Drawing.Size(34, 13);
             this.lblCnpj.TabIndex = 0;
@@ -241,15 +252,16 @@
             // 
             // txtCnpj
             // 
-            this.txtCnpj.Location = new System.Drawing.Point(241, 169);
+            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCnpj.Location = new System.Drawing.Point(303, 136);
             this.txtCnpj.MaxLength = 15;
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(149, 20);
+            this.txtCnpj.Size = new System.Drawing.Size(128, 20);
             this.txtCnpj.TabIndex = 12;
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(219, 213);
+            this.btnInsere.Location = new System.Drawing.Point(192, 182);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(75, 23);
             this.btnInsere.TabIndex = 13;
@@ -259,7 +271,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(300, 213);
+            this.btnLimpa.Location = new System.Drawing.Point(273, 182);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
             this.btnLimpa.TabIndex = 14;
@@ -269,7 +281,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(381, 213);
+            this.btnVolta.Location = new System.Drawing.Point(354, 182);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(75, 23);
             this.btnVolta.TabIndex = 15;
@@ -279,7 +291,7 @@
             // lblTlefone
             // 
             this.lblTlefone.AutoSize = true;
-            this.lblTlefone.Location = new System.Drawing.Point(273, 46);
+            this.lblTlefone.Location = new System.Drawing.Point(251, 33);
             this.lblTlefone.Name = "lblTlefone";
             this.lblTlefone.Size = new System.Drawing.Size(49, 13);
             this.lblTlefone.TabIndex = 0;
@@ -287,7 +299,8 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(328, 43);
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.Location = new System.Drawing.Point(303, 31);
             this.txtTelefone.MaxLength = 20;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(128, 20);
@@ -295,7 +308,8 @@
             // 
             // txtCep2
             // 
-            this.txtCep2.Location = new System.Drawing.Point(129, 109);
+            this.txtCep2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCep2.Location = new System.Drawing.Point(396, 83);
             this.txtCep2.MaxLength = 3;
             this.txtCep2.Name = "txtCep2";
             this.txtCep2.Size = new System.Drawing.Size(35, 20);
@@ -306,7 +320,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 248);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(449, 226);
             this.Controls.Add(this.txtCep2);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);

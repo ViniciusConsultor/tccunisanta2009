@@ -187,11 +187,11 @@ namespace TCC.UI
             try
             {
                 this.ApagaMenu();
-                //Busca e carrega o DataTable com os Menus
-                //----------------------------------------
+                //Busca e carrega o DataTable com os Menus Relacionados a um Perfil
+                //-----------------------------------------------------------------
                 dtMenu = regraMenu.BuscaMenu(idPerfil);
-                //Declara o tamanhdo do Array
-                //---------------------------
+                //Declara o tamanho do Array baseado no tamanho do DataTable com os menus
+                //-----------------------------------------------------------------------
                 itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
                 for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
