@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(55, 63);
+            this.lblUsuario.Location = new System.Drawing.Point(52, 56);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 0;
@@ -48,7 +49,8 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(104, 60);
+            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLogin.Location = new System.Drawing.Point(101, 53);
             this.txtLogin.MaxLength = 20;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
@@ -57,7 +59,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(55, 91);
+            this.lblSenha.Location = new System.Drawing.Point(52, 84);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 0;
@@ -65,7 +67,8 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(104, 88);
+            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.Location = new System.Drawing.Point(101, 81);
             this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
@@ -73,7 +76,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(25, 173);
+            this.btnLogin.Location = new System.Drawing.Point(22, 166);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 25);
             this.btnLogin.TabIndex = 3;
@@ -83,7 +86,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(104, 173);
+            this.btnLimpar.Location = new System.Drawing.Point(101, 166);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 25);
             this.btnLimpar.TabIndex = 4;
@@ -92,7 +95,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(185, 173);
+            this.btnFechar.Location = new System.Drawing.Point(182, 166);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 25);
             this.btnFechar.TabIndex = 5;
@@ -103,7 +106,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(292, 218);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnLogin);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEstoque));
             this.lblcodigoEstoque = new System.Windows.Forms.Label();
             this.txtCdEstoque = new System.Windows.Forms.TextBox();
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
@@ -43,7 +44,7 @@
             // lblcodigoEstoque
             // 
             this.lblcodigoEstoque.AutoSize = true;
-            this.lblcodigoEstoque.Location = new System.Drawing.Point(9, 15);
+            this.lblcodigoEstoque.Location = new System.Drawing.Point(67, 30);
             this.lblcodigoEstoque.Name = "lblcodigoEstoque";
             this.lblcodigoEstoque.Size = new System.Drawing.Size(40, 13);
             this.lblcodigoEstoque.TabIndex = 0;
@@ -51,16 +52,18 @@
             // 
             // txtCdEstoque
             // 
+            this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdEstoque.Enabled = false;
-            this.txtCdEstoque.Location = new System.Drawing.Point(55, 12);
+            this.txtCdEstoque.Location = new System.Drawing.Point(113, 27);
             this.txtCdEstoque.Name = "txtCdEstoque";
             this.txtCdEstoque.Size = new System.Drawing.Size(100, 20);
             this.txtCdEstoque.TabIndex = 0;
             // 
             // txtCdDepartamento
             // 
+            this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Enabled = false;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(300, 12);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(358, 27);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.Size = new System.Drawing.Size(65, 20);
             this.txtCdDepartamento.TabIndex = 0;
@@ -68,7 +71,7 @@
             // lblCodigoDepartamento
             // 
             this.lblCodigoDepartamento.AutoSize = true;
-            this.lblCodigoDepartamento.Location = new System.Drawing.Point(169, 15);
+            this.lblCodigoDepartamento.Location = new System.Drawing.Point(227, 30);
             this.lblCodigoDepartamento.Name = "lblCodigoDepartamento";
             this.lblCodigoDepartamento.Size = new System.Drawing.Size(125, 13);
             this.lblCodigoDepartamento.TabIndex = 2;
@@ -76,7 +79,8 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(55, 48);
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Location = new System.Drawing.Point(113, 63);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(341, 20);
@@ -85,7 +89,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(14, 51);
+            this.lblNome.Location = new System.Drawing.Point(72, 66);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;
@@ -93,7 +97,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(159, 98);
+            this.btnInsere.Location = new System.Drawing.Point(217, 113);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(75, 23);
             this.btnInsere.TabIndex = 3;
@@ -103,7 +107,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(240, 98);
+            this.btnLimpa.Location = new System.Drawing.Point(298, 113);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
             this.btnLimpa.TabIndex = 4;
@@ -112,7 +116,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(321, 98);
+            this.btnVolta.Location = new System.Drawing.Point(379, 113);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(75, 23);
             this.btnVolta.TabIndex = 5;
@@ -121,7 +125,7 @@
             // 
             // btnBuscaDepartamento
             // 
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(371, 10);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(429, 25);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(25, 23);
             this.btnBuscaDepartamento.TabIndex = 1;
@@ -133,7 +137,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 148);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(482, 167);
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
