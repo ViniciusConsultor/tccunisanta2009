@@ -9,6 +9,13 @@ using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
+    enum Comando
+    {
+        insert,
+        delete,
+        update
+    }
+
     abstract class ComandosSql : AcessoDados
     {
         public abstract void ValidarInsere(ModelPai model);
@@ -44,24 +51,20 @@ namespace TCC.BUSINESS
         }
         #endregion Busca Id Maximo Tabelas
 
-        Type _tipo;
-        object _modelo;
-
         #region Busca Nome Parametros
         /// <summary>
         /// Varre o nome dos Parametros que estão no model através dos atributos
         /// </summary>
         /// <returns>Array de SqlParameter com os parametros para as procedures</returns>
-        public SqlParameter[] BuscaNomeParametros(Type tipo, object modelo)
+        public SqlParameter[] BuscaNomeParametros(ModelPai modelo)
         {
-            this._tipo = tipo;
-            this._modelo = modelo;
-            SqlParameter[] param = new SqlParameter[this._tipo.GetProperties().Length];
+            Type tipo = modelo.GetType();
+            SqlParameter[] param = new SqlParameter[tipo.GetProperties().Length];
             object[] cols;
             PropertyInfo[] prop;
             try
             {
-                prop = this._tipo.GetProperties();
+                prop = tipo.GetProperties();
                 //Varre as propriedades
                 //---------------------
                 for (int contador = 0; contador < prop.Length; contador++)
@@ -72,7 +75,7 @@ namespace TCC.BUSINESS
                     if (cols.Length > 0)
                     {
                         ColunasBancoDados colunas = (ColunasBancoDados)cols[0];
-                        param[contador] = new SqlParameter("@" + colunas.NomeColuna, prop[contador].GetValue(this._modelo, null));
+                        param[contador] = new SqlParameter("@" + colunas.NomeColuna, prop[contador].GetValue(modelo, null));
                     }
                 }
                 return param;
@@ -90,15 +93,111 @@ namespace TCC.BUSINESS
         }
         #endregion Busca Nome Parametros
 
+        #region Busca Nome Parametros Chave Primaria
+        /// <summary>
+        /// Busca os parametros que são Chave Primaria
+        /// </summary>
+        /// <param name="tipo">Tipo do model</param>
+        /// <param name="modelo">Model</param>
+        /// <returns>os Parametros que são chave primaria</returns>
+        private SqlParameter[] BuscaNomeParametrosChavePrimaria(ModelPai modelo)
+        {
+            Type tipo = modelo.GetType();
+            List<SqlParameter> listaParametros = new List<SqlParameter>();
+            SqlParameter[] param = null;
+            object[] cols;
+            PropertyInfo[] prop;
+            try
+            {
+                prop = tipo.GetProperties();
+                //Varre as propriedades
+                //---------------------
+                for (int contador = 0; contador < prop.Length; contador++)
+                {
+                    //Atribui os atributos de uma propriedade ao Array cols
+                    //-----------------------------------------------------
+                    cols = prop[contador].GetCustomAttributes(typeof(ColunasBancoDados), true);
+                    if (cols.Length > 0)
+                    {
+                        ColunasBancoDados colunas = (ColunasBancoDados)cols[0];
+                        if (colunas.ChavePrimaria == true)
+                        {
+                            listaParametros.Add(new SqlParameter("@" + colunas.NomeColuna, prop[contador].GetValue(modelo, null)));
+                        }
+                    }
+                }
+                param = new SqlParameter[listaParametros.Count];
+                for (int con = 0; con < listaParametros.Count; con++)
+                {
+                    param[con] = listaParametros[con];
+                }
+                return param;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                cols = null;
+                prop = null;
+            }
+        }
+        #endregion Busca Nome Parametros Chave Primaria
+
+        #region Insere
+        /// <summary>
+        /// Insere os dados no banco.
+        /// </summary>
+        /// <param name="model">Model com os dados e a tabela a ser inserido</param>
         public void Insere(ModelPai model)
         {
-            const string INICIONOMEPROC = "sp_insert_";
+            string inicioNomeProc = "sp_" + Comando.insert.ToString() + "_";
+            this.ExecutaComandoSql(model, inicioNomeProc, Comando.insert);
+        }
+        #endregion Insere
+
+        #region Deleta
+        /// <summary>
+        /// Delete os dados no banco.
+        /// </summary>
+        /// <param name="model">Model com os dados e a tabela a ser inserido</param>
+        public void Deleta(ModelPai model)
+        {
+            string inicioNomeProc = "sp_" + Comando.delete.ToString() + "_";
+            this.ExecutaComandoSql(model, inicioNomeProc, Comando.delete);
+        }
+        #endregion Deleta
+
+        #region Altera
+        /// <summary>
+        /// Altera os dados no banco.
+        /// </summary>
+        /// <param name="model">Model com os dados e a tabela a ser inserido</param>
+        public void Altera(ModelPai model)
+        {
+            string inicioNomeProc = "sp_" + Comando.update.ToString() + "_";
+            this.ExecutaComandoSql(model, inicioNomeProc, Comando.update);
+        }
+        #endregion Altera
+
+        #region Executa Comando Sql
+        public void ExecutaComandoSql(ModelPai model, string inicioNomeProc, Comando com)
+        {
             string nomeProc;
             SqlParameter[] parametros = null;
             try
             {
-                nomeProc = INICIONOMEPROC + model.getNomeTabela();
-                parametros = this.BuscaNomeParametros(model.GetType(), model);
+                nomeProc = inicioNomeProc + model.getNomeTabela();
+                if (com == Comando.insert)
+                {
+                    parametros = this.BuscaNomeParametros(model);
+                }
+                else
+                {
+                    parametros = this.BuscaNomeParametrosChavePrimaria(model);
+                }
                 base.ExecutaProcedure(nomeProc, parametros);
             }
             catch (Exception ex)
@@ -110,5 +209,6 @@ namespace TCC.BUSINESS
                 parametros = null;
             }
         }
+        #endregion Executa Comando Sql
     }
 }
