@@ -110,7 +110,7 @@ namespace TCC.UI
             try
             {
                 model = this.PegaDadosTela();
-                regra.CadastraFornecedor(model);
+                regra.ValidarInsere(model);
                 this.ApagaDadosTela();
                 this.BuscaIdMaximo();
             }

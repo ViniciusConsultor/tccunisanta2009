@@ -8,24 +8,7 @@ namespace TCC.BUSINESS
 {
     class rUsuarioPerfil : ComandosSql
     {
-        public void CadastraUsuarioPerfil(mUsuarioPerfil model)
-        {
-            dUsuarioPerfil dal = new dUsuarioPerfil();
-            try
-            {
-                dal.CadastraUsuarioPerfil(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dal = null;
-            }
-        }
-
-        public void ValidarInsert(mUsuarioPerfil model)
+        public void Validar(mUsuarioPerfil model)
         {
             try
             {
@@ -44,35 +27,17 @@ namespace TCC.BUSINESS
             }
         }
 
-        public override void Insere(object model)
+        public override void ValidarInsere(ModelPai model)
         {
-            mUsuarioPerfil modelo = (mUsuarioPerfil)model;
-            ValidarInsere(modelo);
-            CadastraUsuarioPerfil(modelo);
+            base.Insere(model);
         }
 
-        public override void ValidarInsere(object model)
-        {
-            mUsuarioPerfil modelo = (mUsuarioPerfil)model;
-            ValidarInsert(modelo);
-        }
-
-        public override void Deleta(object model)
+        public override void ValidarDeleta(ModelPai model)
         {
             throw new NotImplementedException();
         }
 
-        public override void ValidarDeleta(object model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Altera(object model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ValidarAltera(object model)
+        public override void ValidarAltera(ModelPai model)
         {
             throw new NotImplementedException();
         }

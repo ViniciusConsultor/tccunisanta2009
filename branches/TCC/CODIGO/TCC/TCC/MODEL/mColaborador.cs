@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mColaborador
+    class mColaborador : ModelPai
     {
         private int idColab;
         private int idUsuario;
@@ -24,124 +24,130 @@ namespace TCC.MODEL
         private char sexo;
         private DateTime datAtl;
         private bool flgAtivo;
+        private string nomeTabela = "colaborador";
 
-        [ColunasBancoDados("id_colab", System.Data.SqlDbType.Int)]
+        [ColunasBancoDados("id_colab", System.Data.SqlDbType.Int, true)]
         public int IdColab
         {
             get { return idColab; }
             set { idColab = value; }
         }
        
-        [ColunasBancoDados("id_usu", System.Data.SqlDbType.Int)]
+        [ColunasBancoDados("id_usu", System.Data.SqlDbType.Int, false)]
         public int IdUsuario
         {
             get { return idUsuario; }
             set { idUsuario = value; }
         }
 
-        [ColunasBancoDados("id_depto", System.Data.SqlDbType.Int)]
+        [ColunasBancoDados("id_depto", System.Data.SqlDbType.Int, false)]
         public int IdDepto
         {
             get { return idDepto; }
             set { idDepto = value; }
         }
 
-        [ColunasBancoDados("nom_colab", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("nom_colab", System.Data.SqlDbType.VarChar, false)]
         public string NomeColab
         {
             get { return nomeColab; }
             set { nomeColab = value; }
         }
 
-        [ColunasBancoDados("dat_nasc", System.Data.SqlDbType.DateTime)]
+        [ColunasBancoDados("dat_nasc", System.Data.SqlDbType.DateTime, false)]
         public DateTime DatNasc
         {
             get { return datNasc; }
             set { datNasc = value; }
         }
 
-        [ColunasBancoDados("nom_rua", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("nom_rua", System.Data.SqlDbType.VarChar, false)]
         public string NomeRua
         {
             get { return nomeRua; }
             set { nomeRua = value; }
         }
 
-        [ColunasBancoDados("nro_end", System.Data.SqlDbType.Int)]
+        [ColunasBancoDados("nro_end", System.Data.SqlDbType.Int, false)]
         public int NroEnd
         {
             get { return nroEnd; }
             set { nroEnd = value; }
         }
 
-        [ColunasBancoDados("compl_end", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("compl_end", System.Data.SqlDbType.VarChar, false)]
         public string ComplEnd
         {
             get { return complEnd; }
             set { complEnd = value; }
         }
 
-        [ColunasBancoDados("cep", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("cep", System.Data.SqlDbType.VarChar, false)]
         public string Cep
         {
             get { return cep; }
             set { cep = value; }
         }
 
-        [ColunasBancoDados("bairr_end", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("bairr_end", System.Data.SqlDbType.VarChar, false)]
         public string BairrEnd
         {
             get { return bairrEnd; }
             set { bairrEnd = value; }
         }
 
-        [ColunasBancoDados("cidade", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("cidade", System.Data.SqlDbType.VarChar, false)]
         public string Cidade
         {
             get { return cidade; }
             set { cidade = value; }
         }
 
-        [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int)]
+        [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int, false)]
         public int Estado
         {
             get { return estado; }
             set { estado = value; }
         }
 
-        [ColunasBancoDados("rg", System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("rg", System.Data.SqlDbType.VarChar, false)]
         public string Rg
         {
             get { return rg; }
             set { rg = value; }
         }
 
-        [ColunasBancoDados("cpf",System.Data.SqlDbType.VarChar)]
+        [ColunasBancoDados("cpf", System.Data.SqlDbType.VarChar, false)]
         public string Cpf
         {
             get { return cpf; }
             set { cpf = value; }
         }
 
-        [ColunasBancoDados("sexo", System.Data.SqlDbType.Char)]
+        [ColunasBancoDados("sexo", System.Data.SqlDbType.Char, false)]
         public char Sexo
         {
             get { return sexo; }
             set { sexo = value; }
         }
 
-        [ColunasBancoDados("dat_atl", System.Data.SqlDbType.DateTime)]
+        [ColunasBancoDados("dat_atl", System.Data.SqlDbType.DateTime, false)]
         public DateTime DatAtl
         {
-            get { return DateTime.Now; }
+            get { return datAtl; }
             set { datAtl = value; }
         }
 
-        [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit)]
+        [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit, false)]
         public bool FlgAtivo
         {
-            get { return true; }
+            get { return flgAtivo; }
             set { flgAtivo = value; }
+        }
+
+        public override string getNomeTabela()
+        {
+            return nomeTabela;
         }
     }
 }

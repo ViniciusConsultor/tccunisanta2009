@@ -7,24 +7,8 @@ using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
-    class rDepartamento
+    class rDepartamento :ComandosSql
     {
-        public void CadastraDepartamento(MODEL.mDepartamento model)
-        {
-            dDepartamento dal = new dDepartamento();
-            try
-            {
-                dal.CadastraDepartamento(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dal = null;
-            }
-        }
         public DataTable BuscaDepartamento(string Descricao)
         {
             dDepartamento dal = new dDepartamento();
@@ -44,19 +28,18 @@ namespace TCC.BUSINESS
 
         public int BuscaIdMaximoDepartamento()
         {
-            dDepartamento dalDepartamento = new dDepartamento();
             DataTable dt;
             int idDepartamento;
             try
             {
-                dt = dalDepartamento.BuscaIdMaximoDepartamento();
-                if (dt.Rows[0]["id_depto"] == DBNull.Value || dt.Rows[0]["id_depto"] == null)
+                dt = base.BuscaIdMaximoTabelas("id_depto", "departamento");
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idDepartamento = 0;
                 }
                 else
                 {
-                    idDepartamento = Convert.ToInt32(dt.Rows[0]["id_depto"]);
+                    idDepartamento = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++idDepartamento;
             }
@@ -66,9 +49,23 @@ namespace TCC.BUSINESS
             }
             finally
             {
-                dalDepartamento = null;
                 dt = null;
             }
+        }
+
+        public override void ValidarInsere(ModelPai model)
+        {
+            base.Insere(model);
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

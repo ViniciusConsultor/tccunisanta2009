@@ -7,26 +7,8 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rPerfil
+    class rPerfil : ComandosSql
     {
-        public void cadastraPerfil(mPerfil model)
-        {
-            dPerfil dalPerfil= new dPerfil();
-            try
-            {
-                dalPerfil.CadastraPerfil(model);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                dalPerfil = null;
-            }
-        }
-
         public int BuscaIdMaximoPerfil()
         {
             dPerfil dalPerfil = new dPerfil();
@@ -34,14 +16,14 @@ namespace TCC.BUSINESS
             int idPerfil;
             try
             {
-                dt = dalPerfil.BuscaIdMaximoPerfil();
-                if (dt.Rows[0]["id_perfil"] == DBNull.Value || dt.Rows[0]["id_perfil"] == null)
+                dt = base.BuscaIdMaximoTabelas("id_perfil", "perfil");
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idPerfil = 0;
                 }
                 else
                 {
-                    idPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
+                    idPerfil = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++idPerfil;
             }
@@ -71,6 +53,21 @@ namespace TCC.BUSINESS
             {
                 dal = null;
             }
+        }
+
+        public override void ValidarInsere(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
