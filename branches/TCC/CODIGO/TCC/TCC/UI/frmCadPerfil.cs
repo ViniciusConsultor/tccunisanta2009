@@ -19,6 +19,7 @@ namespace TCC.UI
             InitializeComponent();
         }
         #endregion
+
         #region Eventos
         private void frmCadPerfil_Load(object sender, EventArgs e)
         {
