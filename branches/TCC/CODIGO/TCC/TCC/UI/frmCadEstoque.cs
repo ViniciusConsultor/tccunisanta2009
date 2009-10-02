@@ -75,7 +75,7 @@ namespace TCC.UI
             try
             {
                 model = this.PegaDadosTela();
-                regra.cadstraEstoque(model);
+                regra.ValidarInsere(model);
                 this.ApagaControles();
                 this.BuscaIdMaximo();
             }

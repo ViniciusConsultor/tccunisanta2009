@@ -8,25 +8,8 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rCadColaborador
+    class rCadColaborador:ComandosSql
     {
-        public void cadastraColaborador(mColaborador model)
-        {
-            dColaborador dalCadColaborador = new dColaborador();
-            try
-            {
-                dalCadColaborador.CadastraColaborador(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dalCadColaborador = null;
-            }
-        }
-
         public int BuscaIDMaximoColaborador()
         {
             dColaborador dalColaborador = new dColaborador();
@@ -34,14 +17,14 @@ namespace TCC.BUSINESS
             int idColaborador;
             try
             {
-                dt = dalColaborador.BuscaIDMaximoColaborador();
-                if (dt.Rows[0]["id_colab"] == DBNull.Value || dt.Rows[0]["id_colab"] == null)
+                dt = base.BuscaIdMaximoTabelas("id_colab", "Colaborador");
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idColaborador = 0;
                 }
                 else
                 {
-                    idColaborador = Convert.ToInt32(dt.Rows[0]["id_colab"]);
+                    idColaborador = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++idColaborador;
             }
@@ -54,6 +37,21 @@ namespace TCC.BUSINESS
                 dalColaborador = null;
                 dt = null;
             }
+        }
+
+        public override void ValidarInsere(ModelPai model)
+        {
+            base.Insere(model);
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

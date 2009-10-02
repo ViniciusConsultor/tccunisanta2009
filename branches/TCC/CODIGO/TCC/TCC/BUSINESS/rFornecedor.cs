@@ -7,25 +7,8 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rFornecedor
+    class rFornecedor : ComandosSql
     {
-        public void CadastraFornecedor(mFornecedor model)
-        {
-            dFornecedor dal = new dFornecedor();
-            try
-            {
-                dal.CadastraFornecedor(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dal = null;
-            }
-        }
-
         public int BuscaIdMaximoFornecedor()
         {
             dFornecedor dal = new dFornecedor();
@@ -33,7 +16,7 @@ namespace TCC.BUSINESS
             int idFornecedor;
             try
             {
-                dt = dal.BuscaIdMaximoFornecedor();
+                dt = base.BuscaIdMaximoTabelas("id_fornecedor", "fornecedor");
                 if (dt.Rows[0]["id_fornecedor"] == DBNull.Value || dt.Rows[0]["id_fornecedor"] == null)
                 {
                     idFornecedor = 0;
@@ -53,6 +36,21 @@ namespace TCC.BUSINESS
                 dal = null;
                 dt = null;
             }
+        }
+
+        public override void ValidarInsere(ModelPai model)
+        {
+            base.Insere(model);
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

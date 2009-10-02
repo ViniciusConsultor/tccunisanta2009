@@ -26,7 +26,7 @@ namespace TCC.UI
             BUSINESS.rDepartamento regraDep = new TCC.BUSINESS.rDepartamento();
             try
             {
-                regraDep.CadastraDepartamento(this.PegaDadosTela());
+                regraDep.ValidarInsere(this.PegaDadosTela());
                 this.ApagaControles();
                 this.BuscaUltimoIdDepartamento();
             }

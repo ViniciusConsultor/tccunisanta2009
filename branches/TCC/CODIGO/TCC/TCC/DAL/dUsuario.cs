@@ -10,38 +10,6 @@ namespace TCC.DAL
 {
     class dUsuario : AcessoDados
     {
-        public void CadastraUsuario(mUsuario model)
-        {
-            ModelAuxiliar mod;
-            SqlParameter[] parametros;
-            try
-            {
-                mod = new ModelAuxiliar(model.GetType(), model);
-                parametros = mod.BuscaNomeParametros();
-                base.ExecutaProcedure("sp_insert_usuario", parametros);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                mod = null;
-                parametros = null;
-            }
-        }
-
-        public DataTable BuscaIdMaximoUsuario()
-        {
-            try
-            {
-                return base.BuscaDados("sp_busca_maxUsuario");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         public DataTable BuscarUsuario(string Descricao)
         {
             SqlParameter param = null;

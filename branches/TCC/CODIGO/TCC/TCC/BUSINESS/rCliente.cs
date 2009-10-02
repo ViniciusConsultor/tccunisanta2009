@@ -7,25 +7,8 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rCliente
+    class rCliente : ComandosSql
     {
-        public void CadastraCliente(mCliente model)
-        {
-            dCliente dal = new dCliente();
-            try
-            {
-                dal.CadastraCliente(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dal = null;
-            }
-        }
-
         public int BuscaIdMaximoCliente()
         {
             dCliente dal = new dCliente();
@@ -53,6 +36,21 @@ namespace TCC.BUSINESS
                 dal = null;
                 dt = null;
             }
+        }
+
+        public override void ValidarInsere(ModelPai model)
+        {
+            base.Insere(model);
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

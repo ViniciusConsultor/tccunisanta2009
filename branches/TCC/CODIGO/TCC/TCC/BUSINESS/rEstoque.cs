@@ -7,25 +7,8 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rEstoque
+    class rEstoque : ComandosSql
     {
-        public void cadstraEstoque(mEstoque model)
-        {
-            dEstoque dal = new dEstoque();
-            try
-            {
-                dal.cadastraEstoque(model);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                dal = null;
-            }
-        }
         public int BuscaIdMaximoEstoque()
         {
             dEstoque dal = new dEstoque();
@@ -33,14 +16,14 @@ namespace TCC.BUSINESS
             int id_estoque;
             try
             {
-                dt = dal.BuscaIdMaximoEstoque();
-                if (dt.Rows[0]["id_estoque"] == DBNull.Value || dt.Rows[0]["id_estoque"] == null)
+                dt = base.BuscaIdMaximoTabelas("id_estoque", "estoque");
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     id_estoque = 0;
                 }
                 else
                 {
-                    id_estoque = Convert.ToInt32(dt.Rows[0]["id_estoque"]);
+                    id_estoque = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++id_estoque;
             }
@@ -53,6 +36,21 @@ namespace TCC.BUSINESS
                 dal = null;
                 dt = null;
             }
+        }
+
+        public override void ValidarInsere(ModelPai model)
+        {
+            base.Insere(model);
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
