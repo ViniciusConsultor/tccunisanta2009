@@ -33,7 +33,10 @@ namespace TCC.UI
             try
             {
                 modelColaborador = this.PegaDadosTela();
-                regraMenu.ValidarInsere(modelColaborador);
+                if (modelColaborador != null)
+                {
+                    regraMenu.ValidarInsere(modelColaborador);
+                }
                 this.LimpaControles();
                 this.BuscaCodigoColadoradorMax();
             }
@@ -127,27 +130,7 @@ namespace TCC.UI
         #endregion
 
         #region Metodos
-        private mColaborador PegaDadosTela()
-        {
-            mColaborador model = new mColaborador();
-            model.BairrEnd = txtBairro.Text;
-            model.Cep = txtCEP.Text+txtCep2.Text;
-            model.Cidade = txtCidade.Text;
-            model.ComplEnd = txtComplemento.Text;
-            model.Cpf = txtCpf.Text;
-            model.DatNasc = new DateTime(Convert.ToInt32(txtDataYyyy.Text),Convert.ToInt32(txtDataMm.Text),Convert.ToInt32(txtDataDd.Text));
-            model.Estado = Convert.ToInt32(cbEstado.SelectedValue);
-            model.IdColab = Convert.ToInt32(txtCdColab.Text);
-            model.IdDepto = Convert.ToInt32(txtCdDepartamento.Text);
-            model.IdUsuario = Convert.ToInt32(txtCdUsuario.Text);
-            model.NomeColab = txtNome.Text;
-            model.NomeRua = txtRua.Text;
-            model.NroEnd = Convert.ToInt32(txtNumero.Text);
-            model.Sexo = Convert.ToChar(CbSexo.Text);
-            model.Rg = txtRg.Text;
-
-            return model;
-        }
+        
         private void BuscaCodigoColadoradorMax()
         {
             rCadColaborador regraColaborador = new rCadColaborador();
@@ -183,6 +166,7 @@ namespace TCC.UI
             model.IdDepto = Convert.ToInt32(txtCdDepartamento);
             return model;
         }
+
         #region Limpa Controles
         /// <summary>
         /// Limpa os controles da tela
@@ -205,6 +189,107 @@ namespace TCC.UI
             }
         }
         #endregion Limpa Controles        
+
+        private mColaborador PegaDadosTela()
+        {
+            mColaborador model = null;
+            try
+            {
+                this.ValidaDadosNulos();
+                model = new mColaborador();
+                model.BairrEnd = txtBairro.Text;
+                model.Cep = txtCEP.Text + txtCep2.Text;
+                model.Cidade = txtCidade.Text;
+                model.ComplEnd = txtComplemento.Text;
+                model.Cpf = txtCpf.Text;
+                model.DatNasc = new DateTime(Convert.ToInt32(txtDataYyyy.Text), Convert.ToInt32(txtDataMm.Text), Convert.ToInt32(txtDataDd.Text));
+                model.Estado = Convert.ToInt32(cbEstado.SelectedValue);
+                model.IdColab = Convert.ToInt32(txtCdColab.Text);
+                model.IdDepto = Convert.ToInt32(txtCdDepartamento.Text);
+                model.IdUsuario = Convert.ToInt32(txtCdUsuario.Text);
+                model.NomeColab = txtNome.Text;
+                model.NomeRua = txtRua.Text;
+                model.NroEnd = Convert.ToInt32(txtNumero.Text);
+                model.Sexo = Convert.ToChar(CbSexo.Text);
+                model.Rg = txtRg.Text;
+                model.DatAtl = DateTime.Now;
+                return model;
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
+            {
+                MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCEP.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.DiaNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Dia Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataDd.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.MesNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Mes Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataMm.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Ano Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataYyyy.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdDepartamento.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
+            {
+                MessageBox.Show("Preencher campo Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdUsuario.Focus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return model;
+        }
+
+        public void ValidaDadosNulos()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(this.txtCEP.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtDataDd.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.DiaNascimentoVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtDataMm.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.MesNascimentoVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtDataYyyy.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtCdDepartamento.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtCdUsuario.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
 
         #endregion
     }
