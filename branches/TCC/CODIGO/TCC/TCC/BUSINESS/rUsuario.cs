@@ -136,7 +136,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarDeleta(ModelPai model)
         {
-            throw new NotImplementedException();
+            base.Deleta(model);
         }
 
         public override void ValidarAltera(ModelPai model)
