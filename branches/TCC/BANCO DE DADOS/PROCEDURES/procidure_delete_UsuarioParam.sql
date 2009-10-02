@@ -1,7 +1,7 @@
 USE Megatechdatabase
 go
 
-CREATE PROCEDURE sp_deleta_usuario
+CREATE PROCEDURE sp_delete_usuario
 @id_usu INT
 AS
 DELETE Usuario
