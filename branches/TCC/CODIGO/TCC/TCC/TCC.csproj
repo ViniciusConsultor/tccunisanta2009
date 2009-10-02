@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUSINESS\ComandosSql.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\AnoNascimentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CepVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CodigoDepartamentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CodigoUsuarioVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\DiaNascimentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\MesNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\LoginVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\PerfilSemIdExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\SenhaVaziaException.cs" />
@@ -86,11 +92,11 @@
     <Compile Include="DAL\dUsuario.cs" />
     <Compile Include="DAL\dUsuarioPerfil.cs" />
     <Compile Include="MODEL\ColunasBancoDados.cs" />
-    <Compile Include="MODEL\dLogin.cs" />
     <Compile Include="MODEL\mCadColaborador.cs" />
     <Compile Include="MODEL\mCliente.cs" />
     <Compile Include="MODEL\mColaborador.cs" />
     <Compile Include="MODEL\mDepartamento.cs" />
+    <Compile Include="MODEL\mEstado.cs" />
     <Compile Include="MODEL\mEstoque.cs" />
     <Compile Include="MODEL\mFornecedor.cs" />
     <Compile Include="MODEL\mMenu.cs" />

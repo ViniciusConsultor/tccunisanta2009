@@ -81,7 +81,7 @@ namespace TCC.UI
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
             finally
             {
