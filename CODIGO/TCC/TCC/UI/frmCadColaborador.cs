@@ -33,7 +33,7 @@ namespace TCC.UI
             try
             {
                 modelColaborador = this.PegaDadosTela();
-                regraMenu.cadastraColaborador(modelColaborador);
+                regraMenu.ValidarInsere(modelColaborador);
                 this.LimpaControles();
                 this.BuscaCodigoColadoradorMax();
             }

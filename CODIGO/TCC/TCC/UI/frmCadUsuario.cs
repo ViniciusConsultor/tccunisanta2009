@@ -68,7 +68,7 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.PerfilSemIdExeception)
             {
                 MessageBox.Show("Não é Possivel Cadastrar um usuário sem o Codigo do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                regraUsu.Deleta(modelUsu);
+                //regraUsu.Deleta(modelUsu);
                 btnBuscaPerfilUsuario.Focus();
             }
             catch (BUSINESS.Exceptions.UsuarioSemIdException)

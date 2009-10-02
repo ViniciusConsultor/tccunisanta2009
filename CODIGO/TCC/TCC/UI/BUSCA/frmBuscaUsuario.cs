@@ -12,11 +12,20 @@ namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaUsuario : Form
     {
+        bool _alteracao;
+
         #region Construtor
+        public frmBuscaUsuario()
+        {
+            InitializeComponent();
+            this._alteracao = true;
+        }
+
         public frmBuscaUsuario(TextBox txtIdUsuario)
         {
             InitializeComponent();
             _txtParam = txtIdUsuario;
+            this._alteracao = false;
         }
         #endregion
 
@@ -46,13 +55,22 @@ namespace TCC.UI.BUSCA
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
+            rUsuario regraUsuario = null;
             try
             {
                 //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                 //------------------------------------------------------------------------------------
                 DataGridViewCell dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
-                this._txtParam.Text = dvC.Value.ToString();
-                this.Close();
+                
+                if (this._alteracao == false)
+                {
+                    this._txtParam.Text = dvC.Value.ToString();
+                    this.Close();
+                }
+                else
+                {
+
+                }
             }
             catch (Exception ex)
             {
@@ -60,7 +78,7 @@ namespace TCC.UI.BUSCA
             }
             finally
             {
-
+                regraUsuario = null;
             }
         }
         #endregion

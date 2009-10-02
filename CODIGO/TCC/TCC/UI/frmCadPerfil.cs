@@ -32,7 +32,7 @@ namespace TCC.UI
             try
             {
                 modelPerfil = this.PegaDadosTela();
-                regraPerfil.cadastraPerfil(modelPerfil);
+                regraPerfil.ValidarInsere(modelPerfil);
                 this.LimpaControles();
                 this.BuscaMaxDepto();
             }

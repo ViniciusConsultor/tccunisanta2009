@@ -47,17 +47,17 @@ namespace TCC.DAL
         }
         #endregion Execute Sql
 
-        protected bool ExecutaProcedure(string nomeProc, SqlParameter parametros)
+        protected void ExecutaProcedure(string nomeProc, SqlParameter parametros)
         {
             SqlParameter[] param = new SqlParameter[1];
             try
             {
                 param[0] = parametros;
-                return this.ExecutaProcedure(nomeProc, param);
+                this.ExecutaProcedure(nomeProc, param);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
             finally
             {
@@ -65,7 +65,7 @@ namespace TCC.DAL
             }
         }
 
-        protected bool ExecutaProcedure(string nomeProc, SqlParameter[] parametros)
+        protected void ExecutaProcedure(string nomeProc, SqlParameter[] parametros)
         {
             try
             {
@@ -77,12 +77,10 @@ namespace TCC.DAL
                 comando.Parameters.AddRange(parametros);
 
                 comando.ExecuteNonQuery();
-                return true;
             }
             catch (Exception ex)
             {
                 throw ex;
-                return false;
             }
             finally
             {

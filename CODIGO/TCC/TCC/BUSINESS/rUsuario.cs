@@ -9,24 +9,6 @@ namespace TCC.BUSINESS
 {
     class rUsuario : ComandosSql
     {
-        #region Cadastra Usuario
-        private void CadastraUsuario(mUsuario model)
-        {
-            dUsuario dalUsuario = new dUsuario();
-            try
-            {
-                dalUsuario.CadastraUsuario(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dalUsuario = null;
-            }
-        }
-        #endregion Cadastra Usuario
 
         #region Busca Id Maximo Usuario
         public int BuscaIdMaximoUsuario()
@@ -119,13 +101,11 @@ namespace TCC.BUSINESS
             }
         }
 
-        public override void Insere(object model)
+        public void BuscaDadosAlterar(int idUsuario)
         {
-            mUsuario modelUsu = (mUsuario)model;
             try
             {
-                //this.ValidarInsere(model);
-                this.CadastraUsuario(modelUsu);
+
             }
             catch (Exception ex)
             {
@@ -133,11 +113,11 @@ namespace TCC.BUSINESS
             }
             finally
             {
-                modelUsu = null;
+
             }
         }
 
-        public override void ValidarInsere(object model)
+        public override void ValidarInsere(ModelPai model)
         {
             mUsuario modelUsu = (mUsuario)model;
             try
@@ -154,23 +134,12 @@ namespace TCC.BUSINESS
             }
         }
 
-        public override void Deleta(object model)
-        {
-            mUsuario modelo = (mUsuario)model;
-            this.DeletaUsuario(modelo);
-        }
-
-        public override void ValidarDeleta(object model)
+        public override void ValidarDeleta(ModelPai model)
         {
             throw new NotImplementedException();
         }
 
-        public override void Altera(object model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ValidarAltera(object model)
+        public override void ValidarAltera(ModelPai model)
         {
             throw new NotImplementedException();
         }

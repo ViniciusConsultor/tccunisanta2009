@@ -127,7 +127,7 @@ namespace TCC.UI
             try
             {
                 model = this.PegaDadosTela();
-                regra.CadastraCliente(model);
+                regra.Insere(model);
                 this.ApagaControles();
                 this.BuscaIdMaximo();
             }

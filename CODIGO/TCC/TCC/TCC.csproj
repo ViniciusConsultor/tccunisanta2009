@@ -95,6 +95,7 @@
     <Compile Include="MODEL\mFornecedor.cs" />
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\ModelAuxiliar.cs" />
+    <Compile Include="MODEL\ModelPai.cs" />
     <Compile Include="MODEL\mPerfil.cs" />
     <Compile Include="MODEL\mPerfilMenu.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
@@ -287,6 +288,9 @@
     <Content Include="UI\img\bg_login.jpg" />
     <Content Include="UI\img\bg_principal.jpg" />
     <Content Include="UI\img\bg_telas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\ALTERA\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

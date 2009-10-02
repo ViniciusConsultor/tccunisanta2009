@@ -71,7 +71,7 @@ namespace TCC.UI
             try
             {
                 model = this.PegaDadosTela();
-                regraPerfilMenu.CadastraPerfilMenu(model);
+                regraPerfilMenu.ValidarInsere(model);
             }
             catch (Exception ex)
             {

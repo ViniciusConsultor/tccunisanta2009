@@ -8,25 +8,6 @@ namespace TCC.DAL
 {
     class dUsuarioPerfil : AcessoDados
     {
-        public void CadastraUsuarioPerfil(mUsuarioPerfil model)
-        {
-            SqlParameter[] param = null;
-            ModelAuxiliar mod;
-            try
-            {
-                mod = new ModelAuxiliar(model.GetType(), model);
-                param = mod.BuscaNomeParametros();
-                base.ExecutaProcedure("sp_insert_usuarioPerfil", param);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                param = null;
-                mod = null;
-            }
-        }
+
     }
 }

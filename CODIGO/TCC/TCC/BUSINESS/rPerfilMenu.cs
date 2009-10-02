@@ -6,23 +6,21 @@ using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rPerfilMenu
+    class rPerfilMenu : ComandosSql
     {
-        public void CadastraPerfilMenu(mPerfilMenu model)
+        public override void ValidarInsere(ModelPai model)
         {
-            dPerfilMenu dal = new dPerfilMenu();
-            try
-            {
-                dal.CadastraPerfilMenu(model);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                dal = null;
-            }
+            base.Insere(model);
+        }
+
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
