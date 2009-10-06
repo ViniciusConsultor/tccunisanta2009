@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -166,37 +166,13 @@
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmCdPeca.resx">
-      <DependentUpon>frmCdPeca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmCompra.resx">
-      <DependentUpon>frmCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmFamiliaMotor.resx">
-      <DependentUpon>frmFamiliaMotor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmInicial.resx">
       <DependentUpon>frmInicial.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmKitGrupoPeca.resx">
-      <DependentUpon>frmKitGrupoPeca.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmOrdemProducao.resx">
-      <DependentUpon>frmOrdemProducao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmPedidoVenda.resx">
-      <DependentUpon>frmPedidoVenda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmUsinagem.resx">
-      <DependentUpon>frmUsinagem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmVenda.resx">
-      <DependentUpon>frmVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmVendaMotor.resx">
       <DependentUpon>frmVendaMotor.cs</DependentUpon>
@@ -295,65 +271,17 @@
     <Compile Include="UI\frmCadUsuario.Designer.cs">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\frmCdPeca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmCdPeca.Designer.cs">
-      <DependentUpon>frmCdPeca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmCompra.Designer.cs">
-      <DependentUpon>frmCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmFamiliaMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmFamiliaMotor.Designer.cs">
-      <DependentUpon>frmFamiliaMotor.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\frmInicial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmInicial.Designer.cs">
       <DependentUpon>frmInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\frmKitGrupoPeca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmKitGrupoPeca.Designer.cs">
-      <DependentUpon>frmKitGrupoPeca.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmOrdemProducao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmOrdemProducao.Designer.cs">
-      <DependentUpon>frmOrdemProducao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmPedidoVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmPedidoVenda.Designer.cs">
-      <DependentUpon>frmPedidoVenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmUsinagem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmUsinagem.Designer.cs">
-      <DependentUpon>frmUsinagem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmVenda.Designer.cs">
-      <DependentUpon>frmVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmVendaMotor.cs">
       <SubType>Form</SubType>

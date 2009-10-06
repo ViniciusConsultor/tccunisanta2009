@@ -11,19 +11,18 @@ namespace TCC.BUSINESS
     {
         public int BuscaIdMaximoCliente()
         {
-            dCliente dal = new dCliente();
             DataTable dt;
             int idCli;
             try
             {
-                dt = dal.BuscaIdMaximoCliente();
-                if (dt.Rows[0]["id_cli"] == DBNull.Value || dt.Rows[0]["id_cli"] == null)
+                dt = base.BuscaIdMaximoTabelas("id_cli", "cliente");
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idCli = 0;
                 }
                 else
                 {
-                    idCli = Convert.ToInt32(dt.Rows[0]["id_cli"]);
+                    idCli = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++idCli;
             }
@@ -33,7 +32,6 @@ namespace TCC.BUSINESS
             }
             finally
             {
-                dal = null;
                 dt = null;
             }
         }

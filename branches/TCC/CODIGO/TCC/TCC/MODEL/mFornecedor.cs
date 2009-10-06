@@ -19,7 +19,7 @@ namespace TCC.MODEL
         private DateTime datAtl;
         private bool flgAtivo;
         private int idEstado;
-        private string nomeTabela = "fonecedor";
+        private string nomeTabela = "fornecedor";
 
         [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int, false)]
         public int IdEstado
