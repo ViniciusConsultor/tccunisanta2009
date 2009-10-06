@@ -17,13 +17,13 @@ namespace TCC.BUSINESS
             try
             {
                 dt = base.BuscaIdMaximoTabelas("id_fornecedor", "fornecedor");
-                if (dt.Rows[0]["id_fornecedor"] == DBNull.Value || dt.Rows[0]["id_fornecedor"] == null)
+                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idFornecedor = 0;
                 }
                 else
                 {
-                    idFornecedor = Convert.ToInt32(dt.Rows[0]["id_fornecedor"]);
+                    idFornecedor = Convert.ToInt32(dt.Rows[0]["max"]);
                 }
                 return ++idFornecedor;
             }
