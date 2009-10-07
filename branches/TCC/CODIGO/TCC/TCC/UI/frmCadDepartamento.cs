@@ -32,7 +32,8 @@ namespace TCC.UI
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDescricaoDepartamento.Focus();
             }
         }
 
@@ -43,7 +44,7 @@ namespace TCC.UI
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private MODEL.mDepartamento PegaDadosTela()

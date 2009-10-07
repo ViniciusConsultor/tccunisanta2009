@@ -188,6 +188,11 @@ namespace TCC.UI
         }
         #endregion Busca Codigo Usuario Max
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion Metodos
     }
 }
