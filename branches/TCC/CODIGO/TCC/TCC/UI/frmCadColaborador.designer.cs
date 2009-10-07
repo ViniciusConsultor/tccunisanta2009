@@ -350,11 +350,12 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(566, 219);
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Location = new System.Drawing.Point(12, 5);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(39, 31);
             this.btnVoltar.TabIndex = 20;
-            this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -417,21 +418,23 @@
             // 
             // btnBuscaUsuario
             // 
+            this.btnBuscaUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaUsuario.BackgroundImage")));
+            this.btnBuscaUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaUsuario.Location = new System.Drawing.Point(416, 7);
             this.btnBuscaUsuario.Name = "btnBuscaUsuario";
             this.btnBuscaUsuario.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaUsuario.TabIndex = 1;
-            this.btnBuscaUsuario.Text = "...";
             this.btnBuscaUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaUsuario.Click += new System.EventHandler(this.btnBuscaUsuario_Click);
             // 
             // btnBuscaDepartamento
             // 
+            this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
+            this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(617, 7);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaDepartamento.TabIndex = 2;
-            this.btnBuscaDepartamento.Text = "...";
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 

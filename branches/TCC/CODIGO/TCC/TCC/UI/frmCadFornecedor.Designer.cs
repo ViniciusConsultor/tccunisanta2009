@@ -251,11 +251,12 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(495, 169);
+            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolta.Location = new System.Drawing.Point(5, 2);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolta.Size = new System.Drawing.Size(42, 26);
             this.btnVolta.TabIndex = 13;
-            this.btnVolta.Text = "Voltar";
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // btnlimpar

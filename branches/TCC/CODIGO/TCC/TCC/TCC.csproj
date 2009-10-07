@@ -166,6 +166,9 @@
     <EmbeddedResource Include="UI\frmCadNumeroMotor.resx">
       <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadOrdemProducao.resx">
+      <DependentUpon>frmCadOrdemProducao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadPedidoVenda.resx">
       <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
     </EmbeddedResource>

@@ -282,14 +282,15 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(434, 170);
+            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolta.Location = new System.Drawing.Point(3, 1);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolta.Size = new System.Drawing.Size(43, 34);
             this.btnVolta.TabIndex = 3;
-            this.btnVolta.Text = "Volta";
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
-            // frmVenda
+            // frmCadVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,9 +324,8 @@
             this.Controls.Add(this.lblCdMotor);
             this.Controls.Add(this.lblCdOrdemMotor);
             this.Controls.Add(this.lblCdVenda);
-            this.Name = "frmVenda";
+            this.Name = "frmCadVenda";
             this.Text = "Venda";
-            this.Load += new System.EventHandler(this.frmCadVenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

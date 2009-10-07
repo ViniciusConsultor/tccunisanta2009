@@ -122,11 +122,12 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(239, 189);
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Location = new System.Drawing.Point(2, 6);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 7;
-            this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -169,11 +170,12 @@
             // 
             // btnBuscaPerfilUsuario
             // 
+            this.btnBuscaPerfilUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPerfilUsuario.BackgroundImage")));
+            this.btnBuscaPerfilUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPerfilUsuario.Location = new System.Drawing.Point(290, 37);
             this.btnBuscaPerfilUsuario.Name = "btnBuscaPerfilUsuario";
             this.btnBuscaPerfilUsuario.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaPerfilUsuario.TabIndex = 1;
-            this.btnBuscaPerfilUsuario.Text = "...";
             this.btnBuscaPerfilUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaPerfilUsuario.Click += new System.EventHandler(this.btnBuscaPerfilUsuario_Click);
             // 

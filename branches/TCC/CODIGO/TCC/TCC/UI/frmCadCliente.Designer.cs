@@ -281,11 +281,12 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(354, 182);
+            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolta.Location = new System.Drawing.Point(4, 4);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolta.Size = new System.Drawing.Size(33, 26);
             this.btnVolta.TabIndex = 15;
-            this.btnVolta.Text = "Voltar";
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // lblTlefone
