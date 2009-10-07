@@ -15,15 +15,5 @@ namespace TCC.UI
         {
             InitializeComponent();
         }
-
-        private void frmCadTipoPeca_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

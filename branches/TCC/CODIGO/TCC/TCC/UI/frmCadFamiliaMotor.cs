@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmTipoMotor : Form
+    public partial class frmCadFamiliaMotor : Form
     {
-        public frmTipoMotor()
+        public frmCadFamiliaMotor()
         {
             InitializeComponent();
+        }
+
+        private void frmFamiliaMotor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

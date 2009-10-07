@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmUsinagem : Form
+    public partial class frmCadUsinagem : Form
     {
-        public frmUsinagem()
+        public frmCadUsinagem()
         {
             InitializeComponent();
         }

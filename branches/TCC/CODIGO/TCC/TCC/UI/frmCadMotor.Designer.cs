@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmMotor
+    partial class frmCadMotor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMotor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadMotor));
             this.lblCdMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblDsMotor = new System.Windows.Forms.Label();
@@ -115,6 +115,7 @@
             this.Controls.Add(this.lblCdMotor);
             this.Name = "frmMotor";
             this.Text = "Motor";
+            this.Load += new System.EventHandler(this.frmMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

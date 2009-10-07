@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmPedidoVenda
+    partial class frmCadPedidoVenda
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidoVenda));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPedidoVenda));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
@@ -137,7 +137,7 @@
             this.lblDsPedido.TabIndex = 21;
             this.lblDsPedido.Text = "Descriçãodo Pedido";
             // 
-            // frmPedidoVenda
+            // frmCadPedidoVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,8 +155,9 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
-            this.Name = "frmPedidoVenda";
+            this.Name = "frmCadPedidoVenda";
             this.Text = "Pedido de Venda";
+            this.Load += new System.EventHandler(this.frmCadPedidoVenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
