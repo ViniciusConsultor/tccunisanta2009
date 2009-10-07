@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmCompra : Form
+    public partial class frmCadCompra : Form
     {
-        public frmCompra()
+        public frmCadCompra()
         {
             InitializeComponent();
         }
