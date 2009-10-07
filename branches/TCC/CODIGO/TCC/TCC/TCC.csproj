@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -150,9 +150,24 @@
       <DependentUpon>frmCadEstoque.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadFamiliaMotor.resx">
+      <DependentUpon>frmCadFamiliaMotor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadFornecedor.resx">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadKitGrupoPeca.resx">
+      <DependentUpon>frmCadKitGrupoPeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadMotor.resx">
+      <DependentUpon>frmCadMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadNumeroMotor.resx">
+      <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadPedidoVenda.resx">
+      <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadPerfil.resx">
       <DependentUpon>frmCadPerfil.cs</DependentUpon>
@@ -162,9 +177,15 @@
       <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadTipoMotor.resx">
+      <DependentUpon>frmCadTipoMotor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadTipoPeca.resx">
       <DependentUpon>frmCadTipoPeca.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadUsinagem.resx">
+      <DependentUpon>frmCadUsinagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadUsuario.resx">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
@@ -173,8 +194,11 @@
     <EmbeddedResource Include="UI\frmCadPeca.resx">
       <DependentUpon>frmCadPeca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmFamiliaMotor.resx">
-      <DependentUpon>frmFamiliaMotor.cs</DependentUpon>
+    <EmbeddedResource Include="UI\frmCadVenda.resx">
+      <DependentUpon>frmCadVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCadVendaMotor.resx">
+      <DependentUpon>frmCadVendaMotor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmInicial.resx">
       <DependentUpon>frmInicial.cs</DependentUpon>
@@ -182,34 +206,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmMotor.resx">
-      <DependentUpon>frmMotor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmNumeroMotor.resx">
-      <DependentUpon>frmNumeroMotor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmOrdemProducao.resx">
-      <DependentUpon>frmOrdemProducao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmPedidoVenda.resx">
-      <DependentUpon>frmPedidoVenda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmTipoMotor.resx">
-      <DependentUpon>frmTipoMotor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmTipoPeca.resx">
-      <DependentUpon>frmTipoPeca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmUsinagem.resx">
-      <DependentUpon>frmUsinagem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmVenda.resx">
-      <DependentUpon>frmVenda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmVendaMotor.resx">
-      <DependentUpon>frmVendaMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -281,11 +277,47 @@
     <Compile Include="UI\frmCadEstoque.Designer.cs">
       <DependentUpon>frmCadEstoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmCadFamiliaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadFamiliaMotor.Designer.cs">
+      <DependentUpon>frmCadFamiliaMotor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmCadFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmCadFornecedor.Designer.cs">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadKitGrupoPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadKitGrupoPeca.Designer.cs">
+      <DependentUpon>frmCadKitGrupoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadMotor.Designer.cs">
+      <DependentUpon>frmCadMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadNumeroMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadNumeroMotor.Designer.cs">
+      <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadOrdemProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadOrdemProducao.Designer.cs">
+      <DependentUpon>frmCadOrdemProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadPedidoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadPedidoVenda.Designer.cs">
+      <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadPerfil.cs">
       <SubType>Form</SubType>
@@ -299,11 +331,23 @@
     <Compile Include="UI\frmCadPerfilMenu.Designer.cs">
       <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmCadTipoMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadTipoMotor.Designer.cs">
+      <DependentUpon>frmCadTipoMotor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmCadTipoPeca.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmCadTipoPeca.Designer.cs">
       <DependentUpon>frmCadTipoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadUsinagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadUsinagem.Designer.cs">
+      <DependentUpon>frmCadUsinagem.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadUsuario.cs">
       <SubType>Form</SubType>
@@ -317,11 +361,17 @@
     <Compile Include="UI\frmCadPeca.Designer.cs">
       <DependentUpon>frmCadPeca.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\frmFamiliaMotor.cs">
+    <Compile Include="UI\frmCadVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\frmFamiliaMotor.Designer.cs">
-      <DependentUpon>frmFamiliaMotor.cs</DependentUpon>
+    <Compile Include="UI\frmCadVenda.Designer.cs">
+      <DependentUpon>frmCadVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCadVendaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadVendaMotor.Designer.cs">
+      <DependentUpon>frmCadVendaMotor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmInicial.cs">
       <SubType>Form</SubType>
@@ -334,60 +384,6 @@
     </Compile>
     <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmMotor.Designer.cs">
-      <DependentUpon>frmMotor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmNumeroMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmNumeroMotor.Designer.cs">
-      <DependentUpon>frmNumeroMotor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmOrdemProducao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmOrdemProducao.Designer.cs">
-      <DependentUpon>frmOrdemProducao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmPedidoVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmPedidoVenda.Designer.cs">
-      <DependentUpon>frmPedidoVenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmTipoMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmTipoMotor.Designer.cs">
-      <DependentUpon>frmTipoMotor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmTipoPeca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmTipoPeca.Designer.cs">
-      <DependentUpon>frmTipoPeca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmUsinagem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmUsinagem.Designer.cs">
-      <DependentUpon>frmUsinagem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmVenda.Designer.cs">
-      <DependentUpon>frmVenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmVendaMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\frmVendaMotor.Designer.cs">
-      <DependentUpon>frmVendaMotor.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

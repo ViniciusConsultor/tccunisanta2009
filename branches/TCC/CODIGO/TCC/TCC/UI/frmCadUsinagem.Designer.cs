@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmUsinagem
+    partial class frmCadUsinagem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsinagem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsinagem));
             this.lblCdUsinagem = new System.Windows.Forms.Label();
             this.txtCdUsinagem = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
@@ -99,7 +99,7 @@
             this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
-            // frmUsinagem
+            // frmCadUsinagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +113,7 @@
             this.Controls.Add(this.lblCdPeca);
             this.Controls.Add(this.txtCdUsinagem);
             this.Controls.Add(this.lblCdUsinagem);
-            this.Name = "frmUsinagem";
+            this.Name = "frmCadUsinagem";
             this.Text = "Usinagem";
             this.ResumeLayout(false);
             this.PerformLayout();

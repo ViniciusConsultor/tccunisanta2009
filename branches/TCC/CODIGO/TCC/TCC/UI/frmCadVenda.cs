@@ -9,11 +9,12 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmPedidoVenda : Form
+    public partial class frmCadVenda : Form
     {
-        public frmPedidoVenda()
+        public frmCadVenda()
         {
             InitializeComponent();
         }
+
     }
 }

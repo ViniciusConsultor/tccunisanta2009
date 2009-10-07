@@ -29,95 +29,75 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadTipoPeca));
-            this.btnVolta = new System.Windows.Forms.Button();
-            this.btnLimpa = new System.Windows.Forms.Button();
-            this.btnInsere = new System.Windows.Forms.Button();
-            this.txtDescricaoTipoPeca = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtCdPeca = new System.Windows.Forms.TextBox();
-            this.lblCodigoPeca = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnAceitar = new System.Windows.Forms.Button();
             this.txtCdTipoPeca = new System.Windows.Forms.TextBox();
-            this.lblcodigoTipoPeca = new System.Windows.Forms.Label();
+            this.lblCdTipoPeca = new System.Windows.Forms.Label();
+            this.lblDsTipoPeca = new System.Windows.Forms.Label();
+            this.txtDsTipoPeca = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnVolta
+            // btnVoltar
             // 
-            this.btnVolta.Location = new System.Drawing.Point(414, 111);
-            this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(75, 23);
-            this.btnVolta.TabIndex = 5;
-            this.btnVolta.Text = "Voltar";
-            this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVoltar.Location = new System.Drawing.Point(205, 118);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 16;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
             // 
-            // btnLimpa
+            // btnLimpar
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(333, 111);
-            this.btnLimpa.Name = "btnLimpa";
-            this.btnLimpa.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpa.TabIndex = 4;
-            this.btnLimpa.Text = "Limpar";
-            this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpar.Location = new System.Drawing.Point(124, 118);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.TabIndex = 15;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
-            // btnInsere
+            // btnAceitar
             // 
-            this.btnInsere.Location = new System.Drawing.Point(252, 111);
-            this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(75, 23);
-            this.btnInsere.TabIndex = 3;
-            this.btnInsere.Text = "Confirmar";
-            this.btnInsere.UseVisualStyleBackColor = true;
-            // 
-            // txtDescricaoTipoPeca
-            // 
-            this.txtDescricaoTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricaoTipoPeca.Location = new System.Drawing.Point(194, 50);
-            this.txtDescricaoTipoPeca.Name = "txtDescricaoTipoPeca";
-            this.txtDescricaoTipoPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtDescricaoTipoPeca.TabIndex = 2;
-            this.txtDescricaoTipoPeca.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(121, 53);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(58, 13);
-            this.lblDescricao.TabIndex = 13;
-            this.lblDescricao.Text = "Descrição ";
-            // 
-            // txtCdPeca
-            // 
-            this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(389, 24);
-            this.txtCdPeca.Name = "txtCdPeca";
-            this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtCdPeca.TabIndex = 1;
-            // 
-            // lblCodigoPeca
-            // 
-            this.lblCodigoPeca.AutoSize = true;
-            this.lblCodigoPeca.Location = new System.Drawing.Point(300, 24);
-            this.lblCodigoPeca.Name = "lblCodigoPeca";
-            this.lblCodigoPeca.Size = new System.Drawing.Size(83, 13);
-            this.lblCodigoPeca.TabIndex = 9;
-            this.lblCodigoPeca.Text = "Codigo da Peça";
+            this.btnAceitar.Location = new System.Drawing.Point(43, 118);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceitar.TabIndex = 14;
+            this.btnAceitar.Text = "Confirmar";
+            this.btnAceitar.UseVisualStyleBackColor = true;
             // 
             // txtCdTipoPeca
             // 
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoPeca.Location = new System.Drawing.Point(194, 24);
+            this.txtCdTipoPeca.Location = new System.Drawing.Point(186, 37);
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
             this.txtCdTipoPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtCdTipoPeca.TabIndex = 0;
+            this.txtCdTipoPeca.TabIndex = 17;
             // 
-            // lblcodigoTipoPeca
+            // lblCdTipoPeca
             // 
-            this.lblcodigoTipoPeca.AutoSize = true;
-            this.lblcodigoTipoPeca.Location = new System.Drawing.Point(67, 27);
-            this.lblcodigoTipoPeca.Name = "lblcodigoTipoPeca";
-            this.lblcodigoTipoPeca.Size = new System.Drawing.Size(106, 13);
-            this.lblcodigoTipoPeca.TabIndex = 7;
-            this.lblcodigoTipoPeca.Text = "Codigo Tipo da peça";
+            this.lblCdTipoPeca.AutoSize = true;
+            this.lblCdTipoPeca.Location = new System.Drawing.Point(43, 40);
+            this.lblCdTipoPeca.Name = "lblCdTipoPeca";
+            this.lblCdTipoPeca.Size = new System.Drawing.Size(122, 13);
+            this.lblCdTipoPeca.TabIndex = 18;
+            this.lblCdTipoPeca.Text = "Codigo do Tipo de Peça";
+            // 
+            // lblDsTipoPeca
+            // 
+            this.lblDsTipoPeca.AutoSize = true;
+            this.lblDsTipoPeca.Location = new System.Drawing.Point(43, 78);
+            this.lblDsTipoPeca.Name = "lblDsTipoPeca";
+            this.lblDsTipoPeca.Size = new System.Drawing.Size(137, 13);
+            this.lblDsTipoPeca.TabIndex = 20;
+            this.lblDsTipoPeca.Text = "Descrição do Tipo de Peça";
+            // 
+            // txtDsTipoPeca
+            // 
+            this.txtDsTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDsTipoPeca.Location = new System.Drawing.Point(186, 75);
+            this.txtDsTipoPeca.Name = "txtDsTipoPeca";
+            this.txtDsTipoPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtDsTipoPeca.TabIndex = 19;
             // 
             // frmCadTipoPeca
             // 
@@ -125,19 +105,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(507, 158);
-            this.Controls.Add(this.btnVolta);
-            this.Controls.Add(this.btnLimpa);
-            this.Controls.Add(this.btnInsere);
-            this.Controls.Add(this.txtDescricaoTipoPeca);
-            this.Controls.Add(this.lblDescricao);
-            this.Controls.Add(this.txtCdPeca);
-            this.Controls.Add(this.lblCodigoPeca);
+            this.ClientSize = new System.Drawing.Size(292, 176);
+            this.Controls.Add(this.lblDsTipoPeca);
+            this.Controls.Add(this.txtDsTipoPeca);
+            this.Controls.Add(this.lblCdTipoPeca);
             this.Controls.Add(this.txtCdTipoPeca);
-            this.Controls.Add(this.lblcodigoTipoPeca);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnAceitar);
             this.Name = "frmCadTipoPeca";
-            this.Text = "Cadastro Tipo da Peça";
-            this.Load += new System.EventHandler(this.frmCadTipoPeca_Load);
+            this.Text = "TipoPeca";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,14 +122,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnVolta;
-        private System.Windows.Forms.Button btnLimpa;
-        private System.Windows.Forms.Button btnInsere;
-        private System.Windows.Forms.TextBox txtDescricaoTipoPeca;
-        private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox txtCdPeca;
-        private System.Windows.Forms.Label lblCodigoPeca;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.TextBox txtCdTipoPeca;
-        private System.Windows.Forms.Label lblcodigoTipoPeca;
+        private System.Windows.Forms.Label lblCdTipoPeca;
+        private System.Windows.Forms.Label lblDsTipoPeca;
+        private System.Windows.Forms.TextBox txtDsTipoPeca;
     }
 }
