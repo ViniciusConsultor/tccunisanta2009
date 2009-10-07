@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmVenda
+    partial class frmCadVenda
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenda));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVenda));
             this.lblCdVenda = new System.Windows.Forms.Label();
             this.txtCdVenda = new System.Windows.Forms.TextBox();
             this.lblCdOrdemMotor = new System.Windows.Forms.Label();
@@ -325,6 +325,7 @@
             this.Controls.Add(this.lblCdVenda);
             this.Name = "frmVenda";
             this.Text = "Venda";
+            this.Load += new System.EventHandler(this.frmCadVenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

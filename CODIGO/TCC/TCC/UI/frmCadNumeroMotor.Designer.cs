@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmNumeroMotor
+    partial class frmCadNumeroMotor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNumeroMotor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadNumeroMotor));
             this.txtCdNumeroMotor = new System.Windows.Forms.TextBox();
             this.lblCdNumeroMotor = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -99,7 +99,7 @@
             this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
-            // frmNumeroMotor
+            // frmCadNumeroMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,8 +113,9 @@
             this.Controls.Add(this.lblDsNumeroMotor);
             this.Controls.Add(this.txtCdNumeroMotor);
             this.Controls.Add(this.lblCdNumeroMotor);
-            this.Name = "frmNumeroMotor";
-            this.Text = "frmNumeroMotor";
+            this.Name = "frmCadNumeroMotor";
+            this.Text = "frmCadNumeroMotor";
+            this.Load += new System.EventHandler(this.frmCadNumeroMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

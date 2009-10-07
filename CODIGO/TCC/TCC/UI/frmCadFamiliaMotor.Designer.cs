@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmFamiliaMotor
+    partial class frmCadFamiliaMotor
     {
         /// <summary>
         /// Required designer variable.
@@ -220,6 +220,7 @@
             this.Controls.Add(this.lblCdMotor);
             this.Name = "frmFamiliaMotor";
             this.Text = "Familia do  Motor";
+            this.Load += new System.EventHandler(this.frmCadFamiliaMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

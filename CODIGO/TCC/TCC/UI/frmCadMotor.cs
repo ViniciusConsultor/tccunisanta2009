@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmVendaMotor : Form
+    public partial class frmCadMotor : Form
     {
-        public frmVendaMotor()
+        public frmCadMotor()
         {
             InitializeComponent();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void frmMotor_Load(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmVendaMotor
+    partial class frmCadVendaMotor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVendaMotor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVendaMotor));
             this.lblcdVendas = new System.Windows.Forms.Label();
             this.txtCodigoVenda = new System.Windows.Forms.TextBox();
             this.lblCdOrdemMotor = new System.Windows.Forms.Label();
@@ -271,7 +271,7 @@
             this.btnLimpa.Text = "Limpa";
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
-            // frmVendaMotor
+            // frmCadVendaMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,8 +303,9 @@
             this.Controls.Add(this.lblCdCliente);
             this.Controls.Add(this.lblCdOrdemMotor);
             this.Controls.Add(this.lblcdVendas);
-            this.Name = "frmVendaMotor";
+            this.Name = "frmCadVendaMotor";
             this.Text = "Venda Motor";
+            this.Load += new System.EventHandler(this.frmCadVendaMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
