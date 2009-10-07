@@ -32,6 +32,7 @@ namespace TCC.UI
             BUSINESS.rCadColaborador regraMenu = new BUSINESS.rCadColaborador();
             try
             {
+                this.ValidaDadosNulos();
                 modelColaborador = this.PegaDadosTela();
                 if (modelColaborador != null)
                 {
@@ -39,6 +40,36 @@ namespace TCC.UI
                 }
                 this.LimpaControles();
                 this.BuscaCodigoColadoradorMax();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
+            {
+                MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCEP.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.DiaNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Dia Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataDd.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.MesNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Mes Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataMm.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Ano Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataYyyy.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdDepartamento.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
+            {
+                MessageBox.Show("Preencher campo Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdUsuario.Focus();
             }
             catch (Exception ex)
             {
@@ -195,7 +226,6 @@ namespace TCC.UI
             mColaborador model = null;
             try
             {
-                this.ValidaDadosNulos();
                 model = new mColaborador();
                 model.BairrEnd = txtBairro.Text;
                 model.Cep = txtCEP.Text + txtCep2.Text;
@@ -214,36 +244,6 @@ namespace TCC.UI
                 model.Rg = txtRg.Text;
                 model.DatAtl = DateTime.Now;
                 return model;
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
-            {
-                MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCEP.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.DiaNascimentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Dia Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataDd.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.MesNascimentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Mes Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataMm.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Ano Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataYyyy.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdDepartamento.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
-            {
-                MessageBox.Show("Preencher campo Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdUsuario.Focus();
             }
             catch (Exception ex)
             {

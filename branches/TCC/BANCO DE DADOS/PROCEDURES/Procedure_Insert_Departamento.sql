@@ -10,8 +10,8 @@ CREATE PROCEDURE sp_insert_departamento
 @flg_ativo BIT
 AS
 BEGIN TRY
-IF(@id_depto='')
-   RAISERROR('Informe o código do departamento!',16,1)
+IF(@dsc_depto='')
+   RAISERROR('Informe a Descrição do departamento!',16,1)
 ELSE
 BEGIN
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo)
