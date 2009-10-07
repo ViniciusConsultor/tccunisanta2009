@@ -166,6 +166,18 @@
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+<<<<<<< .mine
+    <EmbeddedResource Include="UI\frmCadPeca.resx">
+      <DependentUpon>frmCadPeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCompra.resx">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmFamiliaMotor.resx">
+      <DependentUpon>frmFamiliaMotor.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> .r56
     <EmbeddedResource Include="UI\frmInicial.resx">
       <DependentUpon>frmInicial.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -174,6 +186,33 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+<<<<<<< .mine
+    <EmbeddedResource Include="UI\frmMotor.resx">
+      <DependentUpon>frmMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmNumeroMotor.resx">
+      <DependentUpon>frmNumeroMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmOrdemProducao.resx">
+      <DependentUpon>frmOrdemProducao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPedidoVenda.resx">
+      <DependentUpon>frmPedidoVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTipoMotor.resx">
+      <DependentUpon>frmTipoMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTipoPeca.resx">
+      <DependentUpon>frmTipoPeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUsinagem.resx">
+      <DependentUpon>frmUsinagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmVenda.resx">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> .r56
     <EmbeddedResource Include="UI\frmVendaMotor.resx">
       <DependentUpon>frmVendaMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -271,6 +310,27 @@
     <Compile Include="UI\frmCadUsuario.Designer.cs">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
     </Compile>
+<<<<<<< .mine
+    <Compile Include="UI\frmCadPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCadPeca.Designer.cs">
+      <DependentUpon>frmCadPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCompra.Designer.cs">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmFamiliaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmFamiliaMotor.Designer.cs">
+      <DependentUpon>frmFamiliaMotor.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> .r56
     <Compile Include="UI\frmInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +343,57 @@
     <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+<<<<<<< .mine
+    <Compile Include="UI\frmMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmMotor.Designer.cs">
+      <DependentUpon>frmMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmNumeroMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmNumeroMotor.Designer.cs">
+      <DependentUpon>frmNumeroMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmOrdemProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmOrdemProducao.Designer.cs">
+      <DependentUpon>frmOrdemProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPedidoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPedidoVenda.Designer.cs">
+      <DependentUpon>frmPedidoVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTipoMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTipoMotor.Designer.cs">
+      <DependentUpon>frmTipoMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTipoPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTipoPeca.Designer.cs">
+      <DependentUpon>frmTipoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUsinagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUsinagem.Designer.cs">
+      <DependentUpon>frmUsinagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmVenda.Designer.cs">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> .r56
     <Compile Include="UI\frmVendaMotor.cs">
       <SubType>Form</SubType>
     </Compile>
