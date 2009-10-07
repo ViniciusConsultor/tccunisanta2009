@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFamiliaMotor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFamiliaMotor));
             this.lblCdMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblCdMotorCompre = new System.Windows.Forms.Label();
@@ -187,14 +187,15 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.Location = new System.Drawing.Point(427, 122);
+            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolta.Location = new System.Drawing.Point(7, 1);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolta.Size = new System.Drawing.Size(34, 26);
             this.btnVolta.TabIndex = 2;
-            this.btnVolta.Text = "Volta";
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
-            // frmFamiliaMotor
+            // frmCadFamiliaMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,9 +219,8 @@
             this.Controls.Add(this.lblCdMotorCompre);
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblCdMotor);
-            this.Name = "frmFamiliaMotor";
+            this.Name = "frmCadFamiliaMotor";
             this.Text = "Familia do  Motor";
-            this.Load += new System.EventHandler(this.frmCadFamiliaMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

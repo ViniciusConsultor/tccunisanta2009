@@ -42,7 +42,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(71, 200);
+            this.btnCadastrar.Location = new System.Drawing.Point(60, 149);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 3;
@@ -53,7 +53,7 @@
             // lblCodigoPerfil
             // 
             this.lblCodigoPerfil.AutoSize = true;
-            this.lblCodigoPerfil.Location = new System.Drawing.Point(66, 44);
+            this.lblCodigoPerfil.Location = new System.Drawing.Point(100, 44);
             this.lblCodigoPerfil.Name = "lblCodigoPerfil";
             this.lblCodigoPerfil.Size = new System.Drawing.Size(30, 13);
             this.lblCodigoPerfil.TabIndex = 1;
@@ -62,7 +62,7 @@
             // lblCodigoMenu
             // 
             this.lblCodigoMenu.AutoSize = true;
-            this.lblCodigoMenu.Location = new System.Drawing.Point(66, 81);
+            this.lblCodigoMenu.Location = new System.Drawing.Point(100, 81);
             this.lblCodigoMenu.Name = "lblCodigoMenu";
             this.lblCodigoMenu.Size = new System.Drawing.Size(34, 13);
             this.lblCodigoMenu.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.txtCodigoPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoPerfil.Enabled = false;
-            this.txtCodigoPerfil.Location = new System.Drawing.Point(107, 41);
+            this.txtCodigoPerfil.Location = new System.Drawing.Point(141, 41);
             this.txtCodigoPerfil.Name = "txtCodigoPerfil";
             this.txtCodigoPerfil.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoPerfil.TabIndex = 0;
@@ -81,14 +81,14 @@
             // 
             this.txtCodigoMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoMenu.Enabled = false;
-            this.txtCodigoMenu.Location = new System.Drawing.Point(107, 78);
+            this.txtCodigoMenu.Location = new System.Drawing.Point(141, 78);
             this.txtCodigoMenu.Name = "txtCodigoMenu";
             this.txtCodigoMenu.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoMenu.TabIndex = 0;
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(152, 200);
+            this.btnLimpar.Location = new System.Drawing.Point(141, 149);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 4;
@@ -97,30 +97,33 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(233, 200);
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Location = new System.Drawing.Point(1, 0);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(30, 25);
             this.btnVoltar.TabIndex = 5;
-            this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // btnBuscaPerfil
             // 
-            this.btnBuscaPerfil.Location = new System.Drawing.Point(213, 39);
+            this.btnBuscaPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPerfil.BackgroundImage")));
+            this.btnBuscaPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaPerfil.Location = new System.Drawing.Point(247, 39);
             this.btnBuscaPerfil.Name = "btnBuscaPerfil";
             this.btnBuscaPerfil.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaPerfil.TabIndex = 1;
-            this.btnBuscaPerfil.Text = "...";
             this.btnBuscaPerfil.UseVisualStyleBackColor = true;
             this.btnBuscaPerfil.Click += new System.EventHandler(this.btnBuscaPerfil_Click);
             // 
             // btnBuscaMenu
             // 
-            this.btnBuscaMenu.Location = new System.Drawing.Point(213, 76);
+            this.btnBuscaMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaMenu.BackgroundImage")));
+            this.btnBuscaMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaMenu.Location = new System.Drawing.Point(247, 76);
             this.btnBuscaMenu.Name = "btnBuscaMenu";
             this.btnBuscaMenu.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaMenu.TabIndex = 2;
-            this.btnBuscaMenu.Text = "...";
             this.btnBuscaMenu.UseVisualStyleBackColor = true;
             this.btnBuscaMenu.Click += new System.EventHandler(this.btnBuscaMenu_Click);
             // 
@@ -130,7 +133,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(320, 264);
+            this.ClientSize = new System.Drawing.Size(349, 210);
             this.Controls.Add(this.btnBuscaMenu);
             this.Controls.Add(this.btnBuscaPerfil);
             this.Controls.Add(this.btnVoltar);

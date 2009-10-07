@@ -123,7 +123,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 4;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // lblCdTipoProduto
             // 
@@ -255,16 +254,17 @@
             // 
             // btnDeleta
             // 
-            this.btnDeleta.Location = new System.Drawing.Point(290, 217);
+            this.btnDeleta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleta.BackgroundImage")));
+            this.btnDeleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeleta.Location = new System.Drawing.Point(2, 2);
             this.btnDeleta.Name = "btnDeleta";
-            this.btnDeleta.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleta.Size = new System.Drawing.Size(43, 29);
             this.btnDeleta.TabIndex = 13;
-            this.btnDeleta.Text = "Deleta";
             this.btnDeleta.UseVisualStyleBackColor = true;
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(406, 217);
+            this.btnLimpa.Location = new System.Drawing.Point(253, 217);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
             this.btnLimpa.TabIndex = 14;
@@ -305,7 +305,6 @@
             this.Controls.Add(this.lblcdVendas);
             this.Name = "frmCadVendaMotor";
             this.Text = "Venda Motor";
-            this.Load += new System.EventHandler(this.frmCadVendaMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

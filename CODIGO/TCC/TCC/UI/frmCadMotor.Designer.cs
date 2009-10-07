@@ -74,11 +74,12 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(226, 143);
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Location = new System.Drawing.Point(1, 2);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 22);
             this.btnVoltar.TabIndex = 16;
-            this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // btnLimpar
@@ -99,7 +100,7 @@
             this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
-            // frmMotor
+            // frmCadMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +114,7 @@
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblDsMotor);
             this.Controls.Add(this.lblCdMotor);
-            this.Name = "frmMotor";
+            this.Name = "frmCadMotor";
             this.Text = "Motor";
             this.Load += new System.EventHandler(this.frmMotor_Load);
             this.ResumeLayout(false);
