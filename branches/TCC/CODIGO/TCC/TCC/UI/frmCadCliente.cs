@@ -58,7 +58,14 @@ namespace TCC.UI
             mCliente model = new mCliente();
             try
             {
-                model.Bairro = this.txtBairro.Text;
+                if (string.IsNullOrEmpty(this.txtBairro.Text) == true)
+                {
+                    model.Bairro = null;
+                }
+                else
+                {
+                    model.Bairro = this.txtBairro.Text;
+                }
                 model.Cep = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
                 model.Cidade = this.txtCidade.Text;
                 model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);

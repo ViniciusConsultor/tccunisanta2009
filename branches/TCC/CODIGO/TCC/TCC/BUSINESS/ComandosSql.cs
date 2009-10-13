@@ -61,6 +61,7 @@ namespace TCC.BUSINESS
             Type tipo = modelo.GetType();
             SqlParameter[] param = new SqlParameter[tipo.GetProperties().Length];
             object[] cols;
+            object valor;
             PropertyInfo[] prop;
             try
             {
@@ -75,7 +76,10 @@ namespace TCC.BUSINESS
                     if (cols.Length > 0)
                     {
                         ColunasBancoDados colunas = (ColunasBancoDados)cols[0];
-                        param[contador] = new SqlParameter("@" + colunas.NomeColuna, prop[contador].GetValue(modelo, null));
+                        valor = prop[contador].GetValue(modelo, null);
+                        if (valor == null)
+                            valor = DBNull.Value;
+                        param[contador] = new SqlParameter("@" + colunas.NomeColuna, valor);
                     }
                 }
                 return param;
@@ -89,6 +93,7 @@ namespace TCC.BUSINESS
                 param = null;
                 cols = null;
                 prop = null;
+                valor = null;
             }
         }
         #endregion Busca Nome Parametros
