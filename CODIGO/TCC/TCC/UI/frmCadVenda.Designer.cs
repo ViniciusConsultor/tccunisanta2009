@@ -56,6 +56,11 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
+            this.btnCdCliente = new System.Windows.Forms.Button();
+            this.btnCdMotor = new System.Windows.Forms.Button();
+            this.btnCdOrdemMotor = new System.Windows.Forms.Button();
+            this.CdTipoProduto = new System.Windows.Forms.Button();
+            this.btnCdKit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdVenda
@@ -290,15 +295,65 @@
             this.btnVolta.TabIndex = 3;
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
+            // btnCdCliente
+            // 
+            this.btnCdCliente.Location = new System.Drawing.Point(263, 50);
+            this.btnCdCliente.Name = "btnCdCliente";
+            this.btnCdCliente.Size = new System.Drawing.Size(27, 23);
+            this.btnCdCliente.TabIndex = 3;
+            this.btnCdCliente.Text = "...";
+            this.btnCdCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnCdMotor
+            // 
+            this.btnCdMotor.Location = new System.Drawing.Point(262, 76);
+            this.btnCdMotor.Name = "btnCdMotor";
+            this.btnCdMotor.Size = new System.Drawing.Size(28, 23);
+            this.btnCdMotor.TabIndex = 3;
+            this.btnCdMotor.Text = "...";
+            this.btnCdMotor.UseVisualStyleBackColor = true;
+            // 
+            // btnCdOrdemMotor
+            // 
+            this.btnCdOrdemMotor.Location = new System.Drawing.Point(515, 16);
+            this.btnCdOrdemMotor.Name = "btnCdOrdemMotor";
+            this.btnCdOrdemMotor.Size = new System.Drawing.Size(33, 23);
+            this.btnCdOrdemMotor.TabIndex = 3;
+            this.btnCdOrdemMotor.Text = "...";
+            this.btnCdOrdemMotor.UseVisualStyleBackColor = true;
+            // 
+            // CdTipoProduto
+            // 
+            this.CdTipoProduto.Location = new System.Drawing.Point(515, 55);
+            this.CdTipoProduto.Name = "CdTipoProduto";
+            this.CdTipoProduto.Size = new System.Drawing.Size(33, 23);
+            this.CdTipoProduto.TabIndex = 3;
+            this.CdTipoProduto.Text = "...";
+            this.CdTipoProduto.UseVisualStyleBackColor = true;
+            // 
+            // btnCdKit
+            // 
+            this.btnCdKit.Location = new System.Drawing.Point(515, 81);
+            this.btnCdKit.Name = "btnCdKit";
+            this.btnCdKit.Size = new System.Drawing.Size(33, 23);
+            this.btnCdKit.TabIndex = 3;
+            this.btnCdKit.Text = "...";
+            this.btnCdKit.UseVisualStyleBackColor = true;
+            // 
             // frmCadVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(543, 224);
+            this.ClientSize = new System.Drawing.Size(554, 224);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
+            this.Controls.Add(this.btnCdKit);
+            this.Controls.Add(this.CdTipoProduto);
+            this.Controls.Add(this.btnCdOrdemMotor);
+            this.Controls.Add(this.btnCdMotor);
+            this.Controls.Add(this.btnCdCliente);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblB);
@@ -360,5 +415,10 @@
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
+        private System.Windows.Forms.Button btnCdCliente;
+        private System.Windows.Forms.Button btnCdMotor;
+        private System.Windows.Forms.Button btnCdOrdemMotor;
+        private System.Windows.Forms.Button CdTipoProduto;
+        private System.Windows.Forms.Button btnCdKit;
     }
 }

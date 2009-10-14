@@ -44,6 +44,8 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnCdEstoque = new System.Windows.Forms.Button();
+            this.btnCdTipoPeca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdPeca
@@ -77,7 +79,7 @@
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoPeca.Location = new System.Drawing.Point(353, 28);
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
-            this.txtCdTipoPeca.Size = new System.Drawing.Size(69, 20);
+            this.txtCdTipoPeca.Size = new System.Drawing.Size(32, 20);
             this.txtCdTipoPeca.TabIndex = 1;
             // 
             // lblCdEstoque
@@ -94,7 +96,7 @@
             this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdEstoque.Location = new System.Drawing.Point(166, 60);
             this.txtCdEstoque.Name = "txtCdEstoque";
-            this.txtCdEstoque.Size = new System.Drawing.Size(69, 20);
+            this.txtCdEstoque.Size = new System.Drawing.Size(40, 20);
             this.txtCdEstoque.TabIndex = 1;
             // 
             // lblNmPeca
@@ -176,6 +178,24 @@
             this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
+            // btnCdEstoque
+            // 
+            this.btnCdEstoque.Location = new System.Drawing.Point(212, 60);
+            this.btnCdEstoque.Name = "btnCdEstoque";
+            this.btnCdEstoque.Size = new System.Drawing.Size(32, 23);
+            this.btnCdEstoque.TabIndex = 5;
+            this.btnCdEstoque.Text = "...";
+            this.btnCdEstoque.UseVisualStyleBackColor = true;
+            // 
+            // btnCdTipoPeca
+            // 
+            this.btnCdTipoPeca.Location = new System.Drawing.Point(390, 26);
+            this.btnCdTipoPeca.Name = "btnCdTipoPeca";
+            this.btnCdTipoPeca.Size = new System.Drawing.Size(32, 23);
+            this.btnCdTipoPeca.TabIndex = 5;
+            this.btnCdTipoPeca.Text = "...";
+            this.btnCdTipoPeca.UseVisualStyleBackColor = true;
+            // 
             // frmCadPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +205,8 @@
             this.ClientSize = new System.Drawing.Size(436, 185);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnCdTipoPeca);
+            this.Controls.Add(this.btnCdEstoque);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.txtPesoPeca);
             this.Controls.Add(this.txtDsPeca);
@@ -222,5 +244,7 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnConfirma;
+        private System.Windows.Forms.Button btnCdEstoque;
+        private System.Windows.Forms.Button btnCdTipoPeca;
     }
 }
