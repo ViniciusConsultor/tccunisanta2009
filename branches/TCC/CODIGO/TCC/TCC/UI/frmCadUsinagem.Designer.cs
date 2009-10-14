@@ -36,6 +36,7 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnCdPeca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdUsinagem
@@ -69,7 +70,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(170, 55);
             this.txtCdPeca.Name = "txtCdPeca";
-            this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtCdPeca.Size = new System.Drawing.Size(67, 20);
             this.txtCdPeca.TabIndex = 1;
             // 
             // btnVoltar
@@ -100,6 +101,15 @@
             this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
+            // btnCdPeca
+            // 
+            this.btnCdPeca.Location = new System.Drawing.Point(243, 52);
+            this.btnCdPeca.Name = "btnCdPeca";
+            this.btnCdPeca.Size = new System.Drawing.Size(27, 23);
+            this.btnCdPeca.TabIndex = 8;
+            this.btnCdPeca.Text = "...";
+            this.btnCdPeca.UseVisualStyleBackColor = true;
+            // 
             // frmCadUsinagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +119,7 @@
             this.ClientSize = new System.Drawing.Size(308, 169);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnCdPeca);
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.lblCdPeca);
@@ -130,5 +141,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
+        private System.Windows.Forms.Button btnCdPeca;
     }
 }
