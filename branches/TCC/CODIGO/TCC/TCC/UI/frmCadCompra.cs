@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using TCC.BUSINESS;
 using System.Windows.Forms;
 
 namespace TCC.UI
@@ -16,5 +16,26 @@ namespace TCC.UI
             InitializeComponent();
         }
 
+        private void frmCadCompra_Load(object sender, EventArgs e)
+        {
+            this.BuscaIdMaximo();
+        }
+
+        public void BuscaIdMaximo()
+        {
+            rCompra regraCompra = new rCompra();
+            try
+            {
+                this.txtCdCompra.Text = regraCompra.BuscaIdMaximoCompra().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraCompra = null;
+            }
+        }
     }
 }

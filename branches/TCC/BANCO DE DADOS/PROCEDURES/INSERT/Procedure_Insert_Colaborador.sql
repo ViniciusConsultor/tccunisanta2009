@@ -4,34 +4,40 @@ IF OBJECT_ID('sp_insert_colaborador', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_colaborador
-@id_colab INT,
-@nom_colab VARCHAR(40),
-@dat_nasc DATETIME,
-@nom_rua VARCHAR(50),
-@nro_end INT,
-@compl_end VARCHAR(20),
-@cep VARCHAR(10),
-@bairr_end VARCHAR(30),
-@cidade VARCHAR(40),
-@rg VARCHAR(15),
-@cpf VARCHAR(15),
-@sexo CHAR(1),
-@dat_atl DATETIME,
-@flg_ativo BIT,
-@id_usu INT,
-@id_depto INT,
-@id_estado INT
+@id_colab    INT,
+@id_usu      INT,
+@id_depto    INT,
+@slg_estado  VARCHAR(2),
+@nom_colab   VARCHAR(40),
+@dat_nasc    DATETIME,
+@tel_colab   INT,
+@ddd_colab   INT,
+@email_colab VARCHAR(100),
+@nom_rua     VARCHAR(50),
+@nro_end     INT,
+@compl_end   VARCHAR(20),
+@cep         VARCHAR(10),
+@bairr_end   VARCHAR(30),
+@cidade      VARCHAR(40),
+@rg          VARCHAR(15),
+@cpf         VARCHAR(15),
+@sexo        CHAR(1),
+@dat_atl     DATETIME,
+@flg_ativo   BIT
 AS
 
 BEGIN TRY
+--Validações para a tabela colaborador
 IF (@id_colab='')
    RAISERROR('Informe o código do colaborador!',16,1)
+ELSE IF(@id_depto='')
+   RAISERROR('Informe o departamento do colaborador!',16,1)
 ELSE IF(@nom_colab='')
    RAISERROR('Informe o nome do colaborador!',16,1)
 ELSE IF(@dat_nasc='')
    RAISERROR('Informe a data de nascimento do colaborador!',16,1)
 ELSE IF(@nom_rua='')
-   RAISERROR('Informe o nome da rua do endereco do colaborador!',16,1)
+   RAISERROR('Informe o logradouro do endereco do colaborador!',16,1)
 ELSE IF(@nro_end='')
    RAISERROR('Informe o numero do endereco do colaborador!',16,1)
 ELSE IF(@bairr_end='')
@@ -40,14 +46,13 @@ ELSE IF(@cidade='')
    RAISERROR('Informe a cidade do endereco do colaborador!',16,1)
 ELSE IF(@sexo='')
    RAISERROR('Informe o sexo do colaborador!',16,1)
-ELSE IF(@id_depto='')
-   RAISERROR('Informe o departamento do colaborador!',16,1)
 ELSE
 BEGIN
+--Insert na tabela colaborador
 INSERT INTO 
-Colaborador(id_colab, nom_colab, dat_nasc, nom_rua, nro_end, compl_end, cep, bairr_end, cidade, rg, cpf, sexo, dat_atl, flg_ativo, id_usu, id_depto, id_estado)
+Colaborador(id_colab, id_usu, id_depto, slg_estado, nom_colab, dat_nasc, tel_colab, ddd_colab, email_colab, nom_rua, nro_end, compl_end, cep, bairr_end, cidade, rg, cpf, sexo, dat_atl, flg_ativo)
 VALUES
-(@id_colab, @nom_colab, @dat_nasc, @nom_rua, @nro_end, @compl_end, @cep, @bairr_end, @cidade, @rg, @cpf, @sexo, @dat_atl, @flg_ativo, @id_usu, @id_depto, @id_estado)
+(@id_colab, @id_usu, @id_depto, @slg_estado, @nom_colab, @dat_nasc, @tel_colab, @ddd_colab, @email_colab, @nom_rua, @nro_end, @compl_end, @cep, @bairr_end, @cidade, @rg, @cpf, @sexo, @dat_atl, @flg_ativo)
 END
 END TRY
 

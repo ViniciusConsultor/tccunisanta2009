@@ -249,7 +249,6 @@ namespace TCC.UI
             {
                 throw ex;
             }
-            return model;
         }
 
         public void ValidaDadosNulos()

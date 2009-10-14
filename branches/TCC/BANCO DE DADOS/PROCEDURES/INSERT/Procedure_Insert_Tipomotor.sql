@@ -1,27 +1,24 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_perfilmenu', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_perfilmenu;
+IF OBJECT_ID('sp_insert_tipomotor', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_tipomotor;
 GO
 
-CREATE PROCEDURE sp_insert_perfilmenu
-@id_perfil     INT,
-@id_menu       INT,
-@dat_trans  DATETIME,
-@flg_ativo     BIT
+CREATE PROCEDURE sp_insert_tipomotor
+@id_tipo_motor         VARCHAR(20),
+@nom_tipo_motor        VARCHAR(50),
+@flg_ativo             BIT
 AS
 
 BEGIN TRY
---Validações na tabela perfilmenu
-IF(@id_perfil='')
-   RAISERROR('Informe o codigo do perfil!',16,1)
-ELSE IF(@id_menu='')
-   RAISERROR('Informe o codigo do menu!',16,1)
+--Validações na tabela tipomotor
+IF(@id_tipo_motor='')
+   RAISERROR('Informe o codigo do tipo do motor!',16,1)   
 ELSE
 
 BEGIN
---Insert na tabela perfilmenu
-INSERT INTO Perfilmenu(id_perfil, id_menu, dat_trans, flg_ativo)
-VALUES(@id_perfil, @id_menu, @dat_trans, @flg_ativo)
+--Insert na tabela tipomotor
+INSERT INTO TIPOMOTOR(id_tipo_motor, nom_tipo_motor, flg_ativo)
+VALUES (@id_tipo_motor, @nom_tipo_motor, @flg_ativo)
 END
 END TRY
 

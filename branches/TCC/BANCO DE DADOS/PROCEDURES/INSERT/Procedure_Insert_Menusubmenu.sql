@@ -1,28 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_menu', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_menu;
+IF OBJECT_ID('sp_insert_menusubmenu', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_menusubmenu;
 GO
 
-CREATE PROCEDURE sp_insert_menu
-@id_menu          INT,
-@end_menu         VARCHAR(500),
-@dsc_menu         VARCHAR(50),
-@dat_atl          DATETIME,
-@flg_ativo        BIT
+CREATE PROCEDURE sp_insert_menusubmenu
+@id_menu        INT,
+@id_sub         INT,
+@dat_trans      DATETIME,
+@flg_ativo      BIT
 AS
 
 BEGIN TRY
---Validações na tabela menu
+--Validações na tabela menusubmenu
 IF(@id_menu='')
    RAISERROR('Informe o codigo do menu!',16,1)   
-ELSE IF(@end_menu='')
-   RAISERROR('Informe o endereco do menu!',16,1)   
+ELSE IF(@id_sub='')
+   RAISERROR('Informe o codigo do submenu!',16,1)   
 ELSE
 
 BEGIN
---Insert na tabela menu
-INSERT INTO Menu(id_menu, end_menu, dsc_menu, dat_atl, flg_ativo)
-VALUES (@id_menu, @end_menu, @dsc_menu, @dat_atl, @flg_ativo)
+--Insert na tabela menusubmenu
+INSERT INTO Menusubmenu(id_menu, id_sub, dat_trans, flg_ativo)
+VALUES (@id_menu, @id_sub, @dat_trans, @flg_ativo)
 END
 END TRY
 

@@ -55,12 +55,12 @@ namespace TCC.UI.BUSCA
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            rUsuario regraUsuario = null;
+            DataGridViewCell dvC;
             try
             {
                 //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                 //------------------------------------------------------------------------------------
-                DataGridViewCell dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
+                dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
                 
                 if (this._alteracao == false)
                 {
@@ -78,7 +78,7 @@ namespace TCC.UI.BUSCA
             }
             finally
             {
-                regraUsuario = null;
+
             }
         }
         #endregion
