@@ -120,7 +120,7 @@
             this.Controls.Add(this.txtCodigoDepartamento);
             this.Controls.Add(this.lblDepartamento);
             this.Name = "frmCadDepartamento";
-            this.Text = "Cad Departamento";
+            this.Text = "Cadastro Departamento";
             this.Load += new System.EventHandler(this.frmCadDepartamento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

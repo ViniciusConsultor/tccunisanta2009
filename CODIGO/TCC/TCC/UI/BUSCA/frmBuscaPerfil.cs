@@ -58,13 +58,30 @@ namespace TCC.UI.BUSCA
         #region btnOK Click
         private void btnOK_Click(object sender, EventArgs e)
         {
+            DataGridViewCell dvC = null;
+            DataTable dtSource = new DataTable();
             try
             {
-                //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                //------------------------------------------------------------------------------------
-                DataGridViewCell dvC = this.dgPerfil["id_perfil", this.dgPerfil.CurrentRow.Index];
-                this._txtParam.Text = dvC.Value.ToString();
-                this.Close();
+                dtSource = (DataTable)this.dgPerfil.DataSource;
+                if (this.dgPerfil.DataSource != null)
+                {
+                    if (dtSource.Rows.Count > 0)
+                    {
+                        //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
+                        //------------------------------------------------------------------------------------
+                        dvC = this.dgPerfil["id_perfil", this.dgPerfil.CurrentRow.Index];
+                        this._txtParam.Text = dvC.Value.ToString();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("É necessário Cadastrar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                else
+                {
+                        MessageBox.Show("É necessário Buscar e Selecionar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
             }
             catch (Exception ex)
             {
@@ -72,7 +89,16 @@ namespace TCC.UI.BUSCA
             }
             finally
             {
-
+                if (dvC != null)
+                {
+                    dvC.Dispose();
+                    dvC = null;
+                }
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
             }
         }
         #endregion btnOK Click

@@ -13,17 +13,20 @@ namespace TCC.MODEL
         private string nomeColab;
         private DateTime datNasc;
         private string nomeRua;
-        private int nroEnd;
+        private int? nroEnd;
         private string complEnd;
         private string cep;
         private string bairrEnd;
         private string cidade;
-        private int estado;
+        private string estado;
         private string rg;
         private string cpf;
         private char sexo;
         private DateTime datAtl;
         private bool flgAtivo;
+        private int? ddd;
+        private int? telefone;
+        private string email;
         private string nomeTabela = "colaborador";
 
         [ColunasBancoDados("id_colab", System.Data.SqlDbType.Int, true)]
@@ -69,7 +72,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("nro_end", System.Data.SqlDbType.Int, false)]
-        public int NroEnd
+        public int? NroEnd
         {
             get { return nroEnd; }
             set { nroEnd = value; }
@@ -103,8 +106,8 @@ namespace TCC.MODEL
             set { cidade = value; }
         }
 
-        [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int, false)]
-        public int Estado
+        [ColunasBancoDados("slg_estado", System.Data.SqlDbType.Int, false)]
+        public string Estado
         {
             get { return estado; }
             set { estado = value; }
@@ -143,6 +146,27 @@ namespace TCC.MODEL
         {
             get { return flgAtivo; }
             set { flgAtivo = value; }
+        }
+
+        [ColunasBancoDados("ddd_colab", System.Data.SqlDbType.Int, false)]
+        public int? Ddd
+        {
+            get { return ddd; }
+            set { ddd = value; }
+        }
+
+        [ColunasBancoDados("tel_colab", System.Data.SqlDbType.Int, false)]
+        public int? Telefone
+        {
+            get { return telefone; }
+            set { telefone = value; }
+        }
+
+        [ColunasBancoDados("email_colab", System.Data.SqlDbType.VarChar, false)]
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
 
         public override string getNomeTabela()
