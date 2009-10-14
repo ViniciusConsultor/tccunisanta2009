@@ -83,3 +83,6 @@ INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 12, g
 --INSERT TABELA PERFILMENU
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_trans, flg_ativo) VALUES (1, 1, GETDATE(), 1);
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_trans, flg_ativo) VALUES (1, 2, GETDATE(), 1);
+
+--INSERT TABELA CLIENTE 
+INSERT INTO cliente (id_cli,nom_cli,tel_cli,nom_rua,num_end,compl_end,cep,bairr_end,cidade,id_rg,id_cnpj,dat_atl,flg_ativo,slg_estado,email_cliente,ddd_cliente) VALUES (1,'julio','32322970','baralho',666,'castelo','11111111','Iron Forge','Storm Wind',111111111,1111111,GETDATE(),1,'SP','wow@mail.com',99)
