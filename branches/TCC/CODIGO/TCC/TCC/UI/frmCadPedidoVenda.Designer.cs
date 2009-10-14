@@ -40,6 +40,8 @@
             this.lblCdDepartamento = new System.Windows.Forms.Label();
             this.txtDsPedido = new System.Windows.Forms.TextBox();
             this.lblDsPedido = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -92,7 +94,7 @@
             this.txtCdVendaMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdVendaMotor.Location = new System.Drawing.Point(485, 20);
             this.txtCdVendaMotor.Name = "txtCdVendaMotor";
-            this.txtCdVendaMotor.Size = new System.Drawing.Size(79, 20);
+            this.txtCdVendaMotor.Size = new System.Drawing.Size(43, 20);
             this.txtCdVendaMotor.TabIndex = 20;
             // 
             // lblCdVendaMotor
@@ -109,7 +111,7 @@
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Location = new System.Drawing.Point(228, 56);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
-            this.txtCdDepartamento.Size = new System.Drawing.Size(92, 20);
+            this.txtCdDepartamento.Size = new System.Drawing.Size(51, 20);
             this.txtCdDepartamento.TabIndex = 20;
             // 
             // lblCdDepartamento
@@ -138,6 +140,24 @@
             this.lblDsPedido.TabIndex = 21;
             this.lblDsPedido.Text = "Descriçãodo Pedido";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(534, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(290, 56);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 23);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmCadPedidoVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +175,8 @@
             this.Controls.Add(this.txtCdPedidoVenda);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAceitar);
             this.Name = "frmCadPedidoVenda";
             this.Text = "Pedido de Venda";
@@ -177,5 +199,7 @@
         private System.Windows.Forms.Label lblCdDepartamento;
         private System.Windows.Forms.TextBox txtDsPedido;
         private System.Windows.Forms.Label lblDsPedido;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

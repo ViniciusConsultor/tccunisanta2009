@@ -69,6 +69,7 @@
     <Compile Include="BUSINESS\rEstoque.cs" />
     <Compile Include="BUSINESS\rFornecedor.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
+    <Compile Include="BUSINESS\rMotor.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
@@ -116,6 +117,18 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaCliente.resx">
+      <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaFornecedor.resx">
+      <DependentUpon>frmBuscaFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaItemPeca.resx">
+      <DependentUpon>frmBuscaItemPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaMenu.resx">
       <DependentUpon>frmBuscaMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -124,8 +137,20 @@
       <DependentUpon>frmBuscaDepartamento.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaMotor.resx">
+      <DependentUpon>frmBuscaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaPeca.resx">
+      <DependentUpon>frmBuscaPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaPerfil.resx">
       <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaTipoPeca.resx">
+      <DependentUpon>frmBuscaTipoPeca.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaTipoProduto.resx">
@@ -134,6 +159,34 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaUsuario.resx">
       <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaEstoque.resx">
+      <DependentUpon>frmBuscaEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaKit.resx">
+      <DependentUpon>frmBuscaKit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaNumMotor.resx">
+      <DependentUpon>frmBuscaNumMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaTipoMotor.resx">
+      <DependentUpon>frmBuscaTipoMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaVenda.resx">
+      <DependentUpon>frmBuscaVenda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaVendaMotor.resx">
+      <DependentUpon>frmBuscaVendaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaOrdemMotor.resx">
+      <DependentUpon>frmBuscaOrdemMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCadCliente.resx">
@@ -243,6 +296,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCliente.Designer.cs">
+      <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaFornecedor.Designer.cs">
+      <DependentUpon>frmBuscaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItemPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItemPeca.Designer.cs">
+      <DependentUpon>frmBuscaItemPeca.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\BUSCA\frmBuscaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,11 +326,29 @@
     <Compile Include="UI\BUSCA\frmBuscaDepartamento.Designer.cs">
       <DependentUpon>frmBuscaDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMotor.Designer.cs">
+      <DependentUpon>frmBuscaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPeca.Designer.cs">
+      <DependentUpon>frmBuscaPeca.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\BUSCA\frmBuscaPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaPerfil.Designer.cs">
       <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoPeca.Designer.cs">
+      <DependentUpon>frmBuscaTipoPeca.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaTipoProduto.cs">
       <SubType>Form</SubType>
@@ -272,6 +361,48 @@
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaUsuario.Designer.cs">
       <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaEstoque.Designer.cs">
+      <DependentUpon>frmBuscaEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaKit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaKit.Designer.cs">
+      <DependentUpon>frmBuscaKit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaNumMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaNumMotor.Designer.cs">
+      <DependentUpon>frmBuscaNumMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoMotor.Designer.cs">
+      <DependentUpon>frmBuscaTipoMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaVenda.Designer.cs">
+      <DependentUpon>frmBuscaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaVendaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaVendaMotor.Designer.cs">
+      <DependentUpon>frmBuscaVendaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaOrdemMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaOrdemMotor.Designer.cs">
+      <DependentUpon>frmBuscaOrdemMotor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCadCliente.cs">
       <SubType>Form</SubType>

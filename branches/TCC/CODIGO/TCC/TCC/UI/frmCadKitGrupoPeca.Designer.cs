@@ -40,6 +40,8 @@
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.txtNmKit = new System.Windows.Forms.TextBox();
             this.lblNmKit = new System.Windows.Forms.Label();
+            this.btnCdPeca = new System.Windows.Forms.Button();
+            this.btnCdItemPeca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -92,7 +94,7 @@
             this.txtCdItemPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdItemPeca.Location = new System.Drawing.Point(337, 27);
             this.txtCdItemPeca.Name = "txtCdItemPeca";
-            this.txtCdItemPeca.Size = new System.Drawing.Size(53, 20);
+            this.txtCdItemPeca.Size = new System.Drawing.Size(32, 20);
             this.txtCdItemPeca.TabIndex = 14;
             // 
             // lblCdItemPeca
@@ -109,7 +111,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(145, 61);
             this.txtCdPeca.Name = "txtCdPeca";
-            this.txtCdPeca.Size = new System.Drawing.Size(53, 20);
+            this.txtCdPeca.Size = new System.Drawing.Size(35, 20);
             this.txtCdPeca.TabIndex = 14;
             // 
             // lblCdPeca
@@ -138,6 +140,24 @@
             this.lblNmKit.TabIndex = 15;
             this.lblNmKit.Text = "Nome do Kit";
             // 
+            // btnCdPeca
+            // 
+            this.btnCdPeca.Location = new System.Drawing.Point(186, 59);
+            this.btnCdPeca.Name = "btnCdPeca";
+            this.btnCdPeca.Size = new System.Drawing.Size(28, 23);
+            this.btnCdPeca.TabIndex = 11;
+            this.btnCdPeca.Text = "...";
+            this.btnCdPeca.UseVisualStyleBackColor = true;
+            // 
+            // btnCdItemPeca
+            // 
+            this.btnCdItemPeca.Location = new System.Drawing.Point(375, 25);
+            this.btnCdItemPeca.Name = "btnCdItemPeca";
+            this.btnCdItemPeca.Size = new System.Drawing.Size(28, 23);
+            this.btnCdItemPeca.TabIndex = 11;
+            this.btnCdItemPeca.Text = "...";
+            this.btnCdItemPeca.UseVisualStyleBackColor = true;
+            // 
             // frmKitGrupoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +175,8 @@
             this.Controls.Add(this.txtCdKit);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnCdItemPeca);
+            this.Controls.Add(this.btnCdPeca);
             this.Controls.Add(this.btnAceitar);
             this.Name = "frmKitGrupoPeca";
             this.Text = "KitGrupoPeca";
@@ -176,5 +198,7 @@
         private System.Windows.Forms.Label lblCdPeca;
         private System.Windows.Forms.TextBox txtNmKit;
         private System.Windows.Forms.Label lblNmKit;
+        private System.Windows.Forms.Button btnCdPeca;
+        private System.Windows.Forms.Button btnCdItemPeca;
     }
 }
