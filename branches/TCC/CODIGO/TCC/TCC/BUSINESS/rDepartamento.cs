@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using TCC.DAL;
 using TCC.MODEL;
@@ -11,10 +12,18 @@ namespace TCC.BUSINESS
     {
         public DataTable BuscaDepartamento(string Descricao)
         {
-            dDepartamento dal = new dDepartamento();
+            SqlParameter param = null;
             try
             {
-                return dal.BuscarDepartamento(Descricao);
+                if (string.IsNullOrEmpty(Descricao) == true)
+                {
+                    return base.BuscaDados("sp_busca_departamento");
+                }
+                else
+                {
+                    param = new SqlParameter("@dsc_departamento", Descricao);
+                    return base.BuscaDados("sp_busca_departamento_param", param);
+                }
             }
             catch (Exception ex)
             {
@@ -22,7 +31,7 @@ namespace TCC.BUSINESS
             }
             finally
             {
-                dal = null;
+                param = null;
             }
         }
 

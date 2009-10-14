@@ -56,6 +56,7 @@
     <Compile Include="BUSINESS\Exceptions\Colaborador\CodigoUsuarioVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\DiaNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\MesNascimentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\LoginExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\LoginVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\PerfilSemIdExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\SenhaVaziaException.cs" />

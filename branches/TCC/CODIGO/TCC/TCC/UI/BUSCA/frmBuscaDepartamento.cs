@@ -45,17 +45,47 @@ namespace TCC.UI.BUSCA
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
+            DataGridViewCell dvC = null;
+            DataTable dtSource = new DataTable();
             try
             {
-                //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                //------------------------------------------------------------------------------------
-                DataGridViewCell dvC = this.dgDepartamento["id_depto", this.dgDepartamento.CurrentRow.Index];
-                this._txtParam.Text = dvC.Value.ToString();
-                this.Close();
+                dtSource = (DataTable)this.dgDepartamento.DataSource;
+                if (this.dgDepartamento.DataSource != null)
+                {
+                    if (dtSource.Rows.Count > 0)
+                    {
+                        //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
+                        //------------------------------------------------------------------------------------
+                        dvC = this.dgDepartamento["id_depto", this.dgDepartamento.CurrentRow.Index];
+                        this._txtParam.Text = dvC.Value.ToString();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("É necessário Cadastrar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("É necessário Buscar e Selecionar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                if (dvC != null)
+                {
+                    dvC.Dispose();
+                    dvC = null;
+                }
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
             }
         }
         #endregion

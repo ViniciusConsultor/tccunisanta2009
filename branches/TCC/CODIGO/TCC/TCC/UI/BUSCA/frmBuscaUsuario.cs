@@ -55,21 +55,37 @@ namespace TCC.UI.BUSCA
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            DataGridViewCell dvC;
+            DataGridViewCell dvC = null;
+            DataTable dtSource = new DataTable();
             try
             {
-                //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                //------------------------------------------------------------------------------------
-                dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
-                
-                if (this._alteracao == false)
+                dtSource = (DataTable)this.dgUsuario.DataSource;
+                if (this.dgUsuario.DataSource != null)
                 {
-                    this._txtParam.Text = dvC.Value.ToString();
-                    this.Close();
+                    if (dtSource.Rows.Count > 0)
+                    {
+                        //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
+                        //------------------------------------------------------------------------------------
+                        dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
+
+                        if (this._alteracao == false)
+                        {
+                            this._txtParam.Text = dvC.Value.ToString();
+                            this.Close();
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("É necessário Cadastrar um Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    }
                 }
                 else
                 {
-
+                    MessageBox.Show("É necessário Buscar e Selecionar um Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (Exception ex)
@@ -78,7 +94,16 @@ namespace TCC.UI.BUSCA
             }
             finally
             {
-
+                if (dvC != null)
+                {
+                    dvC.Dispose();
+                    dvC = null;
+                }
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
             }
         }
         #endregion
