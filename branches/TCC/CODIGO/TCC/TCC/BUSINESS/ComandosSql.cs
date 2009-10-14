@@ -29,7 +29,7 @@ namespace TCC.BUSINESS
         /// <param name="idTabela">campo que é o id da Tabela</param>
         /// <param name="tabela">nome da tabela que vai ser buscada</param>
         /// <returns>DataTable com o número do id(max); Caso id não exista retorna nulo</returns>
-        public DataTable BuscaIdMaximoTabelas(string idTabela, string tabela)
+        protected DataTable BuscaIdMaximoTabelas(string idTabela, string tabela)
         {
             SqlParameter[] param = new SqlParameter[2];
             try

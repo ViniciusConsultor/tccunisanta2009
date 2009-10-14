@@ -4,14 +4,15 @@ IF OBJECT_ID('sp_insert_usuario', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_usuario
-@id_usu INT,
-@login VARCHAR(20),
-@senha VARCHAR(15),
-@obs_usu VARCHAR(100),
-@flg_ativo BIT
+@id_usu        INT,
+@login         VARCHAR(20),
+@senha         VARCHAR(15),
+@obs_usu       VARCHAR(100),
+@flg_ativo     BIT
 AS
 
 BEGIN TRY
+--Validações na tabela  usuario
 IF(@id_usu='')
   RAISERROR('Informe o código do usuário!',16,1)
 ELSE IF(@login='')
@@ -19,11 +20,12 @@ ELSE IF(@login='')
 ELSE IF(@senha='')
   RAISERROR('Informe a senha do usuário!',16,1)
 ELSE
+
 BEGIN
+--Insert na tabela usuario
 INSERT INTO 
-Usuario (id_usu, login, senha, obs_usu, flg_ativo)
-VALUES
-(@id_usu, @login, @senha, @obs_usu, @flg_ativo)
+Usuario(id_usu, login, senha, obs_usu, flg_ativo)
+VALUES(@id_usu, @login, @senha, @obs_usu, @flg_ativo)
 END
 END TRY
 

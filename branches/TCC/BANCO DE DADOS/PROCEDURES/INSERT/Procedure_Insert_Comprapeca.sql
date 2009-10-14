@@ -1,25 +1,25 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_perfil', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_perfil;
+IF OBJECT_ID('sp_insert_comprapeca', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_comprapeca;
 GO
 
-CREATE PROCEDURE sp_insert_perfil
-@id_perfil     INT,
-@dsc_perfil    VARCHAR(30),
-@dat_atl       DATETIME,
-@flg_ativo     BIT
-AS
+CREATE PROCEDURE sp_insert_comprapeca
+@id_peca         INT,
+@ultimo_preco    INT
 
+AS 
 BEGIN TRY
---Validações na tabela perfil
-IF(@id_perfil='')
-   RAISERROR('Informe o codigo do perfil!',16,1)
+--Validações na tabela comprapeca
+IF(@id_peca='')
+   RAISERROR('Informe o código da peça!',16,1)
+ELSE IF(@ultimo_preco='')
+   RAISERROR('Informe o preco da peça!',16,1)
 ELSE
 
 BEGIN
---Insert na tabela perfil
-INSERT INTO Perfil(id_perfil, dsc_perfil, dat_atl, flg_ativo)
-VALUES(@id_perfil, @dsc_perfil, @dat_atl, @flg_ativo)
+--Insert na tabela comprapeca
+INSERT INTO comprapeca(id_peca, ultimo_preco)
+VALUES(@id_peca, @ultimo_preco)
 END
 END TRY
 
