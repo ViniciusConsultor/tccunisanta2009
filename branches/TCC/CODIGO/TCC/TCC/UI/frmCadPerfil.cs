@@ -39,7 +39,7 @@ namespace TCC.UI
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
 
         }
@@ -94,5 +94,10 @@ namespace TCC.UI
             }
         }
         #endregion
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

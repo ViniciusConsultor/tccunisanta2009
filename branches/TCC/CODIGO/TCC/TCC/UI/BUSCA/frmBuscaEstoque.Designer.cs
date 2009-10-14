@@ -43,6 +43,7 @@
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // txtFiltro
             // 
@@ -59,6 +60,7 @@
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgEstoque
             // 
@@ -74,7 +76,7 @@
             this.dgEstoque.Size = new System.Drawing.Size(260, 177);
             this.dgEstoque.TabIndex = 8;
             // 
-            // frmEstoque
+            // frmBuscaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,7 +85,7 @@
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgEstoque);
-            this.Name = "frmEstoque";
+            this.Name = "frmBuscaEstoque";
             this.Text = "frmEstoque";
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoque)).EndInit();
             this.ResumeLayout(false);

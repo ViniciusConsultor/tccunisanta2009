@@ -59,16 +59,61 @@ namespace TCC.UI
             try
             {
                 model.Bairro = this.txtBairro.Text;
-                model.CepFornecedor = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                if (string.IsNullOrEmpty(this.txtCep.Text) == true && string.IsNullOrEmpty(this.txtCep2.Text) == true)
+                {
+                    model.CepFornecedor = null;
+                }
+                else
+                {
+                    model.CepFornecedor = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                }
                 model.Cidade = this.txtCidade.Text;
-                model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
+                if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
+                {
+                    model.Cnpj = null;
+                }
+                else
+                {
+                    model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
+                }
                 model.Complemento = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                model.IdEstado = Convert.ToInt32(this.cboUf.SelectedValue);
+                model.SlgEstado = this.cboUf.GetItemText(this.cboUf.SelectedItem);
                 model.IdFornecedor = Convert.ToInt32(this.txtCodigoFornecedor.Text);
                 model.NomeFornecedor = this.txtNomeFornecedor.Text;
-                model.NroFornecedor = Convert.ToInt32(this.txtNumeroEndereco.Text);
+                if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
+                {
+                    model.Ddd = null;
+                }
+                else
+                {
+                    model.Ddd = Convert.ToInt32(this.txtDDD.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+                {
+                    model.Telefone = null;
+                }
+                else
+                {
+                    model.Telefone = Convert.ToInt32(this.txtTelefone.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
+                {
+                    model.Email = null;
+                }
+                else
+                {
+                    model.Email = this.txtEmail.Text;
+                }
+                if (string.IsNullOrEmpty(this.txtNumeroEndereco.Text) == true)
+                {
+                    model.NroFornecedor = null;
+                }
+                else
+                {
+                    model.NroFornecedor = Convert.ToInt32(this.txtNumeroEndereco.Text);
+                }
                 model.RuaFornecedor = this.txtRua.Text;
                 return model;
             }
@@ -109,14 +154,19 @@ namespace TCC.UI
             mFornecedor model;
             try
             {
+                this.ValidadadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.ApagaDadosTela();
                 this.BuscaIdMaximo();
             }
+            catch (BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption)
+            {
+                MessageBox.Show("É Necessário o campo Codigo Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             finally
             {
@@ -146,5 +196,19 @@ namespace TCC.UI
             }
         }
 
+        private void ValidadadosNulos()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(this.txtCodigoFornecedor.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

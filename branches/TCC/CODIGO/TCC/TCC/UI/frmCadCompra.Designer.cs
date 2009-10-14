@@ -97,6 +97,7 @@
             this.txtDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDepartamento.Location = new System.Drawing.Point(438, 21);
             this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.ReadOnly = true;
             this.txtDepartamento.Size = new System.Drawing.Size(49, 20);
             this.txtDepartamento.TabIndex = 12;
             // 
@@ -114,6 +115,7 @@
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFornecedor.Location = new System.Drawing.Point(195, 53);
             this.txtFornecedor.Name = "txtFornecedor";
+            this.txtFornecedor.ReadOnly = true;
             this.txtFornecedor.Size = new System.Drawing.Size(38, 20);
             this.txtFornecedor.TabIndex = 12;
             // 
@@ -131,6 +133,7 @@
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoProduto.Location = new System.Drawing.Point(438, 53);
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
+            this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(49, 20);
             this.txtCdTipoProduto.TabIndex = 12;
             // 
@@ -148,6 +151,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(195, 85);
             this.txtCdPeca.Name = "txtCdPeca";
+            this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(38, 20);
             this.txtCdPeca.TabIndex = 12;
             // 
@@ -165,6 +169,7 @@
             this.txtCdMotorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotorCompra.Location = new System.Drawing.Point(438, 85);
             this.txtCdMotorCompra.Name = "txtCdMotorCompra";
+            this.txtCdMotorCompra.ReadOnly = true;
             this.txtCdMotorCompra.Size = new System.Drawing.Size(49, 20);
             this.txtCdMotorCompra.TabIndex = 12;
             // 
@@ -323,6 +328,7 @@
             this.btnBuscaFornecedor.TabIndex = 13;
             this.btnBuscaFornecedor.Text = "...";
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
+            this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
             // btnBuscaPeca
             // 
@@ -341,6 +347,7 @@
             this.btnBuscaDepartamento.TabIndex = 15;
             this.btnBuscaDepartamento.Text = "...";
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
+            this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
             // btnBuscaTipoProduto
             // 
@@ -359,6 +366,7 @@
             this.btnBuscaMotorCompra.TabIndex = 17;
             this.btnBuscaMotorCompra.Text = "...";
             this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
+            this.btnBuscaMotorCompra.Click += new System.EventHandler(this.btnBuscaMotorCompra_Click);
             // 
             // frmCadCompra
             // 

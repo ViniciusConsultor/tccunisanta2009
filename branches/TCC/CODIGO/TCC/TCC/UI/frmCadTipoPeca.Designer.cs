@@ -47,6 +47,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(25, 22);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -56,6 +57,7 @@
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -65,12 +67,14 @@
             this.btnAceitar.TabIndex = 14;
             this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // txtCdTipoPeca
             // 
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoPeca.Location = new System.Drawing.Point(186, 37);
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
+            this.txtCdTipoPeca.ReadOnly = true;
             this.txtCdTipoPeca.Size = new System.Drawing.Size(100, 20);
             this.txtCdTipoPeca.TabIndex = 17;
             // 
@@ -116,6 +120,7 @@
             this.Controls.Add(this.btnAceitar);
             this.Name = "frmCadTipoPeca";
             this.Text = "TipoPeca";
+            this.Load += new System.EventHandler(this.frmCadTipoPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

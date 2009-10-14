@@ -14,7 +14,9 @@ BEGIN TRY
 IF(@id_tipo_peca='')
    RAISERROR('Informe o codigo do tipo da peça!',16,1)   
 ELSE
-
+IF(@dsc_tipo_peca='')
+   RAISERROR('Informe a descrição do tipo da peça!',16,1)   
+ELSE
 BEGIN
 --Insert na tabela tipopeça
 INSERT INTO Tipodepeca(id_tipo_peca, dsc_tipo_peca, flg_ativo)

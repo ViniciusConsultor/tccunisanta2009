@@ -15,6 +15,8 @@ BEGIN TRY
 IF(@id_perfil='')
    RAISERROR('Informe o codigo do perfil!',16,1)
 ELSE
+IF(@dsc_perfil='')
+   RAISERROR('Informe a descrição do perfil!',16,1)
 
 BEGIN
 --Insert na tabela perfil
