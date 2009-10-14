@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using TCC.MODEL;
 using TCC.DAL;
 
@@ -39,10 +40,18 @@ namespace TCC.BUSINESS
         }
         public DataTable BuscaUsuario(string Descricao)
         {
-            dUsuario dal = new dUsuario();
+            SqlParameter param = null;
             try
             {
-                return dal.BuscarUsuario(Descricao);
+                if (string.IsNullOrEmpty(Descricao) == true)
+                {
+                    return base.BuscaDados("sp_busca_usuario");
+                }
+                else
+                {
+                    param = new SqlParameter("@login", Descricao);
+                    return base.BuscaDados("sp_busca_usuario_param", param);
+                }
             }
             catch (Exception ex)
             {
@@ -50,7 +59,7 @@ namespace TCC.BUSINESS
             }
             finally
             {
-                dal = null;
+                param = null;
             }
         }
         #endregion Busca Id Maximo Usuario
@@ -78,9 +87,44 @@ namespace TCC.BUSINESS
             {
                 throw new Exceptions.LoginVazioException();
             }
+            else if (this.VerificaExistenciaUsuario(model.Login))
+            {
+                throw new Exceptions.LoginExistenteException();
+            }
             else if (string.IsNullOrEmpty(model.Senha) == true)
             {
                 throw new Exceptions.SenhaVaziaException();
+            }
+        }
+
+        public bool VerificaExistenciaUsuario(string login)
+        {
+            DataTable dtBusca = null;
+            try
+            {
+                SqlParameter param = new SqlParameter("@usuario", login);
+                dtBusca = base.BuscaDados("sp_existe_usuario", param);
+                int retorno = Convert.ToInt32(dtBusca.Rows[0]["flg_existe"]);
+                if (retorno == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtBusca != null)
+                {
+                    dtBusca.Dispose();
+                    dtBusca = null;
+                }
             }
         }
 
@@ -123,6 +167,7 @@ namespace TCC.BUSINESS
             try
             {
                 this.ValidaDados(modelUsu);
+                base.Insere(modelUsu);
             }
             catch (Exception ex)
             {

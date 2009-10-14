@@ -41,6 +41,16 @@ namespace TCC.UI
                 this.LimpaControles();
                 this.BuscaCodigoColadoradorMax();
             }
+            catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
+            {
+                MessageBox.Show("Preencher campo Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdUsuario.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdDepartamento.Focus();
+            }
             catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
             {
                 MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -60,17 +70,7 @@ namespace TCC.UI
             {
                 MessageBox.Show("Preencher campo Ano Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataYyyy.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdDepartamento.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
-            {
-                MessageBox.Show("Preencher campo Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdUsuario.Focus();
-            }
+            }            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -231,18 +231,63 @@ namespace TCC.UI
                 model.Cep = txtCEP.Text + txtCep2.Text;
                 model.Cidade = txtCidade.Text;
                 model.ComplEnd = txtComplemento.Text;
-                model.Cpf = txtCpf.Text;
+                if (string.IsNullOrEmpty(txtCpf.Text) == true)
+                {
+                    model.Cpf = null;
+                }
+                else
+                {
+                    model.Cpf = txtCpf.Text;
+                }
                 model.DatNasc = new DateTime(Convert.ToInt32(txtDataYyyy.Text), Convert.ToInt32(txtDataMm.Text), Convert.ToInt32(txtDataDd.Text));
-                model.Estado = Convert.ToInt32(cbEstado.SelectedValue);
+                model.Estado = this.cbEstado.GetItemText(this.cbEstado.SelectedItem);
                 model.IdColab = Convert.ToInt32(txtCdColab.Text);
                 model.IdDepto = Convert.ToInt32(txtCdDepartamento.Text);
                 model.IdUsuario = Convert.ToInt32(txtCdUsuario.Text);
                 model.NomeColab = txtNome.Text;
                 model.NomeRua = txtRua.Text;
-                model.NroEnd = Convert.ToInt32(txtNumero.Text);
+                if (string.IsNullOrEmpty(txtNumero.Text) == true)
+                {
+                    model.NroEnd = null;
+                }
+                else
+                {
+                    model.NroEnd = Convert.ToInt32(txtNumero.Text);
+                }
                 model.Sexo = Convert.ToChar(CbSexo.Text);
-                model.Rg = txtRg.Text;
+                if (string.IsNullOrEmpty(this.txtRg.Text) == true)
+                {
+                    model.Rg = null;
+                }
+                else
+                {
+                    model.Rg = txtRg.Text;
+                }
                 model.DatAtl = DateTime.Now;
+                if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
+                {
+                    model.Ddd = null;
+                }
+                else
+                {
+                    model.Ddd = Convert.ToInt32(this.txtDDD.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+                {
+                    model.Telefone = null;
+                }
+                else
+                {
+                    model.Telefone = Convert.ToInt32(this.txtTelefone.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
+                {
+                    model.Email = null;
+                }
+                else
+                {
+                    model.Email = this.txtEmail.Text;
+                }
                 return model;
             }
             catch (Exception ex)
@@ -255,9 +300,13 @@ namespace TCC.UI
         {
             try
             {
-                if (string.IsNullOrEmpty(this.txtCEP.Text) == true)
+                if (string.IsNullOrEmpty(this.txtCdUsuario.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
+                    throw new BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception();
+                }
+                else if (string.IsNullOrEmpty(this.txtCdDepartamento.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtDataDd.Text) == true)
                 {
@@ -271,13 +320,9 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtCdDepartamento.Text) == true)
+                else if (string.IsNullOrEmpty(this.txtCEP.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException();
-                }
-                else if (string.IsNullOrEmpty(this.txtCdUsuario.Text) == true)
-                {
-                    throw new BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception();
+                    throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
                 }
             }
             catch (Exception ex)

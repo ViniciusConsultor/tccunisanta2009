@@ -1,6 +1,9 @@
 CREATE DATABASE Megatechdatabase
 go
 
+USE Megatechdatabase
+go
+
 DROP TABLE Compra
 go
 

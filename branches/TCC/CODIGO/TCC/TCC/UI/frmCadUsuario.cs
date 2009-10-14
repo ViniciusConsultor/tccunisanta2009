@@ -47,13 +47,19 @@ namespace TCC.UI
                 //Insere o usuário
                 //----------------
                 modelUsu = this.PegaDadosTela();
-                regraUsu.Insere(modelUsu);
+                regraUsu.ValidarInsere(modelUsu);
                 //Insere associação usuarioPerfil
                 //-------------------------------
                 modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
                 regraUsuarioPerfil.Insere(modelUsuarioPerfil);
                 this.LimpaControles();
                 this.BuscaCodigoUsuarioMax();
+            }
+            catch (BUSINESS.Exceptions.LoginExistenteException)
+            {
+                MessageBox.Show("Usuário já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtLogin.Text = string.Empty;
+                this.txtLogin.Focus();
             }
             catch (BUSINESS.Exceptions.LoginVazioException)
             {
