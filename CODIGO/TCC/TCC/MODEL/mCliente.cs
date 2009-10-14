@@ -11,16 +11,18 @@ namespace TCC.MODEL
         private string nomeCliente;
         private string telefoneCliente;
         private string nomeRua;
-        private int idEstado;
-        private int numeroEndereco;
+        private string slgEstado;
+        private int? numeroEndereco;
         private string complementoEndereco;
-        private int cep;
+        private int? cep;
         private string bairro;
         private string cidade;
-        private int rg;
-        private int cnpj;
+        private int? rg;
+        private int? cnpj;
         private DateTime datAtl;
         private bool flgAtivo;
+        private string email;
+        private int? ddd;
         private string nomeTabela = "cliente";
 
         [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit, false)]
@@ -38,14 +40,14 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("id_cnpj", System.Data.SqlDbType.Int, false)]
-        public int Cnpj
+        public int? Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }
         }
 
         [ColunasBancoDados("id_rg", System.Data.SqlDbType.Int, false)]
-        public int Rg
+        public int? Rg
         {
             get { return rg; }
             set { rg = value; }
@@ -66,7 +68,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("cep", System.Data.SqlDbType.Int, false)]
-        public int Cep
+        public int? Cep
         {
             get { return cep; }
             set { cep = value; }
@@ -80,17 +82,17 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("num_end", System.Data.SqlDbType.Int, false)]
-        public int NumeroEndereco
+        public int? NumeroEndereco
         {
             get { return numeroEndereco; }
             set { numeroEndereco = value; }
         }
 
-        [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int, false)]
-        public int IdEstado
+        [ColunasBancoDados("slg_estado", System.Data.SqlDbType.VarChar, false)]
+        public string SlgEstado
         {
-            get { return idEstado; }
-            set { idEstado = value; }
+            get { return slgEstado; }
+            set { slgEstado = value; }
         }
 
         [ColunasBancoDados("nom_rua", System.Data.SqlDbType.VarChar, false)]
@@ -119,6 +121,20 @@ namespace TCC.MODEL
         {
             get { return idCliente; }
             set { idCliente = value; }
+        }
+
+        [ColunasBancoDados("email_cliente", System.Data.SqlDbType.VarChar, false)]
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        [ColunasBancoDados("ddd_cliente", System.Data.SqlDbType.Int, false)]
+        public int? Ddd
+        {
+            get { return ddd; }
+            set { ddd = value; }
         }
 
         public override string getNomeTabela()

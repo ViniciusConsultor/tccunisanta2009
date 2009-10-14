@@ -27,17 +27,17 @@ BEGIN TRY
 IF(@id_cli='')
   RAISERROR('Informe o código do cliente!',16,1)
 ELSE IF(@slg_estado='')
-  RAISERROR('Informe o estado do endereco do cliente!',16,1)
+  RAISERROR('Informe o estado do cliente!',16,1)
 ELSE IF(@nom_cli='')
   RAISERROR('Informe o nome do cliente!',16,1)
 ELSE IF(@nom_rua='')
-  RAISERROR('Informe o logradouro do endereco do cliente!',16,1)
+  RAISERROR('Informe o endereco do cliente!',16,1)
 ELSE IF(@num_end='')
-  RAISERROR('Informe o numero do endereco do cliente!',16,1)
+  RAISERROR('Informe o numero do cliente!',16,1)
 ELSE IF(@bairr_end='')
-  RAISERROR('Informe o bairro do endereco do cliente!',16,1)
+  RAISERROR('Informe o bairro do cliente!',16,1)
 ELSE IF(@cidade='')
-  RAISERROR('Informe o cidade do endereco do cliente!',16,1)
+  RAISERROR('Informe o cidade do cliente!',16,1)
 ELSE
 BEGIN
 --Insert na tabela cliente

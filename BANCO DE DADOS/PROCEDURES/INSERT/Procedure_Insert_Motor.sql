@@ -12,8 +12,10 @@ AS
 BEGIN TRY
 --Validações na tabela motor
 IF(@id_motor_compra='')
-   RAISERROR('Informe o codigo do motor!',16,1)   
+   RAISERROR('Informe o codigo do motor!',16,1)
 ELSE
+IF(@dsc_motor_compra='')
+   RAISERROR('Informe a Descrição do motor!',16,1)
 
 BEGIN
 --Insert na tabela motor

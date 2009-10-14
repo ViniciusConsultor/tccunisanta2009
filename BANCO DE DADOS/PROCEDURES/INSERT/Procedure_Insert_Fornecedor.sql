@@ -26,17 +26,17 @@ BEGIN TRY
 IF(@id_fornecedor='')
    RAISERROR('Informe o código do fornecedor!',16,1)
 ELSE IF(@slg_estado='')
-   RAISERROR('Informe o estado do endereco do fornecedor!',16,1) 
+   RAISERROR('Informe o estado do fornecedor!',16,1) 
 ELSE IF(@nom_fornecedor='')
    RAISERROR('Informe o nome do fornecedor!',16,1)
 ELSE IF(@nom_rua_fornecedor='')
-   RAISERROR('Informe o logradouro do endereco do fornecedor!',16,1)
+   RAISERROR('Informe o logradouro do fornecedor!',16,1)
 ELSE IF(@nro_end_fornecedor='')
-   RAISERROR('Informe o numero do endereco do fornecedor!',16,1)
+   RAISERROR('Informe o número do endereco do fornecedor!',16,1)
 ELSE IF(@bairr_end_fornecedor='')
-   RAISERROR('Informe o bairro do endereco do fornecedor!',16,1)
+   RAISERROR('Informe o bairro do fornecedor!',16,1)
 ELSE IF(@cidade_fornecedor='')
-   RAISERROR('Informe a cidade do endereco do fornecedor!',16,1)
+   RAISERROR('Informe a cidade do fornecedor!',16,1)
 ELSE 
   
 BEGIN

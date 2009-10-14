@@ -57,6 +57,10 @@
             this.lblTlefone = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtCep2 = new System.Windows.Forms.TextBox();
+            this.txtDDD = new System.Windows.Forms.TextBox();
+            this.lblDDD = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -261,7 +265,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(192, 182);
+            this.btnInsere.Location = new System.Drawing.Point(132, 191);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(75, 23);
             this.btnInsere.TabIndex = 13;
@@ -271,7 +275,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(273, 182);
+            this.btnLimpa.Location = new System.Drawing.Point(266, 191);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(75, 23);
             this.btnLimpa.TabIndex = 14;
@@ -292,7 +296,7 @@
             // lblTlefone
             // 
             this.lblTlefone.AutoSize = true;
-            this.lblTlefone.Location = new System.Drawing.Point(251, 33);
+            this.lblTlefone.Location = new System.Drawing.Point(311, 33);
             this.lblTlefone.Name = "lblTlefone";
             this.lblTlefone.Size = new System.Drawing.Size(49, 13);
             this.lblTlefone.TabIndex = 0;
@@ -301,10 +305,10 @@
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(301, 31);
+            this.txtTelefone.Location = new System.Drawing.Point(366, 31);
             this.txtTelefone.MaxLength = 20;
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(133, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(68, 20);
             this.txtTelefone.TabIndex = 2;
             // 
             // txtCep2
@@ -317,6 +321,42 @@
             this.txtCep2.TabIndex = 7;
             this.txtCep2.TextChanged += new System.EventHandler(this.txtCep2_TextChanged);
             // 
+            // txtDDD
+            // 
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDDD.Location = new System.Drawing.Point(285, 31);
+            this.txtDDD.MaxLength = 20;
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(24, 20);
+            this.txtDDD.TabIndex = 17;
+            // 
+            // lblDDD
+            // 
+            this.lblDDD.AutoSize = true;
+            this.lblDDD.Location = new System.Drawing.Point(254, 33);
+            this.lblDDD.Name = "lblDDD";
+            this.lblDDD.Size = new System.Drawing.Size(31, 13);
+            this.lblDDD.TabIndex = 16;
+            this.lblDDD.Text = "DDD";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(137, 159);
+            this.txtEmail.MaxLength = 15;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(108, 20);
+            this.txtEmail.TabIndex = 19;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(60, 164);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 18;
+            this.lblEmail.Text = "Email";
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +364,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 226);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtDDD);
+            this.Controls.Add(this.lblDDD);
             this.Controls.Add(this.txtCep2);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
@@ -390,5 +434,9 @@
         private System.Windows.Forms.Label lblTlefone;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtCep2;
+        private System.Windows.Forms.TextBox txtDDD;
+        private System.Windows.Forms.Label lblDDD;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

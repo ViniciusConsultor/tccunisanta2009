@@ -52,6 +52,7 @@
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotor.Location = new System.Drawing.Point(152, 33);
             this.txtCdMotor.Name = "txtCdMotor";
+            this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(100, 20);
             this.txtCdMotor.TabIndex = 1;
             // 
@@ -81,6 +82,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(27, 22);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -90,6 +92,7 @@
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -99,6 +102,7 @@
             this.btnAceitar.TabIndex = 14;
             this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // frmCadMotor
             // 
