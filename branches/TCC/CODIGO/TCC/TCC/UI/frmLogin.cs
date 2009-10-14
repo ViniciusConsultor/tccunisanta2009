@@ -45,6 +45,11 @@ namespace TCC.UI
         }
         #endregion btnLogin Click
 
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion Eventos
 
 

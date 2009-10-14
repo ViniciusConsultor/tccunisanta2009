@@ -62,6 +62,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(165, 28);
             this.txtCdPeca.Name = "txtCdPeca";
+            this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(69, 20);
             this.txtCdPeca.TabIndex = 1;
             // 
@@ -79,6 +80,7 @@
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoPeca.Location = new System.Drawing.Point(353, 28);
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
+            this.txtCdTipoPeca.ReadOnly = true;
             this.txtCdTipoPeca.Size = new System.Drawing.Size(32, 20);
             this.txtCdTipoPeca.TabIndex = 1;
             // 
@@ -96,6 +98,7 @@
             this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdEstoque.Location = new System.Drawing.Point(166, 60);
             this.txtCdEstoque.Name = "txtCdEstoque";
+            this.txtCdEstoque.ReadOnly = true;
             this.txtCdEstoque.Size = new System.Drawing.Size(40, 20);
             this.txtCdEstoque.TabIndex = 1;
             // 
@@ -159,6 +162,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(37, 23);
             this.btnVoltar.TabIndex = 7;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -168,6 +172,7 @@
             this.btnLimpar.TabIndex = 6;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnConfirma
             // 
@@ -186,6 +191,7 @@
             this.btnCdEstoque.TabIndex = 5;
             this.btnCdEstoque.Text = "...";
             this.btnCdEstoque.UseVisualStyleBackColor = true;
+            this.btnCdEstoque.Click += new System.EventHandler(this.btnCdEstoque_Click);
             // 
             // btnCdTipoPeca
             // 
@@ -195,6 +201,7 @@
             this.btnCdTipoPeca.TabIndex = 5;
             this.btnCdTipoPeca.Text = "...";
             this.btnCdTipoPeca.UseVisualStyleBackColor = true;
+            this.btnCdTipoPeca.Click += new System.EventHandler(this.btnCdTipoPeca_Click);
             // 
             // frmCadPeca
             // 
@@ -222,6 +229,7 @@
             this.Controls.Add(this.lblCdPeca);
             this.Name = "frmCadPeca";
             this.Text = "Peça";
+            this.Load += new System.EventHandler(this.frmCadPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

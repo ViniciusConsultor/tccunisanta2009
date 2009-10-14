@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using TCC.MODEL;
 using TCC.DAL;
 
@@ -35,6 +36,31 @@ namespace TCC.BUSINESS
             {
                 dal = null;
                 dt = null;
+            }
+        }
+
+        public DataTable BuscaEstoque(string Descricao)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(Descricao) == true)
+                {
+                    return base.BuscaDados("sp_busca_estoque");
+                }
+                else
+                {
+                    param = new SqlParameter("@nom_estoque", Descricao);
+                    return base.BuscaDados("sp_busca_estoque_param", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
             }
         }
 

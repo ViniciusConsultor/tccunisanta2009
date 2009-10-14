@@ -56,6 +56,7 @@
     <Compile Include="BUSINESS\Exceptions\Colaborador\CodigoUsuarioVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\DiaNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\MesNascimentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\FornecedorSemIdExecption.cs" />
     <Compile Include="BUSINESS\Exceptions\LoginExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\LoginVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\PerfilSemIdExeception.cs" />
@@ -70,9 +71,11 @@
     <Compile Include="BUSINESS\rFornecedor.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />
+    <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
     <Compile Include="BUSINESS\rSubMenu.cs" />
+    <Compile Include="BUSINESS\rTipoPeca.cs" />
     <Compile Include="BUSINESS\rTipoUsuario.cs" />
     <Compile Include="BUSINESS\rUsuario.cs" />
     <Compile Include="BUSINESS\rUsuarioPerfil.cs" />
@@ -103,11 +106,14 @@
     <Compile Include="MODEL\mEstoque.cs" />
     <Compile Include="MODEL\mFornecedor.cs" />
     <Compile Include="MODEL\mMenu.cs" />
+    <Compile Include="MODEL\mMotor.cs" />
     <Compile Include="MODEL\ModelAuxiliar.cs" />
     <Compile Include="MODEL\ModelPai.cs" />
+    <Compile Include="MODEL\mPeca.cs" />
     <Compile Include="MODEL\mPerfil.cs" />
     <Compile Include="MODEL\mPerfilMenu.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
+    <Compile Include="MODEL\mTipoPeca.cs" />
     <Compile Include="MODEL\mUsuario.cs" />
     <Compile Include="MODEL\mUsuarioPerfil.cs" />
     <Compile Include="Program.cs" />

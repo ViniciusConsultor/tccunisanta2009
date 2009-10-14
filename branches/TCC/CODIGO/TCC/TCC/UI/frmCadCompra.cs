@@ -37,5 +37,59 @@ namespace TCC.UI
                 regraCompra = null;
             }
         }
+
+        private void btnBuscaMotorCompra_Click(object sender, EventArgs e)
+        {
+            BUSCA.frmBuscaMotor objFrmMotor = new TCC.UI.BUSCA.frmBuscaMotor(this.txtCdMotorCompra);
+            try
+            {
+                objFrmMotor.MdiParent = this.MdiParent;
+                objFrmMotor.Show();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objFrmMotor = null;
+            }
+        }
+
+        private void btnBuscaDepartamento_Click(object sender, EventArgs e)
+        {
+            BUSCA.frmBuscaDepartamento objTela = new TCC.UI.BUSCA.frmBuscaDepartamento(this.txtDepartamento);
+            try
+            {
+                objTela.MdiParent = this.MdiParent;
+                objTela.Show();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objTela = null;
+            }
+        }
+
+        private void btnBuscaFornecedor_Click(object sender, EventArgs e)
+        {
+            BUSCA.frmBuscaFornecedor objTela = new TCC.UI.BUSCA.frmBuscaFornecedor(this.txtFornecedor);
+            try
+            {
+                objTela.MdiParent = this.MdiParent;
+                objTela.Show();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objTela = null;
+            }
+        }
     }
 }

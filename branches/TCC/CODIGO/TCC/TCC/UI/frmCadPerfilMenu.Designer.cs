@@ -94,6 +94,7 @@
             this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnVoltar
             // 
@@ -104,6 +105,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(30, 25);
             this.btnVoltar.TabIndex = 5;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnBuscaPerfil
             // 
@@ -144,7 +146,7 @@
             this.Controls.Add(this.lblCodigoPerfil);
             this.Controls.Add(this.btnCadastrar);
             this.Name = "frmCadPerfilMenu";
-            this.Text = "Cad PerfilMenu";
+            this.Text = "Cadastro PerfilMenu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

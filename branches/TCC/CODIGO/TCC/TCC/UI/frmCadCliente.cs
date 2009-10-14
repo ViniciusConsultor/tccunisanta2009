@@ -66,19 +66,63 @@ namespace TCC.UI
                 {
                     model.Bairro = this.txtBairro.Text;
                 }
-                model.Cep = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                if (string.IsNullOrEmpty(this.txtCep.Text) == true && string.IsNullOrEmpty(this.txtCep2.Text) == true)
+                {
+                    model.Cep = null;
+                }
+                else
+                {
+                    model.Cep = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                }
                 model.Cidade = this.txtCidade.Text;
-                model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
+                if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
+                {
+                    model.Cnpj = null;
+                }
+                else
+                {
+                    model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
+                }
                 model.ComplementoEndereco = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
                 model.IdCliente = Convert.ToInt32(this.txtCodigo.Text);
-                model.IdEstado = Convert.ToInt32(this.cboEstado.SelectedValue);
+                model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
                 model.NomeCliente = this.txtNome.Text;
                 model.NomeRua = this.txtRua.Text;
-                model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
-                model.Rg = Convert.ToInt32(this.txtRg.Text);
+                if (string.IsNullOrEmpty(this.txtNumero.Text) == true)
+                {
+                    model.NumeroEndereco = null;
+                }
+                else
+                {
+                    model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtRg.Text) == true)
+                {
+                    model.Rg = null;
+                }
+                else
+                {
+                    model.Rg = Convert.ToInt32(this.txtRg.Text);
+                }
                 model.TelefoneCliente = this.txtTelefone.Text;
+                if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
+                {
+                    model.Ddd = null;
+                }
+                else
+                {
+                    model.Ddd = Convert.ToInt32(this.txtDDD.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
+                {
+                    model.Email = null;
+                }
+                else
+                {
+                    model.Email = this.txtEmail.Text;
+                }
                 return model;
             }
             catch (Exception ex)
@@ -140,7 +184,7 @@ namespace TCC.UI
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             finally
             {

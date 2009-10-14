@@ -103,6 +103,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(28, 23);
             this.btnVoltar.TabIndex = 4;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // frmCadPerfil
             // 
@@ -119,7 +120,7 @@
             this.Controls.Add(this.lblDescPerfil);
             this.Controls.Add(this.lblIdPerfil);
             this.Name = "frmCadPerfil";
-            this.Text = "Cad Perfil";
+            this.Text = "Cadastro de Perfil";
             this.Load += new System.EventHandler(this.frmCadPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,22 +10,26 @@ namespace TCC.MODEL
         private int idFornecedor;
         private string nomeFornecedor;
         private string ruaFornecedor;
-        private int nroFornecedor;
+        private int? nroFornecedor;
         private string complemento;
-        private int cepFornecedor;
+        private int? cepFornecedor;
         private string bairro;
         private string cidade;
-        private int cnpj;
+        private int? cnpj;
         private DateTime datAtl;
         private bool flgAtivo;
-        private int idEstado;
+        private string slgEstado;
+        private int? ddd;
+        private int? telefone;
+        private string email;
+
         private string nomeTabela = "fornecedor";
 
-        [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int, false)]
-        public int IdEstado
+        [ColunasBancoDados("slg_estado", System.Data.SqlDbType.VarChar, false)]
+        public string SlgEstado
         {
-            get { return idEstado; }
-            set { idEstado = value; }
+            get { return slgEstado; }
+            set { slgEstado = value; }
         }
 
         [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit, false)]
@@ -43,7 +47,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("id_cnpj_fornecedor", System.Data.SqlDbType.Int, false)]
-        public int Cnpj
+        public int? Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }
@@ -64,7 +68,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("cep_fornecedor", System.Data.SqlDbType.Int, false)]
-        public int CepFornecedor
+        public int? CepFornecedor
         {
             get { return cepFornecedor; }
             set { cepFornecedor = value; }
@@ -78,7 +82,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("nro_end_fornecedor", System.Data.SqlDbType.Int, false)]
-        public int NroFornecedor
+        public int? NroFornecedor
         {
             get { return nroFornecedor; }
             set { nroFornecedor = value; }
@@ -103,6 +107,27 @@ namespace TCC.MODEL
         {
             get { return idFornecedor; }
             set { idFornecedor = value; }
+        }
+
+        [ColunasBancoDados("DDD", System.Data.SqlDbType.Int, false)]
+        public int? Ddd
+        {
+            get { return ddd; }
+            set { ddd = value; }
+        }
+
+        [ColunasBancoDados("tel_fornecedor", System.Data.SqlDbType.Int, false)]
+        public int? Telefone
+        {
+            get { return telefone; }
+            set { telefone = value; }
+        }
+
+        [ColunasBancoDados("Email", System.Data.SqlDbType.VarChar, false)]
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
 
         public override string getNomeTabela()
