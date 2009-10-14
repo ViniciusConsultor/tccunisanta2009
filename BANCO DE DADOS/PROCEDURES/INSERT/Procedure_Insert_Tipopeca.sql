@@ -1,27 +1,24 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_perfilmenu', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_perfilmenu;
+IF OBJECT_ID('sp_insert_Tipodepeca', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_Tipodepeca;
 GO
 
-CREATE PROCEDURE sp_insert_perfilmenu
-@id_perfil     INT,
-@id_menu       INT,
-@dat_trans  DATETIME,
-@flg_ativo     BIT
+CREATE PROCEDURE sp_insert_Tipodepeca
+@id_tipo_peca    INT,
+@dsc_tipo_peca   VARCHAR(500),
+@flg_ativo       BIT
 AS
 
 BEGIN TRY
---Validações na tabela perfilmenu
-IF(@id_perfil='')
-   RAISERROR('Informe o codigo do perfil!',16,1)
-ELSE IF(@id_menu='')
-   RAISERROR('Informe o codigo do menu!',16,1)
+--Validações na tabela tipopeça
+IF(@id_tipo_peca='')
+   RAISERROR('Informe o codigo do tipo da peça!',16,1)   
 ELSE
 
 BEGIN
---Insert na tabela perfilmenu
-INSERT INTO Perfilmenu(id_perfil, id_menu, dat_trans, flg_ativo)
-VALUES(@id_perfil, @id_menu, @dat_trans, @flg_ativo)
+--Insert na tabela tipopeça
+INSERT INTO Tipodepeca(id_tipo_peca, dsc_tipo_peca, flg_ativo)
+VALUES (@id_tipo_peca, @dsc_tipo_peca, @flg_ativo)
 END
 END TRY
 

@@ -58,6 +58,11 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnBuscaFornecedor = new System.Windows.Forms.Button();
+            this.btnBuscaPeca = new System.Windows.Forms.Button();
+            this.btnBuscaDepartamento = new System.Windows.Forms.Button();
+            this.btnBuscaTipoProduto = new System.Windows.Forms.Button();
+            this.btnBuscaMotorCompra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdCompra
@@ -74,6 +79,7 @@
             this.txtCdCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdCompra.Location = new System.Drawing.Point(195, 21);
             this.txtCdCompra.Name = "txtCdCompra";
+            this.txtCdCompra.ReadOnly = true;
             this.txtCdCompra.Size = new System.Drawing.Size(78, 20);
             this.txtCdCompra.TabIndex = 12;
             // 
@@ -91,7 +97,7 @@
             this.txtDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDepartamento.Location = new System.Drawing.Point(438, 21);
             this.txtDepartamento.Name = "txtDepartamento";
-            this.txtDepartamento.Size = new System.Drawing.Size(82, 20);
+            this.txtDepartamento.Size = new System.Drawing.Size(49, 20);
             this.txtDepartamento.TabIndex = 12;
             // 
             // lblCdFornecedor
@@ -108,7 +114,7 @@
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFornecedor.Location = new System.Drawing.Point(195, 53);
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(78, 20);
+            this.txtFornecedor.Size = new System.Drawing.Size(38, 20);
             this.txtFornecedor.TabIndex = 12;
             // 
             // lblCdTipoProduto
@@ -123,9 +129,9 @@
             // txtCdTipoProduto
             // 
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoProduto.Location = new System.Drawing.Point(438, 49);
+            this.txtCdTipoProduto.Location = new System.Drawing.Point(438, 53);
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
-            this.txtCdTipoProduto.Size = new System.Drawing.Size(82, 20);
+            this.txtCdTipoProduto.Size = new System.Drawing.Size(49, 20);
             this.txtCdTipoProduto.TabIndex = 12;
             // 
             // lblCdPeca
@@ -142,7 +148,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(195, 85);
             this.txtCdPeca.Name = "txtCdPeca";
-            this.txtCdPeca.Size = new System.Drawing.Size(78, 20);
+            this.txtCdPeca.Size = new System.Drawing.Size(38, 20);
             this.txtCdPeca.TabIndex = 12;
             // 
             // lblCdMotorCompra
@@ -159,7 +165,7 @@
             this.txtCdMotorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotorCompra.Location = new System.Drawing.Point(438, 85);
             this.txtCdMotorCompra.Name = "txtCdMotorCompra";
-            this.txtCdMotorCompra.Size = new System.Drawing.Size(82, 20);
+            this.txtCdMotorCompra.Size = new System.Drawing.Size(49, 20);
             this.txtCdMotorCompra.TabIndex = 12;
             // 
             // lblDtCompra
@@ -309,6 +315,51 @@
             this.btnVoltar.TabIndex = 10;
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
+            // btnBuscaFornecedor
+            // 
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(239, 50);
+            this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
+            this.btnBuscaFornecedor.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscaFornecedor.TabIndex = 13;
+            this.btnBuscaFornecedor.Text = "...";
+            this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaPeca
+            // 
+            this.btnBuscaPeca.Location = new System.Drawing.Point(239, 82);
+            this.btnBuscaPeca.Name = "btnBuscaPeca";
+            this.btnBuscaPeca.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscaPeca.TabIndex = 14;
+            this.btnBuscaPeca.Text = "...";
+            this.btnBuscaPeca.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaDepartamento
+            // 
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(493, 19);
+            this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
+            this.btnBuscaDepartamento.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscaDepartamento.TabIndex = 15;
+            this.btnBuscaDepartamento.Text = "...";
+            this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaTipoProduto
+            // 
+            this.btnBuscaTipoProduto.Location = new System.Drawing.Point(493, 50);
+            this.btnBuscaTipoProduto.Name = "btnBuscaTipoProduto";
+            this.btnBuscaTipoProduto.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscaTipoProduto.TabIndex = 16;
+            this.btnBuscaTipoProduto.Text = "...";
+            this.btnBuscaTipoProduto.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaMotorCompra
+            // 
+            this.btnBuscaMotorCompra.Location = new System.Drawing.Point(493, 82);
+            this.btnBuscaMotorCompra.Name = "btnBuscaMotorCompra";
+            this.btnBuscaMotorCompra.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscaMotorCompra.TabIndex = 17;
+            this.btnBuscaMotorCompra.Text = "...";
+            this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
+            // 
             // frmCadCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +367,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 271);
+            this.Controls.Add(this.btnBuscaMotorCompra);
+            this.Controls.Add(this.btnBuscaTipoProduto);
+            this.Controls.Add(this.btnBuscaDepartamento);
+            this.Controls.Add(this.btnBuscaPeca);
+            this.Controls.Add(this.btnBuscaFornecedor);
             this.Controls.Add(this.txtYyyy);
             this.Controls.Add(this.txtMm);
             this.Controls.Add(this.txtDd);
@@ -347,6 +403,7 @@
             this.Controls.Add(this.btnAceitar);
             this.Name = "frmCadCompra";
             this.Text = "Compra";
+            this.Load += new System.EventHandler(this.frmCadCompra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +440,10 @@
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnBuscaFornecedor;
+        private System.Windows.Forms.Button btnBuscaPeca;
+        private System.Windows.Forms.Button btnBuscaDepartamento;
+        private System.Windows.Forms.Button btnBuscaTipoProduto;
+        private System.Windows.Forms.Button btnBuscaMotorCompra;
     }
 }
