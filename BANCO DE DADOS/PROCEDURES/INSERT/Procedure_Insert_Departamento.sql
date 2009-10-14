@@ -11,9 +11,11 @@ CREATE PROCEDURE sp_insert_departamento
 AS
 BEGIN TRY
 --Validacoes para a tabela Departamento
-IF(@id_depto='')
+IF(@id_depto = '')
    RAISERROR('Informe o código do departamento!',16,1)
 ELSE
+IF(@dsc_depto = '')
+   RAISERROR('Informe o nome do departamento!',16,1)
 BEGIN
 --Insert na tabela departamento
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo)

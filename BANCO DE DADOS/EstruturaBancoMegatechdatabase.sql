@@ -1,8 +1,44 @@
 CREATE DATABASE Megatechdatabase
 go
 
-USE Megatechdatabase
+DROP TABLE Compra
 go
+
+CREATE TABLE Compra (
+       id_depto             integer NOT NULL,
+       id_compra            integer NOT NULL,
+       dat_compra           datetime NULL,
+       obs_compra           varchar(20) NULL,
+       id_fornecedor        integer NOT NULL,
+       id_motor_compra      integer NULL,
+       qtd_comp             integer NULL,
+       val_comp             numeric(15,2) NULL,
+       nro_nota_fiscal      integer NULL,
+       id_tipo_produto      integer NOT NULL,
+       id_peca              varchar(20) NULL
+)
+go
+
+
+ALTER TABLE Compra
+       ADD PRIMARY KEY CLUSTERED (id_compra ASC)
+go
+
+
+DROP TABLE Comprapeca
+go
+
+CREATE TABLE Comprapeca (
+       id_peca              varchar(20) NOT NULL,
+       ultimo_preco         integer NULL
+)
+go
+
+
+ALTER TABLE Comprapeca
+       ADD PRIMARY KEY CLUSTERED (id_peca ASC)
+go
+
 
 DROP TABLE Pedidovenda
 go
@@ -53,7 +89,7 @@ CREATE TABLE Ordemproducao (
        id_ordem_kit         integer NOT NULL,
        dsc_ordem            varchar(500) NULL,
        id_depto             integer NOT NULL,
-       id_motor             integer NOT NULL,
+       id_motor             integer NULL,
        id_grupo             integer NULL,
        id_tipo_produto      integer NOT NULL
 )
@@ -90,7 +126,6 @@ CREATE TABLE Cliente (
        nom_cli              varchar(60) NULL,
        tel_cli              varchar(20) NULL,
        nom_rua              varchar(100) NULL,
-       id_estado            integer NOT NULL,
        num_end              integer NULL,
        compl_end            varchar(20) NULL,
        cep                  integer NULL,
@@ -99,7 +134,10 @@ CREATE TABLE Cliente (
        id_rg                integer NULL,
        id_cnpj              integer NULL,
        dat_atl              datetime NULL,
-       flg_ativo            bit NULL
+       flg_ativo            bit NULL,
+       slg_estado           varchar(2) NOT NULL,
+       email_cliente        varchar(100) NULL,
+       ddd_cliente          integer NULL
 )
 go
 
@@ -121,45 +159,24 @@ CREATE TABLE Colaborador (
        compl_end            varchar(20) NULL,
        cep                  varchar(10) NULL,
        bairr_end            varchar(30) NULL,
+       ddd_colab            integer NULL,
        cidade               varchar(40) NULL,
+       tel_colab            integer NULL,
        rg                   varchar(15) NULL,
        cpf                  varchar(15) NULL,
        sexo                 char(1) NULL,
+       email_colab          varchar(100) NULL,
        dat_atl              datetime NULL,
        flg_ativo            bit NULL,
        id_usu               INTEGER NULL,
        id_depto             integer NOT NULL,
-       id_estado            integer NULL
+       slg_estado           varchar(2) NULL
 )
 go
 
 
 ALTER TABLE Colaborador
        ADD PRIMARY KEY CLUSTERED (id_colab ASC)
-go
-
-
-DROP TABLE Compra
-go
-
-CREATE TABLE Compra (
-       id_depto             integer NOT NULL,
-       id_compra            integer NOT NULL,
-       dat_compra           datetime NULL,
-       obs_compra           varchar(20) NULL,
-       id_fornecedor        integer NOT NULL,
-       id_motor_compra      integer NULL,
-       qtd_comp             integer NULL,
-       val_comp             numeric(15,2) NULL,
-       nro_nota_fiscal      integer NULL,
-       id_tipo_produto      integer NOT NULL,
-       id_peca              varchar(20) NULL
-)
-go
-
-
-ALTER TABLE Compra
-       ADD PRIMARY KEY CLUSTERED (id_compra ASC)
 go
 
 
@@ -190,12 +207,15 @@ CREATE TABLE Fornecedor (
        nro_end_fornecedor   integer NULL,
        compl_end_fornecedor varchar(20) NULL,
        cep_fornecedor       integer NULL,
+       DDD                  integer NULL,
        bairr_end_fornecedor varchar(50) NULL,
+       tel_fornecedor       integer NULL,
        cidade_fornecedor    varchar(50) NULL,
+       Email                varchar(100) NULL,
        id_cnpj_fornecedor   integer NULL,
        dat_alt              datetime NULL,
        flg_ativo            bit NULL,
-       id_estado            integer NULL
+       slg_estado           varchar(2) NULL
 )
 go
 
@@ -209,50 +229,14 @@ DROP TABLE Estado
 go
 
 CREATE TABLE Estado (
-       id_estado            integer NOT NULL,
-       slg_estado           varchar(2) NULL,
+       slg_estado           varchar(2) NOT NULL,
        nom_estado           varchar(50) NULL
 )
 go
 
 
 ALTER TABLE Estado
-       ADD PRIMARY KEY CLUSTERED (id_estado ASC)
-go
-
-
-DROP TABLE Usuarioperfil
-go
-
-CREATE TABLE Usuarioperfil (
-       id_usu               INTEGER NOT NULL,
-       flg_ativo            bit NULL,
-       id_perfil            integer NOT NULL,
-       dat_trans            datetime NULL
-)
-go
-
-
-ALTER TABLE Usuarioperfil
-       ADD PRIMARY KEY CLUSTERED (id_usu ASC, id_perfil ASC)
-go
-
-
-DROP TABLE Usuario
-go
-
-CREATE TABLE Usuario (
-       id_usu               INTEGER NOT NULL,
-       login                VARCHAR(20) NOT NULL,
-       senha                VARCHAR(15) NOT NULL,
-       obs_usu              varchar(100) NULL,
-       flg_ativo            bit NULL
-)
-go
-
-
-ALTER TABLE Usuario
-       ADD PRIMARY KEY CLUSTERED (id_usu ASC)
+       ADD PRIMARY KEY CLUSTERED (slg_estado ASC)
 go
 
 
@@ -309,11 +293,119 @@ ALTER TABLE Numeromotor
 go
 
 
+DROP TABLE Usuarioperfil
+go
+
+CREATE TABLE Usuarioperfil (
+       id_usu               INTEGER NOT NULL,
+       flg_ativo            bit NULL,
+       id_perfil            integer NOT NULL,
+       dat_trans            datetime NULL
+)
+go
+
+
+ALTER TABLE Usuarioperfil
+       ADD PRIMARY KEY CLUSTERED (id_usu ASC, id_perfil ASC)
+go
+
+
+DROP TABLE Usuario
+go
+
+CREATE TABLE Usuario (
+       id_usu               INTEGER NOT NULL,
+       login                VARCHAR(20) NOT NULL,
+       senha                VARCHAR(15) NOT NULL,
+       obs_usu              varchar(100) NULL,
+       flg_ativo            bit NULL
+)
+go
+
+
+ALTER TABLE Usuario
+       ADD PRIMARY KEY CLUSTERED (id_usu ASC)
+go
+
+
+DROP TABLE Usinagem
+go
+
+CREATE TABLE Usinagem (
+       id_usinagem          integer NOT NULL,
+       flg_status           bit NULL,
+       id_peca              varchar(20) NOT NULL,
+       dta_envio            datetime NULL
+)
+go
+
+
+ALTER TABLE Usinagem
+       ADD PRIMARY KEY CLUSTERED (id_usinagem ASC)
+go
+
+
+DROP TABLE Kitgrupopeca
+go
+
+CREATE TABLE Kitgrupopeca (
+       id_grupo             integer NOT NULL,
+       nom_grupo            varchar(50) NULL,
+       flg_ativo            bit NULL,
+       id_item_peca         integer NOT NULL,
+       id_peca              varchar(20) NOT NULL
+)
+go
+
+
+ALTER TABLE Kitgrupopeca
+       ADD PRIMARY KEY CLUSTERED (id_grupo ASC)
+go
+
+
+DROP TABLE Itempeca
+go
+
+CREATE TABLE Itempeca (
+       id_item_peca         integer NOT NULL,
+       nom_item_peca        varchar(20) NULL,
+       flg_ativo            bit NULL,
+       id_peca              varchar(20) NOT NULL
+)
+go
+
+
+ALTER TABLE Itempeca
+       ADD PRIMARY KEY CLUSTERED (id_item_peca ASC, id_peca ASC)
+go
+
+
+DROP TABLE Peca
+go
+
+CREATE TABLE Peca (
+       id_peca              varchar(20) NOT NULL,
+       nom_peca             varchar(50) NULL,
+       dat_alt              datetime NULL,
+       peso                 decimal(10,2) NULL,
+       flg_ativo            bit NULL,
+       dsc_peca             varchar(100) NULL,
+       id_estoque           integer NOT NULL,
+       qtd_minima           integer NULL,
+       id_tipo_peca         integer NOT NULL
+)
+go
+
+
+ALTER TABLE Peca
+       ADD PRIMARY KEY CLUSTERED (id_peca ASC)
+go
+
+
 DROP TABLE Tipodepeca
 go
 
 CREATE TABLE Tipodepeca (
-       id_peca              varchar(20) NOT NULL,
        id_tipo_peca         integer NOT NULL,
        dsc_tipo_peca        varchar(500) NULL,
        flg_ativo            bit NULL
@@ -373,78 +465,6 @@ go
 
 ALTER TABLE Perfil
        ADD PRIMARY KEY CLUSTERED (id_perfil ASC)
-go
-
-
-DROP TABLE Usinagem
-go
-
-CREATE TABLE Usinagem (
-       id_usinagem          integer NOT NULL,
-       flg_status           bit NULL,
-       id_peca              varchar(20) NOT NULL
-)
-go
-
-
-ALTER TABLE Usinagem
-       ADD PRIMARY KEY CLUSTERED (id_usinagem ASC)
-go
-
-
-DROP TABLE Kitgrupopeca
-go
-
-CREATE TABLE Kitgrupopeca (
-       id_grupo             integer NOT NULL,
-       nom_grupo            varchar(50) NULL,
-       flg_ativo            bit NULL,
-       id_item_peca         integer NOT NULL,
-       id_peca              varchar(20) NOT NULL
-)
-go
-
-
-ALTER TABLE Kitgrupopeca
-       ADD PRIMARY KEY CLUSTERED (id_grupo ASC)
-go
-
-
-DROP TABLE Itempeca
-go
-
-CREATE TABLE Itempeca (
-       id_item_peca         integer NOT NULL,
-       nom_item_peca        varchar(20) NULL,
-       flg_ativo            bit NULL,
-       id_peca              varchar(20) NOT NULL
-)
-go
-
-
-ALTER TABLE Itempeca
-       ADD PRIMARY KEY CLUSTERED (id_item_peca ASC, id_peca ASC)
-go
-
-
-DROP TABLE Peca
-go
-
-CREATE TABLE Peca (
-       id_peca              varchar(20) NOT NULL,
-       nom_peca             varchar(50) NULL,
-       dat_alt              datetime NULL,
-       ult_preco            integer NULL,
-       peso                 integer NULL,
-       flg_ativo            bit NULL,
-       dsc_peca             varchar(100) NULL,
-       id_estoque           integer NOT NULL
-)
-go
-
-
-ALTER TABLE Peca
-       ADD PRIMARY KEY CLUSTERED (id_peca ASC)
 go
 
 
@@ -526,7 +546,9 @@ CREATE TABLE Submenu (
        dsc_sub              varchar(50) NULL,
        end_sub              varchar(500) NULL,
        dat_atl              datetime NULL,
-       flg_ativo            bit NULL
+       flg_ativo            bit NULL,
+       id_sub_pai           integer NULL,
+       id_sub_filho         char(18) NULL
 )
 go
 
@@ -550,6 +572,42 @@ go
 
 ALTER TABLE Tipoproduto
        ADD PRIMARY KEY CLUSTERED (id_tipo_produto ASC)
+go
+
+
+ALTER TABLE Compra
+       ADD FOREIGN KEY (id_peca)
+                             REFERENCES Comprapeca  (id_peca)
+go
+
+
+ALTER TABLE Compra
+       ADD FOREIGN KEY (id_tipo_produto)
+                             REFERENCES Tipoproduto  (id_tipo_produto)
+go
+
+
+ALTER TABLE Compra
+       ADD FOREIGN KEY (id_motor_compra)
+                             REFERENCES Motor  (id_motor_compra)
+go
+
+
+ALTER TABLE Compra
+       ADD FOREIGN KEY (id_fornecedor)
+                             REFERENCES Fornecedor  (id_fornecedor)
+go
+
+
+ALTER TABLE Compra
+       ADD FOREIGN KEY (id_depto)
+                             REFERENCES Departamento  (id_depto)
+go
+
+
+ALTER TABLE Comprapeca
+       ADD FOREIGN KEY (id_peca)
+                             REFERENCES Peca  (id_peca)
 go
 
 
@@ -632,14 +690,14 @@ go
 
 
 ALTER TABLE Cliente
-       ADD FOREIGN KEY (id_estado)
-                             REFERENCES Estado  (id_estado)
+       ADD FOREIGN KEY (slg_estado)
+                             REFERENCES Estado  (slg_estado)
 go
 
 
 ALTER TABLE Colaborador
-       ADD FOREIGN KEY (id_estado)
-                             REFERENCES Estado  (id_estado)
+       ADD FOREIGN KEY (slg_estado)
+                             REFERENCES Estado  (slg_estado)
 go
 
 
@@ -652,36 +710,6 @@ go
 ALTER TABLE Colaborador
        ADD FOREIGN KEY (id_usu)
                              REFERENCES Usuario  (id_usu)
-go
-
-
-ALTER TABLE Compra
-       ADD FOREIGN KEY (id_peca)
-                             REFERENCES Peca  (id_peca)
-go
-
-
-ALTER TABLE Compra
-       ADD FOREIGN KEY (id_tipo_produto)
-                             REFERENCES Tipoproduto  (id_tipo_produto)
-go
-
-
-ALTER TABLE Compra
-       ADD FOREIGN KEY (id_motor_compra)
-                             REFERENCES Motor  (id_motor_compra)
-go
-
-
-ALTER TABLE Compra
-       ADD FOREIGN KEY (id_fornecedor)
-                             REFERENCES Fornecedor  (id_fornecedor)
-go
-
-
-ALTER TABLE Compra
-       ADD FOREIGN KEY (id_depto)
-                             REFERENCES Departamento  (id_depto)
 go
 
 
@@ -698,20 +726,8 @@ go
 
 
 ALTER TABLE Fornecedor
-       ADD FOREIGN KEY (id_estado)
-                             REFERENCES Estado  (id_estado)
-go
-
-
-ALTER TABLE Usuarioperfil
-       ADD FOREIGN KEY (id_perfil)
-                             REFERENCES Perfil  (id_perfil)
-go
-
-
-ALTER TABLE Usuarioperfil
-       ADD FOREIGN KEY (id_usu)
-                             REFERENCES Usuario  (id_usu)
+       ADD FOREIGN KEY (slg_estado)
+                             REFERENCES Estado  (slg_estado)
 go
 
 
@@ -745,21 +761,15 @@ ALTER TABLE Familiamotor
 go
 
 
-ALTER TABLE Tipodepeca
-       ADD FOREIGN KEY (id_peca)
-                             REFERENCES Peca  (id_peca)
-go
-
-
-ALTER TABLE Perfilmenu
-       ADD FOREIGN KEY (id_menu)
-                             REFERENCES Menu  (id_menu)
-go
-
-
-ALTER TABLE Perfilmenu
+ALTER TABLE Usuarioperfil
        ADD FOREIGN KEY (id_perfil)
                              REFERENCES Perfil  (id_perfil)
+go
+
+
+ALTER TABLE Usuarioperfil
+       ADD FOREIGN KEY (id_usu)
+                             REFERENCES Usuario  (id_usu)
 go
 
 
@@ -783,8 +793,26 @@ go
 
 
 ALTER TABLE Peca
+       ADD FOREIGN KEY (id_tipo_peca)
+                             REFERENCES Tipodepeca  (id_tipo_peca)
+go
+
+
+ALTER TABLE Peca
        ADD FOREIGN KEY (id_estoque)
                              REFERENCES Estoque  (id_estoque)
+go
+
+
+ALTER TABLE Perfilmenu
+       ADD FOREIGN KEY (id_menu)
+                             REFERENCES Menu  (id_menu)
+go
+
+
+ALTER TABLE Perfilmenu
+       ADD FOREIGN KEY (id_perfil)
+                             REFERENCES Perfil  (id_perfil)
 go
 
 
