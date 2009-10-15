@@ -35,6 +35,10 @@ ELSE IF(@val_comp='')
    RAISERROR('Informe o valor da compra!',16,1)
 ELSE IF(@nro_nota_fiscal='')
    RAISERROR('Informe o número da nota fiscal!',16,1)
+ELSE IF(@obs_compra='')
+   RAISERROR('Informe alguma observacao para a compra!',16,1)
+ELSE IF(@id_motor_compra='' and @id_peca='')
+   RAISERROR('Informe o codigo do motor ou da peca!',16,1)   
 ELSE
 
 BEGIN

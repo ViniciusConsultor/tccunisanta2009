@@ -1,27 +1,33 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_Tipodepeca', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_Tipodepeca;
+IF OBJECT_ID('sp_update_tipodepeca', 'P')IS NOT NULL
+	DROP PROCEDURE sp_update_tipodepeca;
 GO
 
-CREATE PROCEDURE sp_insert_Tipodepeca
+CREATE PROCEDURE sp_update_tipodepeca
 @id_tipo_peca    INT,
 @dsc_tipo_peca   VARCHAR(500),
 @flg_ativo       BIT
 AS
 
 BEGIN TRY
---Validações na tabela tipopeça
-IF(@id_tipo_peca='')
-   RAISERROR('Informe o codigo do tipo da peça!',16,1)   
-ELSE
-IF(@dsc_tipo_peca='')
-   RAISERROR('Informe a descrição do tipo da peça!',16,1)   
-ELSE
+--verifica a exitencia do codigo recebido
+IF EXISTS(select 1 from tipodepeca where id_tipo_peca=@id_tipo_peca)
 BEGIN
---Insert na tabela tipopeça
-INSERT INTO Tipodepeca(id_tipo_peca, dsc_tipo_peca, flg_ativo)
-VALUES (@id_tipo_peca, @dsc_tipo_peca, @flg_ativo)
+--Validações na tabela tipopeça
+
+--Update na tabela tipopeça
+UPDATE tipodepeca SET
+
+dsc_tipo_peca  = @dsc_tipo_peca, 
+flg_ativo      = @flg_ativo
+
+WHERE id_tipo_peca=@id_tipo_peca
+
 END
+ELSE
+--retorna erro se não houver o codigo
+RAISERROR('Tipo de peca inexistente!',16,1)
+
 END TRY
 
 BEGIN CATCH

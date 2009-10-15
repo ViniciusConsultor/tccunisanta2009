@@ -6,5 +6,5 @@
  
  CREATE PROCEDURE sp_busca_usuario
  AS
- SELECT id_usu, login, senha, obs_usu, flg_ativo FROM Usuario
+ SELECT id_usu, login FROM Usuario
 go

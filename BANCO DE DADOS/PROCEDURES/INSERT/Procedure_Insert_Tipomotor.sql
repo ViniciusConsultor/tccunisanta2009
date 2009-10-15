@@ -13,6 +13,8 @@ BEGIN TRY
 --Validações na tabela tipomotor
 IF(@id_tipo_motor='')
    RAISERROR('Informe o codigo do tipo do motor!',16,1)   
+IF(@nom_tipo_motor='')
+   RAISERROR('Informe o nome do tipo do motor!',16,1)      
 ELSE
 
 BEGIN

@@ -17,6 +17,8 @@ IF(@id_venda='')
    RAISERROR('Informe o codigo da venda!',16,1)   
 ELSE IF(@id_pedido='')
    RAISERROR('Informe o do codigo do pedido!',16,1)   
+ELSE IF(@id_depto='')
+   RAISERROR('Informe o codigo do departamento!',16,1)     
 ELSE
 
 BEGIN
