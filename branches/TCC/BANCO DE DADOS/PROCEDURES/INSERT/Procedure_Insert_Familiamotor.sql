@@ -28,6 +28,8 @@ ELSE IF(@id_motor_compra='')
    RAISERROR('Informe o código original do motor!',16,1)
 ELSE IF(@id_estoque='')
    RAISERROR('Informe o estoque onde se encontra o motor!',16,1)
+ELSE IF(@dsc_motor='')
+   RAISERROR('Informe o descricao do motor!',16,1)  
 ELSE
 BEGIN
 --Insert na tabela falimiamotor

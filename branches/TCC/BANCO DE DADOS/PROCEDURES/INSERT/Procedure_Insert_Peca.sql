@@ -25,6 +25,10 @@ ELSE IF(@id_estoque='')
    RAISERROR('Informe o estoque onde está a produto!',16,1)   
 ELSE IF(@nom_peca='')
    RAISERROR('Informe o nome da peça!',16,1)
+ELSE IF(@dsc_peca='')
+   RAISERROR('Informe a descricao da peça!',16,1)   
+ELSE IF(@qtd_minima='')
+   RAISERROR('Informe a quantidade minima de estoque da peça!',16,1)      
 ELSE
 
 BEGIN

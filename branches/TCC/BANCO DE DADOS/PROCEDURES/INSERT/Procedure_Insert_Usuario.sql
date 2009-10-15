@@ -19,6 +19,8 @@ ELSE IF(@login='')
   RAISERROR('Informe o login do usuário!',16,1)
 ELSE IF(@senha='')
   RAISERROR('Informe a senha do usuário!',16,1)
+ELSE IF(@obs_usu='')
+  RAISERROR('Informe observacoes para o usuário!',16,1)  
 ELSE
 
 BEGIN

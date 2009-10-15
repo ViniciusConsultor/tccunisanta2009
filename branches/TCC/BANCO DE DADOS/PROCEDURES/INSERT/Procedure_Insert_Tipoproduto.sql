@@ -14,6 +14,8 @@ BEGIN TRY
 --Validações na tabela tipoproduto   
 IF(@id_tipo_produto='')
    RAISERROR('Informe o codigo do tipo da produto!',16,1)
+IF(@nom_tipo_produto='')
+   RAISERROR('Informe o nome do tipo da produto!',16,1)  
 ELSE
 
 BEGIN

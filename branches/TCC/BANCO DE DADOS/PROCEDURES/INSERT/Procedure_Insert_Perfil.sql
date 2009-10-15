@@ -14,8 +14,7 @@ BEGIN TRY
 --Validações na tabela perfil
 IF(@id_perfil='')
    RAISERROR('Informe o codigo do perfil!',16,1)
-ELSE
-IF(@dsc_perfil='')
+ELSE IF(@dsc_perfil='')
    RAISERROR('Informe a descrição do perfil!',16,1)
 
 BEGIN

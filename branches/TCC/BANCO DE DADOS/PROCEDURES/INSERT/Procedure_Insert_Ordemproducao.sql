@@ -20,7 +20,9 @@ ELSE IF(@id_tipo_produto='')
    RAISERROR('Informe o tipo do produto!',16,1)   
 ELSE IF(@id_depto='')
    RAISERROR('Informe o departamento da ordem!',16,1)
-ELSE IF(@id_motor='' or @id_grupo='')
+ELSE IF(@dsc_ordem='')
+   RAISERROR('Informe uma descricao para a ordem!',16,1)   
+ELSE IF(@id_motor='' and @id_grupo='')
    RAISERROR('Informe o código do motor ou do grupo de peças!',16,1)
 ELSE
 

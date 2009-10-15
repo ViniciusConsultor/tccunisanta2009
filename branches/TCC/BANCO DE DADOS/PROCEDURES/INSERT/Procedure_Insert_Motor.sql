@@ -15,7 +15,7 @@ IF(@id_motor_compra='')
    RAISERROR('Informe o codigo do motor!',16,1)
 ELSE
 IF(@dsc_motor_compra='')
-   RAISERROR('Informe a Descrição do motor!',16,1)
+   RAISERROR('Informe a descrição do motor!',16,1)
 
 BEGIN
 --Insert na tabela motor
