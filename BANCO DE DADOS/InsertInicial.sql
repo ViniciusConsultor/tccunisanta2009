@@ -65,6 +65,7 @@ INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (9, 'M
 INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (10, 'TIPO PEÇA',	  'frmCadTipoPeca', GETDATE(), 1);
 INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (11, 'ESTOQUE',	  'frmCadEstoque', GETDATE(), 1);
 INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (12, 'PEÇA',	  'frmCadPeca', GETDATE(), 1);
+INSERT INTO Submenu (id_sub, dsc_sub, end_sub, dat_atl, flg_ativo) VALUES (13, 'USINAGEM',	  'frmCadUsinagem', GETDATE(), 1);
 
 --INSERT TABELA MENUSUBMENU
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 1, GETDATE(), 1);
@@ -79,6 +80,7 @@ INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 9, ge
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 10, getdate(), 1);
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 11, getdate(), 1);
 INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 12, getdate(), 1);
+INSERT INTO Menusubmenu (id_menu, id_sub, dat_trans, flg_ativo) VALUES (1, 13, getdate(), 1);
 
 --INSERT TABELA PERFILMENU
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_trans, flg_ativo) VALUES (1, 1, GETDATE(), 1);

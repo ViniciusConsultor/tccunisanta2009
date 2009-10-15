@@ -53,6 +53,7 @@
             this.txtCdUsinagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdUsinagem.Location = new System.Drawing.Point(170, 19);
             this.txtCdUsinagem.Name = "txtCdUsinagem";
+            this.txtCdUsinagem.ReadOnly = true;
             this.txtCdUsinagem.Size = new System.Drawing.Size(100, 20);
             this.txtCdUsinagem.TabIndex = 1;
             // 
@@ -70,6 +71,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(170, 55);
             this.txtCdPeca.Name = "txtCdPeca";
+            this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(67, 20);
             this.txtCdPeca.TabIndex = 1;
             // 
@@ -82,6 +84,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(25, 22);
             this.btnVoltar.TabIndex = 10;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -91,6 +94,7 @@
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -127,6 +131,7 @@
             this.Controls.Add(this.lblCdUsinagem);
             this.Name = "frmCadUsinagem";
             this.Text = "Usinagem";
+            this.Load += new System.EventHandler(this.frmCadUsinagem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
