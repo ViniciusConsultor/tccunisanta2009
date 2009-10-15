@@ -21,7 +21,7 @@ BEGIN TRY
 --Validações na tabela  venda
 IF(@id_venda='')
   RAISERROR('Informe o código da venda!',16,1)
-ELSE IF(@id_motor='' or @id_grupo='')
+ELSE IF(@id_motor='' and @id_grupo='')
   RAISERROR('Informe o código do motor ou do grupo de peças!',16,1)
 ELSE IF(@id_tipo_produto='')
   RAISERROR('Informe o tipo do produto!',16,1) 
@@ -29,6 +29,14 @@ ELSE IF(@id_ordem_kit='')
   RAISERROR('Informe o código da ordem de produção!',16,1)   
 ELSE IF(@id_cli='')
   RAISERROR('Informe o código do cliente!',16,1)  
+ELSE IF(@qtd_venda='')
+  RAISERROR('Informe a quantidade da venda!',16,1)   
+ELSE IF(@val_venda='')
+  RAISERROR('Informe o valor da venda!',16,1)     
+ELSE IF(@nota_fisc='')
+  RAISERROR('Informe a nota fiscal da venda!',16,1)     
+ELSE IF(@dat_saida='')
+  RAISERROR('Informe a data de saida da venda!',16,1)       
 ELSE
 
 BEGIN

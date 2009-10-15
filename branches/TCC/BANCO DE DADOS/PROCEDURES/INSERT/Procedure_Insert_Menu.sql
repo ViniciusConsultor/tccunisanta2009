@@ -17,6 +17,8 @@ IF(@id_menu='')
    RAISERROR('Informe o codigo do menu!',16,1)   
 ELSE IF(@end_menu='')
    RAISERROR('Informe o endereco do menu!',16,1)   
+ELSE IF(@dsc_menu='')
+   RAISERROR('Informe uma descricao para o menu!',16,1)   
 ELSE
 
 BEGIN

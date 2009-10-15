@@ -13,6 +13,8 @@ BEGIN TRY
 --Validações na tabela numeromotor
 IF(@id_num_motor='')
    RAISERROR('Informe o codigo do numero do motor!',16,1)   
+IF(@dsc_num_motor='')
+   RAISERROR('Informe a descricao para numero do motor!',16,1)      
 ELSE
 
 BEGIN

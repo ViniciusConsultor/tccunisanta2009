@@ -16,6 +16,8 @@ IF(@id_item_peca='')
    RAISERROR('Informe o código do item da peça!',16,1)
 ELSE IF(@id_peca='')
    RAISERROR('Informe o codigo da peça!',16,1)
+ELSE IF(@nom_item_peca='')
+   RAISERROR('Informe o nome do item da peça!',16,1)   
 ELSE
 
 BEGIN
