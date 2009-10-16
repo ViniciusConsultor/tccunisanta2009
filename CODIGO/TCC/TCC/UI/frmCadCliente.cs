@@ -10,7 +10,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadCliente : Form
+    public partial class frmCadCliente : FormPai
     {
         public frmCadCliente()
         {
@@ -33,23 +33,6 @@ namespace TCC.UI
             finally
             {
                 regraEstado = null;
-            }
-        }
-
-        private void BuscaIdMaximo()
-        {
-            rCliente regra = new rCliente();
-            try
-            {
-                this.txtCodigo.Text = regra.BuscaIdMaximoCliente().ToString();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
             }
         }
 
@@ -135,21 +118,6 @@ namespace TCC.UI
             }
         }
 
-        private void ApagaControles()
-        {
-            foreach (Control controle in this.Controls)
-            {
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if (controle.Name.Equals("txtCodigo") == false)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-            this.cboEstado.SelectedIndex = 0;
-        }
-
         private void txtCep_TextChanged(object sender, EventArgs e)
         {
             if (this.txtCep.TextLength == 5)
@@ -179,7 +147,7 @@ namespace TCC.UI
             {
                 model = this.PegaDadosTela();
                 regra.Insere(model);
-                this.ApagaControles();
+                base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
             }
             catch (Exception ex)
@@ -195,7 +163,30 @@ namespace TCC.UI
 
         private void btnLimpa_Click(object sender, EventArgs e)
         {
-            this.ApagaControles();
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
+        }
+
+        public override void BuscaIdMaximo()
+        {
+            rCliente regra = new rCliente();
+            try
+            {
+                this.txtCodigo.Text = regra.BuscaIdMaximoCliente().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
+        }
+
+        void btnVolta_Click(object sender, System.EventArgs e)
+        {
+            base.FechaTela(this);
         }
     }
 }
