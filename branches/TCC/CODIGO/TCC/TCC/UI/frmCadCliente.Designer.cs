@@ -292,6 +292,7 @@
             this.btnVolta.Size = new System.Drawing.Size(33, 26);
             this.btnVolta.TabIndex = 15;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(btnVolta_Click);
             // 
             // lblTlefone
             // 
