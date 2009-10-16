@@ -256,6 +256,7 @@
             this.btnInsere.TabIndex = 12;
             this.btnInsere.Text = "Confirma";
             this.btnInsere.UseVisualStyleBackColor = true;
+            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
             // btnDeleta
             // 
@@ -266,6 +267,7 @@
             this.btnDeleta.Size = new System.Drawing.Size(43, 29);
             this.btnDeleta.TabIndex = 13;
             this.btnDeleta.UseVisualStyleBackColor = true;
+            this.btnDeleta.Click += new System.EventHandler(this.btnDeleta_Click);
             // 
             // btnLimpa
             // 
@@ -275,6 +277,7 @@
             this.btnLimpa.TabIndex = 14;
             this.btnLimpa.Text = "Limpa";
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnCdOrdemMotor
             // 
