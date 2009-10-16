@@ -10,38 +10,21 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadTipoPeca : Form
+    public partial class frmCadTipoPeca : FormPai
     {
         public frmCadTipoPeca()
         {
             InitializeComponent();
         }
 
-        private void BuscaIdMaximo()
-        {
-            rTipoPeca regra = new rTipoPeca();
-            try
-            {
-                this.txtCdTipoPeca.Text = regra.BuscaIdMaximoTipoPeca().ToString();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.LimparCampos();
+            base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
         }
 
@@ -107,6 +90,23 @@ namespace TCC.UI
             finally
             {
                 model = null;
+                regra = null;
+            }
+        }
+
+        public override void BuscaIdMaximo()
+        {
+            rTipoPeca regra = new rTipoPeca();
+            try
+            {
+                this.txtCdTipoPeca.Text = regra.BuscaIdMaximoTipoPeca().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
                 regra = null;
             }
         }

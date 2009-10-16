@@ -275,6 +275,7 @@
             this.btnConfirma.TabIndex = 3;
             this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpa
             // 
@@ -284,6 +285,7 @@
             this.btnLimpa.TabIndex = 3;
             this.btnLimpa.Text = "limpa";
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnVolta
             // 
@@ -294,6 +296,7 @@
             this.btnVolta.Size = new System.Drawing.Size(43, 34);
             this.btnVolta.TabIndex = 3;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnCdCliente
             // 

@@ -10,7 +10,7 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmCadUsuario : Form
+    public partial class frmCadUsuario : FormPai
     {
         #region Construtor
         public frmCadUsuario()
@@ -24,14 +24,15 @@ namespace TCC.UI
         #region Form Load
         private void frmCadUsuario_Load(object sender, EventArgs e)
         {
-            this.BuscaCodigoUsuarioMax();
+            this.BuscaIdMaximo();
         }
         #endregion Form Load
 
         #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.LimpaControles();
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
         #endregion btnLimpar Click
 
@@ -52,8 +53,8 @@ namespace TCC.UI
                 //-------------------------------
                 modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
                 regraUsuarioPerfil.Insere(modelUsuarioPerfil);
-                this.LimpaControles();
-                this.BuscaCodigoUsuarioMax();
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.LoginExistenteException)
             {
@@ -119,29 +120,6 @@ namespace TCC.UI
 
         #region Metodos
 
-        #region Limpa Controles
-        /// <summary>
-        /// Limpa os controles da tela
-        /// </summary>
-        private void LimpaControles()
-        {
-            //Varre todos os controles da tela
-            //--------------------------------
-            foreach (Control controle in this.Controls)
-            {
-                //Se for do tipo TextBox apaga o conteudo escrito
-                //-----------------------------------------------
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if (controle.Name.Equals("txtCodigo") == false)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-        }
-        #endregion Limpa Controles
-
         #region Pega Dados Tela
         private mUsuario PegaDadosTela()
         {
@@ -175,8 +153,14 @@ namespace TCC.UI
         }
         #endregion Pega Dados Usuario Perfil
 
-        #region Busca Codigo Usuario Max
-        private void BuscaCodigoUsuarioMax()
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+
+        #endregion Metodos
+
+        public override void BuscaIdMaximo()
         {
             rUsuario regraUsu = new rUsuario();
             try
@@ -192,13 +176,5 @@ namespace TCC.UI
                 regraUsu = null;
             }
         }
-        #endregion Busca Codigo Usuario Max
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        #endregion Metodos
     }
 }
