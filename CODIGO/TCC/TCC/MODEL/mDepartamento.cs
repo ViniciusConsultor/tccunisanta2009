@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mDepartamento : ModelPai
+    public class mDepartamento : ModelPai
     {
         private int _idDepto;
         private string _dscDepto;

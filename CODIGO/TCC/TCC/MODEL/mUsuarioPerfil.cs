@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mUsuarioPerfil : ModelPai
+    public class mUsuarioPerfil : ModelPai
     {
         private int idUsuario;
         private int idPerfil;
@@ -27,7 +27,7 @@ namespace TCC.MODEL
             set { idPerfil = value; }
         }
 
-        [ColunasBancoDados("dat_trans", System.Data.SqlDbType.DateTime, false)]
+        [ColunasBancoDados("dat_alt", System.Data.SqlDbType.DateTime, false)]
         public DateTime DatTrans
         {
             get { return datTrans; }

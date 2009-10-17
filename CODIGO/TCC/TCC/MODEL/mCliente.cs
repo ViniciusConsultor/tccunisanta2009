@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mCliente : ModelPai
+    public class mCliente : ModelPai
     {
         private int idCliente;
         private string nomeCliente;
@@ -39,28 +39,28 @@ namespace TCC.MODEL
             set { datAtl = value; }
         }
 
-        [ColunasBancoDados("id_cnpj", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("cnpj", System.Data.SqlDbType.Int, false)]
         public int? Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }
         }
 
-        [ColunasBancoDados("id_rg", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("rg", System.Data.SqlDbType.Int, false)]
         public int? Rg
         {
             get { return rg; }
             set { rg = value; }
         }
 
-        [ColunasBancoDados("cidade", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("cid", System.Data.SqlDbType.VarChar, false)]
         public string Cidade
         {
             get { return cidade; }
             set { cidade = value; }
         }
 
-        [ColunasBancoDados("bairr_end", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("bairr", System.Data.SqlDbType.VarChar, false)]
         public string Bairro
         {
             get { return bairro; }
@@ -74,14 +74,14 @@ namespace TCC.MODEL
             set { cep = value; }
         }
 
-        [ColunasBancoDados("compl_end", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("compl", System.Data.SqlDbType.VarChar, false)]
         public string ComplementoEndereco
         {
             get { return complementoEndereco; }
             set { complementoEndereco = value; }
         }
 
-        [ColunasBancoDados("num_end", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("nro_ende", System.Data.SqlDbType.Int, false)]
         public int? NumeroEndereco
         {
             get { return numeroEndereco; }
@@ -95,21 +95,21 @@ namespace TCC.MODEL
             set { slgEstado = value; }
         }
 
-        [ColunasBancoDados("nom_rua", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("rua", System.Data.SqlDbType.VarChar, false)]
         public string NomeRua
         {
             get { return nomeRua; }
             set { nomeRua = value; }
         }
 
-        [ColunasBancoDados("tel_cli", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("tel", System.Data.SqlDbType.VarChar, false)]
         public string TelefoneCliente
         {
             get { return telefoneCliente; }
             set { telefoneCliente = value; }
         }
 
-        [ColunasBancoDados("nom_cli", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("nom", System.Data.SqlDbType.VarChar, false)]
         public string NomeCliente
         {
             get { return nomeCliente; }
@@ -123,14 +123,14 @@ namespace TCC.MODEL
             set { idCliente = value; }
         }
 
-        [ColunasBancoDados("email_cliente", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("mail", System.Data.SqlDbType.VarChar, false)]
         public string Email
         {
             get { return email; }
             set { email = value; }
         }
 
-        [ColunasBancoDados("ddd_cliente", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("ddd", System.Data.SqlDbType.Int, false)]
         public int? Ddd
         {
             get { return ddd; }

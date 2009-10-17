@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace TCC.MODEL
+{
+    public class mCompraPeca : ModelPai
+    {
+        private int idPeca;
+        private int ultimoPreco;
+        private int idCompra;
+        private string nomeTabela = "Comprapeca";
+
+        [ColunasBancoDados ("id_peca", System.Data.SqlDbType.Int,true)]
+        public int IdPeca
+        {
+            get { return idPeca; }
+            set { idPeca = value; }
+        }
+
+        [ColunasBancoDados("ultim_preco", System.Data.SqlDbType.Int,false)]
+        public int UltimoPreco
+        {
+            get { return ultimoPreco; }
+            set { ultimoPreco = value; }
+        }
+
+        [ColunasBancoDados ("id_compra", System.Data.SqlDbType.Int,false)]
+        public int IdCompra
+        {
+            get { return idCompra; }
+            set { idCompra = value; }
+        }
+
+        public override string getNomeTabela()
+        {
+            return this.nomeTabela;
+        }
+    }
+}

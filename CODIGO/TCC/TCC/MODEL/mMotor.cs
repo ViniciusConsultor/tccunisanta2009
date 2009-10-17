@@ -5,21 +5,21 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mMotor : ModelPai
+    public class mMotor : ModelPai
     {
         private int idMotor;
         private string dscMotor;
         private bool flgAtivo;
         private string nomeTabela = "motor";
 
-        [ColunasBancoDados("id_motor_compra", System.Data.SqlDbType.Int, true)]
+        [ColunasBancoDados("id_motor", System.Data.SqlDbType.Int, true)]
         public int IdMotor
         {
             get { return idMotor; }
             set { idMotor = value; }
         }
 
-        [ColunasBancoDados("dsc_motor_compra", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("dsc_motor", System.Data.SqlDbType.VarChar, false)]
         public string DscMotor
         {
             get { return dscMotor; }
@@ -35,7 +35,7 @@ namespace TCC.MODEL
 
         public override string getNomeTabela()
         {
-            return nomeTabela;
+            return this.nomeTabela;
         }
     }
 }

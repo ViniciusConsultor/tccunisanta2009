@@ -28,7 +28,7 @@ namespace TCC.MODEL
             set { dscMenu = value; }
         }
 
-        [ColunasBancoDados("end_menu", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("ende", System.Data.SqlDbType.VarChar, false)]
         public string EndMenu
         {
             get { return endMenu; }
