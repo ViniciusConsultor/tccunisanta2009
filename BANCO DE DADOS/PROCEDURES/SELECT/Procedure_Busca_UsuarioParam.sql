@@ -7,6 +7,6 @@
  CREATE PROCEDURE sp_busca_usuario_param
  @login VARCHAR(20)
  AS
- SELECT id_usu, login FROM Usuario
+ SELECT id_usu, login AS 'Login usuario' FROM Usuario
  WHERE login LIKE @login + '%'
 go
