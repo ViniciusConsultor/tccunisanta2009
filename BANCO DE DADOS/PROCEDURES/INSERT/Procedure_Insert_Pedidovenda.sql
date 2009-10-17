@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_insert_pedidovenda
 @id_venda         INT,
 @id_pedido        INT,
 @id_depto         INT,
-@dsc_pedido       VARCHAR(500),
+@dsc_venda        VARCHAR(500),
 @dat_alt          DATETIME
 AS
 
@@ -23,8 +23,8 @@ ELSE
 
 BEGIN
 --Insert na tabela pedidovenda
-INSERT INTO PEDIDOVENDA(id_venda, id_pedido, id_depto, dsc_pedido, dat_alt)
-VALUES (@id_venda, @id_pedido, @id_depto, @dsc_pedido, @dat_alt)
+INSERT INTO PEDIDOVENDA(id_venda, id_pedido, id_depto, dsc_venda, dat_alt)
+VALUES (@id_venda, @id_pedido, @id_depto, @dsc_venda, @dat_alt)
 END
 END TRY
 

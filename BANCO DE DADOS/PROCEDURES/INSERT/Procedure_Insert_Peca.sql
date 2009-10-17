@@ -5,12 +5,13 @@ GO
 
 CREATE PROCEDURE sp_insert_peca
 @id_peca              VARCHAR(20),
+@id_peca_real         VARCHAR(50),
 @id_tipo_peca         INT,
 @id_estoque           INT,
-@nom_peca             VARCHAR(50),
+@nom                  VARCHAR(50),
 @dsc_peca             VARCHAR(100),
 @peso                 DECIMAL(10,2),
-@qtd_minima           INT,
+@qtd_min              INT,
 @dat_alt              DATETIME,
 @flg_ativo            BIT
 AS
@@ -23,18 +24,18 @@ IF(@id_tipo_peca='')
    RAISERROR('Informe o codigo do tipo da peça!',16,1)
 ELSE IF(@id_estoque='')
    RAISERROR('Informe o estoque onde está a produto!',16,1)   
-ELSE IF(@nom_peca='')
+ELSE IF(@nom='')
    RAISERROR('Informe o nome da peça!',16,1)
 ELSE IF(@dsc_peca='')
    RAISERROR('Informe a descricao da peça!',16,1)   
-ELSE IF(@qtd_minima='')
+ELSE IF(@qtd_min='')
    RAISERROR('Informe a quantidade minima de estoque da peça!',16,1)      
 ELSE
 
 BEGIN
 --Insert na tabela peca
-INSERT INTO PECA(id_peca, id_tipo_peca, id_estoque, nom_peca, dsc_peca, peso, qtd_minima, dat_alt, flg_ativo)
-VALUES (@id_peca, @id_tipo_peca, @id_estoque, @nom_peca, @dsc_peca, @peso, @qtd_minima, @dat_alt, @flg_ativo)
+INSERT INTO PECA(id_peca, id_peca_real,id_tipo_peca, id_estoque, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
+VALUES (@id_peca, @id_peca_real, @id_tipo_peca, @id_estoque, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
 END
 END TRY
 

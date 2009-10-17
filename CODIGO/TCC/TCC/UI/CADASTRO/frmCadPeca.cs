@@ -6,14 +6,19 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI
 {
     public partial class frmCadPeca : Form
     {
+        mEstoque _modelEstoque;
+        mTipoPeca _modelTipoPeca;
         public frmCadPeca()
         {
             InitializeComponent();
+            _modelEstoque = new mEstoque();
+            _modelTipoPeca = new mTipoPeca();
         }
 
         private void BuscaIdMaximo()
@@ -40,7 +45,7 @@ namespace TCC.UI
 
         private void btnCdTipoPeca_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaTipoPeca objTela = new TCC.UI.BUSCA.frmBuscaTipoPeca(this.txtCdTipoPeca);
+            BUSCA.frmBuscaTipoPeca objTela = new TCC.UI.BUSCA.frmBuscaTipoPeca(_modelTipoPeca);
             try
             {
                 objTela.MdiParent = this.MdiParent;
@@ -58,7 +63,7 @@ namespace TCC.UI
 
         private void btnCdEstoque_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaEstoque objTela = new TCC.UI.BUSCA.frmBuscaEstoque(this.txtCdEstoque);
+            BUSCA.frmBuscaEstoque objTela = new TCC.UI.BUSCA.frmBuscaEstoque(_modelEstoque);
             try
             {
                 objTela.MdiParent = this.MdiParent;

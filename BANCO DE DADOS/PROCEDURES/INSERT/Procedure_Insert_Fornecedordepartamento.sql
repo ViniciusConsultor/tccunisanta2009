@@ -4,7 +4,7 @@ IF OBJECT_ID('sp_insert_fornecedordepartamento', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_fornecedordepartamento
-@id_fornecedor    INT,
+@id_forn          INT,
 @id_depto         INT,
 @dat_alt          DATETIME,
 @flg_ativo        BIT
@@ -12,7 +12,7 @@ CREATE PROCEDURE sp_insert_fornecedordepartamento
 AS 
 BEGIN TRY
 --Validações na tabela fornecedordepartamento
-IF(@id_fornecedor='')
+IF(@id_forn='')
    RAISERROR('Informe o código do fornecedor!',16,1)
 ELSE IF(@id_depto='')
    RAISERROR('Informe o codigo do departamento!',16,1)
@@ -20,8 +20,8 @@ ELSE
 
 BEGIN
 --Insert na tabela fornecedordepartamento
-INSERT INTO FORNECEDORDEPARTAMENTO(id_fornecedor, id_depto, dat_alt, flg_ativo)
-VALUES(@id_fornecedor, @id_depto, @dat_alt, @flg_ativo)
+INSERT INTO FORNECEDORDEPARTAMENTO(id_forn, id_depto, dat_alt, flg_ativo)
+VALUES(@id_forn, @id_depto, @dat_alt, @flg_ativo)
 END
 END TRY
 

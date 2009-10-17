@@ -14,11 +14,13 @@ namespace TCC.UI
     public partial class frmCadPerfilMenu : Form
     {
         mPerfil _modelPerfil;
+        mMenu _modelMenu;
 
         public frmCadPerfilMenu()
         {
             InitializeComponent();
             _modelPerfil = new mPerfil();
+            _modelMenu = new mMenu();
         }
 
         private mPerfilMenu PegaDadosTela()
@@ -36,8 +38,7 @@ namespace TCC.UI
             BUSCA.frmBuscaPerfil objBuscaPerfil = new TCC.UI.BUSCA.frmBuscaPerfil(_modelPerfil);
             try
             {
-                objBuscaPerfil.MdiParent = this.MdiParent;
-                objBuscaPerfil.Show();
+                objBuscaPerfil.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -51,11 +52,10 @@ namespace TCC.UI
 
         private void btnBuscaMenu_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaMenu objBuscaMenu = new TCC.UI.BUSCA.frmBuscaMenu(this.txtCodigoMenu);
+            BUSCA.frmBuscaMenu objBuscaMenu = new TCC.UI.BUSCA.frmBuscaMenu(_modelMenu);
             try
             {
-                objBuscaMenu.MdiParent = this.MdiParent;
-                objBuscaMenu.Show();
+                objBuscaMenu.ShowDialog();
             }
             catch (Exception ex)
             {

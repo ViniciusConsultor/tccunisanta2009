@@ -4,22 +4,22 @@ IF OBJECT_ID('sp_insert_comprapeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_comprapeca
-@id_peca         INT,
-@ultimo_preco    INT
+@id_compra       INT,
+@ultim_preco     INT
 
 AS 
 BEGIN TRY
 --Validações na tabela comprapeca
-IF(@id_peca='')
+IF(@id_compra='')
    RAISERROR('Informe o código da peça!',16,1)
-ELSE IF(@ultimo_preco='')
+ELSE IF(@ultim_preco='')
    RAISERROR('Informe o preco da peça!',16,1)
 ELSE
 
 BEGIN
 --Insert na tabela comprapeca
-INSERT INTO comprapeca(id_peca, ultimo_preco)
-VALUES(@id_peca, @ultimo_preco)
+INSERT INTO comprapeca(id_compra, ultim_preco)
+VALUES(@id_compra, @ultim_preco)
 END
 END TRY
 

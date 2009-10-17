@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_insert_usuarioperfil
 @id_usu        INT,
 @id_perfil     INT,
-@dat_trans     DATETIME,
+@dat_alt     DATETIME,
 @flg_ativo     BIT
 AS
 
@@ -20,8 +20,8 @@ ELSE
 
 BEGIN
 --Insert na tabela usuarioperfil
-INSERT INTO Usuarioperfil(id_usu, id_perfil, dat_trans, flg_ativo)
-VALUES(@id_usu, @id_perfil, @dat_trans, @flg_ativo)
+INSERT INTO Usuarioperfil(id_usu, id_perfil, dat_alt, flg_ativo)
+VALUES(@id_usu, @id_perfil, @dat_alt, @flg_ativo)
 END
 END TRY
 

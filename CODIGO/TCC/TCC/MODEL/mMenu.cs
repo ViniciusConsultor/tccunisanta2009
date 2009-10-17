@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mMenu : ModelPai
+    public class mMenu : ModelPai
     {
         private int idMenu;
         private string dscMenu;

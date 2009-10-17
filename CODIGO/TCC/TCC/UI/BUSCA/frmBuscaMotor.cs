@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaMotor : Form
     {
-        TextBox _txtParam;
-        public frmBuscaMotor(TextBox txtIdMotor)
+        mMotor _model;
+        public frmBuscaMotor(mMotor modelMotor)
         {
             InitializeComponent();
-            _txtParam = txtIdMotor;
+            this._model = modelMotor;
         }
         public void BuscaCodigo()
         {
@@ -55,7 +56,9 @@ namespace TCC.UI.BUSCA
                     if (dtSource.Rows.Count > 0)
                     {
                         dvc = this.dgMotor["id_motor_compra", this.dgMotor.CurrentRow.Index];
-                        this._txtParam.Text = dvc.Value.ToString();
+                        _model.IdMotor = Convert.ToInt32(dvc.Value);
+                        dvc = this.dgMotor["Motor", this.dgMotor.CurrentRow.Index];
+                        _model.DscMotor = dvc.Value.ToString();
                         this.Close();
                     }
                     else
