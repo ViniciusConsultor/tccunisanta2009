@@ -40,7 +40,7 @@ namespace TCC.UI
             {
                 model.Id_estoque = Convert.ToInt32(this.txtCdEstoque.Text);
                 model.Id_depto = Convert.ToInt32(this.txtCdDepartamento.Text);
-                model.Nom_estoque = this.txtNome.Text;
+                model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
                 return model;

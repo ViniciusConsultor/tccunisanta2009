@@ -22,10 +22,10 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("dsc_estoque", System.Data.SqlDbType.VarChar, false)]
-        public string Nom_estoque
+        public string Dsc_estoque
         {
-            get { return nom_estoque; }
-            set { nom_estoque = value; }
+            get { return dsc_estoque; }
+            set { dsc_estoque = value; }
         }
 
         [ColunasBancoDados("dat_alt", System.Data.SqlDbType.DateTime, false)]
