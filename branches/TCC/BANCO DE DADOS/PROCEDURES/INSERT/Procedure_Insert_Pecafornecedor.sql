@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_pecafornecedor
 @id_peca               VARCHAR(20),
-@id_fornecedor         INT,
+@id_forn         INT,
 @dat_inc               DATETIME,
 @flg_ativo             BIT
 AS
@@ -14,14 +14,14 @@ BEGIN TRY
 --Validações na tabela pecaforncedor
 IF(@id_peca='')
    RAISERROR('Informe o codigo da peça!',16,1)   
-ELSE IF(@id_fornecedor='')
+ELSE IF(@id_forn='')
    RAISERROR('Informe o do codigo do fornecedor!',16,1)   
 ELSE
 
 BEGIN
 --Insert na tabela pecafornecedor
-INSERT INTO PECAFORNECEDOR(id_peca, id_fornecedor, dat_inc, flg_ativo)
-VALUES (@id_peca, @id_fornecedor, @dat_inc, @flg_ativo)
+INSERT INTO PECAFORNECEDOR(id_peca, id_forn, dat_inc, flg_ativo)
+VALUES (@id_peca, @id_forn, @dat_inc, @flg_ativo)
 END
 END TRY
 

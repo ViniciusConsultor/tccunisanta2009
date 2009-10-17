@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_menu
 @id_menu          INT,
-@end_menu         VARCHAR(500),
+@ende             VARCHAR(500),
 @dsc_menu         VARCHAR(50),
 @dat_atl          DATETIME,
 @flg_ativo        BIT
@@ -15,7 +15,7 @@ BEGIN TRY
 --Validações na tabela menu
 IF(@id_menu='')
    RAISERROR('Informe o codigo do menu!',16,1)   
-ELSE IF(@end_menu='')
+ELSE IF(@ende='')
    RAISERROR('Informe o endereco do menu!',16,1)   
 ELSE IF(@dsc_menu='')
    RAISERROR('Informe uma descricao para o menu!',16,1)   
@@ -23,8 +23,8 @@ ELSE
 
 BEGIN
 --Insert na tabela menu
-INSERT INTO Menu(id_menu, end_menu, dsc_menu, dat_atl, flg_ativo)
-VALUES (@id_menu, @end_menu, @dsc_menu, @dat_atl, @flg_ativo)
+INSERT INTO Menu(id_menu, ende, dsc_menu, dat_atl, flg_ativo)
+VALUES (@id_menu, @ende, @dsc_menu, @dat_atl, @flg_ativo)
 END
 END TRY
 

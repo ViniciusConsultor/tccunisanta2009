@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mUsuario : ModelPai
+    public class mUsuario : ModelPai
     {
         private int idUsuario;
         private string login;

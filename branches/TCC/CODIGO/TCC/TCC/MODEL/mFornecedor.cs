@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mFornecedor : ModelPai
+    public class mFornecedor : ModelPai
     {
         private int idFornecedor;
         private string nomeFornecedor;

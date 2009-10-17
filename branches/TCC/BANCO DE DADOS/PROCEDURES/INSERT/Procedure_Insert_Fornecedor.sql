@@ -4,53 +4,53 @@ IF OBJECT_ID('sp_insert_fornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_fornecedor
-@id_fornecedor			INT,
-@slg_estado				VARCHAR(2),
-@nom_fornecedor			VARCHAR(100),
+@id_forn			    INT,
+@slg_est				VARCHAR(2),
+@nom			        VARCHAR(100),
 @tel_fornecedor         INT,
-@DDD                    INT,
+@ddd                    INT,
 @Email                  VARCHAR(100),
-@nom_rua_fornecedor		VARCHAR(50),
-@nro_end_fornecedor		INT,
-@compl_end_fornecedor   VARCHAR(20),
-@cep_fornecedor			INT,
-@bairr_end_fornecedor   VARCHAR(50),
-@cidade_fornecedor		VARCHAR(50),
-@id_cnpj_fornecedor		INT,
+@rua		            VARCHAR(50),
+@nro_ende		        INT,
+@compl                  VARCHAR(20),
+@cep			        INT,
+@bairr                  VARCHAR(50),
+@cid		            VARCHAR(50),
+@cnpj		            INT,
 @dat_alt				DATETIME,
 @flg_ativo				BIT
 AS
 
 BEGIN TRY
 --Validações na tabela fornecedor
-IF(@id_fornecedor='')
+IF(@id_forn='')
    RAISERROR('Informe o código do fornecedor!',16,1)
-ELSE IF(@slg_estado='')
+ELSE IF(@slg_est='')
    RAISERROR('Informe o estado do fornecedor!',16,1) 
-ELSE IF(@nom_fornecedor='')
+ELSE IF(@nom='')
    RAISERROR('Informe o nome do fornecedor!',16,1)
-ELSE IF(@nom_rua_fornecedor='')
+ELSE IF(@rua='')
    RAISERROR('Informe a rua do endereco do fornecedor!',16,1)
-ELSE IF(@nro_end_fornecedor='')
+ELSE IF(@nro_ende='')
    RAISERROR('Informe o número do endereco do fornecedor!',16,1)
-ELSE IF(@bairr_end_fornecedor='')
+ELSE IF(@bairr='')
    RAISERROR('Informe o bairro do fornecedor!',16,1)
-ELSE IF(@cidade_fornecedor='')
+ELSE IF(@cid='')
    RAISERROR('Informe a cidade do fornecedor!',16,1)
-ELSE IF(@DDD='')
-   RAISERROR('Informe o nº de DDD do fornecedor!',16,1)   
+ELSE IF(@ddd='')
+   RAISERROR('Informe o nº de ddd do fornecedor!',16,1)   
 ELSE IF(@tel_fornecedor='')
    RAISERROR('Informe o nº de telefone do fornecedor!',16,1)   
 ELSE IF(@Email='')
    RAISERROR('Informe o e-mail do fornecedor!',16,1)   
-ELSE IF(@id_cnpj_fornecedor='')
+ELSE IF(@cnpj='')
    RAISERROR('Informe o nº de CNPJ do fornecedor!',16,1)   
 ELSE 
   
 BEGIN
 --Insert na tabela fornecedor
-INSERT INTO Fornecedor(id_fornecedor, slg_estado, nom_fornecedor, tel_fornecedor, DDD, Email, nom_rua_fornecedor, nro_end_fornecedor, compl_end_fornecedor, cep_fornecedor, bairr_end_fornecedor, cidade_fornecedor, id_cnpj_fornecedor, dat_alt, flg_ativo)
-VALUES(@id_fornecedor, @slg_estado, @nom_fornecedor, @tel_fornecedor, @DDD, @Email, @nom_rua_fornecedor, @nro_end_fornecedor, @compl_end_fornecedor, @cep_fornecedor, @bairr_end_fornecedor, @cidade_fornecedor, @id_cnpj_fornecedor, @dat_alt, @flg_ativo)
+INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
+VALUES(@id_forn, @slg_est, @nom, @tel_fornecedor, @ddd, @Email, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
 END
 END TRY
 

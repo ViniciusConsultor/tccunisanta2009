@@ -6,17 +6,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaMenu : Form
     {
-        TextBox _txtParam = new TextBox();
+        mMenu _model;
 
-        public frmBuscaMenu(TextBox txtParam)
+        public frmBuscaMenu(mMenu modelMenu)
         {
             InitializeComponent();
-            this._txtParam = txtParam;
+            this._model = modelMenu;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -40,8 +41,11 @@ namespace TCC.UI.BUSCA
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            DataGridViewCell dvC = this.dgMenu["id_menu", this.dgMenu.CurrentRow.Index];
-            this._txtParam.Text = dvC.Value.ToString();
+            DataGridViewCell dvC;
+            dvC = this.dgMenu["id_menu", this.dgMenu.CurrentRow.Index];
+            _model.IdMenu = Convert.ToInt32(dvC.Value);
+            dvC = this.dgMenu["Menu", this.dgMenu.CurrentRow.Index];
+            _model.DscMenu = dvC.Value.ToString();
             this.Close();
         }
     }

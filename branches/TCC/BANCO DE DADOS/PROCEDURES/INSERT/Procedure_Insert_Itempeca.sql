@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_insert_itempeca
 @id_item_peca     INT,
 @id_peca          VARCHAR(20),
-@nom_item_peca    VARCHAR(20),
+@nom              VARCHAR(20),
 @flg_ativo        BIT
 
 AS 
@@ -16,14 +16,14 @@ IF(@id_item_peca='')
    RAISERROR('Informe o código do item da peça!',16,1)
 ELSE IF(@id_peca='')
    RAISERROR('Informe o codigo da peça!',16,1)
-ELSE IF(@nom_item_peca='')
+ELSE IF(@nom='')
    RAISERROR('Informe o nome do item da peça!',16,1)   
 ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO ITEMPECA(id_item_peca, id_peca, nom_item_peca, flg_ativo)
-VALUES(@id_item_peca, @id_peca, @nom_item_peca, @flg_ativo)
+INSERT INTO ITEMPECA(id_item_peca, id_peca, nom, flg_ativo)
+VALUES(@id_item_peca, @id_peca, @nom, @flg_ativo)
 END
 END TRY
 

@@ -7,21 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaDepartamento : Form
     {
+        #region Atributos
+        mDepartamento _modelDep;
+        #endregion
+
         #region Construtor
-        public frmBuscaDepartamento(TextBox txtIdDepartamento)
+        public frmBuscaDepartamento(mDepartamento modelDepartamento)
         {
             InitializeComponent();
-            _txtParam = txtIdDepartamento;
+            this._modelDep = modelDepartamento;
         }
-        #endregion
-        #region Atributos
-        TextBox _txtParam;
-        #endregion
+        #endregion Construtor
 
         #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace TCC.UI.BUSCA
                 dt = null;
             }
         }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             DataGridViewCell dvC = null;
@@ -57,7 +60,9 @@ namespace TCC.UI.BUSCA
                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                         //------------------------------------------------------------------------------------
                         dvC = this.dgDepartamento["id_depto", this.dgDepartamento.CurrentRow.Index];
-                        this._txtParam.Text = dvC.Value.ToString();
+                        this._modelDep.IdDepto = Convert.ToInt32(dvC.Value);
+                        dvC = this.dgDepartamento["Departamento", this.dgDepartamento.CurrentRow.Index];
+                        this._modelDep.DscDepto = dvC.Value.ToString();
                         this.Close();
                     }
                     else
@@ -88,8 +93,6 @@ namespace TCC.UI.BUSCA
                 }
             }
         }
-        #endregion
-
-
+        #endregion Eventos
     }
 }
