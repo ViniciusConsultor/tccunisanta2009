@@ -13,10 +13,13 @@ namespace TCC.UI
 {
     public partial class frmCadUsuario : FormPai
     {
+        mPerfil modelPerfil;
+
         #region Construtor
         public frmCadUsuario()
         {
             InitializeComponent();
+            modelPerfil = new mPerfil();
         }
         #endregion Construtor
 
@@ -102,11 +105,11 @@ namespace TCC.UI
         #region btnBuscaPerfilUsuario Click
         private void btnBuscaPerfilUsuario_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaPerfil buscar = new BUSCA.frmBuscaPerfil(this.txtPerfilUsuario);
+            BUSCA.frmBuscaPerfil buscar = new BUSCA.frmBuscaPerfil(this.modelPerfil);
             try
             {
-                buscar.MdiParent = this.MdiParent;
-                buscar.Show();
+                //buscar.MdiParent = this.MdiParent;
+                buscar.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -114,6 +117,7 @@ namespace TCC.UI
             }
             finally
             {
+                this.txtPerfilUsuario.Text = modelPerfil.DescPerfil;
                 buscar = null;
             }
         }
@@ -143,7 +147,7 @@ namespace TCC.UI
             mUsuarioPerfil model = new mUsuarioPerfil();
             if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == false)
             {
-                model.IdPerfil = Convert.ToInt32(this.txtPerfilUsuario.Text);
+                model.IdPerfil = this.modelPerfil.IdPerfil;
             }
             else
             {
