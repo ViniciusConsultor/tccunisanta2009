@@ -78,14 +78,18 @@
             // 
             // frmBuscaPerfil
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ControlBox = false;
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgPerfil);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBuscaPerfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.dgPerfil)).EndInit();
             this.ResumeLayout(false);

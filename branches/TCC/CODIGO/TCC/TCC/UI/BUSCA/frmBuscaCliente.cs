@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaCliente : Form
     {
-        TextBox _txtParam;
-        public frmBuscaCliente(TextBox txtIdCliente)
+        mCliente _model;
+        frmBuscaCliente(mCliente modelCliente)
         {
             InitializeComponent();
-            _txtParam = txtIdCliente;
+            this._model = modelCliente;
         }
         public void buscaCodigo()
         {
@@ -56,7 +57,9 @@ namespace TCC.UI.BUSCA
                     if (dtSource.Rows.Count > 0)
                     {
                         dvc = this.dgCliente["id_cli", this.dgCliente.CurrentRow.Index];
-                        this._txtParam.Text = dvc.Value.ToString();
+                        this._model.IdCliente = Convert.ToInt32(dvc.Value);
+                        dvc = this.dgCliente["nom_cli", this.dgCliente.CurrentRow.Index];
+                        this._model.NomeCliente = dvc.Value.ToString();
                         this.Close();
                     }
                     else
