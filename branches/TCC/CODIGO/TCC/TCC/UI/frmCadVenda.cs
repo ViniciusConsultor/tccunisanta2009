@@ -32,7 +32,7 @@ namespace TCC.UI
         }
 
 
-        public override void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             throw new NotImplementedException();
         }

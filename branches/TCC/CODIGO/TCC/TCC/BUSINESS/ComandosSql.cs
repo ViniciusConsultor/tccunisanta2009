@@ -9,6 +9,8 @@ using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
+    
+ 
     enum Comando
     {
         insert,
@@ -21,6 +23,8 @@ namespace TCC.BUSINESS
         public abstract void ValidarInsere(ModelPai model);
         public abstract void ValidarDeleta(ModelPai model);
         public abstract void ValidarAltera(ModelPai model);
+
+        const string PROC_INSERT = "sp_insert_";
 
         #region Busca Id Maximo Tabelas
         /// <summary>
