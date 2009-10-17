@@ -4,26 +4,26 @@ IF OBJECT_ID('sp_update_tipoproduto', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_tipoproduto
-@id_tipo_produto       INT,
-@nom_tipo_produto      VARCHAR(100),
+@id_tipo_prod       INT,
+@nom      VARCHAR(100),
 @dat_alt               DATETIME,
 @flg_ativo             BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from tipoproduto where id_tipo_produto=@id_tipo_produto)
+IF EXISTS(select 1 from tipoproduto where id_tipo_prod=@id_tipo_prod)
 BEGIN
 --Validações na tabela tipoproduto   
 
 --Update na tabela tipoproduto
 UPDATE tipoproduto SET
 
-nom_tipo_produto = @nom_tipo_produto, 
+nom = @nom, 
 dat_alt          = @dat_alt, 
 flg_ativo        = @flg_ativo
 
-WHERE id_tipo_produto = @id_tipo_produto
+WHERE id_tipo_prod = @id_tipo_prod
 
 END
 ELSE

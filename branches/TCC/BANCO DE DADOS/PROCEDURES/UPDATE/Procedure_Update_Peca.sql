@@ -7,9 +7,9 @@ CREATE PROCEDURE sp_update_peca
 @id_peca               VARCHAR(20),
 @id_tipo_peca          INT,
 @id_estoque            INT,
-@nom_peca              VARCHAR(50),
+@nom				   VARCHAR(50),
 @dsc_peca              VARCHAR(100),
-@qtd_minima            INT,
+@qtd_min            INT,
 @peso                  DECIMAL(10,2),
 @dat_alt               DATETIME,
 @flg_ativo             BIT
@@ -26,9 +26,9 @@ UPDATE peca SET
 
 id_tipo_peca         = @id_tipo_peca, 
 id_estoque           = @id_estoque, 
-nom_peca             = @nom_peca, 
+nom             = @nom, 
 dsc_peca             = @dsc_peca, 
-qtd_minima           = @qtd_minima,
+qtd_min           = @qtd_min,
 peso                 = @peso, 
 dat_alt              = @dat_alt, 
 flg_ativo            = flg_ativo

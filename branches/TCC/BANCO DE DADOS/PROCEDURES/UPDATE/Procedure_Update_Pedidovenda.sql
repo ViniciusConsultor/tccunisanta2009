@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_update_pedidovenda
 @id_venda         INT,
 @id_pedido        INT,
 @id_depto         INT,
-@dsc_pedido       VARCHAR(500),
+@dsc_venda       VARCHAR(500),
 @dat_alt          DATETIME
 AS
 
@@ -22,7 +22,7 @@ UPDATE pedidovenda SET
 
 id_pedido    = @id_pedido, 
 id_depto     = @id_depto, 
-dsc_pedido   = @dsc_pedido, 
+dsc_venda   = @dsc_venda, 
 dat_alt      = @dat_alt
 
 WHERE id_venda=@id_venda

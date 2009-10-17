@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_tipodepeca
 @id_tipo_peca    INT,
-@dsc_tipo_peca   VARCHAR(500),
+@dsc   VARCHAR(500),
 @flg_ativo       BIT
 AS
 
@@ -18,7 +18,7 @@ BEGIN
 --Update na tabela tipopeça
 UPDATE tipodepeca SET
 
-dsc_tipo_peca  = @dsc_tipo_peca, 
+dsc  = @dsc, 
 flg_ativo      = @flg_ativo
 
 WHERE id_tipo_peca=@id_tipo_peca

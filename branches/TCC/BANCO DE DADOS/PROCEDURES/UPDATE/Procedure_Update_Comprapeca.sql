@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_comprapeca
 @id_peca               VARCHAR(20),
-@ultimo_preco          INT
+@ultim_preco          INT
 AS
 
 BEGIN TRY
@@ -18,7 +18,7 @@ BEGIN
 UPDATE Comprapeca SET
 
 id_peca               = @id_peca, 
-ultimo_preco          = @ultimo_preco
+ultim_preco          = @ultim_preco
 
 WHERE id_peca = @id_peca
 
