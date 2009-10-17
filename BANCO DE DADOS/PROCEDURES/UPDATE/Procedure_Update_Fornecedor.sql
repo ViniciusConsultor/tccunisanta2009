@@ -4,48 +4,48 @@ IF OBJECT_ID('sp_update_fornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_fornecedor
-@id_fornecedor			INT,
-@slg_estado				VARCHAR(2),
-@nom_fornecedor			VARCHAR(100),
+@id_forn			INT,
+@slg_est				VARCHAR(2),
+@nom			VARCHAR(100),
 @DDD                    INT,
-@tel_fornecedor         INT,
-@Email                  VARCHAR(100),
-@nom_rua_fornecedor		VARCHAR(50),
-@nro_end_fornecedor		INT,
-@compl_end_fornecedor   VARCHAR(20),
-@cep_fornecedor			INT,
-@bairr_end_fornecedor   VARCHAR(50),
-@cidade_fornecedor		VARCHAR(50),
-@id_cnpj_fornecedor		INT,
+@tel         INT,
+@mail                  VARCHAR(100),
+@rua		VARCHAR(50),
+@nro_ende		INT,
+@compl   VARCHAR(20),
+@cep			INT,
+@bairr   VARCHAR(50),
+@cid		VARCHAR(50),
+@cnpj		INT,
 @dat_alt				DATETIME,
 @flg_ativo				BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Fornecedor where id_fornecedor=@id_fornecedor)
+IF EXISTS(select 1 from Fornecedor where id_forn=@id_forn)
 BEGIN
 --Validações na tabela fornecedor
   
 --Update na tabela fornecedor
 UPDATE Fornecedor SET
 
-slg_estado            = @slg_estado, 
-nom_fornecedor        = @nom_fornecedor, 
-nom_rua_fornecedor    = @nom_rua_fornecedor, 
+slg_est            = @slg_est, 
+nom        = @nom, 
+rua    = @rua, 
 DDD                   = @DDD,
-tel_fornecedor        = @tel_fornecedor,
-Email                 = @Email,
-nro_end_fornecedor    = @nro_end_fornecedor, 
-compl_end_fornecedor  = @compl_end_fornecedor, 
-cep_fornecedor        = @cep_fornecedor, 
-bairr_end_fornecedor  = @bairr_end_fornecedor, 
-cidade_fornecedor     = @cidade_fornecedor, 
-id_cnpj_fornecedor    = @id_cnpj_fornecedor, 
+tel        = @tel,
+mail                 = @mail,
+nro_ende    = @nro_ende, 
+compl  = @compl, 
+cep        = @cep, 
+bairr  = @bairr, 
+cid     = @cid, 
+cnpj    = @cnpj, 
 dat_alt               = @dat_alt, 
 flg_ativo             = @flg_ativo
 
-WHERE id_fornecedor = @id_fornecedor
+WHERE id_forn = @id_forn
 
 END
 ELSE

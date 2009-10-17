@@ -6,14 +6,14 @@ GO
 CREATE PROCEDURE sp_update_compra
 @id_compra               INT,
 @id_depto                INT,
-@id_fornecedor           INT,
-@id_motor_compra         INT,
+@id_forn           INT,
+@id_motor         INT,
 @id_tipo_produto         INT,
 @id_peca                 INT,
-@dat_compra              DATETIME,
-@qtd_comp                INT,
-@val_comp                NUMERIC(15,2),
-@nro_nota_fiscal         INT,
+@dat              DATETIME,
+@qtd                INT,
+@valor                NUMERIC(15,2),
+@nota_fiscal         INT,
 @obs_compra              VARCHAR(20)
 AS
 
@@ -27,14 +27,14 @@ BEGIN
 UPDATE Compra SET
 
 id_depto               = @id_depto, 
-id_fornecedor          = @id_fornecedor, 
-id_motor_compra        = @id_motor_compra, 
+id_forn          = @id_forn, 
+id_motor        = @id_motor, 
 id_tipo_produto        = @id_tipo_produto, 
 id_peca                = @id_peca, 
-dat_compra             = @dat_compra, 
-qtd_comp               = @qtd_comp, 
-val_comp               = @val_comp, 
-nro_nota_fiscal        = @nro_nota_fiscal, 
+dat             = @dat, 
+qtd               = @qtd, 
+valor               = @valor, 
+nota_fiscal        = @nota_fiscal, 
 obs_compra             = @obs_compra
 
 WHERE id_compra = @id_compra

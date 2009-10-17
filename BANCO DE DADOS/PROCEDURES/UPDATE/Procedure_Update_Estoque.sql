@@ -4,16 +4,16 @@ IF OBJECT_ID('sp_update_estoque', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_estoque
-@id_estoque       INT,
+@id_estoq       INT,
 @id_depto         INT,
-@nom_estoque      VARCHAR(100),
+@dsc_estoq      VARCHAR(100),
 @dat_alt          DATETIME,
 @flg_ativo        BIT
 
 AS 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Estoque where id_estoque=@id_estoque)
+IF EXISTS(select 1 from Estoque where id_estoq=@id_estoq)
 BEGIN
 --Validações na tabela estoque
 
@@ -21,11 +21,11 @@ BEGIN
 UPDATE ESTOQUE SET
 
 id_depto     = @id_depto, 
-nom_estoque  = @nom_estoque, 
+dsc_estoq  = @dsc_estoq, 
 dat_alt      = @dat_alt, 
 flg_ativo    = @flg_ativo
 
-WHERE id_estoque = @id_estoque
+WHERE id_estoq = @id_estoq
 
 END
 ELSE

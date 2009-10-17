@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_tipomotor
 @id_tipo_motor         VARCHAR(20),
-@nom_tipo_motor        VARCHAR(50),
+@dsc_tipo_motor        VARCHAR(50),
 @flg_ativo             BIT
 AS
 
@@ -18,7 +18,7 @@ BEGIN
 --Update na tabela tipomotor
 UPDATE tipomotor SET
 
-nom_tipo_motor = @nom_tipo_motor, 
+dsc_tipo_motor = @dsc_tipo_motor, 
 flg_ativo      = @flg_ativo
 
 WHERE id_tipo_motor=@id_tipo_motor

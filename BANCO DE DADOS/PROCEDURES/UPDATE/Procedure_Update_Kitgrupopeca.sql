@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_update_kitgrupopeca
 @id_grupo      INT,
 @id_peca       VARCHAR(20),
 @id_item_peca  INT,
-@nom_grupo     VARCHAR(50),
+@nom     VARCHAR(50),
 @flg_ativo     BIT
 
 AS 
@@ -22,7 +22,7 @@ UPDATE kitgrupopeca SET
 
 id_peca      = @id_peca, 
 id_item_peca = @id_item_peca, 
-nom_grupo     = @nom_grupo, 
+nom     = @nom, 
 flg_ativo    = @flg_ativo
 
 WHERE id_grupo=@id_grupo
