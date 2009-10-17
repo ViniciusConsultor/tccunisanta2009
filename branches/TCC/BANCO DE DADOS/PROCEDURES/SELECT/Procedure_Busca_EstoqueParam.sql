@@ -6,6 +6,6 @@ GO
 CREATE PROCEDURE sp_busca_estoque_param
 @nom_estoque VARCHAR(500)
 AS
-SELECT id_estoque, nom_estoque 
+SELECT id_estoque, nom_estoque AS 'nome estque'
 FROM Estoque
 WHERE nom_estoque LIKE @nom_estoque  + '%'
