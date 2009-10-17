@@ -11,7 +11,7 @@ namespace TCC.BUSINESS
 {
     
  
-    enum Comando
+    enum TipoComando
     {
         insert,
         delete,
@@ -24,7 +24,9 @@ namespace TCC.BUSINESS
         public abstract void ValidarDeleta(ModelPai model);
         public abstract void ValidarAltera(ModelPai model);
 
-        const string PROC_INSERT = "sp_insert_";
+        const string INICIO_PROC_INSERIR = "sp_insert_";
+        const string INICIO_PROC_ALTERAR = "sp_update_";
+        const string INICIO_PROC_EXCLUIR = "sp_delete_";
 
         #region Busca Id Maximo Tabelas
         /// <summary>
@@ -162,8 +164,7 @@ namespace TCC.BUSINESS
         /// <param name="model">Model com os dados e a tabela a ser inserido</param>
         public void Insere(ModelPai model)
         {
-            string inicioNomeProc = "sp_" + Comando.insert.ToString() + "_";
-            this.ExecutaComandoSql(model, inicioNomeProc, Comando.insert);
+            this.ExecutaComandoSql(model, TipoComando.insert);
         }
         #endregion Insere
 
@@ -174,8 +175,7 @@ namespace TCC.BUSINESS
         /// <param name="model">Model com os dados e a tabela a ser inserido</param>
         public void Deleta(ModelPai model)
         {
-            string inicioNomeProc = "sp_" + Comando.delete.ToString() + "_";
-            this.ExecutaComandoSql(model, inicioNomeProc, Comando.delete);
+            this.ExecutaComandoSql(model, TipoComando.delete);
         }
         #endregion Deleta
 
@@ -186,26 +186,35 @@ namespace TCC.BUSINESS
         /// <param name="model">Model com os dados e a tabela a ser inserido</param>
         public void Altera(ModelPai model)
         {
-            string inicioNomeProc = "sp_" + Comando.update.ToString() + "_";
-            this.ExecutaComandoSql(model, inicioNomeProc, Comando.update);
+            this.ExecutaComandoSql(model, TipoComando.update);
         }
         #endregion Altera
 
         #region Executa Comando Sql
-        public void ExecutaComandoSql(ModelPai model, string inicioNomeProc, Comando com)
+        public void ExecutaComandoSql(ModelPai model, TipoComando com)
         {
-            string nomeProc;
+            string nomeProc = "";
             SqlParameter[] parametros = null;
             try
             {
-                nomeProc = inicioNomeProc + model.getNomeTabela();
-                if (com == Comando.insert)
+                switch ( com )
                 {
+                    case TipoComando.insert:
                     parametros = this.BuscaNomeParametros(model);
-                }
-                else
-                {
+                    nomeProc = INICIO_PROC_INSERIR + model.getNomeTabela();
+                    break;
+                    case TipoComando.update:
                     parametros = this.BuscaNomeParametrosChavePrimaria(model);
+                    nomeProc = INICIO_PROC_ALTERAR + model.getNomeTabela();
+                    break;
+
+                    case TipoComando.delete:
+                    parametros = this.BuscaNomeParametrosChavePrimaria(model);
+                    nomeProc = INICIO_PROC_EXCLUIR + model.getNomeTabela();
+                    break;
+
+
+
                 }
                 base.ExecutaProcedure(nomeProc, parametros);
             }
