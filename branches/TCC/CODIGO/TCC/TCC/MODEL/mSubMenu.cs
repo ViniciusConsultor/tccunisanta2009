@@ -5,47 +5,38 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mSubMenu
+    public class mSubMenu : ModelPai
     {
-        private int idSubMenu;
-        private string dscSubMenu;
-        private string endSubMenu;
-        private bool flgAtivo;
-        private DateTime datAtl;
+        private int idMenuFilho;
+        private int idMenuPai;
+        private int idMenu;
+        private string nomeTabela = "Submenu";
 
-
-        public int IdSubMenu
+        [ColunasBancoDados ("id_menu_filho", System.Data.SqlDbType.Int,true)]
+        public int IdMenuFilho
         {
-            get { return idSubMenu; }
-            set { idSubMenu = value; }
+            get { return idMenuFilho; }
+            set { idMenuFilho = value; }
         }
 
-
-        public string DscSubMenu
+        [ColunasBancoDados ("id_menu_pai", System.Data.SqlDbType.Int,true)]
+        public int IdMenuPai
         {
-            get { return dscSubMenu; }
-            set { dscSubMenu = value; }
+            get { return idMenuPai; }
+            set { idMenuPai = value; }
         }
 
-
-        public string EndSubMenu
+        [ColunasBancoDados ("id_menu", System.Data.SqlDbType.Int,false)]
+        public int IdMenu
         {
-            get { return endSubMenu; }
-            set { endSubMenu = value; }
+            get { return idMenu; }
+            set { idMenu = value; }
         }
 
-
-        public DateTime DatAtl
+        public override string getNomeTabela()
         {
-            get { return datAtl = DateTime.Now; }
-            set { datAtl = value; }
+            return this.nomeTabela;
         }
 
-
-        public bool FlgAtivo
-        {
-            get { return flgAtivo = true; }
-            set { flgAtivo = value; }
-        }
     }
 }

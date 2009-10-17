@@ -5,10 +5,9 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mEstado : ModelPai
+    public class mEstado : ModelPai
     {
         private string nomeTabela = "estado";
-        private int idEstado;
         private string siglaEstado;
         private string nomEstado;
 
@@ -26,16 +25,9 @@ namespace TCC.MODEL
             set { siglaEstado = value; }
         }
 
-        [ColunasBancoDados("id_estado", System.Data.SqlDbType.Int, true)]
-        public int IdEstado
-        {
-            get { return idEstado; }
-            set { idEstado = value; }
-        }
-
         public override string getNomeTabela()
         {
-            return nomeTabela;
+            return this.nomeTabela;
         }
     }
 }
