@@ -5,4 +5,5 @@ IF OBJECT_ID('sp_busca_estoque','P')IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_estoque
 AS
-SELECT id_estoque, nom_estoque FROM Estoque
+SELECT id_estoque, nom_estoque AS 'Nome do estoque'
+FROM Estoque

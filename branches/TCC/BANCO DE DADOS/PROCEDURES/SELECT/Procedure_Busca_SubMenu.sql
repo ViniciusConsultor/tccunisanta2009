@@ -8,7 +8,7 @@
  @id_menu AS INT,
  @id_perfil AS INT
  AS
- SELECT sm.id_sub, sm.dsc_sub, sm.end_sub
+ SELECT sm.id_sub, sm.dsc_sub AS 'Descrição submenu', sm.end_sub as 'Endereço submenu'
  FROM Submenu sm
  INNER JOIN Menusubmenu msm
 	 ON sm.id_sub = msm.id_sub
