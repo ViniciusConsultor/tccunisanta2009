@@ -6,5 +6,9 @@ GO
 
 CREATE PROCEDURE sp_busca_departamento 
 AS 
+<<<<<<< .mine
+SELECT id_depto, dsc_depto 'Departamento' FROM Departamento 
+=======
 SELECT id_depto, dsc_depto as 'Descrição do departamento' FROM Departamento 
+>>>>>>> .r88
 go
