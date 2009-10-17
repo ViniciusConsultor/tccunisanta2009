@@ -6,5 +6,5 @@
  
  CREATE PROCEDURE sp_busca_perfil
  AS
- SELECT id_perfil, dsc_perfil FROM Perfil
+ SELECT id_perfil, dsc_perfil as 'Descrição do perfil' FROM Perfil
 go
