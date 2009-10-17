@@ -8,6 +8,6 @@ GO
 CREATE PROCEDURE sp_busca_departamento_param
 @dsc_departamento VARCHAR(30)
 AS
-SELECT id_depto, dsc_depto
+SELECT id_depto, dsc_depto as 'Descrição do departamento '
 FROM Departamento
 WHERE dsc_depto LIKE @dsc_departamento + '%'

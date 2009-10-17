@@ -195,7 +195,7 @@ namespace TCC.UI
                 itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
                 for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
-                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["dsc_menu"].ToString());
+                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["Descrição do menu"].ToString());
                     dtSubMenu = regraSubMenu.BuscaSubMenu(Convert.ToInt32(dtMenu.Rows[contador]["id_menu"]), frmInicial._idPerfil);
                     this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { itemMenuP[contador] });
                     //Verifica se existem SubMenus para aquele menu

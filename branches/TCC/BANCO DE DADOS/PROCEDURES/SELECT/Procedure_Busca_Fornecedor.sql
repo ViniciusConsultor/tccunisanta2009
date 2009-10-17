@@ -5,4 +5,4 @@ IF OBJECT_ID('sp_busca_fornecedor','P')IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_fornecedor
 AS
-SELECT id_fornecedor, nom_fornecedor FROM fornecedor
+SELECT id_fornecedor, nom_fornecedor as 'Nome do fornecedor' FROM fornecedor

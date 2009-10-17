@@ -5,4 +5,4 @@ IF OBJECT_ID('sp_busca_motor','P')IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_motor
 AS
-SELECT id_motor_compra, dsc_motor_compra fROM motor
+SELECT id_motor_compra, dsc_motor_compra as 'Descrição do motor' fROM motor
