@@ -18,7 +18,7 @@ namespace TCC.UI.BUSCA
             InitializeComponent();
             _txtParam = txtIdCliente;
         }
-        public void buscaCodigo() 
+        public void buscaCodigo()
         {
 
         }
@@ -31,10 +31,10 @@ namespace TCC.UI.BUSCA
             {
                 dt = regraCliente.BuscaClientes (this.txtFiltro.Text);
                 dgCliente.DataSource = dt;
+                dgCliente.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
