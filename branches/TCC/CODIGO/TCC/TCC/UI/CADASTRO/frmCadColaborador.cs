@@ -13,9 +13,13 @@ namespace TCC.UI
 {
     public partial class frmCadColaborador : Form
     {
+        mUsuario _modelUsuario;
+        mDepartamento _modeldDepartamento;
         public frmCadColaborador()
         {
             InitializeComponent();
+            _modelUsuario = new mUsuario();
+            _modeldDepartamento = new mDepartamento();
         }
 
         #region Eventos
@@ -91,11 +95,10 @@ namespace TCC.UI
         }
         private void btnBuscaUsuario_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaUsuario buscarUsuario = new BUSCA.frmBuscaUsuario(this.txtCdUsuario);
+            BUSCA.frmBuscaUsuario buscarUsuario = new BUSCA.frmBuscaUsuario(_modelUsuario);
             try
             {
-                buscarUsuario.MdiParent = this.MdiParent;
-                buscarUsuario.Show();
+                buscarUsuario.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -108,11 +111,10 @@ namespace TCC.UI
         }
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaDepartamento buscarDepartamento = new BUSCA.frmBuscaDepartamento(this.txtCdDepartamento);
+            BUSCA.frmBuscaDepartamento buscarDepartamento = new BUSCA.frmBuscaDepartamento(_modeldDepartamento);
             try
             {
-                buscarDepartamento.MdiParent = this.MdiParent;
-                buscarDepartamento.Show();
+                buscarDepartamento.ShowDialog();
             }
             catch (Exception ex)
             {

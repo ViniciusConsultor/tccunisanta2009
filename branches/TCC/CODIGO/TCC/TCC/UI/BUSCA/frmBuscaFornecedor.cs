@@ -6,17 +6,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaFornecedor : Form
     {
-        TextBox _txtParam;
+        mFornecedor _model;
 
-        public frmBuscaFornecedor(TextBox txtFornecedor)
+        public frmBuscaFornecedor(mFornecedor modelFornecedor)
         {
             InitializeComponent();
-            this._txtParam = txtFornecedor;
+            _model = modelFornecedor;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -50,7 +51,9 @@ namespace TCC.UI.BUSCA
                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                         //------------------------------------------------------------------------------------
                         dvC = this.dgFornecedor["id_fornecedor", this.dgFornecedor.CurrentRow.Index];
-                        this._txtParam.Text = dvC.Value.ToString();
+                        _model.IdFornecedor = Convert.ToInt32(dvC.Value); 
+                        dvC = this.dgFornecedor["Fornecedor", this.dgFornecedor.CurrentRow.Index];
+                        _model.NomeFornecedor = dvC.Value.ToString();
                         this.Close();
                     }
                     else

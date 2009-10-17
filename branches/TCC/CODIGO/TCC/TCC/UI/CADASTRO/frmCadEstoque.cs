@@ -13,9 +13,11 @@ namespace TCC.UI
 {
     public partial class frmCadEstoque : Form
     {
+        mDepartamento modelDepartamento;
         public frmCadEstoque()
         {
             InitializeComponent();
+            modelDepartamento = new mDepartamento();
         }
         private void BuscaIdMaximo()
         {
@@ -97,11 +99,10 @@ namespace TCC.UI
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaDepartamento objFormBuscaDep = new BUSCA.frmBuscaDepartamento(this.txtCdDepartamento);
+            BUSCA.frmBuscaDepartamento objFormBuscaDep = new BUSCA.frmBuscaDepartamento(modelDepartamento);
             try
             {
-                objFormBuscaDep.MdiParent = this.MdiParent;
-                objFormBuscaDep.Show();
+                objFormBuscaDep.ShowDialog();
             }
             catch (Exception ex)
             {

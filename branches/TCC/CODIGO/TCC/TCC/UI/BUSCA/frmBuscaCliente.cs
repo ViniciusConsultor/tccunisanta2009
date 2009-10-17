@@ -58,7 +58,7 @@ namespace TCC.UI.BUSCA
                     {
                         dvc = this.dgCliente["id_cli", this.dgCliente.CurrentRow.Index];
                         this._model.IdCliente = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgCliente["nom_cli", this.dgCliente.CurrentRow.Index];
+                        dvc = this.dgCliente["Nome do cliente", this.dgCliente.CurrentRow.Index];
                         this._model.NomeCliente = dvc.Value.ToString();
                         this.Close();
                     }

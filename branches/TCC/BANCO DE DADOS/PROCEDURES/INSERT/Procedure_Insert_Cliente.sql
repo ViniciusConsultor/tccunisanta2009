@@ -5,19 +5,19 @@ GO
 
 CREATE PROCEDURE sp_insert_cliente
 @id_cli			INT,
-@slg_estado		VARCHAR(2),
-@nom_cli		VARCHAR(60),
-@tel_cli	    VARCHAR(20),
-@ddd_cliente    INT,
-@email_cliente  VARCHAR(100),
-@id_rg			INT,
-@id_cnpj	    INT,
-@nom_rua	    VARCHAR(100),
-@num_end		INT,
-@compl_end	    VARCHAR(20),
+@slg_est		VARCHAR(2),
+@nom		VARCHAR(60),
+@tel	    VARCHAR(20),
+@ddd    INT,
+@mail  VARCHAR(100),
+@rg			INT,
+@cnpj	    INT,
+@rua	    VARCHAR(100),
+@nro_ende		INT,
+@compl	    VARCHAR(20),
 @cep		    INT,
-@bairr_end		VARCHAR(20),
-@cidade		    VARCHAR(50),
+@bairr		VARCHAR(20),
+@cid		    VARCHAR(50),
 @dat_atl		DATETIME,
 @flg_ativo		BIT
 AS
@@ -26,27 +26,27 @@ BEGIN TRY
 --Validações para a tabela cliente
 IF(@id_cli='')
   RAISERROR('Informe o código do cliente!',16,1)
-ELSE IF(@slg_estado='')
+ELSE IF(@slg_est='')
   RAISERROR('Informe o estado do cliente!',16,1)
-ELSE IF(@nom_cli='')
+ELSE IF(@nom='')
   RAISERROR('Informe o nome do cliente!',16,1)
-ELSE IF(@email_cliente='')
+ELSE IF(@mail='')
   RAISERROR('Informe o e-mail do cliente!',16,1)
-ELSE IF(@nom_rua='')
+ELSE IF(@rua='')
   RAISERROR('Informe a rua do endereco do cliente!',16,1)
-ELSE IF(@num_end='')
+ELSE IF(@nro_ende='')
   RAISERROR('Informe o numero do cliente!',16,1)
-ELSE IF(@bairr_end='')
+ELSE IF(@bairr='')
   RAISERROR('Informe o bairro do cliente!',16,1)
-ELSE IF(@cidade='')
+ELSE IF(@cid='')
   RAISERROR('Informe o cidade do cliente!',16,1)
 ELSE
 BEGIN
 --Insert na tabela cliente
 INSERT INTO Cliente
-(id_cli, slg_estado, nom_cli, tel_cli, ddd_cliente, email_cliente, id_rg, id_cnpj, nom_rua, num_end, compl_end, cep, bairr_end, cidade, dat_atl, flg_ativo)
+(id_cli, slg_est, nom, tel, ddd, mail, rg, cnpj, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo)
 VALUES
-(@id_cli, @slg_estado, @nom_cli, @tel_cli, @ddd_cliente, @email_cliente, @id_rg, @id_cnpj, @nom_rua, @num_end, @compl_end, @cep, @bairr_end, @cidade, @dat_atl, @flg_ativo)
+(@id_cli, @slg_est, @nom, @tel, @ddd, @mail, @rg, @cnpj, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo)
 END
 END TRY
 

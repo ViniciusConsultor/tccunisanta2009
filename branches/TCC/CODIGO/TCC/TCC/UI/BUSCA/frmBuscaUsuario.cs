@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaUsuario : Form
     {
         bool _alteracao;
+
+        mUsuario _model;
 
         #region Construtor
         public frmBuscaUsuario()
@@ -21,10 +24,10 @@ namespace TCC.UI.BUSCA
             this._alteracao = true;
         }
 
-        public frmBuscaUsuario(TextBox txtIdUsuario)
+        public frmBuscaUsuario(mUsuario modelUsuario)
         {
             InitializeComponent();
-            _txtParam = txtIdUsuario;
+            _model = modelUsuario;
             this._alteracao = false;
         }
         #endregion
@@ -64,13 +67,14 @@ namespace TCC.UI.BUSCA
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                        //------------------------------------------------------------------------------------
-                        dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
-
                         if (this._alteracao == false)
                         {
-                            this._txtParam.Text = dvC.Value.ToString();
+                            //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
+                            //------------------------------------------------------------------------------------
+                            dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
+                            _model.IdUsuario = Convert.ToInt32(dvC.Value);
+                            dvC = this.dgUsuario["Usuário", this.dgUsuario.CurrentRow.Index];
+                            _model.Login = dvC.Value.ToString();
                             this.Close();
                         }
                         else

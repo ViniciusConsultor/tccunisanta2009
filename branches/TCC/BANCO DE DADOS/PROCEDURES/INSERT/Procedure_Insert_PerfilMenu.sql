@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_insert_perfilmenu
 @id_perfil     INT,
 @id_menu       INT,
-@dat_trans  DATETIME,
+@dat_alt  DATETIME,
 @flg_ativo     BIT
 AS
 
@@ -20,8 +20,8 @@ ELSE
 
 BEGIN
 --Insert na tabela perfilmenu
-INSERT INTO Perfilmenu(id_perfil, id_menu, dat_trans, flg_ativo)
-VALUES(@id_perfil, @id_menu, @dat_trans, @flg_ativo)
+INSERT INTO Perfilmenu(id_perfil, id_menu, dat_alt, flg_ativo)
+VALUES(@id_perfil, @id_menu, @dat_alt, @flg_ativo)
 END
 END TRY
 

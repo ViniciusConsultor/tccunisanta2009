@@ -206,9 +206,9 @@ namespace TCC.UI
                         //--------------------------------------------------------------------------
                         for (int i = 0; i < dtSubMenu.Rows.Count; i++)
                         {
-                            itemMenuP[contador].DropDownItems.Add(dtSubMenu.Rows[i]["dsc_sub"].ToString());
+                            itemMenuP[contador].DropDownItems.Add(dtSubMenu.Rows[i]["Descrição submenu"].ToString());
                             itemMenuP[contador].DropDownItems[i].Click += new EventHandler(frmInicial_Click);
-                            _dicEventos.Add(dtSubMenu.Rows[i]["dsc_sub"].ToString(), dtSubMenu.Rows[i]["end_sub"]);
+                            _dicEventos.Add(dtSubMenu.Rows[i]["Descrição submenu"].ToString(), dtSubMenu.Rows[i]["Endereço submenu"]);
                         }
                     }
                     else
@@ -216,7 +216,7 @@ namespace TCC.UI
                         //Caso não exista apenas adiciona o evento ao controle
                         //----------------------------------------------------
                         this.mnuPrincipal.Items[contador].Click +=new EventHandler(frmInicial_Click);
-                        _dicEventos.Add(dtMenu.Rows[contador]["dsc_menu"].ToString(), dtMenu.Rows[contador]["end_menu"]);
+                        _dicEventos.Add(dtMenu.Rows[contador]["Descrição do menu"].ToString(), dtMenu.Rows[contador]["Endereço do menu"]);
                     }
                 }
             }
