@@ -5,14 +5,14 @@ GO
 
 CREATE PROCEDURE sp_update_fornecedordepto
 @id_depto              INT,
-@id_fornecedor         INT,
+@id_forn         INT,
 @dat_alt               DATETIME,
 @flg_ativo             BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Fornecedordepto where id_depto=@id_depto AND id_fornecedor = @id_fornecedor)
+IF EXISTS(select 1 from Fornecedordepto where id_depto=@id_depto AND id_forn = @id_forn)
 BEGIN
 --Validações para a tabela comprapeca
 
@@ -22,7 +22,7 @@ UPDATE Fornecedordepto SET
 dat_alt                = @dat_alt,
 flg_ativo              = @flg_ativo
 
-WHERE id_depto = @id_depto AND id_fornecedor = @id_fornecedor
+WHERE id_depto = @id_depto AND id_forn = @id_forn
 
 END
 ELSE

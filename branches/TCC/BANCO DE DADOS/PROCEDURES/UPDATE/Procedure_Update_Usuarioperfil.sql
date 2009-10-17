@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_update_usuarioperfil
 @id_usu                INT,
 @id_perfil             INT,
-@dat_trans             DATETIME,
+@dat_alt             DATETIME,
 @flg_ativo             BIT
 AS
 
@@ -19,7 +19,7 @@ BEGIN
 --Update na tabela Usuarioperfil
 UPDATE Usuarioperfil SET
 
-dat_trans              = @dat_trans,
+dat_alt              = @dat_alt,
 flg_ativo              = @flg_ativo
 
 WHERE id_usu = @id_usu AND id_perfil = @id_perfil

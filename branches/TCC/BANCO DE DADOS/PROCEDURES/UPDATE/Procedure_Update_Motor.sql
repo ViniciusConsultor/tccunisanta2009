@@ -4,24 +4,24 @@ IF OBJECT_ID('sp_update_motorcompra', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_motorcompra
-@id_motor_compra    INT,
-@dsc_motor_compra   VARCHAR(100),
+@id_motor    INT,
+@dsc_motor   VARCHAR(100),
 @flg_ativo          BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Motor where id_motor_compra=@id_motor_compra)
+IF EXISTS(select 1 from Motor where id_motor=@id_motor)
 BEGIN
 --Validações na tabela motor
 
 --Update na tabela motor
 UPDATE Motor SET
 
-dsc_motor_compra = @dsc_motor_compra, 
+dsc_motor = @dsc_motor, 
 flg_ativo        = @flg_ativo
 
-WHERE id_motor_compra=@id_motor_compra
+WHERE id_motor=@id_motor
 
 END
 ELSE

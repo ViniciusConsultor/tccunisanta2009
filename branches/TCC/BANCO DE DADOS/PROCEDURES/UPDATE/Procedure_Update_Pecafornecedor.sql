@@ -5,14 +5,14 @@ GO
 
 CREATE PROCEDURE sp_update_pecafornecedor
 @id_peca               VARCHAR(20),
-@id_fornecedor         INT,
+@id_forn			   INT,
 @dat_inc               DATETIME,
 @flg_ativo             BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Pecafornecedor where id_peca = @id_peca AND id_fornecedor = @id_fornecedor)
+IF EXISTS(select 1 from Pecafornecedor where id_peca = @id_peca AND id_forn = @id_forn)
 BEGIN
 --Validações para a tabela pecafornecedor
 
@@ -22,7 +22,7 @@ UPDATE Pecafornecedor SET
 dat_inc                = @dat_inc,
 flg_ativo              = @flg_ativo
 
-WHERE id_peca = @id_peca AND id_fornecedor = @id_fornecedor
+WHERE id_peca = @id_peca AND id_forn = @id_forn
 
 END
 ELSE

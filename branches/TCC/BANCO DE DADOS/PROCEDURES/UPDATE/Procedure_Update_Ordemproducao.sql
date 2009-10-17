@@ -4,7 +4,7 @@ IF OBJECT_ID('sp_update_ordemproducao', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_ordemproducao
-@id_ordem_kit       INT,
+@id_ordem       INT,
 @id_tipo_produto    INT,
 @id_depto           INT,
 @id_motor           INT,
@@ -14,7 +14,7 @@ AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from ordemproducao where id_ordem_kit=@id_ordem_kit)
+IF EXISTS(select 1 from ordemproducao where id_ordem=@id_ordem)
 BEGIN
 --Validações na tabela ordemproducao
 
@@ -27,7 +27,7 @@ id_motor        = @id_motor,
 id_grupo        = @id_grupo, 
 dsc_ordem       = @dsc_ordem
 
-WHERE id_ordem_kit = @id_ordem_kit
+WHERE id_ordem = @id_ordem
 
 END
 ELSE

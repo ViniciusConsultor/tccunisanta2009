@@ -4,19 +4,19 @@ IF OBJECT_ID('sp_update_familiamotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_familiamotor
-@id_motor         INT,
+@id_fam_motor         INT,
 @id_num_motor     INT,
 @id_grupo         INT,
 @id_tipo_motor    VARCHAR(20),
-@id_motor_compra  INT,
+@id_motor  INT,
 @id_estoque       INT,
-@dsc_motor        VARCHAR(500),
+@dsc_fam_motor        VARCHAR(500),
 @flg_ativo        BIT
 
 AS 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from familiamotor where id_motor=@id_motor)
+IF EXISTS(select 1 from familiamotor where id_fam_motor=@id_fam_motor)
 BEGIN
 --Validações na tabela falimiamotor
 
@@ -26,12 +26,12 @@ UPDATE familiamotor SET
 id_num_motor    = @id_num_motor, 
 id_grupo        = @id_grupo, 
 id_tipo_motor   = @id_tipo_motor, 
-id_motor_compra = @id_motor_compra, 
+id_motor = @id_motor, 
 id_estoque      = @id_estoque, 
-dsc_motor       = @dsc_motor, 
+dsc_fam_motor       = @dsc_fam_motor, 
 flg_ativo       = @flg_ativo
 
-WHERE id_motor = @id_motor
+WHERE id_fam_motor = @id_fam_motor
 
 END
 ELSE

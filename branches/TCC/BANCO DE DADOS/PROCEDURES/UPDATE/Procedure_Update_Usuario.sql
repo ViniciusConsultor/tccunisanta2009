@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_usuario
 @id_usu        INT,
-@login         VARCHAR(20),
+@log_usu         VARCHAR(20),
 @senha         VARCHAR(15),
 @obs_usu       VARCHAR(100),
 @flg_ativo     BIT
@@ -20,7 +20,7 @@ BEGIN
 --Update na tabela usuario
 UPDATE Usuario SET
 
-login        = @login, 
+log_usu        = @log_usu, 
 senha        = @senha, 
 obs_usu      = @obs_usu, 
 flg_ativo    = @flg_ativo
