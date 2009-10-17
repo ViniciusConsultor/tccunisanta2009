@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mPerfil : ModelPai
+    public class mPerfil : ModelPai
     {
         private int idPerfil;
         private string descPerfil;

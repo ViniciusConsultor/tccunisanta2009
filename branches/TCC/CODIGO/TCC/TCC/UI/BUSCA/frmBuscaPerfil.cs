@@ -7,21 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI.BUSCA
 {
     public partial class frmBuscaPerfil : Form
     {
-
         #region Atributos
-        TextBox _txtParam;
+        private mPerfil _model;
         #endregion Atributos
 
         #region Contrutor
-        public frmBuscaPerfil(TextBox txtIdPerfil)
+        public frmBuscaPerfil(mPerfil modelPerfil)
         {
             InitializeComponent();
-            _txtParam = txtIdPerfil;
+            this._model = modelPerfil;
         }
         #endregion Contrutor
 
@@ -42,6 +42,7 @@ namespace TCC.UI.BUSCA
             {
                 dt = regraPerfil.BuscaPerfil(this.txtFiltro.Text);
                 dgPerfil.DataSource = dt;
+                this.dgPerfil.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -70,7 +71,9 @@ namespace TCC.UI.BUSCA
                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                         //------------------------------------------------------------------------------------
                         dvC = this.dgPerfil["id_perfil", this.dgPerfil.CurrentRow.Index];
-                        this._txtParam.Text = dvC.Value.ToString();
+                        this._model.IdPerfil = Convert.ToInt32(dvC.Value);
+                        dvC = this.dgPerfil["dsc_perfil", this.dgPerfil.CurrentRow.Index];
+                        this._model.DescPerfil = dvC.Value.ToString();
                         this.Close();
                     }
                     else
