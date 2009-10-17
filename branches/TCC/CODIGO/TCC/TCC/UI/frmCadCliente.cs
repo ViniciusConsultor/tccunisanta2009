@@ -167,7 +167,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        public override void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rCliente regra = new rCliente();
             try

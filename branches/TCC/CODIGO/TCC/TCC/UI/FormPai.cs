@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public abstract class FormPai : Form
+    public class FormPai : Form
     {
-        public abstract void BuscaIdMaximo();
+        protected virtual void BuscaIdMaximo()
+        {
+        }
 
         protected void FechaTela(FormPai form)
         {
