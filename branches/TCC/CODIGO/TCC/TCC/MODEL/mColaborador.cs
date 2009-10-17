@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mColaborador : ModelPai
+    public class mColaborador : ModelPai
     {
         private int idColab;
         private int idUsuario;
@@ -50,7 +50,7 @@ namespace TCC.MODEL
             set { idDepto = value; }
         }
 
-        [ColunasBancoDados("nom_colab", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("nom", System.Data.SqlDbType.VarChar, false)]
         public string NomeColab
         {
             get { return nomeColab; }
@@ -64,7 +64,7 @@ namespace TCC.MODEL
             set { datNasc = value; }
         }
 
-        [ColunasBancoDados("nom_rua", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("rua", System.Data.SqlDbType.VarChar, false)]
         public string NomeRua
         {
             get { return nomeRua; }
@@ -92,14 +92,14 @@ namespace TCC.MODEL
             set { cep = value; }
         }
 
-        [ColunasBancoDados("bairr_end", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("bairr", System.Data.SqlDbType.VarChar, false)]
         public string BairrEnd
         {
             get { return bairrEnd; }
             set { bairrEnd = value; }
         }
 
-        [ColunasBancoDados("cidade", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("cid", System.Data.SqlDbType.VarChar, false)]
         public string Cidade
         {
             get { return cidade; }
@@ -127,7 +127,7 @@ namespace TCC.MODEL
             set { cpf = value; }
         }
 
-        [ColunasBancoDados("sexo", System.Data.SqlDbType.Char, false)]
+        [ColunasBancoDados("sex", System.Data.SqlDbType.Char, false)]
         public char Sexo
         {
             get { return sexo; }
@@ -148,21 +148,21 @@ namespace TCC.MODEL
             set { flgAtivo = value; }
         }
 
-        [ColunasBancoDados("ddd_colab", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("ddd", System.Data.SqlDbType.Int, false)]
         public int? Ddd
         {
             get { return ddd; }
             set { ddd = value; }
         }
 
-        [ColunasBancoDados("tel_colab", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("tel", System.Data.SqlDbType.Int, false)]
         public int? Telefone
         {
             get { return telefone; }
             set { telefone = value; }
         }
 
-        [ColunasBancoDados("email_colab", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("mail", System.Data.SqlDbType.VarChar, false)]
         public string Email
         {
             get { return email; }

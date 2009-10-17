@@ -10,7 +10,7 @@ namespace TCC.MODEL
         private int idTipoPeca;
         private string dscTipoPeca;
         private bool flgAtivo;
-        private string nomeTabela = "Tipodepeca";
+        private string nomeTabela = "Tipopeca";
 
         [ColunasBancoDados("id_tipo_peca", System.Data.SqlDbType.Int, true)]
         public int IdTipoPeca

@@ -35,7 +35,7 @@ namespace TCC.MODEL
             set { senha = value; }
         }
 
-        [ColunasBancoDados("login", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("log_usu", System.Data.SqlDbType.VarChar, false)]
         public string Login
         {
             get { return login; }

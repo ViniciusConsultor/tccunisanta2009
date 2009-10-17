@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mPerfilMenu : ModelPai
+    public class mPerfilMenu : ModelPai
     {
         private int idPerfil;
         private int idMenu;
@@ -20,7 +20,7 @@ namespace TCC.MODEL
             set { flgAtivo = value; }
         }
 
-        [ColunasBancoDados("dat_trans", System.Data.SqlDbType.DateTime, false)]
+        [ColunasBancoDados("dat_alt", System.Data.SqlDbType.DateTime, false)]
         public DateTime DatTrans
         {
             get { return datTrans; }

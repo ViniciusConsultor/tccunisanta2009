@@ -5,23 +5,23 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mEstoque : ModelPai
+    public class mEstoque : ModelPai
     {
         private int id_estoque;
-        private string nom_estoque;
+        private string dsc_estoque;
         private DateTime dat_alt;
         private bool flg_ativo;
         private int id_depto;
         private string nomeTabela = "estoque";
 
-        [ColunasBancoDados("id_estoque", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("id_estoq", System.Data.SqlDbType.Int, false)]
         public int Id_estoque
         {
             get { return id_estoque; }
             set { id_estoque = value; }
         }
 
-        [ColunasBancoDados("nom_estoque", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("dsc_estoque", System.Data.SqlDbType.VarChar, false)]
         public string Nom_estoque
         {
             get { return nom_estoque; }
