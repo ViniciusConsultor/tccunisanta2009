@@ -6,5 +6,9 @@
  
  CREATE PROCEDURE sp_busca_todosMenus
   AS
+<<<<<<< .mine
+ SELECT id_menu, dsc_menu 'Menu' FROM Menu
+=======
  SELECT id_menu, dsc_menu AS 'Descrução menu' FROM Menu
+>>>>>>> .r88
 go

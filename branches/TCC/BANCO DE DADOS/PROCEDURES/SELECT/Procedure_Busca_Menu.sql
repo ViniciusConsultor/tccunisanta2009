@@ -7,7 +7,11 @@ go
 CREATE PROCEDURE sp_busca_menu 
  @id_perfil INT
  AS
+<<<<<<< .mine
+ SELECT m.id_menu, m.dsc_menu 'Menu', m.ende 'Endereço'
+=======
  SELECT m.id_menu, m.dsc_menu as 'Descrição do menu', m.end_menu as 'Endereço do menu'
+>>>>>>> .r88
  FROM Menu m
  INNER JOIN PerfilMenu pm 
 	 ON m.id_menu = pm.id_menu

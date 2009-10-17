@@ -5,4 +5,6 @@ IF OBJECT_ID('sp_busca_cliente','p') IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_cliente
 AS 
-SELECT id_cli, nom_cli as 'Nome do cliente', email_cliente as 'E-mail' FROM Cliente
+<<<<<<< .mine
+SELECT id_cli, nom 'Cliente', mail FROM Cliente=======
+SELECT id_cli, nom_cli as 'Nome do cliente', email_cliente as 'E-mail' FROM Cliente>>>>>>> .r88
