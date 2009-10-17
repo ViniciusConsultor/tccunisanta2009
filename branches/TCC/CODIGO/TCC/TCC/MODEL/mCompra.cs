@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    public public class mCompra : ModelPai
+    public class mCompra : ModelPai
     {
         private int idDepto;
         private int idCompra;
@@ -19,7 +19,7 @@ namespace TCC.MODEL
         private int idTipoProduto;
         private string nomeTabela;
 
-        [ColunasBancoDados("id_depto", System.Data.SqlDbType.int,false)]
+        [ColunasBancoDados("id_depto", System.Data.SqlDbType.Int,false)]
         public int IdDepto
         {
             get { return idDepto; }
