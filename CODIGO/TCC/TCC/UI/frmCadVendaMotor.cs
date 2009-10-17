@@ -31,7 +31,7 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-        public override void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             throw new NotImplementedException();
         }

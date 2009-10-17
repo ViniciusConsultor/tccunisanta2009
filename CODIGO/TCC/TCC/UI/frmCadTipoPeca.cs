@@ -94,7 +94,7 @@ namespace TCC.UI
             }
         }
 
-        public override void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rTipoPeca regra = new rTipoPeca();
             try

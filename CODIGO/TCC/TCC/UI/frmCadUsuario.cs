@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Transactions;
 using TCC.MODEL;
 using TCC.BUSINESS;
 
@@ -55,6 +56,7 @@ namespace TCC.UI
                 regraUsuarioPerfil.Insere(modelUsuarioPerfil);
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
+
             }
             catch (BUSINESS.Exceptions.LoginExistenteException)
             {
@@ -75,7 +77,7 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.PerfilSemIdExeception)
             {
                 MessageBox.Show("Não é Possivel Cadastrar um usuário sem o Codigo do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                regraUsu.Deleta(modelUsu);
+                //regraUsu.Deleta(modelUsu);
                 btnBuscaPerfilUsuario.Focus();
             }
             catch (BUSINESS.Exceptions.UsuarioSemIdException)
@@ -92,6 +94,7 @@ namespace TCC.UI
                 regraUsuarioPerfil = null;
                 modelUsuarioPerfil = null;
                 modelUsu = null;
+               
             }
         }
         #endregion btnAceitar Click
@@ -160,7 +163,7 @@ namespace TCC.UI
 
         #endregion Metodos
 
-        public override void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rUsuario regraUsu = new rUsuario();
             try

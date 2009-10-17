@@ -44,7 +44,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        public override void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rUsinagem regra = new rUsinagem();
             try
