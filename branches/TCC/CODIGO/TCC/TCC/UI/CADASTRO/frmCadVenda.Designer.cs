@@ -77,6 +77,7 @@
             this.txtCdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdVenda.Location = new System.Drawing.Point(192, 19);
             this.txtCdVenda.Name = "txtCdVenda";
+            this.txtCdVenda.ReadOnly = true;
             this.txtCdVenda.Size = new System.Drawing.Size(64, 20);
             this.txtCdVenda.TabIndex = 1;
             // 
@@ -350,6 +351,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(554, 224);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnCdKit);
@@ -382,6 +384,7 @@
             this.Controls.Add(this.lblCdMotor);
             this.Controls.Add(this.lblCdOrdemMotor);
             this.Controls.Add(this.lblCdVenda);
+            this.MaximizeBox = false;
             this.Name = "frmCadVenda";
             this.Text = "Venda";
             this.ResumeLayout(false);

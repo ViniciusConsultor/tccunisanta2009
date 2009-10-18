@@ -59,6 +59,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(40, 28);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -68,6 +69,7 @@
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -92,6 +94,7 @@
             this.txtCdOrdemMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdOrdemMotor.Location = new System.Drawing.Point(227, 27);
             this.txtCdOrdemMotor.Name = "txtCdOrdemMotor";
+            this.txtCdOrdemMotor.ReadOnly = true;
             this.txtCdOrdemMotor.Size = new System.Drawing.Size(82, 20);
             this.txtCdOrdemMotor.TabIndex = 18;
             // 
@@ -223,6 +226,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(521, 268);
+            this.ControlBox = false;
             this.Controls.Add(this.txtDs);
             this.Controls.Add(this.lblDs);
             this.Controls.Add(this.txtCdTipoProduto);
@@ -242,6 +246,7 @@
             this.Controls.Add(this.btnCdDep);
             this.Controls.Add(this.btnCdMotor);
             this.Controls.Add(this.btnAceitar);
+            this.MaximizeBox = false;
             this.Name = "frmOrdemProducao";
             this.Text = "Ordem de Produção";
             this.ResumeLayout(false);

@@ -9,11 +9,22 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmOrdemProducao : Form
+    public partial class frmOrdemProducao : FormPai
     {
         public frmOrdemProducao()
         {
             InitializeComponent();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            base.BuscaIdMaximo();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
         }
     }
 }

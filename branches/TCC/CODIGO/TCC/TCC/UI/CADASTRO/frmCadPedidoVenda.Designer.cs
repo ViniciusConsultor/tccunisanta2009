@@ -53,6 +53,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(44, 31);
             this.btnVoltar.TabIndex = 19;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -62,6 +63,7 @@
             this.btnLimpar.TabIndex = 18;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -77,6 +79,7 @@
             this.txtCdPedidoVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPedidoVenda.Location = new System.Drawing.Point(228, 20);
             this.txtCdPedidoVenda.Name = "txtCdPedidoVenda";
+            this.txtCdPedidoVenda.ReadOnly = true;
             this.txtCdPedidoVenda.Size = new System.Drawing.Size(92, 20);
             this.txtCdPedidoVenda.TabIndex = 20;
             // 
@@ -165,6 +168,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(576, 190);
+            this.ControlBox = false;
             this.Controls.Add(this.lblDsPedido);
             this.Controls.Add(this.txtDsPedido);
             this.Controls.Add(this.lblCdDepartamento);
@@ -178,6 +182,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAceitar);
+            this.MaximizeBox = false;
             this.Name = "frmCadPedidoVenda";
             this.Text = "Pedido de Venda";
             this.Load += new System.EventHandler(this.frmCadPedidoVenda_Load);

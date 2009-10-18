@@ -210,6 +210,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(436, 185);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdTipoPeca);
@@ -227,6 +228,7 @@
             this.Controls.Add(this.lblCdTipoPeca);
             this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.lblCdPeca);
+            this.MaximizeBox = false;
             this.Name = "frmCadPeca";
             this.Text = "Peça";
             this.Load += new System.EventHandler(this.frmCadPeca_Load);

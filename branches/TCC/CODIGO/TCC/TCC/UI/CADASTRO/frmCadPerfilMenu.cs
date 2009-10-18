@@ -11,7 +11,7 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmCadPerfilMenu : Form
+    public partial class frmCadPerfilMenu : FormPai
     {
         mPerfil _modelPerfil;
         mMenu _modelMenu;
@@ -90,23 +90,13 @@ namespace TCC.UI
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.LimparTela();
-        }
-
-        private void LimparTela()
-        {
-            foreach (Control controle in this.Controls)
-            {
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    controle.Text = string.Empty;
-                }
-            }
+            base.LimpaDadosTela(this);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
+
     }
 }

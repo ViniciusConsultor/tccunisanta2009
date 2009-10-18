@@ -28,17 +28,6 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        private void LimparCampos()
-        {
-            foreach (Control controle in this.Controls)
-            {
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    controle.Text = string.Empty;
-                }
-            }
-        }
-
         private void frmCadUsinagem_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
