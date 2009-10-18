@@ -49,7 +49,7 @@ namespace TCC.DAL
         /// Desconecta do Banco de dados.
         /// </summary>
         /// <returns>Caso true que a desconecção foi feita com sucesso.</returns>
-        protected static bool DesconectaBanco()
+        public static bool DesconectaBanco()
         {
             try
             {
