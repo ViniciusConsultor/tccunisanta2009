@@ -123,6 +123,7 @@
             this.btnVolta.Size = new System.Drawing.Size(39, 23);
             this.btnVolta.TabIndex = 5;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnBuscaDepartamento
             // 

@@ -45,7 +45,7 @@ namespace TCC.UI
 
         private void btnCdTipoPeca_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaTipoPeca objTela = new TCC.UI.BUSCA.frmBuscaTipoPeca(_modelTipoPeca);
+            frmBuscaTipoPeca objTela = new frmBuscaTipoPeca(_modelTipoPeca);
             try
             {
                 objTela.MdiParent = this.MdiParent;
@@ -63,7 +63,7 @@ namespace TCC.UI
 
         private void btnCdEstoque_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaEstoque objTela = new TCC.UI.BUSCA.frmBuscaEstoque(_modelEstoque);
+            frmBuscaEstoque objTela = new frmBuscaEstoque(_modelEstoque);
             try
             {
                 objTela.MdiParent = this.MdiParent;

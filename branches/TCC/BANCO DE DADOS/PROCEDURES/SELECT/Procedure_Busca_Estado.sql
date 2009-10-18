@@ -6,9 +6,5 @@ GO
 
 CREATE PROCEDURE sp_busca_estado 
  AS 
-<<<<<<< .mine
- SELECT slg_estado, nom_estado 'Estado' FROM Estado 
-=======
- SELECT slg_estado as 'Sigla do estado', nom_estado as 'Nome do estado' FROM Estado 
->>>>>>> .r88
+ SELECT slg_est, nom_est 'Estado' FROM Estado 
 go

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using TCC.BUSINESS;
 using TCC.MODEL;
 
-namespace TCC.UI.BUSCA
+namespace TCC.UI
 {
     public partial class frmBuscaEstoque : Form
     {
@@ -53,7 +53,7 @@ namespace TCC.UI.BUSCA
                         dvC = this.dgEstoque["id_estoque", this.dgEstoque.CurrentRow.Index];
                         _model.Id_estoque = Convert.ToInt32(dvC.Value);
                         dvC = this.dgEstoque["Estoque", this.dgEstoque.CurrentRow.Index];
-                        _model.Nom_estoque = dvC.Value.ToString(); 
+                        _model.Dsc_estoque = dvC.Value.ToString(); 
                         this.Close();
                     }
                     else

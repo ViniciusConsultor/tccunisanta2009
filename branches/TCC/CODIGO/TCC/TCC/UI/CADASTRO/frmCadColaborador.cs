@@ -95,7 +95,7 @@ namespace TCC.UI
         }
         private void btnBuscaUsuario_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaUsuario buscarUsuario = new BUSCA.frmBuscaUsuario(_modelUsuario);
+            frmBuscaUsuario buscarUsuario = new frmBuscaUsuario(_modelUsuario);
             try
             {
                 buscarUsuario.ShowDialog();
@@ -111,7 +111,7 @@ namespace TCC.UI
         }
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaDepartamento buscarDepartamento = new BUSCA.frmBuscaDepartamento(_modeldDepartamento);
+            frmBuscaDepartamento buscarDepartamento = new frmBuscaDepartamento(_modeldDepartamento);
             try
             {
                 buscarDepartamento.ShowDialog();

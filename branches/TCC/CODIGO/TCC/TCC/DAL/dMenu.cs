@@ -55,6 +55,29 @@ namespace TCC.DAL
                 param = null;
             }
         }
+
+        /// <summary>
+        /// Busca os submenus de um menu pai.
+        /// </summary>
+        /// <returns>DataTable com os menus</returns>
+        public DataTable BuscaSubMenu(int idMenuPai)
+        {
+            SqlParameter param;
+            try
+            {
+                param = new SqlParameter("@id_menu_pai", idMenuPai);
+                param.SqlDbType = SqlDbType.Int;
+                return base.BuscaDados("sp_busca_submenu", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
     }
 }
 

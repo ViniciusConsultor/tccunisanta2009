@@ -11,7 +11,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadEstoque : Form
+    public partial class frmCadEstoque : FormPai
     {
         mDepartamento modelDepartamento;
         public frmCadEstoque()
@@ -99,7 +99,7 @@ namespace TCC.UI
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaDepartamento objFormBuscaDep = new BUSCA.frmBuscaDepartamento(modelDepartamento);
+            frmBuscaDepartamento objFormBuscaDep = new frmBuscaDepartamento(modelDepartamento);
             try
             {
                 objFormBuscaDep.ShowDialog();
@@ -112,6 +112,11 @@ namespace TCC.UI
             {
                 objFormBuscaDep = null;
             }
+        }
+
+        private void btnVolta_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
         }
     }
 }

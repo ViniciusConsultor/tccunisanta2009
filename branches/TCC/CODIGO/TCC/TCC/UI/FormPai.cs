@@ -14,6 +14,7 @@ namespace TCC.UI
 
         protected void FechaTela(FormPai form)
         {
+            frmInicial.listaTelasAbertas.Remove(form.Name);
             form.Close();
         }
 

@@ -47,7 +47,7 @@ namespace TCC.UI
 
         private void btnBuscaMotorCompra_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaMotor objFrmMotor = new TCC.UI.BUSCA.frmBuscaMotor(_modelMotor);
+            frmBuscaMotor objFrmMotor = new frmBuscaMotor(_modelMotor);
             try
             {
                 objFrmMotor.ShowDialog();
@@ -64,7 +64,7 @@ namespace TCC.UI
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaDepartamento objTela = new TCC.UI.BUSCA.frmBuscaDepartamento(_modelDepartamento);
+            frmBuscaDepartamento objTela = new frmBuscaDepartamento(_modelDepartamento);
             try
             {
                 objTela.ShowDialog();
@@ -81,7 +81,7 @@ namespace TCC.UI
 
         private void btnBuscaFornecedor_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaFornecedor objTela = new TCC.UI.BUSCA.frmBuscaFornecedor(_modelFornecedor);
+            frmBuscaFornecedor objTela = new frmBuscaFornecedor(_modelFornecedor);
             try
             {
                 objTela.ShowDialog();
