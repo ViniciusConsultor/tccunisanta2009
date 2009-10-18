@@ -7,7 +7,7 @@ go
 CREATE PROCEDURE sp_busca_menu 
  @id_perfil INT
  AS
- SELECT m.id_menu, m.dsc_menu 'Menu', m.ende 'Endereço'
+ SELECT m.id_menu, m.dsc_menu 'Menu', m.ende
  FROM Menu m
  INNER JOIN PerfilMenu pm 
 	 ON m.id_menu = pm.id_menu

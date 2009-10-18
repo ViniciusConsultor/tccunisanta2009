@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_busca_subMenu
 @id_menu_pai INT
 AS
-SELECT id_menu_filho, m.dsc_menu, m.ende FROM Submenu sm
+SELECT id_menu_filho 'id_menu', m.dsc_menu, m.ende FROM Submenu sm
 INNER JOIN Menu m
-ON sm.id_menu_pai = m.id_menu
+ON sm.id_menu_filho = m.id_menu
 WHERE id_menu_pai = @id_menu_pai
