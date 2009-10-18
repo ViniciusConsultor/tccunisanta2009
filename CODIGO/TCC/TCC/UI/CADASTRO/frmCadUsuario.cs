@@ -105,7 +105,7 @@ namespace TCC.UI
         #region btnBuscaPerfilUsuario Click
         private void btnBuscaPerfilUsuario_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaPerfil buscar = new BUSCA.frmBuscaPerfil(this.modelPerfil);
+            frmBuscaPerfil buscar = new frmBuscaPerfil(this.modelPerfil);
             try
             {
                 //buscar.MdiParent = this.MdiParent;

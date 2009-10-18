@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
@@ -18,6 +19,7 @@ namespace TCC.UI
         /// </summary>
         private Dictionary<string, object> _dicEventos = new Dictionary<string, object>();
         private const string _NAMESPACEFORMS = "TCC.UI.";
+        public static List<string> listaTelasAbertas = new List<string>();
         #endregion Atributos
 
         #region Propriedades
@@ -48,20 +50,33 @@ namespace TCC.UI
 
         void frmInicial_Click(object sender, EventArgs e)
         {
-            Assembly ass = Assembly.GetExecutingAssembly();
-            if (this._dicEventos.ContainsKey(sender.ToString()) == true)
+            string endereco = this._dicEventos[sender.ToString()].ToString();
+            if (listaTelasAbertas.Contains(endereco) == false)
             {
-                Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + this._dicEventos[sender.ToString()]);
-                if (sender.ToString().Equals("LOGIN") == true)
+                Assembly ass = Assembly.GetExecutingAssembly();
+                if (this._dicEventos.ContainsKey(sender.ToString()) == true)
                 {
-                    objFormDinamico.ShowDialog();
-                    this.CarregaMenu(frmInicial.IdPerfil);
-                }
-                else
-                {
-                    objFormDinamico.MdiParent = this;
-                    objFormDinamico.Show();
-                }
+                    Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + endereco);
+                    listaTelasAbertas.Add(endereco);
+                        if (sender.ToString().Equals("LOGIN") == true)
+                        {
+
+                            objFormDinamico.ShowDialog();
+                            this.CarregaMenu(frmInicial.IdPerfil);
+                        }
+                        else
+                        {
+                            if (objFormDinamico != null)
+                            {
+                                objFormDinamico.MdiParent = this;
+                                objFormDinamico.Show();
+                            }
+                        }
+                    }
+            }
+            else
+            {
+                MessageBox.Show("Já Existe uma tela "+sender.ToString()+" aberta", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
         }
 
@@ -175,12 +190,10 @@ namespace TCC.UI
         {
             //Instanciando os objetos
             //-----------------------
-            BUSINESS.rMenu regraMenu = new TCC.BUSINESS.rMenu();
-            BUSINESS.rSubMenu regraSubMenu = new TCC.BUSINESS.rSubMenu();
+            rMenu regraMenu = new rMenu();
             //Declarando DataTables onde serão armazenados os itens de Menu e os SubMenus
             //---------------------------------------------------------------------------
             DataTable dtMenu;
-            DataTable dtSubMenu;
             //Array para armazenar os itens do menu
             //-------------------------------------
             ToolStripMenuItem[] itemMenuP;
@@ -195,29 +208,21 @@ namespace TCC.UI
                 itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
                 for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
-                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["Descrição do menu"].ToString());
-                    dtSubMenu = regraSubMenu.BuscaSubMenu(Convert.ToInt32(dtMenu.Rows[contador]["id_menu"]), frmInicial._idPerfil);
+                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["Menu"].ToString());
                     this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { itemMenuP[contador] });
-                    //Verifica se existem SubMenus para aquele menu
-                    //---------------------------------------------
-                    if (dtSubMenu.Rows.Count > 0)
+
+                    if (dtMenu.Rows[contador]["ende"] != DBNull.Value)
                     {
-                        //Caso exista adicionas os menus na coleção e adiciona a chamada dos eventos
-                        //--------------------------------------------------------------------------
-                        for (int i = 0; i < dtSubMenu.Rows.Count; i++)
-                        {
-                            itemMenuP[contador].DropDownItems.Add(dtSubMenu.Rows[i]["Descrição submenu"].ToString());
-                            itemMenuP[contador].DropDownItems[i].Click += new EventHandler(frmInicial_Click);
-                            _dicEventos.Add(dtSubMenu.Rows[i]["Descrição submenu"].ToString(), dtSubMenu.Rows[i]["Endereço submenu"]);
-                        }
+
+                        itemMenuP[contador].Click += new EventHandler(frmInicial_Click);
+                        _dicEventos.Add(dtMenu.Rows[contador]["Menu"].ToString(), dtMenu.Rows[contador]["ende"]);
                     }
-                    else
-                    {
-                        //Caso não exista apenas adiciona o evento ao controle
-                        //----------------------------------------------------
-                        this.mnuPrincipal.Items[contador].Click +=new EventHandler(frmInicial_Click);
-                        _dicEventos.Add(dtMenu.Rows[contador]["Descrição do menu"].ToString(), dtMenu.Rows[contador]["Endereço do menu"]);
-                    }
+
+                    //Caso exista adicionas os menus na coleção e adiciona a chamada dos eventos
+                    //--------------------------------------------------------------------------
+                    this.PreencheSubMenu(itemMenuP[contador], dtMenu.Rows[contador]);
+                
+                    
                 }
             }
             catch (Exception ex)
@@ -228,14 +233,52 @@ namespace TCC.UI
             finally
             {
                 regraMenu = null;
-                regraSubMenu = null;
                 itemMenuP = null;
                 dtMenu = null;
-                dtSubMenu = null;
             }
         }
 
         #endregion Carrega Menu
+
+        private void PreencheSubMenu(ToolStripMenuItem itemMenuPai, DataRow drLinha)
+        {
+            rMenu regraSubMenu;
+            DataTable dtSubMenu;
+            ToolStripMenuItem itemSubMenu;
+            try
+            {
+                regraSubMenu = new rMenu();
+
+                dtSubMenu = regraSubMenu.BuscaSubMenu(Convert.ToInt32(drLinha["id_menu"]));
+                if (dtSubMenu.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dtSubMenu.Rows.Count; i++)
+                    {
+                        itemSubMenu = new ToolStripMenuItem(dtSubMenu.Rows[i]["dsc_menu"].ToString());
+                        itemMenuPai.DropDownItems.AddRange(new ToolStripMenuItem[] { itemSubMenu });
+
+                        itemMenuPai.DropDownItems[i].Click += new EventHandler(frmInicial_Click);
+                        _dicEventos.Add(dtSubMenu.Rows[i]["dsc_menu"].ToString(), dtSubMenu.Rows[i]["ende"]);
+
+                        this.PreencheSubMenu(itemSubMenu, dtSubMenu.Rows[i]) ;
+                    }
+                }
+                else
+                {
+                    /*//Caso não exista apenas adiciona o evento ao controle
+                    //----------------------------------------------------
+                    itemMenuPai.DropDownItems.Add(drLinha["dsc_menu"].ToString());
+                    itemMenuPai.Click += new EventHandler(frmInicial_Click);
+                    _dicEventos.Add(drLinha["dsc_menu"].ToString(), drLinha["ende"]);*/
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+            }
+        }
 
         #region Apaga Menu
         private void ApagaMenu()

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TCC.UI.BUSCA
+namespace TCC.UI
 {
     public partial class frmBuscaVenda : Form
     {

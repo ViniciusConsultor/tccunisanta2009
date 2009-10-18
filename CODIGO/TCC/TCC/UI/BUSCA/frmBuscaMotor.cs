@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using TCC.BUSINESS;
 using TCC.MODEL;
 
-namespace TCC.UI.BUSCA
+namespace TCC.UI
 {
     public partial class frmBuscaMotor : Form
     {
