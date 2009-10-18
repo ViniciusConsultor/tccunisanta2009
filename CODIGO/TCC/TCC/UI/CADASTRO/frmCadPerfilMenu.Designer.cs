@@ -74,6 +74,7 @@
             this.txtCodigoPerfil.Enabled = false;
             this.txtCodigoPerfil.Location = new System.Drawing.Point(141, 41);
             this.txtCodigoPerfil.Name = "txtCodigoPerfil";
+            this.txtCodigoPerfil.ReadOnly = true;
             this.txtCodigoPerfil.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoPerfil.TabIndex = 0;
             // 
@@ -83,6 +84,7 @@
             this.txtCodigoMenu.Enabled = false;
             this.txtCodigoMenu.Location = new System.Drawing.Point(141, 78);
             this.txtCodigoMenu.Name = "txtCodigoMenu";
+            this.txtCodigoMenu.ReadOnly = true;
             this.txtCodigoMenu.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoMenu.TabIndex = 0;
             // 
@@ -136,6 +138,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(349, 210);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBuscaMenu);
             this.Controls.Add(this.btnBuscaPerfil);
             this.Controls.Add(this.btnVoltar);
@@ -145,6 +148,7 @@
             this.Controls.Add(this.lblCodigoMenu);
             this.Controls.Add(this.lblCodigoPerfil);
             this.Controls.Add(this.btnCadastrar);
+            this.MaximizeBox = false;
             this.Name = "frmCadPerfilMenu";
             this.Text = "Cadastro PerfilMenu";
             this.ResumeLayout(false);

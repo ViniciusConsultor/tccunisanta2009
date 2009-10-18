@@ -38,6 +38,8 @@ namespace TCC.BUSINESS
                 dt = null;
             }
         }
+        #endregion Busca Id Maximo Usuario
+
         public DataTable BuscaUsuario(string Descricao)
         {
             SqlParameter param = null;
@@ -62,7 +64,7 @@ namespace TCC.BUSINESS
                 param = null;
             }
         }
-        #endregion Busca Id Maximo Usuario
+        
 
         public DataTable VerificaLoginUsuario(string login, string senha)
         {

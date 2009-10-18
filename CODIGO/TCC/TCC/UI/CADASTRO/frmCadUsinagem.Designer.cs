@@ -121,6 +121,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(308, 169);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdPeca);
@@ -129,6 +130,7 @@
             this.Controls.Add(this.lblCdPeca);
             this.Controls.Add(this.txtCdUsinagem);
             this.Controls.Add(this.lblCdUsinagem);
+            this.MaximizeBox = false;
             this.Name = "frmCadUsinagem";
             this.Text = "Usinagem";
             this.Load += new System.EventHandler(this.frmCadUsinagem_Load);

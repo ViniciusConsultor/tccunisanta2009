@@ -10,7 +10,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadPeca : Form
+    public partial class frmCadPeca : FormPai
     {
         mEstoque _modelEstoque;
         mTipoPeca _modelTipoPeca;
@@ -21,7 +21,7 @@ namespace TCC.UI
             _modelTipoPeca = new mTipoPeca();
         }
 
-        private void BuscaIdMaximo()
+        protected override void  BuscaIdMaximo()
         {
             rPeca regra = new rPeca();
             try
@@ -40,7 +40,7 @@ namespace TCC.UI
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
 
         private void btnCdTipoPeca_Click(object sender, EventArgs e)
@@ -86,19 +86,8 @@ namespace TCC.UI
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.LimpaDadosTela();
+            base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
-        }
-
-        private void LimpaDadosTela()
-        {
-            foreach (Control controle in this.Controls)
-            {
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    controle.Text = string.Empty;
-                }
-            }
         }
     }
 }

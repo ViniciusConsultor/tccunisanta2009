@@ -62,6 +62,7 @@
             this.txtIdPerfil.Enabled = false;
             this.txtIdPerfil.Location = new System.Drawing.Point(148, 28);
             this.txtIdPerfil.Name = "txtIdPerfil";
+            this.txtIdPerfil.ReadOnly = true;
             this.txtIdPerfil.Size = new System.Drawing.Size(100, 20);
             this.txtIdPerfil.TabIndex = 0;
             // 
@@ -112,6 +113,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(327, 199);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
@@ -119,6 +121,7 @@
             this.Controls.Add(this.txtIdPerfil);
             this.Controls.Add(this.lblDescPerfil);
             this.Controls.Add(this.lblIdPerfil);
+            this.MaximizeBox = false;
             this.Name = "frmCadPerfil";
             this.Text = "Cadastro de Perfil";
             this.Load += new System.EventHandler(this.frmCadPerfil_Load);
