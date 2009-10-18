@@ -35,7 +35,7 @@ namespace TCC.UI
 
         private void btnBuscaPerfil_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaPerfil objBuscaPerfil = new TCC.UI.BUSCA.frmBuscaPerfil(_modelPerfil);
+            frmBuscaPerfil objBuscaPerfil = new frmBuscaPerfil(_modelPerfil);
             try
             {
                 objBuscaPerfil.ShowDialog();
@@ -52,7 +52,7 @@ namespace TCC.UI
 
         private void btnBuscaMenu_Click(object sender, EventArgs e)
         {
-            BUSCA.frmBuscaMenu objBuscaMenu = new TCC.UI.BUSCA.frmBuscaMenu(_modelMenu);
+            frmBuscaMenu objBuscaMenu = new frmBuscaMenu(_modelMenu);
             try
             {
                 objBuscaMenu.ShowDialog();

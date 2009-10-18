@@ -75,7 +75,6 @@
     <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
-    <Compile Include="BUSINESS\rSubMenu.cs" />
     <Compile Include="BUSINESS\rTipoPeca.cs" />
     <Compile Include="BUSINESS\rTipoUsuario.cs" />
     <Compile Include="BUSINESS\rUsinagem.cs" />
@@ -95,7 +94,6 @@
     <Compile Include="DAL\dMenuSubMenu.cs" />
     <Compile Include="DAL\dPerfil.cs" />
     <Compile Include="DAL\dPerfilMenu.cs" />
-    <Compile Include="DAL\dSubMenu.cs" />
     <Compile Include="DAL\dTipoUsuario.cs" />
     <Compile Include="DAL\dUsuario.cs" />
     <Compile Include="DAL\dUsuarioPerfil.cs" />
@@ -422,6 +420,12 @@
     <Compile Include="UI\CADASTRO\frmCadCompra.Designer.cs">
       <DependentUpon>frmCadCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CADASTRO\frmCadCompraPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadCompraPeca.Designer.cs">
+      <DependentUpon>frmCadCompraPeca.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CADASTRO\frmCadDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,6 +480,12 @@
     <Compile Include="UI\CADASTRO\frmCadPeca.Designer.cs">
       <DependentUpon>frmCadPeca.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPecaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPecaFornecedor.Designer.cs">
+      <DependentUpon>frmCadPecaFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CADASTRO\frmCadPedidoVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -505,6 +515,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadTipoPeca.Designer.cs">
       <DependentUpon>frmCadTipoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoProduto.Designer.cs">
+      <DependentUpon>frmCadTipoProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadUsinagem.cs">
       <SubType>Form</SubType>

@@ -1,4 +1,4 @@
-﻿namespace TCC.UI.BUSCA
+﻿namespace TCC.UI
 {
     partial class frmBuscaOrdemMotor
     {

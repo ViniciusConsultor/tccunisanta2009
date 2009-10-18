@@ -46,5 +46,26 @@ namespace TCC.BUSINESS
                 dal = null;
             }
         }
+
+        /// <summary>
+        /// Busca os submenu filhos de um menu.
+        /// </summary>
+        /// <returns>DataTable com os submenu</returns>
+        public DataTable BuscaSubMenu(int idMenuPai)
+        {
+            DAL.dMenu dal = new TCC.DAL.dMenu();
+            try
+            {
+                return dal.BuscaSubMenu(idMenuPai);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dal = null;
+            }
+        }
     }
 }

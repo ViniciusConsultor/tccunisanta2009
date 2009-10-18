@@ -6,9 +6,5 @@
  
  CREATE PROCEDURE sp_busca_usuario
  AS
-<<<<<<< .mine
  SELECT id_usu, log_usu 'Usuário' FROM Usuario
-=======
- SELECT id_usu, login AS 'Login usuario' FROM Usuario
->>>>>>> .r88
 go
