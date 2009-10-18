@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmKitGrupoPeca : FormPai
+    public partial class frmCadKitGrupoPeca : FormPai
     {
-        public frmKitGrupoPeca()
+        public frmCadKitGrupoPeca()
         {
             InitializeComponent();
         }

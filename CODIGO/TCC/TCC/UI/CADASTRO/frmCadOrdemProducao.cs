@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmOrdemProducao : FormPai
+    public partial class frmCadOrdemProducao : FormPai
     {
-        public frmOrdemProducao()
+        public frmCadOrdemProducao()
         {
             InitializeComponent();
         }
