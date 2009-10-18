@@ -111,6 +111,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(312, 188);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
@@ -118,6 +119,7 @@
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblDsMotor);
             this.Controls.Add(this.lblCdMotor);
+            this.MaximizeBox = false;
             this.Name = "frmCadMotor";
             this.Text = "Motor";
             this.Load += new System.EventHandler(this.frmMotor_Load);

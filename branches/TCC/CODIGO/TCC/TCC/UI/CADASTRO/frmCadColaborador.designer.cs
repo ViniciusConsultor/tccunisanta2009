@@ -515,6 +515,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(653, 259);
+            this.ControlBox = false;
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtTelefone);
@@ -561,6 +562,7 @@
             this.Controls.Add(this.lblCdDepart);
             this.Controls.Add(this.lblCdUsuario);
             this.Controls.Add(this.lblIdColaborador);
+            this.MaximizeBox = false;
             this.Name = "frmCadColaborador";
             this.Text = "Cadastro de Colaborador";
             this.Load += new System.EventHandler(this.frmCadColaborador_Load);

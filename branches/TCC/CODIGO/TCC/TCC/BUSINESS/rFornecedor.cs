@@ -17,7 +17,7 @@ namespace TCC.BUSINESS
             int idFornecedor;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_fornecedor", "fornecedor");
+                dt = base.BuscaIdMaximoTabelas("id_forn", "fornecedor");
                 if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     idFornecedor = 0;

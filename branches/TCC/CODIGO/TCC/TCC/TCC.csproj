@@ -217,6 +217,10 @@
     <EmbeddedResource Include="UI\CADASTRO\frmCadCompra.resx">
       <DependentUpon>frmCadCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadCompraPeca.resx">
+      <DependentUpon>frmCadCompraPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadDepartamento.resx">
       <DependentUpon>frmCadDepartamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +274,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadVendaMotor.resx">
       <DependentUpon>frmCadVendaMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPai.resx">
+      <DependentUpon>FormPai.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmInicial.resx">
       <DependentUpon>frmInicial.cs</DependentUpon>

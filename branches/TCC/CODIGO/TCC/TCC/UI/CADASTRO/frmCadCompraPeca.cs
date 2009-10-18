@@ -15,5 +15,15 @@ namespace TCC.UI
         {
             InitializeComponent();
         }
+
+        protected override void BuscaIdMaximo()
+        {
+            base.BuscaIdMaximo();
+        }
+
+        private void frmCadCompraPeca_Load(object sender, EventArgs e)
+        {
+            this.BuscaIdMaximo();
+        }
     }
 }

@@ -51,5 +51,18 @@ namespace TCC.UI
                 }
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FormPai
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ControlBox = false;
+            this.Name = "FormPai";
+            this.ResumeLayout(false);
+
+        }
     }
 }

@@ -113,6 +113,7 @@
             this.btnLimpa.TabIndex = 4;
             this.btnLimpa.Text = "Limpar";
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnVolta
             // 
@@ -143,6 +144,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(482, 167);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
@@ -153,6 +155,7 @@
             this.Controls.Add(this.lblCodigoDepartamento);
             this.Controls.Add(this.txtCdEstoque);
             this.Controls.Add(this.lblcodigoEstoque);
+            this.MaximizeBox = false;
             this.Name = "frmCadEstoque";
             this.Text = "Cadastro de Estoque";
             this.Load += new System.EventHandler(this.frmCadEstoque_Load);

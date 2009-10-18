@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmCadFamiliaMotor : Form
+    public partial class frmCadFamiliaMotor : FormPai
     {
         public frmCadFamiliaMotor()
         {
@@ -19,6 +19,21 @@ namespace TCC.UI
         private void frmFamiliaMotor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVolta_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+        }
+
+        protected override void BuscaIdMaximo()
+        {
+            base.BuscaIdMaximo();
         }
     }
 }
