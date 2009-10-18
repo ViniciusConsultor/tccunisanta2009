@@ -264,6 +264,7 @@
             this.btnVolta.Size = new System.Drawing.Size(42, 26);
             this.btnVolta.TabIndex = 13;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnlimpar
             // 
@@ -346,6 +347,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(582, 227);
+            this.ControlBox = false;
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtTelefone);
@@ -376,6 +378,7 @@
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.txtCodigoFornecedor);
             this.Controls.Add(this.lblCodigoFornecedor);
+            this.MaximizeBox = false;
             this.Name = "frmCadFornecedor";
             this.Text = "Cadastro de Fornecedor";
             this.Load += new System.EventHandler(this.frmCadFornecedor_Load);

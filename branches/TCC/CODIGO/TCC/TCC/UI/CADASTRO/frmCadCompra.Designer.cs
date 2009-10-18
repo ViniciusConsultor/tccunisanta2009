@@ -309,6 +309,7 @@
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnVoltar
             // 
@@ -319,6 +320,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(39, 27);
             this.btnVoltar.TabIndex = 10;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnBuscaFornecedor
             // 
@@ -375,6 +377,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 271);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBuscaMotorCompra);
             this.Controls.Add(this.btnBuscaTipoProduto);
             this.Controls.Add(this.btnBuscaDepartamento);
@@ -409,6 +412,7 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
+            this.MaximizeBox = false;
             this.Name = "frmCadCompra";
             this.Text = "Compra";
             this.Load += new System.EventHandler(this.frmCadCompra_Load);

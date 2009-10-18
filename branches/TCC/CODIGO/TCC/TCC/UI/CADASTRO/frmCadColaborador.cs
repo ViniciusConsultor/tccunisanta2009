@@ -11,10 +11,11 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmCadColaborador : Form
+    public partial class frmCadColaborador : FormPai
     {
         mUsuario _modelUsuario;
         mDepartamento _modeldDepartamento;
+
         public frmCadColaborador()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace TCC.UI
         #region Eventos
         private void frmCadColaborador_Load(object sender, EventArgs e)
         {
-            this.BuscaCodigoColadoradorMax();
+            this.BuscaIdMaximo();
             this.PopulaComboEstados();
             CbSexo.SelectedIndex = 0;
         }
@@ -42,8 +43,8 @@ namespace TCC.UI
                 {
                     regraMenu.ValidarInsere(modelColaborador);
                 }
-                this.LimpaControles();
-                this.BuscaCodigoColadoradorMax();
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
             {
@@ -87,11 +88,11 @@ namespace TCC.UI
 
         private void btnApaga_Click(object sender, EventArgs e)
         {
-            this.LimpaControles();
+            base.LimpaDadosTela(this);
         }
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
         private void btnBuscaUsuario_Click(object sender, EventArgs e)
         {
@@ -163,8 +164,8 @@ namespace TCC.UI
         #endregion
 
         #region Metodos
-        
-        private void BuscaCodigoColadoradorMax()
+
+        protected override void BuscaIdMaximo()
         {
             rCadColaborador regraColaborador = new rCadColaborador();
             try
@@ -199,29 +200,6 @@ namespace TCC.UI
             model.IdDepto = Convert.ToInt32(txtCdDepartamento);
             return model;
         }
-
-        #region Limpa Controles
-        /// <summary>
-        /// Limpa os controles da tela
-        /// </summary>
-        private void LimpaControles()
-        {
-            //Varre todos os controles da tela
-            //--------------------------------
-            foreach (Control controle in this.Controls)
-            {
-                //Se for do tipo TextBox apaga o conteudo escrito
-                //-----------------------------------------------
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if(controle.Name.Equals("txtCdColab")==false)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-        }
-        #endregion Limpa Controles        
 
         private mColaborador PegaDadosTela()
         {

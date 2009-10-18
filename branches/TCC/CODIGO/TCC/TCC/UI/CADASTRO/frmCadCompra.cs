@@ -10,7 +10,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadCompra : Form
+    public partial class frmCadCompra : FormPai
     {
         mMotor _modelMotor;
         mDepartamento _modelDepartamento;
@@ -28,7 +28,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        public void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rCompra regraCompra = new rCompra();
             try
@@ -94,6 +94,17 @@ namespace TCC.UI
             {
                 objTela = null;
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
     }
 }

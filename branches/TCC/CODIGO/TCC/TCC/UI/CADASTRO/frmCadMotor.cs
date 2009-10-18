@@ -11,14 +11,14 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadMotor : Form
+    public partial class frmCadMotor : FormPai
     {
         public frmCadMotor()
         {
             InitializeComponent();
         }
 
-        private void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rMotor regraMotor = new rMotor();
             try
@@ -42,7 +42,7 @@ namespace TCC.UI
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
 
         private void btnAceitar_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace TCC.UI
             {
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                this.LimpaDadosTela();
+                base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
             }
             catch (Exception ex)
@@ -88,31 +88,9 @@ namespace TCC.UI
             }
         }
 
-        private void LimpaDadosTela()
-        {
-            try
-            {
-                foreach (Control controle in this.Controls)
-                {
-                    if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-
-            }
-        }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.LimpaDadosTela();
+            base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
         }
     }

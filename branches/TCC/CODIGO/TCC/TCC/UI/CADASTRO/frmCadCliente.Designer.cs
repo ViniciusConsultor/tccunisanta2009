@@ -292,7 +292,7 @@
             this.btnVolta.Size = new System.Drawing.Size(33, 26);
             this.btnVolta.TabIndex = 15;
             this.btnVolta.UseVisualStyleBackColor = true;
-            this.btnVolta.Click += new System.EventHandler(btnVolta_Click);
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // lblTlefone
             // 
@@ -365,6 +365,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 226);
+            this.ControlBox = false;
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtDDD);
@@ -397,6 +398,7 @@
             this.Controls.Add(this.lblRua);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
+            this.MaximizeBox = false;
             this.Name = "frmCadCliente";
             this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.frmCadCliente_Load);
