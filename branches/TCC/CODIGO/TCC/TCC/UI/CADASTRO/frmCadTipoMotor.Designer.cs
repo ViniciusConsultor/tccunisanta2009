@@ -47,6 +47,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(24, 22);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -56,6 +57,7 @@
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -80,6 +82,7 @@
             this.txtCdTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoMotor.Location = new System.Drawing.Point(170, 33);
             this.txtCdTipoMotor.Name = "txtCdTipoMotor";
+            this.txtCdTipoMotor.ReadOnly = true;
             this.txtCdTipoMotor.Size = new System.Drawing.Size(100, 20);
             this.txtCdTipoMotor.TabIndex = 18;
             // 
@@ -107,6 +110,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(292, 159);
+            this.ControlBox = false;
             this.Controls.Add(this.txtNmTipoMotor);
             this.Controls.Add(this.lblNmTipoMotor);
             this.Controls.Add(this.txtCdTipoMotor);
@@ -114,8 +118,10 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
+            this.MaximizeBox = false;
             this.Name = "frmCadTipoMotor";
             this.Text = "Tipo Motor";
+            this.Load += new System.EventHandler(this.frmCadTipoMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

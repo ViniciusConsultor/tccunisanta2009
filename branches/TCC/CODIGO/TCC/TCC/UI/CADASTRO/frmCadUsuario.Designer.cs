@@ -60,6 +60,7 @@
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(159, 13);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(155, 20);
             this.txtCodigo.TabIndex = 0;
             // 
@@ -186,6 +187,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(347, 233);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBuscaPerfilUsuario);
             this.Controls.Add(this.txtPerfilUsuario);
             this.Controls.Add(this.lblPerfilUsuario);
@@ -200,6 +202,7 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
+            this.MaximizeBox = false;
             this.Name = "frmCadUsuario";
             this.Text = "Cadastro Usuário";
             this.Load += new System.EventHandler(this.frmCadUsuario_Load);

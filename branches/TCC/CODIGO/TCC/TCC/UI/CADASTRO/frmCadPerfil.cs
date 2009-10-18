@@ -11,7 +11,7 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmCadPerfil : Form
+    public partial class frmCadPerfil : FormPai
     {
         #region Construtor
         public frmCadPerfil()
@@ -23,7 +23,7 @@ namespace TCC.UI
         #region Eventos
         private void frmCadPerfil_Load(object sender, EventArgs e)
         {
-            this.BuscaMaxDepto();
+            this.BuscaIdMaximo();
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
@@ -34,8 +34,8 @@ namespace TCC.UI
             {
                 modelPerfil = this.PegaDadosTela();
                 regraPerfil.ValidarInsere(modelPerfil);
-                this.LimpaControles();
-                this.BuscaMaxDepto();
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {
@@ -46,9 +46,10 @@ namespace TCC.UI
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.LimpaControles();
+            base.LimpaDadosTela(this); 
         }
         #endregion
+
         #region Metodos
         private mPerfil PegaDadosTela()
         {
@@ -58,8 +59,9 @@ namespace TCC.UI
 
             return model;
         }
+        #endregion
 
-        private void BuscaMaxDepto()
+        protected override void BuscaIdMaximo()
         {
             rPerfil regraPerfil = new rPerfil();
             try
@@ -76,28 +78,9 @@ namespace TCC.UI
             }
         }
 
-        private void LimpaControles()
-        {
-            //Varre todos os controles da tela
-            //--------------------------------
-            foreach (Control controle in this.Controls)
-            {
-                //Se for do tipo TextBox apaga o conteudo escrito
-                //-----------------------------------------------
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if (controle.Name.Equals("txtIdPerfil") == false)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-        }
-        #endregion
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
     }
 }

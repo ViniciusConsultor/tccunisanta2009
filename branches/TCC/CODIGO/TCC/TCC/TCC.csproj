@@ -210,12 +210,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadCliente.resx">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadColaborador.resx">
       <DependentUpon>frmCadColaborador.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadCompra.resx">
       <DependentUpon>frmCadCompra.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadCompraPeca.resx">
       <DependentUpon>frmCadCompraPeca.cs</DependentUpon>
@@ -223,57 +226,83 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadDepartamento.resx">
       <DependentUpon>frmCadDepartamento.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadEstoque.resx">
       <DependentUpon>frmCadEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadFamiliaMotor.resx">
       <DependentUpon>frmCadFamiliaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadFornecedor.resx">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadKitGrupoPeca.resx">
       <DependentUpon>frmCadKitGrupoPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadMotor.resx">
       <DependentUpon>frmCadMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadNumeroMotor.resx">
       <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadOrdemProducao.resx">
       <DependentUpon>frmCadOrdemProducao.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPeca.resx">
       <DependentUpon>frmCadPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadPecaFornecedor.resx">
+      <DependentUpon>frmCadPecaFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPedidoVenda.resx">
       <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPerfil.resx">
       <DependentUpon>frmCadPerfil.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPerfilMenu.resx">
       <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadTipoMotor.resx">
       <DependentUpon>frmCadTipoMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadTipoPeca.resx">
       <DependentUpon>frmCadTipoPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadTipoProduto.resx">
+      <DependentUpon>frmCadTipoProduto.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadUsinagem.resx">
       <DependentUpon>frmCadUsinagem.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadUsuario.resx">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadVenda.resx">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadVendaMotor.resx">
       <DependentUpon>frmCadVendaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormPai.resx">
       <DependentUpon>FormPai.cs</DependentUpon>
