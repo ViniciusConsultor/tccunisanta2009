@@ -19,7 +19,8 @@ namespace TCC.UI
             InitializeComponent();
             modelDepartamento = new mDepartamento();
         }
-        private void BuscaIdMaximo()
+
+        protected override void BuscaIdMaximo()
         {
             rEstoque regra = new rEstoque();
             try
@@ -35,6 +36,7 @@ namespace TCC.UI
                 regra = null;
             }
         }
+
         private mEstoque PegaDadosTela()
         {
             mEstoque model = new mEstoque();
@@ -117,6 +119,12 @@ namespace TCC.UI
         private void btnVolta_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
+        }
+
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
     }
 }

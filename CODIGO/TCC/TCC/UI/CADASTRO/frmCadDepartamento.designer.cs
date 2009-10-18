@@ -112,6 +112,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(327, 195);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
@@ -119,6 +120,7 @@
             this.Controls.Add(this.lblDescricaoDepartamento);
             this.Controls.Add(this.txtCodigoDepartamento);
             this.Controls.Add(this.lblDepartamento);
+            this.MaximizeBox = false;
             this.Name = "frmCadDepartamento";
             this.Text = "Cadastro Departamento";
             this.Load += new System.EventHandler(this.frmCadDepartamento_Load);

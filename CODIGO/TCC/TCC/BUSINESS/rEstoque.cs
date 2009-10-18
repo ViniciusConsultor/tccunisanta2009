@@ -17,7 +17,7 @@ namespace TCC.BUSINESS
             int id_estoque;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_estoque", "estoque");
+                dt = base.BuscaIdMaximoTabelas("id_estoq", "estoque");
                 if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
                 {
                     id_estoque = 0;

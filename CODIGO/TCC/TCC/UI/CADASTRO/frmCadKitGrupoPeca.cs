@@ -9,11 +9,37 @@ using System.Windows.Forms;
 
 namespace TCC.UI
 {
-    public partial class frmKitGrupoPeca : Form
+    public partial class frmKitGrupoPeca : FormPai
     {
         public frmKitGrupoPeca()
         {
             InitializeComponent();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+
+        private void btnCdPeca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCdItemPeca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override void BuscaIdMaximo()
+        {
+            base.BuscaIdMaximo();
         }
     }
 }

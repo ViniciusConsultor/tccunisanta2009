@@ -172,6 +172,7 @@
             this.btnLimpa.TabIndex = 2;
             this.btnLimpa.Text = "Limpa";
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // lblCdEstoque
             // 
@@ -199,6 +200,7 @@
             this.btnVolta.Size = new System.Drawing.Size(34, 26);
             this.btnVolta.TabIndex = 2;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnBuscaCdNumMotor
             // 
@@ -252,6 +254,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(520, 171);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCdEstoque);
             this.Controls.Add(this.btnCdTipoMotor);
             this.Controls.Add(this.btnCdMotorCompra);
@@ -274,6 +277,7 @@
             this.Controls.Add(this.lblCdMotorCompre);
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblCdMotor);
+            this.MaximizeBox = false;
             this.Name = "frmCadFamiliaMotor";
             this.Text = "Familia do  Motor";
             this.ResumeLayout(false);

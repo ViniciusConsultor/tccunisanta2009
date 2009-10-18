@@ -9,7 +9,7 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmCadDepartamento : Form
+    public partial class frmCadDepartamento : FormPai
     {
         public frmCadDepartamento()
         {
@@ -18,7 +18,7 @@ namespace TCC.UI
 
         private void frmCadDepartamento_Load(object sender, EventArgs e)
         {
-            this.BuscaUltimoIdDepartamento();
+            this.BuscaIdMaximo();
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
@@ -27,8 +27,8 @@ namespace TCC.UI
             try
             {
                 regraDep.ValidarInsere(this.PegaDadosTela());
-                this.ApagaControles();
-                this.BuscaUltimoIdDepartamento();
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {
@@ -39,12 +39,13 @@ namespace TCC.UI
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.ApagaControles();
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
 
         private MODEL.mDepartamento PegaDadosTela()
@@ -65,7 +66,7 @@ namespace TCC.UI
             }
         }
 
-        private void BuscaUltimoIdDepartamento()
+        protected override void BuscaIdMaximo()
         {
             rDepartamento regraDepartamento = new rDepartamento();
             try
@@ -79,20 +80,6 @@ namespace TCC.UI
             finally
             {
                 regraDepartamento = null;
-            }
-        }
-
-        private void ApagaControles()
-        {
-            foreach (Control contr in this.Controls)
-            {
-                if (contr.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if (contr.Name.Equals("txtCodigoDepartamento") == false)
-                    {
-                        contr.Text = string.Empty;
-                    }
-                }
             }
         }
     }

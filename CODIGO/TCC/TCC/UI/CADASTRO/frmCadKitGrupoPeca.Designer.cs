@@ -53,6 +53,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(32, 23);
             this.btnVoltar.TabIndex = 13;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -62,6 +63,7 @@
             this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -148,6 +150,7 @@
             this.btnCdPeca.TabIndex = 11;
             this.btnCdPeca.Text = "...";
             this.btnCdPeca.UseVisualStyleBackColor = true;
+            this.btnCdPeca.Click += new System.EventHandler(this.btnCdPeca_Click);
             // 
             // btnCdItemPeca
             // 
@@ -157,6 +160,7 @@
             this.btnCdItemPeca.TabIndex = 11;
             this.btnCdItemPeca.Text = "...";
             this.btnCdItemPeca.UseVisualStyleBackColor = true;
+            this.btnCdItemPeca.Click += new System.EventHandler(this.btnCdItemPeca_Click);
             // 
             // frmKitGrupoPeca
             // 
@@ -165,6 +169,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(404, 149);
+            this.ControlBox = false;
             this.Controls.Add(this.lblNmKit);
             this.Controls.Add(this.txtNmKit);
             this.Controls.Add(this.lblCdPeca);
@@ -178,6 +183,7 @@
             this.Controls.Add(this.btnCdItemPeca);
             this.Controls.Add(this.btnCdPeca);
             this.Controls.Add(this.btnAceitar);
+            this.MaximizeBox = false;
             this.Name = "frmKitGrupoPeca";
             this.Text = "KitGrupoPeca";
             this.ResumeLayout(false);

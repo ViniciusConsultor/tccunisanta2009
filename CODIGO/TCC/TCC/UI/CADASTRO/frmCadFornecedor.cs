@@ -10,7 +10,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadFornecedor : Form
+    public partial class frmCadFornecedor : FormPai
     {
         public frmCadFornecedor()
         {
@@ -36,7 +36,7 @@ namespace TCC.UI
             }
         }
 
-        private void BuscaIdMaximo()
+        protected override void BuscaIdMaximo()
         {
             rFornecedor regra = new rFornecedor();
             try
@@ -127,21 +127,6 @@ namespace TCC.UI
             }
         }
 
-        private void ApagaDadosTela()
-        {
-            foreach (Control controle in this.Controls)
-            {
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if (controle.Name.Equals("txtCodigoFornecedor") == false)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-            this.cboUf.SelectedIndex = 0;
-        }
-
         private void frmCadFornecedor_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
@@ -157,7 +142,7 @@ namespace TCC.UI
                 this.ValidadadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                this.ApagaDadosTela();
+                base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption)
@@ -177,7 +162,8 @@ namespace TCC.UI
 
         private void btnlimpar_Click(object sender, EventArgs e)
         {
-            this.ApagaDadosTela();
+            base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
 
         private void txtCep_TextChanged(object sender, EventArgs e)
@@ -209,6 +195,11 @@ namespace TCC.UI
             {
                 throw ex;
             }
+        }
+
+        private void btnVolta_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
         }
     }
 }
