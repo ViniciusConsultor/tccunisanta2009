@@ -75,11 +75,13 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (23, 'Comp
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (24, 'Fornecedor', 'frmCadFornecedor', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (25, 'Peça Fornecedor', 'frmCadPecaFornecedor', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (26, 'Usuário', 'frmCadUsuario', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (27, 'Cliente', 'frmCadCliente', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (28, 'Colaborador', 'frmCadColaborador', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (29, 'Departamento', 'frmCadDepartamento', GETDATE(), 1);
 
 --Venda !!
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--Pedido Venda
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 8);--Venda
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 12);--Tipo de Motor
 --Estoque
 
 --Produção
@@ -87,6 +89,7 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 10);--Usinagem
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 11);--Motor
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 16);--Ordem Produção
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 17);--Tipo Produto
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 18);--Peça
 --Motor
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (11, 12);--Tipo de Motor
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (11, 13);--Familia do Motor
@@ -105,6 +108,9 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 23);--Compra
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 24);--Fornecedor
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 25);--Peça Fornecedor
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 26);--Usuário
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 27);--Cliente
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 28);--Colaborador
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 29);--Departamento
 
 --INSERT TABELA PERFILMENU
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 1, GETDATE(), 1);

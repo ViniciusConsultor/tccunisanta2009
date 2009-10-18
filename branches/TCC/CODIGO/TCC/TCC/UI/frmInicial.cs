@@ -57,7 +57,9 @@ namespace TCC.UI
                 if (this._dicEventos.ContainsKey(sender.ToString()) == true)
                 {
                     Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + endereco);
-                    listaTelasAbertas.Add(endereco);
+                    if (objFormDinamico != null)
+                    {
+                        listaTelasAbertas.Add(endereco);
                         if (sender.ToString().Equals("LOGIN") == true)
                         {
 
@@ -66,12 +68,11 @@ namespace TCC.UI
                         }
                         else
                         {
-                            if (objFormDinamico != null)
-                            {
-                                objFormDinamico.MdiParent = this;
-                                objFormDinamico.Show();
-                            }
+
+                            objFormDinamico.MdiParent = this;
+                            objFormDinamico.Show();
                         }
+                    }
                     }
             }
             else
@@ -245,11 +246,12 @@ namespace TCC.UI
             rMenu regraSubMenu;
             DataTable dtSubMenu;
             ToolStripMenuItem itemSubMenu;
+            int idMenu;
             try
             {
                 regraSubMenu = new rMenu();
-
-                dtSubMenu = regraSubMenu.BuscaSubMenu(Convert.ToInt32(drLinha["id_menu"]));
+                idMenu = Convert.ToInt32(drLinha["id_menu"]);
+                dtSubMenu = regraSubMenu.BuscaSubMenu(idMenu);
                 if (dtSubMenu.Rows.Count > 0)
                 {
                     for (int i = 0; i < dtSubMenu.Rows.Count; i++)
@@ -257,8 +259,11 @@ namespace TCC.UI
                         itemSubMenu = new ToolStripMenuItem(dtSubMenu.Rows[i]["dsc_menu"].ToString());
                         itemMenuPai.DropDownItems.AddRange(new ToolStripMenuItem[] { itemSubMenu });
 
-                        itemMenuPai.DropDownItems[i].Click += new EventHandler(frmInicial_Click);
-                        _dicEventos.Add(dtSubMenu.Rows[i]["dsc_menu"].ToString(), dtSubMenu.Rows[i]["ende"]);
+                        if (dtSubMenu.Rows[i]["ende"] != DBNull.Value)
+                        {
+                            itemMenuPai.DropDownItems[i].Click += new EventHandler(frmInicial_Click);
+                            _dicEventos.Add(dtSubMenu.Rows[i]["dsc_menu"].ToString(), dtSubMenu.Rows[i]["ende"]);
+                        }
 
                         this.PreencheSubMenu(itemSubMenu, dtSubMenu.Rows[i]) ;
                     }
@@ -293,6 +298,12 @@ namespace TCC.UI
             }
         }
         #endregion Apaga Menu
+
+        private void frmInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DAL.ConectaBanco.DesconectaBanco();
+            GC.Collect();
+        }
 
         #endregion Metodos
     }
