@@ -1,8 +1,0 @@
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\obj\Debug\AlteraScriptCriacao.Form1.resources
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\obj\Debug\AlteraScriptCriacao.Properties.Resources.resources
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\obj\Debug\AlteraScriptCriacao.csproj.GenerateResource.Cache
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\bin\Debug\AlteraScriptCriacao.exe
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\bin\Debug\AlteraScriptCriacao.pdb
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\obj\Debug\AlteraScriptCriacao.exe
-C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\AlteraScriptCriacao\AlteraScriptCriacao\obj\Debug\AlteraScriptCriacao.pdb
