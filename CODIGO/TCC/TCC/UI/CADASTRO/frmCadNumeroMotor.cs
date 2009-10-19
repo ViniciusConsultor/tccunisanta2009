@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
@@ -34,7 +34,24 @@ namespace TCC.UI
 
         protected override void BuscaIdMaximo()
         {
-            base.BuscaIdMaximo();
+            rFamiliaMotor regra = new rFamiliaMotor();
+            try
+            {
+                this.txtCdNumeroMotor.Text = regra.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
+        }
+
+        private void frmCadNumeroMotor_Load(object sender, EventArgs e)
+        {
+            this.BuscaIdMaximo();
         }
     }
 }

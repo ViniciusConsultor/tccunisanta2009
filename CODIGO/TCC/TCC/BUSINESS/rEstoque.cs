@@ -10,32 +10,15 @@ namespace TCC.BUSINESS
 {
     class rEstoque : ComandosSql
     {
-        public int BuscaIdMaximoEstoque()
+        public string BuscaIdMaximoEstoque()
         {
-            dEstoque dal = new dEstoque();
-            DataTable dt;
-            int id_estoque;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_estoq", "estoque");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    id_estoque = 0;
-                }
-                else
-                {
-                    id_estoque = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++id_estoque;
+                return base.BuscaIdMaximoTabelas("id_estoq", "estoque");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dal = null;
-                dt = null;
             }
         }
 

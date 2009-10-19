@@ -33,7 +33,7 @@ namespace TCC.UI
             rCompra regraCompra = new rCompra();
             try
             {
-                this.txtCdCompra.Text = regraCompra.BuscaIdMaximoCompra().ToString();
+                this.txtCdCompra.Text = regraCompra.BuscaIdMaximoCompra();
             }
             catch (Exception ex)
             {

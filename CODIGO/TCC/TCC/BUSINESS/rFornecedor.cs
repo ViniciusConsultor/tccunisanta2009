@@ -10,32 +10,15 @@ namespace TCC.BUSINESS
 {
     class rFornecedor : ComandosSql
     {
-        public int BuscaIdMaximoFornecedor()
+        public string BuscaIdMaximoFornecedor()
         {
-            dFornecedor dal = new dFornecedor();
-            DataTable dt;
-            int idFornecedor;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_forn", "fornecedor");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    idFornecedor = 0;
-                }
-                else
-                {
-                    idFornecedor = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++idFornecedor;
+                return base.BuscaIdMaximoTabelas("id_forn", "fornecedor");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dal = null;
-                dt = null;
             }
         }
 

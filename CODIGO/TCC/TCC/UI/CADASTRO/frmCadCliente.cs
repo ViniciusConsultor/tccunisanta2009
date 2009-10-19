@@ -172,7 +172,7 @@ namespace TCC.UI
             rCliente regra = new rCliente();
             try
             {
-                this.txtCodigo.Text = regra.BuscaIdMaximoCliente().ToString();
+                this.txtCodigo.Text = regra.BuscaIdMaximoCliente();
             }
             catch (Exception ex)
             {

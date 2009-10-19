@@ -10,30 +10,15 @@ namespace TCC.BUSINESS
 {
     class rCliente : ComandosSql
     {
-        public int BuscaIdMaximoCliente()
+        public string BuscaIdMaximoCliente()
         {
-            DataTable dt;
-            int idCli;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_cli", "cliente");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    idCli = 0;
-                }
-                else
-                {
-                    idCli = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++idCli;
+                return base.BuscaIdMaximoTabelas("id_cli", "cliente");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dt = null;
             }
         }
 

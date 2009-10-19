@@ -387,6 +387,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCadVenda";
             this.Text = "Venda";
+            this.Load += new System.EventHandler(this.frmCadVenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

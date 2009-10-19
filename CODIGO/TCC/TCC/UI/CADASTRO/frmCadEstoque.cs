@@ -25,7 +25,7 @@ namespace TCC.UI
             rEstoque regra = new rEstoque();
             try
             {
-                this.txtCdEstoque.Text = regra.BuscaIdMaximoEstoque().ToString();
+                this.txtCdEstoque.Text = regra.BuscaIdMaximoEstoque();
             }
             catch (Exception ex)
             {

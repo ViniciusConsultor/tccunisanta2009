@@ -5,17 +5,18 @@ using System.Text;
 
 namespace TCC.BUSINESS
 {
-    class rCompra : ComandosSql
+    class rTipoMotor : ComandosSql
     {
-        public string BuscaIdMaximoCompra()
+        public string BuscaIdMaximo()
         {
             try
             {
-                return base.BuscaIdMaximoTabelas("id_compra", "compra");
+                return base.BuscaIdMaximoTabelas("id_tipo_motor", "Tipomotor");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                
+                throw;
             }
         }
 

@@ -47,30 +47,15 @@ namespace TCC.BUSINESS
             }
         }
 
-        public int BuscaIdMaximoMotor()
+        public string BuscaIdMaximoMotor()
         {
-            DataTable dtMax = null;
-            int id = 0;
             try
             {
-                dtMax = base.BuscaIdMaximoTabelas("id_motor_compra", "motor");
-                if (dtMax.Rows[0]["max"] != DBNull.Value)
-                {
-                    id = Convert.ToInt32(dtMax.Rows[0]["max"]);
-                }
-                return ++id;
+                return base.BuscaIdMaximoTabelas("id_motor", "motor");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                if (dtMax != null)
-                {
-                    dtMax.Dispose();
-                    dtMax = null;
-                }
             }
         }
     }

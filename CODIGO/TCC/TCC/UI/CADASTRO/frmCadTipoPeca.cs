@@ -99,7 +99,7 @@ namespace TCC.UI
             rTipoPeca regra = new rTipoPeca();
             try
             {
-                this.txtCdTipoPeca.Text = regra.BuscaIdMaximoTipoPeca().ToString();
+                this.txtCdTipoPeca.Text = regra.BuscaIdMaximoTipoPeca();
             }
             catch (Exception ex)
             {
