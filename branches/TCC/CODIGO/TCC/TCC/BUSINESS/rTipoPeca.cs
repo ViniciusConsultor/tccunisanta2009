@@ -8,30 +8,15 @@ namespace TCC.BUSINESS
 {
     class rTipoPeca : ComandosSql
     {
-        public int BuscaIdMaximoTipoPeca()
+        public string BuscaIdMaximoTipoPeca()
         {
-            int id = 0;
-            DataTable dtMax = new DataTable();
             try
             {
-                dtMax = base.BuscaIdMaximoTabelas("id_tipo_peca", "tipodepeca");
-                if (dtMax.Rows[0]["max"] != DBNull.Value)
-                {
-                    id = Convert.ToInt32(dtMax.Rows[0]["max"]);
-                }
-                return ++id;
+                return base.BuscaIdMaximoTabelas("id_tipo_peca", "tipodepeca");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                if (dtMax != null)
-                {
-                    dtMax.Dispose();
-                    dtMax = null;
-                }
             }
         }
 

@@ -66,7 +66,7 @@ namespace TCC.UI
             rPerfil regraPerfil = new rPerfil();
             try
             {
-                this.txtIdPerfil.Text = regraPerfil.BuscaIdMaximoPerfil().ToString();
+                this.txtIdPerfil.Text = regraPerfil.BuscaIdMaximoPerfil();
             }
             catch (Exception ex)
             {

@@ -41,7 +41,7 @@ namespace TCC.UI
             rFornecedor regra = new rFornecedor();
             try
             {
-                this.txtCodigoFornecedor.Text = regra.BuscaIdMaximoFornecedor().ToString();
+                this.txtCodigoFornecedor.Text = regra.BuscaIdMaximoFornecedor();
             }
             catch (Exception ex)
             {

@@ -9,32 +9,15 @@ namespace TCC.BUSINESS
 {
     class rPerfil : ComandosSql
     {
-        public int BuscaIdMaximoPerfil()
+        public string BuscaIdMaximoPerfil()
         {
-            dPerfil dalPerfil = new dPerfil();
-            DataTable dt;
-            int idPerfil;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_perfil", "perfil");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    idPerfil = 0;
-                }
-                else
-                {
-                    idPerfil = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++idPerfil;
+                return base.BuscaIdMaximoTabelas("id_perfil", "perfil");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dalPerfil = null;
-                dt = null;
             }
         }
 

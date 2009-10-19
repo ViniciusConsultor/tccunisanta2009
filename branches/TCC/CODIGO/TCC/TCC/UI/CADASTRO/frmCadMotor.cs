@@ -23,7 +23,7 @@ namespace TCC.UI
             rMotor regraMotor = new rMotor();
             try
             {
-                this.txtCdMotor.Text = regraMotor.BuscaIdMaximoMotor().ToString();
+                this.txtCdMotor.Text = regraMotor.BuscaIdMaximoMotor();
             }
             catch (Exception ex)
             {

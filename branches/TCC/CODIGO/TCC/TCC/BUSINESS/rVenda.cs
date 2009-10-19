@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace TCC.BUSINESS
 {
-    class rCompra : ComandosSql
+    class rVenda : ComandosSql
     {
-        public string BuscaIdMaximoCompra()
+        public string BuscaidMaximo()
         {
             try
             {
-                return base.BuscaIdMaximoTabelas("id_compra", "compra");
+                return base.BuscaIdMaximoTabelas("id_venda", "venda");
             }
             catch (Exception ex)
             {
@@ -35,3 +35,4 @@ namespace TCC.BUSINESS
         }
     }
 }
+ 

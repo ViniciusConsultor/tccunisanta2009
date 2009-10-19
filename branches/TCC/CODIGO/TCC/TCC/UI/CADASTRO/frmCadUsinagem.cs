@@ -38,7 +38,7 @@ namespace TCC.UI
             rUsinagem regra = new rUsinagem();
             try
             {
-                this.txtCdUsinagem.Text = regra.BuscaIdMaximoUsinagem().ToString();
+                this.txtCdUsinagem.Text = regra.BuscaIdMaximoUsinagem();
             }
             catch (Exception ex)
             {

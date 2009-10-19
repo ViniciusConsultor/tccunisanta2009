@@ -121,6 +121,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCadNumeroMotor";
             this.Text = "frmCadNumeroMotor";
+            this.Load += new System.EventHandler(this.frmCadNumeroMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
