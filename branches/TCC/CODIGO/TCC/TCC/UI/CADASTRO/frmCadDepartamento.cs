@@ -71,7 +71,7 @@ namespace TCC.UI
             rDepartamento regraDepartamento = new rDepartamento();
             try
             {
-                this.txtCodigoDepartamento.Text = regraDepartamento.BuscaIdMaximoDepartamento().ToString();
+                this.txtCodigoDepartamento.Text = regraDepartamento.BuscaIdMaximoDepartamento();
             }
             catch (Exception ex)
             {

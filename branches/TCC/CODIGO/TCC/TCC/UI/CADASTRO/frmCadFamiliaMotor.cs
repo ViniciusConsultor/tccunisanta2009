@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
@@ -16,11 +16,6 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        private void frmFamiliaMotor_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVolta_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
@@ -29,11 +24,29 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
 
         protected override void BuscaIdMaximo()
         {
-            base.BuscaIdMaximo();
+            rFamiliaMotor regra = new rFamiliaMotor();
+            try
+            {
+                this.txtCdMotor.Text = regra.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
+        }
+
+        private void frmCadFamiliaMotor_Load(object sender, EventArgs e)
+        {
+            this.BuscaIdMaximo();
         }
     }
 }

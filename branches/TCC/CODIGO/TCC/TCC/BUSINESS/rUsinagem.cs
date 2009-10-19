@@ -7,30 +7,15 @@ namespace TCC.BUSINESS
 {
     class rUsinagem : ComandosSql
     {
-        public int BuscaIdMaximoUsinagem()
+        public string BuscaIdMaximoUsinagem()
         {
-            DataTable dtId = new DataTable();
-            int id = 0;
             try
             {
-                dtId = base.BuscaIdMaximoTabelas("id_usinagem", "Usinagem");
-                if (dtId.Rows[0]["max"] != DBNull.Value)
-                {
-                    id = Convert.ToInt32(dtId.Rows[0]["max"]);
-                }
-                return ++id;
+                return base.BuscaIdMaximoTabelas("id_usinagem", "Usinagem");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                if (dtId != null)
-                {
-                    dtId.Dispose();
-                    dtId = null;
-                }
             }
         }
 

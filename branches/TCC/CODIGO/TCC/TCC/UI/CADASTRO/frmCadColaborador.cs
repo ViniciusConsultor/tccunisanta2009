@@ -170,7 +170,7 @@ namespace TCC.UI
             rCadColaborador regraColaborador = new rCadColaborador();
             try
             {
-                this.txtCdColab.Text = regraColaborador.BuscaIDMaximoColaborador().ToString();
+                this.txtCdColab.Text = regraColaborador.BuscaIDMaximoColaborador();
             }
             catch (Exception ex)
             {

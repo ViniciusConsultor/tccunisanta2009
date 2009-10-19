@@ -67,6 +67,7 @@
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotor.Location = new System.Drawing.Point(219, 17);
             this.txtCdMotor.Name = "txtCdMotor";
+            this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(38, 20);
             this.txtCdMotor.TabIndex = 1;
             // 
@@ -84,6 +85,7 @@
             this.txtCdMotorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotorCompra.Location = new System.Drawing.Point(427, 16);
             this.txtCdMotorCompra.Name = "txtCdMotorCompra";
+            this.txtCdMotorCompra.ReadOnly = true;
             this.txtCdMotorCompra.Size = new System.Drawing.Size(52, 20);
             this.txtCdMotorCompra.TabIndex = 1;
             // 
@@ -101,6 +103,7 @@
             this.CdNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CdNumeroMotor.Location = new System.Drawing.Point(219, 42);
             this.CdNumeroMotor.Name = "CdNumeroMotor";
+            this.CdNumeroMotor.ReadOnly = true;
             this.CdNumeroMotor.Size = new System.Drawing.Size(38, 20);
             this.CdNumeroMotor.TabIndex = 1;
             // 
@@ -118,6 +121,7 @@
             this.txtCdTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoMotor.Location = new System.Drawing.Point(427, 42);
             this.txtCdTipoMotor.Name = "txtCdTipoMotor";
+            this.txtCdTipoMotor.ReadOnly = true;
             this.txtCdTipoMotor.Size = new System.Drawing.Size(52, 20);
             this.txtCdTipoMotor.TabIndex = 1;
             // 
@@ -135,6 +139,7 @@
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdKit.Location = new System.Drawing.Point(219, 66);
             this.txtCdKit.Name = "txtCdKit";
+            this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(38, 20);
             this.txtCdKit.TabIndex = 1;
             // 
@@ -188,6 +193,7 @@
             this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdEstoque.Location = new System.Drawing.Point(427, 68);
             this.txtCdEstoque.Name = "txtCdEstoque";
+            this.txtCdEstoque.ReadOnly = true;
             this.txtCdEstoque.Size = new System.Drawing.Size(52, 20);
             this.txtCdEstoque.TabIndex = 1;
             // 
@@ -280,6 +286,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCadFamiliaMotor";
             this.Text = "Familia do  Motor";
+            this.Load += new System.EventHandler(this.frmCadFamiliaMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

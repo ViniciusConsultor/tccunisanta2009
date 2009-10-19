@@ -12,30 +12,15 @@ namespace TCC.BUSINESS
     {
 
         #region Busca Id Maximo Usuario
-        public int BuscaIdMaximoUsuario()
+        public string BuscaIdMaximoUsuario()
         {
-            DataTable dt;
-            int idUsuario;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_usu", "Usuario");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    idUsuario = 0;
-                }
-                else
-                {
-                    idUsuario = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++idUsuario;
+                return base.BuscaIdMaximoTabelas("id_usu", "Usuario");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dt = null;
             }
         }
         #endregion Busca Id Maximo Usuario

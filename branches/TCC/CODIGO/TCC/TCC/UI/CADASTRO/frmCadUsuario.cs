@@ -172,7 +172,7 @@ namespace TCC.UI
             rUsuario regraUsu = new rUsuario();
             try
             {
-                this.txtCodigo.Text = regraUsu.BuscaIdMaximoUsuario().ToString();
+                this.txtCodigo.Text = regraUsu.BuscaIdMaximoUsuario();
             }
             catch (Exception ex)
             {

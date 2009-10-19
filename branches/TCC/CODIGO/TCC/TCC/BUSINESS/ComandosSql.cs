@@ -35,16 +35,28 @@ namespace TCC.BUSINESS
         /// <param name="idTabela">campo que é o id da Tabela</param>
         /// <param name="tabela">nome da tabela que vai ser buscada</param>
         /// <returns>DataTable com o número do id(max); Caso id não exista retorna nulo</returns>
-        protected DataTable BuscaIdMaximoTabelas(string idTabela, string tabela)
+        protected string BuscaIdMaximoTabelas(string idTabela, string tabela)
         {
             SqlParameter[] param = new SqlParameter[2];
+            DataTable dtId;
+            int id;
             try
             {
                 param[0] = new SqlParameter("@nome_tabela", tabela);
                 param[0].SqlDbType = SqlDbType.VarChar;
                 param[1] = new SqlParameter("@campo_tabela", idTabela);
                 param[1].SqlDbType = SqlDbType.VarChar;
-                return base.BuscaDados("sp_busca_maxId", param);
+                dtId = base.BuscaDados("sp_busca_maxId", param);
+                if (dtId.Rows[0]["max"] == DBNull.Value || dtId.Rows[0]["max"] == null)
+                {
+                    id = 0;
+                }
+                else
+                {
+                    id = Convert.ToInt32(dtId.Rows[0]["max"]);
+                }
+                ++id;
+                return id.ToString();
             }
             catch (Exception ex)
             {

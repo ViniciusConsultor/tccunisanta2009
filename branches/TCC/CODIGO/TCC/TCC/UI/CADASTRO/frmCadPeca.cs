@@ -26,7 +26,7 @@ namespace TCC.UI
             rPeca regra = new rPeca();
             try
             {
-                this.txtCdPeca.Text = regra.BuscaIdMaximoPeca().ToString();
+                this.txtCdPeca.Text = regra.BuscaIdMaximoPeca();
             }
             catch (Exception ex)
             {

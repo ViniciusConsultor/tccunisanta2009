@@ -35,30 +35,15 @@ namespace TCC.BUSINESS
             }
         }
 
-        public int BuscaIdMaximoDepartamento()
+        public string BuscaIdMaximoDepartamento()
         {
-            DataTable dt;
-            int idDepartamento;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_depto", "departamento");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    idDepartamento = 0;
-                }
-                else
-                {
-                    idDepartamento = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++idDepartamento;
+                return base.BuscaIdMaximoTabelas("id_depto", "departamento");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dt = null;
             }
         }
 

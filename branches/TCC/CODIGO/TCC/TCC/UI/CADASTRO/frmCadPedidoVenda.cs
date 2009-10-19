@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
@@ -18,7 +18,7 @@ namespace TCC.UI
 
         private void frmCadPedidoVenda_Load(object sender, EventArgs e)
         {
-
+            this.BuscaIdMaximo();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -34,6 +34,20 @@ namespace TCC.UI
 
         protected override void BuscaIdMaximo()
         {
+            rPedidoVenda regra = new rPedidoVenda();
+            try
+            {
+                this.txtCdPedidoVenda.Text = regra.BuscaidMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
         }
     }
 }
+ 

@@ -10,32 +10,15 @@ namespace TCC.BUSINESS
 {
     class rCadColaborador:ComandosSql
     {
-        public int BuscaIDMaximoColaborador()
+        public string BuscaIDMaximoColaborador()
         {
-            dColaborador dalColaborador = new dColaborador();
-            DataTable dt;
-            int idColaborador;
             try
             {
-                dt = base.BuscaIdMaximoTabelas("id_colab", "Colaborador");
-                if (dt.Rows[0]["max"] == DBNull.Value || dt.Rows[0]["max"] == null)
-                {
-                    idColaborador = 0;
-                }
-                else
-                {
-                    idColaborador = Convert.ToInt32(dt.Rows[0]["max"]);
-                }
-                return ++idColaborador;
+                return base.BuscaIdMaximoTabelas("id_colab", "Colaborador");
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                dalColaborador = null;
-                dt = null;
             }
         }
 
