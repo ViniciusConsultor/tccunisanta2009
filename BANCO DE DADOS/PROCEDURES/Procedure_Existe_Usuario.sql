@@ -9,6 +9,6 @@ CREATE PROCEDURE sp_existe_usuario
 @usuario VARCHAR(20)
 AS
 
-SELECT COUNT(login) as flg_existe
+SELECT COUNT(log_usu) as flg_existe
 FROM Usuario
-WHERE login LIKE @usuario
+WHERE log_usu LIKE @usuario

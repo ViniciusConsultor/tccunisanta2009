@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCC.MODEL;
 
 namespace TCC.UI
 {
     public partial class frmBuscaTipoProduto : Form
     {
-        TextBox _txt;
+        mTipoProduto _model;
 
-        public frmBuscaTipoProduto(TextBox txt)
+        public frmBuscaTipoProduto(mTipoProduto modelParam)
         {
             InitializeComponent();
-            this._txt = txt;
+            _model = modelParam;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

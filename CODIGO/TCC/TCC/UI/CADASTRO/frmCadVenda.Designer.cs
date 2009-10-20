@@ -42,15 +42,10 @@
             this.lblCdKit = new System.Windows.Forms.Label();
             this.txtCdKit = new System.Windows.Forms.TextBox();
             this.lblDtVenda = new System.Windows.Forms.Label();
-            this.txtDd = new System.Windows.Forms.TextBox();
-            this.txtYyyy = new System.Windows.Forms.TextBox();
-            this.TxtMm = new System.Windows.Forms.TextBox();
-            this.lblB = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblQtdVenda = new System.Windows.Forms.Label();
             this.txtQtdVenda = new System.Windows.Forms.TextBox();
             this.lblVlVenda = new System.Windows.Forms.Label();
-            this.txtVenda = new System.Windows.Forms.TextBox();
+            this.txtValorVenda = new System.Windows.Forms.TextBox();
             this.lblNotaFiscal = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
@@ -61,6 +56,7 @@
             this.btnCdOrdemMotor = new System.Windows.Forms.Button();
             this.CdTipoProduto = new System.Windows.Forms.Button();
             this.btnCdKit = new System.Windows.Forms.Button();
+            this.txtDataVenda = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCdVenda
@@ -86,15 +82,16 @@
             this.lblCdOrdemMotor.AutoSize = true;
             this.lblCdOrdemMotor.Location = new System.Drawing.Point(308, 22);
             this.lblCdOrdemMotor.Name = "lblCdOrdemMotor";
-            this.lblCdOrdemMotor.Size = new System.Drawing.Size(131, 13);
+            this.lblCdOrdemMotor.Size = new System.Drawing.Size(136, 13);
             this.lblCdOrdemMotor.TabIndex = 0;
-            this.lblCdOrdemMotor.Text = "Codigo da ordem do motor";
+            this.lblCdOrdemMotor.Text = "Codigo da ordem Produção";
             // 
             // txtCdOrdemMotor
             // 
             this.txtCdOrdemMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdOrdemMotor.Location = new System.Drawing.Point(445, 19);
             this.txtCdOrdemMotor.Name = "txtCdOrdemMotor";
+            this.txtCdOrdemMotor.ReadOnly = true;
             this.txtCdOrdemMotor.Size = new System.Drawing.Size(64, 20);
             this.txtCdOrdemMotor.TabIndex = 1;
             // 
@@ -112,6 +109,7 @@
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotor.Location = new System.Drawing.Point(192, 79);
             this.txtCdMotor.Name = "txtCdMotor";
+            this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(64, 20);
             this.txtCdMotor.TabIndex = 1;
             // 
@@ -129,6 +127,7 @@
             this.txtCdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdCliente.Location = new System.Drawing.Point(192, 50);
             this.txtCdCliente.Name = "txtCdCliente";
+            this.txtCdCliente.ReadOnly = true;
             this.txtCdCliente.Size = new System.Drawing.Size(64, 20);
             this.txtCdCliente.TabIndex = 1;
             // 
@@ -146,6 +145,7 @@
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoProduto.Location = new System.Drawing.Point(445, 55);
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
+            this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(64, 20);
             this.txtCdTipoProduto.TabIndex = 1;
             // 
@@ -163,6 +163,7 @@
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdKit.Location = new System.Drawing.Point(445, 81);
             this.txtCdKit.Name = "txtCdKit";
+            this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(64, 20);
             this.txtCdKit.TabIndex = 1;
             // 
@@ -174,48 +175,6 @@
             this.lblDtVenda.Size = new System.Drawing.Size(79, 13);
             this.lblDtVenda.TabIndex = 2;
             this.lblDtVenda.Text = "Data de Venda";
-            // 
-            // txtDd
-            // 
-            this.txtDd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDd.Location = new System.Drawing.Point(180, 107);
-            this.txtDd.Name = "txtDd";
-            this.txtDd.Size = new System.Drawing.Size(26, 20);
-            this.txtDd.TabIndex = 1;
-            // 
-            // txtYyyy
-            // 
-            this.txtYyyy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtYyyy.Location = new System.Drawing.Point(278, 107);
-            this.txtYyyy.Name = "txtYyyy";
-            this.txtYyyy.Size = new System.Drawing.Size(26, 20);
-            this.txtYyyy.TabIndex = 1;
-            // 
-            // TxtMm
-            // 
-            this.TxtMm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtMm.Location = new System.Drawing.Point(228, 107);
-            this.TxtMm.Name = "TxtMm";
-            this.TxtMm.Size = new System.Drawing.Size(26, 20);
-            this.TxtMm.TabIndex = 1;
-            // 
-            // lblB
-            // 
-            this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(212, 109);
-            this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(12, 13);
-            this.lblB.TabIndex = 2;
-            this.lblB.Text = "/";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(260, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "/";
             // 
             // lblQtdVenda
             // 
@@ -243,13 +202,13 @@
             this.lblVlVenda.TabIndex = 0;
             this.lblVlVenda.Text = "Valor da Venda";
             // 
-            // txtVenda
+            // txtValorVenda
             // 
-            this.txtVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVenda.Location = new System.Drawing.Point(191, 131);
-            this.txtVenda.Name = "txtVenda";
-            this.txtVenda.Size = new System.Drawing.Size(64, 20);
-            this.txtVenda.TabIndex = 1;
+            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorVenda.Location = new System.Drawing.Point(191, 131);
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(64, 20);
+            this.txtValorVenda.TabIndex = 1;
             // 
             // lblNotaFiscal
             // 
@@ -307,6 +266,7 @@
             this.btnCdCliente.TabIndex = 3;
             this.btnCdCliente.Text = "...";
             this.btnCdCliente.UseVisualStyleBackColor = true;
+            this.btnCdCliente.Click += new System.EventHandler(this.btnCdCliente_Click);
             // 
             // btnCdMotor
             // 
@@ -316,6 +276,7 @@
             this.btnCdMotor.TabIndex = 3;
             this.btnCdMotor.Text = "...";
             this.btnCdMotor.UseVisualStyleBackColor = true;
+            this.btnCdMotor.Click += new System.EventHandler(this.btnCdMotor_Click);
             // 
             // btnCdOrdemMotor
             // 
@@ -325,6 +286,7 @@
             this.btnCdOrdemMotor.TabIndex = 3;
             this.btnCdOrdemMotor.Text = "...";
             this.btnCdOrdemMotor.UseVisualStyleBackColor = true;
+            this.btnCdOrdemMotor.Click += new System.EventHandler(this.btnCdOrdemMotor_Click);
             // 
             // CdTipoProduto
             // 
@@ -344,6 +306,15 @@
             this.btnCdKit.Text = "...";
             this.btnCdKit.UseVisualStyleBackColor = true;
             // 
+            // txtDataVenda
+            // 
+            this.txtDataVenda.Location = new System.Drawing.Point(190, 105);
+            this.txtDataVenda.Mask = "00/00/0000";
+            this.txtDataVenda.Name = "txtDataVenda";
+            this.txtDataVenda.Size = new System.Drawing.Size(66, 20);
+            this.txtDataVenda.TabIndex = 4;
+            this.txtDataVenda.ValidatingType = typeof(System.DateTime);
+            // 
             // frmCadVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +323,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(554, 224);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDataVenda);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnCdKit);
@@ -360,17 +332,12 @@
             this.Controls.Add(this.btnCdMotor);
             this.Controls.Add(this.btnCdCliente);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblB);
             this.Controls.Add(this.lblDtVenda);
             this.Controls.Add(this.txtCdKit);
             this.Controls.Add(this.txtNotaFiscal);
-            this.Controls.Add(this.txtVenda);
+            this.Controls.Add(this.txtValorVenda);
             this.Controls.Add(this.txtQtdVenda);
             this.Controls.Add(this.txtCdTipoProduto);
-            this.Controls.Add(this.txtYyyy);
-            this.Controls.Add(this.TxtMm);
-            this.Controls.Add(this.txtDd);
             this.Controls.Add(this.txtCdCliente);
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.txtCdOrdemMotor);
@@ -408,15 +375,10 @@
         private System.Windows.Forms.Label lblCdKit;
         private System.Windows.Forms.TextBox txtCdKit;
         private System.Windows.Forms.Label lblDtVenda;
-        private System.Windows.Forms.TextBox txtDd;
-        private System.Windows.Forms.TextBox txtYyyy;
-        private System.Windows.Forms.TextBox TxtMm;
-        private System.Windows.Forms.Label lblB;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblQtdVenda;
         private System.Windows.Forms.TextBox txtQtdVenda;
         private System.Windows.Forms.Label lblVlVenda;
-        private System.Windows.Forms.TextBox txtVenda;
+        private System.Windows.Forms.TextBox txtValorVenda;
         private System.Windows.Forms.Label lblNotaFiscal;
         private System.Windows.Forms.TextBox txtNotaFiscal;
         private System.Windows.Forms.Button btnConfirma;
@@ -427,5 +389,6 @@
         private System.Windows.Forms.Button btnCdOrdemMotor;
         private System.Windows.Forms.Button CdTipoProduto;
         private System.Windows.Forms.Button btnCdKit;
+        private System.Windows.Forms.MaskedTextBox txtDataVenda;
     }
 }
