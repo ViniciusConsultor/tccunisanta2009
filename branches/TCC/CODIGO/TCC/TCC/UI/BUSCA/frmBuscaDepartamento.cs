@@ -28,6 +28,11 @@ namespace TCC.UI
         #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
             rDepartamento regraDepto = new rDepartamento();
             DataTable dt = new DataTable();
             try
@@ -47,6 +52,11 @@ namespace TCC.UI
         }
 
         private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
         {
             DataGridViewCell dvC = null;
             DataTable dtSource = new DataTable();

@@ -79,6 +79,7 @@
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdKit.Location = new System.Drawing.Point(145, 27);
             this.txtCdKit.Name = "txtCdKit";
+            this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(53, 20);
             this.txtCdKit.TabIndex = 14;
             // 
@@ -96,6 +97,7 @@
             this.txtCdItemPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdItemPeca.Location = new System.Drawing.Point(337, 27);
             this.txtCdItemPeca.Name = "txtCdItemPeca";
+            this.txtCdItemPeca.ReadOnly = true;
             this.txtCdItemPeca.Size = new System.Drawing.Size(32, 20);
             this.txtCdItemPeca.TabIndex = 14;
             // 
@@ -113,6 +115,7 @@
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Location = new System.Drawing.Point(145, 61);
             this.txtCdPeca.Name = "txtCdPeca";
+            this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(35, 20);
             this.txtCdPeca.TabIndex = 14;
             // 
@@ -162,7 +165,7 @@
             this.btnCdItemPeca.UseVisualStyleBackColor = true;
             this.btnCdItemPeca.Click += new System.EventHandler(this.btnCdItemPeca_Click);
             // 
-            // frmKitGrupoPeca
+            // frmCadKitGrupoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,8 +187,9 @@
             this.Controls.Add(this.btnCdPeca);
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
-            this.Name = "frmKitGrupoPeca";
+            this.Name = "frmCadKitGrupoPeca";
             this.Text = "KitGrupoPeca";
+            this.Load += new System.EventHandler(this.frmCadKitGrupoPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -26,11 +26,16 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
             rCliente regraCliente = new rCliente();
             DataTable dt = new DataTable();
             try
             {
-                dt = regraCliente.BuscaClientes (this.txtFiltro.Text);
+                dt = regraCliente.BuscaClientes(this.txtFiltro.Text);
                 dgCliente.DataSource = dt;
                 dgCliente.Columns[0].Visible = false;
             }
@@ -46,6 +51,11 @@ namespace TCC.UI
         }
 
         private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
         {
             DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
@@ -67,7 +77,7 @@ namespace TCC.UI
                         MessageBox.Show("É necessário cadastrar um Cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
-                else 
+                else
                 {
                     MessageBox.Show("É necessário buscar e selecionar um Cliente!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }

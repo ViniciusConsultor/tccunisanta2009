@@ -22,10 +22,16 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaModel();   
+        }
+
+        private void PopulaModel()
+        {
             rEstoque regra = new rEstoque();
             try
             {
                 this.dgEstoque.DataSource = regra.BuscaEstoque(this.txtFiltro.Text);
+                this.dgEstoque.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -39,6 +45,11 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
+        {
             DataGridViewCell dvC = null;
             DataTable dtSource = new DataTable();
             try
@@ -50,10 +61,10 @@ namespace TCC.UI
                     {
                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                         //------------------------------------------------------------------------------------
-                        dvC = this.dgEstoque["id_estoque", this.dgEstoque.CurrentRow.Index];
+                        dvC = this.dgEstoque["id_estoq", this.dgEstoque.CurrentRow.Index];
                         _model.Id_estoque = Convert.ToInt32(dvC.Value);
                         dvC = this.dgEstoque["Estoque", this.dgEstoque.CurrentRow.Index];
-                        _model.Dsc_estoque = dvC.Value.ToString(); 
+                        _model.Dsc_estoque = dvC.Value.ToString();
                         this.Close();
                     }
                     else

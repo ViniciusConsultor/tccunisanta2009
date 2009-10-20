@@ -48,8 +48,8 @@ namespace TCC.UI
             frmBuscaTipoPeca objTela = new frmBuscaTipoPeca(_modelTipoPeca);
             try
             {
-                objTela.MdiParent = this.MdiParent;
-                objTela.Show();
+                objTela.ShowDialog();
+                this.txtCdTipoPeca.Text = this._modelTipoPeca.DscTipoPeca;
             }
             catch (Exception ex)
             {
@@ -66,8 +66,8 @@ namespace TCC.UI
             frmBuscaEstoque objTela = new frmBuscaEstoque(_modelEstoque);
             try
             {
-                objTela.MdiParent = this.MdiParent;
-                objTela.Show();
+                objTela.ShowDialog();
+                this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
             }
             catch (Exception ex)
             {
@@ -88,6 +88,61 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+        }
+
+        private mPeca PegaDadosTela()
+        {
+            mPeca model = new mPeca();
+            try
+            {
+                model.DatAlt = DateTime.Now;
+                model.DscPeca = this.txtDsPeca.Text;
+                model.FlgAtivo = true;
+                model.IdEstoque = this._modelEstoque.Id_estoque;
+                model.IdPeca = Convert.ToInt32(this.txtCdPeca.Text);
+                model.IdPecaReal = this.txtCodigoReal.Text;
+                model.IdTipoPeca = this._modelTipoPeca.IdTipoPeca;
+                model.Nom = this.txtNmPeca.Text;
+                model.Peso = Convert.ToInt32(this.txtPesoPeca.Text);
+                model.QtdMin = Convert.ToInt32(this.txtQtdPeca.Text);
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+
+        private void btnConfirma_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+
+        private void Insere()
+        {
+            mPeca model;
+            rPeca regra = new rPeca();
+            try
+            {
+                model = this.PegaDadosTela();
+                regra.ValidarInsere(model);
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+                regra = null;
+            }
         }
     }
 }
