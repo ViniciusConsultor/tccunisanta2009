@@ -74,7 +74,7 @@ namespace TCC.BUSINESS
         /// Varre o nome dos Parametros que estão no model através dos atributos
         /// </summary>
         /// <returns>Array de SqlParameter com os parametros para as procedures</returns>
-        public SqlParameter[] BuscaNomeParametros(ModelPai modelo)
+        protected SqlParameter[] BuscaNomeParametros(ModelPai modelo)
         {
             Type tipo = modelo.GetType();
             SqlParameter[] param = new SqlParameter[tipo.GetProperties().Length];

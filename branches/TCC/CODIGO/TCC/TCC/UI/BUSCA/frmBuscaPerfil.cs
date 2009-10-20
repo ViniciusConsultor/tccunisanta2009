@@ -72,7 +72,7 @@ namespace TCC.UI
                         //------------------------------------------------------------------------------------
                         dvC = this.dgPerfil["id_perfil", this.dgPerfil.CurrentRow.Index];
                         this._model.IdPerfil = Convert.ToInt32(dvC.Value);
-                        dvC = this.dgPerfil["dsc_perfil", this.dgPerfil.CurrentRow.Index];
+                        dvC = this.dgPerfil["Perfil", this.dgPerfil.CurrentRow.Index];
                         this._model.DescPerfil = dvC.Value.ToString();
                         this.Close();
                     }

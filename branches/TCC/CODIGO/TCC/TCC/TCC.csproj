@@ -92,6 +92,7 @@
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
+    <Compile Include="BUSINESS\rOrdemProducao.cs" />
     <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPedidoVenda.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />

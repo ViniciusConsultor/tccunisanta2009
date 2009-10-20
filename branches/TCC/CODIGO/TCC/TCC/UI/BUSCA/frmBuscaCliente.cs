@@ -14,7 +14,7 @@ namespace TCC.UI
     public partial class frmBuscaCliente : Form
     {
         mCliente _model;
-        frmBuscaCliente(mCliente modelCliente)
+        public frmBuscaCliente(mCliente modelCliente)
         {
             InitializeComponent();
             this._model = modelCliente;
@@ -58,7 +58,7 @@ namespace TCC.UI
                     {
                         dvc = this.dgCliente["id_cli", this.dgCliente.CurrentRow.Index];
                         this._model.IdCliente = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgCliente["Nome do cliente", this.dgCliente.CurrentRow.Index];
+                        dvc = this.dgCliente["Cliente", this.dgCliente.CurrentRow.Index];
                         this._model.NomeCliente = dvc.Value.ToString();
                         this.Close();
                     }

@@ -112,6 +112,7 @@
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotor.Location = new System.Drawing.Point(409, 29);
             this.txtCdMotor.Name = "txtCdMotor";
+            this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(41, 20);
             this.txtCdMotor.TabIndex = 18;
             // 
@@ -129,6 +130,7 @@
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Location = new System.Drawing.Point(227, 70);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
+            this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(46, 20);
             this.txtCdDepartamento.TabIndex = 18;
             // 
@@ -146,6 +148,7 @@
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdKit.Location = new System.Drawing.Point(409, 71);
             this.txtCdKit.Name = "txtCdKit";
+            this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(41, 20);
             this.txtCdKit.TabIndex = 18;
             // 
@@ -163,6 +166,7 @@
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoProduto.Location = new System.Drawing.Point(227, 119);
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
+            this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(46, 20);
             this.txtCdTipoProduto.TabIndex = 18;
             // 
@@ -191,6 +195,7 @@
             this.btnCdMotor.TabIndex = 14;
             this.btnCdMotor.Text = "...";
             this.btnCdMotor.UseVisualStyleBackColor = true;
+            this.btnCdMotor.Click += new System.EventHandler(this.btnCdMotor_Click);
             // 
             // btnCdDep
             // 
@@ -200,6 +205,7 @@
             this.btnCdDep.TabIndex = 14;
             this.btnCdDep.Text = "...";
             this.btnCdDep.UseVisualStyleBackColor = true;
+            this.btnCdDep.Click += new System.EventHandler(this.btnCdDep_Click);
             // 
             // btnCdKit
             // 
@@ -209,6 +215,7 @@
             this.btnCdKit.TabIndex = 14;
             this.btnCdKit.Text = "...";
             this.btnCdKit.UseVisualStyleBackColor = true;
+            this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
             // 
             // btnCdTipoProduto
             // 
@@ -218,8 +225,9 @@
             this.btnCdTipoProduto.TabIndex = 14;
             this.btnCdTipoProduto.Text = "...";
             this.btnCdTipoProduto.UseVisualStyleBackColor = true;
+            this.btnCdTipoProduto.Click += new System.EventHandler(this.btnCdTipoProduto_Click);
             // 
-            // frmOrdemProducao
+            // frmCadOrdemProducao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,7 +255,7 @@
             this.Controls.Add(this.btnCdMotor);
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
-            this.Name = "frmOrdemProducao";
+            this.Name = "frmCadOrdemProducao";
             this.Text = "Ordem de Produção";
             this.ResumeLayout(false);
             this.PerformLayout();
