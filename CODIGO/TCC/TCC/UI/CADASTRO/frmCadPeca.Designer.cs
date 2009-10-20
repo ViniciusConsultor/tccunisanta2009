@@ -46,12 +46,16 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnCdEstoque = new System.Windows.Forms.Button();
             this.btnCdTipoPeca = new System.Windows.Forms.Button();
+            this.txtCodigoReal = new System.Windows.Forms.TextBox();
+            this.lblNomePecaReal = new System.Windows.Forms.Label();
+            this.txtQtdPeca = new System.Windows.Forms.TextBox();
+            this.lblQtdPeca = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(63, 31);
+            this.lblCdPeca.Location = new System.Drawing.Point(64, 7);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(83, 13);
             this.lblCdPeca.TabIndex = 0;
@@ -60,7 +64,7 @@
             // txtCdPeca
             // 
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(165, 28);
+            this.txtCdPeca.Location = new System.Drawing.Point(166, 4);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(69, 20);
@@ -166,7 +170,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(247, 140);
+            this.btnLimpar.Location = new System.Drawing.Point(310, 154);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 6;
@@ -176,12 +180,13 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(166, 140);
+            this.btnConfirma.Location = new System.Drawing.Point(212, 154);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
             this.btnConfirma.TabIndex = 5;
             this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnCdEstoque
             // 
@@ -203,6 +208,40 @@
             this.btnCdTipoPeca.UseVisualStyleBackColor = true;
             this.btnCdTipoPeca.Click += new System.EventHandler(this.btnCdTipoPeca_Click);
             // 
+            // txtCodigoReal
+            // 
+            this.txtCodigoReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoReal.Location = new System.Drawing.Point(166, 32);
+            this.txtCodigoReal.Name = "txtCodigoReal";
+            this.txtCodigoReal.Size = new System.Drawing.Size(69, 20);
+            this.txtCodigoReal.TabIndex = 9;
+            // 
+            // lblNomePecaReal
+            // 
+            this.lblNomePecaReal.AutoSize = true;
+            this.lblNomePecaReal.Location = new System.Drawing.Point(64, 35);
+            this.lblNomePecaReal.Name = "lblNomePecaReal";
+            this.lblNomePecaReal.Size = new System.Drawing.Size(65, 13);
+            this.lblNomePecaReal.TabIndex = 8;
+            this.lblNomePecaReal.Text = "Codigo Real";
+            // 
+            // txtQtdPeca
+            // 
+            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdPeca.Location = new System.Drawing.Point(166, 120);
+            this.txtQtdPeca.Name = "txtQtdPeca";
+            this.txtQtdPeca.Size = new System.Drawing.Size(69, 20);
+            this.txtQtdPeca.TabIndex = 11;
+            // 
+            // lblQtdPeca
+            // 
+            this.lblQtdPeca.AutoSize = true;
+            this.lblQtdPeca.Location = new System.Drawing.Point(64, 122);
+            this.lblQtdPeca.Name = "lblQtdPeca";
+            this.lblQtdPeca.Size = new System.Drawing.Size(55, 13);
+            this.lblQtdPeca.TabIndex = 10;
+            this.lblQtdPeca.Text = "Qtd. Peça";
+            // 
             // frmCadPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +250,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(436, 185);
             this.ControlBox = false;
+            this.Controls.Add(this.txtQtdPeca);
+            this.Controls.Add(this.lblQtdPeca);
+            this.Controls.Add(this.txtCodigoReal);
+            this.Controls.Add(this.lblNomePecaReal);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdTipoPeca);
@@ -256,5 +299,9 @@
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnCdEstoque;
         private System.Windows.Forms.Button btnCdTipoPeca;
+        private System.Windows.Forms.TextBox txtCodigoReal;
+        private System.Windows.Forms.Label lblNomePecaReal;
+        private System.Windows.Forms.TextBox txtQtdPeca;
+        private System.Windows.Forms.Label lblQtdPeca;
     }
 }

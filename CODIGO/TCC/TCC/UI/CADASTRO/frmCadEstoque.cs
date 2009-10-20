@@ -13,11 +13,11 @@ namespace TCC.UI
 {
     public partial class frmCadEstoque : FormPai
     {
-        mDepartamento modelDepartamento;
+        mDepartamento _modelDepartamento;
         public frmCadEstoque()
         {
             InitializeComponent();
-            modelDepartamento = new mDepartamento();
+            _modelDepartamento = new mDepartamento();
         }
 
         protected override void BuscaIdMaximo()
@@ -43,7 +43,7 @@ namespace TCC.UI
             try
             {
                 model.Id_estoque = Convert.ToInt32(this.txtCdEstoque.Text);
-                model.Id_depto = Convert.ToInt32(this.txtCdDepartamento.Text);
+                model.Id_depto = this._modelDepartamento.IdDepto;
                 model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
@@ -101,10 +101,11 @@ namespace TCC.UI
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            frmBuscaDepartamento objFormBuscaDep = new frmBuscaDepartamento(modelDepartamento);
+            frmBuscaDepartamento objFormBuscaDep = new frmBuscaDepartamento(this._modelDepartamento);
             try
             {
                 objFormBuscaDep.ShowDialog();
+                this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
             }
             catch (Exception ex)
             {

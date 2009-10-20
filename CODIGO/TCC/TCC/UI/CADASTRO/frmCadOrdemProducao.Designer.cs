@@ -257,6 +257,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCadOrdemProducao";
             this.Text = "Ordem de Produção";
+            this.Load += new System.EventHandler(this.frmCadOrdemProducao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,6 +10,7 @@ namespace TCC.UI
     {
         protected virtual void BuscaIdMaximo()
         {
+
         }
 
         protected void FechaTela(FormPai form)

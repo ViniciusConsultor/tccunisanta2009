@@ -12,7 +12,7 @@ namespace TCC.BUSINESS
         {
             try
             {
-                return base.BuscaIdMaximoTabelas("id_tipo_peca", "tipodepeca");
+                return base.BuscaIdMaximoTabelas("id_tipo_peca", "Tipopeca");
             }
             catch (Exception ex)
             {
@@ -27,12 +27,12 @@ namespace TCC.BUSINESS
             {
                 if (string.IsNullOrEmpty(Descricao) == true)
                 {
-                    return base.BuscaDados("sp_busca_tipodepeca");
+                    return base.BuscaDados("sp_busca_tipoPeca");
                 }
                 else
                 {
                     param = new SqlParameter("@dsc_tipo_peca", Descricao);
-                    return base.BuscaDados("sp_busca_tipodepeca_param", param);
+                    return base.BuscaDados("sp_busca_tipoPeca_param", param);
                 }
             }
             catch (Exception ex)

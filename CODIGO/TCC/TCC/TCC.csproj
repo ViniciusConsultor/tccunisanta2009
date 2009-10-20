@@ -89,6 +89,7 @@
     <Compile Include="BUSINESS\rEstoque.cs" />
     <Compile Include="BUSINESS\rFamiliaMotor.cs" />
     <Compile Include="BUSINESS\rFornecedor.cs" />
+    <Compile Include="BUSINESS\rKitGrupoPeca.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
     <Compile Include="BUSINESS\rTipoMotor.cs" />
     <Compile Include="BUSINESS\rTipoPeca.cs" />
+    <Compile Include="BUSINESS\rTipoProduto.cs" />
     <Compile Include="BUSINESS\rTipoUsuario.cs" />
     <Compile Include="BUSINESS\rUsinagem.cs" />
     <Compile Include="BUSINESS\rUsuario.cs" />
@@ -262,6 +264,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadFornecedor.resx">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadItemPeca.resx">
+      <DependentUpon>frmCadItemPeca.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadKitGrupoPeca.resx">
@@ -511,6 +517,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadFornecedor.Designer.cs">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadItemPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadItemPeca.Designer.cs">
+      <DependentUpon>frmCadItemPeca.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadKitGrupoPeca.cs">
       <SubType>Form</SubType>

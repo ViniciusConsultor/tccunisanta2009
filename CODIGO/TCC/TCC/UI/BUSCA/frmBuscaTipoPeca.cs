@@ -22,10 +22,16 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaModel();
+        }
+
+        private void PopulaModel()
+        {
             rTipoPeca regra = new rTipoPeca();
             try
             {
                 this.dgTipoPeca.DataSource = regra.BuscaTipoPeca(this.txtFiltro.Text);
+                this.dgTipoPeca.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {

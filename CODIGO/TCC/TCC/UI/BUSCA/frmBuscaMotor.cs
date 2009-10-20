@@ -25,12 +25,18 @@ namespace TCC.UI
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
             rMotor regraMotor = new rMotor();
             DataTable dt = new DataTable();
             try
             {
                 dt = regraMotor.BuscaMotores(this.txtFiltro.Text);
                 dgMotor.DataSource = dt;
+                this.dgMotor.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -46,6 +52,11 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
+        {
             DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
             try
@@ -55,7 +66,7 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgMotor["id_motor_compra", this.dgMotor.CurrentRow.Index];
+                        dvc = this.dgMotor["id_motor", this.dgMotor.CurrentRow.Index];
                         _model.IdMotor = Convert.ToInt32(dvc.Value);
                         dvc = this.dgMotor["Motor", this.dgMotor.CurrentRow.Index];
                         _model.DscMotor = dvc.Value.ToString();
@@ -63,15 +74,15 @@ namespace TCC.UI
                     }
                     else
                     {
-                        MessageBox.Show("É necessário cadastrar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1); 
+                        MessageBox.Show("É necessário cadastrar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário buscar e selecionar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1); 
+                    MessageBox.Show("É necessário buscar e selecionar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw ex;
@@ -80,16 +91,15 @@ namespace TCC.UI
             {
                 if (dvc != null)
                 {
-                    dvc.Dispose(); 
+                    dvc.Dispose();
                     dvc = null;
                 }
                 if (dtSource != null)
                 {
-                    dtSource.Dispose(); 
+                    dtSource.Dispose();
                     dtSource = null;
                 }
             }
         }
-
     }
 }

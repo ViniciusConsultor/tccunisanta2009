@@ -13,17 +13,23 @@ namespace TCC.UI
     public partial class frmCadOrdemProducao : FormPai
     {
         mDepartamento _modelDepartamento;
+        mTipoProduto _modelTipoProd;
+        mMotor _modelMotor;
+        mKitGrupoPeca _modelKit;
 
         public frmCadOrdemProducao()
         {
             InitializeComponent();
             this._modelDepartamento = new mDepartamento();
+            this._modelTipoProd = new mTipoProduto();
+            this._modelMotor = new mMotor();
+            this._modelKit = new mKitGrupoPeca();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            base.BuscaIdMaximo();
+            this.BuscaIdMaximo();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -51,17 +57,78 @@ namespace TCC.UI
 
         private void btnCdMotor_Click(object sender, EventArgs e)
         {
-
+            frmBuscaMotor objFrmBuscaMotor = new frmBuscaMotor(this._modelMotor);
+            try
+            {
+                objFrmBuscaMotor.ShowDialog();
+                this.txtCdMotor.Text = this._modelMotor.DscMotor;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objFrmBuscaMotor = null;
+            }
         }
 
         private void btnCdKit_Click(object sender, EventArgs e)
         {
-
+            frmBuscaKit objFrmBuscaKit = new frmBuscaKit(this._modelKit);
+            try
+            {
+                objFrmBuscaKit.ShowDialog();
+                this.txtCdKit.Text = this._modelKit.Nom_grupo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objFrmBuscaKit = null;
+            }
         }
 
         private void btnCdTipoProduto_Click(object sender, EventArgs e)
         {
-            frmBuscaTipoProduto objFrmTipoProduto = new frmBuscaTipoProduto
+            frmBuscaTipoProduto objFrmTipoProduto = new frmBuscaTipoProduto(this._modelTipoProd);
+            try
+            {
+                objFrmTipoProduto.ShowDialog();
+                this.txtCdTipoProduto.Text = this._modelTipoProd.Nom;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objFrmTipoProduto = null;
+            }
+        }
+
+        private void frmCadOrdemProducao_Load(object sender, EventArgs e)
+        {
+            this.BuscaIdMaximo();
+        }
+
+        protected override void BuscaIdMaximo()
+        {
+            rOrdemProducao regra = new rOrdemProducao();
+            try
+            {
+                this.txtCdOrdemMotor.Text = regra.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
         }
     }
 }
