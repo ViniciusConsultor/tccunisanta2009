@@ -1,9 +1,9 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_Tipodepeca', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_Tipodepeca;
+IF OBJECT_ID('sp_insert_Tipopeca', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_Tipopeca;
 GO
 
-CREATE PROCEDURE sp_insert_Tipodepeca
+CREATE PROCEDURE sp_insert_Tipopeca
 @id_tipo_peca    INT,
 @dsc_tipo_peca   VARCHAR(500),
 @flg_ativo       BIT
@@ -18,7 +18,7 @@ ELSE IF(@dsc_tipo_peca='')
 ELSE
 BEGIN
 --Insert na tabela tipopeça
-INSERT INTO Tipodepeca(id_tipo_peca, dsc_tipo_peca, flg_ativo)
+INSERT INTO Tipopeca(id_tipo_peca, dsc_tipo_peca, flg_ativo)
 VALUES (@id_tipo_peca, @dsc_tipo_peca, @flg_ativo)
 END
 END TRY

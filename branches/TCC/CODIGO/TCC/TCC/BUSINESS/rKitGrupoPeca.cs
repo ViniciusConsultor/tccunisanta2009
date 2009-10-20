@@ -6,33 +6,21 @@ using System.Data.SqlClient;
 
 namespace TCC.BUSINESS
 {
-    class rPeca:ComandosSql
+    class rKitGrupoPeca:ComandosSql
     {
-        public string BuscaIdMaximoPeca()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_peca", "peca");
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        public DataTable BuscaPeca(string parametro)
+        public DataTable BuscaKitGrupoPeca(string parametro)
         {
             SqlParameter param = null;
             try
             {
                 if (string.IsNullOrEmpty(parametro) == true)
                 {
-                    return base.BuscaDados("sp_busca_peca");
+                    return base.BuscaDados("sp_busca_kitGrupoPeca");
                 }
                 else
                 {
                     param = new SqlParameter("@nom", parametro);
-                    return base.BuscaDados("sp_busca_peca_param", param);
+                    return base.BuscaDados("sp_busca_kitGrupoPeca_param", param);
                 }
             }
             catch (Exception ex)
@@ -46,9 +34,21 @@ namespace TCC.BUSINESS
             }
         }
 
+        public string BuscaIdMaximo()
+        {
+            try
+            {
+                return base.BuscaIdMaximoTabelas("id_grupo", "Kitgrupopeca");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
-            base.Insere(model);
+            throw new NotImplementedException();
         }
 
         public override void ValidarDeleta(TCC.MODEL.ModelPai model)

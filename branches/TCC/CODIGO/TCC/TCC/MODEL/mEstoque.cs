@@ -21,7 +21,7 @@ namespace TCC.MODEL
             set { id_estoque = value; }
         }
 
-        [ColunasBancoDados("dsc_estoque", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("dsc_estoq", System.Data.SqlDbType.VarChar, false)]
         public string Dsc_estoque
         {
             get { return dsc_estoque; }

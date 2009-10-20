@@ -1,0 +1,9 @@
+ USE Megatechdatabase
+ go
+ IF OBJECT_ID('sp_busca_peca', 'P')IS NOT NULL
+	 DROP PROCEDURE sp_busca_peca;
+ GO
+ 
+ CREATE PROCEDURE sp_busca_peca
+ AS
+ SELECT id_peca, nom as 'Peça' FROM Peca
