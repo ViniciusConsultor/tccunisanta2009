@@ -130,5 +130,56 @@ namespace TCC.UI
                 regra = null;
             }
         }
+
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+
+        private void Insere()
+        {
+            mOrdemProducao model;
+            rOrdemProducao regra = new rOrdemProducao();
+            try
+            {
+                model = this.PegaDadosTela();
+                regra.ValidarInsere(model);
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+                regra = null;
+            }
+        }
+
+        private mOrdemProducao PegaDadosTela()
+        {
+            mOrdemProducao model = new mOrdemProducao();
+            try
+            {
+                model.Dsc_ordem = this.txtDs.Text;
+                model.Id_depto = this._modelDepartamento.IdDepto;
+                model.Id_grupo = this._modelKit.Id_grupo;
+                model.Id_motor = this._modelMotor.IdMotor;
+                model.Id_ordem = Convert.ToInt32(this.txtCdOrdemMotor.Text);
+                model.Id_tipo_produto = this._modelTipoProd.IdTipoProd;
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
     }
 }

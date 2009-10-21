@@ -57,7 +57,7 @@ CREATE TABLE Ordemproducao (
        id_ordem             integer NOT NULL,
        dsc_ordem            varchar(500) NULL,
        id_depto             integer NOT NULL,
-       id_motor             integer NULL,
+       id_fam_motor             integer NULL,
        id_grupo             integer NULL,
        id_tipo_produto      integer NOT NULL
 )
@@ -644,7 +644,7 @@ go
 
 
 ALTER TABLE Ordemproducao
-       ADD FOREIGN KEY (id_motor)
+       ADD FOREIGN KEY (id_fam_motor)
                              REFERENCES Familiamotor  (id_fam_motor)
 go
 

@@ -22,7 +22,7 @@ namespace TCC.UI
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            
+            this.Insere();
         }
 
         private void Insere()
