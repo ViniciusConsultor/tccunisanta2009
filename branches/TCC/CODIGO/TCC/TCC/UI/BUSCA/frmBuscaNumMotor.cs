@@ -6,14 +6,96 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCC.MODEL;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
     public partial class frmBuscaNumMotor : Form
     {
-        public frmBuscaNumMotor()
+        mNumMotor _model;
+        public frmBuscaNumMotor(mNumMotor modelNumMotor)
         {
             InitializeComponent();
+            this._model = modelNumMotor;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
+            rNumeroMotor regraNumMotor = new rNumeroMotor();
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = regraNumMotor.BuscaNumeroMotor(this.txtFiltro.Text);
+                dgNumMotor.DataSource = dt;
+                dgNumMotor.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraNumMotor = null;
+                dt = null;
+            }
+        }
+
+        private void RetornaModel()
+        {
+            DataGridViewCell dvc = null;
+            DataTable dtSource = new DataTable();
+            try
+            {
+                dtSource = (DataTable)this.dgNumMotor.DataSource;
+                if (this.dgNumMotor.DataSource != null)
+                {
+                    if (dtSource.Rows.Count > 0)
+                    {
+                        dvc = this.dgNumMotor["id_num_motor", this.dgNumMotor.CurrentRow.Index];
+                        this._model.Id_num_motor = Convert.ToInt32(dvc.Value);
+                        dvc = this.dgNumMotor["Numero do motor", this.dgNumMotor.CurrentRow.Index];
+                        this._model.Dsc_num_motor = dvc.Value.ToString();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("É necessário cadastrar um Numero de motor", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("É necessário buscar e selecionar um Numero de motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dvc != null)
+                {
+                    dvc.Dispose();
+                    dvc = null;
+                }
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
         }
     }
 }
