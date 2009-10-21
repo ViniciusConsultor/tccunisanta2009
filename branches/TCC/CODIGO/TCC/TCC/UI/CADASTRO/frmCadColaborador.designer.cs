@@ -346,11 +346,12 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(404, 219);
+            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(5, 79);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.Size = new System.Drawing.Size(46, 36);
             this.btnConfirma.TabIndex = 18;
-            this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -358,18 +359,18 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 5);
+            this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(39, 31);
+            this.btnVoltar.Size = new System.Drawing.Size(46, 37);
             this.btnVoltar.TabIndex = 20;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnApaga
             // 
-            this.btnApaga.Location = new System.Drawing.Point(485, 219);
+            this.btnApaga.Location = new System.Drawing.Point(5, 47);
             this.btnApaga.Name = "btnApaga";
-            this.btnApaga.Size = new System.Drawing.Size(75, 23);
+            this.btnApaga.Size = new System.Drawing.Size(46, 26);
             this.btnApaga.TabIndex = 19;
             this.btnApaga.Text = "Limpar";
             this.btnApaga.UseVisualStyleBackColor = true;

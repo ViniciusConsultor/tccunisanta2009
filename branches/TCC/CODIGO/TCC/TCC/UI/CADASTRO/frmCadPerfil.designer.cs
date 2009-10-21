@@ -41,7 +41,7 @@
             // lblIdPerfil
             // 
             this.lblIdPerfil.AutoSize = true;
-            this.lblIdPerfil.Location = new System.Drawing.Point(76, 31);
+            this.lblIdPerfil.Location = new System.Drawing.Point(76, 37);
             this.lblIdPerfil.Name = "lblIdPerfil";
             this.lblIdPerfil.Size = new System.Drawing.Size(66, 13);
             this.lblIdPerfil.TabIndex = 0;
@@ -50,7 +50,7 @@
             // lblDescPerfil
             // 
             this.lblDescPerfil.AutoSize = true;
-            this.lblDescPerfil.Location = new System.Drawing.Point(61, 60);
+            this.lblDescPerfil.Location = new System.Drawing.Point(61, 72);
             this.lblDescPerfil.Name = "lblDescPerfil";
             this.lblDescPerfil.Size = new System.Drawing.Size(81, 13);
             this.lblDescPerfil.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             this.txtIdPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdPerfil.Enabled = false;
-            this.txtIdPerfil.Location = new System.Drawing.Point(148, 28);
+            this.txtIdPerfil.Location = new System.Drawing.Point(148, 34);
             this.txtIdPerfil.Name = "txtIdPerfil";
             this.txtIdPerfil.ReadOnly = true;
             this.txtIdPerfil.Size = new System.Drawing.Size(100, 20);
@@ -69,7 +69,7 @@
             // txtDescPerfil
             // 
             this.txtDescPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescPerfil.Location = new System.Drawing.Point(148, 60);
+            this.txtDescPerfil.Location = new System.Drawing.Point(148, 72);
             this.txtDescPerfil.MaxLength = 30;
             this.txtDescPerfil.Name = "txtDescPerfil";
             this.txtDescPerfil.Size = new System.Drawing.Size(100, 20);
@@ -77,19 +77,20 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(67, 126);
+            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(1, 57);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.Size = new System.Drawing.Size(28, 30);
             this.btnConfirma.TabIndex = 2;
-            this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(148, 126);
+            this.btnLimpar.Location = new System.Drawing.Point(1, 30);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(28, 23);
             this.btnLimpar.TabIndex = 3;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;

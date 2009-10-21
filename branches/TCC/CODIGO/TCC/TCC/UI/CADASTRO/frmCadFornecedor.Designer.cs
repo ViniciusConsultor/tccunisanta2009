@@ -247,11 +247,12 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(126, 192);
+            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
+            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsere.Location = new System.Drawing.Point(5, 73);
             this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(75, 23);
+            this.btnInsere.Size = new System.Drawing.Size(42, 31);
             this.btnInsere.TabIndex = 11;
-            this.btnInsere.Text = "Confirmar";
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
@@ -261,16 +262,16 @@
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(5, 2);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(42, 26);
+            this.btnVolta.Size = new System.Drawing.Size(42, 35);
             this.btnVolta.TabIndex = 13;
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnlimpar
             // 
-            this.btnlimpar.Location = new System.Drawing.Point(207, 192);
+            this.btnlimpar.Location = new System.Drawing.Point(5, 39);
             this.btnlimpar.Name = "btnlimpar";
-            this.btnlimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnlimpar.Size = new System.Drawing.Size(42, 28);
             this.btnlimpar.TabIndex = 12;
             this.btnlimpar.Text = "Limpar";
             this.btnlimpar.UseVisualStyleBackColor = true;
