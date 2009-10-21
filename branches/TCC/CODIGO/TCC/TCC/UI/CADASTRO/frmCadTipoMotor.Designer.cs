@@ -51,9 +51,9 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(124, 113);
+            this.btnLimpar.Location = new System.Drawing.Point(1, 26);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(24, 23);
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -61,17 +61,18 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.Location = new System.Drawing.Point(43, 113);
+            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(1, 52);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(24, 23);
             this.btnAceitar.TabIndex = 14;
-            this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
             // lblCdTipoMotor
             // 
             this.lblCdTipoMotor.AutoSize = true;
-            this.lblCdTipoMotor.Location = new System.Drawing.Point(40, 40);
+            this.lblCdTipoMotor.Location = new System.Drawing.Point(40, 36);
             this.lblCdTipoMotor.Name = "lblCdTipoMotor";
             this.lblCdTipoMotor.Size = new System.Drawing.Size(124, 13);
             this.lblCdTipoMotor.TabIndex = 17;
@@ -80,7 +81,7 @@
             // txtCdTipoMotor
             // 
             this.txtCdTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoMotor.Location = new System.Drawing.Point(170, 33);
+            this.txtCdTipoMotor.Location = new System.Drawing.Point(170, 29);
             this.txtCdTipoMotor.Name = "txtCdTipoMotor";
             this.txtCdTipoMotor.ReadOnly = true;
             this.txtCdTipoMotor.Size = new System.Drawing.Size(100, 20);
@@ -89,7 +90,7 @@
             // txtNmTipoMotor
             // 
             this.txtNmTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmTipoMotor.Location = new System.Drawing.Point(170, 63);
+            this.txtNmTipoMotor.Location = new System.Drawing.Point(170, 68);
             this.txtNmTipoMotor.Name = "txtNmTipoMotor";
             this.txtNmTipoMotor.Size = new System.Drawing.Size(100, 20);
             this.txtNmTipoMotor.TabIndex = 20;
@@ -97,7 +98,7 @@
             // lblNmTipoMotor
             // 
             this.lblNmTipoMotor.AutoSize = true;
-            this.lblNmTipoMotor.Location = new System.Drawing.Point(45, 70);
+            this.lblNmTipoMotor.Location = new System.Drawing.Point(45, 75);
             this.lblNmTipoMotor.Name = "lblNmTipoMotor";
             this.lblNmTipoMotor.Size = new System.Drawing.Size(119, 13);
             this.lblNmTipoMotor.TabIndex = 19;

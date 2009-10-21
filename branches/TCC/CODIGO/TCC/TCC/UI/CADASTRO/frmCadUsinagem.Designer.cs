@@ -42,7 +42,7 @@
             // lblCdUsinagem
             // 
             this.lblCdUsinagem.AutoSize = true;
-            this.lblCdUsinagem.Location = new System.Drawing.Point(59, 22);
+            this.lblCdUsinagem.Location = new System.Drawing.Point(54, 39);
             this.lblCdUsinagem.Name = "lblCdUsinagem";
             this.lblCdUsinagem.Size = new System.Drawing.Size(105, 13);
             this.lblCdUsinagem.TabIndex = 0;
@@ -51,7 +51,7 @@
             // txtCdUsinagem
             // 
             this.txtCdUsinagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdUsinagem.Location = new System.Drawing.Point(170, 19);
+            this.txtCdUsinagem.Location = new System.Drawing.Point(165, 36);
             this.txtCdUsinagem.Name = "txtCdUsinagem";
             this.txtCdUsinagem.ReadOnly = true;
             this.txtCdUsinagem.Size = new System.Drawing.Size(100, 20);
@@ -60,7 +60,7 @@
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(59, 58);
+            this.lblCdPeca.Location = new System.Drawing.Point(54, 95);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(83, 13);
             this.lblCdPeca.TabIndex = 0;
@@ -69,7 +69,7 @@
             // txtCdPeca
             // 
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(170, 55);
+            this.txtCdPeca.Location = new System.Drawing.Point(165, 92);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(67, 20);
@@ -88,9 +88,9 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(132, 108);
+            this.btnLimpar.Location = new System.Drawing.Point(2, 29);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(25, 23);
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -98,20 +98,22 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.Location = new System.Drawing.Point(51, 108);
+            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(2, 55);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(25, 23);
             this.btnAceitar.TabIndex = 8;
-            this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
             // btnCdPeca
             // 
-            this.btnCdPeca.Location = new System.Drawing.Point(243, 52);
+            this.btnCdPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdPeca.BackgroundImage")));
+            this.btnCdPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCdPeca.Location = new System.Drawing.Point(238, 89);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(27, 23);
             this.btnCdPeca.TabIndex = 8;
-            this.btnCdPeca.Text = "...";
             this.btnCdPeca.UseVisualStyleBackColor = true;
             // 
             // frmCadUsinagem

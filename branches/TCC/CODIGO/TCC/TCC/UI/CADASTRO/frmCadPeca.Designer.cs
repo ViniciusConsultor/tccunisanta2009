@@ -163,16 +163,16 @@
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(1, 1);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(37, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(37, 28);
             this.btnVoltar.TabIndex = 7;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(310, 154);
+            this.btnLimpar.Location = new System.Drawing.Point(1, 31);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(37, 23);
             this.btnLimpar.TabIndex = 6;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -180,31 +180,34 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(212, 154);
+            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(1, 60);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.Size = new System.Drawing.Size(37, 26);
             this.btnConfirma.TabIndex = 5;
-            this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnCdEstoque
             // 
+            this.btnCdEstoque.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdEstoque.BackgroundImage")));
+            this.btnCdEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdEstoque.Location = new System.Drawing.Point(212, 60);
             this.btnCdEstoque.Name = "btnCdEstoque";
             this.btnCdEstoque.Size = new System.Drawing.Size(32, 23);
             this.btnCdEstoque.TabIndex = 5;
-            this.btnCdEstoque.Text = "...";
             this.btnCdEstoque.UseVisualStyleBackColor = true;
             this.btnCdEstoque.Click += new System.EventHandler(this.btnCdEstoque_Click);
             // 
             // btnCdTipoPeca
             // 
+            this.btnCdTipoPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdTipoPeca.BackgroundImage")));
+            this.btnCdTipoPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdTipoPeca.Location = new System.Drawing.Point(390, 26);
             this.btnCdTipoPeca.Name = "btnCdTipoPeca";
             this.btnCdTipoPeca.Size = new System.Drawing.Size(32, 23);
             this.btnCdTipoPeca.TabIndex = 5;
-            this.btnCdTipoPeca.Text = "...";
             this.btnCdTipoPeca.UseVisualStyleBackColor = true;
             this.btnCdTipoPeca.Click += new System.EventHandler(this.btnCdTipoPeca_Click);
             // 
@@ -238,9 +241,9 @@
             this.lblQtdPeca.AutoSize = true;
             this.lblQtdPeca.Location = new System.Drawing.Point(64, 122);
             this.lblQtdPeca.Name = "lblQtdPeca";
-            this.lblQtdPeca.Size = new System.Drawing.Size(55, 13);
+            this.lblQtdPeca.Size = new System.Drawing.Size(91, 13);
             this.lblQtdPeca.TabIndex = 10;
-            this.lblQtdPeca.Text = "Qtd. Peça";
+            this.lblQtdPeca.Text = "Qtd. Minima Peça";
             // 
             // frmCadPeca
             // 

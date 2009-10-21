@@ -40,29 +40,31 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(0, 3);
+            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFechar.Location = new System.Drawing.Point(0, 2);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 23);
+            this.btnFechar.Size = new System.Drawing.Size(27, 24);
             this.btnFechar.TabIndex = 0;
-            this.btnFechar.Text = "button1";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(55, 229);
+            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(0, 70);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.Size = new System.Drawing.Size(31, 28);
             this.btnConfirma.TabIndex = 1;
-            this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(152, 229);
+            this.btnLimpar.Location = new System.Drawing.Point(0, 32);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 32);
             this.btnLimpar.TabIndex = 2;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -71,7 +73,7 @@
             // lblCdTipoProduto
             // 
             this.lblCdTipoProduto.AutoSize = true;
-            this.lblCdTipoProduto.Location = new System.Drawing.Point(52, 33);
+            this.lblCdTipoProduto.Location = new System.Drawing.Point(76, 51);
             this.lblCdTipoProduto.Name = "lblCdTipoProduto";
             this.lblCdTipoProduto.Size = new System.Drawing.Size(40, 13);
             this.lblCdTipoProduto.TabIndex = 3;
@@ -79,7 +81,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(98, 30);
+            this.txtCodigo.Location = new System.Drawing.Point(122, 48);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
@@ -87,7 +89,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(98, 82);
+            this.txtNome.Location = new System.Drawing.Point(125, 100);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 6;
@@ -95,7 +97,7 @@
             // lblDscNome
             // 
             this.lblDscNome.AutoSize = true;
-            this.lblDscNome.Location = new System.Drawing.Point(37, 85);
+            this.lblDscNome.Location = new System.Drawing.Point(64, 103);
             this.lblDscNome.Name = "lblDscNome";
             this.lblDscNome.Size = new System.Drawing.Size(55, 13);
             this.lblDscNome.TabIndex = 5;
@@ -107,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ClientSize = new System.Drawing.Size(306, 237);
             this.ControlBox = false;
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblDscNome);
