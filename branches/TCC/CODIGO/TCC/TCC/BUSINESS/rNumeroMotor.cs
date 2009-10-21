@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
+using TCC.DAL;
+using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
@@ -18,6 +21,33 @@ namespace TCC.BUSINESS
                 throw ex;
             }
         }
+
+        public DataTable BuscaNumeroMotor(string numeroMotor)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(numeroMotor) == true)
+                {
+                    return base.BuscaDados("sp_busca_numeromotor");
+                }
+                else
+                {
+                    param = new SqlParameter("@nom_cli", numeroMotor);
+                    return base.BuscaDados("sp_busca_numeromotor_param", param);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
