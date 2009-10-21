@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using TCC.MODEL;
+using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
@@ -16,6 +20,32 @@ namespace TCC.BUSINESS
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public DataTable buscaVenda()
+        {
+            SqlParameter param = null;
+            try
+            {
+            /*    if (string.IsNullOrEmpty(venda) == true)
+                */    {
+                    return base.BuscaDados("sp_busca_venda");
+                }
+            /*    else
+                {
+                    param = new SqlParameter("@id_venda", nomeCliente);
+                    return base.BuscaDados("sp_busca_venda_param", param);
+                }*/
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
             }
         }
 
