@@ -40,8 +40,8 @@
             this.lblCdDepartamento = new System.Windows.Forms.Label();
             this.txtDsPedido = new System.Windows.Forms.TextBox();
             this.lblDsPedido = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscaVendaMotor = new System.Windows.Forms.Button();
+            this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -74,6 +74,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(32, 23);
             this.btnAceitar.TabIndex = 17;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // txtCdPedidoVenda
             // 
@@ -144,25 +145,27 @@
             this.lblDsPedido.TabIndex = 21;
             this.lblDsPedido.Text = "Descriçãodo Pedido";
             // 
-            // button1
+            // btnBuscaVendaMotor
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(329, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscaVendaMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaVendaMotor.BackgroundImage")));
+            this.btnBuscaVendaMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaVendaMotor.Location = new System.Drawing.Point(329, 54);
+            this.btnBuscaVendaMotor.Name = "btnBuscaVendaMotor";
+            this.btnBuscaVendaMotor.Size = new System.Drawing.Size(30, 23);
+            this.btnBuscaVendaMotor.TabIndex = 17;
+            this.btnBuscaVendaMotor.UseVisualStyleBackColor = true;
+            this.btnBuscaVendaMotor.Click += new System.EventHandler(this.btnBuscaVendaMotor_Click);
             // 
-            // button2
+            // btnBuscaDepartamento
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(327, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 23);
-            this.button2.TabIndex = 17;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
+            this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(327, 92);
+            this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
+            this.btnBuscaDepartamento.Size = new System.Drawing.Size(30, 23);
+            this.btnBuscaDepartamento.TabIndex = 17;
+            this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
+            this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
             // frmCadPedidoVenda
             // 
@@ -182,8 +185,8 @@
             this.Controls.Add(this.txtCdPedidoVenda);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscaDepartamento);
+            this.Controls.Add(this.btnBuscaVendaMotor);
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
             this.Name = "frmCadPedidoVenda";
@@ -207,7 +210,7 @@
         private System.Windows.Forms.Label lblCdDepartamento;
         private System.Windows.Forms.TextBox txtDsPedido;
         private System.Windows.Forms.Label lblDsPedido;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscaVendaMotor;
+        private System.Windows.Forms.Button btnBuscaDepartamento;
     }
 }

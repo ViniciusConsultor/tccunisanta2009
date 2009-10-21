@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI
 {
@@ -23,8 +24,8 @@ namespace TCC.UI
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
             base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace TCC.UI
 
         protected override void BuscaIdMaximo()
         {
-            rFamiliaMotor regra = new rFamiliaMotor();
+            rNumeroMotor regra = new rNumeroMotor();
             try
             {
                 this.txtCdNumeroMotor.Text = regra.BuscaIdMaximo();
@@ -52,6 +53,54 @@ namespace TCC.UI
         private void frmCadNumeroMotor_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
+        }
+
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+
+        private void Insere()
+        {
+            mNumMotor model;
+            rNumeroMotor regra = new rNumeroMotor();
+            try
+            {
+                model = this.PegaDadoosTela();
+                regra.ValidarInsere(model);
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+                regra = null;
+            }
+        }
+
+        private mNumMotor PegaDadoosTela()
+        {
+            mNumMotor model = new mNumMotor();
+            try
+            {
+                model.Dsc_num_motor = this.txtDscNumeroMotor.Text;
+                model.Flg_ativo = true;
+                model.Id_num_motor = Convert.ToInt32(this.txtCdNumeroMotor.Text);
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
         }
     }
 }

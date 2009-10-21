@@ -169,6 +169,7 @@
             this.btnConfirma.Size = new System.Drawing.Size(39, 24);
             this.btnConfirma.TabIndex = 2;
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpa
             // 
@@ -218,6 +219,7 @@
             this.btnBuscaCdNumMotor.Size = new System.Drawing.Size(26, 23);
             this.btnBuscaCdNumMotor.TabIndex = 3;
             this.btnBuscaCdNumMotor.UseVisualStyleBackColor = true;
+            this.btnBuscaCdNumMotor.Click += new System.EventHandler(this.btnBuscaCdNumMotor_Click);
             // 
             // btnCdKit
             // 
@@ -228,6 +230,7 @@
             this.btnCdKit.Size = new System.Drawing.Size(26, 23);
             this.btnCdKit.TabIndex = 3;
             this.btnCdKit.UseVisualStyleBackColor = true;
+            this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
             // 
             // btnCdMotorCompra
             // 
@@ -238,6 +241,7 @@
             this.btnCdMotorCompra.Size = new System.Drawing.Size(26, 23);
             this.btnCdMotorCompra.TabIndex = 3;
             this.btnCdMotorCompra.UseVisualStyleBackColor = true;
+            this.btnCdMotorCompra.Click += new System.EventHandler(this.btnCdMotorCompra_Click);
             // 
             // btnCdTipoMotor
             // 
@@ -248,6 +252,7 @@
             this.btnCdTipoMotor.Size = new System.Drawing.Size(26, 23);
             this.btnCdTipoMotor.TabIndex = 3;
             this.btnCdTipoMotor.UseVisualStyleBackColor = true;
+            this.btnCdTipoMotor.Click += new System.EventHandler(this.btnCdTipoMotor_Click);
             // 
             // btnCdEstoque
             // 
@@ -258,6 +263,7 @@
             this.btnCdEstoque.Size = new System.Drawing.Size(26, 23);
             this.btnCdEstoque.TabIndex = 3;
             this.btnCdEstoque.UseVisualStyleBackColor = true;
+            this.btnCdEstoque.Click += new System.EventHandler(this.btnCdEstoque_Click);
             // 
             // frmCadFamiliaMotor
             // 
