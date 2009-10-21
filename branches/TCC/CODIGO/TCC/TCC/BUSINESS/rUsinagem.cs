@@ -21,7 +21,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
-            throw new NotImplementedException();
+            base.Insere(model);
         }
 
         public override void ValidarDeleta(TCC.MODEL.ModelPai model)

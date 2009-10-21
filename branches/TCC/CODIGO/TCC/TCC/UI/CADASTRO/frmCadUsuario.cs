@@ -56,7 +56,7 @@ namespace TCC.UI
                 //Insere associação usuarioPerfil
                 //-------------------------------
                 modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
-                regraUsuarioPerfil.Insere(modelUsuarioPerfil);
+                regraUsuarioPerfil.ValidarInsere(modelUsuarioPerfil);
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
 

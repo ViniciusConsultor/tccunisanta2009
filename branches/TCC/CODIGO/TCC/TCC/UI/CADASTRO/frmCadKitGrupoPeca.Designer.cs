@@ -74,6 +74,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(32, 23);
             this.btnAceitar.TabIndex = 11;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // txtCdKit
             // 

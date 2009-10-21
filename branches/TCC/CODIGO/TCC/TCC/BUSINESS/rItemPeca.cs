@@ -6,21 +6,21 @@ using System.Data.SqlClient;
 
 namespace TCC.BUSINESS
 {
-    class rKitGrupoPeca:ComandosSql
+    class rItemPeca:ComandosSql
     {
-        public DataTable BuscaKitGrupoPeca(string parametro)
+        public DataTable BuscaItemPeca(string parametro)
         {
             SqlParameter param = null;
             try
             {
                 if (string.IsNullOrEmpty(parametro) == true)
                 {
-                    return base.BuscaDados("sp_busca_kitGrupoPeca");
+                    return base.BuscaDados("sp_busca_itemPeca");
                 }
                 else
                 {
                     param = new SqlParameter("@nom", parametro);
-                    return base.BuscaDados("sp_busca_kitGrupoPeca_param", param);
+                    return base.BuscaDados("sp_busca_itemPeca_param", param);
                 }
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace TCC.BUSINESS
         {
             try
             {
-                return base.BuscaIdMaximoTabelas("id_grupo", "Kitgrupopeca");
+                return base.BuscaIdMaximoTabelas("id_item_peca", "Itempeca");
             }
             catch (Exception ex)
             {
