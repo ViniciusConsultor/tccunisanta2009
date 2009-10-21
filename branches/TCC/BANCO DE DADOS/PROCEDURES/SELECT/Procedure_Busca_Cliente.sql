@@ -5,4 +5,4 @@ IF OBJECT_ID('sp_busca_cliente','p') IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_cliente
 AS 
-SELECT id_cli, nom 'Cliente', mail FROM Cliente
+SELECT id_fam_motor, dsc_fam_motor 'Familia Motor', mail FROM Cliente

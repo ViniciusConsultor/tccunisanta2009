@@ -10,17 +10,14 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmBuscaCliente : Form
+    public partial class frmBuscaFamiliaMotor : Form
     {
-        mCliente _model;
-        public frmBuscaCliente(mCliente modelCliente)
+        mFamiliaMotor _model;
+
+        public frmBuscaFamiliaMotor(mFamiliaMotor modelFamilia)
         {
             InitializeComponent();
-            this._model = modelCliente;
-        }
-        public void buscaCodigo()
-        {
-
+            this._model = modelFamilia;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -30,11 +27,11 @@ namespace TCC.UI
 
         private void PopulaGrid()
         {
-            rCliente regraCliente = new rCliente();
+            rFamiliaMotor regraFamiliaM = new rFamiliaMotor();
             DataTable dt = new DataTable();
             try
             {
-                dt = regraCliente.BuscaClientes(this.txtFiltro.Text);
+                dt = regraFamiliaM.BuscaFamiliaMotor(this.txtFiltro.Text);
                 dgCliente.DataSource = dt;
                 dgCliente.Columns[0].Visible = false;
             }
@@ -44,14 +41,14 @@ namespace TCC.UI
             }
             finally
             {
-                regraCliente = null;
+                regraFamiliaM = null;
                 dt = null;
             }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.RetornaModel();
+
         }
 
         private void RetornaModel()
@@ -65,20 +62,20 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgCliente["id_cli", this.dgCliente.CurrentRow.Index];
-                        this._model.IdCliente = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgCliente["Cliente", this.dgCliente.CurrentRow.Index];
-                        this._model.NomeCliente = dvc.Value.ToString();
+                        dvc = this.dgCliente["id_fam_motor", this.dgCliente.CurrentRow.Index];
+                        this._model.IdFamiliaMotor = Convert.ToInt32(dvc.Value);
+                        dvc = this.dgCliente["Familia Motor", this.dgCliente.CurrentRow.Index];
+                        this._model.DscFamiliaMotor = dvc.Value.ToString();
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("É necessário cadastrar um Cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("É necessário cadastrar uma Familia de Motor", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário buscar e selecionar um Cliente!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("É necessário buscar e selecionar uma Familia de Motor", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
 
             }
@@ -100,6 +97,5 @@ namespace TCC.UI
                 }
             }
         }
-
     }
 }

@@ -12,9 +12,12 @@ namespace TCC.UI
 {
     public partial class frmCadFamiliaMotor : FormPai
     {
+        mNumMotor _modelNumeroMotor;
+
         public frmCadFamiliaMotor()
         {
             InitializeComponent();
+            _modelNumeroMotor = new mNumMotor();
         }
 
         private void btnVolta_Click(object sender, EventArgs e)
@@ -76,7 +79,19 @@ namespace TCC.UI
 
         private void btnBuscaCdNumMotor_Click(object sender, EventArgs e)
         {
-
+            frmBuscaNumMotor objForm = new frmBuscaNumMotor(this._modelNumeroMotor);
+            try
+            {
+                objForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objForm = null;
+            }
         }
 
         private void btnCdKit_Click(object sender, EventArgs e)
