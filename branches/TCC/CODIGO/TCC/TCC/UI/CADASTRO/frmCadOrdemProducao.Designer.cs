@@ -34,7 +34,7 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.lblCdOrdemMotor = new System.Windows.Forms.Label();
             this.txtCdOrdemMotor = new System.Windows.Forms.TextBox();
-            this.lblcdMotor = new System.Windows.Forms.Label();
+            this.lblcdFamiliaMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblCdDepartamento = new System.Windows.Forms.Label();
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
@@ -80,6 +80,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(40, 36);
             this.btnAceitar.TabIndex = 14;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // lblCdOrdemMotor
             // 
@@ -99,19 +100,19 @@
             this.txtCdOrdemMotor.Size = new System.Drawing.Size(82, 20);
             this.txtCdOrdemMotor.TabIndex = 18;
             // 
-            // lblcdMotor
+            // lblcdFamiliaMotor
             // 
-            this.lblcdMotor.AutoSize = true;
-            this.lblcdMotor.Location = new System.Drawing.Point(318, 33);
-            this.lblcdMotor.Name = "lblcdMotor";
-            this.lblcdMotor.Size = new System.Drawing.Size(85, 13);
-            this.lblcdMotor.TabIndex = 17;
-            this.lblcdMotor.Text = "Codigo do Motor";
+            this.lblcdFamiliaMotor.AutoSize = true;
+            this.lblcdFamiliaMotor.Location = new System.Drawing.Point(318, 33);
+            this.lblcdFamiliaMotor.Name = "lblcdFamiliaMotor";
+            this.lblcdFamiliaMotor.Size = new System.Drawing.Size(105, 13);
+            this.lblcdFamiliaMotor.TabIndex = 17;
+            this.lblcdFamiliaMotor.Text = "Codigo Familia Motor";
             // 
             // txtCdMotor
             // 
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotor.Location = new System.Drawing.Point(409, 29);
+            this.txtCdMotor.Location = new System.Drawing.Point(429, 28);
             this.txtCdMotor.Name = "txtCdMotor";
             this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(41, 20);
@@ -138,7 +139,7 @@
             // lblCdKit
             // 
             this.lblCdKit.AutoSize = true;
-            this.lblCdKit.Location = new System.Drawing.Point(318, 79);
+            this.lblCdKit.Location = new System.Drawing.Point(353, 75);
             this.lblCdKit.Name = "lblCdKit";
             this.lblCdKit.Size = new System.Drawing.Size(70, 13);
             this.lblCdKit.TabIndex = 17;
@@ -147,7 +148,7 @@
             // txtCdKit
             // 
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdKit.Location = new System.Drawing.Point(409, 71);
+            this.txtCdKit.Location = new System.Drawing.Point(429, 70);
             this.txtCdKit.Name = "txtCdKit";
             this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(41, 20);
@@ -192,7 +193,7 @@
             // 
             this.btnCdMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdMotor.BackgroundImage")));
             this.btnCdMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdMotor.Location = new System.Drawing.Point(456, 27);
+            this.btnCdMotor.Location = new System.Drawing.Point(476, 26);
             this.btnCdMotor.Name = "btnCdMotor";
             this.btnCdMotor.Size = new System.Drawing.Size(30, 23);
             this.btnCdMotor.TabIndex = 14;
@@ -214,7 +215,7 @@
             // 
             this.btnCdKit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdKit.BackgroundImage")));
             this.btnCdKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdKit.Location = new System.Drawing.Point(456, 69);
+            this.btnCdKit.Location = new System.Drawing.Point(476, 68);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(30, 23);
             this.btnCdKit.TabIndex = 14;
@@ -249,7 +250,7 @@
             this.Controls.Add(this.txtCdDepartamento);
             this.Controls.Add(this.lblCdDepartamento);
             this.Controls.Add(this.txtCdMotor);
-            this.Controls.Add(this.lblcdMotor);
+            this.Controls.Add(this.lblcdFamiliaMotor);
             this.Controls.Add(this.txtCdOrdemMotor);
             this.Controls.Add(this.lblCdOrdemMotor);
             this.Controls.Add(this.btnVoltar);
@@ -275,7 +276,7 @@
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.Label lblCdOrdemMotor;
         private System.Windows.Forms.TextBox txtCdOrdemMotor;
-        private System.Windows.Forms.Label lblcdMotor;
+        private System.Windows.Forms.Label lblcdFamiliaMotor;
         private System.Windows.Forms.TextBox txtCdMotor;
         private System.Windows.Forms.Label lblCdDepartamento;
         private System.Windows.Forms.TextBox txtCdDepartamento;

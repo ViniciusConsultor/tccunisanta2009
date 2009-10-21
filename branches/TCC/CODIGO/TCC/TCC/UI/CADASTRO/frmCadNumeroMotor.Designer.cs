@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadNumeroMotor));
             this.txtCdNumeroMotor = new System.Windows.Forms.TextBox();
             this.lblCdNumeroMotor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDscNumeroMotor = new System.Windows.Forms.TextBox();
             this.lblDsNumeroMotor = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -56,13 +56,13 @@
             this.lblCdNumeroMotor.TabIndex = 19;
             this.lblCdNumeroMotor.Text = "Codigo do Numero do Motor";
             // 
-            // textBox1
+            // txtDscNumeroMotor
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(56, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 20);
-            this.textBox1.TabIndex = 22;
+            this.txtDscNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDscNumeroMotor.Location = new System.Drawing.Point(56, 100);
+            this.txtDscNumeroMotor.Name = "txtDscNumeroMotor";
+            this.txtDscNumeroMotor.Size = new System.Drawing.Size(240, 20);
+            this.txtDscNumeroMotor.TabIndex = 22;
             // 
             // lblDsNumeroMotor
             // 
@@ -103,6 +103,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(28, 24);
             this.btnAceitar.TabIndex = 23;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // frmCadNumeroMotor
             // 
@@ -115,7 +116,7 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDscNumeroMotor);
             this.Controls.Add(this.lblDsNumeroMotor);
             this.Controls.Add(this.txtCdNumeroMotor);
             this.Controls.Add(this.lblCdNumeroMotor);
@@ -132,7 +133,7 @@
 
         private System.Windows.Forms.TextBox txtCdNumeroMotor;
         private System.Windows.Forms.Label lblCdNumeroMotor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDscNumeroMotor;
         private System.Windows.Forms.Label lblDsNumeroMotor;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
