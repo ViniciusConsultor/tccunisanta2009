@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscaTipoMotor));
             this.btnOK = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -37,27 +38,29 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(101, 230);
+            this.btnOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOK.BackgroundImage")));
+            this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOK.Location = new System.Drawing.Point(103, 229);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(59, 32);
             this.btnOK.TabIndex = 11;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(12, 13);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(179, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(198, 20);
             this.txtFiltro.TabIndex = 9;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(197, 11);
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(226, 6);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(46, 30);
             this.btnBuscar.TabIndex = 10;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // dgTipoMotor
@@ -74,7 +77,7 @@
             this.dgTipoMotor.Size = new System.Drawing.Size(260, 177);
             this.dgTipoMotor.TabIndex = 8;
             // 
-            // frmTipoMotor
+            // frmBuscaTipoMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,7 +86,7 @@
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgTipoMotor);
-            this.Name = "frmTipoMotor";
+            this.Name = "frmBuscaTipoMotor";
             this.Text = "frmTipoMotor";
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoMotor)).EndInit();
             this.ResumeLayout(false);
