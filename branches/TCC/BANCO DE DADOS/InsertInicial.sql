@@ -78,6 +78,7 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (26, 'Usuá
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (27, 'Cliente', 'frmCadCliente', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (28, 'Colaborador', 'frmCadColaborador', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (29, 'Departamento', 'frmCadDepartamento', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (30, 'Item Peça', 'frmCadItemPeca', GETDATE(), 1);
 
 --Venda !!
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--Pedido Venda
@@ -99,6 +100,7 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (11, 15);--Motor
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 19);--Kit Grupo Peça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 20);--Tipo Peça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 21);--Tipo Peça
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 30);--Item Peça
 
 --Compra
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 22);--Compra Peça

@@ -12,9 +12,12 @@ namespace TCC.UI
 {
     public partial class frmCadUsinagem : FormPai
     {
+        mPeca _modelPeca;
+
         public frmCadUsinagem()
         {
             InitializeComponent();
+            _modelPeca = new mPeca();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -47,6 +50,73 @@ namespace TCC.UI
             finally
             {
                 regra = null;
+            }
+        }
+
+        private void Insere()
+        {
+            mUsinagem model;
+            rUsinagem regra = new rUsinagem();
+            try
+            {
+                model = this.PegaDadosTela();
+                regra.ValidarInsere(model);
+                base.LimpaDadosTela(this);
+                this.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+                regra = null;
+            }
+        }
+
+        private mUsinagem PegaDadosTela()
+        {
+            mUsinagem model = new mUsinagem();
+            try
+            {
+                model.DtaEnvio = DateTime.Now;
+                model.FlgStatus = this.chkPecaOk.Checked;
+                model.IdPeca = this._modelPeca.IdPeca;
+                model.IdUsinagem = Convert.ToInt32(this.txtCdUsinagem.Text);
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+
+        private void btnCdPeca_Click(object sender, EventArgs e)
+        {
+            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
+            try
+            {
+                objForm.ShowDialog();
+                this.txtCdPeca.Text = this._modelPeca.Nom;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objForm = null;
             }
         }
     }

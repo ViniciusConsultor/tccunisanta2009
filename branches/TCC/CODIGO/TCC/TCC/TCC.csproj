@@ -89,6 +89,7 @@
     <Compile Include="BUSINESS\rEstoque.cs" />
     <Compile Include="BUSINESS\rFamiliaMotor.cs" />
     <Compile Include="BUSINESS\rFornecedor.cs" />
+    <Compile Include="BUSINESS\rItemPeca.cs" />
     <Compile Include="BUSINESS\rKitGrupoPeca.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />

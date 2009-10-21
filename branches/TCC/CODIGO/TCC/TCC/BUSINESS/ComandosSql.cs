@@ -174,7 +174,7 @@ namespace TCC.BUSINESS
         /// Insere os dados no banco.
         /// </summary>
         /// <param name="model">Model com os dados e a tabela a ser inserido</param>
-        public void Insere(ModelPai model)
+        protected void Insere(ModelPai model)
         {
             this.ExecutaComandoSql(model, TipoComando.insert);
         }

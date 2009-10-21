@@ -37,6 +37,7 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnCdPeca = new System.Windows.Forms.Button();
+            this.chkPecaOk = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblCdUsinagem
@@ -105,6 +106,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(25, 23);
             this.btnAceitar.TabIndex = 8;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // btnCdPeca
             // 
@@ -115,6 +117,17 @@
             this.btnCdPeca.Size = new System.Drawing.Size(27, 23);
             this.btnCdPeca.TabIndex = 8;
             this.btnCdPeca.UseVisualStyleBackColor = true;
+            this.btnCdPeca.Click += new System.EventHandler(this.btnCdPeca_Click);
+            // 
+            // chkPecaOk
+            // 
+            this.chkPecaOk.AutoSize = true;
+            this.chkPecaOk.Location = new System.Drawing.Point(170, 96);
+            this.chkPecaOk.Name = "chkPecaOk";
+            this.chkPecaOk.Size = new System.Drawing.Size(69, 17);
+            this.chkPecaOk.TabIndex = 11;
+            this.chkPecaOk.Text = "Peça OK";
+            this.chkPecaOk.UseVisualStyleBackColor = true;
             // 
             // frmCadUsinagem
             // 
@@ -124,6 +137,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(308, 169);
             this.ControlBox = false;
+            this.Controls.Add(this.chkPecaOk);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdPeca);
@@ -151,5 +165,6 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.Button btnCdPeca;
+        private System.Windows.Forms.CheckBox chkPecaOk;
     }
 }
