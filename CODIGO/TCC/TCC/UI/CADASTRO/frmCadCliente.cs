@@ -146,7 +146,7 @@ namespace TCC.UI
             try
             {
                 model = this.PegaDadosTela();
-                regra.Insere(model);
+                regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
             }
