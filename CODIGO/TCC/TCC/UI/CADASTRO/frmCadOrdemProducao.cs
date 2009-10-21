@@ -14,7 +14,7 @@ namespace TCC.UI
     {
         mDepartamento _modelDepartamento;
         mTipoProduto _modelTipoProd;
-        mMotor _modelMotor;
+        mFamiliaMotor _modelFamiliaMotor;
         mKitGrupoPeca _modelKit;
 
         public frmCadOrdemProducao()
@@ -22,7 +22,7 @@ namespace TCC.UI
             InitializeComponent();
             this._modelDepartamento = new mDepartamento();
             this._modelTipoProd = new mTipoProduto();
-            this._modelMotor = new mMotor();
+            this._modelFamiliaMotor = new mFamiliaMotor();
             this._modelKit = new mKitGrupoPeca();
         }
 
@@ -57,11 +57,11 @@ namespace TCC.UI
 
         private void btnCdMotor_Click(object sender, EventArgs e)
         {
-            frmBuscaMotor objFrmBuscaMotor = new frmBuscaMotor(this._modelMotor);
+            frmBuscaFamiliaMotor objFrmBuscaMotor = new frmBuscaFamiliaMotor(this._modelFamiliaMotor);
             try
             {
                 objFrmBuscaMotor.ShowDialog();
-                this.txtCdMotor.Text = this._modelMotor.DscMotor;
+                this.txtCdMotor.Text = this._modelFamiliaMotor.DscFamiliaMotor;
             }
             catch (Exception ex)
             {
@@ -166,7 +166,7 @@ namespace TCC.UI
                 model.Dsc_ordem = this.txtDs.Text;
                 model.Id_depto = this._modelDepartamento.IdDepto;
                 model.Id_grupo = this._modelKit.Id_grupo;
-                model.Id_motor = this._modelMotor.IdMotor;
+                model.Id_motor = this._modelFamiliaMotor.IdFamiliaMotor;
                 model.Id_ordem = Convert.ToInt32(this.txtCdOrdemMotor.Text);
                 model.Id_tipo_produto = this._modelTipoProd.IdTipoProd;
 
