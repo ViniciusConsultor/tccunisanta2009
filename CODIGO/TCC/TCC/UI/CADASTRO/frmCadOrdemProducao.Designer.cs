@@ -56,16 +56,16 @@
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(3, 3);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(40, 28);
+            this.btnVoltar.Size = new System.Drawing.Size(40, 31);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(341, 219);
+            this.btnLimpar.Location = new System.Drawing.Point(3, 40);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(40, 33);
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -73,11 +73,12 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.Location = new System.Drawing.Point(260, 219);
+            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(3, 79);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(40, 36);
             this.btnAceitar.TabIndex = 14;
-            this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
             // lblCdOrdemMotor
@@ -189,41 +190,45 @@
             // 
             // btnCdMotor
             // 
+            this.btnCdMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdMotor.BackgroundImage")));
+            this.btnCdMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdMotor.Location = new System.Drawing.Point(456, 27);
             this.btnCdMotor.Name = "btnCdMotor";
             this.btnCdMotor.Size = new System.Drawing.Size(30, 23);
             this.btnCdMotor.TabIndex = 14;
-            this.btnCdMotor.Text = "...";
             this.btnCdMotor.UseVisualStyleBackColor = true;
             this.btnCdMotor.Click += new System.EventHandler(this.btnCdMotor_Click);
             // 
             // btnCdDep
             // 
+            this.btnCdDep.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdDep.BackgroundImage")));
+            this.btnCdDep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdDep.Location = new System.Drawing.Point(282, 70);
             this.btnCdDep.Name = "btnCdDep";
             this.btnCdDep.Size = new System.Drawing.Size(30, 23);
             this.btnCdDep.TabIndex = 14;
-            this.btnCdDep.Text = "...";
             this.btnCdDep.UseVisualStyleBackColor = true;
             this.btnCdDep.Click += new System.EventHandler(this.btnCdDep_Click);
             // 
             // btnCdKit
             // 
+            this.btnCdKit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdKit.BackgroundImage")));
+            this.btnCdKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdKit.Location = new System.Drawing.Point(456, 69);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(30, 23);
             this.btnCdKit.TabIndex = 14;
-            this.btnCdKit.Text = "...";
             this.btnCdKit.UseVisualStyleBackColor = true;
             this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
             // 
             // btnCdTipoProduto
             // 
+            this.btnCdTipoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdTipoProduto.BackgroundImage")));
+            this.btnCdTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdTipoProduto.Location = new System.Drawing.Point(282, 116);
             this.btnCdTipoProduto.Name = "btnCdTipoProduto";
             this.btnCdTipoProduto.Size = new System.Drawing.Size(30, 23);
             this.btnCdTipoProduto.TabIndex = 14;
-            this.btnCdTipoProduto.Text = "...";
             this.btnCdTipoProduto.UseVisualStyleBackColor = true;
             this.btnCdTipoProduto.Click += new System.EventHandler(this.btnCdTipoProduto_Click);
             // 

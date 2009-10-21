@@ -164,5 +164,10 @@ namespace TCC.UI
                 objFrmOrdemMotor = null;
             }
         }
+
+        private void btnCdKit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

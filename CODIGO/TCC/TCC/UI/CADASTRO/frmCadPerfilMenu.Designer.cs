@@ -42,11 +42,12 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(60, 149);
+            this.btnCadastrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.BackgroundImage")));
+            this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCadastrar.Location = new System.Drawing.Point(1, 60);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(30, 27);
             this.btnCadastrar.TabIndex = 3;
-            this.btnCadastrar.Text = "Confirmar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -62,7 +63,7 @@
             // lblCodigoMenu
             // 
             this.lblCodigoMenu.AutoSize = true;
-            this.lblCodigoMenu.Location = new System.Drawing.Point(100, 81);
+            this.lblCodigoMenu.Location = new System.Drawing.Point(100, 90);
             this.lblCodigoMenu.Name = "lblCodigoMenu";
             this.lblCodigoMenu.Size = new System.Drawing.Size(34, 13);
             this.lblCodigoMenu.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             this.txtCodigoMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoMenu.Enabled = false;
-            this.txtCodigoMenu.Location = new System.Drawing.Point(141, 78);
+            this.txtCodigoMenu.Location = new System.Drawing.Point(141, 87);
             this.txtCodigoMenu.Name = "txtCodigoMenu";
             this.txtCodigoMenu.ReadOnly = true;
             this.txtCodigoMenu.Size = new System.Drawing.Size(100, 20);
@@ -90,9 +91,9 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(141, 149);
+            this.btnLimpar.Location = new System.Drawing.Point(1, 31);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(30, 23);
             this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(1, 0);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(30, 25);
+            this.btnVoltar.Size = new System.Drawing.Size(30, 28);
             this.btnVoltar.TabIndex = 5;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -124,7 +125,7 @@
             // 
             this.btnBuscaMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaMenu.BackgroundImage")));
             this.btnBuscaMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaMenu.Location = new System.Drawing.Point(247, 76);
+            this.btnBuscaMenu.Location = new System.Drawing.Point(247, 85);
             this.btnBuscaMenu.Name = "btnBuscaMenu";
             this.btnBuscaMenu.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaMenu.TabIndex = 2;

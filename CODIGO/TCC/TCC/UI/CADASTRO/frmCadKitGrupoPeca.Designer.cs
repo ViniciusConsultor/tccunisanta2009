@@ -57,9 +57,9 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(220, 113);
+            this.btnLimpar.Location = new System.Drawing.Point(2, 24);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(32, 23);
             this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -67,11 +67,12 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.Location = new System.Drawing.Point(139, 113);
+            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(2, 46);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(32, 23);
             this.btnAceitar.TabIndex = 11;
-            this.btnAceitar.Text = "Confirmar";
             this.btnAceitar.UseVisualStyleBackColor = true;
             // 
             // txtCdKit
@@ -147,21 +148,24 @@
             // 
             // btnCdPeca
             // 
+            this.btnCdPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdPeca.BackgroundImage")));
+            this.btnCdPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCdPeca.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btnCdPeca.Location = new System.Drawing.Point(186, 59);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(28, 23);
             this.btnCdPeca.TabIndex = 11;
-            this.btnCdPeca.Text = "...";
             this.btnCdPeca.UseVisualStyleBackColor = true;
             this.btnCdPeca.Click += new System.EventHandler(this.btnCdPeca_Click);
             // 
             // btnCdItemPeca
             // 
+            this.btnCdItemPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdItemPeca.BackgroundImage")));
+            this.btnCdItemPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdItemPeca.Location = new System.Drawing.Point(375, 25);
             this.btnCdItemPeca.Name = "btnCdItemPeca";
             this.btnCdItemPeca.Size = new System.Drawing.Size(28, 23);
             this.btnCdItemPeca.TabIndex = 11;
-            this.btnCdItemPeca.Text = "...";
             this.btnCdItemPeca.UseVisualStyleBackColor = true;
             this.btnCdItemPeca.Click += new System.EventHandler(this.btnCdItemPeca_Click);
             // 

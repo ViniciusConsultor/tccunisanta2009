@@ -93,6 +93,7 @@
             this.txtCdOrdemMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdOrdemMotor.Location = new System.Drawing.Point(406, 9);
             this.txtCdOrdemMotor.Name = "txtCdOrdemMotor";
+            this.txtCdOrdemMotor.ReadOnly = true;
             this.txtCdOrdemMotor.Size = new System.Drawing.Size(67, 20);
             this.txtCdOrdemMotor.TabIndex = 2;
             // 
@@ -110,6 +111,7 @@
             this.txtCdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdCliente.Location = new System.Drawing.Point(172, 42);
             this.txtCdCliente.Name = "txtCdCliente";
+            this.txtCdCliente.ReadOnly = true;
             this.txtCdCliente.Size = new System.Drawing.Size(75, 20);
             this.txtCdCliente.TabIndex = 3;
             // 
@@ -127,6 +129,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Location = new System.Drawing.Point(406, 42);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(67, 20);
             this.textBox3.TabIndex = 4;
             // 
@@ -144,6 +147,7 @@
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoProduto.Location = new System.Drawing.Point(220, 76);
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
+            this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(65, 20);
             this.txtCdTipoProduto.TabIndex = 5;
             // 
@@ -161,6 +165,7 @@
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdKit.Location = new System.Drawing.Point(406, 76);
             this.txtCdKit.Name = "txtCdKit";
+            this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(67, 20);
             this.txtCdKit.TabIndex = 6;
             // 
@@ -251,11 +256,12 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(172, 217);
+            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
+            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsere.Location = new System.Drawing.Point(2, 73);
             this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(63, 23);
+            this.btnInsere.Size = new System.Drawing.Size(44, 31);
             this.btnInsere.TabIndex = 12;
-            this.btnInsere.Text = "Confirma";
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
@@ -272,9 +278,9 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(253, 217);
+            this.btnLimpa.Location = new System.Drawing.Point(2, 36);
             this.btnLimpa.Name = "btnLimpa";
-            this.btnLimpa.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpa.Size = new System.Drawing.Size(43, 30);
             this.btnLimpa.TabIndex = 14;
             this.btnLimpa.Text = "Limpa";
             this.btnLimpa.UseVisualStyleBackColor = true;
@@ -282,47 +288,52 @@
             // 
             // btnCdOrdemMotor
             // 
+            this.btnCdOrdemMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdOrdemMotor.BackgroundImage")));
+            this.btnCdOrdemMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdOrdemMotor.Location = new System.Drawing.Point(479, 6);
             this.btnCdOrdemMotor.Name = "btnCdOrdemMotor";
             this.btnCdOrdemMotor.Size = new System.Drawing.Size(31, 23);
             this.btnCdOrdemMotor.TabIndex = 12;
-            this.btnCdOrdemMotor.Text = "...";
             this.btnCdOrdemMotor.UseVisualStyleBackColor = true;
             // 
             // btnCdVenda
             // 
+            this.btnCdVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdVenda.BackgroundImage")));
+            this.btnCdVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdVenda.Location = new System.Drawing.Point(479, 40);
             this.btnCdVenda.Name = "btnCdVenda";
             this.btnCdVenda.Size = new System.Drawing.Size(31, 23);
             this.btnCdVenda.TabIndex = 12;
-            this.btnCdVenda.Text = "...";
             this.btnCdVenda.UseVisualStyleBackColor = true;
             // 
             // btnCdTipoProduto
             // 
+            this.btnCdTipoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdTipoProduto.BackgroundImage")));
+            this.btnCdTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdTipoProduto.Location = new System.Drawing.Point(293, 74);
             this.btnCdTipoProduto.Name = "btnCdTipoProduto";
             this.btnCdTipoProduto.Size = new System.Drawing.Size(31, 23);
             this.btnCdTipoProduto.TabIndex = 12;
-            this.btnCdTipoProduto.Text = "...";
             this.btnCdTipoProduto.UseVisualStyleBackColor = true;
             // 
             // btnCdKit
             // 
+            this.btnCdKit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdKit.BackgroundImage")));
+            this.btnCdKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdKit.Location = new System.Drawing.Point(479, 74);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(31, 23);
             this.btnCdKit.TabIndex = 12;
-            this.btnCdKit.Text = "...";
             this.btnCdKit.UseVisualStyleBackColor = true;
             // 
             // btnCdCliente
             // 
+            this.btnCdCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdCliente.BackgroundImage")));
+            this.btnCdCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdCliente.Location = new System.Drawing.Point(263, 42);
             this.btnCdCliente.Name = "btnCdCliente";
             this.btnCdCliente.Size = new System.Drawing.Size(31, 23);
             this.btnCdCliente.TabIndex = 12;
-            this.btnCdCliente.Text = "...";
             this.btnCdCliente.UseVisualStyleBackColor = true;
             // 
             // frmCadVendaMotor
@@ -331,7 +342,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(529, 252);
+            this.ClientSize = new System.Drawing.Size(529, 226);
             this.ControlBox = false;
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnDeleta);

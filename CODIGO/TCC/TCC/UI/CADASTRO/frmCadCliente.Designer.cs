@@ -265,19 +265,20 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.Location = new System.Drawing.Point(132, 191);
+            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
+            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsere.Location = new System.Drawing.Point(-1, 68);
             this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(75, 23);
+            this.btnInsere.Size = new System.Drawing.Size(43, 35);
             this.btnInsere.TabIndex = 13;
-            this.btnInsere.Text = "Confirmar";
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
             // btnLimpa
             // 
-            this.btnLimpa.Location = new System.Drawing.Point(266, 191);
+            this.btnLimpa.Location = new System.Drawing.Point(-1, 40);
             this.btnLimpa.Name = "btnLimpa";
-            this.btnLimpa.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpa.Size = new System.Drawing.Size(43, 27);
             this.btnLimpa.TabIndex = 14;
             this.btnLimpa.Text = "Limpar";
             this.btnLimpa.UseVisualStyleBackColor = true;
@@ -287,9 +288,9 @@
             // 
             this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(4, 4);
+            this.btnVolta.Location = new System.Drawing.Point(-1, -1);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(33, 26);
+            this.btnVolta.Size = new System.Drawing.Size(43, 37);
             this.btnVolta.TabIndex = 15;
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
