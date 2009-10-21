@@ -12,7 +12,7 @@ namespace TCC.MODEL
         private int idCompra;
         private string nomeTabela = "Comprapeca";
 
-        [ColunasBancoDados ("id_peca", System.Data.SqlDbType.Int,true)]
+        [ColunasBancoDados("id_peca", System.Data.SqlDbType.Int,true)]
         public int IdPeca
         {
             get { return idPeca; }
