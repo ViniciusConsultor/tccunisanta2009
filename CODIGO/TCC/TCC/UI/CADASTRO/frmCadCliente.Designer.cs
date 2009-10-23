@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCliente));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -36,11 +37,9 @@
             this.lblRua = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblCep = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -55,12 +54,14 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.lblTlefone = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.txtCep2 = new System.Windows.Forms.TextBox();
-            this.txtDDD = new System.Windows.Forms.TextBox();
             this.lblDDD = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtCep = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtCep2 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -127,15 +128,6 @@
             this.lblNumero.TabIndex = 0;
             this.lblNumero.Text = "Numero";
             // 
-            // txtNumero
-            // 
-            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(301, 57);
-            this.txtNumero.MaxLength = 10;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(29, 20);
-            this.txtNumero.TabIndex = 4;
-            // 
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
@@ -162,16 +154,6 @@
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 0;
             this.lblCep.Text = "CEP";
-            // 
-            // txtCep
-            // 
-            this.txtCep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCep.Location = new System.Drawing.Point(301, 83);
-            this.txtCep.MaxLength = 5;
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(68, 20);
-            this.txtCep.TabIndex = 6;
-            this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
             // 
             // lblBairro
             // 
@@ -299,39 +281,11 @@
             // lblTlefone
             // 
             this.lblTlefone.AutoSize = true;
-            this.lblTlefone.Location = new System.Drawing.Point(311, 33);
+            this.lblTlefone.Location = new System.Drawing.Point(314, 33);
             this.lblTlefone.Name = "lblTlefone";
             this.lblTlefone.Size = new System.Drawing.Size(49, 13);
             this.lblTlefone.TabIndex = 0;
             this.lblTlefone.Text = "Telefone";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(366, 31);
-            this.txtTelefone.MaxLength = 20;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(68, 20);
-            this.txtTelefone.TabIndex = 2;
-            // 
-            // txtCep2
-            // 
-            this.txtCep2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCep2.Location = new System.Drawing.Point(376, 83);
-            this.txtCep2.MaxLength = 3;
-            this.txtCep2.Name = "txtCep2";
-            this.txtCep2.Size = new System.Drawing.Size(35, 20);
-            this.txtCep2.TabIndex = 7;
-            this.txtCep2.TextChanged += new System.EventHandler(this.txtCep2_TextChanged);
-            // 
-            // txtDDD
-            // 
-            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDDD.Location = new System.Drawing.Point(285, 31);
-            this.txtDDD.MaxLength = 20;
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(24, 20);
-            this.txtDDD.TabIndex = 17;
             // 
             // lblDDD
             // 
@@ -360,6 +314,46 @@
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email";
             // 
+            // txtDDD
+            // 
+            this.txtDDD.Location = new System.Drawing.Point(283, 30);
+            this.txtDDD.MaxLength = 3;
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(31, 20);
+            this.txtDDD.TabIndex = 20;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(369, 30);
+            this.txtTelefone.MaxLength = 9;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(65, 20);
+            this.txtTelefone.TabIndex = 21;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(301, 56);
+            this.txtNumero.MaxLength = 5;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(31, 20);
+            this.txtNumero.TabIndex = 22;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(301, 82);
+            this.txtCep.MaxLength = 5;
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(69, 20);
+            this.txtCep.TabIndex = 23;
+            // 
+            // txtCep2
+            // 
+            this.txtCep2.Location = new System.Drawing.Point(376, 82);
+            this.txtCep2.MaxLength = 3;
+            this.txtCep2.Name = "txtCep2";
+            this.txtCep2.Size = new System.Drawing.Size(31, 20);
+            this.txtCep2.TabIndex = 24;
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,11 +362,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 226);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCep2);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.lblDDD);
-            this.Controls.Add(this.txtCep2);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnInsere);
@@ -382,7 +379,6 @@
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtBairro);
-            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.lblCnpj);
@@ -391,10 +387,8 @@
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblCep);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lblTlefone);
             this.Controls.Add(this.lblRua);
@@ -418,11 +412,9 @@
         private System.Windows.Forms.Label lblRua;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lblComplemento;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label lblCep;
-        private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtBairro;
@@ -437,11 +429,13 @@
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Label lblTlefone;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtCep2;
-        private System.Windows.Forms.TextBox txtDDD;
         private System.Windows.Forms.Label lblDDD;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private Controles.MegaTextBox.MegaTextBox txtDDD;
+        private Controles.MegaTextBox.MegaTextBox txtTelefone;
+        private Controles.MegaTextBox.MegaTextBox txtNumero;
+        private Controles.MegaTextBox.MegaTextBox txtCep;
+        private Controles.MegaTextBox.MegaTextBox txtCep2;
     }
 }

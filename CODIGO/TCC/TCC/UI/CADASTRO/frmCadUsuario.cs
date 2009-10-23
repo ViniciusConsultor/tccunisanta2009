@@ -13,13 +13,12 @@ namespace TCC.UI
 {
     public partial class frmCadUsuario : FormPai
     {
-        mPerfil modelPerfil;
+        mPerfil _modelPerfil;
 
         #region Construtor
         public frmCadUsuario()
         {
             InitializeComponent();
-            modelPerfil = new mPerfil();
         }
         #endregion Construtor
 
@@ -49,6 +48,7 @@ namespace TCC.UI
             mUsuarioPerfil modelUsuarioPerfil = new mUsuarioPerfil();
             try
             {
+                this.ValidaDadosNulos();
                 //Insere o usuário
                 //----------------
                 modelUsu = this.PegaDadosTela();
@@ -60,6 +60,10 @@ namespace TCC.UI
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
 
+            }
+            catch(BUSINESS.Exceptions.CodigoPerfilVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Login.LoginExistenteException)
             {
@@ -76,12 +80,6 @@ namespace TCC.UI
             {
                 MessageBox.Show("É necessário preenchimento do campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtSenha.Focus();
-            }
-            catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
-            {
-                MessageBox.Show("Não é Possivel Cadastrar um usuário sem o Codigo do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                //regraUsu.Deleta(modelUsu);
-                btnBuscaPerfilUsuario.Focus();
             }
             catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
@@ -105,11 +103,19 @@ namespace TCC.UI
         #region btnBuscaPerfilUsuario Click
         private void btnBuscaPerfilUsuario_Click(object sender, EventArgs e)
         {
-            frmBuscaPerfil buscar = new frmBuscaPerfil(this.modelPerfil);
+            this._modelPerfil = new mPerfil();
+            frmBuscaPerfil buscar = new frmBuscaPerfil(this._modelPerfil);
             try
             {
-                //buscar.MdiParent = this.MdiParent;
-                buscar.ShowDialog();
+                DialogResult resultado = buscar.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelPerfil = null;
+                }
+                else
+                {
+                    this.txtPerfilUsuario.Text = this._modelPerfil.DescPerfil;
+                }
             }
             catch (Exception ex)
             {
@@ -117,7 +123,7 @@ namespace TCC.UI
             }
             finally
             {
-                this.txtPerfilUsuario.Text = modelPerfil.DescPerfil;
+                this.txtPerfilUsuario.Text = _modelPerfil.DescPerfil;
                 buscar = null;
             }
         }
@@ -147,7 +153,7 @@ namespace TCC.UI
             mUsuarioPerfil model = new mUsuarioPerfil();
             if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == false)
             {
-                model.IdPerfil = this.modelPerfil.IdPerfil;
+                model.IdPerfil = this._modelPerfil.IdPerfil;
             }
             else
             {
@@ -181,6 +187,14 @@ namespace TCC.UI
             finally
             {
                 regraUsu = null;
+            }
+        }
+
+        private void ValidaDadosNulos()
+        {
+            if (this._modelPerfil == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
             }
         }
     }

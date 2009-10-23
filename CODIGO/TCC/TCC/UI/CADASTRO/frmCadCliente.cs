@@ -137,6 +137,7 @@ namespace TCC.UI
         {
             this.BuscaIdMaximo();
             this.BuscaEstados();
+            this.AtribuiTipoTextBox();
         }
 
         private void btnInsere_Click(object sender, EventArgs e)
@@ -187,6 +188,15 @@ namespace TCC.UI
         void btnVolta_Click(object sender, System.EventArgs e)
         {
             base.FechaTela(this);
+        }
+
+        private void AtribuiTipoTextBox()
+        {
+            txtDDD._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtNumero._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtTelefone._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtCep._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtCep2._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
         }
     }
 }

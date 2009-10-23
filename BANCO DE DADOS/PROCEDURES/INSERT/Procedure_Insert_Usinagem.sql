@@ -17,9 +17,7 @@ IF(@id_usinagem='')
 ELSE IF(@id_peca='')
    RAISERROR('Informe o codigo da peca!',16,1)   
 ELSE IF(@dta_envio='')
-   RAISERROR('Informe a data de envio da peca para a usinagem!',16,1)   
-ELSE IF(@flg_status='')
-   RAISERROR('Informe o status atual da usinagem!',16,1)      
+   RAISERROR('Informe a data de envio da peca para a usinagem!',16,1)       
 ELSE
 
 BEGIN

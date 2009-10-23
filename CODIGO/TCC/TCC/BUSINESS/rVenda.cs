@@ -49,8 +49,22 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mVenda model)
+        {
+            if (model.Qtd == null || model.Qtd <= 0)
+            {
+                throw new Exceptions.Venda.QuantidadeVendaZeroOuNuloException();
+            }
+            else if (model.Valor == null || model.Valor <= 0)
+            {
+                throw new Exceptions.Venda.ValorVendaZeroOuNuloException();
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            mVenda modelVenda = (mVenda)model;
+            this.ValidaDados(modelVenda);
             base.Insere(model);
         }
 

@@ -19,8 +19,6 @@ namespace TCC.UI
         public frmCadPerfilMenu()
         {
             InitializeComponent();
-            _modelPerfil = new mPerfil();
-            _modelMenu = new mMenu();
         }
 
         private mPerfilMenu PegaDadosTela()
@@ -35,10 +33,19 @@ namespace TCC.UI
 
         private void btnBuscaPerfil_Click(object sender, EventArgs e)
         {
+            this._modelPerfil = new mPerfil();
             frmBuscaPerfil objBuscaPerfil = new frmBuscaPerfil(_modelPerfil);
             try
             {
-                objBuscaPerfil.ShowDialog();
+                DialogResult resultado = objBuscaPerfil.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelPerfil = null;
+                }
+                else
+                {
+                    this.txtCodigoPerfil.Text = this._modelPerfil.DescPerfil;
+                }
             }
             catch (Exception ex)
             {
@@ -52,10 +59,19 @@ namespace TCC.UI
 
         private void btnBuscaMenu_Click(object sender, EventArgs e)
         {
+            this._modelMenu = new mMenu();
             frmBuscaMenu objBuscaMenu = new frmBuscaMenu(_modelMenu);
             try
             {
-                objBuscaMenu.ShowDialog();
+                DialogResult resultado = objBuscaMenu.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelMenu = null;
+                }
+                else
+                {
+                    this.txtCodigoMenu.Text = this._modelMenu.DscMenu;
+                }
             }
             catch (Exception ex)
             {
@@ -69,13 +85,27 @@ namespace TCC.UI
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            this.Insere();
+        }
+
+        private void Insere()
+        {
             mPerfilMenu model;
             rPerfilMenu regraPerfilMenu = new rPerfilMenu();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regraPerfilMenu.ValidarInsere(model);
                 this.txtCodigoMenu.Text = string.Empty;
+            }
+            catch (BUSINESS.Exceptions.CodigoMenuVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Menu", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -91,6 +121,8 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
+            this._modelMenu = null;
+            this._modelPerfil = null;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -98,5 +130,16 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
+        private void ValidaDadosNulos()
+        {
+            if (this._modelMenu == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoMenuVazioException();
+            }
+            else if (this._modelPerfil == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
+            }
+        }
     }
 }
