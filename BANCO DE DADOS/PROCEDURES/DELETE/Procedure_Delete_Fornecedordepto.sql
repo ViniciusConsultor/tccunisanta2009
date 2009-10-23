@@ -4,19 +4,19 @@ IF OBJECT_ID('sp_delete_fornecedordepto', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_fornecedordepto
-@id_fornecedor	INT,
+@id_forn	    INT,
 @id_depto       INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Fornecedordepto where id_fornecedor=@id_fornecedor and id_depto=@id_depto)
+IF EXISTS(select 1 from Fornecedordepto where id_forn=@id_forn and id_depto=@id_depto)
 BEGIN
   --deleta logicamente dependencias existentes
     
 --realiza a exclusao logicamente
 UPDATE Fornecedordepto SET flg_ativo = 0
-WHERE id_fornecedor = @id_fornecedor and id_depto=@id_depto
+WHERE id_forn = @id_forn and id_depto=@id_depto
 
 END
 ELSE

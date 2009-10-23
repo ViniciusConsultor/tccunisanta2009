@@ -4,19 +4,19 @@ IF OBJECT_ID('sp_delete_pecafornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_pecafornecedor
-@id_peca    	INT,
-@id_fornecedor  INT
+@id_peca  INT,
+@id_forn  INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Pecafornecedor where id_fornecedor=@id_fornecedor and id_peca=@id_peca)
+IF EXISTS(select 1 from Pecafornecedor where id_forn = @id_forn and id_peca=@id_peca)
 BEGIN
   --deleta logicamente dependencias existentes
     
 --realiza a exclusao logicamente
 UPDATE Pecafornecedor SET flg_ativo = 0
-WHERE id_fornecedor = @id_fornecedor and id_peca=@id_peca
+WHERE id_forn = @id_forn and id_peca=@id_peca
 
 END
 ELSE

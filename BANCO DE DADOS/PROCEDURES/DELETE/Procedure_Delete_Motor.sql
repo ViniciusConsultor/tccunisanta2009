@@ -4,22 +4,22 @@ IF OBJECT_ID('sp_delete_motor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_motor
-@id_motor_compra	INT
+@id_motor	INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from motor where id_motor_compra=@id_motor_compra)
+IF EXISTS(select 1 from motor where id_motor=@id_motor)
 BEGIN
   --deleta logicamente dependencias existentes
-  IF EXISTS(select 1 from familiamotor where id_motor_compra=@id_motor_compra)
+  IF EXISTS(select 1 from familiamotor where id_motor=@id_motor)
 	BEGIN
 		UPDATE familiamotor SET flg_ativo = 0
-		WHERE id_motor_compra=@id_motor_compra
+		WHERE id_motor=@id_motor
 	END	
 --realiza a exclusao logicamente
 UPDATE motor SET flg_ativo = 0
-WHERE id_motor_compra=@id_motor_compra
+WHERE id_motor=@id_motor
 
 END
 ELSE
