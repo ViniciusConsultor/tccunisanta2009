@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "frmBuscaOrdemMotor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmOrdemMotor";
+            this.Text = "Busca Ordem Motor";
             ((System.ComponentModel.ISupportInitialize)(this.dgCdOrdemMotor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -154,7 +154,7 @@
             this.Controls.Add(this.btnConfirmar);
             this.MaximizeBox = false;
             this.Name = "frmCadItemPeca";
-            this.Text = "frmCadItemPeca";
+            this.Text = "Item Peca";
             this.Load += new System.EventHandler(this.frmCadItemPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
