@@ -39,11 +39,12 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(134, 230);
+            this.btnOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOK.BackgroundImage")));
+            this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOK.Location = new System.Drawing.Point(135, 228);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(57, 30);
             this.btnOK.TabIndex = 15;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -51,16 +52,17 @@
             // 
             this.txtFiltro.Location = new System.Drawing.Point(45, 13);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(179, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(206, 20);
             this.txtFiltro.TabIndex = 13;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(230, 11);
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(257, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(47, 33);
             this.btnBuscar.TabIndex = 14;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 

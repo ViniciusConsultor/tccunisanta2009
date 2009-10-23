@@ -259,9 +259,9 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(4, 42);
+            this.btnLimpar.Location = new System.Drawing.Point(4, 36);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(39, 27);
+            this.btnLimpar.Size = new System.Drawing.Size(39, 33);
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -280,51 +280,56 @@
             // 
             // btnBuscaFornecedor
             // 
+            this.btnBuscaFornecedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaFornecedor.BackgroundImage")));
+            this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaFornecedor.Location = new System.Drawing.Point(239, 50);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(34, 23);
             this.btnBuscaFornecedor.TabIndex = 13;
-            this.btnBuscaFornecedor.Text = "...";
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
             // btnBuscaPeca
             // 
+            this.btnBuscaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPeca.BackgroundImage")));
+            this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPeca.Location = new System.Drawing.Point(239, 82);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(34, 23);
             this.btnBuscaPeca.TabIndex = 14;
-            this.btnBuscaPeca.Text = "...";
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
             // btnBuscaDepartamento
             // 
+            this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
+            this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(493, 19);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(34, 23);
             this.btnBuscaDepartamento.TabIndex = 15;
-            this.btnBuscaDepartamento.Text = "...";
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
             // btnBuscaTipoProduto
             // 
+            this.btnBuscaTipoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaTipoProduto.BackgroundImage")));
+            this.btnBuscaTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaTipoProduto.Location = new System.Drawing.Point(493, 50);
             this.btnBuscaTipoProduto.Name = "btnBuscaTipoProduto";
             this.btnBuscaTipoProduto.Size = new System.Drawing.Size(34, 23);
             this.btnBuscaTipoProduto.TabIndex = 16;
-            this.btnBuscaTipoProduto.Text = "...";
             this.btnBuscaTipoProduto.UseVisualStyleBackColor = true;
             this.btnBuscaTipoProduto.Click += new System.EventHandler(this.btnBuscaTipoProduto_Click);
             // 
             // btnBuscaMotorCompra
             // 
+            this.btnBuscaMotorCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaMotorCompra.BackgroundImage")));
+            this.btnBuscaMotorCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaMotorCompra.Location = new System.Drawing.Point(493, 82);
             this.btnBuscaMotorCompra.Name = "btnBuscaMotorCompra";
             this.btnBuscaMotorCompra.Size = new System.Drawing.Size(34, 23);
             this.btnBuscaMotorCompra.TabIndex = 17;
-            this.btnBuscaMotorCompra.Text = "...";
             this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
             this.btnBuscaMotorCompra.Click += new System.EventHandler(this.btnBuscaMotorCompra_Click);
             // 
