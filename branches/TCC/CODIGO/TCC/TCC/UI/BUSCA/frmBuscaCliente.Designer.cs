@@ -75,6 +75,7 @@
             this.dgCliente.MultiSelect = false;
             this.dgCliente.Name = "dgCliente";
             this.dgCliente.ReadOnly = true;
+            this.dgCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCliente.ShowEditingIcon = false;
             this.dgCliente.Size = new System.Drawing.Size(260, 177);
