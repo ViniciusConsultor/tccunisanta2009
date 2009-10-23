@@ -1,0 +1,5 @@
+C:\Users\Kaue\DESENVOLVIMENTO\C#\TCC\CODIGO\TCC\Controles\bin\Debug\Controles.dll
+C:\Users\Kaue\DESENVOLVIMENTO\C#\TCC\CODIGO\TCC\Controles\bin\Debug\Controles.pdb
+C:\Users\Kaue\DESENVOLVIMENTO\C#\TCC\CODIGO\TCC\Controles\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\DESENVOLVIMENTO\C#\TCC\CODIGO\TCC\Controles\obj\Debug\Controles.dll
+C:\Users\Kaue\DESENVOLVIMENTO\C#\TCC\CODIGO\TCC\Controles\obj\Debug\Controles.pdb

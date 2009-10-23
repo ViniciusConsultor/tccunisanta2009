@@ -88,7 +88,7 @@ namespace TCC.MODEL
             set { numeroEndereco = value; }
         }
 
-        [ColunasBancoDados("slg_estado", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("slg_est", System.Data.SqlDbType.VarChar, false)]
         public string SlgEstado
         {
             get { return slgEstado; }

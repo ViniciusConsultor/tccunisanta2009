@@ -10,7 +10,7 @@ namespace TCC.MODEL
         private int idVenda;
         private int? idMotor;
         private int idCli;
-        private DateTime datVenda;
+        private DateTime? datVenda;
         private int? qtd;
         private double? valor;
         private string notaFisc;
@@ -42,7 +42,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("dat_venda", System.Data.SqlDbType.DateTime,false)]
-        public DateTime DatVenda
+        public DateTime? DatVenda
         {
             get { return datVenda; }
             set { datVenda = value; }
