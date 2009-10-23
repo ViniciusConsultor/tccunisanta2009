@@ -4,18 +4,18 @@ IF OBJECT_ID('sp_delete_estoque', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_estoque
-@id_estoque	INT
+@id_estoq	INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from estoque where id_estoque=@id_estoque)
+IF EXISTS(select 1 from estoque where id_estoq=@id_estoq)
 BEGIN
   --deleta logicamente dependencias existentes
   
 --realiza a exclusao logicamente
 UPDATE estoque SET flg_ativo = 0
-WHERE id_estoque = @id_estoque
+WHERE id_estoq = @id_estoq
 
 END
 ELSE

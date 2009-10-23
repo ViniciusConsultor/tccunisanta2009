@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_insert_ordemproducao
 @id_ordem           INT,
 @id_tipo_produto    INT,
 @id_depto           INT,
-@id_motor           INT,
+@id_fam_motor       INT,
 @id_grupo           INT,
 @dsc_ordem          VARCHAR(500)
 AS
@@ -22,14 +22,14 @@ ELSE IF(@id_depto='')
    RAISERROR('Informe o departamento da ordem!',16,1)
 ELSE IF(@dsc_ordem='')
    RAISERROR('Informe uma descricao para a ordem!',16,1)   
-ELSE IF(@id_motor='' and @id_grupo='')
+ELSE IF(@id_fam_motor='' and @id_grupo='')
    RAISERROR('Informe o código do motor ou do grupo de peças!',16,1)
 ELSE
 
 BEGIN
 --Insert na tabela ordemproducao
-INSERT INTO ORDEMPRODUCAO(id_ordem, id_tipo_produto, id_depto, id_motor, id_grupo, dsc_ordem)
-VALUES (@id_ordem, @id_tipo_produto, @id_depto, @id_motor, @id_grupo, @dsc_ordem)
+INSERT INTO ORDEMPRODUCAO(id_ordem, id_tipo_produto, id_depto, id_fam_motor, id_grupo, dsc_ordem)
+VALUES (@id_ordem, @id_tipo_produto, @id_depto, @id_fam_motor, @id_grupo, @dsc_ordem)
 END
 END TRY
 

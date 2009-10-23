@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_update_ordemproducao
 @id_ordem       INT,
 @id_tipo_produto    INT,
 @id_depto           INT,
-@id_motor           INT,
+@id_fam_motor           INT,
 @id_grupo           INT,
 @dsc_ordem          VARCHAR(500)
 AS
@@ -23,7 +23,7 @@ UPDATE ordemproducao SET
 
 id_tipo_produto = @id_tipo_produto, 
 id_depto        = @id_depto, 
-id_motor        = @id_motor, 
+id_fam_motor        = @id_fam_motor, 
 id_grupo        = @id_grupo, 
 dsc_ordem       = @dsc_ordem
 

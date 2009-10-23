@@ -5,19 +5,19 @@ GO
 
 CREATE PROCEDURE sp_update_cliente
 @id_cli			 INT,
-@slg_estado		 VARCHAR(2),
-@nom_cli		 VARCHAR(60),
-@tel_cli	     VARCHAR(20),
-@ddd_cliente     INT,
-@email_cliente   VARCHAR(100),
-@id_rg			 INT,
-@id_cnpj		 INT,
-@nom_rua	     VARCHAR(100),
-@num_end		 INT,
-@compl_end	     VARCHAR(20),
+@slg_est		 VARCHAR(2),
+@nom      		 VARCHAR(60),
+@tel	         VARCHAR(20),
+@ddd             INT,
+@mail            VARCHAR(100),
+@rg			     INT,
+@cnpj		     INT,
+@rua	         VARCHAR(100),
+@nro_ende		 INT,
+@compl	         VARCHAR(20),
 @cep		     INT,
-@bairr_end		 VARCHAR(20),
-@cidade		     VARCHAR(50),
+@bairr		     VARCHAR(20),
+@cid		     VARCHAR(50),
 @dat_atl		 DATETIME,
 @flg_ativo		 BIT
 AS
@@ -31,21 +31,21 @@ BEGIN
 --Update na tabela cliente
 UPDATE Cliente SET
 
-slg_estado    = @slg_estado, 
-nom_cli       = @nom_cli, 
-tel_cli       = @tel_cli, 
-ddd_cliente   = @ddd_cliente,
-email_cliente = @email_cliente, 
-id_rg         = @id_rg, 
-id_cnpj       = @id_cnpj, 
-nom_rua       = @nom_rua, 
-num_end       = @num_end, 
-compl_end     = @compl_end, 
-cep           = @cep, 
-bairr_end     = @bairr_end, 
-cidade        = @cidade, 
-dat_atl       = @dat_atl, 
-flg_ativo     = @flg_ativo
+slg_est   = @slg_est, 
+nom       = @nom, 
+tel       = @tel, 
+ddd       = @ddd,
+mail      = @mail, 
+rg        = @rg, 
+cnpj      = @cnpj, 
+rua       = @rua, 
+nro_ende  = @nro_ende, 
+compl     = @compl, 
+cep       = @cep, 
+bairr     = @bairr, 
+cid       = @cid, 
+dat_atl   = @dat_atl, 
+flg_ativo = @flg_ativo
 
 WHERE id_cli = @id_cli
 
