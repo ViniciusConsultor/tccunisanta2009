@@ -69,6 +69,7 @@ namespace TCC.UI
                         this._model.IdCliente = Convert.ToInt32(dvc.Value);
                         dvc = this.dgCliente["Cliente", this.dgCliente.CurrentRow.Index];
                         this._model.NomeCliente = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -99,6 +100,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
     }

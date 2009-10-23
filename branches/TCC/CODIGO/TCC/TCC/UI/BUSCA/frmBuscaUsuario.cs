@@ -32,12 +32,13 @@ namespace TCC.UI
         }
         #endregion
 
-        #region Atributos
-        TextBox _txtParam;
-        #endregion
-
         #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
         {
             rUsuario regraUsuario = new rUsuario();
             DataTable dt = new DataTable();
@@ -45,6 +46,7 @@ namespace TCC.UI
             {
                 dt = regraUsuario.BuscaUsuario(this.txtFiltro.Text);
                 dgUsuario.DataSource = dt;
+                this.dgUsuario.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -56,7 +58,15 @@ namespace TCC.UI
                 dt = null;
             }
         }
+
+
         private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+        #endregion
+
+        private void RetornaModel()
         {
             DataGridViewCell dvC = null;
             DataTable dtSource = new DataTable();
@@ -75,6 +85,7 @@ namespace TCC.UI
                             _model.IdUsuario = Convert.ToInt32(dvC.Value);
                             dvC = this.dgUsuario["Usuário", this.dgUsuario.CurrentRow.Index];
                             _model.Login = dvC.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
                         else
@@ -110,6 +121,11 @@ namespace TCC.UI
                 }
             }
         }
-        #endregion
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

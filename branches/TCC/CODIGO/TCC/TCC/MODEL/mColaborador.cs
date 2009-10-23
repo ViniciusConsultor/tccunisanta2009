@@ -71,14 +71,14 @@ namespace TCC.MODEL
             set { nomeRua = value; }
         }
 
-        [ColunasBancoDados("nro_end", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("nro_ende", System.Data.SqlDbType.Int, false)]
         public int? NroEnd
         {
             get { return nroEnd; }
             set { nroEnd = value; }
         }
 
-        [ColunasBancoDados("compl_end", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("compl", System.Data.SqlDbType.VarChar, false)]
         public string ComplEnd
         {
             get { return complEnd; }
@@ -106,7 +106,7 @@ namespace TCC.MODEL
             set { cidade = value; }
         }
 
-        [ColunasBancoDados("slg_estado", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("slg_est", System.Data.SqlDbType.Int, false)]
         public string Estado
         {
             get { return estado; }

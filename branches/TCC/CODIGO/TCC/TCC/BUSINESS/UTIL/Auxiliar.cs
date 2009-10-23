@@ -29,5 +29,7 @@ namespace TCC.BUSINESS.UTIL
             return criptografado;
         }
         #endregion Criptografa Senha
+
+
     }
 }

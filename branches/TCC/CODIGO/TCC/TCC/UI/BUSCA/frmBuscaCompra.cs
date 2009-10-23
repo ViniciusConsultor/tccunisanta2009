@@ -3,56 +3,52 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
 using TCC.MODEL;
+using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmBuscaMotor : Form
+    public partial class frmBuscaCompra : Form
     {
-        mMotor _model;
-        public frmBuscaMotor(mMotor modelMotor)
+        mCompra _model;
+
+        public frmBuscaCompra(mCompra modelCompra)
         {
             InitializeComponent();
-            this._model = modelMotor;
-        }
-        public void BuscaCodigo()
-        {
-
-        }
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            this.PopulaGrid();
-        }
-
-        private void PopulaGrid()
-        {
-            rMotor regraMotor = new rMotor();
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = regraMotor.BuscaMotores(this.txtFiltro.Text);
-                dgMotor.DataSource = dt;
-                this.dgMotor.Columns[0].Visible = false;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                regraMotor = null;
-                dt = null;
-            }
+            this._model = modelCompra;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.RetornaModel();
+        }
+
+        private void PopulaGrid()
+        {
+            rCompra regra = new rCompra();
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = regra.BuscaCompra(this.txtFiltro.Text);
+                dgDepartamento.DataSource = dt;
+                dgDepartamento.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+                dt = null;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.PopulaGrid();
         }
 
         private void RetornaModel()
@@ -61,31 +57,30 @@ namespace TCC.UI
             DataTable dtSource = new DataTable();
             try
             {
-                dtSource = (DataTable)this.dgMotor.DataSource;
-                if (this.dgMotor.DataSource != null)
+                dtSource = (DataTable)this.dgDepartamento.DataSource;
+                if (this.dgDepartamento.DataSource != null)
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgMotor["id_motor", this.dgMotor.CurrentRow.Index];
-                        _model.IdMotor = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgMotor["Motor", this.dgMotor.CurrentRow.Index];
-                        _model.DscMotor = dvc.Value.ToString();
+                        dvc = this.dgDepartamento["id_compra", this.dgDepartamento.CurrentRow.Index];
+                        this._model.IdCompra = Convert.ToInt32(dvc.Value);
+                        dvc = this.dgDepartamento["Obs Compra", this.dgDepartamento.CurrentRow.Index];
+                        this._model.Obs = dvc.Value.ToString();
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("É necessário cadastrar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("É necessário cadastrar um Cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário buscar e selecionar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("É necessário buscar e selecionar um Cliente!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally

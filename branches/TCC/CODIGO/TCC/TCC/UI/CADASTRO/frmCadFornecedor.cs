@@ -22,8 +22,8 @@ namespace TCC.UI
             rEstado regraEstado = new rEstado();
             try
             {
-                this.cboUf.DisplayMember = "slg_estado";
-                this.cboUf.ValueMember = "id_estado";
+                this.cboUf.DisplayMember = "slg_est";
+                this.cboUf.ValueMember = "Estado";
                 this.cboUf.DataSource = regraEstado.BuscaEstado();
             }
             catch (Exception ex)

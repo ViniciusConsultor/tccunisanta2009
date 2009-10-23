@@ -48,7 +48,7 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
+            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -66,6 +66,7 @@ namespace TCC.UI
                         this._model.IdFamiliaMotor = Convert.ToInt32(dvc.Value);
                         dvc = this.dgCliente["Familia Motor", this.dgCliente.CurrentRow.Index];
                         this._model.DscFamiliaMotor = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -96,6 +97,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

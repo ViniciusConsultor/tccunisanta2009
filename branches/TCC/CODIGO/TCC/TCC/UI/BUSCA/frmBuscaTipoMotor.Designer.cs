@@ -33,6 +33,7 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgTipoMotor = new System.Windows.Forms.DataGridView();
+            this.btnFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this.btnOK.Size = new System.Drawing.Size(59, 32);
             this.btnOK.TabIndex = 11;
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // txtFiltro
             // 
@@ -62,6 +64,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(46, 30);
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgTipoMotor
             // 
@@ -77,16 +80,32 @@
             this.dgTipoMotor.Size = new System.Drawing.Size(260, 177);
             this.dgTipoMotor.TabIndex = 8;
             // 
+            // btnFechar
+            // 
+            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFechar.Location = new System.Drawing.Point(12, 228);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(49, 34);
+            this.btnFechar.TabIndex = 16;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // frmBuscaTipoMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgTipoMotor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "frmBuscaTipoMotor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmTipoMotor";
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoMotor)).EndInit();
             this.ResumeLayout(false);
@@ -100,5 +119,6 @@
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgTipoMotor;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

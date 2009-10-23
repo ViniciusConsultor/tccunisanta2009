@@ -28,7 +28,7 @@ namespace TCC.UI
                 foreach (Control controle in form.Controls)
                 {
                     tipo = controle.GetType();
-                    if (tipo.Equals(new TextBox().GetType()) == true)
+                    if (tipo.Equals(new TextBox().GetType()) == true || tipo.Equals(new MaskedTextBox().GetType()) == true)
                     {
                         controle.Text = string.Empty;
                     }

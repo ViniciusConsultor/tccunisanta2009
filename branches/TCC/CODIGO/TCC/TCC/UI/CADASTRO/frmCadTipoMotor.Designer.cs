@@ -68,6 +68,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(24, 23);
             this.btnAceitar.TabIndex = 14;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // lblCdTipoMotor
             // 

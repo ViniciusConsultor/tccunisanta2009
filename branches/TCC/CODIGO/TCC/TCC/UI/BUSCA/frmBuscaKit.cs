@@ -66,6 +66,7 @@ namespace TCC.UI
                         this._model.Id_grupo = Convert.ToInt32(dvc.Value);
                         dvc = this.dgKit["Kit Grupo Peça", this.dgKit.CurrentRow.Index];
                         this._model.Nom_grupo = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -96,6 +97,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

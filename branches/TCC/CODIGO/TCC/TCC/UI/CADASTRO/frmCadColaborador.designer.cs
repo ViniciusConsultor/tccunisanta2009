@@ -43,7 +43,6 @@
             this.txtCdUsuario = new System.Windows.Forms.TextBox();
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtDataDd = new System.Windows.Forms.TextBox();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -61,10 +60,6 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnApaga = new System.Windows.Forms.Button();
-            this.txtDataMm = new System.Windows.Forms.TextBox();
-            this.txtDataYyyy = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.btnBuscaUsuario = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
@@ -75,6 +70,7 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblIdColaborador
@@ -173,6 +169,7 @@
             this.txtCdColab.Enabled = false;
             this.txtCdColab.Location = new System.Drawing.Point(210, 9);
             this.txtCdColab.Name = "txtCdColab";
+            this.txtCdColab.ReadOnly = true;
             this.txtCdColab.Size = new System.Drawing.Size(59, 20);
             this.txtCdColab.TabIndex = 0;
             // 
@@ -182,6 +179,7 @@
             this.txtCdUsuario.Enabled = false;
             this.txtCdUsuario.Location = new System.Drawing.Point(360, 9);
             this.txtCdUsuario.Name = "txtCdUsuario";
+            this.txtCdUsuario.ReadOnly = true;
             this.txtCdUsuario.Size = new System.Drawing.Size(50, 20);
             this.txtCdUsuario.TabIndex = 0;
             // 
@@ -191,6 +189,7 @@
             this.txtCdDepartamento.Enabled = false;
             this.txtCdDepartamento.Location = new System.Drawing.Point(562, 11);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
+            this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(50, 20);
             this.txtCdDepartamento.TabIndex = 0;
             // 
@@ -202,16 +201,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(241, 20);
             this.txtNome.TabIndex = 3;
-            // 
-            // txtDataDd
-            // 
-            this.txtDataDd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDataDd.Location = new System.Drawing.Point(499, 37);
-            this.txtDataDd.MaxLength = 2;
-            this.txtDataDd.Name = "txtDataDd";
-            this.txtDataDd.Size = new System.Drawing.Size(26, 20);
-            this.txtDataDd.TabIndex = 4;
-            this.txtDataDd.TextChanged += new System.EventHandler(this.txtDataDd_TextChanged);
             // 
             // txtRua
             // 
@@ -376,44 +365,6 @@
             this.btnApaga.UseVisualStyleBackColor = true;
             this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
             // 
-            // txtDataMm
-            // 
-            this.txtDataMm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDataMm.Location = new System.Drawing.Point(539, 37);
-            this.txtDataMm.MaxLength = 2;
-            this.txtDataMm.Name = "txtDataMm";
-            this.txtDataMm.Size = new System.Drawing.Size(26, 20);
-            this.txtDataMm.TabIndex = 5;
-            this.txtDataMm.TextChanged += new System.EventHandler(this.txtDataMm_TextChanged);
-            // 
-            // txtDataYyyy
-            // 
-            this.txtDataYyyy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDataYyyy.Location = new System.Drawing.Point(578, 37);
-            this.txtDataYyyy.MaxLength = 4;
-            this.txtDataYyyy.Name = "txtDataYyyy";
-            this.txtDataYyyy.Size = new System.Drawing.Size(63, 20);
-            this.txtDataYyyy.TabIndex = 6;
-            this.txtDataYyyy.TextChanged += new System.EventHandler(this.txtDataYyyy_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(525, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "/";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(566, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "/";
-            // 
             // cbEstado
             // 
             this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -509,6 +460,15 @@
             this.txtEmail.Size = new System.Drawing.Size(162, 20);
             this.txtEmail.TabIndex = 26;
             // 
+            // txtDataNasc
+            // 
+            this.txtDataNasc.Location = new System.Drawing.Point(499, 36);
+            this.txtDataNasc.Mask = "00/00/0000";
+            this.txtDataNasc.Name = "txtDataNasc";
+            this.txtDataNasc.Size = new System.Drawing.Size(66, 20);
+            this.txtDataNasc.TabIndex = 27;
+            this.txtDataNasc.ValidatingType = typeof(System.DateTime);
+            // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,6 +477,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(653, 259);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtTelefone);
@@ -527,8 +488,6 @@
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnBuscaUsuario);
             this.Controls.Add(this.cbEstado);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnApaga);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnConfirma);
@@ -546,9 +505,6 @@
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtRua);
-            this.Controls.Add(this.txtDataYyyy);
-            this.Controls.Add(this.txtDataMm);
-            this.Controls.Add(this.txtDataDd);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtCdDepartamento);
             this.Controls.Add(this.txtCdUsuario);
@@ -588,7 +544,6 @@
         private System.Windows.Forms.TextBox txtCdUsuario;
         private System.Windows.Forms.TextBox txtCdDepartamento;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtDataDd;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;
@@ -606,10 +561,6 @@
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnApaga;
-        private System.Windows.Forms.TextBox txtDataMm;
-        private System.Windows.Forms.TextBox txtDataYyyy;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Button btnBuscaUsuario;
         private System.Windows.Forms.Button btnBuscaDepartamento;
@@ -620,5 +571,6 @@
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.MaskedTextBox txtDataNasc;
     }
 }

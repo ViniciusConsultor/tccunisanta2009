@@ -73,7 +73,7 @@
     <Compile Include="BUSINESS\Exceptions\Colaborador\CepVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CodigoDepartamentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CodigoUsuarioVazioExeception.cs" />
-    <Compile Include="BUSINESS\Exceptions\Colaborador\DiaNascimentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\DataNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\MesNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\FornecedorSemIdExecption.cs" />
     <Compile Include="BUSINESS\Exceptions\LoginExistenteException.cs" />
@@ -84,6 +84,7 @@
     <Compile Include="BUSINESS\rCadColaborador.cs" />
     <Compile Include="BUSINESS\rCliente.cs" />
     <Compile Include="BUSINESS\rCompra.cs" />
+    <Compile Include="BUSINESS\rCompraPeca.cs" />
     <Compile Include="BUSINESS\rDepartamento.cs" />
     <Compile Include="BUSINESS\rEstado.cs" />
     <Compile Include="BUSINESS\rEstoque.cs" />
@@ -165,6 +166,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaCliente.resx">
       <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaCompra.resx">
+      <DependentUpon>frmBuscaCompra.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaFamiliaMotor.resx">
@@ -368,6 +373,12 @@
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaCliente.Designer.cs">
       <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCompra.Designer.cs">
+      <DependentUpon>frmBuscaCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaFamiliaMotor.cs">
       <SubType>Form</SubType>

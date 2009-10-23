@@ -13,11 +13,12 @@ namespace TCC.MODEL
         private string obs;
         private int idFornecedor;
         private int idMotorCompra;
+        private int idPeca;
         private int qtd;
-        private int valor;
-        private int notaFiscal;
+        private double valor;
+        private string notaFiscal;
         private int idTipoProduto;
-        private string nomeTabela;
+        private string nomeTabela = "compra";
 
         [ColunasBancoDados("id_depto", System.Data.SqlDbType.Int,false)]
         public int IdDepto
@@ -47,14 +48,14 @@ namespace TCC.MODEL
             set { obs = value; }
         }
 
-        [ColunasBancoDados ("id_fornecedor", System.Data.SqlDbType.Int,false)]
+        [ColunasBancoDados ("id_forn", System.Data.SqlDbType.Int,false)]
         public int IdFornecedor
         {
             get { return idFornecedor; }
             set { idFornecedor = value; }
         }
 
-        [ColunasBancoDados ("id_motor_compra", System.Data.SqlDbType.Int,false)]
+        [ColunasBancoDados ("id_motor", System.Data.SqlDbType.Int,false)]
         public int IdMotorCompra
         {
             get { return idMotorCompra; }
@@ -69,14 +70,14 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("valor", System.Data.SqlDbType.Int,false)]
-        public int Valor
+        public double Valor
         {
             get { return valor; }
             set { valor = value; }
         }
 
-        [ColunasBancoDados ("nota_fisc", System.Data.SqlDbType.Int,false)]
-        public int NotaFiscal
+        [ColunasBancoDados ("nota_fisc", System.Data.SqlDbType.VarChar,false)]
+        public string NotaFiscal
         {
             get { return notaFiscal; }
             set { notaFiscal = value; }
@@ -87,6 +88,13 @@ namespace TCC.MODEL
         {
             get { return idTipoProduto; }
             set { idTipoProduto = value; }
+        }
+
+        [ColunasBancoDados("id_peca", System.Data.SqlDbType.Int, false)]
+        public int IdPeca
+        {
+            get { return idPeca; }
+            set { idPeca = value; }
         }
 
         public override string  getNomeTabela()
