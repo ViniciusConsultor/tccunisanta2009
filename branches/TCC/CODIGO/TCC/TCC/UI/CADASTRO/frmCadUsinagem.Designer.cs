@@ -122,7 +122,7 @@
             // chkPecaOk
             // 
             this.chkPecaOk.AutoSize = true;
-            this.chkPecaOk.Location = new System.Drawing.Point(170, 96);
+            this.chkPecaOk.Location = new System.Drawing.Point(165, 118);
             this.chkPecaOk.Name = "chkPecaOk";
             this.chkPecaOk.Size = new System.Drawing.Size(69, 17);
             this.chkPecaOk.TabIndex = 11;
