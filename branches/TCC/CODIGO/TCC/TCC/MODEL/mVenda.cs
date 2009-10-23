@@ -55,7 +55,7 @@ namespace TCC.MODEL
             set { qtd = value; }
         }
 
-        [ColunasBancoDados ("valor", System.Data.SqlDbType.Int,false)]
+        [ColunasBancoDados ("valor", System.Data.SqlDbType.Decimal,false)]
         public double? Valor
         {
             get { return valor; }

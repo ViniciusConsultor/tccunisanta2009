@@ -99,6 +99,7 @@
             this.txtCdVendaMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdVendaMotor.Location = new System.Drawing.Point(267, 57);
             this.txtCdVendaMotor.Name = "txtCdVendaMotor";
+            this.txtCdVendaMotor.ReadOnly = true;
             this.txtCdVendaMotor.Size = new System.Drawing.Size(56, 20);
             this.txtCdVendaMotor.TabIndex = 20;
             // 
@@ -116,6 +117,7 @@
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Location = new System.Drawing.Point(265, 92);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
+            this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(56, 20);
             this.txtCdDepartamento.TabIndex = 20;
             // 

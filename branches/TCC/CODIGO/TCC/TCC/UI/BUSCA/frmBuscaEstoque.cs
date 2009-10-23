@@ -65,6 +65,7 @@ namespace TCC.UI
                         _model.Id_estoque = Convert.ToInt32(dvC.Value);
                         dvC = this.dgEstoque["Estoque", this.dgEstoque.CurrentRow.Index];
                         _model.Dsc_estoque = dvC.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -94,6 +95,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TCC.MODEL
     public class mCompraPeca : ModelPai
     {
         private int idPeca;
-        private int ultimoPreco;
+        private double ultimoPreco;
         private int idCompra;
         private string nomeTabela = "Comprapeca";
 
@@ -19,8 +19,8 @@ namespace TCC.MODEL
             set { idPeca = value; }
         }
 
-        [ColunasBancoDados("ultim_preco", System.Data.SqlDbType.Int,false)]
-        public int UltimoPreco
+        [ColunasBancoDados("ultim_preco", System.Data.SqlDbType.Decimal,false)]
+        public double UltimoPreco
         {
             get { return ultimoPreco; }
             set { ultimoPreco = value; }

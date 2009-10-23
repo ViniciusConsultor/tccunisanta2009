@@ -22,6 +22,11 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
             rFornecedor regra = new rFornecedor();
             try
             {
@@ -39,6 +44,11 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
+        {
             DataGridViewCell dvC = null;
             DataTable dtSource = new DataTable();
             try
@@ -50,10 +60,11 @@ namespace TCC.UI
                     {
                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                         //------------------------------------------------------------------------------------
-                        dvC = this.dgFornecedor["id_fornecedor", this.dgFornecedor.CurrentRow.Index];
-                        _model.IdFornecedor = Convert.ToInt32(dvC.Value); 
+                        dvC = this.dgFornecedor["id_forn", this.dgFornecedor.CurrentRow.Index];
+                        _model.IdFornecedor = Convert.ToInt32(dvC.Value);
                         dvC = this.dgFornecedor["Fornecedor", this.dgFornecedor.CurrentRow.Index];
                         _model.NomeFornecedor = dvC.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -83,6 +94,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

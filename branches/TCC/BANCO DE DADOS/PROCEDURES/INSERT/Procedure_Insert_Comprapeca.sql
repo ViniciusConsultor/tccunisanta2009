@@ -5,7 +5,8 @@ GO
 
 CREATE PROCEDURE sp_insert_comprapeca
 @id_compra       INT,
-@ultim_preco     INT
+@ultim_preco     INT,
+@id_peca		 INT
 
 AS 
 BEGIN TRY
@@ -18,8 +19,8 @@ ELSE
 
 BEGIN
 --Insert na tabela comprapeca
-INSERT INTO comprapeca(id_compra, ultim_preco)
-VALUES(@id_compra, @ultim_preco)
+INSERT INTO comprapeca(id_compra, ultim_preco, id_peca)
+VALUES(@id_compra, @ultim_preco, @id_peca)
 END
 END TRY
 

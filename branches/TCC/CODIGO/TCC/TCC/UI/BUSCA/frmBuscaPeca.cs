@@ -68,6 +68,7 @@ namespace TCC.UI
                         this._model.IdPeca = Convert.ToInt32(dvC.Value);
                         dvC = this.dgPeca["Peça", this.dgPeca.CurrentRow.Index];
                         this._model.Nom = dvC.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -97,6 +98,11 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

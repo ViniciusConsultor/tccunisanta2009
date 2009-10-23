@@ -16,7 +16,6 @@ CREATE PROCEDURE sp_insert_venda
 @nota_fisc          VARCHAR(20),
 @dat_saida          DATETIME
 AS
-
 BEGIN TRY
 --Validações na tabela  venda
 IF(@id_venda='')
@@ -31,7 +30,7 @@ ELSE IF(@id_cli='')
   RAISERROR('Informe o código do cliente!',16,1)  
 ELSE IF(@qtd='')
   RAISERROR('Informe a quantidade da venda!',16,1)   
-ELSE IF(@valor='')
+ELSE IF(CONVERT(VARCHAR, @valor)='')
   RAISERROR('Informe o valor da venda!',16,1)     
 ELSE IF(@nota_fisc='')
   RAISERROR('Informe a nota fiscal da venda!',16,1)     

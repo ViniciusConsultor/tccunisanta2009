@@ -34,7 +34,7 @@
             this.lblCdDepartamento = new System.Windows.Forms.Label();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
-            this.txtFornecedor = new System.Windows.Forms.TextBox();
+            this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.lblCdTipoProduto = new System.Windows.Forms.Label();
             this.txtCdTipoProduto = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
@@ -42,11 +42,6 @@
             this.lblCdMotorCompra = new System.Windows.Forms.Label();
             this.txtCdMotorCompra = new System.Windows.Forms.TextBox();
             this.lblDtCompra = new System.Windows.Forms.Label();
-            this.txtDd = new System.Windows.Forms.TextBox();
-            this.txtMm = new System.Windows.Forms.TextBox();
-            this.txtYyyy = new System.Windows.Forms.TextBox();
-            this.lblB = new System.Windows.Forms.Label();
-            this.lblBb = new System.Windows.Forms.Label();
             this.lblObservacao = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.lblQtdCompra = new System.Windows.Forms.Label();
@@ -63,6 +58,7 @@
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.btnBuscaTipoProduto = new System.Windows.Forms.Button();
             this.btnBuscaMotorCompra = new System.Windows.Forms.Button();
+            this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCdCompra
@@ -110,14 +106,14 @@
             this.lblCdFornecedor.TabIndex = 11;
             this.lblCdFornecedor.Text = "Codigo do Fornecedor";
             // 
-            // txtFornecedor
+            // txtCdFornecedor
             // 
-            this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFornecedor.Location = new System.Drawing.Point(195, 53);
-            this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.ReadOnly = true;
-            this.txtFornecedor.Size = new System.Drawing.Size(38, 20);
-            this.txtFornecedor.TabIndex = 12;
+            this.txtCdFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdFornecedor.Location = new System.Drawing.Point(195, 53);
+            this.txtCdFornecedor.Name = "txtCdFornecedor";
+            this.txtCdFornecedor.ReadOnly = true;
+            this.txtCdFornecedor.Size = new System.Drawing.Size(38, 20);
+            this.txtCdFornecedor.TabIndex = 12;
             // 
             // lblCdTipoProduto
             // 
@@ -181,48 +177,6 @@
             this.lblDtCompra.Size = new System.Drawing.Size(86, 13);
             this.lblDtCompra.TabIndex = 11;
             this.lblDtCompra.Text = "Data Da Compra";
-            // 
-            // txtDd
-            // 
-            this.txtDd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDd.Location = new System.Drawing.Point(292, 119);
-            this.txtDd.Name = "txtDd";
-            this.txtDd.Size = new System.Drawing.Size(31, 20);
-            this.txtDd.TabIndex = 12;
-            // 
-            // txtMm
-            // 
-            this.txtMm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMm.Location = new System.Drawing.Point(349, 119);
-            this.txtMm.Name = "txtMm";
-            this.txtMm.Size = new System.Drawing.Size(27, 20);
-            this.txtMm.TabIndex = 12;
-            // 
-            // txtYyyy
-            // 
-            this.txtYyyy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtYyyy.Location = new System.Drawing.Point(404, 119);
-            this.txtYyyy.Name = "txtYyyy";
-            this.txtYyyy.Size = new System.Drawing.Size(28, 20);
-            this.txtYyyy.TabIndex = 12;
-            // 
-            // lblB
-            // 
-            this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(327, 121);
-            this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(12, 13);
-            this.lblB.TabIndex = 11;
-            this.lblB.Text = "/";
-            // 
-            // lblBb
-            // 
-            this.lblBb.AutoSize = true;
-            this.lblBb.Location = new System.Drawing.Point(382, 121);
-            this.lblBb.Name = "lblBb";
-            this.lblBb.Size = new System.Drawing.Size(12, 13);
-            this.lblBb.TabIndex = 11;
-            this.lblBb.Text = "/";
             // 
             // lblObservacao
             // 
@@ -301,6 +255,7 @@
             this.btnAceitar.Size = new System.Drawing.Size(39, 31);
             this.btnAceitar.TabIndex = 8;
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // btnLimpar
             // 
@@ -341,6 +296,7 @@
             this.btnBuscaPeca.TabIndex = 14;
             this.btnBuscaPeca.Text = "...";
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
+            this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
             // btnBuscaDepartamento
             // 
@@ -360,6 +316,7 @@
             this.btnBuscaTipoProduto.TabIndex = 16;
             this.btnBuscaTipoProduto.Text = "...";
             this.btnBuscaTipoProduto.UseVisualStyleBackColor = true;
+            this.btnBuscaTipoProduto.Click += new System.EventHandler(this.btnBuscaTipoProduto_Click);
             // 
             // btnBuscaMotorCompra
             // 
@@ -371,6 +328,15 @@
             this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
             this.btnBuscaMotorCompra.Click += new System.EventHandler(this.btnBuscaMotorCompra_Click);
             // 
+            // txtDataCompra
+            // 
+            this.txtDataCompra.Location = new System.Drawing.Point(301, 118);
+            this.txtDataCompra.Mask = "00/00/0000";
+            this.txtDataCompra.Name = "txtDataCompra";
+            this.txtDataCompra.Size = new System.Drawing.Size(66, 20);
+            this.txtDataCompra.TabIndex = 18;
+            this.txtDataCompra.ValidatingType = typeof(System.DateTime);
+            // 
             // frmCadCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,14 +345,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 271);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.btnBuscaMotorCompra);
             this.Controls.Add(this.btnBuscaTipoProduto);
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnBuscaPeca);
             this.Controls.Add(this.btnBuscaFornecedor);
-            this.Controls.Add(this.txtYyyy);
-            this.Controls.Add(this.txtMm);
-            this.Controls.Add(this.txtDd);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.txtNotaFiscal);
             this.Controls.Add(this.txtVlCompra);
@@ -394,11 +358,9 @@
             this.Controls.Add(this.txtQtdCompra);
             this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.txtCdTipoProduto);
-            this.Controls.Add(this.txtFornecedor);
+            this.Controls.Add(this.txtCdFornecedor);
             this.Controls.Add(this.txtDepartamento);
             this.Controls.Add(this.txtCdCompra);
-            this.Controls.Add(this.lblBb);
-            this.Controls.Add(this.lblB);
             this.Controls.Add(this.lblDtCompra);
             this.Controls.Add(this.lblNtFiscal);
             this.Controls.Add(this.lblVlCompra);
@@ -429,7 +391,7 @@
         private System.Windows.Forms.Label lblCdDepartamento;
         private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label lblCdFornecedor;
-        private System.Windows.Forms.TextBox txtFornecedor;
+        private System.Windows.Forms.TextBox txtCdFornecedor;
         private System.Windows.Forms.Label lblCdTipoProduto;
         private System.Windows.Forms.TextBox txtCdTipoProduto;
         private System.Windows.Forms.Label lblCdPeca;
@@ -437,11 +399,6 @@
         private System.Windows.Forms.Label lblCdMotorCompra;
         private System.Windows.Forms.TextBox txtCdMotorCompra;
         private System.Windows.Forms.Label lblDtCompra;
-        private System.Windows.Forms.TextBox txtDd;
-        private System.Windows.Forms.TextBox txtMm;
-        private System.Windows.Forms.TextBox txtYyyy;
-        private System.Windows.Forms.Label lblB;
-        private System.Windows.Forms.Label lblBb;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Label lblQtdCompra;
@@ -458,5 +415,6 @@
         private System.Windows.Forms.Button btnBuscaDepartamento;
         private System.Windows.Forms.Button btnBuscaTipoProduto;
         private System.Windows.Forms.Button btnBuscaMotorCompra;
+        private System.Windows.Forms.MaskedTextBox txtDataCompra;
     }
 }

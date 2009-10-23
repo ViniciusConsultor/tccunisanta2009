@@ -14,13 +14,11 @@ namespace TCC.UI
     public partial class frmCadColaborador : FormPai
     {
         mUsuario _modelUsuario;
-        mDepartamento _modeldDepartamento;
+        mDepartamento _modelDepartamento;
 
         public frmCadColaborador()
         {
             InitializeComponent();
-            _modelUsuario = new mUsuario();
-            _modeldDepartamento = new mDepartamento();
         }
 
         #region Eventos
@@ -48,12 +46,12 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
             {
-                MessageBox.Show("Preencher campo Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Buscar Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCdUsuario.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
             {
-                MessageBox.Show("Preencher campo Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCdDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
@@ -61,21 +59,11 @@ namespace TCC.UI
                 MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCEP.Focus();
             }
-            catch (BUSINESS.Exceptions.Colaborador.DiaNascimentoVazioException)
+            catch (BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException)
             {
-                MessageBox.Show("Preencher campo Dia Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataDd.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.MesNascimentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Mes Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataMm.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Ano Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataYyyy.Focus();
-            }            
+                MessageBox.Show("Preencher campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataNasc.Focus();
+            }    
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -96,10 +84,19 @@ namespace TCC.UI
         }
         private void btnBuscaUsuario_Click(object sender, EventArgs e)
         {
+            _modelUsuario = new mUsuario();
             frmBuscaUsuario buscarUsuario = new frmBuscaUsuario(_modelUsuario);
             try
             {
-                buscarUsuario.ShowDialog();
+                DialogResult resultado = buscarUsuario.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelUsuario = null;
+                }
+                else
+                {
+                    this.txtCdUsuario.Text = this._modelUsuario.Login;
+                }
             }
             catch (Exception ex)
             {
@@ -110,12 +107,22 @@ namespace TCC.UI
                 buscarUsuario = null;
             }
         }
+
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
-            frmBuscaDepartamento buscarDepartamento = new frmBuscaDepartamento(_modeldDepartamento);
+            _modelDepartamento = new mDepartamento();
+            frmBuscaDepartamento buscarDepartamento = new frmBuscaDepartamento(_modelDepartamento);
             try
             {
-                buscarDepartamento.ShowDialog();
+                DialogResult resultado = buscarDepartamento.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelDepartamento = null;
+                }
+                else
+                {
+                    this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
+                }
             }
             catch (Exception ex)
             {
@@ -124,27 +131,6 @@ namespace TCC.UI
             finally
             {
                 buscarDepartamento = null;
-            }
-        }
-        private void txtDataDd_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDataDd.Text.Length == 2)
-            {
-                txtDataMm.Focus();
-            }
-        }
-        private void txtDataMm_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDataMm.Text.Length == 2)
-            {
-                txtDataYyyy.Focus();
-            }
-        }
-        private void txtDataYyyy_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDataYyyy.Text.Length == 4)
-            {
-                txtRua.Focus();
             }
         }
         private void txtCEP_TextChanged(object sender, EventArgs e)
@@ -184,21 +170,9 @@ namespace TCC.UI
         private void PopulaComboEstados()
         {
             BUSINESS.rEstado estados = new rEstado();
-            cbEstado.ValueMember = "id_estado";
-            cbEstado.DisplayMember = "slg_estado";
+            cbEstado.ValueMember = "slg_est";
+            cbEstado.DisplayMember = "Estado";
             cbEstado.DataSource = estados.BuscaEstado();
-        }
-        private mUsuario PegaDadosUsuario()
-        {
-            mUsuario model = new mUsuario();
-            model.IdUsuario = Convert.ToInt32(txtCdUsuario.Text);
-            return model;
-        }
-        private mDepartamento PegaDadosDepto()
-        {
-            mDepartamento model = new mDepartamento();
-            model.IdDepto = Convert.ToInt32(txtCdDepartamento);
-            return model;
         }
 
         private mColaborador PegaDadosTela()
@@ -219,11 +193,11 @@ namespace TCC.UI
                 {
                     model.Cpf = txtCpf.Text;
                 }
-                model.DatNasc = new DateTime(Convert.ToInt32(txtDataYyyy.Text), Convert.ToInt32(txtDataMm.Text), Convert.ToInt32(txtDataDd.Text));
-                model.Estado = this.cbEstado.GetItemText(this.cbEstado.SelectedItem);
+                model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
+                model.Estado = this.cbEstado.SelectedValue.ToString();
                 model.IdColab = Convert.ToInt32(txtCdColab.Text);
-                model.IdDepto = Convert.ToInt32(txtCdDepartamento.Text);
-                model.IdUsuario = Convert.ToInt32(txtCdUsuario.Text);
+                model.IdDepto = this._modelDepartamento.IdDepto;
+                model.IdUsuario = this._modelUsuario.IdUsuario;
                 model.NomeColab = txtNome.Text;
                 model.NomeRua = txtRua.Text;
                 if (string.IsNullOrEmpty(txtNumero.Text) == true)
@@ -280,25 +254,17 @@ namespace TCC.UI
         {
             try
             {
-                if (string.IsNullOrEmpty(this.txtCdUsuario.Text) == true)
+                if (this._modelUsuario == null)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception();
                 }
-                else if (string.IsNullOrEmpty(this.txtCdDepartamento.Text) == true)
+                else if (this._modelDepartamento == null)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtDataDd.Text) == true)
+                else if (string.IsNullOrEmpty(this.txtDataNasc.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Colaborador.DiaNascimentoVazioException();
-                }
-                else if (string.IsNullOrEmpty(this.txtDataMm.Text) == true)
-                {
-                    throw new BUSINESS.Exceptions.Colaborador.MesNascimentoVazioException();
-                }
-                else if (string.IsNullOrEmpty(this.txtDataYyyy.Text) == true)
-                {
-                    throw new BUSINESS.Exceptions.Colaborador.AnoNascimentoVazioException();
+                    throw new BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtCEP.Text) == true)
                 {

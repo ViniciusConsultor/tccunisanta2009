@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFamiliaMotor));
+            this.lblCdFamMotor = new System.Windows.Forms.Label();
+            this.txtCdFamiliaMotor = new System.Windows.Forms.TextBox();
             this.lblCdMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
-            this.lblCdMotorCompre = new System.Windows.Forms.Label();
-            this.txtCdMotorCompra = new System.Windows.Forms.TextBox();
             this.lblCdNumeroMotor = new System.Windows.Forms.Label();
-            this.CdNumeroMotor = new System.Windows.Forms.TextBox();
+            this.txtCdNumeroMotor = new System.Windows.Forms.TextBox();
             this.lblCdTipoMotor = new System.Windows.Forms.Label();
             this.txtCdTipoMotor = new System.Windows.Forms.TextBox();
             this.lblCdKit = new System.Windows.Forms.Label();
@@ -53,10 +53,28 @@
             this.btnCdEstoque = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // lblCdFamMotor
+            // 
+            this.lblCdFamMotor.AutoSize = true;
+            this.lblCdFamMotor.Location = new System.Drawing.Point(68, 29);
+            this.lblCdFamMotor.Name = "lblCdFamMotor";
+            this.lblCdFamMotor.Size = new System.Drawing.Size(137, 13);
+            this.lblCdFamMotor.TabIndex = 0;
+            this.lblCdFamMotor.Text = "Codigo da Familia Do Motor";
+            // 
+            // txtCdFamiliaMotor
+            // 
+            this.txtCdFamiliaMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdFamiliaMotor.Location = new System.Drawing.Point(219, 23);
+            this.txtCdFamiliaMotor.Name = "txtCdFamiliaMotor";
+            this.txtCdFamiliaMotor.ReadOnly = true;
+            this.txtCdFamiliaMotor.Size = new System.Drawing.Size(38, 20);
+            this.txtCdFamiliaMotor.TabIndex = 1;
+            // 
             // lblCdMotor
             // 
             this.lblCdMotor.AutoSize = true;
-            this.lblCdMotor.Location = new System.Drawing.Point(68, 29);
+            this.lblCdMotor.Location = new System.Drawing.Point(295, 25);
             this.lblCdMotor.Name = "lblCdMotor";
             this.lblCdMotor.Size = new System.Drawing.Size(87, 13);
             this.lblCdMotor.TabIndex = 0;
@@ -65,29 +83,11 @@
             // txtCdMotor
             // 
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotor.Location = new System.Drawing.Point(219, 23);
+            this.txtCdMotor.Location = new System.Drawing.Point(427, 22);
             this.txtCdMotor.Name = "txtCdMotor";
             this.txtCdMotor.ReadOnly = true;
-            this.txtCdMotor.Size = new System.Drawing.Size(38, 20);
+            this.txtCdMotor.Size = new System.Drawing.Size(52, 20);
             this.txtCdMotor.TabIndex = 1;
-            // 
-            // lblCdMotorCompre
-            // 
-            this.lblCdMotorCompre.AutoSize = true;
-            this.lblCdMotorCompre.Location = new System.Drawing.Point(295, 25);
-            this.lblCdMotorCompre.Name = "lblCdMotorCompre";
-            this.lblCdMotorCompre.Size = new System.Drawing.Size(126, 13);
-            this.lblCdMotorCompre.TabIndex = 0;
-            this.lblCdMotorCompre.Text = "Codigo Do Motor Compra";
-            // 
-            // txtCdMotorCompra
-            // 
-            this.txtCdMotorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotorCompra.Location = new System.Drawing.Point(427, 22);
-            this.txtCdMotorCompra.Name = "txtCdMotorCompra";
-            this.txtCdMotorCompra.ReadOnly = true;
-            this.txtCdMotorCompra.Size = new System.Drawing.Size(52, 20);
-            this.txtCdMotorCompra.TabIndex = 1;
             // 
             // lblCdNumeroMotor
             // 
@@ -98,14 +98,14 @@
             this.lblCdNumeroMotor.TabIndex = 0;
             this.lblCdNumeroMotor.Text = "Codigo Do Numero do Motor ";
             // 
-            // CdNumeroMotor
+            // txtCdNumeroMotor
             // 
-            this.CdNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CdNumeroMotor.Location = new System.Drawing.Point(219, 59);
-            this.CdNumeroMotor.Name = "CdNumeroMotor";
-            this.CdNumeroMotor.ReadOnly = true;
-            this.CdNumeroMotor.Size = new System.Drawing.Size(38, 20);
-            this.CdNumeroMotor.TabIndex = 1;
+            this.txtCdNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdNumeroMotor.Location = new System.Drawing.Point(219, 59);
+            this.txtCdNumeroMotor.Name = "txtCdNumeroMotor";
+            this.txtCdNumeroMotor.ReadOnly = true;
+            this.txtCdNumeroMotor.Size = new System.Drawing.Size(38, 20);
+            this.txtCdNumeroMotor.TabIndex = 1;
             // 
             // lblCdTipoMotor
             // 
@@ -285,16 +285,16 @@
             this.Controls.Add(this.txtCdEstoque);
             this.Controls.Add(this.txtCdKit);
             this.Controls.Add(this.txtCdTipoMotor);
-            this.Controls.Add(this.CdNumeroMotor);
-            this.Controls.Add(this.txtCdMotorCompra);
+            this.Controls.Add(this.txtCdNumeroMotor);
+            this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblDsMotor);
             this.Controls.Add(this.lblCdEstoque);
             this.Controls.Add(this.lblCdKit);
             this.Controls.Add(this.lblCdTipoMotor);
             this.Controls.Add(this.lblCdNumeroMotor);
-            this.Controls.Add(this.lblCdMotorCompre);
-            this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblCdMotor);
+            this.Controls.Add(this.txtCdFamiliaMotor);
+            this.Controls.Add(this.lblCdFamMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadFamiliaMotor";
             this.Text = "Familia do  Motor";
@@ -306,12 +306,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblCdFamMotor;
+        private System.Windows.Forms.TextBox txtCdFamiliaMotor;
         private System.Windows.Forms.Label lblCdMotor;
         private System.Windows.Forms.TextBox txtCdMotor;
-        private System.Windows.Forms.Label lblCdMotorCompre;
-        private System.Windows.Forms.TextBox txtCdMotorCompra;
         private System.Windows.Forms.Label lblCdNumeroMotor;
-        private System.Windows.Forms.TextBox CdNumeroMotor;
+        private System.Windows.Forms.TextBox txtCdNumeroMotor;
         private System.Windows.Forms.Label lblCdTipoMotor;
         private System.Windows.Forms.TextBox txtCdTipoMotor;
         private System.Windows.Forms.Label lblCdKit;

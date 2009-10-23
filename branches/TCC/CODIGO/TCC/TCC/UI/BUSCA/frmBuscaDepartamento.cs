@@ -73,6 +73,7 @@ namespace TCC.UI
                         this._modelDep.IdDepto = Convert.ToInt32(dvC.Value);
                         dvC = this.dgDepartamento["Departamento", this.dgDepartamento.CurrentRow.Index];
                         this._modelDep.DscDepto = dvC.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -104,5 +105,11 @@ namespace TCC.UI
             }
         }
         #endregion Eventos
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

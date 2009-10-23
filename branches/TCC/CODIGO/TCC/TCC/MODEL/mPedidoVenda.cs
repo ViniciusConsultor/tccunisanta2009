@@ -14,7 +14,7 @@ namespace TCC.MODEL
         private DateTime datAlt;
         private string nomeTabela = "Pedidovenda";
         
-        [ColunasBancoDados ("id_pedido", System.Data.SqlDbType.Int,true)]
+        [ColunasBancoDados ("id_venda", System.Data.SqlDbType.Int,true)]
         public int IdVenda
         {
             get { return idVenda; }

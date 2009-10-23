@@ -22,6 +22,11 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
             rOrdemProducao regra = new rOrdemProducao();
             DataTable dt = new DataTable();
             try
@@ -47,6 +52,11 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
+        {
             DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
             try
@@ -58,8 +68,9 @@ namespace TCC.UI
                     {
                         dvc = this.dgCdOrdemMotor["id_ordem", this.dgCdOrdemMotor.CurrentRow.Index];
                         this.modelOrdemProd.Id_ordem = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgCdOrdemMotor["dsc_ordem", this.dgCdOrdemMotor.CurrentRow.Index];
+                        dvc = this.dgCdOrdemMotor["Ordem", this.dgCdOrdemMotor.CurrentRow.Index];
                         this.modelOrdemProd.Dsc_ordem = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -92,6 +103,10 @@ namespace TCC.UI
             }
         }
 
-
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

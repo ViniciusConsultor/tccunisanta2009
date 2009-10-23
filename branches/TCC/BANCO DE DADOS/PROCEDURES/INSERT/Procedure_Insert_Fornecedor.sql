@@ -7,9 +7,9 @@ CREATE PROCEDURE sp_insert_fornecedor
 @id_forn			    INT,
 @slg_est				VARCHAR(2),
 @nom			        VARCHAR(100),
-@tel_fornecedor         INT,
+@tel                    INT,
 @ddd                    INT,
-@Email                  VARCHAR(100),
+@mail                  VARCHAR(100),
 @rua		            VARCHAR(50),
 @nro_ende		        INT,
 @compl                  VARCHAR(20),
@@ -39,9 +39,9 @@ ELSE IF(@cid='')
    RAISERROR('Informe a cidade do fornecedor!',16,1)
 ELSE IF(@ddd='')
    RAISERROR('Informe o nº de ddd do fornecedor!',16,1)   
-ELSE IF(@tel_fornecedor='')
+ELSE IF(@tel='')
    RAISERROR('Informe o nº de telefone do fornecedor!',16,1)   
-ELSE IF(@Email='')
+ELSE IF(@mail='')
    RAISERROR('Informe o e-mail do fornecedor!',16,1)   
 ELSE IF(@cnpj='')
    RAISERROR('Informe o nº de CNPJ do fornecedor!',16,1)   
@@ -50,7 +50,7 @@ ELSE
 BEGIN
 --Insert na tabela fornecedor
 INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
-VALUES(@id_forn, @slg_est, @nom, @tel_fornecedor, @ddd, @Email, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
+VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
 END
 END TRY
 
