@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using TCC.MODEL;
+using Controles;
 
 namespace TCC.UI
 {
@@ -28,7 +29,7 @@ namespace TCC.UI
                 foreach (Control controle in form.Controls)
                 {
                     tipo = controle.GetType();
-                    if (tipo.Equals(new TextBox().GetType()) == true || tipo.Equals(new MaskedTextBox().GetType()) == true)
+                    if (tipo.Equals(new TextBox().GetType()) == true || tipo.Equals(new MaskedTextBox().GetType()) == true || tipo.Equals(new Controles.MegaTextBox.MegaTextBox().GetType()) == true)
                     {
                         controle.Text = string.Empty;
                     }
