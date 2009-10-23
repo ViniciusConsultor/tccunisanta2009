@@ -122,7 +122,7 @@
             this.Controls.Add(this.lblCdMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadMotor";
-            this.Text = "Motor";
+            this.Text = "Cadastro de Motor";
             this.Load += new System.EventHandler(this.frmMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

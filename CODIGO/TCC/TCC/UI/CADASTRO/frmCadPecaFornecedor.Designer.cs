@@ -147,7 +147,7 @@
             this.Controls.Add(this.btnConfirmar);
             this.MaximizeBox = false;
             this.Name = "frmCadPecaFornecedor";
-            this.Text = "frmCadPecaFornecedor";
+            this.Text = "Peca Fornecedor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

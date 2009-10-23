@@ -122,7 +122,7 @@
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
             this.Name = "frmCadTipoMotor";
-            this.Text = "Tipo Motor";
+            this.Text = "Tipo de Motor";
             this.Load += new System.EventHandler(this.frmCadTipoMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

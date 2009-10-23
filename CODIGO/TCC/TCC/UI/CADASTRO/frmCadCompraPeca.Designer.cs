@@ -168,7 +168,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadCompraPeca";
-            this.Text = "frmCadCompraPeca";
+            this.Text = "Compra Peca";
             this.ResumeLayout(false);
             this.PerformLayout();
 

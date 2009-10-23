@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "frmBuscaKit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmKit";
+            this.Text = "Busca Kit";
             ((System.ComponentModel.ISupportInitialize)(this.dgKit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

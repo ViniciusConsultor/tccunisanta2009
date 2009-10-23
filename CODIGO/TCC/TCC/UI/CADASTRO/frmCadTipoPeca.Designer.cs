@@ -122,7 +122,7 @@
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
             this.Name = "frmCadTipoPeca";
-            this.Text = "TipoPeca";
+            this.Text = "Tipo de Peca";
             this.Load += new System.EventHandler(this.frmCadTipoPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -106,7 +106,7 @@
             this.MinimizeBox = false;
             this.Name = "frmBuscaNumMotor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmNumMotor";
+            this.Text = "Busca Numero Motor";
             ((System.ComponentModel.ISupportInitialize)(this.dgNumMotor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
