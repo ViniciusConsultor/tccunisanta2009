@@ -123,7 +123,6 @@ namespace TCC.UI
             }
             finally
             {
-                this.txtPerfilUsuario.Text = _modelPerfil.DescPerfil;
                 buscar = null;
             }
         }

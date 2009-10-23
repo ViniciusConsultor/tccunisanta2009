@@ -37,6 +37,7 @@ namespace TCC.UI
                 dt = regraCliente.BuscaClientes(this.txtFiltro.Text);
                 dgCliente.DataSource = dt;
                 dgCliente.Columns[0].Visible = false;
+                dgCliente.Rows[0].Selected = true;
             }
             catch (Exception ex)
             {
