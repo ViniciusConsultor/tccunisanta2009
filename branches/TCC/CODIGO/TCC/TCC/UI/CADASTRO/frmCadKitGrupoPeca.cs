@@ -18,14 +18,14 @@ namespace TCC.UI
         public frmCadKitGrupoPeca()
         {
             InitializeComponent();
-            _modelPeca = new mPeca();
-            _modelItemPeca = new mItemPeca();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelItemPeca = null;
+            this._modelPeca = null;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -35,11 +35,19 @@ namespace TCC.UI
 
         private void btnCdPeca_Click(object sender, EventArgs e)
         {
+            this._modelPeca = new mPeca();
             frmBuscaPeca objFrmPeca = new frmBuscaPeca(this._modelPeca);
             try
             {
-                objFrmPeca.ShowDialog();
-                this.txtCdPeca.Text = this._modelPeca.Nom;
+                DialogResult resultado = objFrmPeca.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelPeca = null;
+                }
+                else
+                {
+                    this.txtCdPeca.Text = this._modelPeca.Nom;
+                }
             }
             catch (Exception ex)
             {
@@ -53,11 +61,19 @@ namespace TCC.UI
 
         private void btnCdItemPeca_Click(object sender, EventArgs e)
         {
+            this._modelItemPeca = new mItemPeca();
             frmBuscaItemPeca objTela = new frmBuscaItemPeca(this._modelItemPeca);
             try
             {
-                objTela.ShowDialog();
-                this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
+                DialogResult resultado = objTela.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelItemPeca = null;
+                }
+                else
+                {
+                    this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
+                }
             }
             catch (Exception ex)
             {
@@ -102,19 +118,40 @@ namespace TCC.UI
             rKitGrupoPeca regra = new rKitGrupoPeca();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
             }
+            catch (BUSINESS.Exceptions.CodigoItemPecaVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Item da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             finally
             {
                 model = null;
                 regra = null;
+            }
+        }
+
+        private void ValidaDadosNulos()
+        {
+            if (this._modelItemPeca == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoItemPecaVazioException();
+            }
+            else if (this._modelPeca == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
             }
         }
 

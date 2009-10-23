@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TCC.BUSINESS.Exceptions.Login
+namespace TCC.BUSINESS.Exceptions.Peca
 {
-    public class LoginExistenteException : Exception
+    public class QtdMinimaNuloOuZeroException : Exception
     {
     }
 }

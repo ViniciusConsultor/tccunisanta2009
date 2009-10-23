@@ -72,15 +72,15 @@ namespace TCC.BUSINESS
         {
             if (string.IsNullOrEmpty(model.Login) == true)
             {
-                throw new Exceptions.LoginVazioException();
+                throw new Exceptions.Login.LoginVazioException();
             }
             else if (this.VerificaExistenciaUsuario(model.Login))
             {
-                throw new Exceptions.LoginExistenteException();
+                throw new Exceptions.Login.LoginExistenteException();
             }
             else if (string.IsNullOrEmpty(model.Senha) == true)
             {
-                throw new Exceptions.SenhaVaziaException();
+                throw new Exceptions.Login.SenhaVaziaException();
             }
         }
 

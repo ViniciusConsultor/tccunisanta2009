@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
@@ -46,8 +47,48 @@ namespace TCC.BUSINESS
             }
         }
 
+        public bool VerificaExistenciaPeca(string idPecaReal)
+        {
+            SqlParameter param = new SqlParameter("@id_peca_real", idPecaReal);
+            DataTable dtRetorno;
+            try
+            {
+                dtRetorno = base.BuscaDados("sp_existe_peca", param);
+                if (dtRetorno.Rows[0]["flg_existe"].ToString().Equals("1") == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void ValidaDados(mPeca model)
+        {
+            if (this.VerificaExistenciaPeca(model.IdPecaReal) == true)
+            {
+                throw new Exceptions.Peca.PecaJaExistenteException();
+            }
+            else if (model.QtdMin <= 0 || model.QtdMin == null)
+            {
+                throw new Exceptions.Peca.QtdMinimaNuloOuZeroException();
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            mPeca mPeca = (mPeca)model;
+            this.ValidaDados(mPeca);
             base.Insere(model);
         }
 

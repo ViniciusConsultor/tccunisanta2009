@@ -11,11 +11,11 @@ namespace TCC.MODEL
         private string idPecaReal;
         private string nom;
         private DateTime datAlt;
-        private int peso;
+        private int? peso;
         private bool flgAtivo;
         private string dscPeca;
         private int idEstoque;
-        private int qtdMin;
+        private int? qtdMin;
         private int idTipoPeca;
         private string nomeTabela = "peca";
 
@@ -48,7 +48,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("peso", System.Data.SqlDbType.Decimal,false)]
-        public int Peso
+        public int? Peso
         {
             get { return peso; }
             set { peso = value; }
@@ -76,7 +76,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("qtd_min", System.Data.SqlDbType.Int,false)]
-        public int QtdMin
+        public int? QtdMin
         {
             get { return qtdMin; }
             set { qtdMin = value; }

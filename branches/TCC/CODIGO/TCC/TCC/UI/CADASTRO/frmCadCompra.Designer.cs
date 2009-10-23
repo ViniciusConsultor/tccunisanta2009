@@ -39,7 +39,7 @@
             this.txtCdTipoProduto = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
-            this.lblCdMotorCompra = new System.Windows.Forms.Label();
+            this.lblCdMotor = new System.Windows.Forms.Label();
             this.txtCdMotorCompra = new System.Windows.Forms.TextBox();
             this.lblDtCompra = new System.Windows.Forms.Label();
             this.lblObservacao = new System.Windows.Forms.Label();
@@ -151,14 +151,14 @@
             this.txtCdPeca.Size = new System.Drawing.Size(38, 20);
             this.txtCdPeca.TabIndex = 12;
             // 
-            // lblCdMotorCompra
+            // lblCdMotor
             // 
-            this.lblCdMotorCompra.AutoSize = true;
-            this.lblCdMotorCompra.Location = new System.Drawing.Point(298, 92);
-            this.lblCdMotorCompra.Name = "lblCdMotorCompra";
-            this.lblCdMotorCompra.Size = new System.Drawing.Size(124, 13);
-            this.lblCdMotorCompra.TabIndex = 11;
-            this.lblCdMotorCompra.Text = "Codigo do Motor Compra";
+            this.lblCdMotor.AutoSize = true;
+            this.lblCdMotor.Location = new System.Drawing.Point(347, 87);
+            this.lblCdMotor.Name = "lblCdMotor";
+            this.lblCdMotor.Size = new System.Drawing.Size(85, 13);
+            this.lblCdMotor.TabIndex = 11;
+            this.lblCdMotor.Text = "Codigo do Motor";
             // 
             // txtCdMotorCompra
             // 
@@ -366,7 +366,7 @@
             this.Controls.Add(this.lblVlCompra);
             this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.lblQtdCompra);
-            this.Controls.Add(this.lblCdMotorCompra);
+            this.Controls.Add(this.lblCdMotor);
             this.Controls.Add(this.lblCdPeca);
             this.Controls.Add(this.lblCdTipoProduto);
             this.Controls.Add(this.lblCdFornecedor);
@@ -396,7 +396,7 @@
         private System.Windows.Forms.TextBox txtCdTipoProduto;
         private System.Windows.Forms.Label lblCdPeca;
         private System.Windows.Forms.TextBox txtCdPeca;
-        private System.Windows.Forms.Label lblCdMotorCompra;
+        private System.Windows.Forms.Label lblCdMotor;
         private System.Windows.Forms.TextBox txtCdMotorCompra;
         private System.Windows.Forms.Label lblDtCompra;
         private System.Windows.Forms.Label lblObservacao;

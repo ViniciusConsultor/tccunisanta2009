@@ -17,7 +17,6 @@ namespace TCC.UI
         public frmCadEstoque()
         {
             InitializeComponent();
-            _modelDepartamento = new mDepartamento();
         }
 
         protected override void BuscaIdMaximo()
@@ -59,29 +58,22 @@ namespace TCC.UI
                 model = null;
             }
         }
-        private void ApagaControles()
-        {
-            foreach (Control controle in this.Controls)
-            {
-                if (controle.GetType().Equals(new TextBox().GetType()) == true)
-                {
-                    if (controle.Name.Equals("txtCdEstoque") == false)
-                    {
-                        controle.Text = string.Empty;
-                    }
-                }
-            }
-        }
+        
         private void btnInsere_Click(object sender, EventArgs e)
         {
             rEstoque regra = new rEstoque();
             mEstoque model;
             try
             {
+                this.ValidaCamposNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                this.ApagaControles();
+                this.btnLimpa_Click(null, null);
                 this.BuscaIdMaximo();
+            }
+            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -101,11 +93,19 @@ namespace TCC.UI
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
+            this._modelDepartamento = new mDepartamento();
             frmBuscaDepartamento objFormBuscaDep = new frmBuscaDepartamento(this._modelDepartamento);
             try
             {
-                objFormBuscaDep.ShowDialog();
-                this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
+                DialogResult resultado = objFormBuscaDep.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelDepartamento = null;
+                }
+                else
+                {
+                    this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
+                }
             }
             catch (Exception ex)
             {
@@ -126,6 +126,15 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelDepartamento = null;
+        }
+
+        private void ValidaCamposNulos()
+        {
+            if (this._modelDepartamento == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+            }
         }
     }
 }
