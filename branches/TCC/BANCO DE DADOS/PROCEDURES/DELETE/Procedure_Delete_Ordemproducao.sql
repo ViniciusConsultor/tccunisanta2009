@@ -4,21 +4,21 @@ IF OBJECT_ID('sp_delete_ordemproducao', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_ordemproducao
-@id_ordem_kit INT
+@id_ordem INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from ordemproducao where id_ordem_kit=@id_ordem_kit)
+IF EXISTS(select 1 from ordemproducao where id_ordem=@id_ordem)
 BEGIN
   --deleta dependencias existentes
- IF EXISTS(select 1 from venda where id_ordem_kit=@id_ordem_kit)
+ IF EXISTS(select 1 from venda where id_ordem = @id_ordem)
 	BEGIN
-		DELETE venda WHERE id_ordem_kit=@id_ordem_kit
+		DELETE venda WHERE id_ordem= @id_ordem
 	END
 	
   --realiza a exclusao
-  DELETE ordemproducao WHERE id_ordem_kit = @id_ordem_kit
+  DELETE ordemproducao WHERE id_ordem = @id_ordem
 END
 ELSE
 --retorna erro se não houver o codigo

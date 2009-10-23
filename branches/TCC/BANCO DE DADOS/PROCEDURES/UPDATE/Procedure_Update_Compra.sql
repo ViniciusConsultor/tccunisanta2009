@@ -13,8 +13,8 @@ CREATE PROCEDURE sp_update_compra
 @dat              DATETIME,
 @qtd                INT,
 @valor                NUMERIC(15,2),
-@nota_fiscal         INT,
-@obs_compra              VARCHAR(20)
+@nota_fisc         INT,
+@obs              VARCHAR(20)
 AS
 
 BEGIN TRY
@@ -34,8 +34,8 @@ id_peca                = @id_peca,
 dat             = @dat, 
 qtd               = @qtd, 
 valor               = @valor, 
-nota_fiscal        = @nota_fiscal, 
-obs_compra             = @obs_compra
+nota_fisc        = @nota_fisc, 
+obs             = @obs
 
 WHERE id_compra = @id_compra
 
