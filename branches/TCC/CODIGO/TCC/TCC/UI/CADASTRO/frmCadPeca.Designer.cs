@@ -276,7 +276,7 @@
             this.Controls.Add(this.lblCdPeca);
             this.MaximizeBox = false;
             this.Name = "frmCadPeca";
-            this.Text = "Peça";
+            this.Text = "Cadastro de Peca";
             this.Load += new System.EventHandler(this.frmCadPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

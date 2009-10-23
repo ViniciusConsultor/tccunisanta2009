@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "frmBuscaFamiliaMotor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmBuscaFamiliaMotor";
+            this.Text = "Busca Familia Motor";
             ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

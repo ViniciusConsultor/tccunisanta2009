@@ -120,7 +120,7 @@
             this.Controls.Add(this.btnFechar);
             this.MinimizeBox = false;
             this.Name = "frmCadTipoProduto";
-            this.Text = "frmCadTipoProduto";
+            this.Text = "Tipo de Produto";
             this.Load += new System.EventHandler(this.frmCadTipoProduto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

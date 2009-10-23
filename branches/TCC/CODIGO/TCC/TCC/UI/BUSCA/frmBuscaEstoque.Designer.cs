@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "frmBuscaEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmEstoque";
+            this.Text = "Busca Estoque";
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

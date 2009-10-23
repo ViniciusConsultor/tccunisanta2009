@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "frmBuscaPeca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmBuscaPeca";
+            this.Text = "Busca Peca";
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

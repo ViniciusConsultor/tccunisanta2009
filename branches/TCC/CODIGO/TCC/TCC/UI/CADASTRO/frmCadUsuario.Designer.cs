@@ -205,7 +205,7 @@
             this.Controls.Add(this.lblCodigo);
             this.MaximizeBox = false;
             this.Name = "frmCadUsuario";
-            this.Text = "Cadastro Usuário";
+            this.Text = "Cadastro de Usuário";
             this.Load += new System.EventHandler(this.frmCadUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -106,7 +106,7 @@
             this.MinimizeBox = false;
             this.Name = "frmBuscaItemPeca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmBuscaItemPeca";
+            this.Text = "Busca Item Peca";
             ((System.ComponentModel.ISupportInitialize)(this.dgCdItemPeca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
