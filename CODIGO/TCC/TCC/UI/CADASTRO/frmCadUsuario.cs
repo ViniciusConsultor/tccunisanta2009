@@ -61,29 +61,29 @@ namespace TCC.UI
                 this.BuscaIdMaximo();
 
             }
-            catch (BUSINESS.Exceptions.LoginExistenteException)
+            catch (BUSINESS.Exceptions.Login.LoginExistenteException)
             {
                 MessageBox.Show("Usuário já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Text = string.Empty;
                 this.txtLogin.Focus();
             }
-            catch (BUSINESS.Exceptions.LoginVazioException)
+            catch (BUSINESS.Exceptions.Login.LoginVazioException)
             {
                 MessageBox.Show("É necessário preenchimento do campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Focus();
             }
-            catch (BUSINESS.Exceptions.SenhaVaziaException)
+            catch (BUSINESS.Exceptions.Login.SenhaVaziaException)
             {
                 MessageBox.Show("É necessário preenchimento do campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtSenha.Focus();
             }
-            catch (BUSINESS.Exceptions.PerfilSemIdExeception)
+            catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
                 MessageBox.Show("Não é Possivel Cadastrar um usuário sem o Codigo do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 //regraUsu.Deleta(modelUsu);
                 btnBuscaPerfilUsuario.Focus();
             }
-            catch (BUSINESS.Exceptions.UsuarioSemIdException)
+            catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
                 MessageBox.Show("Não é Possivel Cadastrar um usuário sem Codigo", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -151,7 +151,7 @@ namespace TCC.UI
             }
             else
             {
-                throw new BUSINESS.Exceptions.PerfilSemIdExeception();
+                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
             }
             model.IdUsuario = Convert.ToInt32(this.txtCodigo.Text);
             model.DatTrans = DateTime.Now;

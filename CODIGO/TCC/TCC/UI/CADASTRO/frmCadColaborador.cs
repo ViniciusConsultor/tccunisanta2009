@@ -41,15 +41,15 @@ namespace TCC.UI
                 {
                     regraMenu.ValidarInsere(modelColaborador);
                 }
-                base.LimpaDadosTela(this);
+                this.btnApaga_Click(null, null);
                 this.BuscaIdMaximo();
             }
-            catch (BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception)
+            catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
                 MessageBox.Show("Buscar Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCdUsuario.Focus();
             }
-            catch (BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException)
+            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
                 MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCdDepartamento.Focus();
@@ -77,6 +77,9 @@ namespace TCC.UI
         private void btnApaga_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
+            this.BuscaIdMaximo();
+            this._modelDepartamento = null;
+            this._modelUsuario = null;
         }
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -256,11 +259,11 @@ namespace TCC.UI
             {
                 if (this._modelUsuario == null)
                 {
-                    throw new BUSINESS.Exceptions.Colaborador.CodigoUsuarioVazioExeception();
+                    throw new BUSINESS.Exceptions.CodigoUsuarioVazioExeception();
                 }
                 else if (this._modelDepartamento == null)
                 {
-                    throw new BUSINESS.Exceptions.Colaborador.CodigoDepartamentoVazioException();
+                    throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtDataNasc.Text) == true)
                 {

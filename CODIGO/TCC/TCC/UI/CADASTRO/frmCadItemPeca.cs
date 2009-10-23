@@ -17,7 +17,6 @@ namespace TCC.UI
         public frmCadItemPeca()
         {
             InitializeComponent();
-            _modelPeca = new mPeca();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -31,14 +30,19 @@ namespace TCC.UI
             rItemPeca regra = new rItemPeca();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                base.LimpaDadosTela(this);
+                this.btnLimpa_Click(null, null);
                 this.BuscaIdMaximo();
+            }
+            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             finally
             {
@@ -78,6 +82,7 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelPeca = null;
         }
 
         protected override void BuscaIdMaximo()
@@ -99,11 +104,19 @@ namespace TCC.UI
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
+            this._modelPeca = new mPeca();
             frmBuscaPeca frmTela = new frmBuscaPeca(this._modelPeca);
             try
             {
-                frmTela.ShowDialog();
-                this.txtCodigoPeca.Text = this._modelPeca.Nom;
+                DialogResult resultado = frmTela.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelPeca = null;
+                }
+                else
+                {
+                    this.txtCodigoPeca.Text = this._modelPeca.Nom;
+                }
             }
             catch (Exception ex)
             {
@@ -112,6 +125,14 @@ namespace TCC.UI
             finally
             {
                 frmTela = null;
+            }
+        }
+
+        private void ValidaDadosNulos()
+        {
+            if (this._modelPeca == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
             }
         }
 

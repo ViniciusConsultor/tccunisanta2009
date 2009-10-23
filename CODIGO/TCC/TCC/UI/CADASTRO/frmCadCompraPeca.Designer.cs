@@ -164,7 +164,6 @@
             this.MaximizeBox = false;
             this.Name = "frmCadCompraPeca";
             this.Text = "frmCadCompraPeca";
-            this.Load += new System.EventHandler(this.frmCadCompraPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,27 +18,23 @@ namespace TCC.UI
         public frmCadCompraPeca()
         {
             InitializeComponent();
-            _modelCompra = new mCompra();
-            _modelPeca = new mPeca();
-        }
-
-        protected override void BuscaIdMaximo()
-        {
-            base.BuscaIdMaximo();
-        }
-
-        private void frmCadCompraPeca_Load(object sender, EventArgs e)
-        {
-            this.BuscaIdMaximo();
         }
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
+            this._modelPeca = new mPeca();
             frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
             try
             {
-                objForm.ShowDialog();
-                this.txtCdPeca.Text = this._modelPeca.Nom;
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelPeca = null;
+                }
+                else
+                {
+                    this.txtCdPeca.Text = this._modelPeca.Nom;
+                }
             }
             catch (Exception ex)
             {
@@ -57,10 +53,23 @@ namespace TCC.UI
             rCompraPeca regra = new rCompraPeca();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                base.LimpaDadosTela(this);
+                this.btnLimpar_Click(null, null);
                 this.BuscaIdMaximo();
+            }
+            catch (BUSINESS.Exceptions.CodigoCompraVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código da Compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CompraPeca.UltimoPrecoVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o campo Ultimo Preço", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -97,6 +106,8 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
+            this._modelCompra = null;
+            this._modelPeca = null;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -106,11 +117,19 @@ namespace TCC.UI
 
         private void btnBuscaCompra_Click(object sender, EventArgs e)
         {
+            this._modelCompra = new mCompra();
             frmBuscaCompra objForm = new frmBuscaCompra(this._modelCompra);
             try
             {
-                objForm.ShowDialog();
-                this.txtCdCompra.Text = this._modelCompra.IdCompra.ToString();
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelCompra = null;
+                }
+                else
+                {
+                    this.txtCdCompra.Text = this._modelCompra.IdCompra.ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -119,6 +138,23 @@ namespace TCC.UI
             finally
             {
                 objForm = null;
+            }
+        }
+
+
+        private void ValidaDadosNulos()
+        {
+            if (this._modelCompra == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoCompraVazioException();
+            }
+            else if (this._modelPeca == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
+            }
+            else if (string.IsNullOrEmpty(this.txtUltimoPreco.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.CompraPeca.UltimoPrecoVazioException();
             }
         }
     }
