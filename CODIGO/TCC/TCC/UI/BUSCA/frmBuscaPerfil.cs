@@ -36,6 +36,12 @@ namespace TCC.UI
         #region btnBuscar Click
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+        #endregion btnBuscar Click
+
+        private void PopulaGrid()
+        {
             rPerfil regraPerfil = new rPerfil();
             DataTable dt = new DataTable();
             try
@@ -54,10 +60,15 @@ namespace TCC.UI
                 dt = null;
             }
         }
-        #endregion btnBuscar Click
 
         #region btnOK Click
         private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+        #endregion btnOK Click
+
+        private void RetornaModel()
         {
             DataGridViewCell dvC = null;
             DataTable dtSource = new DataTable();
@@ -74,6 +85,7 @@ namespace TCC.UI
                         this._model.IdPerfil = Convert.ToInt32(dvC.Value);
                         dvC = this.dgPerfil["Perfil", this.dgPerfil.CurrentRow.Index];
                         this._model.DescPerfil = dvC.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -83,7 +95,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                        MessageBox.Show("É necessário Buscar e Selecionar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("É necessário Buscar e Selecionar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (Exception ex)
@@ -104,7 +116,12 @@ namespace TCC.UI
                 }
             }
         }
-        #endregion btnOK Click
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
 
         #endregion Eventos
     }

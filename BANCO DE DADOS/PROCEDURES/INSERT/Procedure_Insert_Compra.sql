@@ -13,7 +13,7 @@ CREATE PROCEDURE sp_insert_compra
 @dat              DATETIME,
 @qtd              INT,
 @valor            NUMERIC(15,2),
-@nota_fisc        INT,
+@nota_fisc        VARCHAR(20),
 @obs              VARCHAR(20)
 AS
 
@@ -31,7 +31,7 @@ ELSE IF(@dat='')
    RAISERROR('Informe a data da compra!',16,1)
 ELSE IF(@qtd='')
    RAISERROR('Informe a quantidade da compra!',16,1)
-ELSE IF(@valor='')
+ELSE IF(CONVERT(VARCHAR(15), @valor)='')
    RAISERROR('Informe o valor da compra!',16,1)
 ELSE IF(@nota_fisc='')
    RAISERROR('Informe o número da nota fiscal!',16,1)

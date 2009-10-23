@@ -48,6 +48,11 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
+        {
             DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
             try
@@ -61,6 +66,7 @@ namespace TCC.UI
                         this._model.IdTipoProd = Convert.ToInt32(dvc.Value);
                         dvc = this.dgTipoProduto["Tipo Produto", this.dgTipoProduto.CurrentRow.Index];
                         this._model.Nom = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -91,6 +97,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

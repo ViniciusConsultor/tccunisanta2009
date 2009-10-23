@@ -22,12 +22,12 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            this.RetornaModel();
+            this.PopulaGrid();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.PopulaGrid();
+            this.RetornaModel();
         }
 
         private void PopulaGrid()
@@ -38,7 +38,6 @@ namespace TCC.UI
             {
                 dt = regraNumMotor.BuscaNumeroMotor(this.txtFiltro.Text);
                 dgNumMotor.DataSource = dt;
-                dgNumMotor.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -66,6 +65,7 @@ namespace TCC.UI
                         this._model.Id_num_motor = Convert.ToInt32(dvc.Value);
                         dvc = this.dgNumMotor["Numero do motor", this.dgNumMotor.CurrentRow.Index];
                         this._model.Dsc_num_motor = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -96,6 +96,12 @@ namespace TCC.UI
                     dtSource = null;
                 }
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

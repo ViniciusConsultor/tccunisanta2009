@@ -69,6 +69,7 @@ namespace TCC.UI
                         this._model.IdVenda = Convert.ToInt32(dvc.Value);
                         dvc = this.dgVenda["Data", this.dgVenda.CurrentRow.Index];
                         this._model.DatVenda = Convert.ToDateTime(dvc.Value);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -100,6 +101,12 @@ namespace TCC.UI
                 }
             }
 
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

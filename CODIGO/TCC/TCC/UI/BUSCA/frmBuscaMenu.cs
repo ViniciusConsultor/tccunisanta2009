@@ -22,6 +22,11 @@ namespace TCC.UI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.PopulaGrid();
+        }
+
+        private void PopulaGrid()
+        {
             rMenu regraMenu = new rMenu();
             DataTable dt;
             try
@@ -41,11 +46,60 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            DataGridViewCell dvC;
-            dvC = this.dgMenu["id_menu", this.dgMenu.CurrentRow.Index];
-            _model.IdMenu = Convert.ToInt32(dvC.Value);
-            dvC = this.dgMenu["Menu", this.dgMenu.CurrentRow.Index];
-            _model.DscMenu = dvC.Value.ToString();
+            this.RetornaModel();
+        }
+
+        private void RetornaModel()
+        {
+            DataGridViewCell dvc = null;
+            DataTable dtSource = new DataTable();
+            try
+            {
+                dtSource = (DataTable)this.dgMenu.DataSource;
+                if (this.dgMenu.DataSource != null)
+                {
+                    if (dtSource.Rows.Count > 0)
+                    {
+                        dvc = this.dgMenu["id_menu", this.dgMenu.CurrentRow.Index];
+                        this._model.IdMenu = Convert.ToInt32(dvc.Value);
+                        dvc = this.dgMenu["Menu", this.dgMenu.CurrentRow.Index];
+                        this._model.DscMenu = dvc.Value.ToString();
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("É necessário cadastrar um Tipo de Produto", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("É necessário buscar e selecionar um Tipo de Produto", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dvc != null)
+                {
+                    dvc.Dispose();
+                    dvc = null;
+                }
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

@@ -301,6 +301,7 @@
             this.CdTipoProduto.Size = new System.Drawing.Size(33, 23);
             this.CdTipoProduto.TabIndex = 3;
             this.CdTipoProduto.UseVisualStyleBackColor = true;
+            this.CdTipoProduto.Click += new System.EventHandler(this.CdTipoProduto_Click);
             // 
             // btnCdKit
             // 

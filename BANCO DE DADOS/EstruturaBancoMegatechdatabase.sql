@@ -75,7 +75,7 @@ go
 
 CREATE TABLE Comprapeca (
        id_peca              integer NOT NULL,
-       ultim_preco          integer NULL,
+       ultim_preco          numeric(15,2) NULL,
        id_compra            integer NULL
 )
 go
@@ -99,7 +99,7 @@ CREATE TABLE Compra (
        id_motor             integer NULL,
        qtd                  integer NULL,
        valor                numeric(15,2) NULL,
-       nota_fisc            integer NULL,
+       nota_fisc            varchar(20) NULL,
        id_tipo_produto      integer NOT NULL,
        id_peca              integer NULL
 )

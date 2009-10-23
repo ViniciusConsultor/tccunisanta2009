@@ -25,7 +25,7 @@ namespace TCC.MODEL
 
         private string nomeTabela = "fornecedor";
 
-        [ColunasBancoDados("slg_estado", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("slg_est", System.Data.SqlDbType.VarChar, false)]
         public string SlgEstado
         {
             get { return slgEstado; }
@@ -46,84 +46,84 @@ namespace TCC.MODEL
             set { datAtl = value; }
         }
 
-        [ColunasBancoDados("id_cnpj_fornecedor", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("cnpj", System.Data.SqlDbType.Int, false)]
         public int? Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }
         }
 
-        [ColunasBancoDados("cidade_fornecedor", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("cid", System.Data.SqlDbType.VarChar, false)]
         public string Cidade
         {
             get { return cidade; }
             set { cidade = value; }
         }
 
-        [ColunasBancoDados("bairr_end_fornecedor", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("bairr", System.Data.SqlDbType.VarChar, false)]
         public string Bairro
         {
             get { return bairro; }
             set { bairro = value; }
         }
 
-        [ColunasBancoDados("cep_fornecedor", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("cep", System.Data.SqlDbType.Int, false)]
         public int? CepFornecedor
         {
             get { return cepFornecedor; }
             set { cepFornecedor = value; }
         }
 
-        [ColunasBancoDados("compl_end_fornecedor", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("compl", System.Data.SqlDbType.VarChar, false)]
         public string Complemento
         {
             get { return complemento; }
             set { complemento = value; }
         }
 
-        [ColunasBancoDados("nro_end_fornecedor", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("nro_ende", System.Data.SqlDbType.Int, false)]
         public int? NroFornecedor
         {
             get { return nroFornecedor; }
             set { nroFornecedor = value; }
         }
 
-        [ColunasBancoDados("nom_rua_fornecedor", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("rua", System.Data.SqlDbType.VarChar, false)]
         public string RuaFornecedor
         {
             get { return ruaFornecedor; }
             set { ruaFornecedor = value; }
         }
 
-        [ColunasBancoDados("nom_fornecedor", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("nom", System.Data.SqlDbType.VarChar, false)]
         public string NomeFornecedor
         {
             get { return nomeFornecedor; }
             set { nomeFornecedor = value; }
         }
 
-        [ColunasBancoDados("id_fornecedor", System.Data.SqlDbType.Int, true)]
+        [ColunasBancoDados("id_forn", System.Data.SqlDbType.Int, true)]
         public int IdFornecedor
         {
             get { return idFornecedor; }
             set { idFornecedor = value; }
         }
 
-        [ColunasBancoDados("DDD", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("ddd", System.Data.SqlDbType.Int, false)]
         public int? Ddd
         {
             get { return ddd; }
             set { ddd = value; }
         }
 
-        [ColunasBancoDados("tel_fornecedor", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("tel", System.Data.SqlDbType.Int, false)]
         public int? Telefone
         {
             get { return telefone; }
             set { telefone = value; }
         }
 
-        [ColunasBancoDados("Email", System.Data.SqlDbType.VarChar, false)]
+        [ColunasBancoDados("mail", System.Data.SqlDbType.VarChar, false)]
         public string Email
         {
             get { return email; }

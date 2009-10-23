@@ -116,7 +116,7 @@ namespace TCC.UI
 
         private void btnAceitar_Click(object sender, EventArgs e)
         {
-
+            this.Insere();
         }
 
         private void Insere()

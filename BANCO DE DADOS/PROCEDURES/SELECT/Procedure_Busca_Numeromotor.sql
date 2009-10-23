@@ -6,6 +6,6 @@
  
  CREATE PROCEDURE sp_busca_numeromotor
  AS
- SELECT dsc_num_motor 'Numero do motor' FROM Numeromotor
+ SELECT id_num_motor, dsc_num_motor 'Numero do motor' FROM Numeromotor
 order by dsc_num_motor desc
 go
