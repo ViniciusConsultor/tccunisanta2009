@@ -14,11 +14,11 @@ namespace TCC.BUSINESS
             {
                 if (model.IdPerfil == 0)
                 {
-                    throw new Exceptions.PerfilSemIdExeception();
+                    throw new Exceptions.CodigoPerfilVazioExeception();
                 }
                 else if (model.IdUsuario == 0)
                 {
-                    throw new Exceptions.UsuarioSemIdException();
+                    throw new Exceptions.CodigoUsuarioVazioExeception();
                 }
             }
             catch (Exception ex)

@@ -132,6 +132,11 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelDepartamento = null;
+            this._modelFornecedor = null;
+            this._modelMotor = null;
+            this._modelPeca = null;
+            this._modelTipoProd = null;
         }
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
@@ -165,7 +170,7 @@ namespace TCC.UI
             this._modelTipoProd = new mTipoProduto();
             frmBuscaTipoProduto objForm = new frmBuscaTipoProduto(this._modelTipoProd);
             try
-            { 
+            {
                 DialogResult resultado = objForm.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
@@ -192,10 +197,39 @@ namespace TCC.UI
             rCompra regra = new rCompra();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                base.LimpaDadosTela(this);
+                this.btnLimpar_Click(null, null);
                 this.BuscaIdMaximo();
+            }
+            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoFornecedorVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException)
+            {
+                MessageBox.Show("É Necessário preencher o campo Quantidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Compra.CompraValorVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o campo Valor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -213,14 +247,35 @@ namespace TCC.UI
             mCompra model = new mCompra();
             try
             {
-                model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
+                if (string.IsNullOrEmpty(this.txtDataCompra.Text) == true)
+                {
+                    model.Dat = null;
+                }
+                else
+                {
+                    model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
+                }
                 model.IdCompra = Convert.ToInt32(this.txtCdCompra.Text);
                 model.IdDepto = this._modelDepartamento.IdDepto;
                 model.IdFornecedor = this._modelFornecedor.IdFornecedor;
                 model.IdMotorCompra = this._modelMotor.IdMotor;
                 model.IdTipoProduto = this._modelTipoProd.IdTipoProd;
-                model.NotaFiscal = this.txtNotaFiscal.Text;
-                model.Obs = this.txtObservacao.Text;
+                if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
+                {
+                    model.NotaFiscal = null;
+                }
+                else
+                {
+                    model.NotaFiscal = this.txtNotaFiscal.Text;
+                }
+                if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
+                {
+                    model.Obs = null;
+                }
+                else
+                {
+                    model.Obs = this.txtObservacao.Text;
+                }
                 model.Qtd = Convert.ToInt32(this.txtQtdCompra.Text);
                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
                 model.IdPeca = this._modelPeca.IdPeca;
@@ -246,23 +301,31 @@ namespace TCC.UI
         {
             if (this._modelDepartamento == null)
             {
-
+                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
             }
             else if (this._modelFornecedor == null)
             {
-
+                throw new BUSINESS.Exceptions.CodigoFornecedorVazioExeception();
             }
             else if (this._modelMotor == null)
             {
-
+                throw new BUSINESS.Exceptions.CodigoMotorVazioExeception();
             }
             else if (this._modelPeca == null)
             {
-
+                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
             }
             else if (this._modelTipoProd == null)
             {
-
+                throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
+            }
+            else if (string.IsNullOrEmpty(this.txtQtdCompra.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+            }
+            else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
             }
         }
     }

@@ -17,8 +17,6 @@ namespace TCC.UI
         public frmCadPeca()
         {
             InitializeComponent();
-            _modelEstoque = new mEstoque();
-            _modelTipoPeca = new mTipoPeca();
         }
 
         protected override void  BuscaIdMaximo()
@@ -45,11 +43,19 @@ namespace TCC.UI
 
         private void btnCdTipoPeca_Click(object sender, EventArgs e)
         {
+            this._modelTipoPeca = new mTipoPeca();
             frmBuscaTipoPeca objTela = new frmBuscaTipoPeca(_modelTipoPeca);
             try
             {
-                objTela.ShowDialog();
-                this.txtCdTipoPeca.Text = this._modelTipoPeca.DscTipoPeca;
+                DialogResult resultado = objTela.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelTipoPeca = null;
+                }
+                else
+                {
+                    this.txtCdTipoPeca.Text = this._modelTipoPeca.DscTipoPeca;
+                }
             }
             catch (Exception ex)
             {
@@ -63,11 +69,19 @@ namespace TCC.UI
 
         private void btnCdEstoque_Click(object sender, EventArgs e)
         {
+            this._modelEstoque = new mEstoque();
             frmBuscaEstoque objTela = new frmBuscaEstoque(_modelEstoque);
             try
             {
-                objTela.ShowDialog();
-                this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
+                DialogResult resultado = objTela.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelEstoque = null;
+                }
+                else
+                {
+                    this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
+                }
             }
             catch (Exception ex)
             {
@@ -88,6 +102,8 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelEstoque = null;
+            this._modelTipoPeca = null;
         }
 
         private mPeca PegaDadosTela()
@@ -103,8 +119,22 @@ namespace TCC.UI
                 model.IdPecaReal = this.txtCodigoReal.Text;
                 model.IdTipoPeca = this._modelTipoPeca.IdTipoPeca;
                 model.Nom = this.txtNmPeca.Text;
-                model.Peso = Convert.ToInt32(this.txtPesoPeca.Text);
-                model.QtdMin = Convert.ToInt32(this.txtQtdPeca.Text);
+                if (string.IsNullOrEmpty(this.txtPesoPeca.Text) == true)
+                {
+                    model.Peso = null;
+                }
+                else
+                {
+                    model.Peso = Convert.ToInt32(this.txtPesoPeca.Text);
+                }
+                if (string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
+                {
+                    model.QtdMin = null;
+                }
+                else
+                {
+                    model.QtdMin = Convert.ToInt32(this.txtQtdPeca.Text);
+                }
 
                 return model;
             }
@@ -129,19 +159,49 @@ namespace TCC.UI
             rPeca regra = new rPeca();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
             }
+            catch (BUSINESS.Exceptions.CodigoEstoqueVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Tipo da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Peca.PecaJaExistenteException)
+            {
+                MessageBox.Show("Peça já existente favor cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            {
+                MessageBox.Show("Quantidade de Peça não Pode ser Vazia ou Zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdPeca.Focus();
+            }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             finally
             {
                 model = null;
                 regra = null;
+            }
+        }
+
+        private void ValidaDadosNulos()
+        {
+            if (this._modelEstoque == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoEstoqueVazioException();
+            }
+            else if (this._modelTipoPeca == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoTipoPecaVazioException();
             }
         }
     }

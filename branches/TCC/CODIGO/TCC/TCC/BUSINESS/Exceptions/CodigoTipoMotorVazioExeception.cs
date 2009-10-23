@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.BUSINESS.Exceptions
 {
-    public class UsuarioSemIdException : Exception
+    public class CodigoTipoMotorVazioExeception : Exception
     {
     }
 }
