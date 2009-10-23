@@ -18,8 +18,6 @@ namespace TCC.UI
         public frmCadPedidoVenda()
         {
             InitializeComponent();
-            _modelDepartamento = new mDepartamento();
-            _modelVenda = new mVenda();
         }
 
         private void frmCadPedidoVenda_Load(object sender, EventArgs e)
@@ -31,6 +29,8 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelDepartamento = null;
+            this._modelVenda = null;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -57,11 +57,19 @@ namespace TCC.UI
 
         private void btnBuscaVendaMotor_Click(object sender, EventArgs e)
         {
+            this._modelVenda = new mVenda();
             frmBuscaVenda objForm = new frmBuscaVenda(this._modelVenda);
             try
             {
-                objForm.ShowDialog();
-                this.txtCdVendaMotor.Text = this._modelVenda.IdVenda.ToString();
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelVenda = null;
+                }
+                else
+                {
+                    this.txtCdVendaMotor.Text = this._modelVenda.IdVenda.ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -75,11 +83,19 @@ namespace TCC.UI
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
+            this._modelDepartamento = new mDepartamento();
             frmBuscaDepartamento objForm = new frmBuscaDepartamento(this._modelDepartamento);
             try
             {
-                objForm.ShowDialog();
-                this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelDepartamento = null;
+                }
+                else
+                {
+                    this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
+                }
             }
             catch (Exception ex)
             {
@@ -125,10 +141,19 @@ namespace TCC.UI
             rPedidoVenda regra = new rPedidoVenda();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                base.LimpaDadosTela(this);
+                this.btnLimpar_Click(null, null);
                 this.BuscaIdMaximo();
+            }
+            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.CodigoVendaVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código da Venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -138,6 +163,18 @@ namespace TCC.UI
             {
                 model = null;
                 regra = null;
+            }
+        }
+
+        private void ValidaDadosNulos()
+        {
+            if (this._modelDepartamento == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+            }
+            else if (this._modelVenda == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoVendaVazioException();
             }
         }
     }

@@ -80,6 +80,8 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (28, 'Cola
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (29, 'Departamento', 'frmCadDepartamento', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (30, 'Item Peça', 'frmCadItemPeca', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (31, 'Peça Fornecedor', 'frmCadPecaFornecedor', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (32, 'Perfil Menu', 'frmCadPerfilMenu', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (33, 'Perfil', 'frmCadPerfil', GETDATE(), 1);
 
 --Venda !!
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--Pedido Venda
@@ -102,7 +104,7 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 19);--Kit Grupo Peç
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 20);--Tipo Peça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 21);--Tipo Peça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 30);--Item Peça
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (18, 31);--Peça Fornecedor
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (3, 31);--Peça Fornecedor
 
 --Compra
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 22);--Compra Peça
@@ -115,6 +117,8 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 26);--Usuário
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 27);--Cliente
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 28);--Colaborador
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 29);--Departamento
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 32);--Perfil Menu
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 33);--Perfil
 
 --INSERT TABELA PERFILMENU
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 1, GETDATE(), 1);

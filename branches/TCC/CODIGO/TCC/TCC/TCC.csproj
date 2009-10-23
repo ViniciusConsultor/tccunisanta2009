@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUSINESS\Exceptions\CodigoClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\ComandosSql.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoCompraVazioException.cs" />
@@ -76,14 +77,17 @@
     <Compile Include="BUSINESS\Exceptions\CodigoFornecedorVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoItemPecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoKitGrupoPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoMenuVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoMotorVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoNumeroMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoOrdemProducaoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoPecaVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoPerfilVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoTipoMotorVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoTipoPecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoTipoProdutoVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoUsuarioVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoVendaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\AnoNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CepVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\DataNascimentoVazioException.cs" />
@@ -97,6 +101,8 @@
     <Compile Include="BUSINESS\Exceptions\Login\SenhaVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\rCadColaborador.cs" />
     <Compile Include="BUSINESS\rCliente.cs" />
     <Compile Include="BUSINESS\rCompra.cs" />
@@ -351,10 +357,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadVenda.resx">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmCadVendaMotor.resx">
-      <DependentUpon>frmCadVendaMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormPai.resx">
@@ -643,12 +645,6 @@
     <Compile Include="UI\CADASTRO\frmCadVenda.Designer.cs">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmCadVendaMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadVendaMotor.Designer.cs">
-      <DependentUpon>frmCadVendaMotor.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\FormPai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -691,6 +687,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2C97DFB1-3649-478D-A09C-1D8F39FFFA89}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\ALTERA\" />
