@@ -1,0 +1,8 @@
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\bin\Debug\TesteMaskedTextBox.exe
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\bin\Debug\TesteMaskedTextBox.pdb
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\obj\Debug\TesteMaskedTextBox.Form1.resources
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\obj\Debug\TesteMaskedTextBox.Properties.Resources.resources
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\obj\Debug\TesteMaskedTextBox.csproj.GenerateResource.Cache
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\obj\Debug\TesteMaskedTextBox.exe
+C:\Users\Kaue\Código\TCC\CODIGO\AUXILIARES\TesteMaskedTextBox\TesteMaskedTextBox\obj\Debug\TesteMaskedTextBox.pdb
