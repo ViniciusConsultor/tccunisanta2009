@@ -12,20 +12,40 @@ namespace TCC.UI
 {
     public partial class frmBuscaCliente : Form
     {
+        #region Atributos
         mCliente _model;
+        #endregion
+
+        #region Construtor
         public frmBuscaCliente(mCliente modelCliente)
         {
             InitializeComponent();
             this._model = modelCliente;
         }
-        public void buscaCodigo()
-        {
+        #endregion
 
-        }
-
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
+        public void buscaCodigo()
+        {
+
         }
 
         private void PopulaGrid()
@@ -48,11 +68,6 @@ namespace TCC.UI
                 regraCliente = null;
                 dt = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -109,12 +124,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
+        #endregion
     }
 }

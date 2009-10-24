@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
@@ -13,9 +12,10 @@ namespace TCC.UI
 {
     public partial class frmBuscaUsuario : Form
     {
+        #region Atributos
         bool _alteracao;
-
         mUsuario _model;
+        #endregion
 
         #region Construtor
         public frmBuscaUsuario()
@@ -38,27 +38,11 @@ namespace TCC.UI
             this.PopulaGrid();
         }
 
-        private void PopulaGrid()
+        private void btnFechar_Click(object sender, EventArgs e)
         {
-            rUsuario regraUsuario = new rUsuario();
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = regraUsuario.BuscaUsuario(this.txtFiltro.Text);
-                dgUsuario.DataSource = dt;
-                this.dgUsuario.Columns[0].Visible = false;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regraUsuario = null;
-                dt = null;
-            }
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
-
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -66,6 +50,7 @@ namespace TCC.UI
         }
         #endregion
 
+        #region Metodos
         private void RetornaModel()
         {
             DataGridViewCell dvC = null;
@@ -125,10 +110,26 @@ namespace TCC.UI
             }
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
+        private void PopulaGrid()
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            rUsuario regraUsuario = new rUsuario();
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = regraUsuario.BuscaUsuario(this.txtFiltro.Text);
+                dgUsuario.DataSource = dt;
+                this.dgUsuario.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraUsuario = null;
+                dt = null;
+            }
         }
+        #endregion
     }
 }

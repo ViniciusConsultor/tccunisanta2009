@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
@@ -13,13 +12,19 @@ namespace TCC.UI
 {
     public partial class frmBuscaVenda : Form
     {
+        #region Atributos
         mVenda _model;
+        #endregion
+
+        #region Construtor
         public frmBuscaVenda(mVenda modelVenda)
         {
             InitializeComponent();
             this._model = modelVenda;
         }
+        #endregion
 
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.populaGrid();
@@ -30,6 +35,14 @@ namespace TCC.UI
             this.retornaModel();
         }
 
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void populaGrid()
         {
             rVenda regra = new rVenda();
@@ -108,11 +121,6 @@ namespace TCC.UI
             }
 
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

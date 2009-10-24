@@ -12,19 +12,37 @@ namespace TCC.UI
 {
     public partial class frmBuscaMenu : Form
     {
+        #region Atributos
         mMenu _model;
+        #endregion
 
+        #region Construtor
         public frmBuscaMenu(mMenu modelMenu)
         {
             InitializeComponent();
             this._model = modelMenu;
         }
+        #endregion
 
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rMenu regraMenu = new rMenu();
@@ -42,11 +60,6 @@ namespace TCC.UI
             {
                 regraMenu = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -103,11 +116,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

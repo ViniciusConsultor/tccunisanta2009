@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
@@ -13,21 +12,37 @@ namespace TCC.UI
 {
     public partial class frmBuscaMotor : Form
     {
+        #region Atributos
         mMotor _model;
+        #endregion
+
+        #region Construtor
         public frmBuscaMotor(mMotor modelMotor)
         {
             InitializeComponent();
             this._model = modelMotor;
         }
-        public void BuscaCodigo()
-        {
+        #endregion
 
-        }
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rMotor regraMotor = new rMotor();
@@ -48,11 +63,6 @@ namespace TCC.UI
                 regraMotor = null;
                 dt = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -109,11 +119,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

@@ -12,19 +12,37 @@ namespace TCC.UI
 {
     public partial class frmBuscaTipoPeca : Form
     {
+        #region Atributos
         mTipoPeca _model;
+        #endregion
 
+        #region Construtor
         public frmBuscaTipoPeca(mTipoPeca modelTipoPeca)
         {
             InitializeComponent();
             _model = modelTipoPeca;
         }
+        #endregion
 
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rTipoPeca regra = new rTipoPeca();
@@ -41,11 +59,6 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -103,11 +116,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }
