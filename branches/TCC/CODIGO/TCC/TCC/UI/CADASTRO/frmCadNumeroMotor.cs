@@ -33,7 +33,7 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rNumeroMotor regra = new rNumeroMotor();
             try
@@ -48,7 +48,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void frmCadNumeroMotor_Load(object sender, EventArgs e)
         {
@@ -85,11 +85,13 @@ namespace TCC.UI
         private mNumMotor PegaDadoosTela()
         {
             mNumMotor model = new mNumMotor();
+            rNumeroMotor regra = new rNumeroMotor();
+
             try
             {
                 model.Dsc_num_motor = this.txtDscNumeroMotor.Text;
                 model.Flg_ativo = true;
-                model.Id_num_motor = Convert.ToInt32(this.txtCdNumeroMotor.Text);
+                model.Id_num_motor = Convert.ToInt32(regra.BuscaIdMaximo());
 
                 return model;
             }

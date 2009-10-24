@@ -32,8 +32,6 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
-            this.txtCdKit = new System.Windows.Forms.TextBox();
-            this.lblCdKit = new System.Windows.Forms.Label();
             this.txtCdItemPeca = new System.Windows.Forms.TextBox();
             this.lblCdItemPeca = new System.Windows.Forms.Label();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
@@ -75,24 +73,6 @@
             this.btnAceitar.TabIndex = 11;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
-            // 
-            // txtCdKit
-            // 
-            this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdKit.Location = new System.Drawing.Point(145, 27);
-            this.txtCdKit.Name = "txtCdKit";
-            this.txtCdKit.ReadOnly = true;
-            this.txtCdKit.Size = new System.Drawing.Size(53, 20);
-            this.txtCdKit.TabIndex = 14;
-            // 
-            // lblCdKit
-            // 
-            this.lblCdKit.AutoSize = true;
-            this.lblCdKit.Location = new System.Drawing.Point(56, 30);
-            this.lblCdKit.Name = "lblCdKit";
-            this.lblCdKit.Size = new System.Drawing.Size(70, 13);
-            this.lblCdKit.TabIndex = 15;
-            this.lblCdKit.Text = "Codigo do Kit";
             // 
             // txtCdItemPeca
             // 
@@ -184,8 +164,6 @@
             this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.lblCdItemPeca);
             this.Controls.Add(this.txtCdItemPeca);
-            this.Controls.Add(this.lblCdKit);
-            this.Controls.Add(this.txtCdKit);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdItemPeca);
@@ -205,8 +183,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.TextBox txtCdKit;
-        private System.Windows.Forms.Label lblCdKit;
         private System.Windows.Forms.TextBox txtCdItemPeca;
         private System.Windows.Forms.Label lblCdItemPeca;
         private System.Windows.Forms.TextBox txtCdPeca;

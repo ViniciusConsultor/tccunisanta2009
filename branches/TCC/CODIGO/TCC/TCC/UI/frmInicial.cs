@@ -279,6 +279,7 @@ namespace TCC.UI
             }
             catch (Exception ex)
             {
+                throw ex;
             }
             finally
             {

@@ -39,7 +39,7 @@ namespace TCC.UI
             this._modelTipoMotor = null;
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rFamiliaMotor regra = new rFamiliaMotor();
             try
@@ -54,7 +54,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void frmCadFamiliaMotor_Load(object sender, EventArgs e)
         {
@@ -136,12 +136,14 @@ namespace TCC.UI
         private mFamiliaMotor PegaDadosTela()
         {
             mFamiliaMotor model = new mFamiliaMotor();
+            rFamiliaMotor regra = new rFamiliaMotor();
+
             try
             {
                 model.DscFamiliaMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;
                 model.IdEstoque = this._modelEstoque.Id_estoque;
-                model.IdFamiliaMotor = Convert.ToInt32(this.txtCdFamiliaMotor.Text);
+                model.IdFamiliaMotor = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.IdGrupo = this._modelKit.Id_grupo;
                 model.IdMotor = this._modelMotor.IdMotor;
                 model.IdNumMotor = this._modelNumeroMotor.Id_num_motor;

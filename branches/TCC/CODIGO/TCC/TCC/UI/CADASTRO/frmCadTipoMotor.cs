@@ -28,7 +28,7 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rTipoMotor regra = new rTipoMotor();
             try
@@ -43,7 +43,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void frmCadTipoMotor_Load(object sender, EventArgs e)
         {
@@ -80,11 +80,12 @@ namespace TCC.UI
         private mTipoMotor PedaDadosTela()
         {
             mTipoMotor model = new mTipoMotor();
+            rTipoMotor regra = new rTipoMotor();
             try
             {
                 model.DscTipoMotor = this.txtNmTipoMotor.Text;
                 model.FlgAtivo = true;
-                model.IdTipoMotor = this.txtCdTipoMotor.Text;
+                model.IdTipoMotor = regra.BuscaIdMaximo();
 
                 return model;
             }

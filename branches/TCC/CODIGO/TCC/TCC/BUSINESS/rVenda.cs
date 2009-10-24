@@ -25,7 +25,7 @@ namespace TCC.BUSINESS
 
         public DataTable buscaVenda()
         {
-            SqlParameter param = null;
+            //SqlParameter param = null;
             try
             {
             /*    if (string.IsNullOrEmpty(venda) == true)
@@ -40,12 +40,11 @@ namespace TCC.BUSINESS
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
-                param = null;
+             //   param = null;
             }
         }
 

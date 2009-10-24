@@ -36,7 +36,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rUsinagem regra = new rUsinagem();
             try
@@ -51,7 +51,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void Insere()
         {
@@ -83,12 +83,13 @@ namespace TCC.UI
         private mUsinagem PegaDadosTela()
         {
             mUsinagem model = new mUsinagem();
+            rUsinagem regra = new rUsinagem();
             try
             {
                 model.DtaEnvio = DateTime.Now;
                 model.FlgStatus = this.chkPecaOk.Checked;
                 model.IdPeca = this._modelPeca.IdPeca;
-                model.IdUsinagem = Convert.ToInt32(this.txtCdUsinagem.Text);
+                model.IdUsinagem = Convert.ToInt32(regra.BuscaIdMaximoUsinagem());
 
                 return model;
             }

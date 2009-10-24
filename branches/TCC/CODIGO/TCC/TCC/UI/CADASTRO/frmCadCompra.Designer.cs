@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompra));
-            this.lblCdCompra = new System.Windows.Forms.Label();
-            this.txtCdCompra = new System.Windows.Forms.TextBox();
             this.lblCdDepartamento = new System.Windows.Forms.Label();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
@@ -60,24 +58,6 @@
             this.btnBuscaMotorCompra = new System.Windows.Forms.Button();
             this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // lblCdCompra
-            // 
-            this.lblCdCompra.AutoSize = true;
-            this.lblCdCompra.Location = new System.Drawing.Point(77, 24);
-            this.lblCdCompra.Name = "lblCdCompra";
-            this.lblCdCompra.Size = new System.Drawing.Size(94, 13);
-            this.lblCdCompra.TabIndex = 11;
-            this.lblCdCompra.Text = "Codigo de Compra";
-            // 
-            // txtCdCompra
-            // 
-            this.txtCdCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdCompra.Location = new System.Drawing.Point(195, 21);
-            this.txtCdCompra.Name = "txtCdCompra";
-            this.txtCdCompra.ReadOnly = true;
-            this.txtCdCompra.Size = new System.Drawing.Size(78, 20);
-            this.txtCdCompra.TabIndex = 12;
             // 
             // lblCdDepartamento
             // 
@@ -365,7 +345,6 @@
             this.Controls.Add(this.txtCdTipoProduto);
             this.Controls.Add(this.txtCdFornecedor);
             this.Controls.Add(this.txtDepartamento);
-            this.Controls.Add(this.txtCdCompra);
             this.Controls.Add(this.lblDtCompra);
             this.Controls.Add(this.lblNtFiscal);
             this.Controls.Add(this.lblVlCompra);
@@ -376,7 +355,6 @@
             this.Controls.Add(this.lblCdTipoProduto);
             this.Controls.Add(this.lblCdFornecedor);
             this.Controls.Add(this.lblCdDepartamento);
-            this.Controls.Add(this.lblCdCompra);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
@@ -391,8 +369,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdCompra;
-        private System.Windows.Forms.TextBox txtCdCompra;
         private System.Windows.Forms.Label lblCdDepartamento;
         private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label lblCdFornecedor;

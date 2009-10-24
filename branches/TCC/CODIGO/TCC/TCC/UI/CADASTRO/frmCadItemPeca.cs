@@ -54,10 +54,12 @@ namespace TCC.UI
         private mItemPeca PegaDadosTela()
         {
             mItemPeca model = new mItemPeca();
+            rItemPeca regra = new rItemPeca();
+
             try
             {
                 model.Flg_ativo = true;
-                model.Id_item_peca = Convert.ToInt32(this.txtCodItemPeca.Text);
+                model.Id_item_peca = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_peca = this._modelPeca.IdPeca;
                 model.Nom_item_peca = this.txtDescItemPeca.Text;
 
@@ -85,7 +87,7 @@ namespace TCC.UI
             this._modelPeca = null;
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rItemPeca regra = new rItemPeca();
             try
@@ -100,7 +102,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {

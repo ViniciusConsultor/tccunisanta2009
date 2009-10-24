@@ -27,7 +27,7 @@ namespace TCC.UI
         #region Form Load
         private void frmCadUsuario_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
+            //this.BuscaIdMaximo();
         }
         #endregion Form Load
 
@@ -55,7 +55,7 @@ namespace TCC.UI
                 regraUsu.ValidarInsere(modelUsu);
                 //Insere associação usuarioPerfil
                 //-------------------------------
-                modelUsuarioPerfil = this.PegaDadosUsuarioPerfil();
+                modelUsuarioPerfil = this.PegaDadosUsuarioPerfil(modelUsu.IdUsuario);
                 regraUsuarioPerfil.ValidarInsere(modelUsuarioPerfil);
                 base.LimpaDadosTela(this);
                 this.BuscaIdMaximo();
@@ -136,7 +136,8 @@ namespace TCC.UI
         private mUsuario PegaDadosTela()
         {
             mUsuario model = new mUsuario();
-            model.IdUsuario = Convert.ToInt32(this.txtCodigo.Text);
+            rUsuario regra = new rUsuario();
+            model.IdUsuario = Convert.ToInt32(regra.BuscaIdMaximoUsuario());
             model.Login = this.txtLogin.Text;
             model.ObsUsuario = this.txtObservacao.Text;
             model.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
@@ -147,9 +148,10 @@ namespace TCC.UI
         #endregion Pega Dados Tela
 
         #region Pega Dados Usuario Perfil
-        private mUsuarioPerfil PegaDadosUsuarioPerfil()
+        private mUsuarioPerfil PegaDadosUsuarioPerfil(int idUsuario)
         {
             mUsuarioPerfil model = new mUsuarioPerfil();
+
             if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == false)
             {
                 model.IdPerfil = this._modelPerfil.IdPerfil;
@@ -158,7 +160,7 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
             }
-            model.IdUsuario = Convert.ToInt32(this.txtCodigo.Text);
+            model.IdUsuario = idUsuario;
             model.DatTrans = DateTime.Now;
             model.FlgAtivo = true;
             return model;
@@ -172,7 +174,7 @@ namespace TCC.UI
 
         #endregion Metodos
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rUsuario regraUsu = new rUsuario();
             try
@@ -187,7 +189,7 @@ namespace TCC.UI
             {
                 regraUsu = null;
             }
-        }
+        }*/
 
         private void ValidaDadosNulos()
         {

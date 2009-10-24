@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCliente));
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblRua = new System.Windows.Forms.Label();
@@ -63,25 +61,6 @@
             this.txtCep = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep2 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(60, 7);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Codigo";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(137, 5);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(108, 20);
-            this.txtCodigo.TabIndex = 0;
             // 
             // lblNome
             // 
@@ -392,8 +371,6 @@
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lblTlefone);
             this.Controls.Add(this.lblRua);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.lblCodigo);
             this.MaximizeBox = false;
             this.Name = "frmCadCliente";
             this.Text = "Cadastro de Cliente";
@@ -405,8 +382,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblRua;

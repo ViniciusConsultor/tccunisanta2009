@@ -146,7 +146,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rOrdemProducao regra = new rOrdemProducao();
             try
@@ -161,7 +161,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void btnAceitar_Click(object sender, EventArgs e)
         {
@@ -230,13 +230,15 @@ namespace TCC.UI
         private mOrdemProducao PegaDadosTela()
         {
             mOrdemProducao model = new mOrdemProducao();
+            rOrdemProducao regra = new rOrdemProducao();
+
             try
             {
                 model.Dsc_ordem = this.txtDs.Text;
                 model.Id_depto = this._modelDepartamento.IdDepto;
                 model.Id_grupo = this._modelKit.Id_grupo;
                 model.Id_motor = this._modelFamiliaMotor.IdFamiliaMotor;
-                model.Id_ordem = Convert.ToInt32(this.txtCdOrdemMotor.Text);
+                model.Id_ordem = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_tipo_produto = this._modelTipoProd.IdTipoProd;
 
                 return model;

@@ -154,7 +154,7 @@ namespace TCC.UI
 
         #region Metodos
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rCadColaborador regraColaborador = new rCadColaborador();
             try
@@ -169,7 +169,7 @@ namespace TCC.UI
             {
                 regraColaborador = null;
             }
-        }
+        }*/
         private void PopulaComboEstados()
         {
             BUSINESS.rEstado estados = new rEstado();
@@ -180,10 +180,11 @@ namespace TCC.UI
 
         private mColaborador PegaDadosTela()
         {
-            mColaborador model = null;
+            mColaborador model = new mColaborador();
+            rCadColaborador regra = new rCadColaborador();
+
             try
             {
-                model = new mColaborador();
                 model.BairrEnd = txtBairro.Text;
                 model.Cep = txtCEP.Text + txtCep2.Text;
                 model.Cidade = txtCidade.Text;
@@ -198,7 +199,7 @@ namespace TCC.UI
                 }
                 model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
                 model.Estado = this.cbEstado.SelectedValue.ToString();
-                model.IdColab = Convert.ToInt32(txtCdColab.Text);
+                model.IdColab = Convert.ToInt32(regra.BuscaIDMaximoColaborador());
                 model.IdDepto = this._modelDepartamento.IdDepto;
                 model.IdUsuario = this._modelUsuario.IdUsuario;
                 model.NomeColab = txtNome.Text;

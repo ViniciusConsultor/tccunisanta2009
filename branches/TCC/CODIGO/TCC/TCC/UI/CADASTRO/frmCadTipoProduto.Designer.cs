@@ -32,8 +32,6 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.lblCdTipoProduto = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblDscNome = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -70,23 +68,6 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // lblCdTipoProduto
-            // 
-            this.lblCdTipoProduto.AutoSize = true;
-            this.lblCdTipoProduto.Location = new System.Drawing.Point(76, 51);
-            this.lblCdTipoProduto.Name = "lblCdTipoProduto";
-            this.lblCdTipoProduto.Size = new System.Drawing.Size(40, 13);
-            this.lblCdTipoProduto.TabIndex = 3;
-            this.lblCdTipoProduto.Text = "Codigo";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(122, 48);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 4;
-            // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(125, 100);
@@ -113,8 +94,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblDscNome);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.lblCdTipoProduto);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.btnFechar);
@@ -132,8 +111,6 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Label lblCdTipoProduto;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblDscNome;
     }

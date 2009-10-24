@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsuario));
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
@@ -44,25 +42,6 @@
             this.lblPerfilUsuario = new System.Windows.Forms.Label();
             this.btnBuscaPerfilUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(72, 16);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(79, 13);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Código Usuário";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(159, 13);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(155, 20);
-            this.txtCodigo.TabIndex = 0;
             // 
             // txtLogin
             // 
@@ -201,8 +180,6 @@
             this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.lblCodigo);
             this.MaximizeBox = false;
             this.Name = "frmCadUsuario";
             this.Text = "Cadastro de Usuário";
@@ -214,8 +191,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtObservacao;

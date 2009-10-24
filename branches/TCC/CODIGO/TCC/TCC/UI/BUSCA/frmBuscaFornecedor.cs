@@ -58,14 +58,21 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                        //------------------------------------------------------------------------------------
-                        dvC = this.dgFornecedor["id_forn", this.dgFornecedor.CurrentRow.Index];
-                        _model.IdFornecedor = Convert.ToInt32(dvC.Value);
-                        dvC = this.dgFornecedor["Fornecedor", this.dgFornecedor.CurrentRow.Index];
-                        _model.NomeFornecedor = dvC.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgFornecedor.CurrentRow != null)
+                        {
+                            //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
+                            //------------------------------------------------------------------------------------
+                            dvC = this.dgFornecedor["id_forn", this.dgFornecedor.CurrentRow.Index];
+                            _model.IdFornecedor = Convert.ToInt32(dvC.Value);
+                            dvC = this.dgFornecedor["Fornecedor", this.dgFornecedor.CurrentRow.Index];
+                            _model.NomeFornecedor = dvC.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {

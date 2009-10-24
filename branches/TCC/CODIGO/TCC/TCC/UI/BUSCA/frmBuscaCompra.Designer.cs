@@ -32,9 +32,9 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgDepartamento = new System.Windows.Forms.DataGridView();
+            this.dgCompra = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -66,19 +66,19 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dgDepartamento
+            // dgCompra
             // 
-            this.dgDepartamento.AllowUserToAddRows = false;
-            this.dgDepartamento.AllowUserToDeleteRows = false;
-            this.dgDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDepartamento.Location = new System.Drawing.Point(12, 45);
-            this.dgDepartamento.MultiSelect = false;
-            this.dgDepartamento.Name = "dgDepartamento";
-            this.dgDepartamento.ReadOnly = true;
-            this.dgDepartamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDepartamento.ShowEditingIcon = false;
-            this.dgDepartamento.Size = new System.Drawing.Size(260, 177);
-            this.dgDepartamento.TabIndex = 4;
+            this.dgCompra.AllowUserToAddRows = false;
+            this.dgCompra.AllowUserToDeleteRows = false;
+            this.dgCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCompra.Location = new System.Drawing.Point(12, 45);
+            this.dgCompra.MultiSelect = false;
+            this.dgCompra.Name = "dgCompra";
+            this.dgCompra.ReadOnly = true;
+            this.dgCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgCompra.ShowEditingIcon = false;
+            this.dgCompra.Size = new System.Drawing.Size(260, 177);
+            this.dgCompra.TabIndex = 4;
             // 
             // btnFechar
             // 
@@ -101,13 +101,13 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgDepartamento);
+            this.Controls.Add(this.dgCompra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmBuscaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Compra";
-            ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +118,7 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgDepartamento;
+        private System.Windows.Forms.DataGridView dgCompra;
         private System.Windows.Forms.Button btnFechar;
     }
 }

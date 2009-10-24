@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsinagem));
-            this.lblCdUsinagem = new System.Windows.Forms.Label();
-            this.txtCdUsinagem = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -39,24 +37,6 @@
             this.btnCdPeca = new System.Windows.Forms.Button();
             this.chkPecaOk = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // lblCdUsinagem
-            // 
-            this.lblCdUsinagem.AutoSize = true;
-            this.lblCdUsinagem.Location = new System.Drawing.Point(54, 39);
-            this.lblCdUsinagem.Name = "lblCdUsinagem";
-            this.lblCdUsinagem.Size = new System.Drawing.Size(105, 13);
-            this.lblCdUsinagem.TabIndex = 0;
-            this.lblCdUsinagem.Text = "Codigo da Usinagem";
-            // 
-            // txtCdUsinagem
-            // 
-            this.txtCdUsinagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdUsinagem.Location = new System.Drawing.Point(165, 36);
-            this.txtCdUsinagem.Name = "txtCdUsinagem";
-            this.txtCdUsinagem.ReadOnly = true;
-            this.txtCdUsinagem.Size = new System.Drawing.Size(100, 20);
-            this.txtCdUsinagem.TabIndex = 1;
             // 
             // lblCdPeca
             // 
@@ -144,8 +124,6 @@
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.lblCdPeca);
-            this.Controls.Add(this.txtCdUsinagem);
-            this.Controls.Add(this.lblCdUsinagem);
             this.MaximizeBox = false;
             this.Name = "frmCadUsinagem";
             this.Text = "Usinagem";
@@ -157,8 +135,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdUsinagem;
-        private System.Windows.Forms.TextBox txtCdUsinagem;
         private System.Windows.Forms.Label lblCdPeca;
         private System.Windows.Forms.TextBox txtCdPeca;
         private System.Windows.Forms.Button btnVoltar;
