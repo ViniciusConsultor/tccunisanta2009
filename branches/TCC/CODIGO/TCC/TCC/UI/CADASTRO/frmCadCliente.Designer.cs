@@ -45,7 +45,6 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblRg = new System.Windows.Forms.Label();
-            this.txtRg = new System.Windows.Forms.TextBox();
             this.lblCnpj = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.btnInsere = new System.Windows.Forms.Button();
@@ -58,8 +57,8 @@
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtCep = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtCep2 = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblNome
@@ -73,8 +72,10 @@
             // 
             // txtNome
             // 
+            this.txtNome.AccessibleDescription = "";
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(137, 31);
+            this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNome.Location = new System.Drawing.Point(137, 35);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(108, 20);
@@ -198,15 +199,6 @@
             this.lblRg.TabIndex = 0;
             this.lblRg.Text = "RG";
             // 
-            // txtRg
-            // 
-            this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRg.Location = new System.Drawing.Point(137, 133);
-            this.txtRg.MaxLength = 15;
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(108, 20);
-            this.txtRg.TabIndex = 11;
-            // 
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
@@ -317,21 +309,20 @@
             this.txtNumero.Size = new System.Drawing.Size(31, 20);
             this.txtNumero.TabIndex = 22;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(137, 135);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(108, 20);
+            this.maskedTextBox1.TabIndex = 25;
+            // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(301, 82);
-            this.txtCep.MaxLength = 5;
+            this.txtCep.Location = new System.Drawing.Point(301, 81);
+            this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(69, 20);
-            this.txtCep.TabIndex = 23;
-            // 
-            // txtCep2
-            // 
-            this.txtCep2.Location = new System.Drawing.Point(376, 82);
-            this.txtCep2.MaxLength = 3;
-            this.txtCep2.Name = "txtCep2";
-            this.txtCep2.Size = new System.Drawing.Size(31, 20);
-            this.txtCep2.TabIndex = 24;
+            this.txtCep.Size = new System.Drawing.Size(133, 20);
+            this.txtCep.TabIndex = 26;
             // 
             // frmCadCliente
             // 
@@ -341,8 +332,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 226);
             this.ControlBox = false;
-            this.Controls.Add(this.txtCep2);
             this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtDDD);
@@ -356,7 +347,6 @@
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtCnpj);
-            this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblCidade);
@@ -397,7 +387,6 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label lblRg;
-        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label lblCnpj;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnInsere;
@@ -410,7 +399,7 @@
         private Controles.MegaTextBox.MegaTextBox txtDDD;
         private Controles.MegaTextBox.MegaTextBox txtTelefone;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
-        private Controles.MegaTextBox.MegaTextBox txtCep;
-        private Controles.MegaTextBox.MegaTextBox txtCep2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtCep;
     }
 }

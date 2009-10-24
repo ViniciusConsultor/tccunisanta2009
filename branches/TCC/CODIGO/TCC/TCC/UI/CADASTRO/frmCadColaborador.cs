@@ -57,7 +57,7 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
             {
                 MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCEP.Focus();
+                this.txtCep.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException)
             {
@@ -136,20 +136,7 @@ namespace TCC.UI
                 buscarDepartamento = null;
             }
         }
-        private void txtCEP_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCEP.TextLength == 5)
-            {
-                this.txtCep2.Focus();
-            }
-        }
-        private void txtCep2_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCep2.TextLength == 3)
-            {
-                this.txtBairro.Focus();
-            }
-        }
+        
         #endregion
 
         #region Metodos
@@ -186,7 +173,7 @@ namespace TCC.UI
             try
             {
                 model.BairrEnd = txtBairro.Text;
-                model.Cep = txtCEP.Text + txtCep2.Text;
+                model.Cep = txtCep.Text;
                 model.Cidade = txtCidade.Text;
                 model.ComplEnd = txtComplemento.Text;
                 if (string.IsNullOrEmpty(txtCpf.Text) == true)
@@ -270,7 +257,7 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtCEP.Text) == true)
+                else if (string.IsNullOrEmpty(this.txtCep.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
                 }
@@ -286,5 +273,6 @@ namespace TCC.UI
         }
 
         #endregion
+
     }
 }

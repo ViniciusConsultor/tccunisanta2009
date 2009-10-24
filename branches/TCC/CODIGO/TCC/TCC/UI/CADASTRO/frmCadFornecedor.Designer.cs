@@ -33,7 +33,6 @@
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.TextBox();
             this.lblCep = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
@@ -50,13 +49,13 @@
             this.btnInsere = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnlimpar = new System.Windows.Forms.Button();
-            this.txtCep2 = new System.Windows.Forms.TextBox();
             this.txtDDD = new System.Windows.Forms.TextBox();
             this.lblDDD = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtCidade
@@ -94,16 +93,6 @@
             this.lblBairro.Size = new System.Drawing.Size(34, 13);
             this.lblBairro.TabIndex = 4;
             this.lblBairro.Text = "Bairro";
-            // 
-            // txtCep
-            // 
-            this.txtCep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCep.Location = new System.Drawing.Point(188, 140);
-            this.txtCep.MaxLength = 5;
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(60, 20);
-            this.txtCep.TabIndex = 6;
-            this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
             // 
             // lblCep
             // 
@@ -255,16 +244,6 @@
             this.btnlimpar.UseVisualStyleBackColor = true;
             this.btnlimpar.Click += new System.EventHandler(this.btnlimpar_Click);
             // 
-            // txtCep2
-            // 
-            this.txtCep2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCep2.Location = new System.Drawing.Point(254, 140);
-            this.txtCep2.MaxLength = 3;
-            this.txtCep2.Name = "txtCep2";
-            this.txtCep2.Size = new System.Drawing.Size(34, 20);
-            this.txtCep2.TabIndex = 7;
-            this.txtCep2.TextChanged += new System.EventHandler(this.txtCep2_TextChanged);
-            // 
             // txtDDD
             // 
             this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -319,6 +298,14 @@
             this.lblEmail.TabIndex = 23;
             this.lblEmail.Text = "Email";
             // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(188, 140);
+            this.txtCep.Mask = "00000-000";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(200, 20);
+            this.txtCep.TabIndex = 24;
+            // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,13 +314,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(582, 227);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.lblDDD);
-            this.Controls.Add(this.txtCep2);
             this.Controls.Add(this.btnlimpar);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnInsere);
@@ -347,7 +334,6 @@
             this.Controls.Add(this.lblNumeroEndereco);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.lblComplemento);
-            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.lblCep);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
@@ -370,7 +356,6 @@
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label lblComplemento;
@@ -387,12 +372,12 @@
         private System.Windows.Forms.Button btnInsere;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnlimpar;
-        private System.Windows.Forms.TextBox txtCep2;
         private System.Windows.Forms.TextBox txtDDD;
         private System.Windows.Forms.Label lblDDD;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.MaskedTextBox txtCep;
     }
 }

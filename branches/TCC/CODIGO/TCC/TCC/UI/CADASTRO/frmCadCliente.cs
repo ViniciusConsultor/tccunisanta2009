@@ -51,13 +51,13 @@ namespace TCC.UI
                 {
                     model.Bairro = this.txtBairro.Text;
                 }
-                if (string.IsNullOrEmpty(this.txtCep.Text) == true && string.IsNullOrEmpty(this.txtCep2.Text) == true)
+                if (this.txtCep.Modified == false)
                 {
                     model.Cep = null;
                 }
                 else
                 {
-                    model.Cep = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                    model.Cep = Convert.ToInt32(this.txtCep.Text.Replace("-",String.Empty));
                 }
                 model.Cidade = this.txtCidade.Text;
                 if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
@@ -83,13 +83,13 @@ namespace TCC.UI
                 {
                     model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
                 }
-                if (string.IsNullOrEmpty(this.txtRg.Text) == true)
+                if (string.IsNullOrEmpty(this.maskedTextBox1.Text) == true)
                 {
                     model.Rg = null;
                 }
                 else
                 {
-                    model.Rg = Convert.ToInt32(this.txtRg.Text);
+                    model.Rg = Convert.ToInt32(this.maskedTextBox1.Text);
                 }
                 model.TelefoneCliente = this.txtTelefone.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
@@ -120,21 +120,7 @@ namespace TCC.UI
             }
         }
 
-        private void txtCep_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCep.TextLength == 5)
-            {
-                this.txtCep2.Focus();
-            }
-        }
-
-        private void txtCep2_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCep2.TextLength == 3)
-            {
-                this.txtBairro.Focus();
-            }
-        }
+       
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
@@ -196,9 +182,7 @@ namespace TCC.UI
         {
             txtDDD._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             txtNumero._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            txtTelefone._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            txtCep._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            txtCep2._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtTelefone._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;           
         }
     }
 }
