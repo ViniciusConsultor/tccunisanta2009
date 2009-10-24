@@ -198,5 +198,24 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rUsuario regra = new rUsuario();
+            mUsuario model = new mUsuario();
+            try
+            {
+                model.IdUsuario = 1;
+                regra.BuscaUsuario(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
+        }
     }
 }
