@@ -29,32 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadNumeroMotor));
-            this.txtCdNumeroMotor = new System.Windows.Forms.TextBox();
-            this.lblCdNumeroMotor = new System.Windows.Forms.Label();
             this.txtDscNumeroMotor = new System.Windows.Forms.TextBox();
             this.lblDsNumeroMotor = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // txtCdNumeroMotor
-            // 
-            this.txtCdNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdNumeroMotor.Location = new System.Drawing.Point(196, 40);
-            this.txtCdNumeroMotor.Name = "txtCdNumeroMotor";
-            this.txtCdNumeroMotor.ReadOnly = true;
-            this.txtCdNumeroMotor.Size = new System.Drawing.Size(100, 20);
-            this.txtCdNumeroMotor.TabIndex = 20;
-            // 
-            // lblCdNumeroMotor
-            // 
-            this.lblCdNumeroMotor.AutoSize = true;
-            this.lblCdNumeroMotor.Location = new System.Drawing.Point(53, 47);
-            this.lblCdNumeroMotor.Name = "lblCdNumeroMotor";
-            this.lblCdNumeroMotor.Size = new System.Drawing.Size(140, 13);
-            this.lblCdNumeroMotor.TabIndex = 19;
-            this.lblCdNumeroMotor.Text = "Codigo do Numero do Motor";
             // 
             // txtDscNumeroMotor
             // 
@@ -118,8 +98,6 @@
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtDscNumeroMotor);
             this.Controls.Add(this.lblDsNumeroMotor);
-            this.Controls.Add(this.txtCdNumeroMotor);
-            this.Controls.Add(this.lblCdNumeroMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadNumeroMotor";
             this.Text = "Numero Motor";
@@ -131,8 +109,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCdNumeroMotor;
-        private System.Windows.Forms.Label lblCdNumeroMotor;
         private System.Windows.Forms.TextBox txtDscNumeroMotor;
         private System.Windows.Forms.Label lblDsNumeroMotor;
         private System.Windows.Forms.Button btnVoltar;

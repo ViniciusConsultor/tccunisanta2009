@@ -36,7 +36,7 @@ namespace TCC.UI
             }
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rFornecedor regra = new rFornecedor();
             try
@@ -51,11 +51,13 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private mFornecedor PegaDadosTela()
         {
             mFornecedor model = new mFornecedor();
+            rFornecedor regra = new rFornecedor();
+
             try
             {
                 model.Bairro = this.txtBairro.Text;
@@ -80,7 +82,7 @@ namespace TCC.UI
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
                 model.SlgEstado = this.cboUf.GetItemText(this.cboUf.SelectedItem);
-                model.IdFornecedor = Convert.ToInt32(this.txtCodigoFornecedor.Text);
+                model.IdFornecedor = Convert.ToInt32(regra.BuscaIdMaximoFornecedor());
                 model.NomeFornecedor = this.txtNomeFornecedor.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
@@ -139,7 +141,7 @@ namespace TCC.UI
             mFornecedor model;
             try
             {
-                this.ValidadadosNulos();
+                //this.ValidadadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
@@ -182,7 +184,7 @@ namespace TCC.UI
             }
         }
 
-        private void ValidadadosNulos()
+        /*private void ValidadadosNulos()
         {
             try
             {
@@ -195,7 +197,7 @@ namespace TCC.UI
             {
                 throw ex;
             }
-        }
+        }*/
 
         private void btnVolta_Click(object sender, EventArgs e)
         {

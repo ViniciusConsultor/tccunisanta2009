@@ -54,14 +54,16 @@ namespace TCC.UI
         private mPerfil PegaDadosTela()
         {
             mPerfil model = new mPerfil();
-            model.IdPerfil = Convert.ToInt32(txtIdPerfil.Text);
+            rPerfil regra = new rPerfil();
+
+            model.IdPerfil = Convert.ToInt32(regra.BuscaIdMaximoPerfil());
             model.DescPerfil = txtDescPerfil.Text;
 
             return model;
         }
         #endregion
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rPerfil regraPerfil = new rPerfil();
             try
@@ -76,7 +78,7 @@ namespace TCC.UI
             {
                 regraPerfil = null;
             }
-        }
+        }*/
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {

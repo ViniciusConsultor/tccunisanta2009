@@ -38,7 +38,7 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rPedidoVenda regra = new rPedidoVenda();
             try
@@ -53,7 +53,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void btnBuscaVendaMotor_Click(object sender, EventArgs e)
         {
@@ -110,12 +110,14 @@ namespace TCC.UI
         private mPedidoVenda PegaDadosTela()
         {
             mPedidoVenda model = new mPedidoVenda();
+            rPedidoVenda regra = new rPedidoVenda();
+
             try
             {
                 model.DatAlt = DateTime.Now;
                 model.DscVenda = this.txtDsPedido.Text;
                 model.IdDepto = this._modelDepartamento.IdDepto;
-                model.IdPedido = Convert.ToInt32(this.txtCdPedidoVenda.Text);
+                model.IdPedido = Convert.ToInt32(regra.BuscaidMaximo());
                 model.IdVenda = this._modelVenda.IdVenda;
 
                 return model;

@@ -32,8 +32,6 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
-            this.txtCdTipoPeca = new System.Windows.Forms.TextBox();
-            this.lblCdTipoPeca = new System.Windows.Forms.Label();
             this.lblDsTipoPeca = new System.Windows.Forms.Label();
             this.txtDsTipoPeca = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -70,24 +68,6 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
-            // txtCdTipoPeca
-            // 
-            this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoPeca.Location = new System.Drawing.Point(186, 37);
-            this.txtCdTipoPeca.Name = "txtCdTipoPeca";
-            this.txtCdTipoPeca.ReadOnly = true;
-            this.txtCdTipoPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtCdTipoPeca.TabIndex = 17;
-            // 
-            // lblCdTipoPeca
-            // 
-            this.lblCdTipoPeca.AutoSize = true;
-            this.lblCdTipoPeca.Location = new System.Drawing.Point(43, 40);
-            this.lblCdTipoPeca.Name = "lblCdTipoPeca";
-            this.lblCdTipoPeca.Size = new System.Drawing.Size(122, 13);
-            this.lblCdTipoPeca.TabIndex = 18;
-            this.lblCdTipoPeca.Text = "Codigo do Tipo de Peça";
-            // 
             // lblDsTipoPeca
             // 
             this.lblDsTipoPeca.AutoSize = true;
@@ -115,8 +95,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.lblDsTipoPeca);
             this.Controls.Add(this.txtDsTipoPeca);
-            this.Controls.Add(this.lblCdTipoPeca);
-            this.Controls.Add(this.txtCdTipoPeca);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
@@ -134,8 +112,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.TextBox txtCdTipoPeca;
-        private System.Windows.Forms.Label lblCdTipoPeca;
         private System.Windows.Forms.Label lblDsTipoPeca;
         private System.Windows.Forms.TextBox txtDsTipoPeca;
     }

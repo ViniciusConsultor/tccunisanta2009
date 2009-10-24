@@ -19,7 +19,7 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rEstoque regra = new rEstoque();
             try
@@ -34,14 +34,16 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private mEstoque PegaDadosTela()
         {
             mEstoque model = new mEstoque();
+            rEstoque regra = new rEstoque();
+
             try
             {
-                model.Id_estoque = Convert.ToInt32(this.txtCdEstoque.Text);
+                model.Id_estoque = Convert.ToInt32(regra.BuscaIdMaximoEstoque());
                 model.Id_depto = this._modelDepartamento.IdDepto;
                 model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;

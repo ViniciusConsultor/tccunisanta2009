@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFornecedor));
-            this.lblCodigoFornecedor = new System.Windows.Forms.Label();
-            this.txtCodigoFornecedor = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -60,26 +58,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblCodigoFornecedor
-            // 
-            this.lblCodigoFornecedor.AutoSize = true;
-            this.lblCodigoFornecedor.Location = new System.Drawing.Point(84, 34);
-            this.lblCodigoFornecedor.Name = "lblCodigoFornecedor";
-            this.lblCodigoFornecedor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCodigoFornecedor.Size = new System.Drawing.Size(97, 13);
-            this.lblCodigoFornecedor.TabIndex = 0;
-            this.lblCodigoFornecedor.Text = "Codigo Fornecedor";
-            this.lblCodigoFornecedor.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // txtCodigoFornecedor
-            // 
-            this.txtCodigoFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoFornecedor.Enabled = false;
-            this.txtCodigoFornecedor.Location = new System.Drawing.Point(188, 31);
-            this.txtCodigoFornecedor.Name = "txtCodigoFornecedor";
-            this.txtCodigoFornecedor.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoFornecedor.TabIndex = 0;
             // 
             // txtCidade
             // 
@@ -377,8 +355,6 @@
             this.Controls.Add(this.lblcnpj);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCidade);
-            this.Controls.Add(this.txtCodigoFornecedor);
-            this.Controls.Add(this.lblCodigoFornecedor);
             this.MaximizeBox = false;
             this.Name = "frmCadFornecedor";
             this.Text = "Cadastro de Fornecedor";
@@ -390,8 +366,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCodigoFornecedor;
-        private System.Windows.Forms.TextBox txtCodigoFornecedor;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtBairro;

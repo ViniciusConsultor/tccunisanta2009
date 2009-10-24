@@ -32,10 +32,8 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
-            this.txtCodItemPeca = new System.Windows.Forms.TextBox();
             this.txtCodigoPeca = new System.Windows.Forms.TextBox();
             this.txtDescItemPeca = new System.Windows.Forms.TextBox();
-            this.lblCodigoItemPeca = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCodPeca = new System.Windows.Forms.Label();
             this.btnBuscaPeca = new System.Windows.Forms.Button();
@@ -73,14 +71,6 @@
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
-            // txtCodItemPeca
-            // 
-            this.txtCodItemPeca.Location = new System.Drawing.Point(182, 38);
-            this.txtCodItemPeca.Name = "txtCodItemPeca";
-            this.txtCodItemPeca.ReadOnly = true;
-            this.txtCodItemPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtCodItemPeca.TabIndex = 3;
-            // 
             // txtCodigoPeca
             // 
             this.txtCodigoPeca.Location = new System.Drawing.Point(182, 90);
@@ -95,15 +85,6 @@
             this.txtDescItemPeca.Name = "txtDescItemPeca";
             this.txtDescItemPeca.Size = new System.Drawing.Size(100, 20);
             this.txtDescItemPeca.TabIndex = 5;
-            // 
-            // lblCodigoItemPeca
-            // 
-            this.lblCodigoItemPeca.AutoSize = true;
-            this.lblCodigoItemPeca.Location = new System.Drawing.Point(96, 41);
-            this.lblCodigoItemPeca.Name = "lblCodigoItemPeca";
-            this.lblCodigoItemPeca.Size = new System.Drawing.Size(80, 13);
-            this.lblCodigoItemPeca.TabIndex = 6;
-            this.lblCodigoItemPeca.Text = "Cod. Item Peça";
             // 
             // label2
             // 
@@ -145,10 +126,8 @@
             this.Controls.Add(this.btnBuscaPeca);
             this.Controls.Add(this.lblCodPeca);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblCodigoItemPeca);
             this.Controls.Add(this.txtDescItemPeca);
             this.Controls.Add(this.txtCodigoPeca);
-            this.Controls.Add(this.txtCodItemPeca);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnConfirmar);
@@ -166,10 +145,8 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnLimpa;
-        private System.Windows.Forms.TextBox txtCodItemPeca;
         private System.Windows.Forms.TextBox txtCodigoPeca;
         private System.Windows.Forms.TextBox txtDescItemPeca;
-        private System.Windows.Forms.Label lblCodigoItemPeca;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCodPeca;
         private System.Windows.Forms.Button btnBuscaPeca;

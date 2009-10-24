@@ -45,7 +45,7 @@ namespace TCC.UI
         }
 
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rVenda regra = new rVenda();
             try
@@ -60,7 +60,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void frmCadVenda_Load(object sender, EventArgs e)
         {
@@ -70,6 +70,8 @@ namespace TCC.UI
         private mVenda PegaDadosTela()
         {
             mVenda model = new mVenda();
+            rVenda regra = new rVenda();
+
             try
             {
                 if (string.IsNullOrEmpty(this.txtDataVenda.Text) == true || this.txtDataVenda.Modified == false)
@@ -86,7 +88,7 @@ namespace TCC.UI
                 model.IdMotor = this._modelMotor.IdMotor;
                 model.IdOrdem = this._modelOrdemProd.Id_ordem;
                 model.IdTipoProduto = this._modelTipoProd.IdTipoProd;
-                model.IdVenda = Convert.ToInt32(this.txtCdVenda.Text);
+                model.IdVenda = Convert.ToInt32(regra.BuscaidMaximo());
                 model.NotaFisc = this.txtNotaFiscal.Text;
                 if (string.IsNullOrEmpty(this.txtQtdVenda.Text) == true)
                 {

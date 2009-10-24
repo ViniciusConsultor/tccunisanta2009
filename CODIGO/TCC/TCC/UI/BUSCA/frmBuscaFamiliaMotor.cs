@@ -32,8 +32,8 @@ namespace TCC.UI
             try
             {
                 dt = regraFamiliaM.BuscaFamiliaMotor(this.txtFiltro.Text);
-                dgCliente.DataSource = dt;
-                dgCliente.Columns[0].Visible = false;
+                dgFamMotor.DataSource = dt;
+                dgFamMotor.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -57,17 +57,24 @@ namespace TCC.UI
             DataTable dtSource = new DataTable();
             try
             {
-                dtSource = (DataTable)this.dgCliente.DataSource;
-                if (this.dgCliente.DataSource != null)
+                dtSource = (DataTable)this.dgFamMotor.DataSource;
+                if (this.dgFamMotor.DataSource != null)
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgCliente["id_fam_motor", this.dgCliente.CurrentRow.Index];
-                        this._model.IdFamiliaMotor = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgCliente["Familia Motor", this.dgCliente.CurrentRow.Index];
-                        this._model.DscFamiliaMotor = dvc.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgFamMotor.CurrentRow != null)
+                        {
+                            dvc = this.dgFamMotor["id_fam_motor", this.dgFamMotor.CurrentRow.Index];
+                            this._model.IdFamiliaMotor = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgFamMotor["Familia Motor", this.dgFamMotor.CurrentRow.Index];
+                            this._model.DscFamiliaMotor = dvc.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {

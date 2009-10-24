@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadColaborador));
-            this.lblIdColaborador = new System.Windows.Forms.Label();
             this.lblCdUsuario = new System.Windows.Forms.Label();
             this.lblCdDepart = new System.Windows.Forms.Label();
             this.lblNmColaborador = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.lblComplemento = new System.Windows.Forms.Label();
             this.lblCep = new System.Windows.Forms.Label();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.txtCdColab = new System.Windows.Forms.TextBox();
             this.txtCdUsuario = new System.Windows.Forms.TextBox();
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -73,15 +71,6 @@
             this.txtCEP = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep2 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
-            // 
-            // lblIdColaborador
-            // 
-            this.lblIdColaborador.AutoSize = true;
-            this.lblIdColaborador.Location = new System.Drawing.Point(104, 12);
-            this.lblIdColaborador.Name = "lblIdColaborador";
-            this.lblIdColaborador.Size = new System.Drawing.Size(100, 13);
-            this.lblIdColaborador.TabIndex = 0;
-            this.lblIdColaborador.Text = "Codigo Colaborador";
             // 
             // lblCdUsuario
             // 
@@ -163,16 +152,6 @@
             this.lblBairro.Size = new System.Drawing.Size(34, 13);
             this.lblBairro.TabIndex = 0;
             this.lblBairro.Text = "Bairro";
-            // 
-            // txtCdColab
-            // 
-            this.txtCdColab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdColab.Enabled = false;
-            this.txtCdColab.Location = new System.Drawing.Point(210, 9);
-            this.txtCdColab.Name = "txtCdColab";
-            this.txtCdColab.ReadOnly = true;
-            this.txtCdColab.Size = new System.Drawing.Size(59, 20);
-            this.txtCdColab.TabIndex = 0;
             // 
             // txtCdUsuario
             // 
@@ -502,7 +481,6 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtCdDepartamento);
             this.Controls.Add(this.txtCdUsuario);
-            this.Controls.Add(this.txtCdColab);
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.lblCep);
             this.Controls.Add(this.lblComplemento);
@@ -512,7 +490,6 @@
             this.Controls.Add(this.lblNmColaborador);
             this.Controls.Add(this.lblCdDepart);
             this.Controls.Add(this.lblCdUsuario);
-            this.Controls.Add(this.lblIdColaborador);
             this.MaximizeBox = false;
             this.Name = "frmCadColaborador";
             this.Text = "Cadastro de Colaborador";
@@ -524,7 +501,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblIdColaborador;
         private System.Windows.Forms.Label lblCdUsuario;
         private System.Windows.Forms.Label lblCdDepart;
         private System.Windows.Forms.Label lblNmColaborador;
@@ -534,7 +510,6 @@
         private System.Windows.Forms.Label lblComplemento;
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.TextBox txtCdColab;
         private System.Windows.Forms.TextBox txtCdUsuario;
         private System.Windows.Forms.TextBox txtCdDepartamento;
         private System.Windows.Forms.TextBox txtNome;

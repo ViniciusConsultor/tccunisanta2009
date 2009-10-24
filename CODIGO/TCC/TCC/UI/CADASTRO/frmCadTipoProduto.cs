@@ -33,7 +33,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rTipoProduto regra = new rTipoProduto();
             try
@@ -48,7 +48,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void frmCadTipoProduto_Load(object sender, EventArgs e)
         {
@@ -58,11 +58,12 @@ namespace TCC.UI
         private mTipoProduto PegaDadosTela()
         {
             mTipoProduto model = new mTipoProduto();
+            rTipoProduto regra = new rTipoProduto();
             try
             {
                 model.DatAlt = DateTime.Now;
                 model.FlgAtivo = true;
-                model.IdTipoProd = Convert.ToInt32(this.txtCodigo.Text);
+                model.IdTipoProd = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Nom = this.txtNome.Text;
 
                 return model;

@@ -79,18 +79,21 @@ namespace TCC.UI
                     {
                         if (this._alteracao == false)
                         {
-                            //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                            //------------------------------------------------------------------------------------
-                            dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
-                            _model.IdUsuario = Convert.ToInt32(dvC.Value);
-                            dvC = this.dgUsuario["Usuário", this.dgUsuario.CurrentRow.Index];
-                            _model.Login = dvC.Value.ToString();
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
-                        else
-                        {
-
+                            if (this.dgUsuario.CurrentRow != null)
+                            {
+                                //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
+                                //------------------------------------------------------------------------------------
+                                dvC = this.dgUsuario["id_usu", this.dgUsuario.CurrentRow.Index];
+                                _model.IdUsuario = Convert.ToInt32(dvC.Value);
+                                dvC = this.dgUsuario["Usuário", this.dgUsuario.CurrentRow.Index];
+                                _model.Login = dvC.Value.ToString();
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                            }
                         }
                     }
                     else

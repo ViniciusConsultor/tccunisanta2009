@@ -18,7 +18,7 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rMotor regraMotor = new rMotor();
             try
@@ -33,7 +33,7 @@ namespace TCC.UI
             {
                 regraMotor = null;
             }
-        }
+        }*/
 
         private void frmMotor_Load(object sender, EventArgs e)
         {
@@ -70,9 +70,11 @@ namespace TCC.UI
         private mMotor PegaDadosTela()
         {
             mMotor model = new mMotor();
+            rMotor regra = new rMotor();
+
             try
             {
-                model.IdMotor = Convert.ToInt32(this.txtCdMotor.Text);
+                model.IdMotor = Convert.ToInt32(regra.BuscaIdMaximoMotor());
                 model.DscMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;
 

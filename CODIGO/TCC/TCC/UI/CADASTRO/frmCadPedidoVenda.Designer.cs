@@ -32,8 +32,6 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
-            this.txtCdPedidoVenda = new System.Windows.Forms.TextBox();
-            this.lblCdPedidoVenda = new System.Windows.Forms.Label();
             this.txtCdVendaMotor = new System.Windows.Forms.TextBox();
             this.lblCdVendaMotor = new System.Windows.Forms.Label();
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
@@ -75,24 +73,6 @@
             this.btnAceitar.TabIndex = 17;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
-            // 
-            // txtCdPedidoVenda
-            // 
-            this.txtCdPedidoVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPedidoVenda.Location = new System.Drawing.Point(267, 20);
-            this.txtCdPedidoVenda.Name = "txtCdPedidoVenda";
-            this.txtCdPedidoVenda.ReadOnly = true;
-            this.txtCdPedidoVenda.Size = new System.Drawing.Size(92, 20);
-            this.txtCdPedidoVenda.TabIndex = 20;
-            // 
-            // lblCdPedidoVenda
-            // 
-            this.lblCdPedidoVenda.AutoSize = true;
-            this.lblCdPedidoVenda.Location = new System.Drawing.Point(82, 22);
-            this.lblCdPedidoVenda.Name = "lblCdPedidoVenda";
-            this.lblCdPedidoVenda.Size = new System.Drawing.Size(140, 13);
-            this.lblCdPedidoVenda.TabIndex = 21;
-            this.lblCdPedidoVenda.Text = "Codigo do Pedido de Venda";
             // 
             // txtCdVendaMotor
             // 
@@ -183,8 +163,6 @@
             this.Controls.Add(this.txtCdDepartamento);
             this.Controls.Add(this.lblCdVendaMotor);
             this.Controls.Add(this.txtCdVendaMotor);
-            this.Controls.Add(this.lblCdPedidoVenda);
-            this.Controls.Add(this.txtCdPedidoVenda);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnBuscaDepartamento);
@@ -204,8 +182,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.TextBox txtCdPedidoVenda;
-        private System.Windows.Forms.Label lblCdPedidoVenda;
         private System.Windows.Forms.TextBox txtCdVendaMotor;
         private System.Windows.Forms.Label lblCdVendaMotor;
         private System.Windows.Forms.TextBox txtCdDepartamento;

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVenda));
-            this.lblCdVenda = new System.Windows.Forms.Label();
-            this.txtCdVenda = new System.Windows.Forms.TextBox();
             this.lblCdOrdemMotor = new System.Windows.Forms.Label();
             this.txtCdOrdemMotor = new System.Windows.Forms.TextBox();
             this.lblCdMotor = new System.Windows.Forms.Label();
@@ -58,24 +56,6 @@
             this.btnCdKit = new System.Windows.Forms.Button();
             this.txtDataVenda = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // lblCdVenda
-            // 
-            this.lblCdVenda.AutoSize = true;
-            this.lblCdVenda.Location = new System.Drawing.Point(96, 22);
-            this.lblCdVenda.Name = "lblCdVenda";
-            this.lblCdVenda.Size = new System.Drawing.Size(74, 13);
-            this.lblCdVenda.TabIndex = 0;
-            this.lblCdVenda.Text = "Codigo Venda";
-            // 
-            // txtCdVenda
-            // 
-            this.txtCdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdVenda.Location = new System.Drawing.Point(192, 19);
-            this.txtCdVenda.Name = "txtCdVenda";
-            this.txtCdVenda.ReadOnly = true;
-            this.txtCdVenda.Size = new System.Drawing.Size(64, 20);
-            this.txtCdVenda.TabIndex = 1;
             // 
             // lblCdOrdemMotor
             // 
@@ -350,7 +330,6 @@
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.txtCdOrdemMotor);
             this.Controls.Add(this.lblCdKit);
-            this.Controls.Add(this.txtCdVenda);
             this.Controls.Add(this.lblNotaFiscal);
             this.Controls.Add(this.lblVlVenda);
             this.Controls.Add(this.lblQtdVenda);
@@ -358,7 +337,6 @@
             this.Controls.Add(this.lblCdCliente);
             this.Controls.Add(this.lblCdMotor);
             this.Controls.Add(this.lblCdOrdemMotor);
-            this.Controls.Add(this.lblCdVenda);
             this.MaximizeBox = false;
             this.Name = "frmCadVenda";
             this.Text = "Venda";
@@ -370,8 +348,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdVenda;
-        private System.Windows.Forms.TextBox txtCdVenda;
         private System.Windows.Forms.Label lblCdOrdemMotor;
         private System.Windows.Forms.TextBox txtCdOrdemMotor;
         private System.Windows.Forms.Label lblCdMotor;

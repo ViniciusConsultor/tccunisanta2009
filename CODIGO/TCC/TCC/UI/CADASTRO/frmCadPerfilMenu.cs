@@ -24,6 +24,7 @@ namespace TCC.UI
         private mPerfilMenu PegaDadosTela()
         {
             mPerfilMenu model = new mPerfilMenu();
+
             model.IdMenu = Convert.ToInt32(this.txtCodigoMenu.Text);
             model.IdPerfil = Convert.ToInt32(this.txtCodigoPerfil.Text);
             model.FlgAtivo = true;

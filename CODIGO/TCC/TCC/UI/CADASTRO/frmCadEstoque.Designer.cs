@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEstoque));
-            this.lblcodigoEstoque = new System.Windows.Forms.Label();
-            this.txtCdEstoque = new System.Windows.Forms.TextBox();
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
             this.lblCodigoDepartamento = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -40,24 +38,6 @@
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblcodigoEstoque
-            // 
-            this.lblcodigoEstoque.AutoSize = true;
-            this.lblcodigoEstoque.Location = new System.Drawing.Point(67, 59);
-            this.lblcodigoEstoque.Name = "lblcodigoEstoque";
-            this.lblcodigoEstoque.Size = new System.Drawing.Size(40, 13);
-            this.lblcodigoEstoque.TabIndex = 0;
-            this.lblcodigoEstoque.Text = "Codigo";
-            // 
-            // txtCdEstoque
-            // 
-            this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdEstoque.Enabled = false;
-            this.txtCdEstoque.Location = new System.Drawing.Point(113, 56);
-            this.txtCdEstoque.Name = "txtCdEstoque";
-            this.txtCdEstoque.Size = new System.Drawing.Size(100, 20);
-            this.txtCdEstoque.TabIndex = 0;
             // 
             // txtCdDepartamento
             // 
@@ -154,8 +134,6 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtCdDepartamento);
             this.Controls.Add(this.lblCodigoDepartamento);
-            this.Controls.Add(this.txtCdEstoque);
-            this.Controls.Add(this.lblcodigoEstoque);
             this.MaximizeBox = false;
             this.Name = "frmCadEstoque";
             this.Text = "Cadastro de Estoque";
@@ -167,8 +145,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblcodigoEstoque;
-        private System.Windows.Forms.TextBox txtCdEstoque;
         private System.Windows.Forms.TextBox txtCdDepartamento;
         private System.Windows.Forms.Label lblCodigoDepartamento;
         private System.Windows.Forms.TextBox txtNome;

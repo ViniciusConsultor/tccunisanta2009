@@ -49,9 +49,10 @@ namespace TCC.UI
         private mTipoPeca PegaDadosTela()
         {
             mTipoPeca model = new mTipoPeca();
+            rTipoPeca regra = new rTipoPeca();
             try
             {
-                model.IdTipoPeca = Convert.ToInt32(this.txtCdTipoPeca.Text);
+                model.IdTipoPeca = Convert.ToInt32(regra.BuscaIdMaximoTipoPeca());
                 model.DscTipoPeca = this.txtDsTipoPeca.Text;
                 model.FlgAtivo = true;
 
@@ -94,7 +95,7 @@ namespace TCC.UI
             }
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rTipoPeca regra = new rTipoPeca();
             try
@@ -109,6 +110,6 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
     }
 }

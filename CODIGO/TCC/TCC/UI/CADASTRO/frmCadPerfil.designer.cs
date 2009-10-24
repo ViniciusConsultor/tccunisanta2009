@@ -29,23 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPerfil));
-            this.lblIdPerfil = new System.Windows.Forms.Label();
             this.lblDescPerfil = new System.Windows.Forms.Label();
-            this.txtIdPerfil = new System.Windows.Forms.TextBox();
             this.txtDescPerfil = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblIdPerfil
-            // 
-            this.lblIdPerfil.AutoSize = true;
-            this.lblIdPerfil.Location = new System.Drawing.Point(76, 37);
-            this.lblIdPerfil.Name = "lblIdPerfil";
-            this.lblIdPerfil.Size = new System.Drawing.Size(66, 13);
-            this.lblIdPerfil.TabIndex = 0;
-            this.lblIdPerfil.Text = "Codigo Perfil";
             // 
             // lblDescPerfil
             // 
@@ -55,16 +44,6 @@
             this.lblDescPerfil.Size = new System.Drawing.Size(81, 13);
             this.lblDescPerfil.TabIndex = 1;
             this.lblDescPerfil.Text = "Descricao Perfil";
-            // 
-            // txtIdPerfil
-            // 
-            this.txtIdPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdPerfil.Enabled = false;
-            this.txtIdPerfil.Location = new System.Drawing.Point(148, 34);
-            this.txtIdPerfil.Name = "txtIdPerfil";
-            this.txtIdPerfil.ReadOnly = true;
-            this.txtIdPerfil.Size = new System.Drawing.Size(100, 20);
-            this.txtIdPerfil.TabIndex = 0;
             // 
             // txtDescPerfil
             // 
@@ -119,9 +98,7 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.txtDescPerfil);
-            this.Controls.Add(this.txtIdPerfil);
             this.Controls.Add(this.lblDescPerfil);
-            this.Controls.Add(this.lblIdPerfil);
             this.MaximizeBox = false;
             this.Name = "frmCadPerfil";
             this.Text = "Cadastro de Perfil";
@@ -133,9 +110,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblIdPerfil;
         private System.Windows.Forms.Label lblDescPerfil;
-        private System.Windows.Forms.TextBox txtIdPerfil;
         private System.Windows.Forms.TextBox txtDescPerfil;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnLimpar;

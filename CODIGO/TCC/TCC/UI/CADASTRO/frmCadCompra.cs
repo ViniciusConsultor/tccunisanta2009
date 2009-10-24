@@ -28,7 +28,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rCompra regraCompra = new rCompra();
             try
@@ -43,7 +43,7 @@ namespace TCC.UI
             {
                 regraCompra = null;
             }
-        }
+        }*/
 
         private void btnBuscaMotorCompra_Click(object sender, EventArgs e)
         {
@@ -245,6 +245,8 @@ namespace TCC.UI
         private mCompra PegaDadosTela()
         {
             mCompra model = new mCompra();
+            rCompra regra = new rCompra();
+
             try
             {
                 if (string.IsNullOrEmpty(this.txtDataCompra.Text) == true)
@@ -255,7 +257,7 @@ namespace TCC.UI
                 {
                     model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
                 }
-                model.IdCompra = Convert.ToInt32(this.txtCdCompra.Text);
+                model.IdCompra = Convert.ToInt32(regra.BuscaIdMaximoCompra());
                 model.IdDepto = this._modelDepartamento.IdDepto;
                 model.IdFornecedor = this._modelFornecedor.IdFornecedor;
                 model.IdMotorCompra = this._modelMotor.IdMotor;
