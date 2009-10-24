@@ -13,7 +13,9 @@ namespace TCC.UI
 {
     public partial class frmCadUsuario : FormPai
     {
+        #region Atributos
         mPerfil _modelPerfil;
+        #endregion
 
         #region Construtor
         public frmCadUsuario()
@@ -27,7 +29,6 @@ namespace TCC.UI
         #region Form Load
         private void frmCadUsuario_Load(object sender, EventArgs e)
         {
-            //this.BuscaIdMaximo();
         }
         #endregion Form Load
 
@@ -131,6 +132,13 @@ namespace TCC.UI
         #endregion Eventos
 
         #region Metodos
+        private void ValidaDadosNulos()
+        {
+            if (this._modelPerfil == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
+            }
+        }
 
         #region Pega Dados Tela
         private mUsuario PegaDadosTela()
@@ -173,30 +181,5 @@ namespace TCC.UI
         }
 
         #endregion Metodos
-
-        /*protected override void BuscaIdMaximo()
-        {
-            rUsuario regraUsu = new rUsuario();
-            try
-            {
-                this.txtCodigo.Text = regraUsu.BuscaIdMaximoUsuario();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                regraUsu = null;
-            }
-        }*/
-
-        private void ValidaDadosNulos()
-        {
-            if (this._modelPerfil == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
-            }
-        }
     }
 }

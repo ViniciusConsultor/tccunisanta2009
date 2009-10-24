@@ -51,6 +51,8 @@ namespace TCC.UI
             {
                 dt = regraDepto.BuscaDepartamento(this.txtFiltro.Text);
                 dgDepartamento.DataSource = dt;
+                dgDepartamento.Columns[0].Visible = false;
+
             }
             catch (Exception ex)
             {

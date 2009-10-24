@@ -49,6 +49,7 @@ namespace TCC.UI
             try
             {
                 this.dgFornecedor.DataSource = regra.BuscaFornecedor(this.txtFiltro.Text);
+                dgFornecedor.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
