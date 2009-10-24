@@ -27,6 +27,7 @@ namespace TCC.BUSINESS
         const string INICIO_PROC_INSERIR = "sp_insert_";
         const string INICIO_PROC_ALTERAR = "sp_update_";
         const string INICIO_PROC_EXCLUIR = "sp_delete_";
+        const string INICIO_PROC_BUSCAR = "sp_select_";
 
         #region Busca Id Maximo Tabelas
         /// <summary>
@@ -184,7 +185,7 @@ namespace TCC.BUSINESS
         /// <summary>
         /// Delete os dados no banco.
         /// </summary>
-        /// <param name="model">Model com os dados e a tabela a ser inserido</param>
+        /// <param name="model">Model com os dados e a tabela a ser Deletado</param>
         public void Deleta(ModelPai model)
         {
             this.ExecutaComandoSql(model, TipoComando.delete);
@@ -195,12 +196,33 @@ namespace TCC.BUSINESS
         /// <summary>
         /// Altera os dados no banco.
         /// </summary>
-        /// <param name="model">Model com os dados e a tabela a ser inserido</param>
+        /// <param name="model">Model com os dados e a tabela a ser Alterado</param>
         public void Altera(ModelPai model)
         {
             this.ExecutaComandoSql(model, TipoComando.update);
         }
         #endregion Altera
+
+        #region Busca
+        /// <summary>
+        /// Busca apenas um registro do banco
+        /// </summary>
+        /// <param name="model">Model com os dados e a tabela a ser buscado</param>
+        public DataTable BuscaUmRegistro(ModelPai model)
+        {
+            SqlParameter[] parametros = null;
+            try
+            {
+                parametros = this.BuscaNomeParametrosChavePrimaria(model);
+                string nomeProc = INICIO_PROC_BUSCAR + model.getNomeTabela();
+                return this.BuscaDados(nomeProc, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Busca
 
         #region Executa Comando Sql
         public void ExecutaComandoSql(ModelPai model, TipoComando com)
