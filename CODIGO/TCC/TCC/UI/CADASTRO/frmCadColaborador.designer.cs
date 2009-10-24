@@ -68,8 +68,7 @@
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtCEP = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtCep2 = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCdUsuario
@@ -426,21 +425,13 @@
             this.txtNumero.Size = new System.Drawing.Size(72, 20);
             this.txtNumero.TabIndex = 30;
             // 
-            // txtCEP
+            // txtCep
             // 
-            this.txtCEP.Location = new System.Drawing.Point(155, 124);
-            this.txtCEP.MaxLength = 5;
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(72, 20);
-            this.txtCEP.TabIndex = 31;
-            // 
-            // txtCep2
-            // 
-            this.txtCep2.Location = new System.Drawing.Point(233, 125);
-            this.txtCep2.MaxLength = 9;
-            this.txtCep2.Name = "txtCep2";
-            this.txtCep2.Size = new System.Drawing.Size(36, 20);
-            this.txtCep2.TabIndex = 32;
+            this.txtCep.Location = new System.Drawing.Point(157, 124);
+            this.txtCep.Mask = "00000-000";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(154, 20);
+            this.txtCep.TabIndex = 31;
             // 
             // frmCadColaborador
             // 
@@ -450,8 +441,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(653, 259);
             this.ControlBox = false;
-            this.Controls.Add(this.txtCep2);
-            this.Controls.Add(this.txtCEP);
+            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtDDD);
@@ -539,7 +529,6 @@
         private Controles.MegaTextBox.MegaTextBox txtDDD;
         private Controles.MegaTextBox.MegaTextBox txtTelefone;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
-        private Controles.MegaTextBox.MegaTextBox txtCEP;
-        private Controles.MegaTextBox.MegaTextBox txtCep2;
+        private System.Windows.Forms.MaskedTextBox txtCep;
     }
 }

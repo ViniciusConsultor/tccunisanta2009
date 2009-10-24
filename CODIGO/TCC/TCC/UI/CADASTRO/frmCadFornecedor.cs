@@ -61,13 +61,13 @@ namespace TCC.UI
             try
             {
                 model.Bairro = this.txtBairro.Text;
-                if (string.IsNullOrEmpty(this.txtCep.Text) == true && string.IsNullOrEmpty(this.txtCep2.Text) == true)
+                if (this.txtCep.Modified == false)
                 {
                     model.CepFornecedor = null;
                 }
                 else
                 {
-                    model.CepFornecedor = Convert.ToInt32(this.txtCep.Text + this.txtCep2.Text);
+                    model.CepFornecedor = Convert.ToInt32(this.txtCep.Text.Replace("-",String.Empty));
                 }
                 model.Cidade = this.txtCidade.Text;
                 if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
@@ -167,23 +167,6 @@ namespace TCC.UI
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
         }
-
-        private void txtCep_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCep.TextLength == 5)
-            {
-                this.txtCep2.Focus();
-            }
-        }
-
-        private void txtCep2_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtCep2.TextLength == 3)
-            {
-                this.cboUf.Focus();
-            }
-        }
-
         /*private void ValidadadosNulos()
         {
             try
