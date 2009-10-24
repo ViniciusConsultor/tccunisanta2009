@@ -28,23 +28,6 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rCompra regraCompra = new rCompra();
-            try
-            {
-                this.txtCdCompra.Text = regraCompra.BuscaIdMaximoCompra();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regraCompra = null;
-            }
-        }*/
-
         private void btnBuscaMotorCompra_Click(object sender, EventArgs e)
         {
             this._modelMotor = new mMotor();
@@ -211,14 +194,6 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário Buscar o código do Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
             catch (BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception)
             {
                 MessageBox.Show("É Necessário Buscar o código do Tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -230,6 +205,10 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Compra.CompraValorVazioException)
             {
                 MessageBox.Show("É Necessário preencher o campo Valor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Compra.CompraMotorPecaVazioException)
+            {
+                MessageBox.Show("É Necessário busca o código do Motor ou da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -309,13 +288,9 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoFornecedorVazioExeception();
             }
-            else if (this._modelMotor == null)
+            else if (this._modelMotor == null && this._modelPeca == null)
             {
-                throw new BUSINESS.Exceptions.CodigoMotorVazioExeception();
-            }
-            else if (this._modelPeca == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
+                throw new BUSINESS.Exceptions.Compra.CompraMotorPecaVazioException();
             }
             else if (this._modelTipoProd == null)
             {

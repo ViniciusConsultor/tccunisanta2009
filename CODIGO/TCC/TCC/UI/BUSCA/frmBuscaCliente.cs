@@ -43,11 +43,6 @@ namespace TCC.UI
         #endregion
 
         #region Metodos
-        public void buscaCodigo()
-        {
-
-        }
-
         private void PopulaGrid()
         {
             rCliente regraCliente = new rCliente();
@@ -57,7 +52,7 @@ namespace TCC.UI
                 dt = regraCliente.BuscaClientes(this.txtFiltro.Text);
                 dgCliente.DataSource = dt;
                 dgCliente.Columns[0].Visible = false;
-                dgCliente.Rows[0].Selected = true;
+                //dgCliente.Rows[0].Selected = true;
             }
             catch (Exception ex)
             {
