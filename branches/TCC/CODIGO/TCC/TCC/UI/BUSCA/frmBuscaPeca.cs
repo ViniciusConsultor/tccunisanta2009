@@ -12,19 +12,36 @@ namespace TCC.UI
 {
     public partial class frmBuscaPeca : Form
     {
+        #region Atributos
         mPeca _model;
+        #endregion
 
+        #region Construtor
         public frmBuscaPeca(mPeca modelPeca)
         {
             InitializeComponent();
             this._model = modelPeca;
         }
+        #endregion
 
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rPeca regra = new rPeca();
@@ -44,11 +61,6 @@ namespace TCC.UI
                 regra = null;
                 dt = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -106,10 +118,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
+        #endregion
     }
 }

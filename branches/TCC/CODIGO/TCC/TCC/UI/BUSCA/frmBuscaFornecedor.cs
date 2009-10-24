@@ -12,19 +12,37 @@ namespace TCC.UI
 {
     public partial class frmBuscaFornecedor : Form
     {
+        #region Atributos
         mFornecedor _model;
+        #endregion
 
+        #region Construtor
         public frmBuscaFornecedor(mFornecedor modelFornecedor)
         {
             InitializeComponent();
             _model = modelFornecedor;
         }
+        #endregion
 
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rFornecedor regra = new rFornecedor();
@@ -40,11 +58,6 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -102,11 +115,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

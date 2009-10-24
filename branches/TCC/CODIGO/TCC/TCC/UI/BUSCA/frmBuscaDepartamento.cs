@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
@@ -31,6 +30,19 @@ namespace TCC.UI
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion Eventos
+
+        #region Metodos
         private void PopulaGrid()
         {
             rDepartamento regraDepto = new rDepartamento();
@@ -49,11 +61,6 @@ namespace TCC.UI
                 regraDepto = null;
                 dt = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -111,12 +118,6 @@ namespace TCC.UI
                 }
             }
         }
-        #endregion Eventos
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

@@ -12,19 +12,37 @@ namespace TCC.UI
 {
     public partial class frmBuscaCompra : Form
     {
+        #region Atributos
         mCompra _model;
+        #endregion
 
+        #region Construtor
         public frmBuscaCompra(mCompra modelCompra)
         {
             InitializeComponent();
             this._model = modelCompra;
         }
+        #endregion
 
+        #region Eventos
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.RetornaModel();
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.PopulaGrid();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rCompra regra = new rCompra();
@@ -44,11 +62,6 @@ namespace TCC.UI
                 regra = null;
                 dt = null;
             }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            this.PopulaGrid();
         }
 
         private void RetornaModel()
@@ -104,11 +117,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

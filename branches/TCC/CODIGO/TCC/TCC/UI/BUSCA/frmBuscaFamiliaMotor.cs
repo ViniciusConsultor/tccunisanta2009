@@ -12,19 +12,37 @@ namespace TCC.UI
 {
     public partial class frmBuscaFamiliaMotor : Form
     {
+        #region Atributos
         mFamiliaMotor _model;
+        #endregion
 
+        #region Construtor
         public frmBuscaFamiliaMotor(mFamiliaMotor modelFamilia)
         {
             InitializeComponent();
             this._model = modelFamilia;
         }
+        #endregion
 
+        #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private void PopulaGrid()
         {
             rFamiliaMotor regraFamiliaM = new rFamiliaMotor();
@@ -44,11 +62,6 @@ namespace TCC.UI
                 regraFamiliaM = null;
                 dt = null;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
         }
 
         private void RetornaModel()
@@ -105,11 +118,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        #endregion
     }
 }

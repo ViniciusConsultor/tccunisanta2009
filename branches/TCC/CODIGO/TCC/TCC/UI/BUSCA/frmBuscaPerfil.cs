@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
@@ -25,21 +24,27 @@ namespace TCC.UI
         }
         #endregion Contrutor
 
-        #region Metodos
-
-
-
-        #endregion Metodos
-
         #region Eventos
 
-        #region btnBuscar Click
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
-        #endregion btnBuscar Click
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.RetornaModel();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        #endregion Eventos
+
+        #region Metodos
         private void PopulaGrid()
         {
             rPerfil regraPerfil = new rPerfil();
@@ -60,13 +65,6 @@ namespace TCC.UI
                 dt = null;
             }
         }
-
-        #region btnOK Click
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.RetornaModel();
-        }
-        #endregion btnOK Click
 
         private void RetornaModel()
         {
@@ -123,13 +121,6 @@ namespace TCC.UI
                 }
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        #endregion Eventos
+        #endregion Metodos
     }
 }
