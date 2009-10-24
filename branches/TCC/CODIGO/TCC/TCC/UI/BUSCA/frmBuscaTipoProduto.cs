@@ -62,12 +62,19 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgTipoProduto["id_tipo_prod", this.dgTipoProduto.CurrentRow.Index];
-                        this._model.IdTipoProd = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgTipoProduto["Tipo Produto", this.dgTipoProduto.CurrentRow.Index];
-                        this._model.Nom = dvc.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgTipoProduto.CurrentRow != null)
+                        {
+                            dvc = this.dgTipoProduto["id_tipo_prod", this.dgTipoProduto.CurrentRow.Index];
+                            this._model.IdTipoProd = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgTipoProduto["Tipo Produto", this.dgTipoProduto.CurrentRow.Index];
+                            this._model.Nom = dvc.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {

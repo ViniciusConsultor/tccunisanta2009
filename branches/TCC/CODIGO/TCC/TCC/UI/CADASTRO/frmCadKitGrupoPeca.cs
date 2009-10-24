@@ -85,7 +85,7 @@ namespace TCC.UI
             }
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rKitGrupoPeca regra = new rKitGrupoPeca();
             try
@@ -100,7 +100,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         private void frmCadKitGrupoPeca_Load(object sender, EventArgs e)
         {
@@ -158,11 +158,13 @@ namespace TCC.UI
         private mKitGrupoPeca PegaDadosTela()
         {
             mKitGrupoPeca model = new mKitGrupoPeca();
+            rKitGrupoPeca regra = new rKitGrupoPeca();
+
             try
             {
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
-                model.Id_grupo = Convert.ToInt32(this.txtCdKit.Text);
+                model.Id_grupo = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_item_peca = this._modelItemPeca.Id_item_peca;
                 model.Id_peca = this._modelPeca.IdPeca;
                 model.Nom_grupo = this.txtNmKit.Text;

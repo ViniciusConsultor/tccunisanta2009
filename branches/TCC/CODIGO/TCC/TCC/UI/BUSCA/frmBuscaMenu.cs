@@ -60,12 +60,19 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgMenu["id_menu", this.dgMenu.CurrentRow.Index];
-                        this._model.IdMenu = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgMenu["Menu", this.dgMenu.CurrentRow.Index];
-                        this._model.DscMenu = dvc.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgMenu.CurrentRow != null)
+                        {
+                            dvc = this.dgMenu["id_menu", this.dgMenu.CurrentRow.Index];
+                            this._model.IdMenu = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgMenu["Menu", this.dgMenu.CurrentRow.Index];
+                            this._model.DscMenu = dvc.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {

@@ -32,9 +32,9 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgCliente = new System.Windows.Forms.DataGridView();
+            this.dgFamMotor = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFamMotor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -66,19 +66,19 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dgCliente
+            // dgFamMotor
             // 
-            this.dgCliente.AllowUserToAddRows = false;
-            this.dgCliente.AllowUserToDeleteRows = false;
-            this.dgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCliente.Location = new System.Drawing.Point(45, 45);
-            this.dgCliente.MultiSelect = false;
-            this.dgCliente.Name = "dgCliente";
-            this.dgCliente.ReadOnly = true;
-            this.dgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCliente.ShowEditingIcon = false;
-            this.dgCliente.Size = new System.Drawing.Size(260, 177);
-            this.dgCliente.TabIndex = 12;
+            this.dgFamMotor.AllowUserToAddRows = false;
+            this.dgFamMotor.AllowUserToDeleteRows = false;
+            this.dgFamMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFamMotor.Location = new System.Drawing.Point(45, 45);
+            this.dgFamMotor.MultiSelect = false;
+            this.dgFamMotor.Name = "dgFamMotor";
+            this.dgFamMotor.ReadOnly = true;
+            this.dgFamMotor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgFamMotor.ShowEditingIcon = false;
+            this.dgFamMotor.Size = new System.Drawing.Size(260, 177);
+            this.dgFamMotor.TabIndex = 12;
             // 
             // btnFechar
             // 
@@ -101,13 +101,13 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgCliente);
+            this.Controls.Add(this.dgFamMotor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmBuscaFamiliaMotor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Familia Motor";
-            ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFamMotor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +118,7 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgCliente;
+        private System.Windows.Forms.DataGridView dgFamMotor;
         private System.Windows.Forms.Button btnFechar;
     }
 }

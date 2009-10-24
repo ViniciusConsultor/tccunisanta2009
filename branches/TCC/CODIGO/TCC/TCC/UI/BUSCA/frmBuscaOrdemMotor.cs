@@ -66,12 +66,19 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgCdOrdemMotor["id_ordem", this.dgCdOrdemMotor.CurrentRow.Index];
-                        this.modelOrdemProd.Id_ordem = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgCdOrdemMotor["Ordem", this.dgCdOrdemMotor.CurrentRow.Index];
-                        this.modelOrdemProd.Dsc_ordem = dvc.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgCdOrdemMotor.CurrentRow != null)
+                        {
+                            dvc = this.dgCdOrdemMotor["id_ordem", this.dgCdOrdemMotor.CurrentRow.Index];
+                            this.modelOrdemProd.Id_ordem = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgCdOrdemMotor["Ordem", this.dgCdOrdemMotor.CurrentRow.Index];
+                            this.modelOrdemProd.Dsc_ordem = dvc.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {

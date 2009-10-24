@@ -62,12 +62,19 @@ namespace TCC.UI
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgKit["id_grupo", this.dgKit.CurrentRow.Index];
-                        this._model.Id_grupo = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgKit["Kit Grupo Peça", this.dgKit.CurrentRow.Index];
-                        this._model.Nom_grupo = dvc.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgKit.CurrentRow != null)
+                        {
+                            dvc = this.dgKit["id_grupo", this.dgKit.CurrentRow.Index];
+                            this._model.Id_grupo = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgKit["Kit Grupo Peça", this.dgKit.CurrentRow.Index];
+                            this._model.Nom_grupo = dvc.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {

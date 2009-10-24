@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TCC.BUSINESS;
+using TCC.MODEL;
 
 namespace TCC.UI
 {
@@ -48,16 +49,18 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-        private MODEL.mDepartamento PegaDadosTela()
+        private mDepartamento PegaDadosTela()
         {
-            MODEL.mDepartamento model = new TCC.MODEL.mDepartamento();
+            mDepartamento model = new mDepartamento();
+            rDepartamento regra = new rDepartamento();
+
             try
             {
                 
                 model.DscDepto = this.txtDescricaoDepartamento.Text;
                 model.FlgAtivo = true;
                 model.DatAtl = DateTime.Now;
-                model.IdDepto = Convert.ToInt32(this.txtCodigoDepartamento.Text);
+                model.IdDepto = Convert.ToInt32(regra.BuscaIdMaximoDepartamento());
                 return model;
             }
             catch (Exception ex)
@@ -66,7 +69,7 @@ namespace TCC.UI
             }
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rDepartamento regraDepartamento = new rDepartamento();
             try
@@ -81,6 +84,6 @@ namespace TCC.UI
             {
                 regraDepartamento = null;
             }
-        }
+        }*/
     }
 }

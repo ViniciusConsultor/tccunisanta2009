@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPeca));
-            this.lblCdPeca = new System.Windows.Forms.Label();
-            this.txtCdPeca = new System.Windows.Forms.TextBox();
             this.lblCdTipoPeca = new System.Windows.Forms.Label();
             this.txtCdTipoPeca = new System.Windows.Forms.TextBox();
             this.lblCdEstoque = new System.Windows.Forms.Label();
@@ -51,24 +49,6 @@
             this.txtQtdPeca = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblCdPeca
-            // 
-            this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(64, 7);
-            this.lblCdPeca.Name = "lblCdPeca";
-            this.lblCdPeca.Size = new System.Drawing.Size(83, 13);
-            this.lblCdPeca.TabIndex = 0;
-            this.lblCdPeca.Text = "Codigo de Peça";
-            // 
-            // txtCdPeca
-            // 
-            this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(166, 4);
-            this.txtCdPeca.Name = "txtCdPeca";
-            this.txtCdPeca.ReadOnly = true;
-            this.txtCdPeca.Size = new System.Drawing.Size(69, 20);
-            this.txtCdPeca.TabIndex = 1;
             // 
             // lblCdTipoPeca
             // 
@@ -272,8 +252,6 @@
             this.Controls.Add(this.lblCdEstoque);
             this.Controls.Add(this.txtCdTipoPeca);
             this.Controls.Add(this.lblCdTipoPeca);
-            this.Controls.Add(this.txtCdPeca);
-            this.Controls.Add(this.lblCdPeca);
             this.MaximizeBox = false;
             this.Name = "frmCadPeca";
             this.Text = "Cadastro de Peca";
@@ -285,8 +263,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdPeca;
-        private System.Windows.Forms.TextBox txtCdPeca;
         private System.Windows.Forms.Label lblCdTipoPeca;
         private System.Windows.Forms.TextBox txtCdTipoPeca;
         private System.Windows.Forms.Label lblCdEstoque;

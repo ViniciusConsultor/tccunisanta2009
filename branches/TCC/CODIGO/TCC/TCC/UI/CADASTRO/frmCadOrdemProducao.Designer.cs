@@ -32,8 +32,6 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
-            this.lblCdOrdemMotor = new System.Windows.Forms.Label();
-            this.txtCdOrdemMotor = new System.Windows.Forms.TextBox();
             this.lblcdFamiliaMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblCdDepartamento = new System.Windows.Forms.Label();
@@ -81,24 +79,6 @@
             this.btnAceitar.TabIndex = 14;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
-            // 
-            // lblCdOrdemMotor
-            // 
-            this.lblCdOrdemMotor.AutoSize = true;
-            this.lblCdOrdemMotor.Location = new System.Drawing.Point(77, 35);
-            this.lblCdOrdemMotor.Name = "lblCdOrdemMotor";
-            this.lblCdOrdemMotor.Size = new System.Drawing.Size(136, 13);
-            this.lblCdOrdemMotor.TabIndex = 17;
-            this.lblCdOrdemMotor.Text = "Codigo da Ordem Do Motor";
-            // 
-            // txtCdOrdemMotor
-            // 
-            this.txtCdOrdemMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdOrdemMotor.Location = new System.Drawing.Point(227, 27);
-            this.txtCdOrdemMotor.Name = "txtCdOrdemMotor";
-            this.txtCdOrdemMotor.ReadOnly = true;
-            this.txtCdOrdemMotor.Size = new System.Drawing.Size(82, 20);
-            this.txtCdOrdemMotor.TabIndex = 18;
             // 
             // lblcdFamiliaMotor
             // 
@@ -251,8 +231,6 @@
             this.Controls.Add(this.lblCdDepartamento);
             this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblcdFamiliaMotor);
-            this.Controls.Add(this.txtCdOrdemMotor);
-            this.Controls.Add(this.lblCdOrdemMotor);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdTipoProduto);
@@ -274,8 +252,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.Label lblCdOrdemMotor;
-        private System.Windows.Forms.TextBox txtCdOrdemMotor;
         private System.Windows.Forms.Label lblcdFamiliaMotor;
         private System.Windows.Forms.TextBox txtCdMotor;
         private System.Windows.Forms.Label lblCdDepartamento;

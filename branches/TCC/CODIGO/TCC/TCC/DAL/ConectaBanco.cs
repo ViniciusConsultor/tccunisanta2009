@@ -33,7 +33,7 @@ namespace TCC.DAL
                 conexao.Open();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

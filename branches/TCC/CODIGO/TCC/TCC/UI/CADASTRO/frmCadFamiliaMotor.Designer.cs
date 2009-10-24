@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFamiliaMotor));
-            this.lblCdFamMotor = new System.Windows.Forms.Label();
-            this.txtCdFamiliaMotor = new System.Windows.Forms.TextBox();
             this.lblCdMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblCdNumeroMotor = new System.Windows.Forms.Label();
@@ -52,24 +50,6 @@
             this.btnCdTipoMotor = new System.Windows.Forms.Button();
             this.btnCdEstoque = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblCdFamMotor
-            // 
-            this.lblCdFamMotor.AutoSize = true;
-            this.lblCdFamMotor.Location = new System.Drawing.Point(68, 29);
-            this.lblCdFamMotor.Name = "lblCdFamMotor";
-            this.lblCdFamMotor.Size = new System.Drawing.Size(137, 13);
-            this.lblCdFamMotor.TabIndex = 0;
-            this.lblCdFamMotor.Text = "Codigo da Familia Do Motor";
-            // 
-            // txtCdFamiliaMotor
-            // 
-            this.txtCdFamiliaMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdFamiliaMotor.Location = new System.Drawing.Point(219, 23);
-            this.txtCdFamiliaMotor.Name = "txtCdFamiliaMotor";
-            this.txtCdFamiliaMotor.ReadOnly = true;
-            this.txtCdFamiliaMotor.Size = new System.Drawing.Size(38, 20);
-            this.txtCdFamiliaMotor.TabIndex = 1;
             // 
             // lblCdMotor
             // 
@@ -293,8 +273,6 @@
             this.Controls.Add(this.lblCdTipoMotor);
             this.Controls.Add(this.lblCdNumeroMotor);
             this.Controls.Add(this.lblCdMotor);
-            this.Controls.Add(this.txtCdFamiliaMotor);
-            this.Controls.Add(this.lblCdFamMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadFamiliaMotor";
             this.Text = "Familia do  Motor";
@@ -306,8 +284,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdFamMotor;
-        private System.Windows.Forms.TextBox txtCdFamiliaMotor;
         private System.Windows.Forms.Label lblCdMotor;
         private System.Windows.Forms.TextBox txtCdMotor;
         private System.Windows.Forms.Label lblCdNumeroMotor;

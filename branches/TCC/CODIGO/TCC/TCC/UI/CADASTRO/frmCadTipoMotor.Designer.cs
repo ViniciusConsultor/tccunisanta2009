@@ -32,8 +32,6 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
-            this.lblCdTipoMotor = new System.Windows.Forms.Label();
-            this.txtCdTipoMotor = new System.Windows.Forms.TextBox();
             this.txtNmTipoMotor = new System.Windows.Forms.TextBox();
             this.lblNmTipoMotor = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -70,24 +68,6 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
-            // lblCdTipoMotor
-            // 
-            this.lblCdTipoMotor.AutoSize = true;
-            this.lblCdTipoMotor.Location = new System.Drawing.Point(40, 36);
-            this.lblCdTipoMotor.Name = "lblCdTipoMotor";
-            this.lblCdTipoMotor.Size = new System.Drawing.Size(124, 13);
-            this.lblCdTipoMotor.TabIndex = 17;
-            this.lblCdTipoMotor.Text = "Codigo do Tipo do Motor";
-            // 
-            // txtCdTipoMotor
-            // 
-            this.txtCdTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoMotor.Location = new System.Drawing.Point(170, 29);
-            this.txtCdTipoMotor.Name = "txtCdTipoMotor";
-            this.txtCdTipoMotor.ReadOnly = true;
-            this.txtCdTipoMotor.Size = new System.Drawing.Size(100, 20);
-            this.txtCdTipoMotor.TabIndex = 18;
-            // 
             // txtNmTipoMotor
             // 
             this.txtNmTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -115,8 +95,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.txtNmTipoMotor);
             this.Controls.Add(this.lblNmTipoMotor);
-            this.Controls.Add(this.txtCdTipoMotor);
-            this.Controls.Add(this.lblCdTipoMotor);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
@@ -134,8 +112,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.Label lblCdTipoMotor;
-        private System.Windows.Forms.TextBox txtCdTipoMotor;
         private System.Windows.Forms.TextBox txtNmTipoMotor;
         private System.Windows.Forms.Label lblNmTipoMotor;
     }

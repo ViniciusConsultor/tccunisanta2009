@@ -39,6 +39,8 @@ namespace TCC.UI
         private mCliente PegaDadosTela()
         {
             mCliente model = new mCliente();
+            rCliente regra = new rCliente();
+
             try
             {
                 if (string.IsNullOrEmpty(this.txtBairro.Text) == true)
@@ -69,7 +71,7 @@ namespace TCC.UI
                 model.ComplementoEndereco = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                model.IdCliente = Convert.ToInt32(this.txtCodigo.Text);
+                model.IdCliente = Convert.ToInt32(regra.BuscaIdMaximoCliente());
                 model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
                 model.NomeCliente = this.txtNome.Text;
                 model.NomeRua = this.txtRua.Text;
@@ -168,7 +170,7 @@ namespace TCC.UI
             this.BuscaIdMaximo();
         }
 
-        protected override void BuscaIdMaximo()
+        /*protected override void BuscaIdMaximo()
         {
             rCliente regra = new rCliente();
             try
@@ -183,7 +185,7 @@ namespace TCC.UI
             {
                 regra = null;
             }
-        }
+        }*/
 
         void btnVolta_Click(object sender, System.EventArgs e)
         {

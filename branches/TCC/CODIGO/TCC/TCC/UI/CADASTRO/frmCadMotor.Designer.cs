@@ -29,32 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadMotor));
-            this.lblCdMotor = new System.Windows.Forms.Label();
-            this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblDsMotor = new System.Windows.Forms.Label();
             this.txtDsMotor = new System.Windows.Forms.TextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblCdMotor
-            // 
-            this.lblCdMotor.AutoSize = true;
-            this.lblCdMotor.Location = new System.Drawing.Point(61, 36);
-            this.lblCdMotor.Name = "lblCdMotor";
-            this.lblCdMotor.Size = new System.Drawing.Size(85, 13);
-            this.lblCdMotor.TabIndex = 0;
-            this.lblCdMotor.Text = "Codigo do Motor";
-            // 
-            // txtCdMotor
-            // 
-            this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotor.Location = new System.Drawing.Point(152, 33);
-            this.txtCdMotor.Name = "txtCdMotor";
-            this.txtCdMotor.ReadOnly = true;
-            this.txtCdMotor.Size = new System.Drawing.Size(100, 20);
-            this.txtCdMotor.TabIndex = 1;
             // 
             // lblDsMotor
             // 
@@ -117,9 +97,7 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtDsMotor);
-            this.Controls.Add(this.txtCdMotor);
             this.Controls.Add(this.lblDsMotor);
-            this.Controls.Add(this.lblCdMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadMotor";
             this.Text = "Cadastro de Motor";
@@ -131,8 +109,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdMotor;
-        private System.Windows.Forms.TextBox txtCdMotor;
         private System.Windows.Forms.Label lblDsMotor;
         private System.Windows.Forms.TextBox txtDsMotor;
         private System.Windows.Forms.Button btnVoltar;

@@ -32,8 +32,8 @@ namespace TCC.UI
             try
             {
                 dt = regra.BuscaCompra(this.txtFiltro.Text);
-                dgDepartamento.DataSource = dt;
-                dgDepartamento.Columns[0].Visible = false;
+                dgCompra.DataSource = dt;
+                dgCompra.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -57,17 +57,24 @@ namespace TCC.UI
             DataTable dtSource = new DataTable();
             try
             {
-                dtSource = (DataTable)this.dgDepartamento.DataSource;
-                if (this.dgDepartamento.DataSource != null)
+                dtSource = (DataTable)this.dgCompra.DataSource;
+                if (this.dgCompra.DataSource != null)
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        dvc = this.dgDepartamento["id_compra", this.dgDepartamento.CurrentRow.Index];
-                        this._model.IdCompra = Convert.ToInt32(dvc.Value);
-                        dvc = this.dgDepartamento["Obs Compra", this.dgDepartamento.CurrentRow.Index];
-                        this._model.Obs = dvc.Value.ToString();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (this.dgCompra.CurrentRow != null)
+                        {
+                            dvc = this.dgCompra["id_compra", this.dgCompra.CurrentRow.Index];
+                            this._model.IdCompra = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgCompra["Obs Compra", this.dgCompra.CurrentRow.Index];
+                            this._model.Obs = dvc.Value.ToString();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
                     }
                     else
                     {
