@@ -40,20 +40,21 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 1);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 60);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(25, 24);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 16;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(2, 29);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(2, 32);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(25, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 15;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -61,9 +62,9 @@
             // 
             this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(2, 54);
+            this.btnAceitar.Location = new System.Drawing.Point(2, 4);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(25, 25);
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 14;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -71,7 +72,7 @@
             // lblDsTipoPeca
             // 
             this.lblDsTipoPeca.AutoSize = true;
-            this.lblDsTipoPeca.Location = new System.Drawing.Point(43, 78);
+            this.lblDsTipoPeca.Location = new System.Drawing.Point(68, 54);
             this.lblDsTipoPeca.Name = "lblDsTipoPeca";
             this.lblDsTipoPeca.Size = new System.Drawing.Size(137, 13);
             this.lblDsTipoPeca.TabIndex = 20;
@@ -80,9 +81,10 @@
             // txtDsTipoPeca
             // 
             this.txtDsTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsTipoPeca.Location = new System.Drawing.Point(186, 75);
+            this.txtDsTipoPeca.Location = new System.Drawing.Point(71, 69);
+            this.txtDsTipoPeca.Multiline = true;
             this.txtDsTipoPeca.Name = "txtDsTipoPeca";
-            this.txtDsTipoPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtDsTipoPeca.Size = new System.Drawing.Size(235, 79);
             this.txtDsTipoPeca.TabIndex = 19;
             // 
             // frmCadTipoPeca
@@ -91,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(292, 176);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.lblDsTipoPeca);
             this.Controls.Add(this.txtDsTipoPeca);

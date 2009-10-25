@@ -53,7 +53,7 @@
             // lblCdTipoPeca
             // 
             this.lblCdTipoPeca.AutoSize = true;
-            this.lblCdTipoPeca.Location = new System.Drawing.Point(240, 31);
+            this.lblCdTipoPeca.Location = new System.Drawing.Point(93, 37);
             this.lblCdTipoPeca.Name = "lblCdTipoPeca";
             this.lblCdTipoPeca.Size = new System.Drawing.Size(107, 13);
             this.lblCdTipoPeca.TabIndex = 0;
@@ -62,7 +62,7 @@
             // txtCdTipoPeca
             // 
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoPeca.Location = new System.Drawing.Point(353, 28);
+            this.txtCdTipoPeca.Location = new System.Drawing.Point(206, 34);
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
             this.txtCdTipoPeca.ReadOnly = true;
             this.txtCdTipoPeca.Size = new System.Drawing.Size(32, 20);
@@ -71,7 +71,7 @@
             // lblCdEstoque
             // 
             this.lblCdEstoque.AutoSize = true;
-            this.lblCdEstoque.Location = new System.Drawing.Point(63, 67);
+            this.lblCdEstoque.Location = new System.Drawing.Point(93, 62);
             this.lblCdEstoque.Name = "lblCdEstoque";
             this.lblCdEstoque.Size = new System.Drawing.Size(97, 13);
             this.lblCdEstoque.TabIndex = 0;
@@ -80,7 +80,7 @@
             // txtCdEstoque
             // 
             this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdEstoque.Location = new System.Drawing.Point(166, 60);
+            this.txtCdEstoque.Location = new System.Drawing.Point(196, 60);
             this.txtCdEstoque.Name = "txtCdEstoque";
             this.txtCdEstoque.ReadOnly = true;
             this.txtCdEstoque.Size = new System.Drawing.Size(40, 20);
@@ -89,7 +89,7 @@
             // lblNmPeca
             // 
             this.lblNmPeca.AutoSize = true;
-            this.lblNmPeca.Location = new System.Drawing.Point(250, 67);
+            this.lblNmPeca.Location = new System.Drawing.Point(52, 94);
             this.lblNmPeca.Name = "lblNmPeca";
             this.lblNmPeca.Size = new System.Drawing.Size(78, 13);
             this.lblNmPeca.TabIndex = 0;
@@ -98,15 +98,15 @@
             // txtNmPeca
             // 
             this.txtNmPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmPeca.Location = new System.Drawing.Point(353, 60);
+            this.txtNmPeca.Location = new System.Drawing.Point(136, 92);
             this.txtNmPeca.Name = "txtNmPeca";
-            this.txtNmPeca.Size = new System.Drawing.Size(69, 20);
+            this.txtNmPeca.Size = new System.Drawing.Size(194, 20);
             this.txtNmPeca.TabIndex = 1;
             // 
             // lblDsPeca
             // 
             this.lblDsPeca.AutoSize = true;
-            this.lblDsPeca.Location = new System.Drawing.Point(63, 101);
+            this.lblDsPeca.Location = new System.Drawing.Point(52, 115);
             this.lblDsPeca.Name = "lblDsPeca";
             this.lblDsPeca.Size = new System.Drawing.Size(83, 13);
             this.lblDsPeca.TabIndex = 0;
@@ -115,15 +115,16 @@
             // txtDsPeca
             // 
             this.txtDsPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsPeca.Location = new System.Drawing.Point(166, 94);
+            this.txtDsPeca.Location = new System.Drawing.Point(55, 131);
+            this.txtDsPeca.Multiline = true;
             this.txtDsPeca.Name = "txtDsPeca";
-            this.txtDsPeca.Size = new System.Drawing.Size(69, 20);
+            this.txtDsPeca.Size = new System.Drawing.Size(275, 42);
             this.txtDsPeca.TabIndex = 1;
             // 
             // lblPesoPeca
             // 
             this.lblPesoPeca.AutoSize = true;
-            this.lblPesoPeca.Location = new System.Drawing.Point(250, 101);
+            this.lblPesoPeca.Location = new System.Drawing.Point(193, 184);
             this.lblPesoPeca.Name = "lblPesoPeca";
             this.lblPesoPeca.Size = new System.Drawing.Size(74, 13);
             this.lblPesoPeca.TabIndex = 0;
@@ -132,29 +133,30 @@
             // txtPesoPeca
             // 
             this.txtPesoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesoPeca.Location = new System.Drawing.Point(353, 94);
+            this.txtPesoPeca.Location = new System.Drawing.Point(273, 182);
             this.txtPesoPeca.Name = "txtPesoPeca";
-            this.txtPesoPeca.Size = new System.Drawing.Size(69, 20);
+            this.txtPesoPeca.Size = new System.Drawing.Size(57, 20);
             this.txtPesoPeca.TabIndex = 1;
             // 
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(1, 1);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 4);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(37, 28);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 7;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(1, 31);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(37, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 6;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -162,9 +164,9 @@
             // 
             this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(1, 60);
+            this.btnConfirma.Location = new System.Drawing.Point(2, 63);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(37, 26);
+            this.btnConfirma.Size = new System.Drawing.Size(27, 23);
             this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -173,9 +175,9 @@
             // 
             this.btnCdEstoque.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdEstoque.BackgroundImage")));
             this.btnCdEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdEstoque.Location = new System.Drawing.Point(212, 60);
+            this.btnCdEstoque.Location = new System.Drawing.Point(242, 59);
             this.btnCdEstoque.Name = "btnCdEstoque";
-            this.btnCdEstoque.Size = new System.Drawing.Size(32, 23);
+            this.btnCdEstoque.Size = new System.Drawing.Size(27, 23);
             this.btnCdEstoque.TabIndex = 5;
             this.btnCdEstoque.UseVisualStyleBackColor = true;
             this.btnCdEstoque.Click += new System.EventHandler(this.btnCdEstoque_Click);
@@ -184,9 +186,9 @@
             // 
             this.btnCdTipoPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdTipoPeca.BackgroundImage")));
             this.btnCdTipoPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdTipoPeca.Location = new System.Drawing.Point(390, 26);
+            this.btnCdTipoPeca.Location = new System.Drawing.Point(243, 32);
             this.btnCdTipoPeca.Name = "btnCdTipoPeca";
-            this.btnCdTipoPeca.Size = new System.Drawing.Size(32, 23);
+            this.btnCdTipoPeca.Size = new System.Drawing.Size(27, 23);
             this.btnCdTipoPeca.TabIndex = 5;
             this.btnCdTipoPeca.UseVisualStyleBackColor = true;
             this.btnCdTipoPeca.Click += new System.EventHandler(this.btnCdTipoPeca_Click);
@@ -194,15 +196,15 @@
             // txtCodigoReal
             // 
             this.txtCodigoReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoReal.Location = new System.Drawing.Point(166, 32);
+            this.txtCodigoReal.Location = new System.Drawing.Point(164, 7);
             this.txtCodigoReal.Name = "txtCodigoReal";
-            this.txtCodigoReal.Size = new System.Drawing.Size(69, 20);
+            this.txtCodigoReal.Size = new System.Drawing.Size(106, 20);
             this.txtCodigoReal.TabIndex = 9;
             // 
             // lblNomePecaReal
             // 
             this.lblNomePecaReal.AutoSize = true;
-            this.lblNomePecaReal.Location = new System.Drawing.Point(64, 35);
+            this.lblNomePecaReal.Location = new System.Drawing.Point(93, 9);
             this.lblNomePecaReal.Name = "lblNomePecaReal";
             this.lblNomePecaReal.Size = new System.Drawing.Size(65, 13);
             this.lblNomePecaReal.TabIndex = 8;
@@ -211,15 +213,15 @@
             // txtQtdPeca
             // 
             this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdPeca.Location = new System.Drawing.Point(166, 120);
+            this.txtQtdPeca.Location = new System.Drawing.Point(144, 182);
             this.txtQtdPeca.Name = "txtQtdPeca";
-            this.txtQtdPeca.Size = new System.Drawing.Size(69, 20);
+            this.txtQtdPeca.Size = new System.Drawing.Size(43, 20);
             this.txtQtdPeca.TabIndex = 11;
             // 
             // lblQtdPeca
             // 
             this.lblQtdPeca.AutoSize = true;
-            this.lblQtdPeca.Location = new System.Drawing.Point(64, 122);
+            this.lblQtdPeca.Location = new System.Drawing.Point(52, 184);
             this.lblQtdPeca.Name = "lblQtdPeca";
             this.lblQtdPeca.Size = new System.Drawing.Size(91, 13);
             this.lblQtdPeca.TabIndex = 10;
@@ -231,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(436, 185);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.txtQtdPeca);
             this.Controls.Add(this.lblQtdPeca);

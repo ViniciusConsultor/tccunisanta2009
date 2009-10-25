@@ -60,6 +60,13 @@ namespace TCC.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap corel_draw {
+            get {
+                object obj = ResourceManager.GetObject("corel draw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap trash_can {
             get {
                 object obj = ResourceManager.GetObject("trash_can", resourceCulture);

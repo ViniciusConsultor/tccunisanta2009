@@ -46,20 +46,21 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(1, 2);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 62);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(32, 27);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 19;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(1, 32);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(2, 33);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(32, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 18;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -67,9 +68,9 @@
             // 
             this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(1, 61);
+            this.btnAceitar.Location = new System.Drawing.Point(2, 4);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(32, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 17;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -77,7 +78,7 @@
             // txtCdVendaMotor
             // 
             this.txtCdVendaMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdVendaMotor.Location = new System.Drawing.Point(267, 57);
+            this.txtCdVendaMotor.Location = new System.Drawing.Point(206, 30);
             this.txtCdVendaMotor.Name = "txtCdVendaMotor";
             this.txtCdVendaMotor.ReadOnly = true;
             this.txtCdVendaMotor.Size = new System.Drawing.Size(56, 20);
@@ -86,7 +87,7 @@
             // lblCdVendaMotor
             // 
             this.lblCdVendaMotor.AutoSize = true;
-            this.lblCdVendaMotor.Location = new System.Drawing.Point(82, 57);
+            this.lblCdVendaMotor.Location = new System.Drawing.Point(66, 32);
             this.lblCdVendaMotor.Name = "lblCdVendaMotor";
             this.lblCdVendaMotor.Size = new System.Drawing.Size(134, 13);
             this.lblCdVendaMotor.TabIndex = 21;
@@ -95,16 +96,16 @@
             // txtCdDepartamento
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(265, 92);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(197, 56);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
-            this.txtCdDepartamento.Size = new System.Drawing.Size(56, 20);
+            this.txtCdDepartamento.Size = new System.Drawing.Size(65, 20);
             this.txtCdDepartamento.TabIndex = 20;
             // 
             // lblCdDepartamento
             // 
             this.lblCdDepartamento.AutoSize = true;
-            this.lblCdDepartamento.Location = new System.Drawing.Point(80, 91);
+            this.lblCdDepartamento.Location = new System.Drawing.Point(66, 58);
             this.lblCdDepartamento.Name = "lblCdDepartamento";
             this.lblCdDepartamento.Size = new System.Drawing.Size(125, 13);
             this.lblCdDepartamento.TabIndex = 21;
@@ -113,15 +114,16 @@
             // txtDsPedido
             // 
             this.txtDsPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsPedido.Location = new System.Drawing.Point(75, 136);
+            this.txtDsPedido.Location = new System.Drawing.Point(69, 103);
+            this.txtDsPedido.Multiline = true;
             this.txtDsPedido.Name = "txtDsPedido";
-            this.txtDsPedido.Size = new System.Drawing.Size(274, 20);
+            this.txtDsPedido.Size = new System.Drawing.Size(253, 72);
             this.txtDsPedido.TabIndex = 20;
             // 
             // lblDsPedido
             // 
             this.lblDsPedido.AutoSize = true;
-            this.lblDsPedido.Location = new System.Drawing.Point(72, 120);
+            this.lblDsPedido.Location = new System.Drawing.Point(66, 87);
             this.lblDsPedido.Name = "lblDsPedido";
             this.lblDsPedido.Size = new System.Drawing.Size(103, 13);
             this.lblDsPedido.TabIndex = 21;
@@ -131,9 +133,9 @@
             // 
             this.btnBuscaVendaMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaVendaMotor.BackgroundImage")));
             this.btnBuscaVendaMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaVendaMotor.Location = new System.Drawing.Point(329, 54);
+            this.btnBuscaVendaMotor.Location = new System.Drawing.Point(268, 30);
             this.btnBuscaVendaMotor.Name = "btnBuscaVendaMotor";
-            this.btnBuscaVendaMotor.Size = new System.Drawing.Size(30, 23);
+            this.btnBuscaVendaMotor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaVendaMotor.TabIndex = 17;
             this.btnBuscaVendaMotor.UseVisualStyleBackColor = true;
             this.btnBuscaVendaMotor.Click += new System.EventHandler(this.btnBuscaVendaMotor_Click);
@@ -142,9 +144,9 @@
             // 
             this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(327, 92);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(268, 56);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
-            this.btnBuscaDepartamento.Size = new System.Drawing.Size(30, 23);
+            this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaDepartamento.TabIndex = 17;
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
@@ -155,7 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(398, 191);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.lblDsPedido);
             this.Controls.Add(this.txtDsPedido);
