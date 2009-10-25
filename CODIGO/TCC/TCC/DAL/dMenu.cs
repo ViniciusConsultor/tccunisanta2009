@@ -43,7 +43,7 @@ namespace TCC.DAL
                 else
                 {
                     param = new SqlParameter("@param", Descricao);
-                    return base.BuscaDados("sp_busca_menu", param);
+                    return base.BuscaDados("sp_busca_menus_param", param);
                 }
             }
             catch (Exception ex)

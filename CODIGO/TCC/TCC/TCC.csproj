@@ -88,10 +88,8 @@
     <Compile Include="BUSINESS\Exceptions\CodigoTipoProdutoVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoUsuarioVazioExeception.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoVendaVazioException.cs" />
-    <Compile Include="BUSINESS\Exceptions\Colaborador\AnoNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CepVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\DataNascimentoVazioException.cs" />
-    <Compile Include="BUSINESS\Exceptions\Colaborador\MesNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CompraPeca\UltimoPrecoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraMotorPecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
@@ -102,6 +100,7 @@
     <Compile Include="BUSINESS\Exceptions\Login\SenhaVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\rCadColaborador.cs" />
@@ -132,7 +131,10 @@
     <Compile Include="BUSINESS\rUsuario.cs" />
     <Compile Include="BUSINESS\rUsuarioPerfil.cs" />
     <Compile Include="BUSINESS\rVenda.cs" />
-    <Compile Include="BUSINESS\UTIL\Auxiliar.cs" />
+    <Compile Include="BUSINESS\UTIL\Auxiliar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BUSINESS\UTIL\Validacoes.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
     <Compile Include="DAL\dCadColaborador.cs" />
