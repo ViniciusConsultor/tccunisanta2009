@@ -6,3 +6,4 @@ GO
 CREATE PROCEDURE sp_busca_tipoProduto
 AS
 SELECT id_tipo_prod, nom as 'Tipo Produto' FROM Tipoproduto
+WHERE flg_ativo = 1

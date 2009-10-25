@@ -7,3 +7,4 @@ CREATE PROCEDURE sp_busca_tipoMotor
 AS
 SELECT id_tipo_motor, dsc_tipo_motor 'Tipo Motor'
 FROM Tipomotor
+WHERE flg_ativo = 1

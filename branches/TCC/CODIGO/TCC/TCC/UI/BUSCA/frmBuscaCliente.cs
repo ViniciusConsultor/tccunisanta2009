@@ -14,6 +14,7 @@ namespace TCC.UI
     {
         #region Atributos
         mCliente _model;
+        bool _alteracao;
         #endregion
 
         #region Construtor
@@ -21,6 +22,14 @@ namespace TCC.UI
         {
             InitializeComponent();
             this._model = modelCliente;
+            this._alteracao = false;
+        }
+
+        public frmBuscaCliente(mCliente modelCliente, bool alteracao)
+        {
+            InitializeComponent();
+            this._model = modelCliente;
+            this._alteracao = alteracao;
         }
         #endregion
 
@@ -32,7 +41,9 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.RetornaModel();
+            this.PopulaModelDadosGrid();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -65,7 +76,10 @@ namespace TCC.UI
             }
         }
 
-        private void RetornaModel()
+        /// <summary>
+        /// Popula o model com os dados que estão no DataSource do Grid
+        /// </summary>
+        private void PopulaModelDadosGrid()
         {
             DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
@@ -82,22 +96,20 @@ namespace TCC.UI
                             this._model.IdCliente = Convert.ToInt32(dvc.Value);
                             dvc = this.dgCliente["Cliente", this.dgCliente.CurrentRow.Index];
                             this._model.NomeCliente = dvc.Value.ToString();
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                            throw new BUSINESS.Exceptions.Busca.LinhaSemSelecionarException();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("É necessário cadastrar um Cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        throw new BUSINESS.Exceptions.Busca.CadastrarDadoException(this._model.getNomeTabela());
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário buscar e selecionar um Cliente!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    throw new BUSINESS.Exceptions.Busca.SemBuscaESelecionarException(this._model.getNomeTabela());
                 }
 
             }
@@ -120,5 +132,116 @@ namespace TCC.UI
             }
         }
         #endregion
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.PopulaModelDadosGrid();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Pega os dados que estão populados Atravez do Grid e Completa o mapper
+        /// </summary>
+        private void PopulaModelCompletoAlteracao()
+        {
+            rCliente regraCliente = new rCliente();
+            DataTable dtRegistroUsuario = null;
+            try
+            {
+                dtRegistroUsuario = regraCliente.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraCliente = null;
+                if (dtRegistroUsuario != null)
+                {
+                    dtRegistroUsuario.Dispose();
+                    dtRegistroUsuario = null;
+                }
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.PopulaModelDadosGrid();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void DeletaCadastro()
+        {
+            rCliente regraCliente = new rCliente();
+            try
+            {
+                regraCliente.ValidarDeleta(this._model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraCliente = null;
+            }
+        }
+
+        private void frmBuscaCliente_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
+        }
     }
 }

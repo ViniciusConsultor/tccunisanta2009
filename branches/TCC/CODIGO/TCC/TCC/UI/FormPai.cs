@@ -9,6 +9,8 @@ namespace TCC.UI
 {
     public class FormPai : Form
     {
+        protected bool Alteracao;
+
         protected virtual void BuscaIdMaximo()
         {
 

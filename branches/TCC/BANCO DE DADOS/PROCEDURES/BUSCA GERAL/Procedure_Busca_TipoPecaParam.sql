@@ -9,3 +9,4 @@ AS
 SELECT id_tipo_peca, dsc 'Tipo Peça'
 FROM Tipodepeca
 WHERE dsc LIKE @dsc_tipo_peca  + '%'
+AND flg_ativo = 1

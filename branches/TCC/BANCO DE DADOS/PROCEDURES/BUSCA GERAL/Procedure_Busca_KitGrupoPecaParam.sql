@@ -10,4 +10,5 @@
  SELECT id_grupo, nom as 'Kit Grupo Peça'
  FROM Kitgrupopeca
  WHERE nom LIKE @nom + '%'
+ AND flg_ativo = 1
 go

@@ -6,3 +6,4 @@ GO
 CREATE PROCEDURE sp_busca_fornecedor
 AS
 SELECT id_forn, nom 'Fornecedor' FROM fornecedor
+WHERE flg_ativo = 1
