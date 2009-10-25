@@ -671,6 +671,7 @@
     <Content Include="UI\img\bg_login.jpg" />
     <Content Include="UI\img\bg_principal.jpg" />
     <Content Include="UI\img\bg_telas.jpg" />
+    <None Include="UI\img\trash_can.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
