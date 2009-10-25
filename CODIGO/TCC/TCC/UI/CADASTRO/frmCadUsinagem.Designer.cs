@@ -41,7 +41,7 @@
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(54, 95);
+            this.lblCdPeca.Location = new System.Drawing.Point(90, 76);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(83, 13);
             this.lblCdPeca.TabIndex = 0;
@@ -50,7 +50,7 @@
             // txtCdPeca
             // 
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(165, 92);
+            this.txtCdPeca.Location = new System.Drawing.Point(179, 74);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(67, 20);
@@ -60,20 +60,21 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 1);
+            this.btnVoltar.Location = new System.Drawing.Point(3, 58);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(25, 22);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 10;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(2, 29);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(3, 30);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(25, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 9;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -81,9 +82,9 @@
             // 
             this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(2, 55);
+            this.btnAceitar.Location = new System.Drawing.Point(3, 3);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(25, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 8;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -92,7 +93,7 @@
             // 
             this.btnCdPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdPeca.BackgroundImage")));
             this.btnCdPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdPeca.Location = new System.Drawing.Point(238, 89);
+            this.btnCdPeca.Location = new System.Drawing.Point(252, 74);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(27, 23);
             this.btnCdPeca.TabIndex = 8;
@@ -102,7 +103,7 @@
             // chkPecaOk
             // 
             this.chkPecaOk.AutoSize = true;
-            this.chkPecaOk.Location = new System.Drawing.Point(165, 118);
+            this.chkPecaOk.Location = new System.Drawing.Point(153, 110);
             this.chkPecaOk.Name = "chkPecaOk";
             this.chkPecaOk.Size = new System.Drawing.Size(69, 17);
             this.chkPecaOk.TabIndex = 11;
@@ -115,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(308, 169);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.chkPecaOk);
             this.Controls.Add(this.btnVoltar);

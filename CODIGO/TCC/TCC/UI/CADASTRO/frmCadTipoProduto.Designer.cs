@@ -40,9 +40,9 @@
             // 
             this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.Location = new System.Drawing.Point(0, 2);
+            this.btnFechar.Location = new System.Drawing.Point(2, 63);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 24);
+            this.btnFechar.Size = new System.Drawing.Size(27, 23);
             this.btnFechar.TabIndex = 0;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -51,34 +51,36 @@
             // 
             this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(0, 70);
+            this.btnConfirma.Location = new System.Drawing.Point(2, 5);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(31, 28);
+            this.btnConfirma.Size = new System.Drawing.Size(27, 23);
             this.btnConfirma.TabIndex = 1;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(0, 32);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(27, 32);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 2;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(125, 100);
+            this.txtNome.Location = new System.Drawing.Point(75, 75);
+            this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(234, 80);
             this.txtNome.TabIndex = 6;
             // 
             // lblDscNome
             // 
             this.lblDscNome.AutoSize = true;
-            this.lblDscNome.Location = new System.Drawing.Point(64, 103);
+            this.lblDscNome.Location = new System.Drawing.Point(72, 59);
             this.lblDscNome.Name = "lblDscNome";
             this.lblDscNome.Size = new System.Drawing.Size(55, 13);
             this.lblDscNome.TabIndex = 5;
@@ -90,7 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(306, 237);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblDscNome);
