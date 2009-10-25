@@ -62,7 +62,7 @@
             // lblCdDepartamento
             // 
             this.lblCdDepartamento.AutoSize = true;
-            this.lblCdDepartamento.Location = new System.Drawing.Point(298, 24);
+            this.lblCdDepartamento.Location = new System.Drawing.Point(337, 49);
             this.lblCdDepartamento.Name = "lblCdDepartamento";
             this.lblCdDepartamento.Size = new System.Drawing.Size(125, 13);
             this.lblCdDepartamento.TabIndex = 11;
@@ -71,16 +71,16 @@
             // txtDepartamento
             // 
             this.txtDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDepartamento.Location = new System.Drawing.Point(438, 21);
+            this.txtDepartamento.Location = new System.Drawing.Point(468, 44);
             this.txtDepartamento.Name = "txtDepartamento";
             this.txtDepartamento.ReadOnly = true;
             this.txtDepartamento.Size = new System.Drawing.Size(49, 20);
-            this.txtDepartamento.TabIndex = 12;
+            this.txtDepartamento.TabIndex = 3;
             // 
             // lblCdFornecedor
             // 
             this.lblCdFornecedor.AutoSize = true;
-            this.lblCdFornecedor.Location = new System.Drawing.Point(77, 60);
+            this.lblCdFornecedor.Location = new System.Drawing.Point(96, 46);
             this.lblCdFornecedor.Name = "lblCdFornecedor";
             this.lblCdFornecedor.Size = new System.Drawing.Size(112, 13);
             this.lblCdFornecedor.TabIndex = 11;
@@ -89,16 +89,16 @@
             // txtCdFornecedor
             // 
             this.txtCdFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdFornecedor.Location = new System.Drawing.Point(195, 53);
+            this.txtCdFornecedor.Location = new System.Drawing.Point(214, 44);
             this.txtCdFornecedor.Name = "txtCdFornecedor";
             this.txtCdFornecedor.ReadOnly = true;
             this.txtCdFornecedor.Size = new System.Drawing.Size(38, 20);
-            this.txtCdFornecedor.TabIndex = 12;
+            this.txtCdFornecedor.TabIndex = 1;
             // 
             // lblCdTipoProduto
             // 
             this.lblCdTipoProduto.AutoSize = true;
-            this.lblCdTipoProduto.Location = new System.Drawing.Point(298, 56);
+            this.lblCdTipoProduto.Location = new System.Drawing.Point(328, 78);
             this.lblCdTipoProduto.Name = "lblCdTipoProduto";
             this.lblCdTipoProduto.Size = new System.Drawing.Size(134, 13);
             this.lblCdTipoProduto.TabIndex = 11;
@@ -107,16 +107,16 @@
             // txtCdTipoProduto
             // 
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoProduto.Location = new System.Drawing.Point(438, 53);
+            this.txtCdTipoProduto.Location = new System.Drawing.Point(468, 76);
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
             this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(49, 20);
-            this.txtCdTipoProduto.TabIndex = 12;
+            this.txtCdTipoProduto.TabIndex = 7;
             // 
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(77, 92);
+            this.lblCdPeca.Location = new System.Drawing.Point(96, 76);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(83, 13);
             this.lblCdPeca.TabIndex = 11;
@@ -125,16 +125,16 @@
             // txtCdPeca
             // 
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(195, 85);
+            this.txtCdPeca.Location = new System.Drawing.Point(185, 74);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(38, 20);
-            this.txtCdPeca.TabIndex = 12;
+            this.txtCdPeca.TabIndex = 5;
             // 
             // lblCdMotor
             // 
             this.lblCdMotor.AutoSize = true;
-            this.lblCdMotor.Location = new System.Drawing.Point(347, 87);
+            this.lblCdMotor.Location = new System.Drawing.Point(377, 112);
             this.lblCdMotor.Name = "lblCdMotor";
             this.lblCdMotor.Size = new System.Drawing.Size(85, 13);
             this.lblCdMotor.TabIndex = 11;
@@ -143,16 +143,16 @@
             // txtCdMotorCompra
             // 
             this.txtCdMotorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotorCompra.Location = new System.Drawing.Point(438, 85);
+            this.txtCdMotorCompra.Location = new System.Drawing.Point(468, 110);
             this.txtCdMotorCompra.Name = "txtCdMotorCompra";
             this.txtCdMotorCompra.ReadOnly = true;
             this.txtCdMotorCompra.Size = new System.Drawing.Size(49, 20);
-            this.txtCdMotorCompra.TabIndex = 12;
+            this.txtCdMotorCompra.TabIndex = 9;
             // 
             // lblDtCompra
             // 
             this.lblDtCompra.AutoSize = true;
-            this.lblDtCompra.Location = new System.Drawing.Point(182, 121);
+            this.lblDtCompra.Location = new System.Drawing.Point(96, 164);
             this.lblDtCompra.Name = "lblDtCompra";
             this.lblDtCompra.Size = new System.Drawing.Size(86, 13);
             this.lblDtCompra.TabIndex = 11;
@@ -161,7 +161,7 @@
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(85, 147);
+            this.lblObservacao.Location = new System.Drawing.Point(96, 243);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(65, 13);
             this.lblObservacao.TabIndex = 11;
@@ -170,15 +170,15 @@
             // txtObservacao
             // 
             this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacao.Location = new System.Drawing.Point(169, 145);
+            this.txtObservacao.Location = new System.Drawing.Point(166, 241);
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(351, 20);
-            this.txtObservacao.TabIndex = 12;
+            this.txtObservacao.Size = new System.Drawing.Size(391, 20);
+            this.txtObservacao.TabIndex = 15;
             // 
             // lblQtdCompra
             // 
             this.lblQtdCompra.AutoSize = true;
-            this.lblQtdCompra.Location = new System.Drawing.Point(77, 178);
+            this.lblQtdCompra.Location = new System.Drawing.Point(96, 201);
             this.lblQtdCompra.Name = "lblQtdCompra";
             this.lblQtdCompra.Size = new System.Drawing.Size(116, 13);
             this.lblQtdCompra.TabIndex = 11;
@@ -187,7 +187,7 @@
             // lblVlCompra
             // 
             this.lblVlCompra.AutoSize = true;
-            this.lblVlCompra.Location = new System.Drawing.Point(354, 178);
+            this.lblVlCompra.Location = new System.Drawing.Point(337, 201);
             this.lblVlCompra.Name = "lblVlCompra";
             this.lblVlCompra.Size = new System.Drawing.Size(70, 13);
             this.lblVlCompra.TabIndex = 11;
@@ -196,23 +196,23 @@
             // txtQtdCompra
             // 
             this.txtQtdCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdCompra.Location = new System.Drawing.Point(195, 171);
+            this.txtQtdCompra.Location = new System.Drawing.Point(218, 199);
             this.txtQtdCompra.Name = "txtQtdCompra";
             this.txtQtdCompra.Size = new System.Drawing.Size(78, 20);
-            this.txtQtdCompra.TabIndex = 12;
+            this.txtQtdCompra.TabIndex = 13;
             // 
             // txtVlCompra
             // 
             this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVlCompra.Location = new System.Drawing.Point(438, 171);
+            this.txtVlCompra.Location = new System.Drawing.Point(413, 199);
             this.txtVlCompra.Name = "txtVlCompra";
-            this.txtVlCompra.Size = new System.Drawing.Size(82, 20);
-            this.txtVlCompra.TabIndex = 12;
+            this.txtVlCompra.Size = new System.Drawing.Size(144, 20);
+            this.txtVlCompra.TabIndex = 14;
             // 
             // lblNtFiscal
             // 
             this.lblNtFiscal.AutoSize = true;
-            this.lblNtFiscal.Location = new System.Drawing.Point(107, 214);
+            this.lblNtFiscal.Location = new System.Drawing.Point(299, 164);
             this.lblNtFiscal.Name = "lblNtFiscal";
             this.lblNtFiscal.Size = new System.Drawing.Size(60, 13);
             this.lblNtFiscal.TabIndex = 11;
@@ -221,29 +221,30 @@
             // txtNotaFiscal
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNotaFiscal.Location = new System.Drawing.Point(195, 207);
+            this.txtNotaFiscal.Location = new System.Drawing.Point(365, 161);
             this.txtNotaFiscal.Name = "txtNotaFiscal";
-            this.txtNotaFiscal.Size = new System.Drawing.Size(78, 20);
+            this.txtNotaFiscal.Size = new System.Drawing.Size(192, 20);
             this.txtNotaFiscal.TabIndex = 12;
             // 
             // btnAceitar
             // 
             this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(4, 75);
+            this.btnAceitar.Location = new System.Drawing.Point(6, 5);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(39, 31);
-            this.btnAceitar.TabIndex = 8;
+            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
+            this.btnAceitar.TabIndex = 16;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(4, 36);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(6, 46);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(39, 33);
-            this.btnLimpar.TabIndex = 9;
-            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.Size = new System.Drawing.Size(40, 35);
+            this.btnLimpar.TabIndex = 17;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -251,10 +252,10 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(4, 6);
+            this.btnVoltar.Location = new System.Drawing.Point(6, 87);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(39, 31);
-            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.Size = new System.Drawing.Size(40, 35);
+            this.btnVoltar.TabIndex = 18;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -262,10 +263,10 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaFornecedor.BackgroundImage")));
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(239, 50);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(258, 44);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaFornecedor.TabIndex = 13;
+            this.btnBuscaFornecedor.TabIndex = 2;
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
@@ -273,10 +274,10 @@
             // 
             this.btnBuscaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPeca.BackgroundImage")));
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPeca.Location = new System.Drawing.Point(239, 82);
+            this.btnBuscaPeca.Location = new System.Drawing.Point(229, 73);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaPeca.TabIndex = 14;
+            this.btnBuscaPeca.TabIndex = 6;
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
@@ -284,10 +285,10 @@
             // 
             this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(493, 19);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(523, 42);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaDepartamento.TabIndex = 15;
+            this.btnBuscaDepartamento.TabIndex = 4;
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
@@ -295,10 +296,10 @@
             // 
             this.btnBuscaTipoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaTipoProduto.BackgroundImage")));
             this.btnBuscaTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaTipoProduto.Location = new System.Drawing.Point(493, 50);
+            this.btnBuscaTipoProduto.Location = new System.Drawing.Point(523, 76);
             this.btnBuscaTipoProduto.Name = "btnBuscaTipoProduto";
             this.btnBuscaTipoProduto.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaTipoProduto.TabIndex = 16;
+            this.btnBuscaTipoProduto.TabIndex = 8;
             this.btnBuscaTipoProduto.UseVisualStyleBackColor = true;
             this.btnBuscaTipoProduto.Click += new System.EventHandler(this.btnBuscaTipoProduto_Click);
             // 
@@ -306,20 +307,20 @@
             // 
             this.btnBuscaMotorCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaMotorCompra.BackgroundImage")));
             this.btnBuscaMotorCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaMotorCompra.Location = new System.Drawing.Point(493, 82);
+            this.btnBuscaMotorCompra.Location = new System.Drawing.Point(523, 107);
             this.btnBuscaMotorCompra.Name = "btnBuscaMotorCompra";
             this.btnBuscaMotorCompra.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaMotorCompra.TabIndex = 17;
+            this.btnBuscaMotorCompra.TabIndex = 10;
             this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
             this.btnBuscaMotorCompra.Click += new System.EventHandler(this.btnBuscaMotorCompra_Click);
             // 
             // txtDataCompra
             // 
-            this.txtDataCompra.Location = new System.Drawing.Point(301, 118);
+            this.txtDataCompra.Location = new System.Drawing.Point(188, 161);
             this.txtDataCompra.Mask = "00/00/0000";
             this.txtDataCompra.Name = "txtDataCompra";
             this.txtDataCompra.Size = new System.Drawing.Size(66, 20);
-            this.txtDataCompra.TabIndex = 18;
+            this.txtDataCompra.TabIndex = 11;
             this.txtDataCompra.ValidatingType = typeof(System.DateTime);
             // 
             // frmCadCompra
@@ -328,7 +329,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(541, 271);
+            this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
             this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.btnBuscaMotorCompra);

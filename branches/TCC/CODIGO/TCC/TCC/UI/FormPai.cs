@@ -62,7 +62,7 @@ namespace TCC.UI
             // 
             // FormPai
             // 
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ClientSize = new System.Drawing.Size(592, 392);
             this.ControlBox = false;
             this.Name = "FormPai";
             this.ResumeLayout(false);
