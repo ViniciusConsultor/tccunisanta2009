@@ -46,20 +46,21 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 2);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 56);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(32, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 13;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(2, 24);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(2, 29);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(32, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 12;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -67,9 +68,9 @@
             // 
             this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(2, 46);
+            this.btnAceitar.Location = new System.Drawing.Point(2, 2);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(32, 23);
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 11;
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -77,7 +78,7 @@
             // txtCdItemPeca
             // 
             this.txtCdItemPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdItemPeca.Location = new System.Drawing.Point(337, 27);
+            this.txtCdItemPeca.Location = new System.Drawing.Point(176, 44);
             this.txtCdItemPeca.Name = "txtCdItemPeca";
             this.txtCdItemPeca.ReadOnly = true;
             this.txtCdItemPeca.Size = new System.Drawing.Size(32, 20);
@@ -86,7 +87,7 @@
             // lblCdItemPeca
             // 
             this.lblCdItemPeca.AutoSize = true;
-            this.lblCdItemPeca.Location = new System.Drawing.Point(215, 30);
+            this.lblCdItemPeca.Location = new System.Drawing.Point(61, 46);
             this.lblCdItemPeca.Name = "lblCdItemPeca";
             this.lblCdItemPeca.Size = new System.Drawing.Size(109, 13);
             this.lblCdItemPeca.TabIndex = 15;
@@ -95,16 +96,16 @@
             // txtCdPeca
             // 
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdPeca.Location = new System.Drawing.Point(145, 61);
+            this.txtCdPeca.Location = new System.Drawing.Point(150, 81);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
-            this.txtCdPeca.Size = new System.Drawing.Size(35, 20);
+            this.txtCdPeca.Size = new System.Drawing.Size(57, 20);
             this.txtCdPeca.TabIndex = 14;
             // 
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(56, 64);
+            this.lblCdPeca.Location = new System.Drawing.Point(61, 83);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(83, 13);
             this.lblCdPeca.TabIndex = 15;
@@ -113,15 +114,15 @@
             // txtNmKit
             // 
             this.txtNmKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmKit.Location = new System.Drawing.Point(337, 64);
+            this.txtNmKit.Location = new System.Drawing.Point(132, 118);
             this.txtNmKit.Name = "txtNmKit";
-            this.txtNmKit.Size = new System.Drawing.Size(53, 20);
+            this.txtNmKit.Size = new System.Drawing.Size(188, 20);
             this.txtNmKit.TabIndex = 14;
             // 
             // lblNmKit
             // 
             this.lblNmKit.AutoSize = true;
-            this.lblNmKit.Location = new System.Drawing.Point(215, 67);
+            this.lblNmKit.Location = new System.Drawing.Point(61, 120);
             this.lblNmKit.Name = "lblNmKit";
             this.lblNmKit.Size = new System.Drawing.Size(65, 13);
             this.lblNmKit.TabIndex = 15;
@@ -132,7 +133,7 @@
             this.btnCdPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdPeca.BackgroundImage")));
             this.btnCdPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdPeca.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.btnCdPeca.Location = new System.Drawing.Point(186, 59);
+            this.btnCdPeca.Location = new System.Drawing.Point(213, 78);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(28, 23);
             this.btnCdPeca.TabIndex = 11;
@@ -143,9 +144,9 @@
             // 
             this.btnCdItemPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdItemPeca.BackgroundImage")));
             this.btnCdItemPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdItemPeca.Location = new System.Drawing.Point(375, 25);
+            this.btnCdItemPeca.Location = new System.Drawing.Point(214, 44);
             this.btnCdItemPeca.Name = "btnCdItemPeca";
-            this.btnCdItemPeca.Size = new System.Drawing.Size(28, 23);
+            this.btnCdItemPeca.Size = new System.Drawing.Size(27, 23);
             this.btnCdItemPeca.TabIndex = 11;
             this.btnCdItemPeca.UseVisualStyleBackColor = true;
             this.btnCdItemPeca.Click += new System.EventHandler(this.btnCdItemPeca_Click);
@@ -156,7 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(404, 149);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.lblNmKit);
             this.Controls.Add(this.txtNmKit);

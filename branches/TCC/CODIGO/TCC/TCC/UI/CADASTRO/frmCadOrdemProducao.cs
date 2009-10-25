@@ -252,5 +252,10 @@ namespace TCC.UI
                 model = null;
             }
         }
+
+        private void lblCdDepartamento_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
