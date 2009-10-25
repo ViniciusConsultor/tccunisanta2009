@@ -54,6 +54,11 @@ namespace TCC.UI
                 MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCdDepartamento.Focus();
             }
+            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
+            {
+                MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada ,"Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataNasc.Focus();
+            }
             catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
             {
                 MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -63,7 +68,7 @@ namespace TCC.UI
             {
                 MessageBox.Show("Preencher campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataNasc.Focus();
-            }    
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -184,7 +189,15 @@ namespace TCC.UI
                 {
                     model.Cpf = txtCpf.Text;
                 }
-                model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
+                if (this.txtDataNasc.Modified == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException();
+                }
+                else
+                {
+                    BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
+                    model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
+                }
                 model.Estado = this.cbEstado.SelectedValue.ToString();
                 model.IdColab = Convert.ToInt32(regra.BuscaIDMaximoColaborador());
                 model.IdDepto = this._modelDepartamento.IdDepto;
