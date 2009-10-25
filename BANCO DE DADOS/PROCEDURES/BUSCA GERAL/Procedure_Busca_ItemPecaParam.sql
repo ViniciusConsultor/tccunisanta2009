@@ -9,3 +9,4 @@
  AS
  SELECT id_item_peca, nom as 'Item Peça' FROM Itempeca
  WHERE nom LIKE @nom + '%'
+ AND flg_ativo = 1

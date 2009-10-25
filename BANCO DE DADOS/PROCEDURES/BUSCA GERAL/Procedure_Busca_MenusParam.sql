@@ -13,5 +13,6 @@ INNER JOIN Submenu sm
  WHERE 
  m.dsc_menu like @param + '%'
  AND m.id_menu NOT IN (SELECT id_menu_filho FROM submenu)
+ AND m.flg_ativo = 1
  GROUP BY m.id_menu, m.dsc_menu
 go

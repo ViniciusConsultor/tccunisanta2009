@@ -7,3 +7,4 @@
  CREATE PROCEDURE sp_busca_peca
  AS
  SELECT id_peca, nom as 'Peça' FROM Peca
+ WHERE flg_ativo = 1

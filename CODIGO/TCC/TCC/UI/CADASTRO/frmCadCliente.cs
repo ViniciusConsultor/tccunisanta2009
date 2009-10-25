@@ -12,6 +12,8 @@ namespace TCC.UI
 {
     public partial class frmCadCliente : FormPai
     {
+        mCliente _modelCliente;
+
         public frmCadCliente()
         {
             InitializeComponent();
@@ -51,7 +53,7 @@ namespace TCC.UI
                 {
                     model.Bairro = this.txtBairro.Text;
                 }
-                if (this.txtCep.Modified == false)
+                if (this.txtCep.Modified == true)
                 {
                     model.Cep = null;
                 }
@@ -71,7 +73,14 @@ namespace TCC.UI
                 model.ComplementoEndereco = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                model.IdCliente = Convert.ToInt32(regra.BuscaIdMaximoCliente());
+                if (base.Alteracao == true)
+                {
+                    model.IdCliente = this._modelCliente.IdCliente;
+                }
+                else
+                {
+                    model.IdCliente = Convert.ToInt32(regra.BuscaIdMaximoCliente());
+                }
                 model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
                 model.NomeCliente = this.txtNome.Text;
                 model.NomeRua = this.txtRua.Text;
@@ -83,13 +92,13 @@ namespace TCC.UI
                 {
                     model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
                 }
-                if (string.IsNullOrEmpty(this.maskedTextBox1.Text) == true)
+                if (string.IsNullOrEmpty(this.txtRg.Text) == true)
                 {
                     model.Rg = null;
                 }
                 else
                 {
-                    model.Rg = Convert.ToInt32(this.maskedTextBox1.Text);
+                    model.Rg = Convert.ToInt32(this.txtRg.Text);
                 }
                 model.TelefoneCliente = this.txtTelefone.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
@@ -135,8 +144,15 @@ namespace TCC.UI
             try
             {
                 model = this.PegaDadosTela();
-                regra.ValidarInsere(model);
-                base.LimpaDadosTela(this);
+                if (base.Alteracao == true)
+                {
+                    regra.ValidarAltera(model);
+                }
+                else
+                {
+                    regra.ValidarInsere(model);
+                }
+                this.btnLimpa_Click(null, null);
                 this.BuscaIdMaximo();
             }
             catch (Exception ex)
@@ -154,6 +170,8 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.BuscaIdMaximo();
+            this._modelCliente = null;
+            base.Alteracao = false;
         }
 
         /*protected override void BuscaIdMaximo()
@@ -183,6 +201,54 @@ namespace TCC.UI
             txtDDD._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             txtNumero._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             txtTelefone._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;           
+        }
+
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnLimpa_Click(null, null);
+            this._modelCliente = new mCliente();
+            frmBuscaCliente objCliente = new frmBuscaCliente(this._modelCliente, true);
+            try
+            {
+                DialogResult resultado = objCliente.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelCliente = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objCliente = null;
+            }
+        }
+
+        private void PopulaTelaComModelAlteracao()
+        {
+            if (this._modelCliente != null)
+            {
+                base.Alteracao = true;
+                this.txtBairro.Text = this._modelCliente.Bairro;
+                this.txtCep.Text = this._modelCliente.Cep.ToString();
+                this.txtCidade.Text = this._modelCliente.Cidade;
+                this.txtCnpj.Text = this._modelCliente.Cnpj.ToString();
+                this.txtComplemento.Text = this._modelCliente.ComplementoEndereco;
+                this.txtDDD.Text = this._modelCliente.Ddd.ToString();
+                this.txtEmail.Text = this._modelCliente.Email;
+                this.txtNome.Text = this._modelCliente.NomeCliente;
+                this.txtNumero.Text = this._modelCliente.NumeroEndereco.ToString();
+                this.txtRua.Text = this._modelCliente.NomeRua;
+                this.txtTelefone.Text = this._modelCliente.TelefoneCliente.ToString();
+                this.txtRg.Text = this._modelCliente.Rg.ToString();
+                this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelCliente.SlgEstado);
+            }
         }
     }
 }

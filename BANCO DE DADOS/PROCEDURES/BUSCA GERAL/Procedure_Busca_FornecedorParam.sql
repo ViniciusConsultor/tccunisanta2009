@@ -9,3 +9,4 @@ AS
 SELECT id_forn, nom 'Fornecedor' 
 FROM fornecedor
 WHERE nom LIKE @nomeFornecedor  + '%'
+AND flg_ativo = 1

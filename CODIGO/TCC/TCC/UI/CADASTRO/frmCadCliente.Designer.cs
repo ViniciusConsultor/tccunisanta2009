@@ -57,8 +57,9 @@
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -309,12 +310,12 @@
             this.txtNumero.Size = new System.Drawing.Size(31, 20);
             this.txtNumero.TabIndex = 22;
             // 
-            // maskedTextBox1
+            // txtRg
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(137, 135);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(108, 20);
-            this.maskedTextBox1.TabIndex = 25;
+            this.txtRg.Location = new System.Drawing.Point(137, 135);
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(108, 20);
+            this.txtRg.TabIndex = 25;
             // 
             // txtCep
             // 
@@ -324,6 +325,16 @@
             this.txtCep.Size = new System.Drawing.Size(133, 20);
             this.txtCep.TabIndex = 26;
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(332, 191);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(105, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 27;
+            this.btnBuscaAlteracaoDelecao.Text = "Alteração/Deleção";
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,8 +343,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 226);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtDDD);
@@ -399,7 +411,8 @@
         private Controles.MegaTextBox.MegaTextBox txtDDD;
         private Controles.MegaTextBox.MegaTextBox txtTelefone;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtRg;
         private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

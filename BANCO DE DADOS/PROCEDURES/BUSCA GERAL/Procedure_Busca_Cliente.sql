@@ -6,3 +6,4 @@ GO
 CREATE PROCEDURE sp_busca_cliente
 AS 
 SELECT id_cli, nom 'Cliente', mail FROM Cliente
+WHERE flg_ativo = 1

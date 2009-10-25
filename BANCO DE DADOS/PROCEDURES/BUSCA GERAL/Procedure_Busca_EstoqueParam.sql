@@ -9,3 +9,4 @@ AS
 SELECT id_estoq, dsc_estoq 'Estoque' 
 FROM Estoque
 WHERE dsc_estoq LIKE @nom_estoque  + '%'
+AND flg_ativo = 1

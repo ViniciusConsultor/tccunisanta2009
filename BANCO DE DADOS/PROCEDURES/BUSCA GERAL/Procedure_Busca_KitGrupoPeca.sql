@@ -8,3 +8,4 @@
  AS
  SELECT id_grupo, nom as 'Kit Grupo Peça'
  FROM Kitgrupopeca
+WHERE flg_ativo = 1

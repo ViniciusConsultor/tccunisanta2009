@@ -7,3 +7,4 @@
  CREATE PROCEDURE sp_busca_itemPeca
  AS
  SELECT id_item_peca, nom as 'Item Peça' FROM Itempeca
+ WHERE flg_ativo = 1

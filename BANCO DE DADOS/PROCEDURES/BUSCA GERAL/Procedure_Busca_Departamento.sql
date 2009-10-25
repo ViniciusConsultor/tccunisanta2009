@@ -7,4 +7,5 @@ GO
 CREATE PROCEDURE sp_busca_departamento 
 AS 
 SELECT id_depto, dsc_depto 'Departamento' FROM Departamento 
+WHERE flg_ativo = 1
 go

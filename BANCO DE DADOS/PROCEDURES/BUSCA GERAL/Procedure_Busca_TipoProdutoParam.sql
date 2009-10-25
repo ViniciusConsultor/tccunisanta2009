@@ -8,3 +8,4 @@ CREATE PROCEDURE sp_busca_tipoProduto_param
 AS
 SELECT id_tipo_prod, nom as 'Tipo Produto' FROM Tipoproduto
 WHERE nom LIKE @nom + '%'
+AND flg_ativo = 1
