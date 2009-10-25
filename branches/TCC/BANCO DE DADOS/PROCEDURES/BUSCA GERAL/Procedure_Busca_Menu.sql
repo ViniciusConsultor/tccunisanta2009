@@ -14,4 +14,5 @@ CREATE PROCEDURE sp_busca_menu
  INNER JOIN Perfil p
 	 ON pm.id_perfil = p.id_perfil
  WHERE pm.id_perfil = @id_perfil
+ AND m.flg_ativo = 1
 go

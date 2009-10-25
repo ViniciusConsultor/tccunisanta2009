@@ -11,3 +11,4 @@ AS
 SELECT id_depto, dsc_depto 'Departamento'
 FROM Departamento
 WHERE dsc_depto LIKE @dsc_departamento + '%'
+AND flg_ativo = 1

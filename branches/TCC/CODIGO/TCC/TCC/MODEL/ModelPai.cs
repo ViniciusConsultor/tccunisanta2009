@@ -30,6 +30,10 @@ namespace TCC.MODEL
                     {
                         ColunasBancoDados colunas = (ColunasBancoDados)cols[0];
                         valor = dtModel.Rows[0][colunas.NomeColuna];
+                        if (valor == DBNull.Value)
+                        {
+                            valor = null;
+                        }
                         prop[contador].SetValue(this, valor, null);
                     }
                 }

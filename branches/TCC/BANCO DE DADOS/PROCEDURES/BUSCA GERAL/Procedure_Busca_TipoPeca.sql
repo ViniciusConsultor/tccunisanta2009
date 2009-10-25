@@ -6,3 +6,4 @@ GO
 CREATE PROCEDURE sp_busca_tipoPeca
 AS
 SELECT id_tipo_peca, dsc_tipo_peca as 'Tipo Peça' FROM Tipopeca
+WHERE flg_ativo = 1

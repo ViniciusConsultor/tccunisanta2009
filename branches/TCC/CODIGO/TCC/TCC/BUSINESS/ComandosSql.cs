@@ -238,7 +238,7 @@ namespace TCC.BUSINESS
                     nomeProc = INICIO_PROC_INSERIR + model.getNomeTabela();
                     break;
                     case TipoComando.update:
-                    parametros = this.BuscaNomeParametrosChavePrimaria(model);
+                    parametros = this.BuscaNomeParametros(model);
                     nomeProc = INICIO_PROC_ALTERAR + model.getNomeTabela();
                     break;
 

@@ -6,3 +6,4 @@ GO
 CREATE PROCEDURE sp_busca_estoque
 AS
 SELECT id_estoq, dsc_estoq 'Estoque' FROM Estoque
+WHERE flg_ativo = 1
