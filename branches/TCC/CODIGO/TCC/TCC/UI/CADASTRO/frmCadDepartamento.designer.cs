@@ -39,16 +39,17 @@
             // txtDescricaoDepartamento
             // 
             this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(187, 70);
+            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(64, 73);
             this.txtDescricaoDepartamento.MaxLength = 30;
+            this.txtDescricaoDepartamento.Multiline = true;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
-            this.txtDescricaoDepartamento.Size = new System.Drawing.Size(100, 20);
+            this.txtDescricaoDepartamento.Size = new System.Drawing.Size(253, 60);
             this.txtDescricaoDepartamento.TabIndex = 1;
             // 
             // lblDescricaoDepartamento
             // 
             this.lblDescricaoDepartamento.AutoSize = true;
-            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(59, 73);
+            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(61, 57);
             this.lblDescricaoDepartamento.Name = "lblDescricaoDepartamento";
             this.lblDescricaoDepartamento.Size = new System.Drawing.Size(122, 13);
             this.lblDescricaoDepartamento.TabIndex = 2;
@@ -58,20 +59,21 @@
             // 
             this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(-1, 57);
+            this.btnConfirma.Location = new System.Drawing.Point(1, 3);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(29, 28);
+            this.btnConfirma.Size = new System.Drawing.Size(30, 25);
             this.btnConfirma.TabIndex = 2;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(0, 29);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(1, 31);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(28, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(30, 25);
             this.btnLimpar.TabIndex = 3;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -79,9 +81,9 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(0, 1);
+            this.btnVoltar.Location = new System.Drawing.Point(1, 60);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(29, 26);
+            this.btnVoltar.Size = new System.Drawing.Size(30, 25);
             this.btnVoltar.TabIndex = 4;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -92,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(327, 195);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);

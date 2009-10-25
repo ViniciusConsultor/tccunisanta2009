@@ -46,20 +46,21 @@
             // 
             this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(1, 65);
+            this.btnConfirma.Location = new System.Drawing.Point(0, 2);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(28, 23);
+            this.btnConfirma.Size = new System.Drawing.Size(30, 25);
             this.btnConfirma.TabIndex = 0;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(0, 36);
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Location = new System.Drawing.Point(0, 29);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(38, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(30, 25);
             this.btnLimpar.TabIndex = 1;
-            this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -67,51 +68,51 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(0, 5);
+            this.btnVoltar.Location = new System.Drawing.Point(0, 56);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(29, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(30, 25);
             this.btnVoltar.TabIndex = 2;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txtCdPeca
             // 
-            this.txtCdPeca.Location = new System.Drawing.Point(137, 16);
+            this.txtCdPeca.Location = new System.Drawing.Point(154, 57);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtCdPeca.TabIndex = 3;
+            this.txtCdPeca.TabIndex = 1;
             // 
             // txtUltimoPreco
             // 
-            this.txtUltimoPreco.Location = new System.Drawing.Point(137, 68);
+            this.txtUltimoPreco.Location = new System.Drawing.Point(154, 123);
             this.txtUltimoPreco.Name = "txtUltimoPreco";
             this.txtUltimoPreco.Size = new System.Drawing.Size(100, 20);
-            this.txtUltimoPreco.TabIndex = 4;
+            this.txtUltimoPreco.TabIndex = 5;
             // 
             // txtCdCompra
             // 
-            this.txtCdCompra.Location = new System.Drawing.Point(137, 42);
+            this.txtCdCompra.Location = new System.Drawing.Point(154, 89);
             this.txtCdCompra.Name = "txtCdCompra";
             this.txtCdCompra.ReadOnly = true;
             this.txtCdCompra.Size = new System.Drawing.Size(100, 20);
-            this.txtCdCompra.TabIndex = 5;
+            this.txtCdCompra.TabIndex = 3;
             // 
             // btnBuscaPeca
             // 
             this.btnBuscaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPeca.BackgroundImage")));
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPeca.Location = new System.Drawing.Point(243, 14);
+            this.btnBuscaPeca.Location = new System.Drawing.Point(260, 55);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaPeca.TabIndex = 6;
+            this.btnBuscaPeca.TabIndex = 2;
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(63, 19);
+            this.lblCdPeca.Location = new System.Drawing.Point(80, 60);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(68, 13);
             this.lblCdPeca.TabIndex = 7;
@@ -120,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 45);
+            this.label2.Location = new System.Drawing.Point(102, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 8;
@@ -129,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 71);
+            this.label3.Location = new System.Drawing.Point(84, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 9;
@@ -139,10 +140,10 @@
             // 
             this.btnBuscaCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaCompra.BackgroundImage")));
             this.btnBuscaCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaCompra.Location = new System.Drawing.Point(243, 40);
+            this.btnBuscaCompra.Location = new System.Drawing.Point(260, 87);
             this.btnBuscaCompra.Name = "btnBuscaCompra";
             this.btnBuscaCompra.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaCompra.TabIndex = 10;
+            this.btnBuscaCompra.TabIndex = 4;
             this.btnBuscaCompra.UseVisualStyleBackColor = true;
             this.btnBuscaCompra.Click += new System.EventHandler(this.btnBuscaCompra_Click);
             // 
@@ -152,7 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(326, 190);
+            this.ClientSize = new System.Drawing.Size(340, 216);
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscaCompra);
             this.Controls.Add(this.label3);
