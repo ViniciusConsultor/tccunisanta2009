@@ -330,7 +330,7 @@
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(506, 281);
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 129);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
             this.btnBuscaAlteracaoDelecao.TabIndex = 27;
