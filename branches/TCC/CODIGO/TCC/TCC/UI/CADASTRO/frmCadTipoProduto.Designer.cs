@@ -73,6 +73,7 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(75, 75);
             this.txtNome.Multiline = true;
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(234, 80);
             this.txtNome.TabIndex = 6;

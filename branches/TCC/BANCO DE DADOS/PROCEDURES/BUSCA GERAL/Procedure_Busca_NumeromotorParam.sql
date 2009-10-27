@@ -8,7 +8,7 @@
 @dsc_num_motor varchar(50)
  AS
  SELECT id_num_motor, dsc_num_motor 'Numero do motor' FROM Numeromotor
-where dsc_num_motor like @dsc_num_motor +'%'
+where dsc_num_motor like '%' + @dsc_num_motor +'%'
 AND flg_ativo = 1
 order by dsc_num_motor desc
 go

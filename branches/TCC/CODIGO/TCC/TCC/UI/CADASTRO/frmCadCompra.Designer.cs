@@ -45,7 +45,6 @@
             this.lblQtdCompra = new System.Windows.Forms.Label();
             this.lblVlCompra = new System.Windows.Forms.Label();
             this.txtQtdCompra = new System.Windows.Forms.TextBox();
-            this.txtVlCompra = new System.Windows.Forms.TextBox();
             this.lblNtFiscal = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.btnAceitar = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.btnBuscaTipoProduto = new System.Windows.Forms.Button();
             this.btnBuscaMotorCompra = new System.Windows.Forms.Button();
             this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
+            this.txtVlCompra = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCdDepartamento
@@ -171,6 +171,7 @@
             // 
             this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObservacao.Location = new System.Drawing.Point(166, 241);
+            this.txtObservacao.MaxLength = 20;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(391, 20);
             this.txtObservacao.TabIndex = 15;
@@ -197,6 +198,7 @@
             // 
             this.txtQtdCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdCompra.Location = new System.Drawing.Point(218, 199);
+            this.txtQtdCompra.MaxLength = 5;
             this.txtQtdCompra.Name = "txtQtdCompra";
             this.txtQtdCompra.Size = new System.Drawing.Size(78, 20);
             this.txtQtdCompra.TabIndex = 13;
@@ -222,6 +224,7 @@
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNotaFiscal.Location = new System.Drawing.Point(365, 161);
+            this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(192, 20);
             this.txtNotaFiscal.TabIndex = 12;
@@ -323,6 +326,15 @@
             this.txtDataCompra.TabIndex = 11;
             this.txtDataCompra.ValidatingType = typeof(System.DateTime);
             // 
+            // txtVlCompra
+            // 
+            this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVlCompra.Location = new System.Drawing.Point(438, 178);
+            this.txtVlCompra.MaxLength = 17;
+            this.txtVlCompra.Name = "txtVlCompra";
+            this.txtVlCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtVlCompra.TabIndex = 19;
+            // 
             // frmCadCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +343,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtVlCompra);
             this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.btnBuscaMotorCompra);
             this.Controls.Add(this.btnBuscaTipoProduto);
@@ -339,7 +352,6 @@
             this.Controls.Add(this.btnBuscaFornecedor);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.txtNotaFiscal);
-            this.Controls.Add(this.txtVlCompra);
             this.Controls.Add(this.txtCdMotorCompra);
             this.Controls.Add(this.txtQtdCompra);
             this.Controls.Add(this.txtCdPeca);
@@ -386,7 +398,6 @@
         private System.Windows.Forms.Label lblQtdCompra;
         private System.Windows.Forms.Label lblVlCompra;
         private System.Windows.Forms.TextBox txtQtdCompra;
-        private System.Windows.Forms.TextBox txtVlCompra;
         private System.Windows.Forms.Label lblNtFiscal;
         private System.Windows.Forms.TextBox txtNotaFiscal;
         private System.Windows.Forms.Button btnAceitar;
@@ -398,5 +409,6 @@
         private System.Windows.Forms.Button btnBuscaTipoProduto;
         private System.Windows.Forms.Button btnBuscaMotorCompra;
         private System.Windows.Forms.MaskedTextBox txtDataCompra;
+        private System.Windows.Forms.TextBox txtVlCompra;
     }
 }

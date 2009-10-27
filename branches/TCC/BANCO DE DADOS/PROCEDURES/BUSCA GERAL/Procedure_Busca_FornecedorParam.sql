@@ -8,5 +8,5 @@ CREATE PROCEDURE sp_busca_fornecedor_param
 AS
 SELECT id_forn, nom 'Fornecedor' 
 FROM fornecedor
-WHERE nom LIKE @nomeFornecedor  + '%'
+WHERE nom LIKE '%' + @nomeFornecedor  + '%'
 AND flg_ativo = 1

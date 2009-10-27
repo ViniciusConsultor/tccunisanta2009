@@ -8,5 +8,5 @@ CREATE PROCEDURE sp_busca_tipoMotor_param
 AS
 SELECT id_tipo_motor, dsc_tipo_motor 'Tipo Motor'
 FROM Tipomotor
-WHERE dsc_tipo_motor LIKE @dsc_tipo_motor  + '%'
+WHERE dsc_tipo_motor LIKE '%' + @dsc_tipo_motor  + '%'
 AND flg_ativo = 1

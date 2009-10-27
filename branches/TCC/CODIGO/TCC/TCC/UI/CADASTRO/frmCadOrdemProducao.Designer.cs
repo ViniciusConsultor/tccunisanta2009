@@ -168,6 +168,7 @@
             this.txtDs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDs.Location = new System.Drawing.Point(172, 177);
             this.txtDs.Multiline = true;
+            this.txtDs.MaxLength = 500;
             this.txtDs.Name = "txtDs";
             this.txtDs.Size = new System.Drawing.Size(361, 80);
             this.txtDs.TabIndex = 18;

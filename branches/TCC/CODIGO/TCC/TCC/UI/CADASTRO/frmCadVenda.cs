@@ -44,24 +44,6 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-
-        /*protected override void BuscaIdMaximo()
-        {
-            rVenda regra = new rVenda();
-            try
-            {
-                this.txtCdVenda.Text = regra.BuscaidMaximo();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
         private void frmCadVenda_Load(object sender, EventArgs e)
         {
             this.BuscaIdMaximo();
@@ -139,13 +121,9 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário Buscar o código do Kit Grupo Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
+            catch (BUSINESS.Exceptions.Venda.VendaMotorGrupoVazioException)
             {
-                MessageBox.Show("É Necessário Buscar o código do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoOrdemProducaoVazioException)
-            {
-                MessageBox.Show("É Necessário Buscar o código da Ordem de Produção", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar o código do Motor ou do Grupo de Peças", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception)
             {
@@ -178,14 +156,6 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoClienteVazioException();
             }
-            else if (this._modelKit == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException();
-            }
-            else if (this._modelMotor == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoMotorVazioExeception();
-            }
             else if (this._modelOrdemProd == null)
             {
                 throw new BUSINESS.Exceptions.CodigoOrdemProducaoVazioException();
@@ -193,6 +163,10 @@ namespace TCC.UI
             else if (this._modelTipoProd == null)
             {
                 throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
+            }
+            else if (this._modelKit == null && this._modelMotor == null)
+            {
+                throw new BUSINESS.Exceptions.Venda.VendaMotorGrupoVazioException();
             }
         }
 

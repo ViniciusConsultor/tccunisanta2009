@@ -41,6 +41,7 @@
             this.txtDscNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDscNumeroMotor.Location = new System.Drawing.Point(61, 79);
             this.txtDscNumeroMotor.Multiline = true;
+            this.txtDscNumeroMotor.MaxLength = 50;
             this.txtDscNumeroMotor.Name = "txtDscNumeroMotor";
             this.txtDscNumeroMotor.Size = new System.Drawing.Size(260, 72);
             this.txtDscNumeroMotor.TabIndex = 22;

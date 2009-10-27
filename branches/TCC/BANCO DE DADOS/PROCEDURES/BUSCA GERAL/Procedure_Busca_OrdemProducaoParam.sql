@@ -8,4 +8,4 @@ CREATE PROCEDURE sp_busca_ordemProducao_param
 @dsc_ordem VARCHAR(500)
 AS
 SELECT id_ordem, dsc_ordem as 'Ordem' FROM Ordemproducao
-WHERE dsc_ordem LIKE @dsc_ordem + '%'
+WHERE dsc_ordem LIKE '%' + @dsc_ordem + '%'

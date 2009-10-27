@@ -36,23 +36,6 @@ namespace TCC.UI
             }
         }
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rFornecedor regra = new rFornecedor();
-            try
-            {
-                this.txtCodigoFornecedor.Text = regra.BuscaIdMaximoFornecedor();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
         private mFornecedor PegaDadosTela()
         {
             mFornecedor model = new mFornecedor();
@@ -61,13 +44,14 @@ namespace TCC.UI
             try
             {
                 model.Bairro = this.txtBairro.Text;
-                if (this.txtCep.Modified == false)
+                string cep = this.txtCepFornecedor.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(cep)==true)
                 {
                     model.CepFornecedor = null;
                 }
                 else
                 {
-                    model.CepFornecedor = Convert.ToInt32(this.txtCep.Text.Replace("-",String.Empty));
+                    model.CepFornecedor = Convert.ToInt32(cep);
                 }
                 model.Cidade = this.txtCidade.Text;
                 if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
@@ -92,13 +76,14 @@ namespace TCC.UI
                 {
                     model.Ddd = Convert.ToInt32(this.txtDDD.Text);
                 }
-                if (string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+                string tel = this.txtTelefone.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(tel) == true)
                 {
                     model.Telefone = null;
                 }
                 else
-                {
-                    model.Telefone = Convert.ToInt32(this.txtTelefone.Text);
+                {                    
+                    model.Telefone = Convert.ToInt32(tel);
                 }
                 if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
                 {
@@ -145,7 +130,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption)
             {

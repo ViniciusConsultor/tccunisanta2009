@@ -83,6 +83,7 @@
             // txtDescItemPeca
             // 
             this.txtDescItemPeca.Location = new System.Drawing.Point(179, 101);
+            this.txtDescItemPeca.MaxLength = 20;
             this.txtDescItemPeca.Name = "txtDescItemPeca";
             this.txtDescItemPeca.Size = new System.Drawing.Size(133, 20);
             this.txtDescItemPeca.TabIndex = 5;

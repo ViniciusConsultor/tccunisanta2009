@@ -66,9 +66,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCdUsuario
@@ -387,8 +387,9 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(131, 308);
-            this.txtEmail.MaxLength = 40;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtEmail.Location = new System.Drawing.Point(450, 62);
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(415, 20);
             this.txtEmail.TabIndex = 18;
@@ -405,23 +406,15 @@
             // txtDDD
             // 
             this.txtDDD.Location = new System.Drawing.Point(390, 88);
-            this.txtDDD.MaxLength = 3;
+            this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(28, 20);
             this.txtDDD.TabIndex = 8;
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(476, 87);
-            this.txtTelefone.MaxLength = 9;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(71, 20);
-            this.txtTelefone.TabIndex = 9;
-            // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(144, 156);
-            this.txtNumero.MaxLength = 9;
+            this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(76, 20);
             this.txtNumero.TabIndex = 11;
@@ -434,6 +427,15 @@
             this.txtCep.Size = new System.Drawing.Size(70, 20);
             this.txtCep.TabIndex = 13;
             // 
+            // txtTelefone
+            // 
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.Location = new System.Drawing.Point(265, 65);
+            this.txtTelefone.Mask = "0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(58, 20);
+            this.txtTelefone.TabIndex = 32;
+            // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,9 +444,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.txtEmail);
@@ -528,8 +530,8 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtDataNasc;
         private Controles.MegaTextBox.MegaTextBox txtDDD;
-        private Controles.MegaTextBox.MegaTextBox txtTelefone;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
         private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
     }
 }

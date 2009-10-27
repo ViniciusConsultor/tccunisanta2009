@@ -169,6 +169,7 @@
             // 
             this.txtQtdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdVenda.Location = new System.Drawing.Point(455, 224);
+            this.txtQtdVenda.MaxLength = 5;
             this.txtQtdVenda.Name = "txtQtdVenda";
             this.txtQtdVenda.Size = new System.Drawing.Size(73, 20);
             this.txtQtdVenda.TabIndex = 1;
@@ -186,6 +187,7 @@
             // 
             this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValorVenda.Location = new System.Drawing.Point(200, 265);
+            this.txtValorVenda.MaxLength = 17;
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(80, 20);
             this.txtValorVenda.TabIndex = 1;
@@ -203,6 +205,7 @@
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNotaFiscal.Location = new System.Drawing.Point(380, 265);
+            this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(148, 20);
             this.txtNotaFiscal.TabIndex = 1;
