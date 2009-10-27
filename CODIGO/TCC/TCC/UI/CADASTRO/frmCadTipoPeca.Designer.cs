@@ -83,6 +83,7 @@
             this.txtDsTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsTipoPeca.Location = new System.Drawing.Point(71, 69);
             this.txtDsTipoPeca.Multiline = true;
+            this.txtDsTipoPeca.MaxLength = 500;
             this.txtDsTipoPeca.Name = "txtDsTipoPeca";
             this.txtDsTipoPeca.Size = new System.Drawing.Size(235, 79);
             this.txtDsTipoPeca.TabIndex = 19;

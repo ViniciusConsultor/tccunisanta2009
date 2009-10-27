@@ -99,6 +99,7 @@
             // 
             this.txtNmPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNmPeca.Location = new System.Drawing.Point(136, 92);
+            this.txtNmPeca.MaxLength = 50;
             this.txtNmPeca.Name = "txtNmPeca";
             this.txtNmPeca.Size = new System.Drawing.Size(194, 20);
             this.txtNmPeca.TabIndex = 1;
@@ -117,6 +118,7 @@
             this.txtDsPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsPeca.Location = new System.Drawing.Point(55, 131);
             this.txtDsPeca.Multiline = true;
+            this.txtDsPeca.MaxLength = 100;
             this.txtDsPeca.Name = "txtDsPeca";
             this.txtDsPeca.Size = new System.Drawing.Size(275, 42);
             this.txtDsPeca.TabIndex = 1;
@@ -134,6 +136,7 @@
             // 
             this.txtPesoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPesoPeca.Location = new System.Drawing.Point(273, 182);
+            this.txtPesoPeca.MaxLength = 12;
             this.txtPesoPeca.Name = "txtPesoPeca";
             this.txtPesoPeca.Size = new System.Drawing.Size(57, 20);
             this.txtPesoPeca.TabIndex = 1;
@@ -197,6 +200,7 @@
             // 
             this.txtCodigoReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoReal.Location = new System.Drawing.Point(164, 7);
+            this.txtCodigoReal.MaxLength = 50;
             this.txtCodigoReal.Name = "txtCodigoReal";
             this.txtCodigoReal.Size = new System.Drawing.Size(106, 20);
             this.txtCodigoReal.TabIndex = 9;
@@ -214,6 +218,7 @@
             // 
             this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdPeca.Location = new System.Drawing.Point(144, 182);
+            this.txtQtdPeca.MaxLength = 9;
             this.txtQtdPeca.Name = "txtQtdPeca";
             this.txtQtdPeca.Size = new System.Drawing.Size(43, 20);
             this.txtQtdPeca.TabIndex = 11;

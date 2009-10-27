@@ -145,23 +145,6 @@ namespace TCC.UI
         #endregion
 
         #region Metodos
-
-        /*protected override void BuscaIdMaximo()
-        {
-            rCadColaborador regraColaborador = new rCadColaborador();
-            try
-            {
-                this.txtCdColab.Text = regraColaborador.BuscaIDMaximoColaborador();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regraColaborador = null;
-            }
-        }*/
         private void PopulaComboEstados()
         {
             BUSINESS.rEstado estados = new rEstado();
@@ -178,7 +161,8 @@ namespace TCC.UI
             try
             {
                 model.BairrEnd = txtBairro.Text;
-                model.Cep = txtCep.Text;
+                string cep = txtCep.Text.Replace("-",string.Empty).Replace(" ",string.Empty);
+                model.Cep = cep;
                 model.Cidade = txtCidade.Text;
                 model.ComplEnd = txtComplemento.Text;
                 if (string.IsNullOrEmpty(txtCpf.Text) == true)
@@ -230,13 +214,16 @@ namespace TCC.UI
                 {
                     model.Ddd = Convert.ToInt32(this.txtDDD.Text);
                 }
-                if (string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+
+                string tel = this.txtTelefone.Text;
+                tel = tel.Replace(" ",string.Empty).Replace("-",string.Empty);
+                if (string.IsNullOrEmpty(tel) == true)
                 {
                     model.Telefone = null;
                 }
                 else
                 {
-                    model.Telefone = Convert.ToInt32(this.txtTelefone.Text);
+                    model.Telefone = Convert.ToInt32(tel);
                 }
                 if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
                 {

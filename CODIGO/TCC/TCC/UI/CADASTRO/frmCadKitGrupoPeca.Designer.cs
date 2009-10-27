@@ -115,6 +115,7 @@
             // 
             this.txtNmKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNmKit.Location = new System.Drawing.Point(132, 118);
+            this.txtNmKit.MaxLength = 50;
             this.txtNmKit.Name = "txtNmKit";
             this.txtNmKit.Size = new System.Drawing.Size(188, 20);
             this.txtNmKit.TabIndex = 14;
