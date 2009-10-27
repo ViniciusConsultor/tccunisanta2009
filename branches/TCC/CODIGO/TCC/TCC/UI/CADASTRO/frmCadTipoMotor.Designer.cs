@@ -73,6 +73,7 @@
             // 
             this.txtNmTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNmTipoMotor.Location = new System.Drawing.Point(80, 98);
+            this.txtNmTipoMotor.MaxLength = 50;
             this.txtNmTipoMotor.Name = "txtNmTipoMotor";
             this.txtNmTipoMotor.Size = new System.Drawing.Size(227, 20);
             this.txtNmTipoMotor.TabIndex = 20;

@@ -10,5 +10,5 @@ CREATE PROCEDURE sp_busca_departamento_param
 AS
 SELECT id_depto, dsc_depto 'Departamento'
 FROM Departamento
-WHERE dsc_depto LIKE @dsc_departamento + '%'
+WHERE dsc_depto LIKE '%' + @dsc_departamento + '%'
 AND flg_ativo = 1

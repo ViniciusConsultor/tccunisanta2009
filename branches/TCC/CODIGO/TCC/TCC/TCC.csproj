@@ -104,8 +104,10 @@
     <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Validacoes\MaskedInvalidaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\VendaMotorGrupoVazioException.cs" />
     <Compile Include="BUSINESS\rCadColaborador.cs" />
     <Compile Include="BUSINESS\rCliente.cs" />
     <Compile Include="BUSINESS\rCompra.cs" />

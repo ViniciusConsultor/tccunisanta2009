@@ -50,6 +50,7 @@
             this.txtDsMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsMotor.Location = new System.Drawing.Point(68, 71);
             this.txtDsMotor.Multiline = true;
+            this.txtDsMotor.MaxLength = 100;
             this.txtDsMotor.Name = "txtDsMotor";
             this.txtDsMotor.Size = new System.Drawing.Size(249, 80);
             this.txtDsMotor.TabIndex = 1;

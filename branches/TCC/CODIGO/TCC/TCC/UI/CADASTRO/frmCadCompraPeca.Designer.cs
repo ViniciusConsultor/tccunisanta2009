@@ -86,6 +86,7 @@
             // txtUltimoPreco
             // 
             this.txtUltimoPreco.Location = new System.Drawing.Point(154, 123);
+            this.txtUltimoPreco.MaxLength = 17;
             this.txtUltimoPreco.Name = "txtUltimoPreco";
             this.txtUltimoPreco.Size = new System.Drawing.Size(100, 20);
             this.txtUltimoPreco.TabIndex = 5;

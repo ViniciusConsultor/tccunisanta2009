@@ -8,5 +8,5 @@ CREATE PROCEDURE sp_busca_motor_param
 AS 
 SELECT id_motor, dsc_motor 'Motor'
 FROM motor 
-WHERE dsc_motor like @dsc_motor_compra + '%'
+WHERE dsc_motor like '%' + @dsc_motor_compra + '%'
 AND flg_ativo = 1

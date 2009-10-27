@@ -116,6 +116,7 @@
             this.txtDsPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsPedido.Location = new System.Drawing.Point(69, 103);
             this.txtDsPedido.Multiline = true;
+            this.txtDsPedido.MaxLength = 500;
             this.txtDsPedido.Name = "txtDsPedido";
             this.txtDsPedido.Size = new System.Drawing.Size(253, 72);
             this.txtDsPedido.TabIndex = 20;

@@ -51,11 +51,11 @@
             this.btnlimpar = new System.Windows.Forms.Button();
             this.txtDDD = new System.Windows.Forms.TextBox();
             this.lblDDD = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.txtCepFornecedor = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtCidade
@@ -125,7 +125,7 @@
             // 
             this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumeroEndereco.Location = new System.Drawing.Point(160, 135);
-            this.txtNumeroEndereco.MaxLength = 10;
+            this.txtNumeroEndereco.MaxLength = 5;
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(65, 20);
             this.txtNumeroEndereco.TabIndex = 3;
@@ -284,8 +284,9 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(148, 285);
-            this.txtEmail.MaxLength = 50;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtEmail.Location = new System.Drawing.Point(469, 57);
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(390, 20);
             this.txtEmail.TabIndex = 22;
@@ -299,13 +300,22 @@
             this.lblEmail.TabIndex = 23;
             this.lblEmail.Text = "Email";
             // 
-            // txtCep
+            // txtCepFornecedor
             // 
-            this.txtCep.Location = new System.Drawing.Point(461, 170);
-            this.txtCep.Mask = "00000-000";
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(78, 20);
-            this.txtCep.TabIndex = 24;
+            this.txtCepFornecedor.Location = new System.Drawing.Point(188, 140);
+            this.txtCepFornecedor.Mask = "00000-000";
+            this.txtCepFornecedor.Name = "txtCepFornecedor";
+            this.txtCepFornecedor.Size = new System.Drawing.Size(200, 20);
+            this.txtCepFornecedor.TabIndex = 24;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.Location = new System.Drawing.Point(288, 56);
+            this.txtTelefone.Mask = "0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.TabIndex = 25;
             // 
             // frmCadFornecedor
             // 
@@ -315,10 +325,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
-            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtCepFornecedor);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.lblDDD);
@@ -375,10 +385,10 @@
         private System.Windows.Forms.Button btnlimpar;
         private System.Windows.Forms.TextBox txtDDD;
         private System.Windows.Forms.Label lblDDD;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.MaskedTextBox txtCepFornecedor;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
     }
 }
