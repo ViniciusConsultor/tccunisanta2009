@@ -388,7 +388,7 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtEmail.Location = new System.Drawing.Point(450, 62);
+            this.txtEmail.Location = new System.Drawing.Point(131, 308);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(415, 20);
@@ -430,10 +430,10 @@
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(265, 65);
+            this.txtTelefone.Location = new System.Drawing.Point(476, 89);
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(58, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(70, 20);
             this.txtTelefone.TabIndex = 32;
             // 
             // frmCadColaborador
