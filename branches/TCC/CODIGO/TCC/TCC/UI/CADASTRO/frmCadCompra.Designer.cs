@@ -203,14 +203,6 @@
             this.txtQtdCompra.Size = new System.Drawing.Size(78, 20);
             this.txtQtdCompra.TabIndex = 13;
             // 
-            // txtVlCompra
-            // 
-            this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVlCompra.Location = new System.Drawing.Point(413, 199);
-            this.txtVlCompra.Name = "txtVlCompra";
-            this.txtVlCompra.Size = new System.Drawing.Size(144, 20);
-            this.txtVlCompra.TabIndex = 14;
-            // 
             // lblNtFiscal
             // 
             this.lblNtFiscal.AutoSize = true;
@@ -329,10 +321,10 @@
             // txtVlCompra
             // 
             this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVlCompra.Location = new System.Drawing.Point(438, 178);
+            this.txtVlCompra.Location = new System.Drawing.Point(413, 199);
             this.txtVlCompra.MaxLength = 17;
             this.txtVlCompra.Name = "txtVlCompra";
-            this.txtVlCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtVlCompra.Size = new System.Drawing.Size(144, 20);
             this.txtVlCompra.TabIndex = 19;
             // 
             // frmCadCompra
