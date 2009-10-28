@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MegaMaskedTextBox\MegaMaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MegaMaskedTextBox\MegaMaskedTextBox.Designer.cs">
+      <DependentUpon>MegaMaskedTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="MegaTextBox\MegaTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

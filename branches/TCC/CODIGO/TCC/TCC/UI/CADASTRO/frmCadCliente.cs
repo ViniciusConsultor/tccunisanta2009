@@ -42,6 +42,7 @@ namespace TCC.UI
         {
             mCliente model = new mCliente();
             rCliente regra = new rCliente();
+
             try
             {
                 if (string.IsNullOrEmpty(this.txtBairro.Text) == true)
@@ -52,22 +53,13 @@ namespace TCC.UI
                 {
                     model.Bairro = this.txtBairro.Text;
                 }
-                string cep = this.txtCep.Text.Replace("-", String.Empty).Replace(" ",string.Empty);
-                if (string.IsNullOrEmpty(cep)==true)
+                if (this.txtCep.Modified == true)
                 {
                     model.Cep = null;
                 }
                 else
                 {
-                    //BUSINESS.UTIL.Validacoes.ValidaMasked(cep, "CEP");
-                    //if (cep.Length == 8)
-                    //{
-                        model.Cep = Convert.ToInt32(cep);
-                    /*}
-                    else
-                    {
-                        MessageBox.Show("CEP incorreto!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                    }*/
+                    model.Cep = Convert.ToInt32(this.txtCep.Text.Replace("-",String.Empty));
                 }
                 model.Cidade = this.txtCidade.Text;
                 if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
@@ -108,8 +100,7 @@ namespace TCC.UI
                 {
                     model.Rg = Convert.ToInt32(this.txtRg.Text);
                 }
-                string tel = this.txtTelefone.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
-                model.TelefoneCliente = tel;
+                model.TelefoneCliente = this.txtTelefone.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     model.Ddd = null;
@@ -137,6 +128,7 @@ namespace TCC.UI
                 model = null;
             }
         }
+
        
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
@@ -161,6 +153,7 @@ namespace TCC.UI
                     regra.ValidarInsere(model);
                 }
                 this.btnLimpa_Click(null, null);
+                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {
@@ -172,6 +165,7 @@ namespace TCC.UI
                 model = null;
             }
         }
+
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
@@ -179,6 +173,23 @@ namespace TCC.UI
             this._modelCliente = null;
             base.Alteracao = false;
         }
+
+        /*protected override void BuscaIdMaximo()
+        {
+            rCliente regra = new rCliente();
+            try
+            {
+                this.txtCodigo.Text = regra.BuscaIdMaximoCliente();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+            }
+        }*/
 
         void btnVolta_Click(object sender, System.EventArgs e)
         {
@@ -189,7 +200,9 @@ namespace TCC.UI
         {
             txtDDD._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             txtNumero._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtTelefone._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;           
         }
+
         private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
         {
             this.btnLimpa_Click(null, null);
