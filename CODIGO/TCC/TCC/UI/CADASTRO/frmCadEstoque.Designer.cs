@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEstoque));
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
             this.lblCodigoDepartamento = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtCdDepartamento
@@ -47,6 +49,7 @@
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.Size = new System.Drawing.Size(68, 20);
             this.txtCdDepartamento.TabIndex = 0;
+            this.txtCdDepartamento.TabStop = false;
             // 
             // lblCodigoDepartamento
             // 
@@ -84,6 +87,7 @@
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(30, 25);
             this.btnInsere.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
@@ -95,6 +99,7 @@
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(30, 25);
             this.btnLimpa.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Novo");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
@@ -106,6 +111,7 @@
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(30, 25);
             this.btnVolta.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -117,8 +123,14 @@
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 20);
             this.btnBuscaDepartamento.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento Responsável");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadEstoque
             // 
@@ -155,5 +167,6 @@
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnBuscaDepartamento;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadTipoPeca));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.lblDsTipoPeca = new System.Windows.Forms.Label();
             this.txtDsTipoPeca = new System.Windows.Forms.TextBox();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -43,7 +45,8 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 60);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 16;
+            this.btnVoltar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -54,7 +57,8 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 32);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 15;
+            this.btnLimpar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -65,7 +69,8 @@
             this.btnAceitar.Location = new System.Drawing.Point(2, 4);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 14;
+            this.btnAceitar.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -82,11 +87,16 @@
             // 
             this.txtDsTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsTipoPeca.Location = new System.Drawing.Point(71, 69);
-            this.txtDsTipoPeca.Multiline = true;
             this.txtDsTipoPeca.MaxLength = 500;
+            this.txtDsTipoPeca.Multiline = true;
             this.txtDsTipoPeca.Name = "txtDsTipoPeca";
             this.txtDsTipoPeca.Size = new System.Drawing.Size(235, 79);
-            this.txtDsTipoPeca.TabIndex = 19;
+            this.txtDsTipoPeca.TabIndex = 1;
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadTipoPeca
             // 
@@ -117,5 +127,6 @@
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.Label lblDsTipoPeca;
         private System.Windows.Forms.TextBox txtDsTipoPeca;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

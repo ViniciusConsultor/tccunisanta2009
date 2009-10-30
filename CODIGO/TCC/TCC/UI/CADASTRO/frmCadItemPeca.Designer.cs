@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadItemPeca));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCodPeca = new System.Windows.Forms.Label();
             this.btnBuscaPeca = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -46,7 +48,8 @@
             this.btnConfirmar.Location = new System.Drawing.Point(2, 3);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirmar.TabIndex = 0;
+            this.btnConfirmar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnConfirmar, "Cadastrar");
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -57,7 +60,8 @@
             this.btnVolta.Location = new System.Drawing.Point(2, 61);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(27, 23);
-            this.btnVolta.TabIndex = 1;
+            this.btnVolta.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -68,7 +72,8 @@
             this.btnLimpa.Location = new System.Drawing.Point(2, 32);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpa.TabIndex = 2;
+            this.btnLimpa.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Novo");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
@@ -79,6 +84,7 @@
             this.txtCodigoPeca.ReadOnly = true;
             this.txtCodigoPeca.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoPeca.TabIndex = 4;
+            this.txtCodigoPeca.TabStop = false;
             // 
             // txtDescItemPeca
             // 
@@ -86,7 +92,7 @@
             this.txtDescItemPeca.MaxLength = 20;
             this.txtDescItemPeca.Name = "txtDescItemPeca";
             this.txtDescItemPeca.Size = new System.Drawing.Size(133, 20);
-            this.txtDescItemPeca.TabIndex = 5;
+            this.txtDescItemPeca.TabIndex = 2;
             // 
             // label2
             // 
@@ -113,9 +119,15 @@
             this.btnBuscaPeca.Location = new System.Drawing.Point(284, 56);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(28, 23);
-            this.btnBuscaPeca.TabIndex = 9;
+            this.btnBuscaPeca.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadItemPeca
             // 
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCodPeca;
         private System.Windows.Forms.Button btnBuscaPeca;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

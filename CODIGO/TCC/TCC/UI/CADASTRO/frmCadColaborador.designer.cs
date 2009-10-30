@@ -69,6 +69,7 @@
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblCdUsuario
@@ -161,6 +162,7 @@
             this.txtCdUsuario.ReadOnly = true;
             this.txtCdUsuario.Size = new System.Drawing.Size(50, 20);
             this.txtCdUsuario.TabIndex = 1;
+            this.txtCdUsuario.TabStop = false;
             // 
             // txtCdDepartamento
             // 
@@ -171,6 +173,7 @@
             this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(50, 20);
             this.txtCdDepartamento.TabIndex = 3;
+            this.txtCdDepartamento.TabStop = false;
             // 
             // txtNome
             // 
@@ -179,7 +182,7 @@
             this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(410, 20);
-            this.txtNome.TabIndex = 5;
+            this.txtNome.TabIndex = 3;
             // 
             // txtRua
             // 
@@ -188,7 +191,7 @@
             this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(419, 20);
-            this.txtRua.TabIndex = 10;
+            this.txtRua.TabIndex = 8;
             // 
             // txtComplemento
             // 
@@ -197,7 +200,7 @@
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(247, 20);
-            this.txtComplemento.TabIndex = 12;
+            this.txtComplemento.TabIndex = 10;
             // 
             // txtBairro
             // 
@@ -206,7 +209,7 @@
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(297, 20);
-            this.txtBairro.TabIndex = 12;
+            this.txtBairro.TabIndex = 11;
             // 
             // lblCidade
             // 
@@ -224,7 +227,7 @@
             this.txtCidade.MaxLength = 40;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(282, 20);
-            this.txtCidade.TabIndex = 14;
+            this.txtCidade.TabIndex = 13;
             // 
             // lblEstado
             // 
@@ -260,7 +263,7 @@
             this.txtRg.MaxLength = 15;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(171, 20);
-            this.txtRg.TabIndex = 16;
+            this.txtRg.TabIndex = 15;
             // 
             // txtCpf
             // 
@@ -269,7 +272,7 @@
             this.txtCpf.MaxLength = 15;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(187, 20);
-            this.txtCpf.TabIndex = 17;
+            this.txtCpf.TabIndex = 16;
             // 
             // lblSexo
             // 
@@ -291,7 +294,7 @@
             this.CbSexo.Location = new System.Drawing.Point(303, 87);
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Size = new System.Drawing.Size(47, 21);
-            this.CbSexo.TabIndex = 7;
+            this.CbSexo.TabIndex = 5;
             // 
             // btnConfirma
             // 
@@ -300,7 +303,8 @@
             this.btnConfirma.Location = new System.Drawing.Point(7, 6);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 19;
+            this.btnConfirma.TabIndex = 18;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -311,7 +315,8 @@
             this.btnVoltar.Location = new System.Drawing.Point(7, 84);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 21;
+            this.btnVoltar.TabIndex = 20;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -322,7 +327,8 @@
             this.btnApaga.Location = new System.Drawing.Point(7, 45);
             this.btnApaga.Name = "btnApaga";
             this.btnApaga.Size = new System.Drawing.Size(40, 35);
-            this.btnApaga.TabIndex = 20;
+            this.btnApaga.TabIndex = 19;
+            this.toolTipLegenda.SetToolTip(this.btnApaga, "Novo");
             this.btnApaga.UseVisualStyleBackColor = true;
             this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
             // 
@@ -333,7 +339,7 @@
             this.cbEstado.Location = new System.Drawing.Point(476, 233);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(70, 21);
-            this.cbEstado.TabIndex = 15;
+            this.cbEstado.TabIndex = 14;
             // 
             // btnBuscaUsuario
             // 
@@ -342,7 +348,8 @@
             this.btnBuscaUsuario.Location = new System.Drawing.Point(238, 14);
             this.btnBuscaUsuario.Name = "btnBuscaUsuario";
             this.btnBuscaUsuario.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaUsuario.TabIndex = 2;
+            this.btnBuscaUsuario.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaUsuario, "Buscar Usuário");
             this.btnBuscaUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaUsuario.Click += new System.EventHandler(this.btnBuscaUsuario_Click);
             // 
@@ -353,7 +360,8 @@
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(523, 12);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaDepartamento.TabIndex = 4;
+            this.btnBuscaDepartamento.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
@@ -392,7 +400,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(415, 20);
-            this.txtEmail.TabIndex = 18;
+            this.txtEmail.TabIndex = 17;
             // 
             // txtDataNasc
             // 
@@ -400,7 +408,7 @@
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.Size = new System.Drawing.Size(71, 20);
-            this.txtDataNasc.TabIndex = 6;
+            this.txtDataNasc.TabIndex = 4;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
             // txtDDD
@@ -409,7 +417,7 @@
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(28, 20);
-            this.txtDDD.TabIndex = 8;
+            this.txtDDD.TabIndex = 6;
             // 
             // txtNumero
             // 
@@ -417,7 +425,7 @@
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(76, 20);
-            this.txtNumero.TabIndex = 11;
+            this.txtNumero.TabIndex = 9;
             // 
             // txtCep
             // 
@@ -425,7 +433,7 @@
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(70, 20);
-            this.txtCep.TabIndex = 13;
+            this.txtCep.TabIndex = 12;
             // 
             // txtTelefone
             // 
@@ -434,7 +442,12 @@
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(70, 20);
-            this.txtTelefone.TabIndex = 32;
+            this.txtTelefone.TabIndex = 7;
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadColaborador
             // 
@@ -533,5 +546,6 @@
         private Controles.MegaTextBox.MegaTextBox txtNumero;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

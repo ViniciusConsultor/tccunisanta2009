@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadKitGrupoPeca));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.lblNmKit = new System.Windows.Forms.Label();
             this.btnCdPeca = new System.Windows.Forms.Button();
             this.btnCdItemPeca = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -49,7 +51,8 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 56);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 13;
+            this.btnVoltar.TabIndex = 6;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -60,7 +63,8 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 29);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -71,7 +75,8 @@
             this.btnAceitar.Location = new System.Drawing.Point(2, 2);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 11;
+            this.btnAceitar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -83,6 +88,7 @@
             this.txtCdItemPeca.ReadOnly = true;
             this.txtCdItemPeca.Size = new System.Drawing.Size(32, 20);
             this.txtCdItemPeca.TabIndex = 14;
+            this.txtCdItemPeca.TabStop = false;
             // 
             // lblCdItemPeca
             // 
@@ -101,6 +107,7 @@
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(57, 20);
             this.txtCdPeca.TabIndex = 14;
+            this.txtCdPeca.TabStop = false;
             // 
             // lblCdPeca
             // 
@@ -118,7 +125,7 @@
             this.txtNmKit.MaxLength = 50;
             this.txtNmKit.Name = "txtNmKit";
             this.txtNmKit.Size = new System.Drawing.Size(188, 20);
-            this.txtNmKit.TabIndex = 14;
+            this.txtNmKit.TabIndex = 3;
             // 
             // lblNmKit
             // 
@@ -137,7 +144,8 @@
             this.btnCdPeca.Location = new System.Drawing.Point(213, 78);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(28, 23);
-            this.btnCdPeca.TabIndex = 11;
+            this.btnCdPeca.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnCdPeca, "Buscar Peça");
             this.btnCdPeca.UseVisualStyleBackColor = true;
             this.btnCdPeca.Click += new System.EventHandler(this.btnCdPeca_Click);
             // 
@@ -148,9 +156,15 @@
             this.btnCdItemPeca.Location = new System.Drawing.Point(214, 44);
             this.btnCdItemPeca.Name = "btnCdItemPeca";
             this.btnCdItemPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnCdItemPeca.TabIndex = 11;
+            this.btnCdItemPeca.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnCdItemPeca, "Buscar Item Peça");
             this.btnCdItemPeca.UseVisualStyleBackColor = true;
             this.btnCdItemPeca.Click += new System.EventHandler(this.btnCdItemPeca_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadKitGrupoPeca
             // 
@@ -193,5 +207,6 @@
         private System.Windows.Forms.Label lblNmKit;
         private System.Windows.Forms.Button btnCdPeca;
         private System.Windows.Forms.Button btnCdItemPeca;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

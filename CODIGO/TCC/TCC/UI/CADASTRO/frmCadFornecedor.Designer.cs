@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFornecedor));
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtCepFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtCidade
@@ -65,7 +67,7 @@
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(259, 20);
-            this.txtCidade.TabIndex = 9;
+            this.txtCidade.TabIndex = 7;
             // 
             // lblCidade
             // 
@@ -83,7 +85,7 @@
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(269, 20);
-            this.txtBairro.TabIndex = 4;
+            this.txtBairro.TabIndex = 5;
             // 
             // lblBairro
             // 
@@ -110,7 +112,7 @@
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(212, 20);
-            this.txtComplemento.TabIndex = 5;
+            this.txtComplemento.TabIndex = 4;
             // 
             // lblComplemento
             // 
@@ -210,7 +212,7 @@
             this.txtCnpj.MaxLength = 15;
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(149, 20);
-            this.txtCnpj.TabIndex = 10;
+            this.txtCnpj.TabIndex = 9;
             // 
             // btnInsere
             // 
@@ -219,7 +221,8 @@
             this.btnInsere.Location = new System.Drawing.Point(7, 5);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 11;
+            this.btnInsere.TabIndex = 13;
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
@@ -230,7 +233,8 @@
             this.btnVolta.Location = new System.Drawing.Point(7, 87);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 13;
+            this.btnVolta.TabIndex = 15;
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -241,7 +245,8 @@
             this.btnlimpar.Location = new System.Drawing.Point(7, 46);
             this.btnlimpar.Name = "btnlimpar";
             this.btnlimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnlimpar.TabIndex = 12;
+            this.btnlimpar.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnlimpar, "Novo");
             this.btnlimpar.UseVisualStyleBackColor = true;
             this.btnlimpar.Click += new System.EventHandler(this.btnlimpar_Click);
             // 
@@ -252,7 +257,7 @@
             this.txtDDD.MaxLength = 50;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(36, 20);
-            this.txtDDD.TabIndex = 18;
+            this.txtDDD.TabIndex = 10;
             // 
             // lblDDD
             // 
@@ -262,15 +267,6 @@
             this.lblDDD.Size = new System.Drawing.Size(31, 13);
             this.lblDDD.TabIndex = 19;
             this.lblDDD.Text = "DDD";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(437, 246);
-            this.txtTelefone.MaxLength = 50;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(101, 20);
-            this.txtTelefone.TabIndex = 20;
             // 
             // lblTelefone
             // 
@@ -285,11 +281,11 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtEmail.Location = new System.Drawing.Point(469, 57);
+            this.txtEmail.Location = new System.Drawing.Point(148, 280);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(390, 20);
-            this.txtEmail.TabIndex = 22;
+            this.txtEmail.TabIndex = 12;
             // 
             // lblEmail
             // 
@@ -302,20 +298,25 @@
             // 
             // txtCepFornecedor
             // 
-            this.txtCepFornecedor.Location = new System.Drawing.Point(188, 140);
+            this.txtCepFornecedor.Location = new System.Drawing.Point(461, 172);
             this.txtCepFornecedor.Mask = "00000-000";
             this.txtCepFornecedor.Name = "txtCepFornecedor";
-            this.txtCepFornecedor.Size = new System.Drawing.Size(200, 20);
-            this.txtCepFornecedor.TabIndex = 24;
+            this.txtCepFornecedor.Size = new System.Drawing.Size(77, 20);
+            this.txtCepFornecedor.TabIndex = 6;
             // 
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(288, 56);
+            this.txtTelefone.Location = new System.Drawing.Point(439, 246);
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 25;
+            this.txtTelefone.TabIndex = 11;
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadFornecedor
             // 
@@ -390,5 +391,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.MaskedTextBox txtCepFornecedor;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsinagem));
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnCdPeca = new System.Windows.Forms.Button();
             this.chkPecaOk = new System.Windows.Forms.CheckBox();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblCdPeca
@@ -55,6 +57,7 @@
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(67, 20);
             this.txtCdPeca.TabIndex = 1;
+            this.txtCdPeca.TabStop = false;
             // 
             // btnVoltar
             // 
@@ -63,7 +66,8 @@
             this.btnVoltar.Location = new System.Drawing.Point(3, 58);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -74,7 +78,8 @@
             this.btnLimpar.Location = new System.Drawing.Point(3, 30);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 9;
+            this.btnLimpar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -85,7 +90,8 @@
             this.btnAceitar.Location = new System.Drawing.Point(3, 3);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 8;
+            this.btnAceitar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -96,7 +102,8 @@
             this.btnCdPeca.Location = new System.Drawing.Point(252, 74);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnCdPeca.TabIndex = 8;
+            this.btnCdPeca.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnCdPeca, "Buscar Peça");
             this.btnCdPeca.UseVisualStyleBackColor = true;
             this.btnCdPeca.Click += new System.EventHandler(this.btnCdPeca_Click);
             // 
@@ -106,9 +113,14 @@
             this.chkPecaOk.Location = new System.Drawing.Point(153, 110);
             this.chkPecaOk.Name = "chkPecaOk";
             this.chkPecaOk.Size = new System.Drawing.Size(69, 17);
-            this.chkPecaOk.TabIndex = 11;
+            this.chkPecaOk.TabIndex = 2;
             this.chkPecaOk.Text = "Peça OK";
             this.chkPecaOk.UseVisualStyleBackColor = true;
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadUsinagem
             // 
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.Button btnCdPeca;
         private System.Windows.Forms.CheckBox chkPecaOk;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }
