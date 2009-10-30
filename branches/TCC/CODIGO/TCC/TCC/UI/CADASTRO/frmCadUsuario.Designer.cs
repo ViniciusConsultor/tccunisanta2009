@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsuario));
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.txtPerfilUsuario = new System.Windows.Forms.TextBox();
             this.lblPerfilUsuario = new System.Windows.Forms.Label();
             this.btnBuscaPerfilUsuario = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtLogin
@@ -88,6 +90,7 @@
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -99,6 +102,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 6;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -110,6 +114,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 7;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -140,6 +145,7 @@
             this.txtPerfilUsuario.Name = "txtPerfilUsuario";
             this.txtPerfilUsuario.Size = new System.Drawing.Size(125, 20);
             this.txtPerfilUsuario.TabIndex = 0;
+            this.txtPerfilUsuario.TabStop = false;
             // 
             // lblPerfilUsuario
             // 
@@ -158,8 +164,14 @@
             this.btnBuscaPerfilUsuario.Name = "btnBuscaPerfilUsuario";
             this.btnBuscaPerfilUsuario.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaPerfilUsuario.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaPerfilUsuario, "Buscar Perfil");
             this.btnBuscaPerfilUsuario.UseVisualStyleBackColor = true;
             this.btnBuscaPerfilUsuario.Click += new System.EventHandler(this.btnBuscaPerfilUsuario_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadUsuario
             // 
@@ -204,5 +216,6 @@
         private System.Windows.Forms.TextBox txtPerfilUsuario;
         private System.Windows.Forms.Label lblPerfilUsuario;
         private System.Windows.Forms.Button btnBuscaPerfilUsuario;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

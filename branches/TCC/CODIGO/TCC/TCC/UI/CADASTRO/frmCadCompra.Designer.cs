@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompra));
             this.lblCdDepartamento = new System.Windows.Forms.Label();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
@@ -57,6 +58,7 @@
             this.btnBuscaMotorCompra = new System.Windows.Forms.Button();
             this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.txtVlCompra = new System.Windows.Forms.TextBox();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblCdDepartamento
@@ -76,6 +78,7 @@
             this.txtDepartamento.ReadOnly = true;
             this.txtDepartamento.Size = new System.Drawing.Size(49, 20);
             this.txtDepartamento.TabIndex = 3;
+            this.txtDepartamento.TabStop = false;
             // 
             // lblCdFornecedor
             // 
@@ -94,6 +97,7 @@
             this.txtCdFornecedor.ReadOnly = true;
             this.txtCdFornecedor.Size = new System.Drawing.Size(38, 20);
             this.txtCdFornecedor.TabIndex = 1;
+            this.txtCdFornecedor.TabStop = false;
             // 
             // lblCdTipoProduto
             // 
@@ -112,6 +116,7 @@
             this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(49, 20);
             this.txtCdTipoProduto.TabIndex = 7;
+            this.txtCdTipoProduto.TabStop = false;
             // 
             // lblCdPeca
             // 
@@ -130,6 +135,7 @@
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(38, 20);
             this.txtCdPeca.TabIndex = 5;
+            this.txtCdPeca.TabStop = false;
             // 
             // lblCdMotor
             // 
@@ -148,6 +154,7 @@
             this.txtCdMotorCompra.ReadOnly = true;
             this.txtCdMotorCompra.Size = new System.Drawing.Size(49, 20);
             this.txtCdMotorCompra.TabIndex = 9;
+            this.txtCdMotorCompra.TabStop = false;
             // 
             // lblDtCompra
             // 
@@ -174,7 +181,7 @@
             this.txtObservacao.MaxLength = 20;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(391, 20);
-            this.txtObservacao.TabIndex = 15;
+            this.txtObservacao.TabIndex = 10;
             // 
             // lblQtdCompra
             // 
@@ -201,7 +208,7 @@
             this.txtQtdCompra.MaxLength = 5;
             this.txtQtdCompra.Name = "txtQtdCompra";
             this.txtQtdCompra.Size = new System.Drawing.Size(78, 20);
-            this.txtQtdCompra.TabIndex = 13;
+            this.txtQtdCompra.TabIndex = 8;
             // 
             // lblNtFiscal
             // 
@@ -219,7 +226,7 @@
             this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(192, 20);
-            this.txtNotaFiscal.TabIndex = 12;
+            this.txtNotaFiscal.TabIndex = 7;
             // 
             // btnAceitar
             // 
@@ -228,7 +235,8 @@
             this.btnAceitar.Location = new System.Drawing.Point(6, 5);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 16;
+            this.btnAceitar.TabIndex = 11;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -239,7 +247,8 @@
             this.btnLimpar.Location = new System.Drawing.Point(6, 46);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpar.TabIndex = 17;
+            this.btnLimpar.TabIndex = 12;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -250,7 +259,8 @@
             this.btnVoltar.Location = new System.Drawing.Point(6, 87);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 18;
+            this.btnVoltar.TabIndex = 13;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -261,7 +271,8 @@
             this.btnBuscaFornecedor.Location = new System.Drawing.Point(258, 44);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaFornecedor.TabIndex = 2;
+            this.btnBuscaFornecedor.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
@@ -272,7 +283,8 @@
             this.btnBuscaPeca.Location = new System.Drawing.Point(229, 73);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaPeca.TabIndex = 6;
+            this.btnBuscaPeca.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
@@ -283,7 +295,8 @@
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(523, 42);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaDepartamento.TabIndex = 4;
+            this.btnBuscaDepartamento.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
@@ -294,7 +307,8 @@
             this.btnBuscaTipoProduto.Location = new System.Drawing.Point(523, 76);
             this.btnBuscaTipoProduto.Name = "btnBuscaTipoProduto";
             this.btnBuscaTipoProduto.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaTipoProduto.TabIndex = 8;
+            this.btnBuscaTipoProduto.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaTipoProduto, "Buscar Tipo do Produto");
             this.btnBuscaTipoProduto.UseVisualStyleBackColor = true;
             this.btnBuscaTipoProduto.Click += new System.EventHandler(this.btnBuscaTipoProduto_Click);
             // 
@@ -305,7 +319,8 @@
             this.btnBuscaMotorCompra.Location = new System.Drawing.Point(523, 107);
             this.btnBuscaMotorCompra.Name = "btnBuscaMotorCompra";
             this.btnBuscaMotorCompra.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaMotorCompra.TabIndex = 10;
+            this.btnBuscaMotorCompra.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaMotorCompra, "Buscar Motor");
             this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
             this.btnBuscaMotorCompra.Click += new System.EventHandler(this.btnBuscaMotorCompra_Click);
             // 
@@ -315,7 +330,7 @@
             this.txtDataCompra.Mask = "00/00/0000";
             this.txtDataCompra.Name = "txtDataCompra";
             this.txtDataCompra.Size = new System.Drawing.Size(66, 20);
-            this.txtDataCompra.TabIndex = 11;
+            this.txtDataCompra.TabIndex = 6;
             this.txtDataCompra.ValidatingType = typeof(System.DateTime);
             // 
             // txtVlCompra
@@ -325,7 +340,12 @@
             this.txtVlCompra.MaxLength = 17;
             this.txtVlCompra.Name = "txtVlCompra";
             this.txtVlCompra.Size = new System.Drawing.Size(144, 20);
-            this.txtVlCompra.TabIndex = 19;
+            this.txtVlCompra.TabIndex = 9;
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadCompra
             // 
@@ -402,5 +422,6 @@
         private System.Windows.Forms.Button btnBuscaMotorCompra;
         private System.Windows.Forms.MaskedTextBox txtDataCompra;
         private System.Windows.Forms.TextBox txtVlCompra;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

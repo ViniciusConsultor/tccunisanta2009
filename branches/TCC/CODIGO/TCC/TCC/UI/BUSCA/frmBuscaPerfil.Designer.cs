@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscaPerfil));
             this.dgPerfil = new System.Windows.Forms.DataGridView();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.toolTipFechar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipOK = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipBuscar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,6 +45,9 @@
             // 
             this.dgPerfil.AllowUserToAddRows = false;
             this.dgPerfil.AllowUserToDeleteRows = false;
+            this.dgPerfil.AllowUserToResizeColumns = false;
+            this.dgPerfil.AllowUserToResizeRows = false;
+            this.dgPerfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPerfil.Location = new System.Drawing.Point(12, 44);
             this.dgPerfil.MultiSelect = false;
@@ -54,6 +61,7 @@
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(12, 12);
+            this.txtFiltro.MaxLength = 50;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(199, 20);
             this.txtFiltro.TabIndex = 1;
@@ -66,6 +74,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 31);
             this.btnBuscar.TabIndex = 2;
+            this.toolTipBuscar.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -76,7 +85,8 @@
             this.btnOK.Location = new System.Drawing.Point(114, 227);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(52, 34);
-            this.btnOK.TabIndex = 3;
+            this.btnOK.TabIndex = 4;
+            this.toolTipOK.SetToolTip(this.btnOK, "OK!");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -87,9 +97,25 @@
             this.btnFechar.Location = new System.Drawing.Point(12, 227);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(49, 34);
-            this.btnFechar.TabIndex = 17;
+            this.btnFechar.TabIndex = 3;
+            this.toolTipFechar.SetToolTip(this.btnFechar, "Fechar Busca");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // toolTipFechar
+            // 
+            this.toolTipFechar.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipFechar.ForeColor = System.Drawing.Color.Black;
+            // 
+            // toolTipOK
+            // 
+            this.toolTipOK.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipOK.ForeColor = System.Drawing.Color.Black;
+            // 
+            // toolTipBuscar
+            // 
+            this.toolTipBuscar.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipBuscar.ForeColor = System.Drawing.Color.Black;
             // 
             // frmBuscaPerfil
             // 
@@ -121,5 +147,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.ToolTip toolTipBuscar;
+        private System.Windows.Forms.ToolTip toolTipOK;
+        private System.Windows.Forms.ToolTip toolTipFechar;
     }
 }

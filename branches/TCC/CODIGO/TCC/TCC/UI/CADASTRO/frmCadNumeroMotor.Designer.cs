@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadNumeroMotor));
             this.txtDscNumeroMotor = new System.Windows.Forms.TextBox();
             this.lblDsNumeroMotor = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtDscNumeroMotor
             // 
             this.txtDscNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDscNumeroMotor.Location = new System.Drawing.Point(61, 79);
-            this.txtDscNumeroMotor.Multiline = true;
             this.txtDscNumeroMotor.MaxLength = 50;
+            this.txtDscNumeroMotor.Multiline = true;
             this.txtDscNumeroMotor.Name = "txtDscNumeroMotor";
             this.txtDscNumeroMotor.Size = new System.Drawing.Size(260, 72);
-            this.txtDscNumeroMotor.TabIndex = 22;
+            this.txtDscNumeroMotor.TabIndex = 1;
             // 
             // lblDsNumeroMotor
             // 
@@ -62,7 +64,8 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 62);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 25;
+            this.btnVoltar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -73,7 +76,8 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 33);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 24;
+            this.btnLimpar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -84,9 +88,15 @@
             this.btnAceitar.Location = new System.Drawing.Point(3, 4);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 23;
+            this.btnAceitar.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadNumeroMotor
             // 
@@ -117,5 +127,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }
