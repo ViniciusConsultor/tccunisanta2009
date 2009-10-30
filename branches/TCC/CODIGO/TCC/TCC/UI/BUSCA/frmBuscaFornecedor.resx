@@ -492,6 +492,9 @@
         E3iyWoeeLKeZ3wQ/C3r4+eNu7v8/OnxJhFqwdL8AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="toolTipOK.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>155, 18</value>
+  </metadata>
   <data name="btnBuscar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -929,6 +932,9 @@
         //8S574MGa9zTAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="toolTipBuscar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>255, 18</value>
+  </metadata>
   <data name="btnFechar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1093,4 +1099,7 @@
         8BS8BY/Ba/AcvHf1+A2b5Q/Ue5/kNACKsCgRNrLcqhnA/wGYuGF4E5OcoAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="toolTipFechar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>36, 18</value>
+  </metadata>
 </root>

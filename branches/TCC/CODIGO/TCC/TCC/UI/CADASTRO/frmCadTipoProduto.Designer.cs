@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadTipoProduto));
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblDscNome = new System.Windows.Forms.Label();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnFechar
@@ -43,7 +45,8 @@
             this.btnFechar.Location = new System.Drawing.Point(2, 63);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(27, 23);
-            this.btnFechar.TabIndex = 0;
+            this.btnFechar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -54,7 +57,8 @@
             this.btnConfirma.Location = new System.Drawing.Point(2, 5);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirma.TabIndex = 1;
+            this.btnConfirma.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -65,18 +69,19 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 2;
+            this.btnLimpar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(75, 75);
-            this.txtNome.Multiline = true;
             this.txtNome.MaxLength = 100;
+            this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(234, 80);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 1;
             // 
             // lblDscNome
             // 
@@ -86,6 +91,11 @@
             this.lblDscNome.Size = new System.Drawing.Size(55, 13);
             this.lblDscNome.TabIndex = 5;
             this.lblDscNome.Text = "Descrição";
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadTipoProduto
             // 
@@ -116,5 +126,6 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblDscNome;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

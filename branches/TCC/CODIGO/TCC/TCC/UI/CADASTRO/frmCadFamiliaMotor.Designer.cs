@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFamiliaMotor));
             this.lblCdMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             this.btnCdMotorCompra = new System.Windows.Forms.Button();
             this.btnCdTipoMotor = new System.Windows.Forms.Button();
             this.btnCdEstoque = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblCdMotor
@@ -68,6 +70,7 @@
             this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(52, 20);
             this.txtCdMotor.TabIndex = 1;
+            this.txtCdMotor.TabStop = false;
             // 
             // lblCdNumeroMotor
             // 
@@ -86,6 +89,7 @@
             this.txtCdNumeroMotor.ReadOnly = true;
             this.txtCdNumeroMotor.Size = new System.Drawing.Size(38, 20);
             this.txtCdNumeroMotor.TabIndex = 3;
+            this.txtCdNumeroMotor.TabStop = false;
             // 
             // lblCdTipoMotor
             // 
@@ -104,6 +108,7 @@
             this.txtCdTipoMotor.ReadOnly = true;
             this.txtCdTipoMotor.Size = new System.Drawing.Size(52, 20);
             this.txtCdTipoMotor.TabIndex = 5;
+            this.txtCdTipoMotor.TabStop = false;
             // 
             // lblCdKit
             // 
@@ -122,6 +127,7 @@
             this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(38, 20);
             this.txtCdKit.TabIndex = 7;
+            this.txtCdKit.TabStop = false;
             // 
             // lblDsMotor
             // 
@@ -136,11 +142,11 @@
             // 
             this.txtDsMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsMotor.Location = new System.Drawing.Point(202, 187);
-            this.txtDsMotor.Multiline = true;
             this.txtDsMotor.MaxLength = 500;
+            this.txtDsMotor.Multiline = true;
             this.txtDsMotor.Name = "txtDsMotor";
             this.txtDsMotor.Size = new System.Drawing.Size(351, 87);
-            this.txtDsMotor.TabIndex = 11;
+            this.txtDsMotor.TabIndex = 6;
             // 
             // btnConfirma
             // 
@@ -149,7 +155,8 @@
             this.btnConfirma.Location = new System.Drawing.Point(7, 4);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 2;
+            this.btnConfirma.TabIndex = 7;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -160,7 +167,8 @@
             this.btnLimpa.Location = new System.Drawing.Point(7, 47);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 2;
+            this.btnLimpa.TabIndex = 8;
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Novo");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
@@ -181,6 +189,7 @@
             this.txtCdEstoque.ReadOnly = true;
             this.txtCdEstoque.Size = new System.Drawing.Size(52, 20);
             this.txtCdEstoque.TabIndex = 9;
+            this.txtCdEstoque.TabStop = false;
             // 
             // btnVolta
             // 
@@ -189,7 +198,8 @@
             this.btnVolta.Location = new System.Drawing.Point(7, 92);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 2;
+            this.btnVolta.TabIndex = 9;
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -200,7 +210,8 @@
             this.btnBuscaCdNumMotor.Location = new System.Drawing.Point(288, 88);
             this.btnBuscaCdNumMotor.Name = "btnBuscaCdNumMotor";
             this.btnBuscaCdNumMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaCdNumMotor.TabIndex = 4;
+            this.btnBuscaCdNumMotor.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaCdNumMotor, "Buscar Número do Motor");
             this.btnBuscaCdNumMotor.UseVisualStyleBackColor = true;
             this.btnBuscaCdNumMotor.Click += new System.EventHandler(this.btnBuscaCdNumMotor_Click);
             // 
@@ -211,7 +222,8 @@
             this.btnCdKit.Location = new System.Drawing.Point(219, 125);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(27, 23);
-            this.btnCdKit.TabIndex = 8;
+            this.btnCdKit.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnCdKit, "Buscar Kit de Peças");
             this.btnCdKit.UseVisualStyleBackColor = true;
             this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
             // 
@@ -222,7 +234,8 @@
             this.btnCdMotorCompra.Location = new System.Drawing.Point(249, 56);
             this.btnCdMotorCompra.Name = "btnCdMotorCompra";
             this.btnCdMotorCompra.Size = new System.Drawing.Size(27, 23);
-            this.btnCdMotorCompra.TabIndex = 2;
+            this.btnCdMotorCompra.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnCdMotorCompra, "Buscar Motor");
             this.btnCdMotorCompra.UseVisualStyleBackColor = true;
             this.btnCdMotorCompra.Click += new System.EventHandler(this.btnCdMotorCompra_Click);
             // 
@@ -233,7 +246,8 @@
             this.btnCdTipoMotor.Location = new System.Drawing.Point(526, 88);
             this.btnCdTipoMotor.Name = "btnCdTipoMotor";
             this.btnCdTipoMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnCdTipoMotor.TabIndex = 6;
+            this.btnCdTipoMotor.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnCdTipoMotor, "Buscar Tipo do Motor");
             this.btnCdTipoMotor.UseVisualStyleBackColor = true;
             this.btnCdTipoMotor.Click += new System.EventHandler(this.btnCdTipoMotor_Click);
             // 
@@ -244,9 +258,15 @@
             this.btnCdEstoque.Location = new System.Drawing.Point(526, 123);
             this.btnCdEstoque.Name = "btnCdEstoque";
             this.btnCdEstoque.Size = new System.Drawing.Size(27, 23);
-            this.btnCdEstoque.TabIndex = 10;
+            this.btnCdEstoque.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnCdEstoque, "Buscar Estoque");
             this.btnCdEstoque.UseVisualStyleBackColor = true;
             this.btnCdEstoque.Click += new System.EventHandler(this.btnCdEstoque_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadFamiliaMotor
             // 
@@ -307,5 +327,6 @@
         private System.Windows.Forms.Button btnCdMotorCompra;
         private System.Windows.Forms.Button btnCdTipoMotor;
         private System.Windows.Forms.Button btnCdEstoque;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscaDepartamento));
             this.btnOK = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgDepartamento = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.toolTipFechar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipOK = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipBuscar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,13 +48,15 @@
             this.btnOK.Location = new System.Drawing.Point(113, 232);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(60, 33);
-            this.btnOK.TabIndex = 3;
+            this.btnOK.TabIndex = 4;
+            this.toolTipOK.SetToolTip(this.btnOK, "OK!");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(16, 15);
+            this.txtFiltro.MaxLength = 50;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(196, 20);
             this.txtFiltro.TabIndex = 1;
@@ -63,6 +69,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(58, 33);
             this.btnBuscar.TabIndex = 2;
+            this.toolTipBuscar.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -70,6 +77,9 @@
             // 
             this.dgDepartamento.AllowUserToAddRows = false;
             this.dgDepartamento.AllowUserToDeleteRows = false;
+            this.dgDepartamento.AllowUserToResizeColumns = false;
+            this.dgDepartamento.AllowUserToResizeRows = false;
+            this.dgDepartamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDepartamento.Location = new System.Drawing.Point(16, 47);
             this.dgDepartamento.MultiSelect = false;
@@ -87,9 +97,25 @@
             this.btnFechar.Location = new System.Drawing.Point(16, 231);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(49, 34);
-            this.btnFechar.TabIndex = 28;
+            this.btnFechar.TabIndex = 3;
+            this.toolTipFechar.SetToolTip(this.btnFechar, "Fechar Busca");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // toolTipFechar
+            // 
+            this.toolTipFechar.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipFechar.ForeColor = System.Drawing.Color.Black;
+            // 
+            // toolTipOK
+            // 
+            this.toolTipOK.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipOK.ForeColor = System.Drawing.Color.Black;
+            // 
+            // toolTipBuscar
+            // 
+            this.toolTipBuscar.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipBuscar.ForeColor = System.Drawing.Color.Black;
             // 
             // frmBuscaDepartamento
             // 
@@ -120,5 +146,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgDepartamento;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.ToolTip toolTipOK;
+        private System.Windows.Forms.ToolTip toolTipBuscar;
+        private System.Windows.Forms.ToolTip toolTipFechar;
     }
 }

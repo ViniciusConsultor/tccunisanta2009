@@ -60,6 +60,7 @@
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblNome
@@ -98,7 +99,7 @@
             this.txtRua.MaxLength = 100;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(405, 20);
-            this.txtRua.TabIndex = 3;
+            this.txtRua.TabIndex = 2;
             // 
             // lblNumero
             // 
@@ -125,7 +126,7 @@
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(233, 20);
-            this.txtComplemento.TabIndex = 5;
+            this.txtComplemento.TabIndex = 4;
             // 
             // lblCep
             // 
@@ -161,7 +162,7 @@
             this.txtBairro.MaxLength = 20;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(294, 20);
-            this.txtBairro.TabIndex = 8;
+            this.txtBairro.TabIndex = 5;
             // 
             // txtCidade
             // 
@@ -170,7 +171,7 @@
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(290, 20);
-            this.txtCidade.TabIndex = 9;
+            this.txtCidade.TabIndex = 7;
             // 
             // lblEstado
             // 
@@ -189,7 +190,7 @@
             this.cboEstado.Location = new System.Drawing.Point(483, 188);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(63, 21);
-            this.cboEstado.TabIndex = 10;
+            this.cboEstado.TabIndex = 8;
             // 
             // lblRg
             // 
@@ -216,7 +217,7 @@
             this.txtCnpj.MaxLength = 15;
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(196, 20);
-            this.txtCnpj.TabIndex = 12;
+            this.txtCnpj.TabIndex = 10;
             // 
             // btnInsere
             // 
@@ -225,7 +226,8 @@
             this.btnInsere.Location = new System.Drawing.Point(6, 6);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 13;
+            this.btnInsere.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
@@ -236,7 +238,8 @@
             this.btnLimpa.Location = new System.Drawing.Point(6, 47);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 14;
+            this.btnLimpa.TabIndex = 15;
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Novo");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
@@ -247,7 +250,8 @@
             this.btnVolta.Location = new System.Drawing.Point(6, 88);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 15;
+            this.btnVolta.TabIndex = 16;
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -276,7 +280,7 @@
             this.txtEmail.MaxLength = 15;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(399, 20);
-            this.txtEmail.TabIndex = 19;
+            this.txtEmail.TabIndex = 11;
             // 
             // lblEmail
             // 
@@ -293,7 +297,7 @@
             this.txtDDD.MaxLength = 3;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
-            this.txtDDD.TabIndex = 20;
+            this.txtDDD.TabIndex = 12;
             // 
             // txtTelefone
             // 
@@ -301,7 +305,7 @@
             this.txtTelefone.MaxLength = 9;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(115, 20);
-            this.txtTelefone.TabIndex = 21;
+            this.txtTelefone.TabIndex = 13;
             // 
             // txtNumero
             // 
@@ -309,14 +313,14 @@
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(63, 20);
-            this.txtNumero.TabIndex = 22;
+            this.txtNumero.TabIndex = 3;
             // 
             // txtRg
             // 
             this.txtRg.Location = new System.Drawing.Point(138, 223);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(136, 20);
-            this.txtRg.TabIndex = 25;
+            this.txtRg.TabIndex = 9;
             // 
             // txtCep
             // 
@@ -324,7 +328,7 @@
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(63, 20);
-            this.txtCep.TabIndex = 26;
+            this.txtCep.TabIndex = 6;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -333,9 +337,15 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(506, 281);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 27;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 17;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmCadCliente
             // 
@@ -416,5 +426,6 @@
         private System.Windows.Forms.MaskedTextBox txtRg;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

@@ -131,5 +131,10 @@ namespace TCC.UI
             }
         }
         #endregion
+
+        private void toolTipBuscar_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
