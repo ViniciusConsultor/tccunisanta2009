@@ -5,11 +5,12 @@ GO
 
 CREATE PROCEDURE sp_update_peca
 @id_peca               VARCHAR(20),
+@id_peca_real          VARCHAR(50),
 @id_tipo_peca          INT,
 @id_estoque            INT,
 @nom				   VARCHAR(50),
-@dsc_peca              VARCHAR(100),
-@qtd_min            INT,
+@dsc_peca              VARCHAR(500),
+@qtd_min               INT,
 @peso                  DECIMAL(10,2),
 @dat_alt               DATETIME,
 @flg_ativo             BIT
@@ -24,11 +25,12 @@ BEGIN
 --Update na tabela peca
 UPDATE peca SET
 
+id_peca_real         = @id_peca_real,
 id_tipo_peca         = @id_tipo_peca, 
 id_estoque           = @id_estoque, 
-nom             = @nom, 
+nom                  = @nom, 
 dsc_peca             = @dsc_peca, 
-qtd_min           = @qtd_min,
+qtd_min              = @qtd_min,
 peso                 = @peso, 
 dat_alt              = @dat_alt, 
 flg_ativo            = flg_ativo

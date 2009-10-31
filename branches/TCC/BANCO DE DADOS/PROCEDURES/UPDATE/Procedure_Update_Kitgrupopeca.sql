@@ -4,16 +4,17 @@ IF OBJECT_ID('sp_update_kitgrupopeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_kitgrupopeca
-@id_grupo      INT,
-@id_peca       VARCHAR(20),
+@id_kit        INT,
+@id_peca       INT,
 @id_item_peca  INT,
-@nom     VARCHAR(50),
-@flg_ativo     BIT
+@nom           VARCHAR(50),
+@flg_ativo     BIT,
+@dat_alt       DATETIME
 
 AS 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from kitgrupopeca where id_grupo=@id_grupo)
+IF EXISTS(select 1 from kitgrupopeca where id_kit=@id_kit)
 BEGIN
 --Validações na tabela kitgrupopeca
 
@@ -22,10 +23,11 @@ UPDATE kitgrupopeca SET
 
 id_peca      = @id_peca, 
 id_item_peca = @id_item_peca, 
-nom     = @nom, 
-flg_ativo    = @flg_ativo
+nom          = @nom, 
+flg_ativo    = @flg_ativo,
+dat_alt      = @dat_alt
 
-WHERE id_grupo=@id_grupo
+WHERE id_kit = @id_kit
 
 END
 ELSE

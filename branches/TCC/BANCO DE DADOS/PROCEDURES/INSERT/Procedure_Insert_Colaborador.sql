@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_colaborador', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_colaborador
-@id_colab    INT,
 @id_usu      INT,
 @id_depto    INT,
 @slg_est  VARCHAR(2),
@@ -28,9 +27,7 @@ AS
 
 BEGIN TRY
 --Validações para a tabela colaborador
-IF (@id_colab='')
-   RAISERROR('Informe o código do colaborador!',16,1)
-ELSE IF(@id_depto='')
+IF(@id_depto='')
    RAISERROR('Informe o departamento do colaborador!',16,1)
 ELSE IF(@nom='')
    RAISERROR('Informe o nome do colaborador!',16,1)
@@ -50,9 +47,9 @@ ELSE
 BEGIN
 --Insert na tabela colaborador
 INSERT INTO 
-Colaborador(id_colab, id_usu, id_depto, slg_est, nom, dat_nasc, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, rg, cpf, sex, dat_atl, flg_ativo)
+Colaborador(id_usu, id_depto, slg_est, nom, dat_nasc, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, rg, cpf, sex, dat_atl, flg_ativo)
 VALUES
-(@id_colab, @id_usu, @id_depto, @slg_est, @nom, @dat_nasc, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @rg, @cpf, @sex, @dat_atl, @flg_ativo)
+(@id_usu, @id_depto, @slg_est, @nom, @dat_nasc, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @rg, @cpf, @sex, @dat_atl, @flg_ativo)
 END
 END TRY
 

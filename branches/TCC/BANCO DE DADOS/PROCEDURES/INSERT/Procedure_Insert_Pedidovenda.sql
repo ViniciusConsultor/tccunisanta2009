@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_pedidovenda', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_pedidovenda
-@id_pedido        INT,
 @id_venda         INT,
 @id_depto         INT,
 @dsc_venda        VARCHAR(500),
@@ -17,16 +16,14 @@ BEGIN TRY
 --Validações na tabela pedidovenda
 IF(@id_venda='')
    RAISERROR('Informe o codigo da venda!',16,1)   
-ELSE IF(@id_pedido='')
-   RAISERROR('Informe o do codigo do pedido!',16,1)   
 ELSE IF(@id_depto='')
    RAISERROR('Informe o codigo do departamento!',16,1)     
 ELSE
 
 BEGIN
 --Insert na tabela pedidovenda
-INSERT INTO PEDIDOVENDA(id_venda, id_pedido, id_depto, dsc_venda, dat_alt, id_fam_motor, id_grupo)
-VALUES (@id_venda, @id_pedido, @id_depto, @dsc_venda, @dat_alt, @id_fam_motor, @id_grupo)
+INSERT INTO PEDIDOVENDA(id_venda, id_depto, dsc_venda, dat_alt, id_fam_motor, id_grupo)
+VALUES (@id_venda, @id_depto, @dsc_venda, @dat_alt, @id_fam_motor, @id_grupo)
 END
 END TRY
 

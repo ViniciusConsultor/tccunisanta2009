@@ -4,23 +4,23 @@ IF OBJECT_ID('sp_insert_numeromotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_numeromotor
-@id_num_motor    INT,
+@id_num_motor_real VARCHAR(20),
 @dsc_num_motor   VARCHAR(500),
 @flg_ativo       BIT
 AS
 
 BEGIN TRY
 --Validações na tabela numeromotor
-IF(@id_num_motor='')
-   RAISERROR('Informe o codigo do numero do motor!',16,1)   
-IF(@dsc_num_motor='')
+IF(@id_num_motor_real='')
+   RAISERROR('Informe o Número do motor!',16,1)      
+ELSE IF(@dsc_num_motor='')
    RAISERROR('Informe a descricao para numero do motor!',16,1)      
 ELSE
 
 BEGIN
 --Insert na tabela numeromotor
-INSERT INTO Numeromotor(id_num_motor, dsc_num_motor, flg_ativo)
-VALUES (@id_num_motor, @dsc_num_motor, @flg_ativo)
+INSERT INTO Numeromotor(id_num_motor_real, dsc_num_motor, flg_ativo)
+VALUES (@id_num_motor_real, @dsc_num_motor, @flg_ativo)
 END
 END TRY
 

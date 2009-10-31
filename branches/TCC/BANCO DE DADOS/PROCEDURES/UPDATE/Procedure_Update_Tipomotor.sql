@@ -4,8 +4,9 @@ IF OBJECT_ID('sp_update_tipomotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_tipomotor
-@id_tipo_motor         VARCHAR(20),
-@dsc_tipo_motor        VARCHAR(50),
+@id_tipo_motor         INT,
+@id_tipo_motor_real    VARCHAR(20),
+@dsc_tipo_motor        VARCHAR(500),
 @flg_ativo             BIT
 AS
 
@@ -18,6 +19,7 @@ BEGIN
 --Update na tabela tipomotor
 UPDATE tipomotor SET
 
+id_tipo_motor_real = @id_tipo_motor_real,
 dsc_tipo_motor = @dsc_tipo_motor, 
 flg_ativo      = @flg_ativo
 

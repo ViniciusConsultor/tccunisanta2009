@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_usinagem
 @id_usinagem           INT,
-@id_peca               VARCHAR(20),
+@id_peca               INT,
 @dta_envio             DATETIME,
 @flg_status            BIT
 AS
@@ -19,6 +19,7 @@ BEGIN
 --Update na tabela Usinagem
 UPDATE Usinagem SET
 
+id_peca                = @id_peca,
 dta_envio              = @dta_envio,
 flg_status             = @flg_status
 

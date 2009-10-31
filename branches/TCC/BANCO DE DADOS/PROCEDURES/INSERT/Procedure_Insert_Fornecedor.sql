@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_fornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_fornecedor
-@id_forn			    INT,
 @nom			        VARCHAR(100),
 @rua		            VARCHAR(50),
 @nro_ende		        INT,
@@ -23,9 +22,7 @@ AS
 
 BEGIN TRY
 --Validações na tabela fornecedor
-IF(@id_forn='')
-   RAISERROR('Informe o código do fornecedor!',16,1)
-ELSE IF(@slg_est='')
+IF(@slg_est='')
    RAISERROR('Informe o estado do fornecedor!',16,1) 
 ELSE IF(@nom='')
    RAISERROR('Informe o nome do fornecedor!',16,1)
@@ -49,8 +46,8 @@ ELSE
   
 BEGIN
 --Insert na tabela fornecedor
-INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
-VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
+INSERT INTO Fornecedor(slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
+VALUES(@slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
 END
 END TRY
 

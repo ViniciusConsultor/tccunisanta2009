@@ -4,9 +4,10 @@ IF OBJECT_ID('sp_update_numeromotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_numeromotor
-@id_num_motor    INT,
-@dsc_num_motor  VARCHAR(50),
-@flg_ativo       BIT
+@id_num_motor      INT,
+@id_num_motor_real VARCHAR(20),
+@dsc_num_motor     VARCHAR(50),
+@flg_ativo         BIT
 AS
 
 BEGIN TRY
@@ -18,8 +19,9 @@ BEGIN
 --Update na tabela numeromotor
 UPDATE Numeromotor SET
 
-dsc_num_motor  = @dsc_num_motor, 
-flg_ativo      = @flg_ativo
+id_num_motor_real = @id_num_motor_real,
+dsc_num_motor     = @dsc_num_motor, 
+flg_ativo         = @flg_ativo
 
 WHERE id_num_motor = @id_num_motor
 
