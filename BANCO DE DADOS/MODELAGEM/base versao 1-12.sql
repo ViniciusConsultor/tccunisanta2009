@@ -5,13 +5,13 @@ go
 CREATE TABLE Comprapeca (
        id_peca              integer NOT NULL,
        ultim_preco          numeric(15,2) NULL,
-       id_compra            integer NULL
+       id_compra            integer NOT NULL
 )
 go
 
 
 ALTER TABLE Comprapeca
-       ADD PRIMARY KEY CLUSTERED (id_peca ASC)
+       ADD PRIMARY KEY CLUSTERED (id_peca ASC, id_compra ASC)
 go
 
 
@@ -19,7 +19,7 @@ DROP TABLE Pedidovenda
 go
 
 CREATE TABLE Pedidovenda (
-       id_pedido            integer NOT NULL,
+       id_pedido            integer IDENTITY,
        id_venda             integer NOT NULL,
        id_depto             integer NULL,
        dsc_venda            varchar(500) NULL,
@@ -39,7 +39,7 @@ DROP TABLE Venda
 go
 
 CREATE TABLE Venda (
-       id_venda             integer NOT NULL,
+       id_venda             integer IDENTITY,
        id_cli               integer NOT NULL,
        dat_venda            datetime NULL,
        qtd                  integer NULL,
@@ -61,7 +61,7 @@ DROP TABLE Ordemproducao
 go
 
 CREATE TABLE Ordemproducao (
-       id_ordem             integer NOT NULL,
+       id_ordem             integer IDENTITY,
        dsc_ordem            varchar(500) NULL,
        id_depto             integer NOT NULL,
        id_fam_motor         integer NULL,
@@ -97,9 +97,9 @@ DROP TABLE Cliente
 go
 
 CREATE TABLE Cliente (
-       id_cli               integer NOT NULL,
+       id_cli               integer IDENTITY,
        nom                  varchar(60) NULL,
-       tel                  varchar(20) NULL,
+       tel                  interger NULL,
        rua                  varchar(100) NULL,
        nro_ende             integer NULL,
        compl                varchar(20) NULL,
@@ -126,7 +126,7 @@ DROP TABLE Colaborador
 go
 
 CREATE TABLE Colaborador (
-       id_colab             integer NOT NULL,
+       id_colab             integer IDENTITY,
        nom                  varchar(40) NULL,
        dat_nasc             datetime NULL,
        rua                  varchar(50) NULL,
@@ -160,14 +160,14 @@ go
 
 CREATE TABLE Compra (
        id_depto             integer NOT NULL,
-       id_compra            integer NOT NULL,
+       id_compra            integer IDENTITY,
        dat                  datetime NULL,
-       obs                  varchar(20) NULL,
-       id_fornecedor        integer NOT NULL,
+       obs                  varchar(500) NULL,
+       id_forn              integer NOT NULL,
        id_motor             integer NULL,
        qtd                  integer NULL,
        valor                numeric(15,2) NULL,
-       nota_fisc            integer NULL,
+       nota_fisc            varchar(20) NULL,
        id_tipo_produto      integer NOT NULL
 )
 go
@@ -199,7 +199,7 @@ DROP TABLE Fornecedor
 go
 
 CREATE TABLE Fornecedor (
-       id_forn              integer NOT NULL,
+       id_forn              integer IDENTITY,
        nom                  varchar(100) NULL,
        rua                  varchar(50) NULL,
        nro_ende             integer NULL,
@@ -242,7 +242,7 @@ DROP TABLE Familiamotor
 go
 
 CREATE TABLE Familiamotor (
-       id_fam_motor         integer NOT NULL,
+       id_fam_motor         integer IDENTITY,
        id_num_motor         integer NOT NULL,
        id_grupo             integer NOT NULL,
        dsc_fam_motor        varchar(500) NULL,
@@ -263,7 +263,7 @@ DROP TABLE Motor
 go
 
 CREATE TABLE Motor (
-       id_motor             integer NOT NULL,
+       id_motor             integer IDENTITY,
        dsc_motor            varchar(100) NULL,
        flg_ativo            bit NULL
 )
@@ -279,7 +279,8 @@ DROP TABLE Numeromotor
 go
 
 CREATE TABLE Numeromotor (
-       id_num_motor         integer NOT NULL,
+       id_num_motor         integer IDENTITY,
+       id_num_motor_real    varchar(20) NOT NULL,
        dsc_num_motor        varchar(500) NULL,
        flg_ativo            bit NULL
 )
@@ -295,7 +296,7 @@ DROP TABLE Usuario
 go
 
 CREATE TABLE Usuario (
-       id_usu               INTEGER NOT NULL,
+       id_usu               INTEGER IDENTITY,
        log_usu              VARCHAR(20) NOT NULL,
        senha                VARCHAR(15) NOT NULL,
        obs_usu              varchar(100) NULL,
@@ -314,7 +315,7 @@ DROP TABLE Usinagem
 go
 
 CREATE TABLE Usinagem (
-       id_usinagem          integer NOT NULL,
+       id_usinagem          integer IDENTITY,
        flg_status           bit NULL,
        id_peca              integer NOT NULL,
        dta_envio            datetime NULL
@@ -331,7 +332,8 @@ DROP TABLE Kitgrupopeca
 go
 
 CREATE TABLE Kitgrupopeca (
-       id_kit               integer NOT NULL,
+       id_kit               integer IDENTITY,
+       id_kit_real          varchar(10) NOT NULL,
        nom                  varchar(50) NULL,
        flg_ativo            bit NULL,
        id_item_peca         integer NOT NULL,
@@ -367,7 +369,7 @@ DROP TABLE Peca
 go
 
 CREATE TABLE Peca (
-       id_peca              integer NOT NULL,
+       id_peca              integer IDENTITY,
        id_peca_real         varchar(50) NULL,
        nom                  varchar(50) NULL,
        dat_alt              datetime NULL,
@@ -390,7 +392,7 @@ DROP TABLE Tipopeca
 go
 
 CREATE TABLE Tipopeca (
-       id_tipo_peca         integer NOT NULL,
+       id_tipo_peca         integer IDENTITY,
        dsc_tipo_peca        varchar(500) NULL,
        flg_ativo            bit NULL
 )
@@ -406,8 +408,8 @@ DROP TABLE Tipomotor
 go
 
 CREATE TABLE Tipomotor (
-       id_tipo              integer NOT NULL,
-       id_tipo_motor        varchar(20) NOT NULL,
+       id_tipo_motor        integer IDENTITY,
+       id_tipo_motor_real   varchar(20) NOT NULL,
        dsc_tipo_motor       varchar(500) NULL,
        flg_ativo            bit NULL
 )
@@ -415,7 +417,7 @@ go
 
 
 ALTER TABLE Tipomotor
-       ADD PRIMARY KEY CLUSTERED (id_tipo ASC)
+       ADD PRIMARY KEY CLUSTERED (id_tipo_motor ASC)
 go
 
 
@@ -440,7 +442,7 @@ DROP TABLE Perfil
 go
 
 CREATE TABLE Perfil (
-       id_perfil            integer NOT NULL,
+       id_perfil            integer IDENTITY,
        dsc_perfil           varchar(50) NULL,
        dat_atl              datetime NULL,
        flg_ativo            bit NULL
@@ -473,7 +475,7 @@ DROP TABLE Menus
 go
 
 CREATE TABLE Menus (
-       id_menu              integer NOT NULL,
+       id_menu              integer IDENTITY,
        dsc_menu             varchar(50) NULL,
        ende                 varchar(500) NULL,
        dat_atl              datetime NULL,
@@ -509,7 +511,7 @@ DROP TABLE Departamento
 go
 
 CREATE TABLE Departamento (
-       id_depto             integer NOT NULL,
+       id_depto             integer IDENTITY,
        dsc_depto            varchar(30) NULL,
        dat_atl              datetime NULL,
        flg_ativo            bit NULL
@@ -526,7 +528,7 @@ DROP TABLE Tipoproduto
 go
 
 CREATE TABLE Tipoproduto (
-       id_tipo_prod         integer NOT NULL,
+       id_tipo_prod         integer IDENTITY,
        nom                  varchar(100) NULL,
        flg_ativo            bit NULL,
        dat_alt              datetime NULL
@@ -666,7 +668,7 @@ go
 
 
 ALTER TABLE Compra
-       ADD FOREIGN KEY (id_fornecedor)
+       ADD FOREIGN KEY (id_forn)
                              REFERENCES Fornecedor  (id_forn)
 go
 
@@ -709,7 +711,7 @@ go
 
 ALTER TABLE Familiamotor
        ADD FOREIGN KEY (id_tipo)
-                             REFERENCES Tipomotor  (id_tipo)
+                             REFERENCES Tipomotor  (id_tipo_motor)
 go
 
 
