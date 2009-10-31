@@ -95,13 +95,11 @@ namespace TCC.UI
 
         private void frmCadPeca_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelEstoque = null;
             this._modelTipoPeca = null;
         }
@@ -165,7 +163,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoEstoqueVazioException)
             {

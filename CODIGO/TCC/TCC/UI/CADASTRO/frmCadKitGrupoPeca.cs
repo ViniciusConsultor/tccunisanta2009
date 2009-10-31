@@ -23,7 +23,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelItemPeca = null;
             this._modelPeca = null;
         }
@@ -104,7 +103,6 @@ namespace TCC.UI
 
         private void frmCadKitGrupoPeca_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnAceitar_Click(object sender, EventArgs e)
@@ -122,7 +120,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoItemPecaVazioException)
             {
@@ -164,7 +161,7 @@ namespace TCC.UI
             {
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
-                model.Id_grupo = Convert.ToInt32(regra.BuscaIdMaximo());
+                model.IdKit = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_item_peca = this._modelItemPeca.Id_item_peca;
                 model.Id_peca = this._modelPeca.IdPeca;
                 model.Nom_grupo = this.txtNmKit.Text;

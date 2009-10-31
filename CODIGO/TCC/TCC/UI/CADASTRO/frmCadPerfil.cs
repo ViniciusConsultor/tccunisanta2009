@@ -23,7 +23,6 @@ namespace TCC.UI
         #region Eventos
         private void frmCadPerfil_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
@@ -35,7 +34,6 @@ namespace TCC.UI
                 modelPerfil = this.PegaDadosTela();
                 regraPerfil.ValidarInsere(modelPerfil);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {

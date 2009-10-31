@@ -19,7 +19,6 @@ namespace TCC.UI
 
         private void frmCadDepartamento_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
@@ -29,7 +28,6 @@ namespace TCC.UI
             {
                 regraDep.ValidarInsere(this.PegaDadosTela());
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {
@@ -41,7 +39,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

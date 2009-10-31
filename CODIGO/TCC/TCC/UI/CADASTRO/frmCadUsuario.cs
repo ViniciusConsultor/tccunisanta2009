@@ -36,7 +36,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
         #endregion btnLimpar Click
 
@@ -46,7 +45,6 @@ namespace TCC.UI
             rUsuario regraUsu = new rUsuario();
             mUsuario modelUsu = new mUsuario();
             rUsuarioPerfil regraUsuarioPerfil = new rUsuarioPerfil();
-            mUsuarioPerfil modelUsuarioPerfil = new mUsuarioPerfil();
             try
             {
                 this.ValidaDadosNulos();
@@ -54,13 +52,6 @@ namespace TCC.UI
                 //----------------
                 modelUsu = this.PegaDadosTela();
                 regraUsu.ValidarInsere(modelUsu);
-                //Insere associação usuarioPerfil
-                //-------------------------------
-                modelUsuarioPerfil = this.PegaDadosUsuarioPerfil(modelUsu.IdUsuario);
-                regraUsuarioPerfil.ValidarInsere(modelUsuarioPerfil);
-                base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
-
             }
             catch(BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
@@ -94,7 +85,6 @@ namespace TCC.UI
             {
                 regraUsu = null;
                 regraUsuarioPerfil = null;
-                modelUsuarioPerfil = null;
                 modelUsu = null;
                
             }
@@ -154,26 +144,6 @@ namespace TCC.UI
             
         }
         #endregion Pega Dados Tela
-
-        #region Pega Dados Usuario Perfil
-        private mUsuarioPerfil PegaDadosUsuarioPerfil(int idUsuario)
-        {
-            mUsuarioPerfil model = new mUsuarioPerfil();
-
-            if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == false)
-            {
-                model.IdPerfil = this._modelPerfil.IdPerfil;
-            }
-            else
-            {
-                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
-            }
-            model.IdUsuario = idUsuario;
-            model.DatTrans = DateTime.Now;
-            model.FlgAtivo = true;
-            return model;
-        }
-        #endregion Pega Dados Usuario Perfil
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {

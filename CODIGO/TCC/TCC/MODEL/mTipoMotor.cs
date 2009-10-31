@@ -14,7 +14,7 @@ namespace TCC.MODEL
         private string nomeTabela = "Tipomotor";
 
         [ColunasBancoDados ("id_tipo_motor", System.Data.SqlDbType.Int,true)]
-        public string IdTipoMotor
+        public int IdTipoMotor
         {
             get { return idTipoMotor; }
             set { idTipoMotor = value; }
