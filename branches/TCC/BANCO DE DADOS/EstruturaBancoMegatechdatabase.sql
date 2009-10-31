@@ -4,7 +4,6 @@ go
 USE Megatechdatabase
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Pedidovenda')
 DROP TABLE Pedidovenda
 go
@@ -14,15 +13,15 @@ CREATE TABLE Pedidovenda (
        id_venda             integer NOT NULL,
        id_depto             integer NULL,
        dsc_venda            varchar(500) NULL,
-       dat_alt              datetime NULL
+       dat_alt              datetime NULL,
+       id_fam_motor         integer NULL,
+       id_grupo             integer NULL
 )
 go
-
 
 ALTER TABLE Pedidovenda
        ADD PRIMARY KEY CLUSTERED (id_pedido ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Venda')
 DROP TABLE Venda
@@ -30,7 +29,6 @@ go
 
 CREATE TABLE Venda (
        id_venda             integer NOT NULL,
-       id_motor             integer NULL,
        id_cli               integer NOT NULL,
        dat_venda            datetime NULL,
        qtd                  integer NULL,
@@ -38,8 +36,7 @@ CREATE TABLE Venda (
        nota_fisc            varchar(20) NULL,
        dat_saida            datetime NULL,
        id_ordem             integer NOT NULL,
-       id_tipo_produto      integer NOT NULL,
-       id_grupo             integer NULL
+       id_tipo_produto      integer NOT NULL
 )
 go
 
@@ -47,7 +44,6 @@ go
 ALTER TABLE Venda
        ADD PRIMARY KEY CLUSTERED (id_venda ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Ordemproducao')
 DROP TABLE Ordemproducao
@@ -57,7 +53,7 @@ CREATE TABLE Ordemproducao (
        id_ordem             integer NOT NULL,
        dsc_ordem            varchar(500) NULL,
        id_depto             integer NOT NULL,
-       id_fam_motor             integer NULL,
+       id_fam_motor         integer NULL,
        id_grupo             integer NULL,
        id_tipo_produto      integer NOT NULL
 )
@@ -67,7 +63,6 @@ go
 ALTER TABLE Ordemproducao
        ADD PRIMARY KEY CLUSTERED (id_ordem ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Comprapeca')
 DROP TABLE Comprapeca
@@ -85,7 +80,6 @@ ALTER TABLE Comprapeca
        ADD PRIMARY KEY CLUSTERED (id_peca ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Compra')
 DROP TABLE Compra
 go
@@ -95,13 +89,12 @@ CREATE TABLE Compra (
        id_compra            integer NOT NULL,
        dat                  datetime NULL,
        obs                  varchar(20) NULL,
-       id_forn              integer NOT NULL,
+       id_fornecedor        integer NOT NULL,
        id_motor             integer NULL,
        qtd                  integer NULL,
        valor                numeric(15,2) NULL,
-       nota_fisc            varchar(20) NULL,
-       id_tipo_produto      integer NOT NULL,
-       id_peca              integer NULL
+       nota_fisc            integer NULL,
+       id_tipo_produto      integer NOT NULL
 )
 go
 
@@ -109,7 +102,6 @@ go
 ALTER TABLE Compra
        ADD PRIMARY KEY CLUSTERED (id_compra ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipoproduto')
 DROP TABLE Tipoproduto
@@ -128,7 +120,6 @@ ALTER TABLE Tipoproduto
        ADD PRIMARY KEY CLUSTERED (id_tipo_prod ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usinagem')
 DROP TABLE Usinagem
 go
@@ -146,7 +137,6 @@ ALTER TABLE Usinagem
        ADD PRIMARY KEY CLUSTERED (id_usinagem ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Familiamotor')
 DROP TABLE Familiamotor
 go
@@ -155,11 +145,11 @@ CREATE TABLE Familiamotor (
        id_fam_motor         integer NOT NULL,
        id_num_motor         integer NOT NULL,
        id_grupo             integer NOT NULL,
-       id_tipo_motor        varchar(20) NOT NULL,
        dsc_fam_motor        varchar(500) NULL,
        flg_ativo            bit NULL,
        id_motor             integer NOT NULL,
-       id_estoque           integer NOT NULL
+       id_estoque           integer NOT NULL,
+       id_tipo              integer NOT NULL
 )
 go
 
@@ -168,13 +158,12 @@ ALTER TABLE Familiamotor
        ADD PRIMARY KEY CLUSTERED (id_fam_motor ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Kitgrupopeca')
 DROP TABLE Kitgrupopeca
 go
 
 CREATE TABLE Kitgrupopeca (
-       id_grupo             integer NOT NULL,
+       id_kit               integer NOT NULL,
        nom                  varchar(50) NULL,
        flg_ativo            bit NULL,
        id_item_peca         integer NOT NULL,
@@ -185,9 +174,8 @@ go
 
 
 ALTER TABLE Kitgrupopeca
-       ADD PRIMARY KEY CLUSTERED (id_grupo ASC)
+       ADD PRIMARY KEY CLUSTERED (id_kit ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Itempeca')
 DROP TABLE Itempeca
@@ -206,7 +194,6 @@ ALTER TABLE Itempeca
        ADD PRIMARY KEY CLUSTERED (id_item_peca ASC, id_peca ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Pecafornecedor')
 DROP TABLE Pecafornecedor
 go
@@ -224,7 +211,6 @@ ALTER TABLE Pecafornecedor
        ADD PRIMARY KEY CLUSTERED (id_peca ASC, id_forn ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Peca')
 DROP TABLE Peca
 go
@@ -236,7 +222,7 @@ CREATE TABLE Peca (
        dat_alt              datetime NULL,
        peso                 decimal(10,2) NULL,
        flg_ativo            bit NULL,
-       dsc_peca             varchar(100) NULL,
+       dsc_peca             varchar(500) NULL,
        id_estoque           integer NOT NULL,
        qtd_min              integer NULL,
        id_tipo_peca         integer NOT NULL
@@ -247,7 +233,6 @@ go
 ALTER TABLE Peca
        ADD PRIMARY KEY CLUSTERED (id_peca ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Estoque')
 DROP TABLE Estoque
@@ -267,14 +252,14 @@ ALTER TABLE Estoque
        ADD PRIMARY KEY CLUSTERED (id_estoq ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Submenu')
 DROP TABLE Submenu
 go
 
 CREATE TABLE Submenu (
        id_menu_filho        integer NOT NULL,
-       id_menu_pai          integer NOT NULL
+       id_menu_pai          integer NOT NULL,
+       id_menu              integer NULL
 )
 go
 
@@ -282,7 +267,6 @@ go
 ALTER TABLE Submenu
        ADD PRIMARY KEY CLUSTERED (id_menu_pai ASC, id_menu_filho ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Perfilmenu')
 DROP TABLE Perfilmenu
@@ -301,7 +285,6 @@ ALTER TABLE Perfilmenu
        ADD PRIMARY KEY CLUSTERED (id_perfil ASC, id_menu ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Cliente')
 DROP TABLE Cliente
 go
@@ -316,8 +299,8 @@ CREATE TABLE Cliente (
        cep                  integer NULL,
        bairr                varchar(20) NULL,
        cid                  varchar(50) NULL,
-       rg                   integer NULL,
-       cnpj                 integer NULL,
+       cpf		            varchar(15) NULL,
+	   cnpj					varchar(15) NULL,
        dat_atl              datetime NULL,
        flg_ativo            bit NULL,
        slg_est              varchar(2) NOT NULL,
@@ -331,7 +314,6 @@ ALTER TABLE Cliente
        ADD PRIMARY KEY CLUSTERED (id_cli ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Colaborador')
 DROP TABLE Colaborador
 go
@@ -343,7 +325,7 @@ CREATE TABLE Colaborador (
        rua                  varchar(50) NULL,
        nro_ende             integer NULL,
        compl                varchar(20) NULL,
-       cep                  varchar(10) NULL,
+       cep                  integer NULL,
        bairr                varchar(30) NULL,
        ddd                  integer NULL,
        cid                  varchar(40) NULL,
@@ -365,7 +347,6 @@ ALTER TABLE Colaborador
        ADD PRIMARY KEY CLUSTERED (id_colab ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Fornecedordepto')
 DROP TABLE Fornecedordepto
 go
@@ -382,7 +363,6 @@ go
 ALTER TABLE Fornecedordepto
        ADD PRIMARY KEY CLUSTERED (id_depto ASC, id_forn ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Departamento')
 DROP TABLE Departamento
@@ -401,7 +381,6 @@ ALTER TABLE Departamento
        ADD PRIMARY KEY CLUSTERED (id_depto ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Fornecedor')
 DROP TABLE Fornecedor
 go
@@ -418,7 +397,7 @@ CREATE TABLE Fornecedor (
        tel                  integer NULL,
        cid                  varchar(50) NULL,
        mail                 varchar(100) NULL,
-       cnpj                 integer NULL,
+       cnpj                 varchar(15) NULL,
        dat_alt              datetime NULL,
        flg_ativo            bit NULL,
        slg_est              varchar(2) NULL
@@ -429,7 +408,6 @@ go
 ALTER TABLE Fornecedor
        ADD PRIMARY KEY CLUSTERED (id_forn ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Menu')
 DROP TABLE Menu
@@ -449,24 +427,24 @@ ALTER TABLE Menu
        ADD PRIMARY KEY CLUSTERED (id_menu ASC)
 go
 
-
-IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usuarioperfil')
-DROP TABLE Usuarioperfil
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usuario')
+DROP TABLE Usuario
 go
 
-CREATE TABLE Usuarioperfil (
+CREATE TABLE Usuario (
        id_usu               INTEGER NOT NULL,
+       log_usu              VARCHAR(20) NOT NULL,
+       senha                VARCHAR(15) NOT NULL,
+       obs_usu              varchar(100) NULL,
        flg_ativo            bit NULL,
-       id_perfil            integer NOT NULL,
-       dat_alt              datetime NULL
+       id_perfil            integer NOT NULL
 )
 go
 
 
-ALTER TABLE Usuarioperfil
-       ADD PRIMARY KEY CLUSTERED (id_usu ASC, id_perfil ASC)
+ALTER TABLE Usuario
+       ADD PRIMARY KEY CLUSTERED (id_usu ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Perfil')
 DROP TABLE Perfil
@@ -485,23 +463,22 @@ ALTER TABLE Perfil
        ADD PRIMARY KEY CLUSTERED (id_perfil ASC)
 go
 
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipomotor')
 DROP TABLE Tipomotor
 go
 
 CREATE TABLE Tipomotor (
+       id_tipo              integer NOT NULL,
        id_tipo_motor        varchar(20) NOT NULL,
-       dsc_tipo_motor       varchar(50) NULL,
+       dsc_tipo_motor       varchar(500) NULL,
        flg_ativo            bit NULL
 )
 go
 
 
 ALTER TABLE Tipomotor
-       ADD PRIMARY KEY CLUSTERED (id_tipo_motor ASC)
+       ADD PRIMARY KEY CLUSTERED (id_tipo ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipopeca')
 DROP TABLE Tipopeca
@@ -519,33 +496,13 @@ ALTER TABLE Tipopeca
        ADD PRIMARY KEY CLUSTERED (id_tipo_peca ASC)
 go
 
-
-IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usuario')
-DROP TABLE Usuario
-go
-
-CREATE TABLE Usuario (
-       id_usu               INTEGER NOT NULL,
-       log_usu              VARCHAR(20) NOT NULL,
-       senha                VARCHAR(15) NOT NULL,
-       obs_usu              varchar(100) NULL,
-       flg_ativo            bit NULL
-)
-go
-
-
-ALTER TABLE Usuario
-       ADD PRIMARY KEY CLUSTERED (id_usu ASC)
-go
-
-
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Numeromotor')
 DROP TABLE Numeromotor
 go
 
 CREATE TABLE Numeromotor (
        id_num_motor         integer NOT NULL,
-       dsc_num_motor        varchar(50) NULL,
+       dsc_num_motor        varchar(500) NULL,
        flg_ativo            bit NULL
 )
 go
@@ -554,7 +511,6 @@ go
 ALTER TABLE Numeromotor
        ADD PRIMARY KEY CLUSTERED (id_num_motor ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motor')
 DROP TABLE Motor
@@ -571,7 +527,6 @@ go
 ALTER TABLE Motor
        ADD PRIMARY KEY CLUSTERED (id_motor ASC)
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Estado')
 DROP TABLE Estado
@@ -590,6 +545,18 @@ go
 
 
 ALTER TABLE Pedidovenda
+       ADD FOREIGN KEY (id_grupo)
+                             REFERENCES Kitgrupopeca  (id_kit)
+go
+
+
+ALTER TABLE Pedidovenda
+       ADD FOREIGN KEY (id_fam_motor)
+                             REFERENCES Familiamotor  (id_fam_motor)
+go
+
+
+ALTER TABLE Pedidovenda
        ADD FOREIGN KEY (id_depto)
                              REFERENCES Departamento  (id_depto)
 go
@@ -598,12 +565,6 @@ go
 ALTER TABLE Pedidovenda
        ADD FOREIGN KEY (id_venda)
                              REFERENCES Venda  (id_venda)
-go
-
-
-ALTER TABLE Venda
-       ADD FOREIGN KEY (id_grupo)
-                             REFERENCES Kitgrupopeca  (id_grupo)
 go
 
 
@@ -625,12 +586,6 @@ ALTER TABLE Venda
 go
 
 
-ALTER TABLE Venda
-       ADD FOREIGN KEY (id_motor)
-                             REFERENCES Familiamotor  (id_fam_motor)
-go
-
-
 ALTER TABLE Ordemproducao
        ADD FOREIGN KEY (id_tipo_produto)
                              REFERENCES Tipoproduto  (id_tipo_prod)
@@ -639,7 +594,7 @@ go
 
 ALTER TABLE Ordemproducao
        ADD FOREIGN KEY (id_grupo)
-                             REFERENCES Kitgrupopeca  (id_grupo)
+                             REFERENCES Kitgrupopeca  (id_kit)
 go
 
 
@@ -668,12 +623,6 @@ go
 
 
 ALTER TABLE Compra
-       ADD FOREIGN KEY (id_peca)
-                             REFERENCES Peca  (id_peca)
-go
-
-
-ALTER TABLE Compra
        ADD FOREIGN KEY (id_tipo_produto)
                              REFERENCES Tipoproduto  (id_tipo_prod)
 go
@@ -686,7 +635,7 @@ go
 
 
 ALTER TABLE Compra
-       ADD FOREIGN KEY (id_forn)
+       ADD FOREIGN KEY (id_fornecedor)
                              REFERENCES Fornecedor  (id_forn)
 go
 
@@ -716,14 +665,14 @@ go
 
 
 ALTER TABLE Familiamotor
-       ADD FOREIGN KEY (id_tipo_motor)
-                             REFERENCES Tipomotor  (id_tipo_motor)
+       ADD FOREIGN KEY (id_tipo)
+                             REFERENCES Tipomotor  (id_tipo)
 go
 
 
 ALTER TABLE Familiamotor
        ADD FOREIGN KEY (id_grupo)
-                             REFERENCES Kitgrupopeca  (id_grupo)
+                             REFERENCES Kitgrupopeca  (id_kit)
 go
 
 
@@ -773,6 +722,12 @@ go
 ALTER TABLE Estoque
        ADD FOREIGN KEY (id_depto)
                              REFERENCES Departamento  (id_depto)
+go
+
+
+ALTER TABLE Submenu
+       ADD FOREIGN KEY (id_menu)
+                             REFERENCES Menu  (id_menu)
 go
 
 
@@ -830,16 +785,7 @@ ALTER TABLE Fornecedor
 go
 
 
-ALTER TABLE Usuarioperfil
+ALTER TABLE Usuario
        ADD FOREIGN KEY (id_perfil)
                              REFERENCES Perfil  (id_perfil)
 go
-
-
-ALTER TABLE Usuarioperfil
-       ADD FOREIGN KEY (id_usu)
-                             REFERENCES Usuario  (id_usu)
-go
-
-
-
