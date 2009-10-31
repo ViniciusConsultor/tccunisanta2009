@@ -71,7 +71,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
@@ -90,7 +89,6 @@ namespace TCC.UI
 
         private void frmCadEstoque_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
@@ -127,7 +125,6 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelDepartamento = null;
         }
 

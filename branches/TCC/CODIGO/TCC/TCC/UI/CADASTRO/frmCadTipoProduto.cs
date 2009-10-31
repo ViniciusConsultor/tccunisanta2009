@@ -30,7 +30,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
 
         /*protected override void BuscaIdMaximo()
@@ -52,7 +51,6 @@ namespace TCC.UI
 
         private void frmCadTipoProduto_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private mTipoProduto PegaDadosTela()
@@ -87,7 +85,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {

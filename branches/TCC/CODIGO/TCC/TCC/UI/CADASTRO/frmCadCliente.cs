@@ -73,14 +73,6 @@ namespace TCC.UI
                 model.ComplementoEndereco = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                if (base.Alteracao == true)
-                {
-                    model.IdCliente = this._modelCliente.IdCliente;
-                }
-                else
-                {
-                    model.IdCliente = Convert.ToInt32(regra.BuscaIdMaximoCliente());
-                }
                 model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
                 model.NomeCliente = this.txtNome.Text;
                 model.NomeRua = this.txtRua.Text;
@@ -91,14 +83,6 @@ namespace TCC.UI
                 else
                 {
                     model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
-                }
-                if (string.IsNullOrEmpty(this.txtRg.Text) == true)
-                {
-                    model.Rg = null;
-                }
-                else
-                {
-                    model.Rg = Convert.ToInt32(this.txtRg.Text);
                 }
                 model.TelefoneCliente = this.txtTelefone.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
@@ -132,7 +116,6 @@ namespace TCC.UI
        
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
             this.BuscaEstados();
             this.AtribuiTipoTextBox();
         }
@@ -153,7 +136,6 @@ namespace TCC.UI
                     regra.ValidarInsere(model);
                 }
                 this.btnLimpa_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {
@@ -169,7 +151,6 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelCliente = null;
             base.Alteracao = false;
         }
@@ -246,7 +227,6 @@ namespace TCC.UI
                 this.txtNumero.Text = this._modelCliente.NumeroEndereco.ToString();
                 this.txtRua.Text = this._modelCliente.NomeRua;
                 this.txtTelefone.Text = this._modelCliente.TelefoneCliente.ToString();
-                this.txtRg.Text = this._modelCliente.Rg.ToString();
                 this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelCliente.SlgEstado);
             }
         }

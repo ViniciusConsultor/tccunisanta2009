@@ -116,7 +116,6 @@ namespace TCC.UI
 
         private void frmCadFornecedor_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
             this.BuscaEstado();
         }
 
@@ -149,7 +148,6 @@ namespace TCC.UI
         private void btnlimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
         /*private void ValidadadosNulos()
         {

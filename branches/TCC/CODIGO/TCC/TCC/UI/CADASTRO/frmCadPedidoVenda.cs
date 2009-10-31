@@ -22,13 +22,11 @@ namespace TCC.UI
 
         private void frmCadPedidoVenda_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelDepartamento = null;
             this._modelVenda = null;
         }
@@ -147,7 +145,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpar_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {

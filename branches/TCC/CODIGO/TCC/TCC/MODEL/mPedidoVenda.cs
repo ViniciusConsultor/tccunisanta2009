@@ -13,14 +13,14 @@ namespace TCC.MODEL
         private string dscVenda;
         private DateTime datAlt;
         private int idFamMotor;
-        private int idGrupo;
+        private int idKit;
         private string nomeTabela = "Pedidovenda";
 
-        [ColunasBancoDados("id_grupo", System.Data.SqlDbType.Int, false)]
-        public int IdGrupo
+        [ColunasBancoDados("id_kit", System.Data.SqlDbType.Int, false)]
+        public int IdKit
         {
-            get { return idGrupo; }
-            set { idGrupo = value; }
+            get { return idKit; }
+            set { idKit = value; }
         }
 
         [ColunasBancoDados("id_fam_motor", System.Data.SqlDbType.Int, false)]

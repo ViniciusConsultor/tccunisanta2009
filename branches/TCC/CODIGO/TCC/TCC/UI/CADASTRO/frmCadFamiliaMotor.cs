@@ -31,7 +31,6 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelEstoque = null;
             this._modelKit = null;
             this._modelMotor = null;
@@ -58,7 +57,6 @@ namespace TCC.UI
 
         private void frmCadFamiliaMotor_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
@@ -76,7 +74,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoEstoqueVazioException)
             {
@@ -144,7 +141,7 @@ namespace TCC.UI
                 model.FlgAtivo = true;
                 model.IdEstoque = this._modelEstoque.Id_estoque;
                 model.IdFamiliaMotor = Convert.ToInt32(regra.BuscaIdMaximo());
-                model.IdGrupo = this._modelKit.Id_grupo;
+                model.IdKit = this._modelKit.IdKit;
                 model.IdMotor = this._modelMotor.IdMotor;
                 model.IdNumMotor = this._modelNumeroMotor.Id_num_motor;
                 model.IdTipoMotor = this._modelTipoMotor.IdTipoMotor;

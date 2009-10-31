@@ -19,13 +19,11 @@ namespace TCC.UI
 
         private void frmNumeroMotor_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -52,7 +50,6 @@ namespace TCC.UI
 
         private void frmCadNumeroMotor_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnAceitar_Click(object sender, EventArgs e)
@@ -69,7 +66,6 @@ namespace TCC.UI
                 model = this.PegaDadoosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {

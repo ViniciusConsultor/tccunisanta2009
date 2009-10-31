@@ -31,7 +31,6 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelCliente = null;
             this._modelKit = null;
             this._modelMotor = null;
@@ -46,7 +45,6 @@ namespace TCC.UI
 
         private void frmCadVenda_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private mVenda PegaDadosTela()
@@ -66,8 +64,6 @@ namespace TCC.UI
                 }
                 model.DatSaida = DateTime.Now;
                 model.IdCli = this._modelCliente.IdCliente;
-                model.IdGrupo = this._modelKit.Id_grupo;
-                model.IdMotor = this._modelMotor.IdMotor;
                 model.IdOrdem = this._modelOrdemProd.Id_ordem;
                 model.IdTipoProduto = this._modelTipoProd.IdTipoProd;
                 model.IdVenda = Convert.ToInt32(regra.BuscaidMaximo());
@@ -111,7 +107,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoClienteVazioException)
             {

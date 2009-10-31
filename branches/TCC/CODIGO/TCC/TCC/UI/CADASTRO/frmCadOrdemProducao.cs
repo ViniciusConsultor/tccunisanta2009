@@ -25,7 +25,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelDepartamento = null;
             this._modelFamiliaMotor = null;
             this._modelKit = null;
@@ -143,7 +142,6 @@ namespace TCC.UI
 
         private void frmCadOrdemProducao_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         /*protected override void BuscaIdMaximo()
@@ -178,7 +176,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpar_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
@@ -236,7 +233,7 @@ namespace TCC.UI
             {
                 model.Dsc_ordem = this.txtDs.Text;
                 model.Id_depto = this._modelDepartamento.IdDepto;
-                model.Id_grupo = this._modelKit.Id_grupo;
+                model.IdKit = this._modelKit.IdKit;
                 model.Id_motor = this._modelFamiliaMotor.IdFamiliaMotor;
                 model.Id_ordem = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_tipo_produto = this._modelTipoProd.IdTipoProd;

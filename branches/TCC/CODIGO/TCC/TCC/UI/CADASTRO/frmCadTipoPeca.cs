@@ -25,7 +25,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
 
         private void LimparCampos()
@@ -70,7 +69,6 @@ namespace TCC.UI
 
         private void frmCadTipoPeca_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnAceitar_Click(object sender, EventArgs e)
@@ -82,7 +80,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.LimparCampos();
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {

@@ -20,7 +20,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -47,7 +46,6 @@ namespace TCC.UI
 
         private void frmCadTipoMotor_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnAceitar_Click(object sender, EventArgs e)
@@ -64,7 +62,6 @@ namespace TCC.UI
                 model = this.PedaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (Exception ex)
             {
@@ -85,7 +82,7 @@ namespace TCC.UI
             {
                 model.DscTipoMotor = this.txtNmTipoMotor.Text;
                 model.FlgAtivo = true;
-                model.IdTipoMotor = regra.BuscaIdMaximo();
+                model.IdTipoMotor = Convert.ToInt32(regra.BuscaIdMaximo());
 
                 return model;
             }
