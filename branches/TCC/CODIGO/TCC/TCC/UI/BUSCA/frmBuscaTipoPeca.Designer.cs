@@ -36,8 +36,6 @@
             this.dgTipoPeca = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipFechar = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipOK = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipBuscar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +47,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(60, 33);
             this.btnOK.TabIndex = 4;
-            this.toolTipOK.SetToolTip(this.btnOK, "OK!");
+            this.toolTipFechar.SetToolTip(this.btnOK, "OK");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -69,7 +67,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(51, 30);
             this.btnBuscar.TabIndex = 2;
-            this.toolTipBuscar.SetToolTip(this.btnBuscar, "Buscar");
+            this.toolTipFechar.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -107,16 +105,6 @@
             this.toolTipFechar.BackColor = System.Drawing.Color.LightGray;
             this.toolTipFechar.ForeColor = System.Drawing.Color.Black;
             // 
-            // toolTipOK
-            // 
-            this.toolTipOK.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipOK.ForeColor = System.Drawing.Color.Black;
-            // 
-            // toolTipBuscar
-            // 
-            this.toolTipBuscar.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipBuscar.ForeColor = System.Drawing.Color.Black;
-            // 
             // frmBuscaTipoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,8 +134,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgTipoPeca;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.ToolTip toolTipOK;
-        private System.Windows.Forms.ToolTip toolTipBuscar;
         private System.Windows.Forms.ToolTip toolTipFechar;
     }
 }

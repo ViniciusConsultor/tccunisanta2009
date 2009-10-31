@@ -35,9 +35,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgTipoProduto = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.toolTipBuscar = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipOK = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipFechar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +47,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(58, 32);
             this.btnOK.TabIndex = 4;
-            this.toolTipOK.SetToolTip(this.btnOK, "OK!");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "OK");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -69,7 +67,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 31);
             this.btnBuscar.TabIndex = 2;
-            this.toolTipBuscar.SetToolTip(this.btnBuscar, "Buscar");
+            this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -98,24 +96,14 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(49, 34);
             this.btnFechar.TabIndex = 3;
-            this.toolTipFechar.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fecha Busca");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // toolTipBuscar
+            // toolTipLegenda
             // 
-            this.toolTipBuscar.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipBuscar.ForeColor = System.Drawing.Color.Black;
-            // 
-            // toolTipOK
-            // 
-            this.toolTipOK.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipOK.ForeColor = System.Drawing.Color.Black;
-            // 
-            // toolTipFechar
-            // 
-            this.toolTipFechar.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipFechar.ForeColor = System.Drawing.Color.Black;
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmBuscaTipoProduto
             // 
@@ -146,8 +134,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgTipoProduto;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.ToolTip toolTipOK;
-        private System.Windows.Forms.ToolTip toolTipBuscar;
-        private System.Windows.Forms.ToolTip toolTipFechar;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }
