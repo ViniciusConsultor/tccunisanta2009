@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_itempeca
 @id_item_peca     INT,
-@id_peca          VARCHAR(20),
+@id_peca          INT,
 @nom              VARCHAR(20),
 @flg_ativo        BIT
 

@@ -5,9 +5,9 @@ GO
 
 CREATE PROCEDURE sp_insert_tipoproduto
 @id_tipo_prod       INT,
-@nom      VARCHAR(100),
-@dat_alt               DATETIME,
-@flg_ativo             BIT
+@nom				VARCHAR(100),
+@dat_alt            DATETIME,
+@flg_ativo          BIT
 AS
 
 BEGIN TRY

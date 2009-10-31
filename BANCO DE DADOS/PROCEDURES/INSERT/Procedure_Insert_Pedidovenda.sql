@@ -4,11 +4,13 @@ IF OBJECT_ID('sp_insert_pedidovenda', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_pedidovenda
-@id_venda         INT,
 @id_pedido        INT,
+@id_venda         INT,
 @id_depto         INT,
 @dsc_venda        VARCHAR(500),
-@dat_alt          DATETIME
+@dat_alt          DATETIME,
+@id_fam_motor	  INT,
+@id_grupo		  INT
 AS
 
 BEGIN TRY
@@ -23,8 +25,8 @@ ELSE
 
 BEGIN
 --Insert na tabela pedidovenda
-INSERT INTO PEDIDOVENDA(id_venda, id_pedido, id_depto, dsc_venda, dat_alt)
-VALUES (@id_venda, @id_pedido, @id_depto, @dsc_venda, @dat_alt)
+INSERT INTO PEDIDOVENDA(id_venda, id_pedido, id_depto, dsc_venda, dat_alt, id_fam_motor, id_grupo)
+VALUES (@id_venda, @id_pedido, @id_depto, @dsc_venda, @dat_alt, @id_fam_motor, @id_grupo)
 END
 END TRY
 

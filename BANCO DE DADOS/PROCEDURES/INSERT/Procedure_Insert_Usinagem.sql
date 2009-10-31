@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_usinagem
 @id_usinagem       INT,
-@id_peca           VARCHAR(20),
+@id_peca           INT,
 @dta_envio         DATETIME,
 @flg_status        BIT
 AS

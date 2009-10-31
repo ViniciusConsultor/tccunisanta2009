@@ -9,12 +9,11 @@ CREATE PROCEDURE sp_insert_compra
 @id_forn          INT,
 @id_motor         INT,
 @id_tipo_produto  INT,
-@id_peca          VARCHAR(20),
 @dat              DATETIME,
 @qtd              INT,
 @valor            NUMERIC(15,2),
-@nota_fisc        VARCHAR(20),
-@obs              VARCHAR(20)
+@nota_fisc        VARCHAR(50),
+@obs              VARCHAR(500)
 AS
 
 BEGIN TRY
@@ -37,15 +36,15 @@ ELSE IF(@nota_fisc='')
    RAISERROR('Informe o número da nota fiscal!',16,1)
 ELSE IF(@obs='')
    RAISERROR('Informe alguma observacao para a compra!',16,1)
-ELSE IF(@id_motor='' and @id_peca='')
-   RAISERROR('Informe o codigo do motor ou da peca!',16,1)   
+ELSE IF(@id_motor='')
+   RAISERROR('Informe o codigo do motor!',16,1)   
 ELSE
 
 BEGIN
 --Insert na tabela compra
 INSERT INTO 
-Compra(id_compra, id_depto, id_forn, id_motor, id_tipo_produto, id_peca, dat, qtd, valor, nota_fisc, obs)
-VALUES(@id_compra, @id_depto, @id_forn, @id_motor, @id_tipo_produto, @id_peca, @dat, @qtd, @valor, @nota_fisc, @obs)
+Compra(id_compra, id_depto, id_forn, id_motor, id_tipo_produto, dat, qtd, valor, nota_fisc, obs)
+VALUES(@id_compra, @id_depto, @id_forn, @id_motor, @id_tipo_produto, @dat, @qtd, @valor, @nota_fisc, @obs)
 END
 END TRY
 

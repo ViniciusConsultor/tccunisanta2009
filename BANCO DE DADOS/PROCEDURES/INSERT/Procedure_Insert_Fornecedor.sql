@@ -5,20 +5,20 @@ GO
 
 CREATE PROCEDURE sp_insert_fornecedor
 @id_forn			    INT,
-@slg_est				VARCHAR(2),
 @nom			        VARCHAR(100),
-@tel                    INT,
-@ddd                    INT,
-@mail                  VARCHAR(100),
 @rua		            VARCHAR(50),
 @nro_ende		        INT,
 @compl                  VARCHAR(20),
 @cep			        INT,
+@ddd                    INT,
 @bairr                  VARCHAR(50),
+@tel                    INT,
 @cid		            VARCHAR(50),
-@cnpj		            INT,
+@mail                  VARCHAR(100),
+@cnpj		            VARCHAR(15),
 @dat_alt				DATETIME,
-@flg_ativo				BIT
+@flg_ativo				BIT,
+@slg_est				VARCHAR(2)
 AS
 
 BEGIN TRY
