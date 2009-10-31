@@ -8,6 +8,7 @@ GO
 CREATE PROCEDURE sp_select_familiamotor
 @id_fam_motor INT
 AS
-SELECT id_fam_motor, id_num_motor, id_grupo, id_tipo_motor, flg_ativo, id_motor, id_estoque
+SELECT id_fam_motor, id_num_motor, id_grupo, id_tipo, id_motor, id_estoque
 FROM Familimotor
 WHERE id_fam_motor = @id_fam_motor
+AND flg_ativo = 1

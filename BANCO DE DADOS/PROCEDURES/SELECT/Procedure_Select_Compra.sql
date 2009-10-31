@@ -8,6 +8,6 @@ GO
 CREATE PROCEDURE sp_select_compra
 @id_compra INT
 AS
-SELECT id_depto, id_compra, dat, obs, id_forn, id_motor, qtd, valor, nota_fisc, id_tipo_produto, id_peca
+SELECT id_depto, id_compra, dat, obs, id_fornecedor, id_motor, qtd, valor, nota_fisc, id_tipo_produto
 FROM Compra
 WHERE id_compra = @id_compra

@@ -5,7 +5,7 @@
  GO
  
  CREATE PROCEDURE sp_busca_numeromotor_param
-@dsc_num_motor varchar(50)
+@dsc_num_motor varchar(500)
  AS
  SELECT id_num_motor, dsc_num_motor 'Numero do motor' FROM Numeromotor
 where dsc_num_motor like '%' + @dsc_num_motor +'%'
