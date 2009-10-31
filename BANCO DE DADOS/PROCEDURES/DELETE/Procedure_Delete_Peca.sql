@@ -16,8 +16,7 @@ BEGIN
 	BEGIN
 		DECLARE @idItemPeca INT
 		SET @idItemPeca = SELECT id_item_peca from Itempeca where id_peca=@id_peca
-		UPDATE Itempeca SET flg_ativo = 0
-		WHERE id_peca=@id_peca
+		exec sp_delete_itemPeca @idItemPeca
 	END	
   IF EXISTS(select 1 from Pecafornecedor where id_peca=@id_peca)
 	BEGIN

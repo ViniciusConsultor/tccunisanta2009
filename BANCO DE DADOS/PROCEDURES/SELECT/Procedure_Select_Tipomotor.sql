@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_tipomotor
 @id_tipo_motor INT
 AS
-SELECT id_tipo, id_tipo_motor, dsc_tipo_motor
+SELECT id_tipo_motor, id_tipo_motor_real, dsc_tipo_motor
 FROM Tipomotor
 WHERE id_tipo_motor = @id_tipo_motor
 AND flg_ativo = 1
