@@ -17,7 +17,7 @@ namespace TCC.MODEL
         private int? cep;
         private string bairro;
         private string cidade;
-        private int? rg;
+        private int? cpf;
         private int? cnpj;
         private DateTime datAtl;
         private bool flgAtivo;
@@ -46,12 +46,14 @@ namespace TCC.MODEL
             set { cnpj = value; }
         }
 
-        [ColunasBancoDados("rg", System.Data.SqlDbType.Int, false)]
-        public int? Rg
+        //troquei de rg para cpf
+        [ColunasBancoDados("cpf", System.Data.SqlDbType.Decimal, false)]
+        public int? Cpf
         {
-            get { return rg; }
-            set { rg = value; }
+            get { return cpf; }
+            set { cpf = value; }
         }
+         
 
         [ColunasBancoDados("cid", System.Data.SqlDbType.VarChar, false)]
         public string Cidade
