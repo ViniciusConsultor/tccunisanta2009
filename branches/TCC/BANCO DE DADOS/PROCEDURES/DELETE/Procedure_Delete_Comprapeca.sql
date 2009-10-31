@@ -4,20 +4,18 @@ IF OBJECT_ID('sp_delete_comprapeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_comprapeca
-@id_peca INT
+@id_peca   INT,
+@id_compra INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from comprapeca where id_peca=@id_peca)
+IF EXISTS(select 1 from comprapeca where id_peca=@id_peca and id_compra=@id_compra)
 BEGIN
   --deleta dependencias existentes
-  IF EXISTS(select 1 from compra where id_peca=@id_peca)
-	BEGIN
-		DELETE compra WHERE id_peca=@id_peca
-	END
+  
   --realiza a exclusao  
-  DELETE comprapeca WHERE id_peca = @id_peca
+  DELETE comprapeca WHERE id_peca = @id_peca and id_compra=@id_compra
 END
 ELSE
 --retorna erro se não houver o codigo

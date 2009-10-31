@@ -12,11 +12,11 @@ BEGIN TRY
 IF EXISTS(select 1 from usuario where id_usu=@id_usu)
 BEGIN
   --deleta logicamente dependencias existentes
-  /*IF EXISTS(select 1 from colaborador where id_usu=@id_usu)
+  IF EXISTS(select 1 from colaborador where id_usu=@id_usu)
 	BEGIN
 		UPDATE colaborador SET flg_ativo = 0
 		WHERE id_usu=@id_usu
-	END*/
+	END
   IF EXISTS(select 1 from usuarioperfil where id_usu=@id_usu)
 	BEGIN
 		UPDATE usuarioperfil SET flg_ativo = 0
