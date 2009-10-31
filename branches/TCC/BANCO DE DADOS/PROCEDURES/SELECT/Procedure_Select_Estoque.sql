@@ -8,6 +8,7 @@ GO
 CREATE PROCEDURE sp_select_estoque
 @id_estoq INT
 AS
-SELECT id_estoq, dsc_estoq, dat_alt, flg_ativo, id_depto
+SELECT id_estoq, dsc_estoq, dat_alt, id_depto
 FROM Estoque
 WHERE id_estoq = @id_estoq
+AND flg_ativo = 1
