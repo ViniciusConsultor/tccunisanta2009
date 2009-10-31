@@ -7,13 +7,13 @@ namespace TCC.MODEL
 {
     public class mMotor : ModelPai
     {
-        private int idMotor;
+        private int? idMotor;
         private string dscMotor;
         private bool flgAtivo;
         private string nomeTabela = "motor";
 
         [ColunasBancoDados("id_motor", System.Data.SqlDbType.Int, true)]
-        public int IdMotor
+        public int? IdMotor
         {
             get { return idMotor; }
             set { idMotor = value; }

@@ -142,7 +142,7 @@ namespace TCC.UI
                 model.IdEstoque = this._modelEstoque.Id_estoque;
                 model.IdFamiliaMotor = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.IdKit = this._modelKit.IdKit;
-                model.IdMotor = this._modelMotor.IdMotor;
+                model.IdMotor = Convert.ToInt32(this._modelMotor.IdMotor);
                 model.IdNumMotor = this._modelNumeroMotor.Id_num_motor;
                 model.IdTipoMotor = this._modelTipoMotor.IdTipoMotor;
 
