@@ -35,9 +35,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.toolTipFechar = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipOK = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipBuscar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +72,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 31);
             this.btnBuscar.TabIndex = 2;
-            this.toolTipBuscar.SetToolTip(this.btnBuscar, "Buscar");
+            this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -86,7 +84,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(52, 34);
             this.btnOK.TabIndex = 4;
-            this.toolTipOK.SetToolTip(this.btnOK, "OK!");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "OK");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -98,24 +96,14 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(49, 34);
             this.btnFechar.TabIndex = 3;
-            this.toolTipFechar.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // toolTipFechar
+            // toolTipLegenda
             // 
-            this.toolTipFechar.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipFechar.ForeColor = System.Drawing.Color.Black;
-            // 
-            // toolTipOK
-            // 
-            this.toolTipOK.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipOK.ForeColor = System.Drawing.Color.Black;
-            // 
-            // toolTipBuscar
-            // 
-            this.toolTipBuscar.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipBuscar.ForeColor = System.Drawing.Color.Black;
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // frmBuscaPerfil
             // 
@@ -147,8 +135,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.ToolTip toolTipBuscar;
-        private System.Windows.Forms.ToolTip toolTipOK;
-        private System.Windows.Forms.ToolTip toolTipFechar;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }
