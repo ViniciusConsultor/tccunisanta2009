@@ -7,13 +7,29 @@ namespace TCC.MODEL
 {
     public class mPedidoVenda : ModelPai
     {
-        private int idVenda;
         private int idPedido;
+        private int idVenda;
         private int idDepto;
         private string dscVenda;
         private DateTime datAlt;
+        private int idFamMotor;
+        private int idGrupo;
         private string nomeTabela = "Pedidovenda";
-        
+
+        [ColunasBancoDados("id_grupo", System.Data.SqlDbType.Int, false)]
+        public int IdGrupo
+        {
+            get { return idGrupo; }
+            set { idGrupo = value; }
+        }
+
+        [ColunasBancoDados("id_fam_motor", System.Data.SqlDbType.Int, false)]
+        public int IdFamMotor
+        {
+            get { return idFamMotor; }
+            set { idFamMotor = value; }
+        }
+
         [ColunasBancoDados ("id_venda", System.Data.SqlDbType.Int,true)]
         public int IdVenda
         {
@@ -21,7 +37,7 @@ namespace TCC.MODEL
             set { idVenda = value; }
         }
 
-        [ColunasBancoDados ("id_pedido", System.Data.SqlDbType.Int,false)]
+        [ColunasBancoDados ("id_pedido", System.Data.SqlDbType.Int,true)]
         public int IdPedido
         {
             get { return idPedido; }

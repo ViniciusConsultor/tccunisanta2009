@@ -27,7 +27,7 @@ namespace TCC.MODEL
             set { nom_item_peca = value; }
         }
 
-        [ColunasBancoDados("id_peca", System.Data.SqlDbType.VarChar,true)]
+        [ColunasBancoDados("id_peca", System.Data.SqlDbType.Int,true)]
         public int Id_peca
         {
             get { return id_peca; }
