@@ -5,7 +5,7 @@
  GO
 
  CREATE PROCEDURE sp_busca_perfil_param
- @dsc_perfil AS VARCHAR(30)
+ @dsc_perfil AS VARCHAR(50)
  AS
  SELECT id_perfil, dsc_perfil as 'Perfil'
  FROM Perfil

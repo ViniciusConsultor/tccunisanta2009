@@ -8,6 +8,7 @@ GO
 CREATE PROCEDURE sp_select_menu
 @id_menu INT
 AS
-SELECT id_menu, dsc_menu, ende, dat_atl, flg_ativo
+SELECT id_menu, dsc_menu, ende, dat_atl
 FROM Menu
 WHERE id_menu = @id_menu
+AND flg_ativo = 1

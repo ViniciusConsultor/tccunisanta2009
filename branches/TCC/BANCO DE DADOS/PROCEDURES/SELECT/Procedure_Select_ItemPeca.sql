@@ -9,6 +9,7 @@ CREATE PROCEDURE sp_select_itempeca
 @id_item_peca INT,
 @id_peca INT
 AS
-SELECT id_item_peca, nom, flg_ativo, id_peca
+SELECT id_item_peca, nom, id_peca
 FROM Itempeca
 WHERE id_item_peca = @id_item_peca and id_peca = @id_peca
+AND flg_ativo = 1

@@ -9,6 +9,7 @@ CREATE PROCEDURE sp_select_pecafornecedor
 @id_peca INT,
 @id_forn INT
 AS
-SELECT id_peca, id_forn, dat_inc, flg_ativo
+SELECT id_peca, id_forn, dat_inc
 FROM Pecafornecedor
 WHERE id_peca = @id_peca and id_forn = @id_forn
+AND flg_ativo = 1

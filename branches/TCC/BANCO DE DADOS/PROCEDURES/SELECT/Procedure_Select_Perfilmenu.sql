@@ -9,6 +9,7 @@ CREATE PROCEDURE sp_select_perfilmenu
 @id_perfil INT,
 @id_menu INT
 AS
-SELECT id_perfil, dat_alt, flg_ativo, id_menu
+SELECT id_perfil, dat_alt, id_menu
 FROM Perfilmenu
 WHERE id_perfil = @id_perfil and id_menu = @id_menu
+AND flg_ativo = 1

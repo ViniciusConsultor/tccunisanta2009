@@ -8,6 +8,7 @@ GO
 CREATE PROCEDURE sp_select_tipopeca
 @id_tipo_peca INT
 AS
-SELECT id_tipo_peca, dsc_tipo_peca, flg_ativo
+SELECT id_tipo_peca, dsc_tipo_peca
 FROM Tipopeca
 WHERE id_tipo_peca = @id_tipo_peca
+AND flg_ativo = 1

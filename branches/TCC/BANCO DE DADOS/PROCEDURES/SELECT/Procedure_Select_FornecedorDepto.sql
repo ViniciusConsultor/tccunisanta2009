@@ -9,6 +9,7 @@ CREATE PROCEDURE sp_select_fornecedordepto
 @id_depto INT,
 @id_forn INT
 AS
-SELECT id_depto, id_forn, dat_alt, flg_ativo
+SELECT id_depto, id_forn, dat_alt
 FROM Fornecedordepto
 WHERE id_forn = @id_forn and id_depto = @id_depto
+AND flg_ativo = 1
