@@ -4,8 +4,9 @@ IF OBJECT_ID('sp_insert_tipomotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_tipomotor
-@id_tipo_motor         VARCHAR(20),
-@dsc_tipo_motor        VARCHAR(50),
+@id_tipo_motor         INT,
+@id_tipo_motor_real    VARCHAR(20),
+@dsc_tipo_motor        VARCHAR(500),
 @flg_ativo             BIT
 AS
 
@@ -13,14 +14,16 @@ BEGIN TRY
 --Validações na tabela tipomotor
 IF(@id_tipo_motor='')
    RAISERROR('Informe o codigo do tipo do motor!',16,1)   
-IF(@dsc_tipo_motor='')
-   RAISERROR('Informe o nome do tipo do motor!',16,1)      
+ELSE IF(@dsc_tipo_motor='')
+   RAISERROR('Informe o nome do tipo do motor!',16,1)
+ELSE IF(@id_tipo_motor_real='')
+   RAISERROR('Informe o codigo do tipo do motor!',16,1)
 ELSE
 
 BEGIN
 --Insert na tabela tipomotor
-INSERT INTO TIPOMOTOR(id_tipo_motor, dsc_tipo_motor, flg_ativo)
-VALUES (@id_tipo_motor, @dsc_tipo_motor, @flg_ativo)
+INSERT INTO TIPOMOTOR(id_tipo_motor, id_tipo_motor_real, dsc_tipo_motor, flg_ativo)
+VALUES (@id_tipo_motor, @id_tipo_motor_real, @dsc_tipo_motor, @flg_ativo)
 END
 END TRY
 

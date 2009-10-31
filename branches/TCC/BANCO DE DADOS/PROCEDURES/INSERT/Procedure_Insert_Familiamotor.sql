@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_insert_familiamotor
 @id_fam_motor      INT,
 @id_num_motor      INT,
 @id_grupo          INT,
-@id_tipo_motor     VARCHAR(20),
+@id_tipo_motor	   INT,
 @id_motor          INT,
 @id_estoque        INT,
 @dsc_fam_motor     VARCHAR(500),
