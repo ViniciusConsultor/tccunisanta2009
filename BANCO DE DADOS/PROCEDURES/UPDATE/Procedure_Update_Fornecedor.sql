@@ -5,20 +5,20 @@ GO
 
 CREATE PROCEDURE sp_update_fornecedor
 @id_forn			INT,
-@slg_est				VARCHAR(2),
-@nom			VARCHAR(100),
-@DDD                    INT,
-@tel         INT,
-@mail                  VARCHAR(100),
-@rua		VARCHAR(50),
-@nro_ende		INT,
-@compl   VARCHAR(20),
-@cep			INT,
-@bairr   VARCHAR(50),
-@cid		VARCHAR(50),
-@cnpj		INT,
-@dat_alt				DATETIME,
-@flg_ativo				BIT
+@slg_est			VARCHAR(2),
+@nom			    VARCHAR(100),
+@DDD                INT,
+@tel                INT,
+@mail               VARCHAR(100),
+@rua		        VARCHAR(50),
+@nro_ende		    INT,
+@compl              VARCHAR(20),
+@cep			    INT,
+@bairr              VARCHAR(50),
+@cid		        VARCHAR(50),
+@cnpj		        VARCHAR(15),
+@dat_alt			DATETIME,
+@flg_ativo			BIT
 AS
 
 BEGIN TRY
@@ -30,20 +30,20 @@ BEGIN
 --Update na tabela fornecedor
 UPDATE Fornecedor SET
 
-slg_est            = @slg_est, 
+slg_est    = @slg_est, 
 nom        = @nom, 
-rua    = @rua, 
-DDD                   = @DDD,
+rua        = @rua, 
+DDD        = @DDD,
 tel        = @tel,
-mail                 = @mail,
-nro_ende    = @nro_ende, 
-compl  = @compl, 
+mail       = @mail,
+nro_ende   = @nro_ende, 
+compl      = @compl, 
 cep        = @cep, 
-bairr  = @bairr, 
-cid     = @cid, 
-cnpj    = @cnpj, 
-dat_alt               = @dat_alt, 
-flg_ativo             = @flg_ativo
+bairr      = @bairr, 
+cid        = @cid, 
+cnpj       = @cnpj, 
+dat_alt    = @dat_alt, 
+flg_ativo  = @flg_ativo
 
 WHERE id_forn = @id_forn
 

@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_tipoproduto', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_tipoproduto
-@id_tipo_prod       INT,
 @nom				VARCHAR(100),
 @dat_alt            DATETIME,
 @flg_ativo          BIT
@@ -12,16 +11,14 @@ AS
 
 BEGIN TRY
 --Validações na tabela tipoproduto   
-IF(@id_tipo_prod='')
-   RAISERROR('Informe o codigo do tipo da produto!',16,1)
 IF(@nom='')
    RAISERROR('Informe o nome do tipo da produto!',16,1)  
 ELSE
 
 BEGIN
 --Insert na tabela tipoproduto
-INSERT INTO TIPOPRODUTO(id_tipo_prod, nom, dat_alt, flg_ativo)
-VALUES (@id_tipo_prod, @nom, @dat_alt, @flg_ativo)
+INSERT INTO TIPOPRODUTO(nom, dat_alt, flg_ativo)
+VALUES (@nom, @dat_alt, @flg_ativo)
 END
 END TRY
 

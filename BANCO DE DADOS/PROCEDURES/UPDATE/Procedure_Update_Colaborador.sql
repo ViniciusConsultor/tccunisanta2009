@@ -16,7 +16,7 @@ CREATE PROCEDURE sp_update_colaborador
 @rua              VARCHAR(50),
 @nro_ende         INT,
 @compl            VARCHAR(20),
-@cep              VARCHAR(10),
+@cep              INT,
 @bairr            VARCHAR(30),
 @cid              VARCHAR(40),
 @rg               VARCHAR(15),

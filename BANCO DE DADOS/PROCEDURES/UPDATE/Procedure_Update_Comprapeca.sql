@@ -4,23 +4,25 @@ IF OBJECT_ID('sp_update_comprapeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_comprapeca
-@id_peca               VARCHAR(20),
-@ultim_preco          INT
+@id_peca              INT,
+@ultim_preco          NUMERIC(15,2),
+@id_compra			  INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Comprapeca where id_peca=@id_peca)
+IF EXISTS(select 1 from Comprapeca where id_peca=@id_peca and id_compra=@id_compra)
 BEGIN
 --Validações para a tabela comprapeca
 
 --Update na tabela comprapeca
 UPDATE Comprapeca SET
 
-id_peca               = @id_peca, 
+id_peca              = @id_peca, 
+id_compra			 = @id_compra,
 ultim_preco          = @ultim_preco
 
-WHERE id_peca = @id_peca
+WHERE id_peca = @id_peca and id_compra = @id_compra
 
 END
 ELSE

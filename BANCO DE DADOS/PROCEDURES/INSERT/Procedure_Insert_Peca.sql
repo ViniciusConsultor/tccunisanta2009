@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_peca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_peca
-@id_peca              INT,
 @id_peca_real         VARCHAR(50),
 @id_tipo_peca         INT,
 @id_estoque           INT,
@@ -17,9 +16,7 @@ CREATE PROCEDURE sp_insert_peca
 AS
 
 BEGIN TRY
---Validações na tabela peca
-IF(@id_peca='')
-   RAISERROR('Informe o codigo da peça!',16,1)   
+--Validações na tabela peca  
 IF(@id_tipo_peca='')
    RAISERROR('Informe o codigo do tipo da peça!',16,1)
 ELSE IF(@id_estoque='')
@@ -34,8 +31,8 @@ ELSE
 
 BEGIN
 --Insert na tabela peca
-INSERT INTO PECA(id_peca, id_peca_real,id_tipo_peca, id_estoque, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
-VALUES (@id_peca, @id_peca_real, @id_tipo_peca, @id_estoque, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
+INSERT INTO PECA(id_peca_real,id_tipo_peca, id_estoque, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
+VALUES (@id_peca_real, @id_tipo_peca, @id_estoque, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
 END
 END TRY
 

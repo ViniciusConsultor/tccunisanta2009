@@ -1,24 +1,24 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_update_tipodepeca', 'P')IS NOT NULL
-	DROP PROCEDURE sp_update_tipodepeca;
+IF OBJECT_ID('sp_update_tipopeca', 'P')IS NOT NULL
+	DROP PROCEDURE sp_update_tipopeca;
 GO
 
-CREATE PROCEDURE sp_update_tipodepeca
+CREATE PROCEDURE sp_update_tipopeca
 @id_tipo_peca    INT,
-@dsc   VARCHAR(500),
+@dsc_tipo_peca   VARCHAR(500),
 @flg_ativo       BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from tipodepeca where id_tipo_peca=@id_tipo_peca)
+IF EXISTS(select 1 from tipopeca where id_tipo_peca=@id_tipo_peca)
 BEGIN
 --Validações na tabela tipopeça
 
 --Update na tabela tipopeça
 UPDATE tipodepeca SET
 
-dsc  = @dsc, 
+dsc_tipo_peca  = @dsc_tipo_peca, 
 flg_ativo      = @flg_ativo
 
 WHERE id_tipo_peca=@id_tipo_peca

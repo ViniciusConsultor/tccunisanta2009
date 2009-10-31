@@ -4,7 +4,7 @@ IF OBJECT_ID('sp_update_pecafornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_pecafornecedor
-@id_peca               VARCHAR(20),
+@id_peca               INT,
 @id_forn			   INT,
 @dat_inc               DATETIME,
 @flg_ativo             BIT
@@ -19,6 +19,8 @@ BEGIN
 --Update na tabela pecafornecedor
 UPDATE Pecafornecedor SET
 
+id_peca                = @id_peca,
+id_forn                = @id_forn,
 dat_inc                = @dat_inc,
 flg_ativo              = @flg_ativo
 

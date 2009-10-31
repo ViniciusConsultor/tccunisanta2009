@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_update_motorcompra
 @id_motor    INT,
 @dsc_motor   VARCHAR(100),
-@flg_ativo          BIT
+@flg_ativo   BIT
 AS
 
 BEGIN TRY
@@ -19,7 +19,7 @@ BEGIN
 UPDATE Motor SET
 
 dsc_motor = @dsc_motor, 
-flg_ativo        = @flg_ativo
+flg_ativo   = @flg_ativo
 
 WHERE id_motor=@id_motor
 

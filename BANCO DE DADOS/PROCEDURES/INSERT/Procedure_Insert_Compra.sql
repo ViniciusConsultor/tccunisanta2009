@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_compra', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_compra
-@id_compra        INT,
 @id_depto         INT,
 @id_forn          INT,
 @id_motor         INT,
@@ -18,9 +17,7 @@ AS
 
 BEGIN TRY
 --Validações para a tabela compra
-IF (@id_compra='')
-   RAISERROR('Informe o código da compra!',16,1)
-ELSE IF(@id_depto='')
+IF(@id_depto='')
    RAISERROR('Informe o departamento da compra!',16,1)
 ELSE IF(@id_forn='')
    RAISERROR('Informe o fornecedor da compra!',16,1)
@@ -43,8 +40,8 @@ ELSE
 BEGIN
 --Insert na tabela compra
 INSERT INTO 
-Compra(id_compra, id_depto, id_forn, id_motor, id_tipo_produto, dat, qtd, valor, nota_fisc, obs)
-VALUES(@id_compra, @id_depto, @id_forn, @id_motor, @id_tipo_produto, @dat, @qtd, @valor, @nota_fisc, @obs)
+Compra(id_depto, id_forn, id_motor, id_tipo_produto, dat, qtd, valor, nota_fisc, obs)
+VALUES(@id_depto, @id_forn, @id_motor, @id_tipo_produto, @dat, @qtd, @valor, @nota_fisc, @obs)
 END
 END TRY
 

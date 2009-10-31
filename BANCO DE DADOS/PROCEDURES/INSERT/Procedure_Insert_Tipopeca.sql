@@ -4,22 +4,19 @@ IF OBJECT_ID('sp_insert_Tipopeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_Tipopeca
-@id_tipo_peca    INT,
 @dsc_tipo_peca   VARCHAR(500),
 @flg_ativo       BIT
 AS
 
 BEGIN TRY
 --Validações na tabela tipopeça
-IF(@id_tipo_peca='')
-   RAISERROR('Informe o codigo do tipo da peça!',16,1)   
-ELSE IF(@dsc_tipo_peca='')
+IF(@dsc_tipo_peca='')
    RAISERROR('Informe a descrição do tipo da peça!',16,1)   
 ELSE
 BEGIN
 --Insert na tabela tipopeça
-INSERT INTO Tipopeca(id_tipo_peca, dsc_tipo_peca, flg_ativo)
-VALUES (@id_tipo_peca, @dsc_tipo_peca, @flg_ativo)
+INSERT INTO Tipopeca(dsc_tipo_peca, flg_ativo)
+VALUES (@dsc_tipo_peca, @flg_ativo)
 END
 END TRY
 

@@ -4,13 +4,13 @@ IF OBJECT_ID('sp_update_familiamotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_familiamotor
-@id_fam_motor         INT,
+@id_fam_motor     INT,
 @id_num_motor     INT,
 @id_grupo         INT,
-@id_tipo_motor    VARCHAR(20),
-@id_motor  INT,
+@id_tipo_motor    INT,
+@id_motor         INT,
 @id_estoque       INT,
-@dsc_fam_motor        VARCHAR(500),
+@dsc_fam_motor    VARCHAR(500),
 @flg_ativo        BIT
 
 AS 
@@ -26,9 +26,9 @@ UPDATE familiamotor SET
 id_num_motor    = @id_num_motor, 
 id_grupo        = @id_grupo, 
 id_tipo_motor   = @id_tipo_motor, 
-id_motor = @id_motor, 
+id_motor        = @id_motor, 
 id_estoque      = @id_estoque, 
-dsc_fam_motor       = @dsc_fam_motor, 
+dsc_fam_motor   = @dsc_fam_motor, 
 flg_ativo       = @flg_ativo
 
 WHERE id_fam_motor = @id_fam_motor

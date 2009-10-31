@@ -4,17 +4,15 @@ IF OBJECT_ID('sp_update_compra', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_compra
-@id_compra               INT,
-@id_depto                INT,
-@id_forn           INT,
+@id_compra        INT,
+@id_depto         INT,
+@id_forn          INT,
 @id_motor         INT,
-@id_tipo_produto         INT,
-@id_peca                 INT,
 @dat              DATETIME,
-@qtd                INT,
-@valor                NUMERIC(15,2),
-@nota_fisc         INT,
-@obs              VARCHAR(20)
+@qtd              INT,
+@valor            NUMERIC(15,2),
+@nota_fisc        VARCHAR(50),
+@obs              VARCHAR(500)
 AS
 
 BEGIN TRY
@@ -26,15 +24,13 @@ BEGIN
 --Update na tabela compra
 UPDATE Compra SET
 
-id_depto               = @id_depto, 
-id_forn          = @id_forn, 
+id_depto        = @id_depto, 
+id_forn         = @id_forn, 
 id_motor        = @id_motor, 
-id_tipo_produto        = @id_tipo_produto, 
-id_peca                = @id_peca, 
 dat             = @dat, 
-qtd               = @qtd, 
-valor               = @valor, 
-nota_fisc        = @nota_fisc, 
+qtd             = @qtd, 
+valor           = @valor, 
+nota_fisc       = @nota_fisc, 
 obs             = @obs
 
 WHERE id_compra = @id_compra
