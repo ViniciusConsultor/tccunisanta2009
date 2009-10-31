@@ -7,7 +7,8 @@ namespace TCC.MODEL
 {
     public class mTipoMotor : ModelPai
     {
-        private string idTipoMotor;
+        private int idTipoMotor;
+        private string idTipoMotorReal;
         private string dscTipoMotor;
         private bool flgAtivo;
         private string nomeTabela = "Tipomotor";
@@ -17,6 +18,13 @@ namespace TCC.MODEL
         {
             get { return idTipoMotor; }
             set { idTipoMotor = value; }
+        }
+
+        [ColunasBancoDados("id_tipo_motor_real", System.Data.SqlDbType.VarChar, false)]
+        public string IdTipoMotorReal
+        {
+            get { return idTipoMotorReal; }
+            set { idTipoMotorReal = value; }
         }
 
         [ColunasBancoDados ("dsc_tipo_motor", System.Data.SqlDbType.VarChar,false)]

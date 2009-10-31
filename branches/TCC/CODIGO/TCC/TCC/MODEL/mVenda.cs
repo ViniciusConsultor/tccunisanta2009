@@ -8,7 +8,6 @@ namespace TCC.MODEL
     public class mVenda : ModelPai
     {
         private int idVenda;
-        private int? idMotor;
         private int idCli;
         private DateTime? datVenda;
         private int? qtd;
@@ -17,7 +16,6 @@ namespace TCC.MODEL
         private DateTime datSaida;
         private int idOrdem;
         private int idTipoProduto;
-        private int idGrupo;
         private string nomeTabela = "Venda";
 
         [ColunasBancoDados ("id_venda", System.Data.SqlDbType.Int,true)]
@@ -25,13 +23,6 @@ namespace TCC.MODEL
         {
             get { return idVenda; }
             set { idVenda = value; }
-        }
-
-        [ColunasBancoDados ("id_motor", System.Data.SqlDbType.Int,false)]
-        public int? IdMotor
-        {
-            get { return idMotor; }
-            set { idMotor = value; }
         }
 
         [ColunasBancoDados ("id_cli", System.Data.SqlDbType.Int,false)]
@@ -88,13 +79,6 @@ namespace TCC.MODEL
         {
             get { return idTipoProduto; }
             set { idTipoProduto = value; }
-        }
-
-        [ColunasBancoDados ("id_grupo", System.Data.SqlDbType.Int,false)]
-        public int IdGrupo
-        {
-            get { return idGrupo; }
-            set { idGrupo = value; }
         }
 
         public override string getNomeTabela()
