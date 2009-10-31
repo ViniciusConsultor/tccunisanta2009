@@ -1,4 +1,5 @@
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Comprapeca')
 DROP TABLE Comprapeca
 go
 
@@ -15,26 +16,28 @@ ALTER TABLE Comprapeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Pedidovenda')
 DROP TABLE Pedidovenda
 go
 
 CREATE TABLE Pedidovenda (
        id_pedido            integer IDENTITY,
        id_venda             integer NOT NULL,
-       id_depto             integer NULL,
+       id_depto             integer NOT NULL,
        dsc_venda            varchar(500) NULL,
        dat_alt              datetime NULL,
-       id_fam_motor         integer NULL,
-       id_grupo             integer NULL
+       id_fam_motor         integer NOT NULL,
+       id_grupo             integer NOT NULL
 )
 go
 
 
 ALTER TABLE Pedidovenda
-       ADD PRIMARY KEY CLUSTERED (id_pedido ASC)
+       ADD PRIMARY KEY CLUSTERED (id_pedido ASC, id_venda ASC)
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Venda')
 DROP TABLE Venda
 go
 
@@ -57,6 +60,7 @@ ALTER TABLE Venda
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Ordemproducao')
 DROP TABLE Ordemproducao
 go
 
@@ -76,6 +80,7 @@ ALTER TABLE Ordemproducao
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Fornecedordepto')
 DROP TABLE Fornecedordepto
 go
 
@@ -93,6 +98,7 @@ ALTER TABLE Fornecedordepto
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Cliente')
 DROP TABLE Cliente
 go
 
@@ -122,6 +128,7 @@ ALTER TABLE Cliente
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Colaborador')
 DROP TABLE Colaborador
 go
 
@@ -155,6 +162,7 @@ ALTER TABLE Colaborador
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Compra')
 DROP TABLE Compra
 go
 
@@ -178,6 +186,7 @@ ALTER TABLE Compra
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Pecafornecedor')
 DROP TABLE Pecafornecedor
 go
 
@@ -195,6 +204,7 @@ ALTER TABLE Pecafornecedor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Fornecedor')
 DROP TABLE Fornecedor
 go
 
@@ -223,6 +233,7 @@ ALTER TABLE Fornecedor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Estado')
 DROP TABLE Estado
 go
 
@@ -238,6 +249,7 @@ ALTER TABLE Estado
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Familiamotor')
 DROP TABLE Familiamotor
 go
 
@@ -259,6 +271,7 @@ ALTER TABLE Familiamotor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motor')
 DROP TABLE Motor
 go
 
@@ -275,6 +288,7 @@ ALTER TABLE Motor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Numeromotor')
 DROP TABLE Numeromotor
 go
 
@@ -292,6 +306,7 @@ ALTER TABLE Numeromotor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usuario')
 DROP TABLE Usuario
 go
 
@@ -311,6 +326,7 @@ ALTER TABLE Usuario
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usinagem')
 DROP TABLE Usinagem
 go
 
@@ -328,6 +344,7 @@ ALTER TABLE Usinagem
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Kitgrupopeca')
 DROP TABLE Kitgrupopeca
 go
 
@@ -348,6 +365,7 @@ ALTER TABLE Kitgrupopeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Itempeca')
 DROP TABLE Itempeca
 go
 
@@ -365,6 +383,7 @@ ALTER TABLE Itempeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Peca')
 DROP TABLE Peca
 go
 
@@ -388,6 +407,7 @@ ALTER TABLE Peca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipopeca')
 DROP TABLE Tipopeca
 go
 
@@ -404,6 +424,7 @@ ALTER TABLE Tipopeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipomotor')
 DROP TABLE Tipomotor
 go
 
@@ -421,6 +442,7 @@ ALTER TABLE Tipomotor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Perfilmenu')
 DROP TABLE Perfilmenu
 go
 
@@ -438,6 +460,7 @@ ALTER TABLE Perfilmenu
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Perfil')
 DROP TABLE Perfil
 go
 
@@ -455,6 +478,7 @@ ALTER TABLE Perfil
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Submenu')
 DROP TABLE Submenu
 go
 
@@ -471,10 +495,11 @@ ALTER TABLE Submenu
 go
 
 
-DROP TABLE Menus
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Menu')
+DROP TABLE Menu
 go
 
-CREATE TABLE Menus (
+CREATE TABLE Menu (
        id_menu              integer IDENTITY,
        dsc_menu             varchar(50) NULL,
        ende                 varchar(500) NULL,
@@ -484,11 +509,12 @@ CREATE TABLE Menus (
 go
 
 
-ALTER TABLE Menus
+ALTER TABLE Menu
        ADD PRIMARY KEY CLUSTERED (id_menu ASC)
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Estoque')
 DROP TABLE Estoque
 go
 
@@ -507,6 +533,7 @@ ALTER TABLE Estoque
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Departamento')
 DROP TABLE Departamento
 go
 
@@ -524,6 +551,7 @@ ALTER TABLE Departamento
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipoproduto')
 DROP TABLE Tipoproduto
 go
 
@@ -766,7 +794,7 @@ go
 
 ALTER TABLE Perfilmenu
        ADD FOREIGN KEY (id_menu)
-                             REFERENCES Menus  (id_menu)
+                             REFERENCES Menu  (id_menu)
 go
 
 
@@ -778,7 +806,7 @@ go
 
 ALTER TABLE Submenu
        ADD FOREIGN KEY (id_menu)
-                             REFERENCES Menus  (id_menu)
+                             REFERENCES Menu  (id_menu)
 go
 
 
