@@ -72,7 +72,6 @@ namespace TCC.UI
 
             try
             {
-                model.IdMotor = Convert.ToInt32(regra.BuscaIdMaximoMotor());
                 model.DscMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;
 
