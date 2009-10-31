@@ -186,7 +186,6 @@
     <Compile Include="MODEL\mTipoProduto.cs" />
     <Compile Include="MODEL\mUsinagem.cs" />
     <Compile Include="MODEL\mUsuario.cs" />
-    <Compile Include="MODEL\mUsuarioPerfil.cs" />
     <Compile Include="MODEL\mVenda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

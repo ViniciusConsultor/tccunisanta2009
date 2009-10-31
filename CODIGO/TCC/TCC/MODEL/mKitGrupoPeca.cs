@@ -7,7 +7,8 @@ namespace TCC.MODEL
 {
     public class mKitGrupoPeca : ModelPai
     {
-        private int id_grupo;
+        private int idKit;
+        private string idKitReal;
         private string nom_grupo;
         private bool flg_ativo;
         private int id_item_peca;
@@ -15,11 +16,19 @@ namespace TCC.MODEL
         private DateTime dat_alt;
         private string nomeTabela = "Kitgrupopeca";
 
-        [ColunasBancoDados ("id_grupo", System.Data.SqlDbType.Int,true)]
-        public int Id_grupo
+
+        [ColunasBancoDados("id_kit_real", System.Data.SqlDbType.VarChar, false)]
+        public string IdKitReal
         {
-            get { return id_grupo; }
-            set { id_grupo = value; }
+            get { return idKitReal; }
+            set { idKitReal = value; }
+        }
+
+        [ColunasBancoDados("id_kit", System.Data.SqlDbType.Int, true)]
+        public int IdKit
+        {
+            get { return idKit; }
+            set { idKit = value; }
         }
 
         [ColunasBancoDados ("nom", System.Data.SqlDbType.VarChar,false)]

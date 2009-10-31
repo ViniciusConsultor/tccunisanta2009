@@ -10,7 +10,7 @@ namespace TCC.MODEL
         private int id_ordem;
         private string dsc_ordem;
         private int id_depto;
-        private int id_motor;
+        private int idFamMotor;
         private int id_grupo;
         private int id_tipo_produto;
         private string nomeTabela = "Ordemproducao";
@@ -36,7 +36,7 @@ namespace TCC.MODEL
             set { id_depto = value; }
         }
 
-        [ColunasBancoDados ("id_fam_motor", System.Data.SqlDbType.Int,false)]
+        [ColunasBancoDados("id_fam_motor", System.Data.SqlDbType.Int, false)]
         public int Id_motor
         {
             get { return id_motor; }
