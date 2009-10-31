@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_numeromotor
 @id_num_motor    INT,
-@dsc_num_motor   VARCHAR(50),
+@dsc_num_motor   VARCHAR(500),
 @flg_ativo       BIT
 AS
 

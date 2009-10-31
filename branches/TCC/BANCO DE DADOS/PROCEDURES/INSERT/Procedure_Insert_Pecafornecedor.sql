@@ -4,8 +4,8 @@ IF OBJECT_ID('sp_insert_pecafornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_pecafornecedor
-@id_peca               VARCHAR(20),
-@id_forn         INT,
+@id_peca               INT,
+@id_forn			   INT,
 @dat_inc               DATETIME,
 @flg_ativo             BIT
 AS

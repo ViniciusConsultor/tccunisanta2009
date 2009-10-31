@@ -4,7 +4,7 @@ IF OBJECT_ID('sp_insert_peca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_peca
-@id_peca              VARCHAR(20),
+@id_peca              INT,
 @id_peca_real         VARCHAR(50),
 @id_tipo_peca         INT,
 @id_estoque           INT,

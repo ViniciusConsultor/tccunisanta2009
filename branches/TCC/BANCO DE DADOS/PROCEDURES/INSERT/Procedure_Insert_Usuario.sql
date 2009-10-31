@@ -5,7 +5,8 @@ GO
 
 CREATE PROCEDURE sp_insert_usuario
 @id_usu        INT,
-@log_usu         VARCHAR(20),
+@id_perfil	   INT,
+@log_usu       VARCHAR(20),
 @senha         VARCHAR(15),
 @obs_usu       VARCHAR(100),
 @flg_ativo     BIT
@@ -26,8 +27,8 @@ ELSE
 BEGIN
 --Insert na tabela usuario
 INSERT INTO 
-Usuario(id_usu, log_usu, senha, obs_usu, flg_ativo)
-VALUES(@id_usu, @log_usu, @senha, @obs_usu, @flg_ativo)
+Usuario(id_usu, id_perfil, log_usu, senha, obs_usu, flg_ativo)
+VALUES(@id_usu, @id_perfil, @log_usu, @senha, @obs_usu, @flg_ativo)
 END
 END TRY
 

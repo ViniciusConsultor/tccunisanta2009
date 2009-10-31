@@ -5,7 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_perfil
 @id_perfil     INT,
-@dsc_perfil    VARCHAR(30),
+@dsc_perfil    VARCHAR(50),
 @dat_atl       DATETIME,
 @flg_ativo     BIT
 AS
