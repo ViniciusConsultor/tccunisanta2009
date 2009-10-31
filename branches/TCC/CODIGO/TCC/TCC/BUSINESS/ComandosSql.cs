@@ -95,13 +95,17 @@ namespace TCC.BUSINESS
                     if (cols.Length > 0)
                     {
                         ColunasBancoDados colunas = (ColunasBancoDados)cols[0];
+                        if (colunas.ChavePrimaria == true && prop[contador].GetValue(modelo, null) == null)
+                        {
+                            continue;
+                        }
                         valor = prop[contador].GetValue(modelo, null);
                         if (valor == null)
                             valor = DBNull.Value;
                         param[contador] = new SqlParameter("@" + colunas.NomeColuna, valor);
                     }
                 }
-                return param;
+                return this.AjustaTamanhoArray(param);
             }
             catch (Exception ex)
             {
@@ -262,5 +266,44 @@ namespace TCC.BUSINESS
             }
         }
         #endregion Executa Comando Sql
+
+        private SqlParameter[] AjustaTamanhoArray(SqlParameter[] parametros)
+        {
+            SqlParameter[] param;
+            try
+            {
+                int tamanhoArrayCorreto = 0;
+                int contadorCorreto = 0;
+                //Varre o parametro para verificar o tamanho correto dele
+                //-------------------------------------------------------
+                for (int contador = 0; contador < parametros.Length; contador++)
+                {
+                    if (parametros[contador] != null)
+                    {
+                        tamanhoArrayCorreto++;
+                    }
+                }
+                param = new SqlParameter[tamanhoArrayCorreto];
+                //Varre atribuindo os valores de um para outro tirando o valor nulo
+                for (int con = 0; con < parametros.Length; con++)
+                {
+                    if (parametros[con] != null)
+                    {
+                        param[contadorCorreto] = parametros[con];
+                        contadorCorreto++;
+                    }
+                }
+
+                return param;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
     }
 }

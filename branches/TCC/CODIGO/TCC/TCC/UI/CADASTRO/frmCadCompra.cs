@@ -237,7 +237,7 @@ namespace TCC.UI
                 model.IdCompra = Convert.ToInt32(regra.BuscaIdMaximoCompra());
                 model.IdDepto = this._modelDepartamento.IdDepto;
                 model.IdFornecedor = this._modelFornecedor.IdFornecedor;
-                model.IdMotorCompra = this._modelMotor.IdMotor;
+                model.IdMotorCompra = Convert.ToInt32(this._modelMotor.IdMotor);
                 model.IdTipoProduto = this._modelTipoProd.IdTipoProd;
                 if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
                 {
