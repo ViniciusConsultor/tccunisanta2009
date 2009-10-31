@@ -6,9 +6,9 @@ IF OBJECT_ID('sp_select_kitgrupopeca','p') IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_select_kitgrupopeca
-@id_grupo INT
+@id_kit INT
 AS
-SELECT id_kit, nom, id_item_peca, id_peca, dat_alt
+SELECT id_kit_real, nom, id_item_peca, id_peca, dat_alt
 FROM Kitgrupopeca
-WHERE id_kit = @id_grupo
+WHERE id_kit = @id_kit
 AND flg_ativo = 1

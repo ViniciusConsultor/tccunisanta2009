@@ -12,7 +12,10 @@ BEGIN TRY
 IF EXISTS(select 1 from compra where id_compra=@id_compra)
 BEGIN
   --deleta dependencias existentes
-  
+  IF EXISTS(select 1 from Comprapeca where id_compra=@id_compra)
+	BEGIN
+		DELETE Comprapeca where id_compra=@id_compra
+	END	
   --realiza a exclusao  
   DELETE compra WHERE id_compra = @id_compra
 END
