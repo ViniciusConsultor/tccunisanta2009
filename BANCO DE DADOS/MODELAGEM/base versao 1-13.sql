@@ -105,7 +105,7 @@ go
 CREATE TABLE Cliente (
        id_cli               integer IDENTITY,
        nom                  varchar(60) NULL,
-       tel                  interger NULL,
+       tel                  integer NULL,
        rua                  varchar(100) NULL,
        nro_ende             integer NULL,
        compl                varchar(20) NULL,
