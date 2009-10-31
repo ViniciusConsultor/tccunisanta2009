@@ -24,7 +24,6 @@ namespace TCC.UI
         #region Eventos
         private void frmCadColaborador_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
             this.PopulaComboEstados();
             CbSexo.SelectedIndex = 0;
         }
@@ -42,7 +41,6 @@ namespace TCC.UI
                     regraMenu.ValidarInsere(modelColaborador);
                 }
                 this.btnApaga_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
@@ -82,7 +80,6 @@ namespace TCC.UI
         private void btnApaga_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelDepartamento = null;
             this._modelUsuario = null;
         }

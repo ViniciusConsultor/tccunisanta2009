@@ -27,13 +27,11 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelPeca = null;
         }
 
         private void frmCadUsinagem_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         /*protected override void BuscaIdMaximo()
@@ -63,7 +61,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
             {

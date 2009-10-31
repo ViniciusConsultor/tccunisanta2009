@@ -77,7 +77,7 @@ namespace TCC.UI
                             //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                             //------------------------------------------------------------------------------------
                             dvC = this.dgTipoMotor["id_tipo_motor", this.dgTipoMotor.CurrentRow.Index];
-                            _model.IdTipoMotor = dvC.Value.ToString();
+                            _model.IdTipoMotor = Convert.ToInt32(dvC.Value.ToString());
                             dvC = this.dgTipoMotor["Tipo Motor", this.dgTipoMotor.CurrentRow.Index];
                             _model.DscTipoMotor = dvC.Value.ToString();
                             this.DialogResult = DialogResult.OK;

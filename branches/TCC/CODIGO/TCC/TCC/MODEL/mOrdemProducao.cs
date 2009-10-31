@@ -11,7 +11,7 @@ namespace TCC.MODEL
         private string dsc_ordem;
         private int id_depto;
         private int idFamMotor;
-        private int id_grupo;
+        private int idKit;
         private int id_tipo_produto;
         private string nomeTabela = "Ordemproducao";
 
@@ -39,15 +39,15 @@ namespace TCC.MODEL
         [ColunasBancoDados("id_fam_motor", System.Data.SqlDbType.Int, false)]
         public int Id_motor
         {
-            get { return id_motor; }
-            set { id_motor = value; }
+            get { return Id_motor; }
+            set { Id_motor = value; }
         }
 
-        [ColunasBancoDados ("id_grupo", System.Data.SqlDbType.Int,false)]
-        public int Id_grupo
+        [ColunasBancoDados ("id_kit", System.Data.SqlDbType.Int,false)]
+        public int IdKit
         {
-            get { return id_grupo; }
-            set { id_grupo = value; }
+            get { return idKit; }
+            set { idKit = value; }
         }
 
         [ColunasBancoDados ("id_tipo_produto", System.Data.SqlDbType.Int,false)]

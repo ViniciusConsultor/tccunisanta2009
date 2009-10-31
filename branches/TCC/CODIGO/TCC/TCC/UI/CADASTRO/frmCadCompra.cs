@@ -25,7 +25,6 @@ namespace TCC.UI
 
         private void frmCadCompra_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
 
         private void btnBuscaMotorCompra_Click(object sender, EventArgs e)
@@ -114,7 +113,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelDepartamento = null;
             this._modelFornecedor = null;
             this._modelMotor = null;
@@ -184,7 +182,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpar_Click(null, null);
-                this.BuscaIdMaximo();
+
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {

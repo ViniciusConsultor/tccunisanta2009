@@ -34,7 +34,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
-                this.BuscaIdMaximo();
             }
             catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
             {
@@ -83,7 +82,6 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this.BuscaIdMaximo();
             this._modelPeca = null;
         }
 
@@ -140,7 +138,6 @@ namespace TCC.UI
 
         private void frmCadItemPeca_Load(object sender, EventArgs e)
         {
-            this.BuscaIdMaximo();
         }
     }
 } 

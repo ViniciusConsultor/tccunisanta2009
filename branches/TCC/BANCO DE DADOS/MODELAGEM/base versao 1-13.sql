@@ -1,3 +1,8 @@
+CREATE DATABASE Megatechdatabase
+go
+
+USE Megatechdatabase
+go
 
 DROP TABLE Comprapeca
 go
