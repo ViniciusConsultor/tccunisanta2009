@@ -4,10 +4,10 @@ IF OBJECT_ID('sp_update_fornecedordepto', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_fornecedordepto
-@id_depto              INT,
+@id_depto        INT,
 @id_forn         INT,
-@dat_alt               DATETIME,
-@flg_ativo             BIT
+@dat_alt         DATETIME,
+@flg_ativo       BIT
 AS
 
 BEGIN TRY
@@ -19,6 +19,8 @@ BEGIN
 --Update na tabela comprapeca
 UPDATE Fornecedordepto SET
 
+id_depto               = @id_depto,
+id_forn                = @id_forn,
 dat_alt                = @dat_alt,
 flg_ativo              = @flg_ativo
 

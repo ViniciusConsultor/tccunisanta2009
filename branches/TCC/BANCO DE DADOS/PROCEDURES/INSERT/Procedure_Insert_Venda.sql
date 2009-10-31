@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_venda', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_venda
-@id_venda           INT,
 @id_tipo_produto    INT,
 @id_ordem       INT,
 @id_cli             INT,
@@ -16,9 +15,7 @@ CREATE PROCEDURE sp_insert_venda
 AS
 BEGIN TRY
 --Validações na tabela  venda
-IF(@id_venda='')
-  RAISERROR('Informe o código da venda!',16,1)
-ELSE IF(@id_tipo_produto='')
+IF(@id_tipo_produto='')
   RAISERROR('Informe o tipo do produto!',16,1) 
 ELSE IF(@id_ordem='')
   RAISERROR('Informe o código da ordem de produção!',16,1)   
@@ -36,8 +33,8 @@ ELSE
 
 BEGIN
 --Insert na tabela venda
-INSERT INTO Venda(id_venda, id_tipo_produto, id_ordem, id_cli, dat_venda, qtd, valor, nota_fisc, dat_saida)
-VALUES(@id_venda, @id_tipo_produto, @id_ordem, @id_cli, @dat_venda, @qtd, @valor, @nota_fisc, @dat_saida)
+INSERT INTO Venda(id_tipo_produto, id_ordem, id_cli, dat_venda, qtd, valor, nota_fisc, dat_saida)
+VALUES(@id_tipo_produto, @id_ordem, @id_cli, @dat_venda, @qtd, @valor, @nota_fisc, @dat_saida)
 END
 END TRY
 

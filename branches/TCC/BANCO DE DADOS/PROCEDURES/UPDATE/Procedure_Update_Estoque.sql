@@ -5,10 +5,10 @@ GO
 
 CREATE PROCEDURE sp_update_estoque
 @id_estoq       INT,
-@id_depto         INT,
+@id_depto       INT,
 @dsc_estoq      VARCHAR(100),
-@dat_alt          DATETIME,
-@flg_ativo        BIT
+@dat_alt        DATETIME,
+@flg_ativo      BIT
 
 AS 
 BEGIN TRY
@@ -21,7 +21,7 @@ BEGIN
 UPDATE ESTOQUE SET
 
 id_depto     = @id_depto, 
-dsc_estoq  = @dsc_estoq, 
+dsc_estoq    = @dsc_estoq, 
 dat_alt      = @dat_alt, 
 flg_ativo    = @flg_ativo
 

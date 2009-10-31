@@ -4,22 +4,18 @@ IF OBJECT_ID('sp_insert_departamento', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_departamento
-@id_depto    INT,
 @dsc_depto   VARCHAR(30),
 @dat_atl     DATETIME,
 @flg_ativo   BIT
 AS
 BEGIN TRY
 --Validacoes para a tabela Departamento
-IF(@id_depto = '')
-   RAISERROR('Informe o código do departamento!',16,1)
-ELSE
 IF(@dsc_depto = '')
    RAISERROR('Informe o nome do departamento!',16,1)
 BEGIN
 --Insert na tabela departamento
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo)
-VALUES (@id_depto, @dsc_depto, @dat_atl, @flg_ativo)
+INSERT INTO Departamento (dsc_depto, dat_atl, flg_ativo)
+VALUES (@dsc_depto, @dat_atl, @flg_ativo)
 END
 END TRY
 

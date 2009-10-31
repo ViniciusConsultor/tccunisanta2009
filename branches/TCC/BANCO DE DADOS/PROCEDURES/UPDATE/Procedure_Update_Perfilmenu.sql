@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_update_perfilmenu
 @id_perfil             INT,
 @id_menu               INT,
-@dat_alt             DATETIME,
+@dat_alt               DATETIME,
 @flg_ativo             BIT
 AS
 
@@ -19,8 +19,10 @@ BEGIN
 --Update na tabela perfilmenu
 UPDATE Perfilmenu SET
 
+id_perfil            = @id_perfil,
+id_menu              = @id_menu,
 dat_alt              = @dat_alt,
-flg_ativo              = @flg_ativo
+flg_ativo            = @flg_ativo
 
 WHERE id_perfil = @id_perfil AND id_menu = @id_menu
 

@@ -6,7 +6,7 @@ IF OBJECT_ID('sp_existe_peca', 'P')IS NOT NULL
 GO 
 
 CREATE PROCEDURE sp_existe_peca
-@id_peca_real VARCHAR(20)
+@id_peca_real VARCHAR(50)
 AS
 
 SELECT COUNT(id_peca_real) as flg_existe

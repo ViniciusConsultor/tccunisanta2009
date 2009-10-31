@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_estoque', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_estoque
-@id_estoq     INT,
 @id_depto     INT,
 @dsc_estoq    VARCHAR(100),
 @dat_alt      DATETIME,
@@ -13,17 +12,15 @@ CREATE PROCEDURE sp_insert_estoque
 AS 
 BEGIN TRY
 --Validações na tabela estoque
-IF(@id_estoq='')
-   RAISERROR('Informe o código do estoque!',16,1)
-ELSE IF(@id_depto='')
+IF(@id_depto='')
    RAISERROR('Informe o código do departamento deste estoque!',16,1)
 ELSE IF(@dsc_estoq='')
    RAISERROR('Informe o nome do estoque!',16,1)
 ELSE
 BEGIN
 --Insert na tabela estoque
-INSERT INTO ESTOQUE(id_estoq, id_depto, dsc_estoq, dat_alt, flg_ativo)
-VALUES(@id_estoq, @id_depto, @dsc_estoq, @dat_alt, @flg_ativo)
+INSERT INTO ESTOQUE(id_depto, dsc_estoq, dat_alt, flg_ativo)
+VALUES(@id_depto, @dsc_estoq, @dat_alt, @flg_ativo)
 END
 END TRY
 

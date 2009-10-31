@@ -5,14 +5,12 @@ GO
 
 CREATE PROCEDURE sp_update_venda
 @id_venda           INT,
-@id_motor           INT,
-@id_grupo           INT,
 @id_tipo_produto    INT,
-@id_ordem       INT,
+@id_ordem           INT,
 @id_cli             INT,
 @dat_venda          DATETIME,
-@qtd          INT,
-@valor          NUMERIC(15,2),
+@qtd                INT,
+@valor              NUMERIC(15,2),
 @nota_fisc          VARCHAR(20),
 @dat_saida          DATETIME
 AS
@@ -26,14 +24,12 @@ BEGIN
 --Update na tabela venda
 UPDATE Venda SET
 
-id_motor          = @id_motor, 
-id_grupo          = @id_grupo, 
 id_tipo_produto   = @id_tipo_produto, 
-id_ordem      = @id_ordem, 
+id_ordem          = @id_ordem, 
 id_cli            = @id_cli, 
 dat_venda         = @dat_venda, 
-qtd         = @qtd, 
-valor         = @valor, 
+qtd               = @qtd, 
+valor             = @valor, 
 nota_fisc         = @nota_fisc, 
 dat_saida         = @dat_saida
 

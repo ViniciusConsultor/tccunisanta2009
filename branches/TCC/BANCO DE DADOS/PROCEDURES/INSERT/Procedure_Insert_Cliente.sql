@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_cliente', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_cliente
-@id_cli			INT,
 @nom		VARCHAR(60),
 @tel	    INT,
 @rua	    VARCHAR(100),
@@ -24,9 +23,7 @@ AS
 
 BEGIN TRY
 --Validações para a tabela cliente
-IF(@id_cli='')
-  RAISERROR('Informe o código do cliente!',16,1)
-ELSE IF(@slg_est='')
+IF(@slg_est='')
   RAISERROR('Informe o estado do cliente!',16,1)
 ELSE IF(@nom='')
   RAISERROR('Informe o nome do cliente!',16,1)
@@ -44,9 +41,9 @@ ELSE
 BEGIN
 --Insert na tabela cliente
 INSERT INTO Cliente
-(id_cli, slg_est, nom, tel, ddd, mail, cnpj, cpf, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo)
+(slg_est, nom, tel, ddd, mail, cnpj, cpf, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo)
 VALUES
-(@id_cli, @slg_est, @nom, @tel, @ddd, @mail, @cnpj, @cpf, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo)
+(@slg_est, @nom, @tel, @ddd, @mail, @cnpj, @cpf, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo)
 END
 END TRY
 

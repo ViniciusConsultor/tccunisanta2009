@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_perfil', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_perfil
-@id_perfil     INT,
 @dsc_perfil    VARCHAR(50),
 @dat_atl       DATETIME,
 @flg_ativo     BIT
@@ -12,15 +11,13 @@ AS
 
 BEGIN TRY
 --Validações na tabela perfil
-IF(@id_perfil='')
-   RAISERROR('Informe o codigo do perfil!',16,1)
-ELSE IF(@dsc_perfil='')
+IF(@dsc_perfil='')
    RAISERROR('Informe a descrição do perfil!',16,1)
 
 BEGIN
 --Insert na tabela perfil
-INSERT INTO Perfil(id_perfil, dsc_perfil, dat_atl, flg_ativo)
-VALUES(@id_perfil, @dsc_perfil, @dat_atl, @flg_ativo)
+INSERT INTO Perfil(dsc_perfil, dat_atl, flg_ativo)
+VALUES(@dsc_perfil, @dat_atl, @flg_ativo)
 END
 END TRY
 

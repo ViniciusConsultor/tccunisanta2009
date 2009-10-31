@@ -5,9 +5,9 @@ GO
 
 CREATE PROCEDURE sp_update_tipoproduto
 @id_tipo_prod       INT,
-@nom      VARCHAR(100),
-@dat_alt               DATETIME,
-@flg_ativo             BIT
+@nom                VARCHAR(100),
+@dat_alt            DATETIME,
+@flg_ativo          BIT
 AS
 
 BEGIN TRY
@@ -19,7 +19,7 @@ BEGIN
 --Update na tabela tipoproduto
 UPDATE tipoproduto SET
 
-nom = @nom, 
+nom              = @nom, 
 dat_alt          = @dat_alt, 
 flg_ativo        = @flg_ativo
 

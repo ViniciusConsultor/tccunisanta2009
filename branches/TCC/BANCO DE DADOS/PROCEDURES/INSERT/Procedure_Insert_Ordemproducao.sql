@@ -4,7 +4,6 @@ IF OBJECT_ID('sp_insert_ordemproducao', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_ordemproducao
-@id_ordem           INT,
 @id_tipo_produto    INT,
 @id_depto           INT,
 @id_fam_motor       INT,
@@ -13,10 +12,8 @@ CREATE PROCEDURE sp_insert_ordemproducao
 AS
 
 BEGIN TRY
---Validações na tabela ordemproducao
-IF(@id_ordem='')
-   RAISERROR('Informe o codigo da ordem de produção!',16,1)   
-ELSE IF(@id_tipo_produto='')
+--Validações na tabela ordemproducao  
+IF(@id_tipo_produto='')
    RAISERROR('Informe o tipo do produto!',16,1)   
 ELSE IF(@id_depto='')
    RAISERROR('Informe o departamento da ordem!',16,1)
@@ -28,8 +25,8 @@ ELSE
 
 BEGIN
 --Insert na tabela ordemproducao
-INSERT INTO ORDEMPRODUCAO(id_ordem, id_tipo_produto, id_depto, id_fam_motor, id_grupo, dsc_ordem)
-VALUES (@id_ordem, @id_tipo_produto, @id_depto, @id_fam_motor, @id_grupo, @dsc_ordem)
+INSERT INTO ORDEMPRODUCAO(id_tipo_produto, id_depto, id_fam_motor, id_grupo, dsc_ordem)
+VALUES (@id_tipo_produto, @id_depto, @id_fam_motor, @id_grupo, @dsc_ordem)
 END
 END TRY
 
