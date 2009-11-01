@@ -12,7 +12,7 @@ namespace TCC.UI
 {
     public partial class frmCadKitGrupoPeca : FormPai
     {
-        mPeca _modelPeca;
+        List<mPeca> _modelPeca;
         mItemPeca _modelItemPeca;
 
         public frmCadKitGrupoPeca()
@@ -30,32 +30,6 @@ namespace TCC.UI
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
-        }
-
-        private void btnCdPeca_Click(object sender, EventArgs e)
-        {
-            this._modelPeca = new mPeca();
-            frmBuscaPeca objFrmPeca = new frmBuscaPeca(this._modelPeca);
-            try
-            {
-                DialogResult resultado = objFrmPeca.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelPeca = null;
-                }
-                else
-                {
-                    this.txtCdPeca.Text = this._modelPeca.Nom;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmPeca = null;
-            }
         }
 
         private void btnCdItemPeca_Click(object sender, EventArgs e)
@@ -162,7 +136,6 @@ namespace TCC.UI
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
                 model.Id_item_peca = Convert.ToInt32( this._modelItemPeca.Id_item_peca);
-                model.Id_peca = Convert.ToInt32(this._modelPeca.IdPeca);
                 model.Nom_grupo = this.txtNmKit.Text;
 
                 return model;

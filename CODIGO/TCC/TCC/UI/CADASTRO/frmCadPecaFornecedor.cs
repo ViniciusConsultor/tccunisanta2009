@@ -13,7 +13,7 @@ namespace TCC.UI
     public partial class frmCadPecaFornecedor : FormPai
     {
         mFornecedor _modelFornecedor;
-        mPeca _modelPeca;
+        List<mPeca> _modelPeca;
 
         public frmCadPecaFornecedor()
         {
@@ -48,8 +48,8 @@ namespace TCC.UI
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
-            this._modelPeca = new mPeca();
-            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
+            this._modelPeca = new List<mPeca>();
+            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true);
             try
             {
                 DialogResult resultado = objForm.ShowDialog();
@@ -59,7 +59,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtPeca.Text = this._modelPeca.Nom;
+                    this.txtPeca.Text = this._modelPeca[0].Nom;
                 }
             }
             catch (Exception ex)
@@ -85,7 +85,7 @@ namespace TCC.UI
                 model.DatInc = DateTime.Now;
                 model.FlgAtivo = true;
                 model.Id_forn = this._modelFornecedor.IdFornecedor;
-                model.Id_peca = this._modelPeca.IdPeca;
+                model.Id_peca = this._modelPeca[0].IdPeca;
 
                 return model;
             }
