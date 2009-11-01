@@ -43,7 +43,6 @@ namespace TCC.UI
 
             try
             {
-                model.Id_estoque = Convert.ToInt32(regra.BuscaIdMaximoEstoque());
                 model.Id_depto = Convert.ToInt32 (this._modelDepartamento.IdDepto);
                 model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;

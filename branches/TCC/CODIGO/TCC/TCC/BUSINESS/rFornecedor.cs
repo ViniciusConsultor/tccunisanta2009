@@ -10,17 +10,6 @@ namespace TCC.BUSINESS
 {
     class rFornecedor : ComandosSql
     {
-        public string BuscaIdMaximoFornecedor()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_forn", "fornecedor");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public DataTable BuscaFornecedor(string Descricao)
         {

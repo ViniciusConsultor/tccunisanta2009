@@ -115,7 +115,6 @@ namespace TCC.UI
                 model.DscPeca = this.txtDsPeca.Text;
                 model.FlgAtivo = true;
                 model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
-                model.IdPeca = Convert.ToInt32(regra.BuscaIdMaximoPeca());
                 model.IdPecaReal = this.txtCodigoReal.Text;
                 model.IdTipoPeca = Convert.ToInt32(this._modelTipoPeca.IdTipoPeca);
                 model.Nom = this.txtNmPeca.Text;

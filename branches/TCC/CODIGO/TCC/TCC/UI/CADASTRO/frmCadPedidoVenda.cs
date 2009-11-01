@@ -115,7 +115,6 @@ namespace TCC.UI
                 model.DatAlt = DateTime.Now;
                 model.DscVenda = this.txtDsPedido.Text;
                 model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
-                model.IdPedido = Convert.ToInt32(regra.BuscaidMaximo());
                 model.IdVenda = this._modelVenda.IdVenda;
 
                 return model;

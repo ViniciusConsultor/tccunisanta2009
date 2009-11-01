@@ -10,17 +10,6 @@ namespace TCC.BUSINESS
 {
     class rEstoque : ComandosSql
     {
-        public string BuscaIdMaximoEstoque()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_estoq", "estoque");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public DataTable BuscaEstoque(string Descricao)
         {

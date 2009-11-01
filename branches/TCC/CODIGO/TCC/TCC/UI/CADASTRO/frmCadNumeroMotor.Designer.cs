@@ -36,6 +36,8 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.txtIdRealMotor = new System.Windows.Forms.TextBox();
+            this.lblIdReal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtDscNumeroMotor
@@ -98,6 +100,24 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // txtIdRealMotor
+            // 
+            this.txtIdRealMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdRealMotor.Location = new System.Drawing.Point(61, 25);
+            this.txtIdRealMotor.MaxLength = 50;
+            this.txtIdRealMotor.Name = "txtIdRealMotor";
+            this.txtIdRealMotor.Size = new System.Drawing.Size(227, 20);
+            this.txtIdRealMotor.TabIndex = 22;
+            // 
+            // lblIdReal
+            // 
+            this.lblIdReal.AutoSize = true;
+            this.lblIdReal.Location = new System.Drawing.Point(58, 9);
+            this.lblIdReal.Name = "lblIdReal";
+            this.lblIdReal.Size = new System.Drawing.Size(89, 13);
+            this.lblIdReal.TabIndex = 23;
+            this.lblIdReal.Text = "Numero do Motor";
+            // 
             // frmCadNumeroMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +126,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.txtIdRealMotor);
+            this.Controls.Add(this.lblIdReal);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
@@ -128,5 +150,7 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.TextBox txtIdRealMotor;
+        private System.Windows.Forms.Label lblIdReal;
     }
 }

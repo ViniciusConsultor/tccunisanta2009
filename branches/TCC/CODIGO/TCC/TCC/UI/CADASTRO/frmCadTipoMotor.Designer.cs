@@ -36,6 +36,8 @@
             this.txtNmTipoMotor = new System.Windows.Forms.TextBox();
             this.lblNmTipoMotor = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.lblIdReal = new System.Windows.Forms.Label();
+            this.txtIdReal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -77,7 +79,7 @@
             // txtNmTipoMotor
             // 
             this.txtNmTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmTipoMotor.Location = new System.Drawing.Point(80, 98);
+            this.txtNmTipoMotor.Location = new System.Drawing.Point(77, 127);
             this.txtNmTipoMotor.MaxLength = 50;
             this.txtNmTipoMotor.Name = "txtNmTipoMotor";
             this.txtNmTipoMotor.Size = new System.Drawing.Size(227, 20);
@@ -86,7 +88,7 @@
             // lblNmTipoMotor
             // 
             this.lblNmTipoMotor.AutoSize = true;
-            this.lblNmTipoMotor.Location = new System.Drawing.Point(77, 82);
+            this.lblNmTipoMotor.Location = new System.Drawing.Point(74, 111);
             this.lblNmTipoMotor.Name = "lblNmTipoMotor";
             this.lblNmTipoMotor.Size = new System.Drawing.Size(119, 13);
             this.lblNmTipoMotor.TabIndex = 19;
@@ -97,6 +99,24 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // lblIdReal
+            // 
+            this.lblIdReal.AutoSize = true;
+            this.lblIdReal.Location = new System.Drawing.Point(74, 62);
+            this.lblIdReal.Name = "lblIdReal";
+            this.lblIdReal.Size = new System.Drawing.Size(128, 13);
+            this.lblIdReal.TabIndex = 19;
+            this.lblIdReal.Text = "Numero do Tipo do Motor";
+            // 
+            // txtIdReal
+            // 
+            this.txtIdReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdReal.Location = new System.Drawing.Point(77, 78);
+            this.txtIdReal.MaxLength = 50;
+            this.txtIdReal.Name = "txtIdReal";
+            this.txtIdReal.Size = new System.Drawing.Size(227, 20);
+            this.txtIdReal.TabIndex = 1;
+            // 
             // frmCadTipoMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +125,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.txtIdReal);
+            this.Controls.Add(this.lblIdReal);
             this.Controls.Add(this.txtNmTipoMotor);
             this.Controls.Add(this.lblNmTipoMotor);
             this.Controls.Add(this.btnVoltar);
@@ -127,5 +149,7 @@
         private System.Windows.Forms.TextBox txtNmTipoMotor;
         private System.Windows.Forms.Label lblNmTipoMotor;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Label lblIdReal;
+        private System.Windows.Forms.TextBox txtIdReal;
     }
 }

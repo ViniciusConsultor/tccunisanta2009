@@ -80,14 +80,15 @@ namespace TCC.UI
 
         private mNumMotor PegaDadoosTela()
         {
+
             mNumMotor model = new mNumMotor();
             rNumeroMotor regra = new rNumeroMotor();
 
             try
             {
+                model.IdNumMotorReal = this.txtIdRealMotor.Text;
                 model.Dsc_num_motor = this.txtDscNumeroMotor.Text;
                 model.Flg_ativo = true;
-                model.Id_num_motor = Convert.ToInt32(regra.BuscaIdMaximo());
 
                 return model;
             }
