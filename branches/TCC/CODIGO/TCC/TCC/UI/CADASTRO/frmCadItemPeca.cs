@@ -83,24 +83,6 @@ namespace TCC.UI
             base.LimpaDadosTela(this);
             this._modelPeca = null;
         }
-
-        /*protected override void BuscaIdMaximo()
-        {
-            rItemPeca regra = new rItemPeca();
-            try
-            {
-                this.txtCodItemPeca.Text = regra.BuscaIdMaximo();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
             this._modelPeca = new mPeca();

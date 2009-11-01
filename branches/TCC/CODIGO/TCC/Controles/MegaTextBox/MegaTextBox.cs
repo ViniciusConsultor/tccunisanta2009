@@ -10,7 +10,8 @@ namespace Controles.MegaTextBox
     public enum TipoTexto
     {
         Texto,
-        Numerico
+        Numerico,
+        Decimal
     }
 
     public partial class MegaTextBox : TextBox
