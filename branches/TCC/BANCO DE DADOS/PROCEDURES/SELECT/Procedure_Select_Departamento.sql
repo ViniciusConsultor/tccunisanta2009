@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_departamento
 @id_depto INT
 AS
-SELECT id_depto, dsc_depto, dat_atl
+SELECT id_depto, dsc_depto, dat_atl, flg_ativo
 FROM Departamento
 WHERE id_depto = @id_depto
 AND flg_ativo = 1

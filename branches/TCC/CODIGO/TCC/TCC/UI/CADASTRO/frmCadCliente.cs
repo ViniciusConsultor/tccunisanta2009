@@ -155,23 +155,6 @@ namespace TCC.UI
             base.Alteracao = false;
         }
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rCliente regra = new rCliente();
-            try
-            {
-                this.txtCodigo.Text = regra.BuscaIdMaximoCliente();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
         void btnVolta_Click(object sender, System.EventArgs e)
         {
             base.FechaTela(this);

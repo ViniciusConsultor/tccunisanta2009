@@ -21,7 +21,7 @@ namespace TCC.MODEL
         private string estado;
         private string rg;
         private string cpf;
-        private char sexo;
+        private string sexo;
         private DateTime datAtl;
         private bool flgAtivo;
         private int? ddd;
@@ -128,7 +128,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("sex", System.Data.SqlDbType.Char, false)]
-        public char Sexo
+        public string Sexo
         {
             get { return sexo; }
             set { sexo = value; }
