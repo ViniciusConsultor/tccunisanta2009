@@ -135,7 +135,6 @@ namespace TCC.UI
         {
             mUsuario model = new mUsuario();
             rUsuario regra = new rUsuario();
-            model.IdUsuario = Convert.ToInt32(regra.BuscaIdMaximoUsuario());
             model.Login = this.txtLogin.Text;
             model.ObsUsuario = this.txtObservacao.Text;
             model.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);

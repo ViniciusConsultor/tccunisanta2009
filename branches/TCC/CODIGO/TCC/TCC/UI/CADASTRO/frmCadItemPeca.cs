@@ -58,7 +58,6 @@ namespace TCC.UI
             try
             {
                 model.Flg_ativo = true;
-                model.Id_item_peca = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_peca = this._modelPeca.IdPeca;
                 model.Nom_item_peca = this.txtDescItemPeca.Text;
 

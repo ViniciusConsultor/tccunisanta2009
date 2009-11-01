@@ -46,17 +46,5 @@ namespace TCC.BUSINESS
                 param = null;
             }
         }
-
-        public string BuscaIdMaximoMotor()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_motor", "motor");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
     }
 }

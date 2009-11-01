@@ -234,7 +234,6 @@ namespace TCC.UI
                 {
                     model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
                 }
-                model.IdCompra = Convert.ToInt32(regra.BuscaIdMaximoCompra());
                 model.IdDepto = Convert.ToInt32( this._modelDepartamento.IdDepto);
                 model.IdFornecedor = Convert.ToInt32( this._modelFornecedor.IdFornecedor);
                 model.IdMotorCompra = Convert.ToInt32(this._modelMotor.IdMotor);

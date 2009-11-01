@@ -8,18 +8,6 @@ namespace TCC.BUSINESS
 {
     class rTipoPeca : ComandosSql
     {
-        public string BuscaIdMaximoTipoPeca()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_tipo_peca", "Tipopeca");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public DataTable BuscaTipoPeca(string Descricao)
         {
             SqlParameter param = null;

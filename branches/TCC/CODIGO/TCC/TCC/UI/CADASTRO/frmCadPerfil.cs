@@ -54,7 +54,6 @@ namespace TCC.UI
             mPerfil model = new mPerfil();
             rPerfil regra = new rPerfil();
 
-            model.IdPerfil = Convert.ToInt32(regra.BuscaIdMaximoPerfil());
             model.DescPerfil = txtDescPerfil.Text;
 
             return model;

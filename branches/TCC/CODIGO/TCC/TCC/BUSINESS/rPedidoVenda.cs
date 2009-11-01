@@ -7,17 +7,6 @@ namespace TCC.BUSINESS
 {
     class rPedidoVenda : ComandosSql
     {
-        public string BuscaidMaximo()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_pedido", "Pedidovenda");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {

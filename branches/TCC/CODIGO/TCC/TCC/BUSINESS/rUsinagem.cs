@@ -7,17 +7,6 @@ namespace TCC.BUSINESS
 {
     class rUsinagem : ComandosSql
     {
-        public string BuscaIdMaximoUsinagem()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_usinagem", "Usinagem");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {

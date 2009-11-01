@@ -86,7 +86,6 @@ namespace TCC.UI
                 model.DtaEnvio = DateTime.Now;
                 model.FlgStatus = this.chkPecaOk.Checked;
                 model.IdPeca = Convert.ToInt32(this._modelPeca.IdPeca);
-                model.IdUsinagem = Convert.ToInt32(regra.BuscaIdMaximoUsinagem());
 
                 return model;
             }

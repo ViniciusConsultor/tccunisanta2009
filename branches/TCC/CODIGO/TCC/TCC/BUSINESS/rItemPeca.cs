@@ -34,17 +34,6 @@ namespace TCC.BUSINESS
             }
         }
 
-        public string BuscaIdMaximo()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_item_peca", "Itempeca");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {

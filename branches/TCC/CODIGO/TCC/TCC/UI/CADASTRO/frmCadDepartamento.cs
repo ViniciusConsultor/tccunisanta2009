@@ -57,7 +57,6 @@ namespace TCC.UI
                 model.DscDepto = this.txtDescricaoDepartamento.Text;
                 model.FlgAtivo = true;
                 model.DatAtl = DateTime.Now;
-                model.IdDepto = Convert.ToInt32(regra.BuscaIdMaximoDepartamento());
                 return model;
             }
             catch (Exception ex)

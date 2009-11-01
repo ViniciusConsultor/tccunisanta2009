@@ -11,17 +11,6 @@ namespace TCC.BUSINESS
 {
     class rVenda : ComandosSql
     {
-        public string BuscaidMaximo()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_venda", "venda");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public DataTable buscaVenda()
         {
