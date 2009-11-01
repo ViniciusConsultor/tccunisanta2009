@@ -19,23 +19,6 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rEstoque regra = new rEstoque();
-            try
-            {
-                this.txtCdEstoque.Text = regra.BuscaIdMaximoEstoque();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
         private mEstoque PegaDadosTela()
         {
             mEstoque model = new mEstoque();

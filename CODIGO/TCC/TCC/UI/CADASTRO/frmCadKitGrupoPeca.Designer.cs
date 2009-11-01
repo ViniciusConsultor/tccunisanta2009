@@ -140,7 +140,7 @@
             // 
             this.btnCdPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdPeca.BackgroundImage")));
             this.btnCdPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdPeca.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btnCdPeca.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCdPeca.Location = new System.Drawing.Point(213, 78);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(28, 23);
