@@ -15,7 +15,7 @@ namespace TCC.MODEL
         private int? cepFornecedor;
         private string bairro;
         private string cidade;
-        private int? cnpj;
+        private string cnpj;
         private DateTime datAtl;
         private bool flgAtivo;
         private string slgEstado;
@@ -46,8 +46,8 @@ namespace TCC.MODEL
             set { datAtl = value; }
         }
 
-        [ColunasBancoDados("cnpj", System.Data.SqlDbType.Int, false)]
-        public int? Cnpj
+        [ColunasBancoDados("cnpj", System.Data.SqlDbType.VarChar, false)]
+        public string Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }

@@ -119,5 +119,15 @@ namespace TCC.UI
             }
         }
         #endregion
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,6 +36,8 @@
             this.dgDepartamento = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             // 
             this.btnOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOK.BackgroundImage")));
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.Location = new System.Drawing.Point(113, 232);
+            this.btnOK.Location = new System.Drawing.Point(71, 231);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(60, 33);
             this.btnOK.TabIndex = 4;
@@ -105,12 +107,36 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(218, 231);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.Text = "Excluir";
+            this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(137, 231);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 7;
+            this.btnAlterar.Text = "Alterar";
+            this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // frmBuscaDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 268);
             this.ControlBox = false;
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
@@ -121,6 +147,7 @@
             this.Name = "frmBuscaDepartamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Departamento";
+            this.Load += new System.EventHandler(this.frmBuscaDepartamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +162,7 @@
         private System.Windows.Forms.DataGridView dgDepartamento;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }
