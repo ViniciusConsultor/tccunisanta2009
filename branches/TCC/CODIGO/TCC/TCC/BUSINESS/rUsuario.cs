@@ -120,7 +120,7 @@ namespace TCC.BUSINESS
             dUsuario dal = new dUsuario();
             try
             {
-                dal.DeletaUsuario(model.IdUsuario);
+                dal.DeletaUsuario(Convert.ToInt32(model.IdUsuario));
             }
             catch (Exception ex)
             {

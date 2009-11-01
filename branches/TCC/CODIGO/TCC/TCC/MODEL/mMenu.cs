@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mMenu : ModelPai
     {
-        private int idMenu;
+        private int? idMenu;
         private string dscMenu;
         private string endMenu;
         private DateTime datAtl;
@@ -15,7 +15,7 @@ namespace TCC.MODEL
         private string nomeTabela = "menu";
 
         [ColunasBancoDados("id_menu", System.Data.SqlDbType.Int, true)]
-        public int IdMenu
+        public int? IdMenu
         {
             get { return idMenu; }
             set { idMenu = value; }

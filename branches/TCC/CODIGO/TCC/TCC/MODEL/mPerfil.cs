@@ -7,14 +7,14 @@ namespace TCC.MODEL
 {
     public class mPerfil : ModelPai
     {
-        private int idPerfil;
+        private int? idPerfil;
         private string descPerfil;
         private DateTime datAtl;
         private bool flgAtivo;
         private string nomeTabela = "perfil";
 
         [ColunasBancoDados("id_perfil", System.Data.SqlDbType.Int, true)]
-        public int IdPerfil
+        public int? IdPerfil
         {
             get { return idPerfil; }
             set { idPerfil = value; }

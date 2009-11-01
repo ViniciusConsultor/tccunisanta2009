@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mPeca : ModelPai
     {
-        private int idPeca;
+        private int? idPeca;
         private string idPecaReal;
         private string nom;
         private DateTime datAlt;
@@ -20,7 +20,7 @@ namespace TCC.MODEL
         private string nomeTabela = "peca";
 
         [ColunasBancoDados ("id_peca", System.Data.SqlDbType.Int,true)]
-        public int IdPeca
+        public int? IdPeca
         {
             get { return idPeca; }
             set { idPeca = value; }

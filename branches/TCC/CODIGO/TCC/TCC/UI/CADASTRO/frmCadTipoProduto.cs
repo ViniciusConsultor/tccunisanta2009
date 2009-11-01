@@ -61,7 +61,6 @@ namespace TCC.UI
             {
                 model.DatAlt = DateTime.Now;
                 model.FlgAtivo = true;
-                model.IdTipoProd = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Nom = this.txtNome.Text;
 
                 return model;

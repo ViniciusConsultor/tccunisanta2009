@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mFamiliaMotor : ModelPai
     {
-        private int idFamiliaMotor;
+        private int? idFamiliaMotor;
         private int idNumMotor;
         private int idKit;
         private int idTipoMotor;
@@ -18,7 +18,7 @@ namespace TCC.MODEL
         private string nomeTabela = "Familiamotor";
 
         [ColunasBancoDados ("id_fam_motor", System.Data.SqlDbType.Int,true)]
-        public int IdFamiliaMotor
+        public int? IdFamiliaMotor
         {
             get { return idFamiliaMotor; }
             set { idFamiliaMotor = value; }

@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mUsuario : ModelPai
     {
-        private int idUsuario;
+        private int? idUsuario;
         private string login;
         private string senha;
         private string obsUsuario;
@@ -43,7 +43,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("id_usu", System.Data.SqlDbType.Int, true)]
-        public int IdUsuario
+        public int? IdUsuario
         {
             get { return idUsuario; }
             set { idUsuario = value; }

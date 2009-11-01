@@ -139,12 +139,12 @@ namespace TCC.UI
             {
                 model.DscFamiliaMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;
-                model.IdEstoque = this._modelEstoque.Id_estoque;
+                model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
                 model.IdFamiliaMotor = Convert.ToInt32(regra.BuscaIdMaximo());
-                model.IdKit = this._modelKit.IdKit;
+                model.IdKit = Convert.ToInt32(this._modelKit.IdKit);
                 model.IdMotor = Convert.ToInt32(this._modelMotor.IdMotor);
-                model.IdNumMotor = this._modelNumeroMotor.Id_num_motor;
-                model.IdTipoMotor = this._modelTipoMotor.IdTipoMotor;
+                model.IdNumMotor = Convert.ToInt32(this._modelNumeroMotor.Id_num_motor);
+                model.IdTipoMotor = Convert.ToInt32(this._modelTipoMotor.IdTipoMotor);
 
                 return model;
             }

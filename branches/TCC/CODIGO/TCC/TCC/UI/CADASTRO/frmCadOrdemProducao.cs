@@ -232,11 +232,11 @@ namespace TCC.UI
             try
             {
                 model.Dsc_ordem = this.txtDs.Text;
-                model.Id_depto = this._modelDepartamento.IdDepto;
-                model.IdKit = this._modelKit.IdKit;
-                model.Id_motor = this._modelFamiliaMotor.IdFamiliaMotor;
+                model.Id_depto = Convert.ToInt32( this._modelDepartamento.IdDepto);
+                model.IdKit = Convert.ToInt32(this._modelKit.IdKit);
+                model.Id_motor = Convert.ToInt32( this._modelFamiliaMotor.IdFamiliaMotor);
                 model.Id_ordem = Convert.ToInt32(regra.BuscaIdMaximo());
-                model.Id_tipo_produto = this._modelTipoProd.IdTipoProd;
+                model.Id_tipo_produto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
 
                 return model;
             }

@@ -7,13 +7,13 @@ namespace TCC.MODEL
 {
     public class mCompraPeca : ModelPai
     {
-        private int idPeca;
+        private int? idPeca;
         private double ultimoPreco;
-        private int idCompra;
+        private int? idCompra;
         private string nomeTabela = "Comprapeca";
 
         [ColunasBancoDados("id_peca", System.Data.SqlDbType.Int,true)]
-        public int IdPeca
+        public int? IdPeca
         {
             get { return idPeca; }
             set { idPeca = value; }
@@ -27,7 +27,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("id_compra", System.Data.SqlDbType.Int,false)]
-        public int IdCompra
+        public int? IdCompra
         {
             get { return idCompra; }
             set { idCompra = value; }
