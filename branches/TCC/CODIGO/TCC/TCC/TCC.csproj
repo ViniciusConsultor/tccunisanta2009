@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -108,8 +108,8 @@
     <Compile Include="BUSINESS\Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\VendaMotorGrupoVazioException.cs" />
-    <Compile Include="BUSINESS\rCadColaborador.cs" />
     <Compile Include="BUSINESS\rCliente.cs" />
+    <Compile Include="BUSINESS\rColaborador.cs" />
     <Compile Include="BUSINESS\rCompra.cs" />
     <Compile Include="BUSINESS\rCompraPeca.cs" />
     <Compile Include="BUSINESS\rDepartamento.cs" />
@@ -197,6 +197,9 @@
     <EmbeddedResource Include="UI\BUSCA\frmBuscaCliente.resx">
       <DependentUpon>frmBuscaCliente.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaColaborador.resx">
+      <DependentUpon>frmBuscaColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaCompra.resx">
       <DependentUpon>frmBuscaCompra.cs</DependentUpon>
@@ -399,6 +402,12 @@
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaCliente.Designer.cs">
       <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaColaborador.Designer.cs">
+      <DependentUpon>frmBuscaColaborador.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaCompra.cs">
       <SubType>Form</SubType>

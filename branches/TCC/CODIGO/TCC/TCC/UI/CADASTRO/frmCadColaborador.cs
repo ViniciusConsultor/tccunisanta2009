@@ -15,6 +15,7 @@ namespace TCC.UI
     {
         mUsuario _modelUsuario;
         mDepartamento _modelDepartamento;
+        mColaborador _modelColaborador;
 
         public frmCadColaborador()
         {
@@ -31,7 +32,7 @@ namespace TCC.UI
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             mColaborador modelColaborador = new mColaborador();
-            BUSINESS.rCadColaborador regraMenu = new BUSINESS.rCadColaborador();
+            BUSINESS.rColaborador regraMenu = new BUSINESS.rColaborador();
             try
             {
                 this.ValidaDadosNulos();
@@ -82,6 +83,8 @@ namespace TCC.UI
             base.LimpaDadosTela(this);
             this._modelDepartamento = null;
             this._modelUsuario = null;
+            this._modelColaborador = null;
+            base.Alteracao = false;
         }
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -146,14 +149,14 @@ namespace TCC.UI
         {
             BUSINESS.rEstado estados = new rEstado();
             cbEstado.ValueMember = "slg_est";
-            cbEstado.DisplayMember = "Estado";
+            cbEstado.DisplayMember = "slg_est";
             cbEstado.DataSource = estados.BuscaEstado();
         }
 
         private mColaborador PegaDadosTela()
         {
             mColaborador model = new mColaborador();
-            rCadColaborador regra = new rCadColaborador();
+            rColaborador regra = new rColaborador();
 
             try
             {
@@ -180,7 +183,6 @@ namespace TCC.UI
                     model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
                 }
                 model.Estado = this.cbEstado.SelectedValue.ToString();
-                model.IdColab = Convert.ToInt32(regra.BuscaIDMaximoColaborador());
                 model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
                 model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
                 model.NomeColab = txtNome.Text;
@@ -193,7 +195,7 @@ namespace TCC.UI
                 {
                     model.NroEnd = Convert.ToInt32(txtNumero.Text);
                 }
-                model.Sexo = Convert.ToChar(CbSexo.Text);
+                model.Sexo = CbSexo.Text;
                 if (string.IsNullOrEmpty(this.txtRg.Text) == true)
                 {
                     model.Rg = null;
@@ -271,5 +273,57 @@ namespace TCC.UI
 
         #endregion
 
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnApaga_Click(null, null);
+            this._modelColaborador = new mColaborador();
+            frmBuscaColaborador objColaborador = new frmBuscaColaborador(this._modelColaborador,true);
+            try
+            {
+                DialogResult resultado = objColaborador.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelColaborador = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objColaborador = null;
+            }
+        }
+
+        private void PopulaTelaComModelAlteracao()
+        {
+            if (this._modelColaborador != null)
+            {
+                base.Alteracao = true;
+                this.txtCdUsuario.Text = this._modelColaborador.IdUsuario.ToString();
+                this.txtCdDepartamento.Text = this._modelColaborador.IdDepto.ToString();
+                this.txtNome.Text = this._modelColaborador.IdColab.ToString();
+                this.txtDataNasc.Text = this._modelColaborador.DatNasc.ToString("dd/MM/yyyy");
+                this.CbSexo.SelectedIndex = this.CbSexo.FindString(this._modelColaborador.Sexo);
+                this.txtDDD.Text = this._modelColaborador.Ddd.ToString();
+                this.txtTelefone.Text = this._modelColaborador.Telefone.ToString();
+                this.txtRua.Text = this._modelColaborador.NomeRua;
+                this.txtNumero.Text = this._modelColaborador.NroEnd.ToString();
+                this.txtComplemento.Text = this._modelColaborador.ComplEnd;
+                this.txtBairro.Text = this._modelColaborador.BairrEnd;
+                this.txtCep.Text = this._modelColaborador.Cep;
+                this.txtCidade.Text = this._modelColaborador.Cidade;
+                this.cbEstado.SelectedIndex = this.cbEstado.FindString(this._modelColaborador.Estado);
+                this.txtRg.Text = this._modelColaborador.Rg;
+                this.txtCpf.Text = this._modelColaborador.Cpf;
+                this.txtEmail.Text = this._modelColaborador.Email;
+            }
+        }
     }
 }
