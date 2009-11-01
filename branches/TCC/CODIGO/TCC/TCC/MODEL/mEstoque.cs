@@ -14,7 +14,7 @@ namespace TCC.MODEL
         private int id_depto;
         private string nomeTabela = "estoque";
 
-        [ColunasBancoDados("id_estoq", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("id_estoq", System.Data.SqlDbType.Int, true)]
         public int? Id_estoque
         {
             get { return id_estoque; }

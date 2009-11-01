@@ -19,23 +19,6 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        /*protected override void  BuscaIdMaximo()
-        {
-            rPeca regra = new rPeca();
-            try
-            {
-                this.txtCdPeca.Text = regra.BuscaIdMaximoPeca();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
@@ -124,7 +107,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    model.Peso = Convert.ToInt32(this.txtPesoPeca.Text);
+                    model.Peso = Convert.ToDouble(this.txtPesoPeca.Text);
                 }
                 if (string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
                 {
