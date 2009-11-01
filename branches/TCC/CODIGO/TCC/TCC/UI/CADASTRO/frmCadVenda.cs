@@ -190,7 +190,7 @@ namespace TCC.UI
             }
         }
 
-        private void btnCdMotor_Click(object sender, EventArgs e)
+       /* private void btnCdMotor_Click(object sender, EventArgs e)
         {
             this._modelMotor = new mMotor();
             frmBuscaMotor objFrmBuscaMotor = new frmBuscaMotor(this._modelMotor);
@@ -215,7 +215,7 @@ namespace TCC.UI
                 objFrmBuscaMotor = null;
             }
         }
-
+        */
         private void btnCdOrdemMotor_Click(object sender, EventArgs e)
         {
             this._modelOrdemProd = new mOrdemProducao();
@@ -242,7 +242,7 @@ namespace TCC.UI
             }
         }
 
-        private void btnCdKit_Click(object sender, EventArgs e)
+       /* private void btnCdKit_Click(object sender, EventArgs e)
         {
             this._modelKit = new mKitGrupoPeca();
             frmBuscaKit frmForm = new frmBuscaKit(this._modelKit);
@@ -267,7 +267,7 @@ namespace TCC.UI
                 frmForm = null;
             }
         }
-
+        */
         private void CdTipoProduto_Click(object sender, EventArgs e)
         {
             this._modelTipoProd = new mTipoProduto();

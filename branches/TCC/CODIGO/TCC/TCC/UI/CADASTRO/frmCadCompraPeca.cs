@@ -13,7 +13,7 @@ namespace TCC.UI
     public partial class frmCadCompraPeca : FormPai
     {
         mCompra _modelCompra;
-        mPeca _modelPeca;
+        List<mPeca> _modelPeca;
 
         public frmCadCompraPeca()
         {
@@ -22,8 +22,8 @@ namespace TCC.UI
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
-            this._modelPeca = new mPeca();
-            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
+            this._modelPeca = new List<mPeca>();
+            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true);
             try
             {
                 DialogResult resultado = objForm.ShowDialog();
@@ -33,7 +33,17 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdPeca.Text = this._modelPeca.Nom;
+                    for (int contador = 0; contador < this._modelPeca.Count; contador++)
+                    {
+                        if (contador == 0)
+                        {
+                            this.txtCdPeca.Text = this._modelPeca[contador].Nom;
+                        }
+                        else
+                        {
+                            this.txtCdPeca.Text += this._modelPeca[contador].Nom;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -87,7 +97,7 @@ namespace TCC.UI
             try
             {
                 model.IdCompra = this._modelCompra.IdCompra;
-                model.IdPeca = Convert.ToInt32(this._modelPeca.IdPeca);
+                model.IdPeca = Convert.ToInt32(this._modelPeca[0].IdPeca);
                 model.UltimoPreco = Convert.ToDouble(this.txtUltimoPreco.Text);
 
                 return model;

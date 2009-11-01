@@ -84,11 +84,11 @@
             this.dgPeca.Location = new System.Drawing.Point(12, 45);
             this.dgPeca.MultiSelect = false;
             this.dgPeca.Name = "dgPeca";
-            this.dgPeca.ReadOnly = true;
             this.dgPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPeca.ShowEditingIcon = false;
             this.dgPeca.Size = new System.Drawing.Size(260, 177);
             this.dgPeca.TabIndex = 0;
+            this.toolTipLegenda.SetToolTip(this.dgPeca, "Apertar Ctrl para Selecionar mais de um item");
             // 
             // btnFechar
             // 

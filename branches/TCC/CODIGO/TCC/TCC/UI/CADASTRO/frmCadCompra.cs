@@ -16,7 +16,7 @@ namespace TCC.UI
         mMotor _modelMotor;
         mDepartamento _modelDepartamento;
         mFornecedor _modelFornecedor;
-        mPeca _modelPeca;
+        List<mPeca> _modelPeca;
         mTipoProduto _modelTipoProd;
         mCompra _modelCompra;
         #endregion
@@ -131,8 +131,8 @@ namespace TCC.UI
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
-            this._modelPeca = new mPeca();
-            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
+            this._modelPeca = new List<mPeca>();
+            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true);
             try
             {
                 DialogResult resultado = objForm.ShowDialog();
@@ -142,7 +142,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdPeca.Text = this._modelPeca.Nom;
+                    this.txtCdPeca.Text = this._modelPeca[0].Nom;
                 }
             }
             catch (Exception ex)
@@ -299,7 +299,7 @@ namespace TCC.UI
                 }
                 model.Qtd = Convert.ToInt32(this.txtQtdCompra.Text);
                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
-                model.IdPeca = Convert.ToInt32(this._modelPeca.IdPeca);
+                model.IdPeca = Convert.ToInt32(this._modelPeca[0].IdPeca);
 
                 return model;
             }
