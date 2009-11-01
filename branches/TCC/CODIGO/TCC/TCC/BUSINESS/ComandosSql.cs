@@ -9,8 +9,6 @@ using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
-    
- 
     enum TipoComando
     {
         insert,
@@ -75,7 +73,7 @@ namespace TCC.BUSINESS
         /// Varre o nome dos Parametros que estão no model através dos atributos
         /// </summary>
         /// <returns>Array de SqlParameter com os parametros para as procedures</returns>
-        protected SqlParameter[] BuscaNomeParametros(ModelPai modelo)
+        protected SqlParameter[] BuscaNomeParametros(ModelPai modelo, TipoComando tipoCom)
         {
             Type tipo = modelo.GetType();
             SqlParameter[] param = new SqlParameter[tipo.GetProperties().Length];
@@ -95,9 +93,12 @@ namespace TCC.BUSINESS
                     if (cols.Length > 0)
                     {
                         ColunasBancoDados colunas = (ColunasBancoDados)cols[0];
-                        if (colunas.ChavePrimaria == true && prop[contador].GetValue(modelo, null) == null)
+                        if (tipoCom == TipoComando.insert)
                         {
-                            continue;
+                            if (colunas.ChavePrimaria == true && prop[contador].GetValue(modelo, null) == null)
+                            {
+                                continue;
+                            }
                         }
                         valor = prop[contador].GetValue(modelo, null);
                         if (valor == null)
@@ -238,11 +239,11 @@ namespace TCC.BUSINESS
                 switch ( com )
                 {
                     case TipoComando.insert:
-                    parametros = this.BuscaNomeParametros(model);
+                    parametros = this.BuscaNomeParametros(model, com);
                     nomeProc = INICIO_PROC_INSERIR + model.getNomeTabela();
                     break;
                     case TipoComando.update:
-                    parametros = this.BuscaNomeParametros(model);
+                    parametros = this.BuscaNomeParametros(model, com);
                     nomeProc = INICIO_PROC_ALTERAR + model.getNomeTabela();
                     break;
 

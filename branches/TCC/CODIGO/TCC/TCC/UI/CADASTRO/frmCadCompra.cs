@@ -12,17 +12,23 @@ namespace TCC.UI
 {
     public partial class frmCadCompra : FormPai
     {
+        #region Atributos
         mMotor _modelMotor;
         mDepartamento _modelDepartamento;
         mFornecedor _modelFornecedor;
         mPeca _modelPeca;
         mTipoProduto _modelTipoProd;
+        mCompra _modelCompra;
+        #endregion
 
+        #region Construtor
         public frmCadCompra()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Eventos
         private void frmCadCompra_Load(object sender, EventArgs e)
         {
         }
@@ -118,6 +124,9 @@ namespace TCC.UI
             this._modelMotor = null;
             this._modelPeca = null;
             this._modelTipoProd = null;
+            
+            this._modelCompra = null;
+            base.Alteracao = false;
         }
 
         private void btnBuscaPeca_Click(object sender, EventArgs e)
@@ -219,6 +228,40 @@ namespace TCC.UI
             }
         }
 
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnLimpar_Click(null, null);
+            this._modelCompra = new mCompra();
+            frmBuscaCompra objCompra = new frmBuscaCompra(_modelCompra, true);
+            try
+            {
+                DialogResult resultado = objCompra.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelCompra = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objCompra = null;
+            }
+        }
+
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion
+
+        #region Metodos
         private mCompra PegaDadosTela()
         {
             mCompra model = new mCompra();
@@ -270,11 +313,6 @@ namespace TCC.UI
             }
         }
 
-        private void btnAceitar_Click(object sender, EventArgs e)
-        {
-            this.Insere();
-        }
-
         private void ValidaDadosNulos()
         {
             if (this._modelDepartamento == null)
@@ -302,5 +340,23 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
             }
         }
+
+        private void PopulaTelaComModelAlteracao()
+        {
+            if (this._modelCompra != null)
+            {
+                base.Alteracao = true;
+                this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
+                this.txtDepartamento.Text = this._modelCompra.IdDepto.ToString();
+                this.txtCdPeca.Text = this._modelCompra.IdPeca.ToString();
+                this.txtCdMotorCompra.Text = this._modelCompra.IdMotorCompra.ToString();
+                this.txtDataCompra.Text = this._modelCompra.Dat.ToString();
+                this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
+                this.txtQtdCompra.Text = this._modelCompra.Qtd.ToString();
+                this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
+                this.txtObservacao.Text = this._modelCompra.Obs;
+            }
+        }
+        #endregion
     }
 }

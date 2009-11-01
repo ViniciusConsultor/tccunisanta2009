@@ -32,16 +32,24 @@ namespace TCC.UI
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             mColaborador modelColaborador = new mColaborador();
-            BUSINESS.rColaborador regraMenu = new BUSINESS.rColaborador();
+            BUSINESS.rColaborador regraColaborador = new BUSINESS.rColaborador();
             try
             {
-                this.ValidaDadosNulos();
-                modelColaborador = this.PegaDadosTela();
-                if (modelColaborador != null)
+                if (base.Alteracao == false)
                 {
-                    regraMenu.ValidarInsere(modelColaborador);
+                    this.ValidaDadosNulos();
+                    modelColaborador = this.PegaDadosTela();
+                    if (modelColaborador != null)
+                    {
+                        regraColaborador.ValidarInsere(modelColaborador);
+                    }
+                    this.btnApaga_Click(null, null);
                 }
-                this.btnApaga_Click(null, null);
+                else
+                {
+                    modelColaborador = this.PegaDadosTela();
+                    regraColaborador.ValidarAltera(modelColaborador);
+                }
             }
             catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
@@ -161,8 +169,15 @@ namespace TCC.UI
             try
             {
                 model.BairrEnd = txtBairro.Text;
-                string cep = txtCep.Text.Replace("-",string.Empty).Replace(" ",string.Empty);
-                model.Cep = cep;
+                if (this.txtCep.Modified == true)
+                {
+                    string cep = txtCep.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
+                    model.Cep = Convert.ToInt32(cep);
+                }
+                else
+                {
+                    model.Cep = null;
+                }
                 model.Cidade = txtCidade.Text;
                 model.ComplEnd = txtComplemento.Text;
                 if (string.IsNullOrEmpty(txtCpf.Text) == true)
@@ -215,7 +230,7 @@ namespace TCC.UI
                 }
 
                 string tel = this.txtTelefone.Text;
-                tel = tel.Replace(" ",string.Empty).Replace("-",string.Empty);
+                tel = tel.Replace(" ", string.Empty).Replace("-", string.Empty);
                 if (string.IsNullOrEmpty(tel) == true)
                 {
                     model.Telefone = null;
@@ -232,6 +247,11 @@ namespace TCC.UI
                 {
                     model.Email = this.txtEmail.Text;
                 }
+                if (base.Alteracao == true)
+                {
+                    model.IdColab = this._modelColaborador.IdColab;
+                }
+                model.FlgAtivo = true;
                 return model;
             }
             catch (Exception ex)
@@ -305,6 +325,12 @@ namespace TCC.UI
         {
             if (this._modelColaborador != null)
             {
+                //Ver essa MERDA!!!
+                this._modelUsuario = new mUsuario();
+                this._modelUsuario.IdUsuario = this._modelColaborador.IdUsuario;
+                this._modelDepartamento = new mDepartamento();
+                this._modelDepartamento.IdDepto = this._modelColaborador.IdDepto;
+
                 base.Alteracao = true;
                 this.txtCdUsuario.Text = this._modelColaborador.IdUsuario.ToString();
                 this.txtCdDepartamento.Text = this._modelColaborador.IdDepto.ToString();
@@ -317,7 +343,7 @@ namespace TCC.UI
                 this.txtNumero.Text = this._modelColaborador.NroEnd.ToString();
                 this.txtComplemento.Text = this._modelColaborador.ComplEnd;
                 this.txtBairro.Text = this._modelColaborador.BairrEnd;
-                this.txtCep.Text = this._modelColaborador.Cep;
+                this.txtCep.Text = this._modelColaborador.Cep.ToString();
                 this.txtCidade.Text = this._modelColaborador.Cidade;
                 this.cbEstado.SelectedIndex = this.cbEstado.FindString(this._modelColaborador.Estado);
                 this.txtRg.Text = this._modelColaborador.Rg;
