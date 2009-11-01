@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_perfil
 @id_perfil INT
 AS
-SELECT id_perfil, dsc_perfil, dat_atl
+SELECT id_perfil, dsc_perfil, dat_atl, flg_ativo
 FROM Perfil
 WHERE id_perfil = @id_perfil
 AND flg_ativo = 1

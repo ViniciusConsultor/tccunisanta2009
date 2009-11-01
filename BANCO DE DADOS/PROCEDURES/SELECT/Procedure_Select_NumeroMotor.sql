@@ -8,6 +8,6 @@ GO
 CREATE PROCEDURE sp_select_numeromotor
 @id_num_motor INT
 AS
-SELECT id_num_motor, dsc_num_motor
+SELECT id_num_motor, dsc_num_motor, flg_ativo
 FROM Numeromotor
 WHERE id_num_motor = @id_num_motor

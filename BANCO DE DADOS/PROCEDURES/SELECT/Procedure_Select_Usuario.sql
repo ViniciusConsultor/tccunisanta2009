@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_usuario
 @id_usu INT
 AS
-SELECT id_usu, log_usu, senha, obs_usu, id_perfil
+SELECT id_usu, log_usu, senha, obs_usu, id_perfil, flg_ativo
 FROM Usuario
 WHERE id_usu = @id_usu
 AND flg_ativo = 1

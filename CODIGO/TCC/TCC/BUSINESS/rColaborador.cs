@@ -3,22 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using TCC.MODEL;
 using TCC.DAL;
 
 namespace TCC.BUSINESS
 {
-    class rCadColaborador:ComandosSql
+    class rColaborador:ComandosSql
     {
-        public string BuscaIDMaximoColaborador()
+        public DataTable BuscaColaborador(string nomeColaborador)
         {
+            SqlParameter param = null;
             try
             {
-                return base.BuscaIdMaximoTabelas("id_colab", "Colaborador");
+                if (string.IsNullOrEmpty(nomeColaborador) == true)
+                {
+                    return base.BuscaDados("sp_busca_colaborador");
+                }
+                else
+                {
+                    param = new SqlParameter("@nom_colab", nomeColaborador);
+                    return base.BuscaDados("sp_busca_colaborador_param", param);
+                }
             }
             catch (Exception ex)
             {
+
                 throw ex;
+            }
+            finally
+            {
+                param = null;
             }
         }
 
@@ -36,5 +51,7 @@ namespace TCC.BUSINESS
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
