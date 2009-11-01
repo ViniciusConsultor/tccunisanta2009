@@ -12,7 +12,7 @@ namespace TCC.UI
 {
     public partial class frmCadItemPeca : FormPai
     {
-        mPeca _modelPeca;
+        List<mPeca> _modelPeca;
 
         public frmCadItemPeca()
         {
@@ -26,13 +26,16 @@ namespace TCC.UI
 
         private void Insere()
         {
-            mItemPeca model;
+            List<mItemPeca> ListaModel;
             rItemPeca regra = new rItemPeca();
             try
             {
                 this.ValidaDadosNulos();
-                model = this.PegaDadosTela();
-                regra.ValidarInsere(model);
+                ListaModel = this.PegaDadosTela();
+                foreach (mItemPeca model in ListaModel)
+                {
+                    regra.ValidarInsere(model);
+                }
                 this.btnLimpa_Click(null, null);
             }
             catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
@@ -45,23 +48,29 @@ namespace TCC.UI
             }
             finally
             {
-                model = null;
                 regra = null;
             }
         }
 
-        private mItemPeca PegaDadosTela()
+        private List<mItemPeca> PegaDadosTela()
         {
-            mItemPeca model = new mItemPeca();
+            List<mItemPeca> ListaModel = new List<mItemPeca>();
+            mItemPeca model;
             rItemPeca regra = new rItemPeca();
-
             try
             {
-                model.Flg_ativo = true;
-                model.Id_peca = this._modelPeca.IdPeca;
-                model.Nom_item_peca = this.txtDescItemPeca.Text;
+                int idMaximo = regra.BuscaIdMaximo();
+                for (int posicao = 0; posicao < this._modelPeca.Count; posicao++)
+                {
+                    model = new mItemPeca();
+                    model.Flg_ativo = true;
+                    model.Id_peca = this._modelPeca[posicao].IdPeca;
+                    model.Nom_item_peca = this.txtDescItemPeca.Text;
+                    model.Id_item_peca = idMaximo;
+                    ListaModel.Add(model);
+                }
 
-                return model;
+                return ListaModel;
             }
             catch (Exception ex)
             {
@@ -69,6 +78,7 @@ namespace TCC.UI
             }
             finally
             {
+                ListaModel = null;
                 model = null;
             }
         }
@@ -85,8 +95,8 @@ namespace TCC.UI
         }
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
-            this._modelPeca = new mPeca();
-            frmBuscaPeca frmTela = new frmBuscaPeca(this._modelPeca);
+            this._modelPeca = new List<mPeca>();
+            frmBuscaPeca frmTela = new frmBuscaPeca(this._modelPeca, true);
             try
             {
                 DialogResult resultado = frmTela.ShowDialog();
@@ -96,7 +106,17 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCodigoPeca.Text = this._modelPeca.Nom;
+                    for (int contador = 0; contador < this._modelPeca.Count; contador++)
+                    {
+                        if (contador == 0)
+                        {
+                            this.txtCodigoPeca.Text = this._modelPeca[contador].Nom;
+                        }
+                        else
+                        {
+                            this.txtCodigoPeca.Text += ", " + this._modelPeca[contador].Nom;
+                        }
+                    }
                 }
             }
             catch (Exception ex)

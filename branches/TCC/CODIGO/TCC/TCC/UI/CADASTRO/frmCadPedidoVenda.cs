@@ -53,7 +53,7 @@ namespace TCC.UI
             }
         }*/
 
-        private void btnBuscaVendaMotor_Click(object sender, EventArgs e)
+       /* private void btnBuscaVendaMotor_Click(object sender, EventArgs e)
         {
             this._modelVenda = new mVenda();
             frmBuscaVenda objForm = new frmBuscaVenda(this._modelVenda);
@@ -78,7 +78,7 @@ namespace TCC.UI
                 objForm = null;
             }
         }
-
+        */
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
             this._modelDepartamento = new mDepartamento();

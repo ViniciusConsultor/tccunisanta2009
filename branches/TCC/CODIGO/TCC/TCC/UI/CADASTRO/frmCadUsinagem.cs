@@ -12,7 +12,7 @@ namespace TCC.UI
 {
     public partial class frmCadUsinagem : FormPai
     {
-        mPeca _modelPeca;
+        List<mPeca> _modelPeca;
 
         public frmCadUsinagem()
         {
@@ -33,23 +33,6 @@ namespace TCC.UI
         private void frmCadUsinagem_Load(object sender, EventArgs e)
         {
         }
-
-        /*protected override void BuscaIdMaximo()
-        {
-            rUsinagem regra = new rUsinagem();
-            try
-            {
-                this.txtCdUsinagem.Text = regra.BuscaIdMaximoUsinagem();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
 
         private void Insere()
         {
@@ -85,7 +68,7 @@ namespace TCC.UI
             {
                 model.DtaEnvio = DateTime.Now;
                 model.FlgStatus = this.chkPecaOk.Checked;
-                model.IdPeca = Convert.ToInt32(this._modelPeca.IdPeca);
+                model.IdPeca = Convert.ToInt32(this._modelPeca[0].IdPeca);
 
                 return model;
             }
@@ -106,8 +89,8 @@ namespace TCC.UI
 
         private void btnCdPeca_Click(object sender, EventArgs e)
         {
-            this._modelPeca = new mPeca();
-            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
+            this._modelPeca = new List<mPeca>();
+            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, false);
             try
             {
                 DialogResult resultado = objForm.ShowDialog();
@@ -117,7 +100,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdPeca.Text = this._modelPeca.Nom;
+                    this.txtCdPeca.Text = this._modelPeca[0].Nom;
                 }
             }
             catch (Exception ex)

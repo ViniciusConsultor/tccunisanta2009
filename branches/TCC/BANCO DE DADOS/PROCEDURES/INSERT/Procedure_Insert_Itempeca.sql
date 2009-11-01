@@ -4,7 +4,7 @@ IF OBJECT_ID('sp_insert_itempeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_itempeca
-@id_item_peca     INT,
+@id_item_peca	  INT,
 @id_peca          INT,
 @nom              VARCHAR(20),
 @flg_ativo        BIT
@@ -12,8 +12,8 @@ CREATE PROCEDURE sp_insert_itempeca
 AS 
 BEGIN TRY
 --Validações na tabela itempeca
-IF(@id_item_peca='')
-   RAISERROR('Informe o código do item da peça!',16,1)
+IF (@id_item_peca = '')
+	RAISERROR('Informe o codigo da Item Peça!',16,1)
 ELSE IF(@id_peca='')
    RAISERROR('Informe o codigo da peça!',16,1)
 ELSE IF(@nom='')
