@@ -1,8 +1,3 @@
-CREATE DATABASE Megatechdatabase
-go
-
-USE Megatechdatabase
-go
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Comprapeca')
 DROP TABLE Comprapeca
@@ -555,7 +550,7 @@ DROP TABLE Item
 go
 
 CREATE TABLE Item (
-       id_item              integer NOT NULL,
+       id_item              integer IDENTITY,
        nom                  varchar(20) NULL,
        flg_ativo            bit NULL
 )
