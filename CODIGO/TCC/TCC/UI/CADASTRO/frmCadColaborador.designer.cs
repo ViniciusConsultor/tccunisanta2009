@@ -329,7 +329,7 @@
             this.btnApaga.Name = "btnApaga";
             this.btnApaga.Size = new System.Drawing.Size(40, 35);
             this.btnApaga.TabIndex = 19;
-            this.toolTipLegenda.SetToolTip(this.btnApaga, "Novo");
+            this.toolTipLegenda.SetToolTip(this.btnApaga, "Limpar");
             this.btnApaga.UseVisualStyleBackColor = true;
             this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
             // 

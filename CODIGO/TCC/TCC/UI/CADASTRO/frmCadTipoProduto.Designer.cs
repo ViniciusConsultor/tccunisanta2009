@@ -46,7 +46,7 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(27, 23);
             this.btnFechar.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar / Voltar");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -70,7 +70,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Novo");
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
