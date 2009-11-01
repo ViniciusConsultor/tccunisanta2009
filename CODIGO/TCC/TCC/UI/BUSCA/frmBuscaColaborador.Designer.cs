@@ -34,7 +34,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.dgColaborador = new System.Windows.Forms.DataGridView();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
-            this.toolTip1.SetToolTip(this.btnExcluir, "Excluir");
+            this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -59,7 +59,7 @@
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 12;
             this.btnAlterar.Text = "Alterar";
-            this.toolTip1.SetToolTip(this.btnAlterar, "Alterar");
+            this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -89,6 +89,11 @@
             this.dgColaborador.Size = new System.Drawing.Size(260, 177);
             this.dgColaborador.TabIndex = 7;
             // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
+            // 
             // btnFechar
             // 
             this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
@@ -97,7 +102,7 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(49, 34);
             this.btnFechar.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -109,7 +114,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(55, 33);
             this.btnOK.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.btnOK, "OK!");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "OK!");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -121,7 +126,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(56, 34);
             this.btnBuscar.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
+            this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -155,6 +160,6 @@
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgColaborador;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

@@ -47,7 +47,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(58, 33);
             this.btnOK.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnOK, "OK");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "OK!");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 

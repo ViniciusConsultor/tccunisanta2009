@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mColaborador : ModelPai
     {
-        private int idColab;
+        private int? idColab;
         private int idUsuario;
         private int idDepto;
         private string nomeColab;
@@ -15,7 +15,7 @@ namespace TCC.MODEL
         private string nomeRua;
         private int? nroEnd;
         private string complEnd;
-        private string cep;
+        private int? cep;
         private string bairrEnd;
         private string cidade;
         private string estado;
@@ -30,7 +30,7 @@ namespace TCC.MODEL
         private string nomeTabela = "colaborador";
 
         [ColunasBancoDados("id_colab", System.Data.SqlDbType.Int, true)]
-        public int IdColab
+        public int? IdColab
         {
             get { return idColab; }
             set { idColab = value; }
@@ -85,8 +85,8 @@ namespace TCC.MODEL
             set { complEnd = value; }
         }
 
-        [ColunasBancoDados("cep", System.Data.SqlDbType.VarChar, false)]
-        public string Cep
+        [ColunasBancoDados("cep", System.Data.SqlDbType.Int, false)]
+        public int? Cep
         {
             get { return cep; }
             set { cep = value; }
