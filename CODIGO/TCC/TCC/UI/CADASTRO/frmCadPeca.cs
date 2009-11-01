@@ -114,10 +114,10 @@ namespace TCC.UI
                 model.DatAlt = DateTime.Now;
                 model.DscPeca = this.txtDsPeca.Text;
                 model.FlgAtivo = true;
-                model.IdEstoque = this._modelEstoque.Id_estoque;
+                model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
                 model.IdPeca = Convert.ToInt32(regra.BuscaIdMaximoPeca());
                 model.IdPecaReal = this.txtCodigoReal.Text;
-                model.IdTipoPeca = this._modelTipoPeca.IdTipoPeca;
+                model.IdTipoPeca = Convert.ToInt32(this._modelTipoPeca.IdTipoPeca);
                 model.Nom = this.txtNmPeca.Text;
                 if (string.IsNullOrEmpty(this.txtPesoPeca.Text) == true)
                 {

@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mKitGrupoPeca : ModelPai
     {
-        private int idKit;
+        private int? idKit;
         private string idKitReal;
         private string nom_grupo;
         private bool flg_ativo;
@@ -25,7 +25,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("id_kit", System.Data.SqlDbType.Int, true)]
-        public int IdKit
+        public int? IdKit
         {
             get { return idKit; }
             set { idKit = value; }

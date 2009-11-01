@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mOrdemProducao : ModelPai
     {
-        private int id_ordem;
+        private int? id_ordem;
         private string dsc_ordem;
         private int id_depto;
         private int idFamMotor;
@@ -16,7 +16,7 @@ namespace TCC.MODEL
         private string nomeTabela = "Ordemproducao";
 
         [ColunasBancoDados ("id_ordem", System.Data.SqlDbType.Int,true)]
-        public int Id_ordem
+        public int? Id_ordem
         {
             get { return id_ordem; }
             set { id_ordem = value; }

@@ -235,10 +235,10 @@ namespace TCC.UI
                     model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
                 }
                 model.IdCompra = Convert.ToInt32(regra.BuscaIdMaximoCompra());
-                model.IdDepto = this._modelDepartamento.IdDepto;
-                model.IdFornecedor = this._modelFornecedor.IdFornecedor;
+                model.IdDepto = Convert.ToInt32( this._modelDepartamento.IdDepto);
+                model.IdFornecedor = Convert.ToInt32( this._modelFornecedor.IdFornecedor);
                 model.IdMotorCompra = Convert.ToInt32(this._modelMotor.IdMotor);
-                model.IdTipoProduto = this._modelTipoProd.IdTipoProd;
+                model.IdTipoProduto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
                 if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
                 {
                     model.NotaFiscal = null;
@@ -257,7 +257,7 @@ namespace TCC.UI
                 }
                 model.Qtd = Convert.ToInt32(this.txtQtdCompra.Text);
                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
-                model.IdPeca = this._modelPeca.IdPeca;
+                model.IdPeca = Convert.ToInt32(this._modelPeca.IdPeca);
 
                 return model;
             }

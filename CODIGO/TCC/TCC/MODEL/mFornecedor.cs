@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mFornecedor : ModelPai
     {
-        private int idFornecedor;
+        private int? idFornecedor;
         private string nomeFornecedor;
         private string ruaFornecedor;
         private int? nroFornecedor;
@@ -103,7 +103,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("id_forn", System.Data.SqlDbType.Int, true)]
-        public int IdFornecedor
+        public int? IdFornecedor
         {
             get { return idFornecedor; }
             set { idFornecedor = value; }

@@ -8,7 +8,7 @@ namespace TCC.MODEL
     public class mCompra : ModelPai
     {
         private int idDepto;
-        private int idCompra;
+        private int? idCompra;
         private DateTime? dat;
         private string obs;
         private int idFornecedor;
@@ -28,7 +28,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("id_compra", System.Data.SqlDbType.Int,true)]
-        public int IdCompra
+        public int? IdCompra
         {
             get { return idCompra; }
             set { idCompra = value; }

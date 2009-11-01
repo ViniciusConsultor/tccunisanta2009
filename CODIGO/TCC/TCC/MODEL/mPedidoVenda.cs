@@ -7,8 +7,8 @@ namespace TCC.MODEL
 {
     public class mPedidoVenda : ModelPai
     {
-        private int idPedido;
-        private int idVenda;
+        private int? idPedido;
+        private int? idVenda;
         private int idDepto;
         private string dscVenda;
         private DateTime datAlt;
@@ -31,14 +31,14 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("id_venda", System.Data.SqlDbType.Int,true)]
-        public int IdVenda
+        public int? IdVenda
         {
             get { return idVenda; }
             set { idVenda = value; }
         }
 
         [ColunasBancoDados ("id_pedido", System.Data.SqlDbType.Int,true)]
-        public int IdPedido
+        public int? IdPedido
         {
             get { return idPedido; }
             set { idPedido = value; }

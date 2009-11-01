@@ -64,8 +64,8 @@ namespace TCC.UI
                 }
                 model.DatSaida = DateTime.Now;
                 model.IdCli = this._modelCliente.IdCliente;
-                model.IdOrdem = this._modelOrdemProd.Id_ordem;
-                model.IdTipoProduto = this._modelTipoProd.IdTipoProd;
+                model.IdOrdem = Convert.ToInt32(this._modelOrdemProd.Id_ordem);
+                model.IdTipoProduto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
                 model.IdVenda = Convert.ToInt32(regra.BuscaidMaximo());
                 model.NotaFisc = this.txtNotaFiscal.Text;
                 if (string.IsNullOrEmpty(this.txtQtdVenda.Text) == true)

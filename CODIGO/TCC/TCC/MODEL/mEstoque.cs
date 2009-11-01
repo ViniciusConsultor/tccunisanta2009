@@ -7,7 +7,7 @@ namespace TCC.MODEL
 {
     public class mEstoque : ModelPai
     {
-        private int id_estoque;
+        private int? id_estoque;
         private string dsc_estoque;
         private DateTime dat_alt;
         private bool flg_ativo;
@@ -15,7 +15,7 @@ namespace TCC.MODEL
         private string nomeTabela = "estoque";
 
         [ColunasBancoDados("id_estoq", System.Data.SqlDbType.Int, false)]
-        public int Id_estoque
+        public int? Id_estoque
         {
             get { return id_estoque; }
             set { id_estoque = value; }

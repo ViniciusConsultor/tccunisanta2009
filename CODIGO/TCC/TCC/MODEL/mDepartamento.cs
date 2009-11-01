@@ -6,7 +6,7 @@ namespace TCC.MODEL
 {
     public class mDepartamento : ModelPai
     {
-        private int _idDepto;
+        private int? _idDepto;
         private string _dscDepto;
         private DateTime _datAtl;
         private bool _flgAtivo;
@@ -34,7 +34,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("id_depto", System.Data.SqlDbType.Int, true)]
-        public int IdDepto
+        public int? IdDepto
         {
             get { return _idDepto; }
             set { _idDepto = value; }
