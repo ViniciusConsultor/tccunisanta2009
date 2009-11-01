@@ -49,7 +49,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarAltera(ModelPai model)
         {
-            throw new NotImplementedException();
+            base.Altera(model);
         }
 
 

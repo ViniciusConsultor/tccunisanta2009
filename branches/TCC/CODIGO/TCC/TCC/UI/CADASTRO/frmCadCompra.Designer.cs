@@ -59,6 +59,7 @@
             this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.txtVlCompra = new System.Windows.Forms.TextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdDepartamento
@@ -347,6 +348,18 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(517, 282);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 18;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
+            // 
             // frmCadCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +368,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtVlCompra);
             this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.btnBuscaMotorCompra);
@@ -423,5 +437,6 @@
         private System.Windows.Forms.MaskedTextBox txtDataCompra;
         private System.Windows.Forms.TextBox txtVlCompra;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }
