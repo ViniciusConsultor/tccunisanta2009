@@ -14,6 +14,7 @@ namespace TCC.UI
     {
         #region Atributos
         mFornecedor _model;
+        bool _alteracao;
         #endregion
 
         #region Construtor
@@ -21,6 +22,14 @@ namespace TCC.UI
         {
             InitializeComponent();
             _model = modelFornecedor;
+            _alteracao = false;
+        }
+
+        public frmBuscaFornecedor(mFornecedor modelFornecedor, bool Alteracao)
+        {
+            InitializeComponent();
+            _model = modelFornecedor;
+            _alteracao = Alteracao;
         }
         #endregion
 
@@ -39,6 +48,21 @@ namespace TCC.UI
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void frmBuscaFornecedor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 

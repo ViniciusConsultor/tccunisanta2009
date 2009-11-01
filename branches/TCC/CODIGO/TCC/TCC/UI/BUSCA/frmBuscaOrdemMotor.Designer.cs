@@ -36,6 +36,8 @@
             this.dgCdOrdemMotor = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCdOrdemMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             // 
             this.btnOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOK.BackgroundImage")));
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.Location = new System.Drawing.Point(104, 228);
+            this.btnOK.Location = new System.Drawing.Point(67, 227);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(54, 32);
             this.btnOK.TabIndex = 4;
@@ -105,12 +107,34 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(208, 228);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.Text = "Excluir";
+            this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(127, 228);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 7;
+            this.btnAlterar.Text = "Alterar";
+            this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
             // frmBuscaOrdemMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 264);
             this.ControlBox = false;
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
@@ -135,5 +159,7 @@
         private System.Windows.Forms.DataGridView dgCdOrdemMotor;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

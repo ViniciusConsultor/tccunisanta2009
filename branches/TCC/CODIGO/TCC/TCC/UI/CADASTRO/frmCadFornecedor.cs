@@ -60,7 +60,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
+                    model.Cnpj = this.txtCnpj.Text;
                 }
                 model.Complemento = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;

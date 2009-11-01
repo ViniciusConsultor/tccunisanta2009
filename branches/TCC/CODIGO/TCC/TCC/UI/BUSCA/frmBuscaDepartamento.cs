@@ -14,6 +14,7 @@ namespace TCC.UI
     {
         #region Atributos
         mDepartamento _modelDep;
+        bool _alteracao;
         #endregion
 
         #region Construtor
@@ -21,6 +22,14 @@ namespace TCC.UI
         {
             InitializeComponent();
             this._modelDep = modelDepartamento;
+            this._alteracao = false;
+        }
+
+        public frmBuscaDepartamento(mDepartamento modelDepartamento, bool Alteracao)
+        {
+            InitializeComponent();
+            this._modelDep = modelDepartamento;
+            this._alteracao = Alteracao;
         }
         #endregion Construtor
 
@@ -39,6 +48,64 @@ namespace TCC.UI
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void frmBuscaDepartamento_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
         }
         #endregion Eventos
 
@@ -118,6 +185,56 @@ namespace TCC.UI
                     dtSource.Dispose();
                     dtSource = null;
                 }
+            }
+        }
+
+        private void PopulaModelCompletoAlteracao()
+        {
+            rDepartamento regraDepartamento = new rDepartamento();
+            DataTable dtRegistroDepartamento = null;
+            try
+            {
+                dtRegistroDepartamento = regraDepartamento.BuscaUmRegistro(this._modelDep);
+                this._modelDep.Deserialize(dtRegistroDepartamento);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraDepartamento = null;
+                if (dtRegistroDepartamento != null)
+                {
+                    dtRegistroDepartamento.Dispose();
+                    dtRegistroDepartamento = null;
+                }
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void DeletaCadastro()
+        {
+            rDepartamento regraDepartamento = new rDepartamento();
+            try
+            {
+                regraDepartamento.ValidarDeleta(this._modelDep);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraDepartamento = null;
             }
         }
         #endregion
