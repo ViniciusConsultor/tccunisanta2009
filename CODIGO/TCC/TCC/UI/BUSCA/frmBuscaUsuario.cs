@@ -18,17 +18,18 @@ namespace TCC.UI
         #endregion
 
         #region Construtor
-        public frmBuscaUsuario()
-        {
-            InitializeComponent();
-            this._alteracao = true;
-        }
-
         public frmBuscaUsuario(mUsuario modelUsuario)
         {
             InitializeComponent();
-            _model = modelUsuario;
+            this._model = modelUsuario;
             this._alteracao = false;
+        }
+
+        public frmBuscaUsuario(mUsuario modelUsuario, bool Alteracao)
+        {
+            InitializeComponent();
+            this._model = modelUsuario;
+            this._alteracao = Alteracao;
         }
         #endregion
 
@@ -48,6 +49,66 @@ namespace TCC.UI
         {
             this.RetornaModel();
         }
+
+        private void frmBuscaUsuario_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region Metodos
@@ -130,11 +191,56 @@ namespace TCC.UI
                 dt = null;
             }
         }
-        #endregion
 
-        private void toolTipBuscar_Popup(object sender, PopupEventArgs e)
+        private void PopulaModelCompletoAlteracao()
         {
-
+            rUsuario regraUsuario = new rUsuario();
+            DataTable dtRegistroUsuario = null;
+            try
+            {
+                dtRegistroUsuario = regraUsuario.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraUsuario = null;
+                if (dtRegistroUsuario != null)
+                {
+                    dtRegistroUsuario.Dispose();
+                    dtRegistroUsuario = null;
+                }
+            }
         }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void DeletaCadastro()
+        {
+            rUsuario regraUsuario = new rUsuario();
+            try
+            {
+                regraUsuario.ValidarDeleta(this._model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraUsuario = null;
+            }
+        }
+        #endregion
     }
 }
