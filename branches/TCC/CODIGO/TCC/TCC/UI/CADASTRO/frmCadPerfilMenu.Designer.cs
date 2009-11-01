@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPerfilMenu));
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblCodigoPerfil = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnBuscaPerfil = new System.Windows.Forms.Button();
             this.btnBuscaMenu = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -48,6 +50,7 @@
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(27, 23);
             this.btnCadastrar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnCadastrar, "OK");
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -97,6 +100,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -108,6 +112,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 5;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -119,6 +124,7 @@
             this.btnBuscaPerfil.Name = "btnBuscaPerfil";
             this.btnBuscaPerfil.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaPerfil.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaPerfil, "Buscar Perfil");
             this.btnBuscaPerfil.UseVisualStyleBackColor = true;
             this.btnBuscaPerfil.Click += new System.EventHandler(this.btnBuscaPerfil_Click);
             // 
@@ -130,6 +136,7 @@
             this.btnBuscaMenu.Name = "btnBuscaMenu";
             this.btnBuscaMenu.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaMenu.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaMenu, "Buscar Menu");
             this.btnBuscaMenu.UseVisualStyleBackColor = true;
             this.btnBuscaMenu.Click += new System.EventHandler(this.btnBuscaMenu_Click);
             // 
@@ -169,5 +176,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnBuscaPerfil;
         private System.Windows.Forms.Button btnBuscaMenu;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

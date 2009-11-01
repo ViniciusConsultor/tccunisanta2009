@@ -168,7 +168,7 @@
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
             this.btnLimpa.TabIndex = 8;
-            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Novo");
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
