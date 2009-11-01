@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadOrdemProducao));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.btnCdDep = new System.Windows.Forms.Button();
             this.btnCdKit = new System.Windows.Forms.Button();
             this.btnCdTipoProduto = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -56,6 +58,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
             this.btnVoltar.TabIndex = 16;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -67,6 +70,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
             this.btnLimpar.TabIndex = 15;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -78,6 +82,7 @@
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(40, 35);
             this.btnAceitar.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -167,8 +172,8 @@
             // 
             this.txtDs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDs.Location = new System.Drawing.Point(172, 177);
-            this.txtDs.Multiline = true;
             this.txtDs.MaxLength = 500;
+            this.txtDs.Multiline = true;
             this.txtDs.Name = "txtDs";
             this.txtDs.Size = new System.Drawing.Size(361, 80);
             this.txtDs.TabIndex = 18;
@@ -181,6 +186,7 @@
             this.btnCdMotor.Name = "btnCdMotor";
             this.btnCdMotor.Size = new System.Drawing.Size(27, 23);
             this.btnCdMotor.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnCdMotor, "Buscar Familia Motor");
             this.btnCdMotor.UseVisualStyleBackColor = true;
             this.btnCdMotor.Click += new System.EventHandler(this.btnCdMotor_Click);
             // 
@@ -192,6 +198,7 @@
             this.btnCdDep.Name = "btnCdDep";
             this.btnCdDep.Size = new System.Drawing.Size(27, 23);
             this.btnCdDep.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnCdDep, "Buscar Departamento");
             this.btnCdDep.UseVisualStyleBackColor = true;
             this.btnCdDep.Click += new System.EventHandler(this.btnCdDep_Click);
             // 
@@ -203,6 +210,7 @@
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(27, 23);
             this.btnCdKit.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnCdKit, "Buscar Kit");
             this.btnCdKit.UseVisualStyleBackColor = true;
             this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
             // 
@@ -214,6 +222,7 @@
             this.btnCdTipoProduto.Name = "btnCdTipoProduto";
             this.btnCdTipoProduto.Size = new System.Drawing.Size(27, 23);
             this.btnCdTipoProduto.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnCdTipoProduto, "Buscar Tipo Produto");
             this.btnCdTipoProduto.UseVisualStyleBackColor = true;
             this.btnCdTipoProduto.Click += new System.EventHandler(this.btnCdTipoProduto_Click);
             // 
@@ -270,5 +279,6 @@
         private System.Windows.Forms.Button btnCdDep;
         private System.Windows.Forms.Button btnCdKit;
         private System.Windows.Forms.Button btnCdTipoProduto;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPedidoVenda));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.lblDsPedido = new System.Windows.Forms.Label();
             this.btnBuscaVendaMotor = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -50,6 +52,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 19;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -61,6 +64,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 18;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -72,6 +76,7 @@
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 17;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -115,8 +120,8 @@
             // 
             this.txtDsPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDsPedido.Location = new System.Drawing.Point(69, 103);
-            this.txtDsPedido.Multiline = true;
             this.txtDsPedido.MaxLength = 500;
+            this.txtDsPedido.Multiline = true;
             this.txtDsPedido.Name = "txtDsPedido";
             this.txtDsPedido.Size = new System.Drawing.Size(253, 72);
             this.txtDsPedido.TabIndex = 20;
@@ -138,6 +143,7 @@
             this.btnBuscaVendaMotor.Name = "btnBuscaVendaMotor";
             this.btnBuscaVendaMotor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaVendaMotor.TabIndex = 17;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaVendaMotor, "Busca Venda do Motor");
             this.btnBuscaVendaMotor.UseVisualStyleBackColor = true;
             this.btnBuscaVendaMotor.Click += new System.EventHandler(this.btnBuscaVendaMotor_Click);
             // 
@@ -149,6 +155,7 @@
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaDepartamento.TabIndex = 17;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Busca Departamento");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
@@ -193,5 +200,6 @@
         private System.Windows.Forms.Label lblDsPedido;
         private System.Windows.Forms.Button btnBuscaVendaMotor;
         private System.Windows.Forms.Button btnBuscaDepartamento;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }

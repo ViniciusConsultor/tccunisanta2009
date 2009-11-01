@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPecaFornecedor));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.txtPeca = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
+            this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -48,6 +50,7 @@
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(27, 23);
             this.btnConfirmar.TabIndex = 0;
+            this.toolTipLegenda.SetToolTip(this.btnConfirmar, "OK");
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -59,6 +62,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -70,6 +74,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -81,6 +86,7 @@
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(25, 23);
             this.btnBuscaFornecedor.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
@@ -92,6 +98,7 @@
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(25, 23);
             this.btnBuscaPeca.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
@@ -165,5 +172,6 @@
         private System.Windows.Forms.TextBox txtPeca;
         private System.Windows.Forms.Label lblFornecedor;
         private System.Windows.Forms.Label lblPeca;
+        private System.Windows.Forms.ToolTip toolTipLegenda;
     }
 }
