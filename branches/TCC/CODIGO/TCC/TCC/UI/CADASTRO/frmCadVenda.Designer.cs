@@ -52,6 +52,7 @@
             this.txtDataVenda = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnPedidoVenda = new System.Windows.Forms.Button();
+            this.btnOP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdOrdemMotor
@@ -111,7 +112,7 @@
             // lblDtVenda
             // 
             this.lblDtVenda.AutoSize = true;
-            this.lblDtVenda.Location = new System.Drawing.Point(111, 194);
+            this.lblDtVenda.Location = new System.Drawing.Point(111, 176);
             this.lblDtVenda.Name = "lblDtVenda";
             this.lblDtVenda.Size = new System.Drawing.Size(79, 13);
             this.lblDtVenda.TabIndex = 2;
@@ -120,7 +121,7 @@
             // lblQtdVenda
             // 
             this.lblQtdVenda.AutoSize = true;
-            this.lblQtdVenda.Location = new System.Drawing.Point(328, 194);
+            this.lblQtdVenda.Location = new System.Drawing.Point(328, 176);
             this.lblQtdVenda.Name = "lblQtdVenda";
             this.lblQtdVenda.Size = new System.Drawing.Size(111, 13);
             this.lblQtdVenda.TabIndex = 0;
@@ -129,7 +130,7 @@
             // txtQtdVenda
             // 
             this.txtQtdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdVenda.Location = new System.Drawing.Point(455, 192);
+            this.txtQtdVenda.Location = new System.Drawing.Point(455, 174);
             this.txtQtdVenda.MaxLength = 5;
             this.txtQtdVenda.Name = "txtQtdVenda";
             this.txtQtdVenda.Size = new System.Drawing.Size(73, 20);
@@ -138,7 +139,7 @@
             // lblVlVenda
             // 
             this.lblVlVenda.AutoSize = true;
-            this.lblVlVenda.Location = new System.Drawing.Point(111, 235);
+            this.lblVlVenda.Location = new System.Drawing.Point(111, 217);
             this.lblVlVenda.Name = "lblVlVenda";
             this.lblVlVenda.Size = new System.Drawing.Size(80, 13);
             this.lblVlVenda.TabIndex = 0;
@@ -147,7 +148,7 @@
             // txtValorVenda
             // 
             this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorVenda.Location = new System.Drawing.Point(200, 233);
+            this.txtValorVenda.Location = new System.Drawing.Point(196, 215);
             this.txtValorVenda.MaxLength = 17;
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(80, 20);
@@ -156,7 +157,7 @@
             // lblNotaFiscal
             // 
             this.lblNotaFiscal.AutoSize = true;
-            this.lblNotaFiscal.Location = new System.Drawing.Point(312, 235);
+            this.lblNotaFiscal.Location = new System.Drawing.Point(312, 217);
             this.lblNotaFiscal.Name = "lblNotaFiscal";
             this.lblNotaFiscal.Size = new System.Drawing.Size(62, 13);
             this.lblNotaFiscal.TabIndex = 0;
@@ -165,7 +166,7 @@
             // txtNotaFiscal
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNotaFiscal.Location = new System.Drawing.Point(380, 233);
+            this.txtNotaFiscal.Location = new System.Drawing.Point(380, 215);
             this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(148, 20);
@@ -245,7 +246,7 @@
             // 
             // txtDataVenda
             // 
-            this.txtDataVenda.Location = new System.Drawing.Point(196, 191);
+            this.txtDataVenda.Location = new System.Drawing.Point(196, 173);
             this.txtDataVenda.Mask = "00/00/0000";
             this.txtDataVenda.Name = "txtDataVenda";
             this.txtDataVenda.Size = new System.Drawing.Size(66, 20);
@@ -254,12 +255,22 @@
             // 
             // btnPedidoVenda
             // 
-            this.btnPedidoVenda.Location = new System.Drawing.Point(437, 88);
+            this.btnPedidoVenda.Location = new System.Drawing.Point(315, 285);
             this.btnPedidoVenda.Name = "btnPedidoVenda";
             this.btnPedidoVenda.Size = new System.Drawing.Size(115, 23);
             this.btnPedidoVenda.TabIndex = 5;
             this.btnPedidoVenda.Text = "Items de Venda";
             this.btnPedidoVenda.UseVisualStyleBackColor = true;
+            // 
+            // btnOP
+            // 
+            this.btnOP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOP.BackgroundImage")));
+            this.btnOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOP.Location = new System.Drawing.Point(193, 273);
+            this.btnOP.Name = "btnOP";
+            this.btnOP.Size = new System.Drawing.Size(45, 35);
+            this.btnOP.TabIndex = 6;
+            this.btnOP.UseVisualStyleBackColor = true;
             // 
             // frmCadVenda
             // 
@@ -269,6 +280,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.btnOP);
             this.Controls.Add(this.btnPedidoVenda);
             this.Controls.Add(this.txtDataVenda);
             this.Controls.Add(this.btnVolta);
@@ -323,5 +335,6 @@
         private System.Windows.Forms.MaskedTextBox txtDataVenda;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnPedidoVenda;
+        private System.Windows.Forms.Button btnOP;
     }
 }
