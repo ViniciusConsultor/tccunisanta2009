@@ -148,6 +148,7 @@
             this.Name = "frmBuscaNumMotor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Numero Motor";
+            this.Load += new System.EventHandler(this.frmBuscaNumMotor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgNumMotor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -117,6 +117,7 @@
             this.btnExcluir.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -128,6 +129,7 @@
             this.btnAlterar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // frmBuscaTipoPeca
             // 
@@ -147,6 +149,7 @@
             this.Name = "frmBuscaTipoPeca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Tipo Peca";
+            this.Load += new System.EventHandler(this.frmBuscaTipoPeca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoPeca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
