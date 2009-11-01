@@ -50,6 +50,7 @@ namespace TCC.UI
                     modelColaborador = this.PegaDadosTela();
                     regraColaborador.ValidarAltera(modelColaborador);
                 }
+                this.btnApaga_Click(null, null);
             }
             catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
@@ -169,7 +170,7 @@ namespace TCC.UI
             try
             {
                 model.BairrEnd = txtBairro.Text;
-                if (this.txtCep.Modified == true)
+                if (this.txtCep.Modified == false)
                 {
                     string cep = txtCep.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
                     model.Cep = Convert.ToInt32(cep);
@@ -325,7 +326,6 @@ namespace TCC.UI
         {
             if (this._modelColaborador != null)
             {
-                //Ver essa MERDA!!!
                 this._modelUsuario = new mUsuario();
                 this._modelUsuario.IdUsuario = this._modelColaborador.IdUsuario;
                 this._modelDepartamento = new mDepartamento();
@@ -334,7 +334,7 @@ namespace TCC.UI
                 base.Alteracao = true;
                 this.txtCdUsuario.Text = this._modelColaborador.IdUsuario.ToString();
                 this.txtCdDepartamento.Text = this._modelColaborador.IdDepto.ToString();
-                this.txtNome.Text = this._modelColaborador.IdColab.ToString();
+                this.txtNome.Text = this._modelColaborador.NomeColab;
                 this.txtDataNasc.Text = this._modelColaborador.DatNasc.ToString("dd/MM/yyyy");
                 this.CbSexo.SelectedIndex = this.CbSexo.FindString(this._modelColaborador.Sexo);
                 this.txtDDD.Text = this._modelColaborador.Ddd.ToString();
