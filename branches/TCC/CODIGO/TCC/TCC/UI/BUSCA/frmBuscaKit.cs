@@ -14,6 +14,7 @@ namespace TCC.UI
     {
         #region Atributos
         mKitGrupoPeca _model;
+        bool _alteracao;
         #endregion
 
         #region Construtor
@@ -21,6 +22,14 @@ namespace TCC.UI
         {
             InitializeComponent();
             this._model = modelKit;
+            this._alteracao = false;
+        }
+
+        public frmBuscaKit(mKitGrupoPeca modelKit, bool Alteracao)
+        {
+            InitializeComponent();
+            this._model = modelKit;
+            this._alteracao = Alteracao;
         }
         #endregion
 
@@ -40,10 +49,67 @@ namespace TCC.UI
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void frmBuscaKit_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
         #region Metodos
-
         private void PopulaGrid()
         {
             rKitGrupoPeca regra = new rKitGrupoPeca();
@@ -119,6 +185,57 @@ namespace TCC.UI
                 }
             }
         }
+
+        private void PopulaModelCompletoAlteracao()
+        {
+            rKitGrupoPeca regraKit = new rKitGrupoPeca();
+            DataTable dtRegistroKit = null;
+            try
+            {
+                dtRegistroKit = regraKit.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroKit);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraKit = null;
+                if (dtRegistroKit != null)
+                {
+                    dtRegistroKit.Dispose();
+                    dtRegistroKit = null;
+                }
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void DeletaCadastro()
+        {
+            rKitGrupoPeca regraKit = new rKitGrupoPeca();
+            try
+            {
+                regraKit.ValidarDeleta(this._model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraKit = null;
+            }
+        }
         #endregion
+
     }
 }

@@ -15,13 +15,21 @@ namespace TCC.UI
 
         #region Atributos
         mTipoProduto _model;
+        bool _alteracao;
         #endregion
 
         #region Construtor
         public frmBuscaTipoProduto(mTipoProduto modelParam)
         {
             InitializeComponent();
-            _model = modelParam;
+            this._model = modelParam;
+            this._alteracao = false;
+        }
+        public frmBuscaTipoProduto(mTipoProduto modelParam, bool Alteracao)
+        {
+            InitializeComponent();
+            this._model = modelParam;
+            this._alteracao = Alteracao;
         }
         #endregion
 
@@ -40,6 +48,64 @@ namespace TCC.UI
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void frmBuscaTipoProduto_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
 
@@ -119,6 +185,57 @@ namespace TCC.UI
                 }
             }
         }
+
+        private void PopulaModelCompletoAlteracao()
+        {
+            rTipoProduto regraTipoProduto = new rTipoProduto();
+            DataTable dtRegistroTipoProduto = null;
+            try
+            {
+                dtRegistroTipoProduto = regraTipoProduto.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroTipoProduto);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraTipoProduto = null;
+                if (dtRegistroTipoProduto != null)
+                {
+                    dtRegistroTipoProduto.Dispose();
+                    dtRegistroTipoProduto = null;
+                }
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void DeletaCadastro()
+        {
+            rTipoProduto regraTipoProduto = new rTipoProduto();
+            try
+            {
+                regraTipoProduto.ValidarDeleta(this._model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraTipoProduto = null;
+            }
+        }
         #endregion
+
     }
 }

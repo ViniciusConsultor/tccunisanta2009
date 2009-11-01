@@ -117,6 +117,7 @@
             this.btnExcluir.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -128,6 +129,7 @@
             this.btnAlterar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // frmBuscaTipoMotor
             // 
@@ -147,6 +149,7 @@
             this.Name = "frmBuscaTipoMotor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busca Tipo Motor";
+            this.Load += new System.EventHandler(this.frmBuscaTipoMotor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoMotor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

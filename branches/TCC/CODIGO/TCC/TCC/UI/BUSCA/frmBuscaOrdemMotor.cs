@@ -14,13 +14,21 @@ namespace TCC.UI
     {
         #region Atributos
         mOrdemProducao modelOrdemProd;
+        bool _alteracao;
         #endregion
 
         #region Construtor
         public frmBuscaOrdemMotor(mOrdemProducao model)
         {
             InitializeComponent();
-            modelOrdemProd = model;
+            this.modelOrdemProd = model;
+            this._alteracao = false;
+        }
+        public frmBuscaOrdemMotor(mOrdemProducao model, bool Alteracao)
+        {
+            InitializeComponent();
+            this.modelOrdemProd = model;
+            this._alteracao = Alteracao;
         }
         #endregion
 
@@ -39,6 +47,64 @@ namespace TCC.UI
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void frmBuscaOrdemMotor_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
 
@@ -122,6 +188,57 @@ namespace TCC.UI
                 }
             }
         }
+
+        private void PopulaModelCompletoAlteracao()
+        {
+            rOrdemProducao regraOrdemProd = new rOrdemProducao();
+            DataTable dtRegistroOrdemProd = null;
+            try
+            {
+                dtRegistroOrdemProd = regraOrdemProd.BuscaUmRegistro(this.modelOrdemProd);
+                this.modelOrdemProd.Deserialize(dtRegistroOrdemProd);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraOrdemProd = null;
+                if (dtRegistroOrdemProd != null)
+                {
+                    dtRegistroOrdemProd.Dispose();
+                    dtRegistroOrdemProd = null;
+                }
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void DeletaCadastro()
+        {
+            rOrdemProducao regraOrdemProd = new rOrdemProducao();
+            try
+            {
+                regraOrdemProd.ValidarDeleta(this.modelOrdemProd);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraOrdemProd = null;
+            }
+        }
+
         #endregion
     }
 }

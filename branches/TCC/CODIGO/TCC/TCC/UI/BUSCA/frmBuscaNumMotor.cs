@@ -14,6 +14,7 @@ namespace TCC.UI
     {
         #region Atributos
         mNumMotor _model;
+        bool _alteracao;
         #endregion
 
         #region Construtor
@@ -21,6 +22,14 @@ namespace TCC.UI
         {
             InitializeComponent();
             this._model = modelNumMotor;
+            this._alteracao = false;
+        }
+
+        public frmBuscaNumMotor(mNumMotor modelNumMotor, bool Alteracao)
+        {
+            InitializeComponent();
+            this._model = modelNumMotor;
+            this._alteracao = Alteracao;
         }
         #endregion
 
@@ -40,10 +49,67 @@ namespace TCC.UI
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void frmBuscaNumMotor_Load(object sender, EventArgs e)
+        {
+            this.HabilitaBotoes();
+        }
         #endregion
 
         #region Metodos
-
         private void PopulaGrid()
         {
             rNumeroMotor regraNumMotor = new rNumeroMotor();
@@ -118,16 +184,57 @@ namespace TCC.UI
                 }
             }
         }
+
+        private void PopulaModelCompletoAlteracao()
+        {
+            rNumeroMotor regraNumMotor = new rNumeroMotor();
+            DataTable dtRegistroNumMotor = null;
+            try
+            {
+                dtRegistroNumMotor = regraNumMotor.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroNumMotor);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraNumMotor = null;
+                if (dtRegistroNumMotor != null)
+                {
+                    dtRegistroNumMotor.Dispose();
+                    dtRegistroNumMotor = null;
+                }
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void DeletaCadastro()
+        {
+            rNumeroMotor regraNumMotor = new rNumeroMotor();
+            try
+            {
+                regraNumMotor.ValidarDeleta(this._model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraNumMotor = null;
+            }
+        }
         #endregion
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

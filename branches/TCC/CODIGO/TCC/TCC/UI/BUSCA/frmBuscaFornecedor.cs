@@ -52,16 +52,60 @@ namespace TCC.UI
 
         private void frmBuscaFornecedor_Load(object sender, EventArgs e)
         {
-
+            this.HabilitaBotoes();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.RetornaModel();
+                this.PopulaModelCompletoAlteracao();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.RetornaModel();
+                this.DeletaCadastro();
+                this.PopulaGrid();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
         #endregion
@@ -137,6 +181,56 @@ namespace TCC.UI
                 {
                     dtSource.Dispose();
                     dtSource = null;
+                }
+            }
+        }
+
+        private void DeletaCadastro()
+        {
+            rFornecedor regraFornecedor = new rFornecedor();
+            try
+            {
+                regraFornecedor.ValidarDeleta(this._model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraFornecedor = null;
+            }
+        }
+
+        private void HabilitaBotoes()
+        {
+            this.btnAlterar.Visible = this._alteracao;
+            this.btnExcluir.Visible = this._alteracao;
+            //Alteração negado!!
+            //------------------
+            this.btnOK.Visible = !this._alteracao;
+        }
+
+        private void PopulaModelCompletoAlteracao()
+        {
+            rFornecedor regraFornecedor = new rFornecedor();
+            DataTable dtRegistroFornecedor = null;
+            try
+            {
+                dtRegistroFornecedor = regraFornecedor.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroFornecedor);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraFornecedor = null;
+                if (dtRegistroFornecedor != null)
+                {
+                    dtRegistroFornecedor.Dispose();
+                    dtRegistroFornecedor = null;
                 }
             }
         }
