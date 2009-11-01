@@ -7,20 +7,20 @@ namespace TCC.MODEL
 {
     public class mSubMenu : ModelPai
     {
-        private int idMenuFilho;
-        private int idMenuPai;
+        private int? idMenuFilho;
+        private int? idMenuPai;
         private int idMenu;
         private string nomeTabela = "Submenu";
 
         [ColunasBancoDados ("id_menu_filho", System.Data.SqlDbType.Int,true)]
-        public int IdMenuFilho
+        public int? IdMenuFilho
         {
             get { return idMenuFilho; }
             set { idMenuFilho = value; }
         }
 
         [ColunasBancoDados ("id_menu_pai", System.Data.SqlDbType.Int,true)]
-        public int IdMenuPai
+        public int? IdMenuPai
         {
             get { return idMenuPai; }
             set { idMenuPai = value; }

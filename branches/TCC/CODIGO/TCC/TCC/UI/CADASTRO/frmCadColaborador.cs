@@ -181,8 +181,8 @@ namespace TCC.UI
                 }
                 model.Estado = this.cbEstado.SelectedValue.ToString();
                 model.IdColab = Convert.ToInt32(regra.BuscaIDMaximoColaborador());
-                model.IdDepto = this._modelDepartamento.IdDepto;
-                model.IdUsuario = this._modelUsuario.IdUsuario;
+                model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
+                model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
                 model.NomeColab = txtNome.Text;
                 model.NomeRua = txtRua.Text;
                 if (string.IsNullOrEmpty(txtNumero.Text) == true)

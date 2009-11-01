@@ -7,14 +7,14 @@ namespace TCC.MODEL
 {
     public class mUsinagem : ModelPai
     {
-        private int idUsinagem;
+        private int? idUsinagem;
         private bool flgStatus;
         private int idPeca;
         private DateTime dtaEnvio;
         private string nomeTabela = "Usinagem";
 
         [ColunasBancoDados ("id_usinagem", System.Data.SqlDbType.Int,true)]
-        public int IdUsinagem
+        public int? IdUsinagem
         {
             get { return idUsinagem; }
             set { idUsinagem = value; }

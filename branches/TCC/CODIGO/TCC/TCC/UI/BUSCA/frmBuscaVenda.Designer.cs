@@ -56,16 +56,16 @@
             this.txtFiltro.Location = new System.Drawing.Point(12, 13);
             this.txtFiltro.MaxLength = 50;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(193, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(191, 20);
             this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(211, 5);
+            this.btnBuscar.Location = new System.Drawing.Point(223, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(61, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(49, 34);
             this.btnBuscar.TabIndex = 2;
             this.toolTipFechar.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;

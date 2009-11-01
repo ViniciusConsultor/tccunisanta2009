@@ -7,13 +7,13 @@ namespace TCC.MODEL
 {
     public class mTipoPeca : ModelPai
     {
-        private int idTipoPeca;
+        private int? idTipoPeca;
         private string dscTipoPeca;
         private bool flgAtivo;
         private string nomeTabela = "Tipopeca";
 
         [ColunasBancoDados("id_tipo_peca", System.Data.SqlDbType.Int, true)]
-        public int IdTipoPeca
+        public int? IdTipoPeca
         {
             get { return idTipoPeca; }
             set { idTipoPeca = value; }

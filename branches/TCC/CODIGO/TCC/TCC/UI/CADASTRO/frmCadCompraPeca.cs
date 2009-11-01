@@ -87,7 +87,7 @@ namespace TCC.UI
             try
             {
                 model.IdCompra = this._modelCompra.IdCompra;
-                model.IdPeca = this._modelPeca.IdPeca;
+                model.IdPeca = Convert.ToInt32(this._modelPeca.IdPeca);
                 model.UltimoPreco = Convert.ToDouble(this.txtUltimoPreco.Text);
 
                 return model;
