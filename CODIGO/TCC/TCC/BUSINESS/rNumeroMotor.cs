@@ -10,18 +10,6 @@ namespace TCC.BUSINESS
 {
     class rNumeroMotor : ComandosSql
     {
-        public string BuscaIdMaximo()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_num_motor", "Numeromotor");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public DataTable BuscaNumeroMotor(string numeroMotor)
         {
             SqlParameter param = null;

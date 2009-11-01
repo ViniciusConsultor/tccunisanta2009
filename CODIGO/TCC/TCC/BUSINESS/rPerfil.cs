@@ -9,17 +9,6 @@ namespace TCC.BUSINESS
 {
     class rPerfil : ComandosSql
     {
-        public string BuscaIdMaximoPerfil()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_perfil", "perfil");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public DataTable BuscaPerfil(string Descricao)
         {

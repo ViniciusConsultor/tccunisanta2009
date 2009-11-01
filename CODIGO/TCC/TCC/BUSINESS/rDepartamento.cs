@@ -35,18 +35,6 @@ namespace TCC.BUSINESS
             }
         }
 
-        public string BuscaIdMaximoDepartamento()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_depto", "departamento");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public override void ValidarInsere(ModelPai model)
         {
             base.Insere(model);

@@ -11,20 +11,6 @@ namespace TCC.BUSINESS
     class rUsuario : ComandosSql
     {
 
-        #region Busca Id Maximo Usuario
-        public string BuscaIdMaximoUsuario()
-        {
-            try
-            {
-                return base.BuscaIdMaximoTabelas("id_usu", "Usuario");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        #endregion Busca Id Maximo Usuario
-
         public DataTable BuscaUsuario(string Descricao)
         {
             SqlParameter param = null;

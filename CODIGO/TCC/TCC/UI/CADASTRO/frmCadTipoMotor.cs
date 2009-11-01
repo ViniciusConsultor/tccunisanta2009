@@ -80,9 +80,9 @@ namespace TCC.UI
             rTipoMotor regra = new rTipoMotor();
             try
             {
+                model.IdTipoMotorReal = this.txtIdReal.Text;
                 model.DscTipoMotor = this.txtNmTipoMotor.Text;
                 model.FlgAtivo = true;
-                model.IdTipoMotor = Convert.ToInt32(regra.BuscaIdMaximo());
 
                 return model;
             }

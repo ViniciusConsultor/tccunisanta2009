@@ -11,6 +11,8 @@ namespace TCC.MODEL
         private string dsc_num_motor;
         private bool flg_ativo;
         private string nomeTabela = "Numeromotor";
+        private string idNumMotorReal;
+
 
         [ColunasBancoDados ("id_num_motor",System.Data.SqlDbType.Int,true)]
         public int? Id_num_motor
@@ -31,6 +33,13 @@ namespace TCC.MODEL
         {
             get { return flg_ativo; }
             set { flg_ativo = value; }
+        }
+
+        [ColunasBancoDados("id_num_motor_real", System.Data.SqlDbType.VarChar, false)]
+        public string IdNumMotorReal
+        {
+            get { return idNumMotorReal; }
+            set { idNumMotorReal = value; }
         }
 
         public override string getNomeTabela()

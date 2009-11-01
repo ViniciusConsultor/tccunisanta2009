@@ -235,7 +235,6 @@ namespace TCC.UI
                 model.Id_depto = Convert.ToInt32( this._modelDepartamento.IdDepto);
                 model.IdKit = Convert.ToInt32(this._modelKit.IdKit);
                 model.Id_motor = Convert.ToInt32( this._modelFamiliaMotor.IdFamiliaMotor);
-                model.Id_ordem = Convert.ToInt32(regra.BuscaIdMaximo());
                 model.Id_tipo_produto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
 
                 return model;

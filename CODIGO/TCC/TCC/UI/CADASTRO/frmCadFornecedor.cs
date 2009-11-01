@@ -66,7 +66,6 @@ namespace TCC.UI
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
                 model.SlgEstado = this.cboUf.GetItemText(this.cboUf.SelectedItem);
-                model.IdFornecedor = Convert.ToInt32(regra.BuscaIdMaximoFornecedor());
                 model.NomeFornecedor = this.txtNomeFornecedor.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {

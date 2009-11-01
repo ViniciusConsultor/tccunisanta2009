@@ -51,7 +51,6 @@ namespace TCC.UI
             rTipoPeca regra = new rTipoPeca();
             try
             {
-                model.IdTipoPeca = Convert.ToInt32(regra.BuscaIdMaximoTipoPeca());
                 model.DscTipoPeca = this.txtDsTipoPeca.Text;
                 model.FlgAtivo = true;
 
