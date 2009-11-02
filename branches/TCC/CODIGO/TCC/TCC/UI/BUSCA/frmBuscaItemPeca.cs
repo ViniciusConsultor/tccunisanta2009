@@ -146,7 +146,7 @@ namespace TCC.UI
                             dvC = this.dgCdItemPeca["id_item_peca", this.dgCdItemPeca.CurrentRow.Index];
                             this._model.Id_item = Convert.ToInt32(dvC.Value);
                             dvC = this.dgCdItemPeca["Item Peça", this.dgCdItemPeca.CurrentRow.Index];
-                            this._model.Nom_item_peca = dvC.Value.ToString();
+                            //this._model.Nom_item_peca = dvC.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }

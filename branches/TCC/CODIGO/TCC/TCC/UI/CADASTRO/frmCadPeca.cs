@@ -49,7 +49,7 @@ namespace TCC.UI
                 objTela = null;
             }
         }
-
+/*
         private void btnCdEstoque_Click(object sender, EventArgs e)
         {
             this._modelEstoque = new mEstoque();
@@ -75,7 +75,7 @@ namespace TCC.UI
                 objTela = null;
             }
         }
-
+        */
         private void frmCadPeca_Load(object sender, EventArgs e)
         {
         }
@@ -97,7 +97,6 @@ namespace TCC.UI
                 model.DatAlt = DateTime.Now;
                 model.DscPeca = this.txtDsPeca.Text;
                 model.FlgAtivo = true;
-                model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
                 model.IdPecaReal = this.txtCodigoReal.Text;
                 model.IdTipoPeca = Convert.ToInt32(this._modelTipoPeca.IdTipoPeca);
                 model.Nom = this.txtNmPeca.Text;
