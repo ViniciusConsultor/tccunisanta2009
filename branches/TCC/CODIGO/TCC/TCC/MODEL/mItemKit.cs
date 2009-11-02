@@ -12,6 +12,7 @@ namespace TCC.MODEL
         private int? id_kit;
         private DateTime dat_alt;
         private bool flg_ativo;
+        private string nomeTabela = "Itemkit";
 
         [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.Int, false)]
         public DateTime Dat_alt
@@ -40,7 +41,12 @@ namespace TCC.MODEL
             get { return id_item; }
             set { id_item = value; }
         }
-        
-      
+
+
+
+        public override string getNomeTabela()
+        {
+            return this.nomeTabela;
+        }
     }
 }
