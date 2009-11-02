@@ -65,7 +65,7 @@ namespace TCC.UI
                     model = new mItemPeca();
                     model.Flg_ativo = true;
                     model.Id_peca = this._modelPeca[posicao].IdPeca;
-                    model.Nom_item_peca = this.txtDescItemPeca.Text;
+                    model.Nom_item_peca = this.txtNmItem.Text;
                     model.Id_item = idMaximo;
                     ListaModel.Add(model);
                 }
@@ -110,11 +110,11 @@ namespace TCC.UI
                     {
                         if (contador == 0)
                         {
-                            this.txtCodigoPeca.Text = this._modelPeca[contador].Nom;
+                            this.txtCdPeca.Text = this._modelPeca[contador].Nom;
                         }
                         else
                         {
-                            this.txtCodigoPeca.Text += ", " + this._modelPeca[contador].Nom;
+                            this.txtCdPeca.Text += ", " + this._modelPeca[contador].Nom;
                         }
                     }
                 }

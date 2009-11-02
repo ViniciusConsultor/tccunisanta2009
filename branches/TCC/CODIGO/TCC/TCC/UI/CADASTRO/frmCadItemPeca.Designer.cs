@@ -33,8 +33,8 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
-            this.txtCodigoPeca = new System.Windows.Forms.TextBox();
-            this.txtDescItemPeca = new System.Windows.Forms.TextBox();
+            this.txtCdPeca = new System.Windows.Forms.TextBox();
+            this.txtNmItem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCodPeca = new System.Windows.Forms.Label();
             this.btnBuscaPeca = new System.Windows.Forms.Button();
@@ -77,40 +77,40 @@
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
-            // txtCodigoPeca
+            // txtCdPeca
             // 
-            this.txtCodigoPeca.Location = new System.Drawing.Point(179, 57);
-            this.txtCodigoPeca.Name = "txtCodigoPeca";
-            this.txtCodigoPeca.ReadOnly = true;
-            this.txtCodigoPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoPeca.TabIndex = 4;
-            this.txtCodigoPeca.TabStop = false;
+            this.txtCdPeca.Location = new System.Drawing.Point(179, 57);
+            this.txtCdPeca.Name = "txtCdPeca";
+            this.txtCdPeca.ReadOnly = true;
+            this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtCdPeca.TabIndex = 4;
+            this.txtCdPeca.TabStop = false;
             // 
-            // txtDescItemPeca
+            // txtNmItem
             // 
-            this.txtDescItemPeca.Location = new System.Drawing.Point(179, 101);
-            this.txtDescItemPeca.MaxLength = 20;
-            this.txtDescItemPeca.Name = "txtDescItemPeca";
-            this.txtDescItemPeca.Size = new System.Drawing.Size(133, 20);
-            this.txtDescItemPeca.TabIndex = 2;
+            this.txtNmItem.Location = new System.Drawing.Point(179, 101);
+            this.txtNmItem.MaxLength = 20;
+            this.txtNmItem.Name = "txtNmItem";
+            this.txtNmItem.Size = new System.Drawing.Size(133, 20);
+            this.txtNmItem.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 104);
+            this.label2.Location = new System.Drawing.Point(112, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Descrição Item Peça";
+            this.label2.Text = "Nome Item ";
             // 
             // lblCodPeca
             // 
             this.lblCodPeca.AutoSize = true;
             this.lblCodPeca.Location = new System.Drawing.Point(116, 60);
             this.lblCodPeca.Name = "lblCodPeca";
-            this.lblCodPeca.Size = new System.Drawing.Size(57, 13);
+            this.lblCodPeca.Size = new System.Drawing.Size(32, 13);
             this.lblCodPeca.TabIndex = 8;
-            this.lblCodPeca.Text = "Cod. Peça";
+            this.lblCodPeca.Text = "Peça";
             // 
             // btnBuscaPeca
             // 
@@ -140,14 +140,14 @@
             this.Controls.Add(this.btnBuscaPeca);
             this.Controls.Add(this.lblCodPeca);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtDescItemPeca);
-            this.Controls.Add(this.txtCodigoPeca);
+            this.Controls.Add(this.txtNmItem);
+            this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnConfirmar);
             this.MaximizeBox = false;
             this.Name = "frmCadItemPeca";
-            this.Text = "Item Peca";
+            this.Text = "Item";
             this.Load += new System.EventHandler(this.frmCadItemPeca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,8 +159,8 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnLimpa;
-        private System.Windows.Forms.TextBox txtCodigoPeca;
-        private System.Windows.Forms.TextBox txtDescItemPeca;
+        private System.Windows.Forms.TextBox txtCdPeca;
+        private System.Windows.Forms.TextBox txtNmItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCodPeca;
         private System.Windows.Forms.Button btnBuscaPeca;

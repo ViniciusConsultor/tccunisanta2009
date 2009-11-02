@@ -12,7 +12,15 @@ namespace TCC.MODEL
         private DateTime dat_alt;
         private bool flg_ativo;
         private int id_depto;
+        private bool flg_negativo;
         private string nomeTabela = "estoque";
+
+        public bool Flg_negativo
+        {
+            get { return flg_negativo; }
+            set { flg_negativo = value; }
+        }
+
 
         [ColunasBancoDados("id_estoq", System.Data.SqlDbType.Int, true)]
         public int? Id_estoque

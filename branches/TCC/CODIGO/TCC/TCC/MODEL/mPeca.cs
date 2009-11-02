@@ -14,7 +14,6 @@ namespace TCC.MODEL
         private double? peso;
         private bool flgAtivo;
         private string dscPeca;
-        private int idEstoque;
         private int? qtdMin;
         private int idTipoPeca;
         private string nomeTabela = "peca";
@@ -68,12 +67,6 @@ namespace TCC.MODEL
             set { dscPeca = value; }
         }
 
-        [ColunasBancoDados ("id_estoque", System.Data.SqlDbType.Int,false)]
-        public int IdEstoque
-        {
-            get { return idEstoque; }
-            set { idEstoque = value; }
-        }
 
         [ColunasBancoDados ("qtd_min", System.Data.SqlDbType.Int,false)]
         public int? QtdMin

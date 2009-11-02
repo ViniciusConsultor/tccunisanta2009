@@ -179,6 +179,7 @@
     <Compile Include="MODEL\ModelPai.cs" />
     <Compile Include="MODEL\mOrdemProducao.cs" />
     <Compile Include="MODEL\mPeca.cs" />
+    <Compile Include="MODEL\mPecaEstoque.cs" />
     <Compile Include="MODEL\mPecaFornecedor.cs" />
     <Compile Include="MODEL\mPedidoVenda.cs" />
     <Compile Include="MODEL\mPerfil.cs" />
@@ -335,6 +336,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPeca.resx">
       <DependentUpon>frmCadPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadPecaEstoque.resx">
+      <DependentUpon>frmCadPecaEstoque.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPecaFornecedor.resx">
@@ -614,6 +619,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadPeca.Designer.cs">
       <DependentUpon>frmCadPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPecaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPecaEstoque.Designer.cs">
+      <DependentUpon>frmCadPecaEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadPecaFornecedor.cs">
       <SubType>Form</SubType>

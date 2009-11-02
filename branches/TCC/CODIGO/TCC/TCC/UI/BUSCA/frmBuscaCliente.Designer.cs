@@ -124,7 +124,7 @@
             // 
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(216, 5);
+            this.btnBuscar.Location = new System.Drawing.Point(232, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(40, 35);
             this.btnBuscar.TabIndex = 2;
