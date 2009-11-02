@@ -45,7 +45,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
+                 //   this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
                 }
             }
             catch (Exception ex)

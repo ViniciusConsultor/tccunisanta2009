@@ -8,10 +8,17 @@ namespace TCC.MODEL
     public class mItemPeca : ModelPai
     {
         private int? id_item;
-        private string nom_item_peca;
         private int? id_peca;
         private bool flg_ativo;
+        private DateTime dat_alt;
         private string nomeTabela = "Itempeca";
+
+        [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.DateTime, false)]
+        public DateTime Dat_alt
+        {
+            get { return dat_alt; }
+            set { dat_alt = value; }
+        }
 
         [ColunasBancoDados("id_item_peca", System.Data.SqlDbType.Int,true)]
         public int? Id_item
@@ -20,12 +27,6 @@ namespace TCC.MODEL
             set { id_item = value; }
         }
 
-        [ColunasBancoDados("nom", System.Data.SqlDbType.VarChar,false)]
-        public string Nom_item_peca
-        {
-            get { return nom_item_peca; }
-            set { nom_item_peca = value; }
-        }
 
         [ColunasBancoDados("id_peca", System.Data.SqlDbType.Int,false)]
         public int? Id_peca

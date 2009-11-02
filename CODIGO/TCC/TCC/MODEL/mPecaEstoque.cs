@@ -5,14 +5,14 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mPecaEstoque
+    class mPecaEstoque: ModelPai
     {
         private int id_peca;
         private int id_estoq;
         private bool flg_alt;
         private DateTime dat_alt;
         private int? qtd_peca;
-        private string nometabela = "PecaEstoque";
+        private string nomeTabela = "PecaEstoque";
 
         [ColunasBancoDados("Id_peca", System.Data.SqlDbType.Int, true)]
         public int Id_peca
