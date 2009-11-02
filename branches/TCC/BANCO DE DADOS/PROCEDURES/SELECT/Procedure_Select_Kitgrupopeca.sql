@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_kitgrupopeca
 @id_kit INT
 AS
-SELECT id_kit_real, nom, id_item_peca, id_peca, dat_alt, flg_ativo
+SELECT id_kit_real, nom, dat_alt, flg_ativo
 FROM Kitgrupopeca
 WHERE id_kit = @id_kit
 AND flg_ativo = 1

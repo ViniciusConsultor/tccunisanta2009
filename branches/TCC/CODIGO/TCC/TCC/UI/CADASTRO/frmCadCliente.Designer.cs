@@ -44,7 +44,7 @@
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
-            this.lblRg = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
             this.lblCnpj = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.btnInsere = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtRg = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
@@ -192,14 +192,14 @@
             this.cboEstado.Size = new System.Drawing.Size(63, 21);
             this.cboEstado.TabIndex = 8;
             // 
-            // lblRg
+            // lblCPF
             // 
-            this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(109, 226);
-            this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(23, 13);
-            this.lblRg.TabIndex = 0;
-            this.lblRg.Text = "RG";
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Location = new System.Drawing.Point(109, 226);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(27, 13);
+            this.lblCPF.TabIndex = 0;
+            this.lblCPF.Text = "CPF";
             // 
             // lblCnpj
             // 
@@ -315,12 +315,12 @@
             this.txtNumero.Size = new System.Drawing.Size(63, 20);
             this.txtNumero.TabIndex = 3;
             // 
-            // txtRg
+            // txtCPF
             // 
-            this.txtRg.Location = new System.Drawing.Point(138, 223);
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(136, 20);
-            this.txtRg.TabIndex = 9;
+            this.txtCPF.Location = new System.Drawing.Point(147, 222);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(136, 20);
+            this.txtCPF.TabIndex = 9;
             // 
             // txtCep
             // 
@@ -357,7 +357,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.txtRg);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtDDD);
@@ -375,7 +375,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.lblCnpj);
-            this.Controls.Add(this.lblRg);
+            this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.lblComplemento);
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.lblNumero);
@@ -410,7 +410,7 @@
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cboEstado;
-        private System.Windows.Forms.Label lblRg;
+        private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblCnpj;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnInsere;
@@ -423,7 +423,7 @@
         private Controles.MegaTextBox.MegaTextBox txtDDD;
         private Controles.MegaTextBox.MegaTextBox txtTelefone;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
-        private System.Windows.Forms.MaskedTextBox txtRg;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.ToolTip toolTipLegenda;

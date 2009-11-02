@@ -1,27 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_itempeca', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_itempeca;
+IF OBJECT_ID('sp_insert_itemkit', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_itemkit;
 GO
 
-CREATE PROCEDURE sp_insert_itempeca
+CREATE PROCEDURE sp_insert_itemkit
 @id_item		  INT,
-@id_peca          INT,
+@id_kit			  INT,
 @dat_alt		  DATETIME,
 @flg_ativo        BIT
 
 AS 
 BEGIN TRY
 --Validações na tabela itempeca
-IF (@id_item = '')
-	RAISERROR('Informe o codigo da Item!',16,1)
-ELSE IF(@id_peca='')
-   RAISERROR('Informe o codigo da Peça!',16,1)
+IF(@id_item='')
+   RAISERROR('Informe o código do Item!',16,1)   
+ELSE IF(@id_kit='')
+   RAISERROR('Informe o código do Kit!',16,1)   
 ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO ITEMPECA(id_item, id_peca, dat_alt, flg_ativo)
-VALUES(@id_item, @id_peca, @dat_alt, @flg_ativo)
+INSERT INTO ITEMKIT(id_item, id_kit, dat_alt, flg_ativo)
+VALUES(@id_item, @id_kit, @dat_alt, @flg_ativo)
 END
 END TRY
 

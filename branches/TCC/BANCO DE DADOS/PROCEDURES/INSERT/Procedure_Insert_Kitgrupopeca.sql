@@ -5,7 +5,6 @@ GO
 
 CREATE PROCEDURE sp_insert_kitgrupopeca
 @id_kit_real   VARCHAR(10),
-@id_item_peca  INT,
 @nom           VARCHAR(50),
 @dat_alt       DATETIME,
 @flg_ativo     BIT
@@ -13,16 +12,14 @@ CREATE PROCEDURE sp_insert_kitgrupopeca
 AS 
 BEGIN TRY
 --Validações na tabela kitgrupopeca
-IF(@id_item_peca='')
-   RAISERROR('Informe o codigo do item da peça!',16,1)
-ELSE IF(@nom='')
+IF(@nom='')
    RAISERROR('Informe o nome do grupo de peças!',16,1)   
 ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO KITGRUPOPECA(id_kit_real, id_item_peca, nom, dat_alt, flg_ativo)
-VALUES(@id_kit_real, @id_item_peca, @nom, @dat_alt, @flg_ativo)
+INSERT INTO KITGRUPOPECA(id_kit_real, nom, dat_alt, flg_ativo)
+VALUES(@id_kit_real, @nom, @dat_alt, @flg_ativo)
 END
 END TRY
 
