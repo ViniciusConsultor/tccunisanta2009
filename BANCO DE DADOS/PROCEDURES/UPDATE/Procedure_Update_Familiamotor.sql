@@ -6,7 +6,6 @@ GO
 CREATE PROCEDURE sp_update_familiamotor
 @id_fam_motor     INT,
 @id_num_motor     INT,
-@id_grupo         INT,
 @id_tipo_motor    INT,
 @id_motor         INT,
 @id_estoque       INT,
@@ -24,7 +23,6 @@ BEGIN
 UPDATE familiamotor SET
 
 id_num_motor    = @id_num_motor, 
-id_grupo        = @id_grupo, 
 id_tipo_motor   = @id_tipo_motor, 
 id_motor        = @id_motor, 
 id_estoque      = @id_estoque, 

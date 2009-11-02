@@ -1,44 +1,37 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_update_peca', 'P')IS NOT NULL
-	DROP PROCEDURE sp_update_peca;
+IF OBJECT_ID('sp_update_pecaestoque', 'P')IS NOT NULL
+	DROP PROCEDURE sp_update_pecaestoque;
 GO
 
-CREATE PROCEDURE sp_update_peca
+CREATE PROCEDURE sp_update_pecaestoque
 @id_peca               INT,
-@id_peca_real          VARCHAR(50),
-@id_tipo_peca          INT,
-@nom				   VARCHAR(50),
-@dsc_peca              VARCHAR(500),
-@qtd_min               INT,
-@peso                  DECIMAL(10,2),
+@id_estoq			   INT,
+@qtd_peca			   INT,
 @dat_alt               DATETIME,
 @flg_ativo             BIT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Peca where id_peca=@id_peca)
+IF EXISTS(select 1 from Pecaestoque where id_peca=@id_peca and id_estoq=@id_estoq)
 BEGIN
---Validações na tabela peca
+--Validações na tabela pecaestoque
 
---Update na tabela peca
-UPDATE peca SET
+--Update na tabela pecaestoque
+UPDATE pecaestoque SET
 
-id_peca_real         = @id_peca_real,
-id_tipo_peca         = @id_tipo_peca, 
-nom                  = @nom, 
-dsc_peca             = @dsc_peca, 
-qtd_min              = @qtd_min,
-peso                 = @peso, 
+id_peca		         = @id_peca,
+id_estoq			 = @id_estoq,
+qtd_peca			 = @qtd_peca,
 dat_alt              = @dat_alt, 
 flg_ativo            = flg_ativo
 
-WHERE id_peca=@id_peca
+WHERE id_peca=@id_peca and id_estoq=@id_estoq
 
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Peca inexistente!',16,1)
+RAISERROR('Peca não cadastrada neste estoque!',16,1)
 
 END TRY
 

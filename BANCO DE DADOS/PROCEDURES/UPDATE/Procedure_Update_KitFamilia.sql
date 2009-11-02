@@ -1,38 +1,34 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_update_estoque', 'P')IS NOT NULL
-	DROP PROCEDURE sp_update_estoque;
+IF OBJECT_ID('sp_update_kitfamilia', 'P')IS NOT NULL
+	DROP PROCEDURE sp_update_kitfamilia;
 GO
 
-CREATE PROCEDURE sp_update_estoque
-@id_estoq       INT,
-@id_depto       INT,
-@dsc_estoq      VARCHAR(100),
-@dat_alt        DATETIME,
-@flg_negativo	INT,
-@flg_ativo      BIT
+CREATE PROCEDURE sp_update_kitfamilia
+@id_fam_motor    INT,
+@id_kit			 INT,
+@dat_alt		 DATETIME,
+@flg_ativo       BIT
+AS
 
-AS 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Estoque where id_estoq=@id_estoq)
+IF EXISTS(select 1 from kitfamilia where id_fam_motor=@id_fam_motor and id_kit=@id_kit)
 BEGIN
---Validações na tabela estoque
+--Validações na tabela itemkit
 
---Insert na tabela estoque
-UPDATE ESTOQUE SET
+--Update na tabela itemkit
+UPDATE kitfamilia SET
+id_fam_motor   = @id_fam_motor,
+id_kit		   = @id_kit,
+dat_alt		   = @dat_alt, 
+flg_ativo      = @flg_ativo
 
-id_depto     = @id_depto, 
-dsc_estoq    = @dsc_estoq, 
-dat_alt      = @dat_alt, 
-flg_negativo = @flg_negativo,
-flg_ativo    = @flg_ativo
-
-WHERE id_estoq = @id_estoq
+WHERE id_fam_motor=@id_fam_motor and id_kit=@id_kit
 
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Estoque inexistente!',16,1)
+RAISERROR('Grupo de peças inexistente nesta Familia de motores!',16,1)
 
 END TRY
 
