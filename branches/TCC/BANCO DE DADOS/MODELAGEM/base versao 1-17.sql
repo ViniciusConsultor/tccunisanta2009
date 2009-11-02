@@ -1,3 +1,8 @@
+CREATE DATABASE Megatechdatabase
+go
+
+USE Megatechdatabase
+go
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Comprapeca')
 DROP TABLE Comprapeca
@@ -256,7 +261,9 @@ go
 
 CREATE TABLE Kitfamilia (
        id_kit               integer NOT NULL,
-       id_fam_motor         integer NOT NULL
+       id_fam_motor         integer NOT NULL,
+       dat_alt              datetime NULL,
+       flg_ativo            bit NULL
 )
 go
 
@@ -348,16 +355,16 @@ DROP TABLE Itempeca
 go
 
 CREATE TABLE Itempeca (
-       id_item_peca         integer NOT NULL,
        id_peca              integer NOT NULL,
        dat_alt              datetime NULL,
-       flg_ativo            bit NULL
+       flg_ativo            bit NULL,
+       id_item              integer NOT NULL
 )
 go
 
 
 ALTER TABLE Itempeca
-       ADD PRIMARY KEY CLUSTERED (id_item_peca ASC, id_peca ASC)
+       ADD PRIMARY KEY CLUSTERED (id_peca ASC, id_item ASC)
 go
 
 
@@ -516,7 +523,9 @@ go
 
 CREATE TABLE Itemkit (
        id_item              integer NOT NULL,
-       id_kit               integer NOT NULL
+       id_kit               integer NOT NULL,
+       dat_alt              datetime NULL,
+       flg_ativo            bit NULL
 )
 go
 
@@ -823,14 +832,14 @@ go
 
 
 ALTER TABLE Itempeca
-       ADD FOREIGN KEY (id_peca)
-                             REFERENCES Peca  (id_peca)
+       ADD FOREIGN KEY (id_item)
+                             REFERENCES Item  (id_item)
 go
 
 
 ALTER TABLE Itempeca
-       ADD FOREIGN KEY (id_item_peca)
-                             REFERENCES Item  (id_item)
+       ADD FOREIGN KEY (id_peca)
+                             REFERENCES Peca  (id_peca)
 go
 
 
