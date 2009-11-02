@@ -6,7 +6,6 @@ GO
 CREATE PROCEDURE sp_insert_peca
 @id_peca_real         VARCHAR(50),
 @id_tipo_peca         INT,
-@id_estoque           INT,
 @nom                  VARCHAR(50),
 @dsc_peca             VARCHAR(100),
 @peso                 DECIMAL(10,2),
@@ -19,8 +18,6 @@ BEGIN TRY
 --Validações na tabela peca  
 IF(@id_tipo_peca='')
    RAISERROR('Informe o codigo do tipo da peça!',16,1)
-ELSE IF(@id_estoque='')
-   RAISERROR('Informe o estoque onde está a produto!',16,1)   
 ELSE IF(@nom='')
    RAISERROR('Informe o nome da peça!',16,1)
 ELSE IF(@dsc_peca='')
@@ -31,8 +28,8 @@ ELSE
 
 BEGIN
 --Insert na tabela peca
-INSERT INTO PECA(id_peca_real,id_tipo_peca, id_estoque, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
-VALUES (@id_peca_real, @id_tipo_peca, @id_estoque, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
+INSERT INTO PECA(id_peca_real,id_tipo_peca, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
+VALUES (@id_peca_real, @id_tipo_peca, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
 END
 END TRY
 

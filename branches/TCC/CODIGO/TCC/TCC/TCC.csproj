@@ -249,6 +249,10 @@
       <DependentUpon>frmBuscaTipoProduto.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaUsinagem.resx">
+      <DependentUpon>frmBuscaUsinagem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaUsuario.resx">
       <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -478,6 +482,12 @@
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaTipoProduto.Designer.cs">
       <DependentUpon>frmBuscaTipoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaUsinagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaUsinagem.Designer.cs">
+      <DependentUpon>frmBuscaUsinagem.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaUsuario.cs">
       <SubType>Form</SubType>

@@ -74,7 +74,7 @@ namespace TCC.MODEL
             set { idOrdem = value; }
         }
 
-        [ColunasBancoDados ("id_tipo_produto", System.Data.SqlDbType.Int,false)]
+        [ColunasBancoDados ("id_tipo_prod", System.Data.SqlDbType.Int,false)]
         public int IdTipoProduto
         {
             get { return idTipoProduto; }
