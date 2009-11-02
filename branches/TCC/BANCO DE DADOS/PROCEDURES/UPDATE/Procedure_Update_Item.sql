@@ -1,38 +1,33 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_update_estoque', 'P')IS NOT NULL
-	DROP PROCEDURE sp_update_estoque;
+IF OBJECT_ID('sp_update_item', 'P')IS NOT NULL
+	DROP PROCEDURE sp_update_item;
 GO
 
-CREATE PROCEDURE sp_update_estoque
-@id_estoq       INT,
-@id_depto       INT,
-@dsc_estoq      VARCHAR(100),
-@dat_alt        DATETIME,
-@flg_negativo	INT,
-@flg_ativo      BIT
+CREATE PROCEDURE sp_update_item
+@id_item	      INT,
+@nom              VARCHAR(20),
+@flg_ativo        BIT,
+@dat_alt		  DATETIME
 
 AS 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Estoque where id_estoq=@id_estoq)
+IF EXISTS(select 1 from item where id_item=@id_item)
 BEGIN
---Validações na tabela estoque
+--Validações na tabela item
 
---Insert na tabela estoque
-UPDATE ESTOQUE SET
+--Insert na tabela item
+UPDATE item SET
+nom          = @nom, 
+flg_ativo    = @flg_ativo,
+dat_alt		 = @dat_alt
 
-id_depto     = @id_depto, 
-dsc_estoq    = @dsc_estoq, 
-dat_alt      = @dat_alt, 
-flg_negativo = @flg_negativo,
-flg_ativo    = @flg_ativo
-
-WHERE id_estoq = @id_estoq
+WHERE id_item=@id_item
 
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Estoque inexistente!',16,1)
+RAISERROR('Item inexistente!',16,1)
 
 END TRY
 
