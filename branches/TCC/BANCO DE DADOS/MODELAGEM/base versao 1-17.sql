@@ -280,7 +280,6 @@ go
 CREATE TABLE Familiamotor (
        id_fam_motor         integer IDENTITY,
        id_num_motor         integer NOT NULL,
-       id_kit               integer NOT NULL,
        dsc_fam_motor        varchar(500) NULL,
        flg_ativo            bit NULL,
        id_motor             integer NOT NULL,
@@ -561,7 +560,8 @@ go
 CREATE TABLE Item (
        id_item              integer IDENTITY,
        nom                  varchar(20) NULL,
-       flg_ativo            bit NULL
+       flg_ativo            bit NULL,
+       dat_alt              datetime NULL
 )
 go
 
@@ -810,12 +810,6 @@ go
 ALTER TABLE Familiamotor
        ADD FOREIGN KEY (id_tipo_motor)
                              REFERENCES Tipomotor  (id_tipo_motor)
-go
-
-
-ALTER TABLE Familiamotor
-       ADD FOREIGN KEY (id_kit)
-                             REFERENCES Kitgrupopeca  (id_kit)
 go
 
 

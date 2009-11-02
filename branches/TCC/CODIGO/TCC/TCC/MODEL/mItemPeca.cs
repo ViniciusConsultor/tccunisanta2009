@@ -7,17 +7,17 @@ namespace TCC.MODEL
 {
     public class mItemPeca : ModelPai
     {
-        private int? id_item_peca;
+        private int? id_item;
         private string nom_item_peca;
         private int? id_peca;
         private bool flg_ativo;
         private string nomeTabela = "Itempeca";
 
         [ColunasBancoDados("id_item_peca", System.Data.SqlDbType.Int,true)]
-        public int? Id_item_peca
+        public int? Id_item
         {
-            get { return id_item_peca; }
-            set { id_item_peca = value; }
+            get { return id_item; }
+            set { id_item = value; }
         }
 
         [ColunasBancoDados("nom", System.Data.SqlDbType.VarChar,false)]

@@ -161,6 +161,8 @@
     <Compile Include="MODEL\mCompraPeca.cs" />
     <Compile Include="MODEL\mFamiliaMotor.cs" />
     <Compile Include="MODEL\mFornecedorDepto.cs" />
+    <Compile Include="MODEL\mItem.cs" />
+    <Compile Include="MODEL\mItemKit.cs" />
     <Compile Include="MODEL\mItemPeca.cs" />
     <Compile Include="MODEL\mCliente.cs" />
     <Compile Include="MODEL\mColaborador.cs" />
@@ -168,6 +170,7 @@
     <Compile Include="MODEL\mEstado.cs" />
     <Compile Include="MODEL\mEstoque.cs" />
     <Compile Include="MODEL\mFornecedor.cs" />
+    <Compile Include="MODEL\mKitFamilia.cs" />
     <Compile Include="MODEL\mKitGrupoPeca.cs" />
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\mMotor.cs" />
