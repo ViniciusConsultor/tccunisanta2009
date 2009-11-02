@@ -8,6 +8,6 @@ GO
 CREATE PROCEDURE sp_select_ordemproducao
 @id_ordem INT
 AS
-SELECT id_ordem, dsc_ordem, id_depto, id_fam_motor, id_grupo, id_tipo_produto
+SELECT id_ordem, dsc_ordem, id_depto, id_fam_motor, id_kit, id_tipo_produto
 FROM Ordemproducao
 WHERE id_ordem = @id_ordem
