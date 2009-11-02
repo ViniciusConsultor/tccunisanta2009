@@ -135,7 +135,6 @@ namespace TCC.UI
             {
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
-                model.Id_item_peca = Convert.ToInt32( this._modelItemPeca.Id_item_peca);
                 model.Nom_grupo = this.txtNmKit.Text;
 
                 return model;

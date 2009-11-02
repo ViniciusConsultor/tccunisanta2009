@@ -11,6 +11,7 @@ namespace TCC.MODEL
         private int? id_farm_motor;
         private DateTime dat_alt;
         private bool flg_ativo;
+        private string nomeTabela = "Kitfamilia";
 
         [ColunasBancoDados("Id_kit", System.Data.SqlDbType.VarChar, true)]
         public int? Id_kit
@@ -41,5 +42,10 @@ namespace TCC.MODEL
         }
 
 
+
+        public override string getNomeTabela()
+        {
+            return nomeTabela;
+        }
     }
 }
