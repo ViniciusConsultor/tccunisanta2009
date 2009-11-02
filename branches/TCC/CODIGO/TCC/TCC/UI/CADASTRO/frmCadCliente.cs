@@ -84,7 +84,7 @@ namespace TCC.UI
                 {
                     model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
                 }
-                model.TelefoneCliente = Convert.ToInt32(this.aaa.Text);
+                model.TelefoneCliente = Convert.ToInt32(this.txtTelefone.Text);
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     model.Ddd = null;
@@ -167,7 +167,6 @@ namespace TCC.UI
         {
             txtDDD._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             txtNumero._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            aaa._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;           
         }
 
         private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
@@ -213,7 +212,7 @@ namespace TCC.UI
                 this.txtNome.Text = this._modelCliente.NomeCliente;
                 this.txtNumero.Text = this._modelCliente.NumeroEndereco.ToString();
                 this.txtRua.Text = this._modelCliente.NomeRua;
-                this.aaa.Text = this._modelCliente.TelefoneCliente.ToString();
+                this.txtTelefone.Text = this._modelCliente.TelefoneCliente.ToString();
                 this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelCliente.SlgEstado);
             }
         }

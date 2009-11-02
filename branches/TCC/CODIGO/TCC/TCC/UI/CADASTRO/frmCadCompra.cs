@@ -33,58 +33,6 @@ namespace TCC.UI
         {
         }
 
-        private void btnBuscaMotorCompra_Click(object sender, EventArgs e)
-        {
-            this._modelMotor = new mMotor();
-            frmBuscaMotor objFrmMotor = new frmBuscaMotor(_modelMotor);
-            try
-            {
-                DialogResult resultado = objFrmMotor.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelMotor = null;
-                }
-                else
-                {
-                    this.txtCdMotorCompra.Text = this._modelMotor.DscMotor;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmMotor = null;
-            }
-        }
-
-        private void btnBuscaDepartamento_Click(object sender, EventArgs e)
-        {
-            this._modelDepartamento = new mDepartamento();
-            frmBuscaDepartamento objTela = new frmBuscaDepartamento(_modelDepartamento);
-            try
-            {
-                DialogResult resultado = objTela.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelDepartamento = null;
-                }
-                else
-                {
-                    this.txtDepartamento.Text = this._modelDepartamento.DscDepto;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objTela = null;
-            }
-        }
-
         private void btnBuscaFornecedor_Click(object sender, EventArgs e)
         {
             _modelFornecedor = new mFornecedor();
@@ -127,58 +75,6 @@ namespace TCC.UI
             
             this._modelCompra = null;
             base.Alteracao = false;
-        }
-
-        private void btnBuscaPeca_Click(object sender, EventArgs e)
-        {
-            this._modelPeca = new List<mPeca>();
-            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true, false);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelPeca = null;
-                }
-                else
-                {
-                    this.txtCdPeca.Text = this._modelPeca[0].Nom;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
-        private void btnBuscaTipoProduto_Click(object sender, EventArgs e)
-        {
-            this._modelTipoProd = new mTipoProduto();
-            frmBuscaTipoProduto objForm = new frmBuscaTipoProduto(this._modelTipoProd);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelTipoProd = null;
-                }
-                else
-                {
-                    this.txtCdTipoProduto.Text = this._modelTipoProd.Nom;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
         }
 
         private void Insere()
@@ -269,14 +165,7 @@ namespace TCC.UI
 
             try
             {
-                if (string.IsNullOrEmpty(this.txtDataCompra.Text) == true)
-                {
-                    model.Dat = null;
-                }
-                else
-                {
-                    model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
-                }
+                model.Dat = DateTime.Now;
                 model.IdDepto = Convert.ToInt32( this._modelDepartamento.IdDepto);
                 model.IdFornecedor = Convert.ToInt32( this._modelFornecedor.IdFornecedor);
                 model.IdMotorCompra = Convert.ToInt32(this._modelMotor.IdMotor);
@@ -297,7 +186,6 @@ namespace TCC.UI
                 {
                     model.Obs = this.txtObservacao.Text;
                 }
-                model.Qtd = Convert.ToInt32(this.txtQtdCompra.Text);
                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
                 model.IdPeca = Convert.ToInt32(this._modelPeca[0].IdPeca);
 
@@ -331,10 +219,6 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
             }
-            else if (string.IsNullOrEmpty(this.txtQtdCompra.Text) == true)
-            {
-                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
-            }
             else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
             {
                 throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
@@ -347,12 +231,7 @@ namespace TCC.UI
             {
                 base.Alteracao = true;
                 this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
-                this.txtDepartamento.Text = this._modelCompra.IdDepto.ToString();
-                this.txtCdPeca.Text = this._modelCompra.IdPeca.ToString();
-                this.txtCdMotorCompra.Text = this._modelCompra.IdMotorCompra.ToString();
-                this.txtDataCompra.Text = this._modelCompra.Dat.ToString();
                 this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
-                this.txtQtdCompra.Text = this._modelCompra.Qtd.ToString();
                 this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
                 this.txtObservacao.Text = this._modelCompra.Obs;
             }
