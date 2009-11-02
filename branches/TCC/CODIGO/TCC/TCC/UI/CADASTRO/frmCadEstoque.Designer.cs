@@ -39,6 +39,7 @@
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.ckbFlgNegativo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtCdDepartamento
@@ -132,6 +133,16 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // ckbFlgNegativo
+            // 
+            this.ckbFlgNegativo.AutoSize = true;
+            this.ckbFlgNegativo.Location = new System.Drawing.Point(154, 177);
+            this.ckbFlgNegativo.Name = "ckbFlgNegativo";
+            this.ckbFlgNegativo.Size = new System.Drawing.Size(148, 17);
+            this.ckbFlgNegativo.TabIndex = 6;
+            this.ckbFlgNegativo.Text = "Remove Peça Defeituosa";
+            this.ckbFlgNegativo.UseVisualStyleBackColor = true;
+            // 
             // frmCadEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +151,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.ckbFlgNegativo);
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnBuscaDepartamento;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.CheckBox ckbFlgNegativo;
     }
 }
