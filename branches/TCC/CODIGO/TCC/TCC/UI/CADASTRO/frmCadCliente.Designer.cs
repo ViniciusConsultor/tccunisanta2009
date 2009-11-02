@@ -46,7 +46,6 @@
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblCnpj = new System.Windows.Forms.Label();
-            this.txtCnpj = new System.Windows.Forms.TextBox();
             this.btnInsere = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
@@ -55,12 +54,13 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtTelefone = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblNome
@@ -210,15 +210,6 @@
             this.lblCnpj.TabIndex = 0;
             this.lblCnpj.Text = "CNPJ";
             // 
-            // txtCnpj
-            // 
-            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCnpj.Location = new System.Drawing.Point(350, 223);
-            this.txtCnpj.MaxLength = 15;
-            this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(196, 20);
-            this.txtCnpj.TabIndex = 10;
-            // 
             // btnInsere
             // 
             this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
@@ -299,14 +290,6 @@
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 12;
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(241, 289);
-            this.txtTelefone.MaxLength = 9;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(115, 20);
-            this.txtTelefone.TabIndex = 13;
-            // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(158, 114);
@@ -315,18 +298,12 @@
             this.txtNumero.Size = new System.Drawing.Size(63, 20);
             this.txtNumero.TabIndex = 3;
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(147, 222);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(136, 20);
-            this.txtCPF.TabIndex = 9;
-            // 
             // txtCep
             // 
             this.txtCep.Location = new System.Drawing.Point(483, 153);
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
+            this.txtCep.ValidatingType = typeof(int);
             this.txtCep.Size = new System.Drawing.Size(63, 20);
             this.txtCep.TabIndex = 6;
             // 
@@ -347,6 +324,36 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // txtCPF
+            // 
+            this.txtCPF.Location = new System.Drawing.Point(147, 222);
+            this.txtCPF.Mask = "000,000,000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.ValidatingType = typeof(int);
+            this.txtCPF.Size = new System.Drawing.Size(100, 20);
+            this.txtCPF.TabIndex = 19;
+            // 
+            // txtCnpj
+            // 
+            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCnpj.Location = new System.Drawing.Point(350, 222);
+            this.txtCnpj.Mask = "00,000,000/0000-00";
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.ValidatingType = typeof(int);
+            this.txtCnpj.Size = new System.Drawing.Size(147, 20);
+            this.txtCnpj.TabIndex = 25;
+            this.txtCnpj.ValidatingType = typeof(int);
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.Location = new System.Drawing.Point(241, 290);
+            this.txtTelefone.Mask = "0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.ValidatingType = typeof(int);
+            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.TabIndex = 26;
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,11 +362,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtCnpj);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
@@ -370,7 +378,6 @@
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtComplemento);
-            this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblCidade);
@@ -412,7 +419,6 @@
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblCnpj;
-        private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnInsere;
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
@@ -421,11 +427,12 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private Controles.MegaTextBox.MegaTextBox txtDDD;
-        private Controles.MegaTextBox.MegaTextBox txtTelefone;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
-        private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.MaskedTextBox txtCnpj;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
     }
 }

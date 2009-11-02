@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace TCC.BUSINESS.Exceptions.Validacoes
 {
-    class MaskedInvalidaException : Exception
+    public class MaskedInvalidaException : Exception
     {
-        
+        string _mensagem;
+
+        public string Mensagem
+        {
+            get { return _mensagem; }
+        }
+
+        public MaskedInvalidaException(BUSINESS.UTIL.TipoMasked TipoMasked)
+        {
+            _mensagem = TipoMasked.ToString() + " incompleto";
+        }
     }
 }
