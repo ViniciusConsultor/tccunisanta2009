@@ -4,10 +4,28 @@ using System.Text;
 
 namespace TCC.BUSINESS.UTIL
 {
+    public enum TipoMasked
+    {
+        cep,
+        tel,
+        ddd,
+        cnpj
+    }
+
     public static class Validacoes
     {
+        #region Atributos
+        /// <summary>
+        /// Ano Minimo Aceito pelo SQL e DateTime
+        /// </summary>
         const int ANOMINIMO = 1753;
+        #endregion Atributos
 
+        #region Valida Data
+        /// <summary>
+        /// Validação para Data
+        /// </summary>
+        /// <param name="DataSemFormatacao">Data com '/' exemplo:. "02/06/1988"</param>
         public static void ValidaData(string DataSemFormatacao)
         {
             string[] dataString = DataSemFormatacao.Split('/');
@@ -50,7 +68,14 @@ namespace TCC.BUSINESS.UTIL
                 throw new Exceptions.Validacoes.DataInvalidaException(TCC.BUSINESS.Exceptions.Validacoes.TipoErroData.dia, data);
             }
         }
+        #endregion Valida Data
 
+        #region Verifica Ano Bixesto
+        /// <summary>
+        /// Verifica se é ano Bixesto ou não
+        /// </summary>
+        /// <param name="ano">Ano para verificação</param>
+        /// <returns>true é um ano bisexto caso contrario, false</returns>
         private static bool VerificaAnoBixesto(int ano)
         {
             bool retorno = false;
@@ -68,35 +93,39 @@ namespace TCC.BUSINESS.UTIL
             }
             return retorno;
         }
+        #endregion Verifica Ano Bixesto
 
-        public static void ValidaMasked(string masked, string tipo)
+
+        public static void ValidaMasked(string masked, TipoMasked tipo)
         {
             //string mensagem = "OK";
-            if (tipo.Equals("CEP") == true)
+            switch (tipo)
             {
-                if (masked.Length < 8 == true)
-                {
-                    throw new Exceptions.Validacoes.MaskedInvalidaException();
-                    //mensagem = "CEP incorreto!";
-                }
+                case TipoMasked.cep:
+                    if (masked.Length < 8)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
+                case TipoMasked.ddd:
+                    if (masked.Length < 2)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
+                case TipoMasked.tel:
+                    if (masked.Length < 8)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
+                case TipoMasked.cnpj:
+                    if (masked.Length < 14)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
             }
-            else if (tipo.Equals("TEL") == true)
-            {
-                if (masked.Length < 8 == true)
-                {
-                    throw new Exceptions.Validacoes.MaskedInvalidaException();
-                    //mensagem = "Telefone incorreto!";
-                }
-            }
-            else if (tipo.Equals("DDD") == true)
-            {
-                if (masked.Length < 2 == true)
-                {
-                    throw new Exceptions.Validacoes.MaskedInvalidaException();
-                    //mensagem = "DDD incorreto!";
-                }
-            }
-            //return mensagem;
         }
 
         /// <summary>
