@@ -46,7 +46,6 @@
             this.cboUf = new System.Windows.Forms.ComboBox();
             this.lblestado = new System.Windows.Forms.Label();
             this.lblcnpj = new System.Windows.Forms.Label();
-            this.txtCnpj = new System.Windows.Forms.TextBox();
             this.btnInsere = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnlimpar = new System.Windows.Forms.Button();
@@ -58,6 +57,7 @@
             this.txtCepFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtCidade
@@ -205,15 +205,6 @@
             this.lblcnpj.TabIndex = 2;
             this.lblcnpj.Text = "CNPJ";
             // 
-            // txtCnpj
-            // 
-            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCnpj.Location = new System.Drawing.Point(148, 246);
-            this.txtCnpj.MaxLength = 15;
-            this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(149, 20);
-            this.txtCnpj.TabIndex = 9;
-            // 
             // btnInsere
             // 
             this.btnInsere.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
@@ -318,6 +309,16 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // txtCnpj
+            // 
+            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCnpj.Location = new System.Drawing.Point(150, 245);
+            this.txtCnpj.Mask = "00,000,000/0000-00";
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.ValidatingType = typeof(int);
+            this.txtCnpj.Size = new System.Drawing.Size(147, 20);
+            this.txtCnpj.TabIndex = 24;
+            // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +327,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCepFornecedor);
             this.Controls.Add(this.txtEmail);
@@ -349,7 +351,6 @@
             this.Controls.Add(this.lblCep);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
-            this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.lblcnpj);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCidade);
@@ -380,7 +381,6 @@
         private System.Windows.Forms.ComboBox cboUf;
         private System.Windows.Forms.Label lblestado;
         private System.Windows.Forms.Label lblcnpj;
-        private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.Button btnInsere;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnlimpar;
@@ -392,5 +392,6 @@
         private System.Windows.Forms.MaskedTextBox txtCepFornecedor;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.MaskedTextBox txtCnpj;
     }
 }

@@ -54,7 +54,10 @@ namespace TCC.UI
                     model.CepFornecedor = Convert.ToInt32(cep);
                 }
                 model.Cidade = this.txtCidade.Text;
-                if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
+                string cnpj = this.txtCnpj.Text.Replace(".", string.Empty);
+                cnpj = cnpj.Replace("/", string.Empty);
+                cnpj = cnpj.Replace("-", string.Empty);
+                if (this.txtCnpj.Modified == false)
                 {
                     model.Cnpj = null;
                 }
@@ -132,6 +135,10 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption)
             {
                 MessageBox.Show("É Necessário o campo Codigo Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
