@@ -18,19 +18,12 @@ namespace TCC.UI
         #endregion
 
         #region Construtor
-        public frmBuscaPeca(List<mPeca> modelPeca, bool multiSelecao)
-        {
-            InitializeComponent();
-            this._model = modelPeca;
-            this._alteracao = false;
-            this.dgPeca.MultiSelect = multiSelecao;
-        }
-
-        public frmBuscaPeca(mPeca modelPeca, bool Alteracao)
+        public frmBuscaPeca(List<mPeca> modelPeca, bool multiSelecao, bool Alteracao)
         {
             InitializeComponent();
             this._model = modelPeca;
             this._alteracao = Alteracao;
+            this.dgPeca.MultiSelect = multiSelecao;
         }
         #endregion
 
@@ -208,8 +201,8 @@ namespace TCC.UI
             DataTable dtRegistroPeca = null;
             try
             {
-                dtRegistroPeca = regraPeca.BuscaUmRegistro(this._model);
-                this._model.Deserialize(dtRegistroPeca);
+                dtRegistroPeca = regraPeca.BuscaUmRegistro(this._model[0]);
+                this._model[0].Deserialize(dtRegistroPeca);
             }
             catch (Exception ex)
             {
@@ -240,7 +233,7 @@ namespace TCC.UI
             rPeca regraPeca = new rPeca();
             try
             {
-                regraPeca.ValidarDeleta(this._model);
+                regraPeca.ValidarDeleta(this._model[0]);
             }
             catch (Exception ex)
             {

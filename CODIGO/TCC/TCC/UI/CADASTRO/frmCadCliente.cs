@@ -84,7 +84,7 @@ namespace TCC.UI
                 {
                     model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
                 }
-                model.TelefoneCliente = this.txtTelefone.Text;
+                model.TelefoneCliente = Convert.ToInt32(this.txtTelefone.Text);
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     model.Ddd = null;
@@ -101,6 +101,10 @@ namespace TCC.UI
                 {
                     model.Email = this.txtEmail.Text;
                 }
+                if (base.Alteracao == true)
+                {
+                    model.IdCliente = this._modelCliente.IdCliente;
+                }
                 return model;
             }
             catch (Exception ex)
@@ -113,7 +117,6 @@ namespace TCC.UI
             }
         }
 
-       
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
             this.BuscaEstados();
@@ -203,6 +206,7 @@ namespace TCC.UI
                 this.txtCep.Text = this._modelCliente.Cep.ToString();
                 this.txtCidade.Text = this._modelCliente.Cidade;
                 this.txtCnpj.Text = this._modelCliente.Cnpj.ToString();
+                this.txtCPF.Text = this._modelCliente.Cpf;
                 this.txtComplemento.Text = this._modelCliente.ComplementoEndereco;
                 this.txtDDD.Text = this._modelCliente.Ddd.ToString();
                 this.txtEmail.Text = this._modelCliente.Email;

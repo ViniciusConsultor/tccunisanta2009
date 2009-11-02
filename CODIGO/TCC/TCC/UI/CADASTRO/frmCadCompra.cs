@@ -132,7 +132,7 @@ namespace TCC.UI
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
             this._modelPeca = new List<mPeca>();
-            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true);
+            frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true, false);
             try
             {
                 DialogResult resultado = objForm.ShowDialog();

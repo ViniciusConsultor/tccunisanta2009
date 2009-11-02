@@ -5,7 +5,6 @@ GO
 
 CREATE PROCEDURE sp_insert_familiamotor
 @id_num_motor      INT,
-@id_kit          INT,
 @id_tipo_motor     INT,
 @id_motor          INT,
 @id_estoque        INT,
@@ -17,8 +16,6 @@ BEGIN TRY
 --Validações na tabela falimiamotor
 IF(@id_num_motor='')
    RAISERROR('Informe o numero do motor!',16,1)
-ELSE IF(@id_kit='')
-   RAISERROR('Informe o grupo do motor!',16,1)
 ELSE IF(@id_tipo_motor='')
    RAISERROR('Informe o tipo do motor!',16,1)
 ELSE IF(@id_motor='')
@@ -30,8 +27,8 @@ ELSE IF(@dsc_fam_motor='')
 ELSE
 BEGIN
 --Insert na tabela falimiamotor
-INSERT INTO FAMILIAMOTOR(id_num_motor, id_kit, id_tipo_motor, id_motor, id_estoque, dsc_fam_motor, flg_ativo)
-VALUES(@id_num_motor, @id_kit, @id_tipo_motor, @id_motor, @id_estoque, @dsc_fam_motor, @flg_ativo)
+INSERT INTO FAMILIAMOTOR(id_num_motor, id_tipo_motor, id_motor, id_estoque, dsc_fam_motor, flg_ativo)
+VALUES(@id_num_motor, @id_tipo_motor, @id_motor, @id_estoque, @dsc_fam_motor, @flg_ativo)
 END
 END TRY
 

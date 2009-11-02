@@ -6,6 +6,5 @@
 
  CREATE PROCEDURE sp_busca_kitGrupoPeca
  AS
- SELECT id_kit, nom as 'Kit Grupo Peça'
- FROM Kitgrupopeca
+ SELECT id_kit, nom as 'Kit Grupo Peça' FROM Kitgrupopeca
 WHERE flg_ativo = 1
