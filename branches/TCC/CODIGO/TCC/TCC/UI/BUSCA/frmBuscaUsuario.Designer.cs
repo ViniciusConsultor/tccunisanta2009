@@ -106,7 +106,6 @@
             // 
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
-            this.toolTipLegenda.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipBuscar_Popup);
             // 
             // btnExcluir
             // 

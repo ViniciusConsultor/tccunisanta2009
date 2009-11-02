@@ -9,7 +9,7 @@ namespace TCC.MODEL
     {
         private int idCliente;
         private string nomeCliente;
-        private string telefoneCliente;
+        private int? telefoneCliente;
         private string nomeRua;
         private string slgEstado;
         private int? numeroEndereco;
@@ -17,8 +17,8 @@ namespace TCC.MODEL
         private int? cep;
         private string bairro;
         private string cidade;
-        private int? cpf;
-        private int? cnpj;
+        private string cpf;
+        private decimal? cnpj;
         private DateTime datAtl;
         private bool flgAtivo;
         private string email;
@@ -39,16 +39,16 @@ namespace TCC.MODEL
             set { datAtl = value; }
         }
 
-        [ColunasBancoDados("cnpj", System.Data.SqlDbType.Int, false)]
-        public int? Cnpj
+        [ColunasBancoDados("cnpj", System.Data.SqlDbType.Decimal, false)]
+        public decimal? Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }
         }
 
         //troquei de rg para cpf
-        [ColunasBancoDados("cpf", System.Data.SqlDbType.Decimal, false)]
-        public int? Cpf
+        [ColunasBancoDados("cpf", System.Data.SqlDbType.VarChar, false)]
+        public string  Cpf
         {
             get { return cpf; }
             set { cpf = value; }
@@ -104,8 +104,8 @@ namespace TCC.MODEL
             set { nomeRua = value; }
         }
 
-        [ColunasBancoDados("tel", System.Data.SqlDbType.VarChar, false)]
-        public string TelefoneCliente
+        [ColunasBancoDados("tel", System.Data.SqlDbType.Int, false)]
+        public int? TelefoneCliente
         {
             get { return telefoneCliente; }
             set { telefoneCliente = value; }
