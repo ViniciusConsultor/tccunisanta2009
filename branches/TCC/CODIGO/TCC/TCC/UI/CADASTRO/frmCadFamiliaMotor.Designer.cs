@@ -150,7 +150,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(7, 4);
             this.btnConfirma.Name = "btnConfirma";
@@ -162,7 +162,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(7, 47);
             this.btnLimpa.Name = "btnLimpa";
@@ -195,7 +195,7 @@
             // 
             this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(7, 92);
+            this.btnVolta.Location = new System.Drawing.Point(7, 88);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
             this.btnVolta.TabIndex = 9;

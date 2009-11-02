@@ -81,7 +81,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
+            this.btnInsere.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsere.Location = new System.Drawing.Point(1, 2);
             this.btnInsere.Name = "btnInsere";
@@ -93,7 +93,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(1, 30);
             this.btnLimpa.Name = "btnLimpa";

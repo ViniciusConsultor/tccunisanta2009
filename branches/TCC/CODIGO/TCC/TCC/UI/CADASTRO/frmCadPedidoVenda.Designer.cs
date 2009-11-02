@@ -40,9 +40,9 @@
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaPeca = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblCodMotor = new System.Windows.Forms.Label();
             this.txtCodigoPeca = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblCodKit = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 33);
             this.btnLimpar.Name = "btnLimpar";
@@ -73,7 +73,7 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceitar.Location = new System.Drawing.Point(2, 4);
             this.btnAceitar.Name = "btnAceitar";
@@ -143,6 +143,17 @@
             this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(261, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.button1, "Buscar Peça");
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // lblCodMotor
             // 
             this.lblCodMotor.AutoSize = true;
@@ -160,17 +171,6 @@
             this.txtCodigoPeca.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoPeca.TabIndex = 23;
             this.txtCodigoPeca.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(261, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 23);
-            this.button1.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.button1, "Buscar Peça");
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblCodKit
             // 

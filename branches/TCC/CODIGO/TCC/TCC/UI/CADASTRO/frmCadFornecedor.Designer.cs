@@ -162,10 +162,10 @@
             // txtNomeFornecedor
             // 
             this.txtNomeFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(208, 58);
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(175, 58);
             this.txtNomeFornecedor.MaxLength = 100;
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(331, 20);
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(364, 20);
             this.txtNomeFornecedor.TabIndex = 1;
             // 
             // lblNomeFornecedor
@@ -173,9 +173,9 @@
             this.lblNomeFornecedor.AutoSize = true;
             this.lblNomeFornecedor.Location = new System.Drawing.Point(110, 60);
             this.lblNomeFornecedor.Name = "lblNomeFornecedor";
-            this.lblNomeFornecedor.Size = new System.Drawing.Size(92, 13);
+            this.lblNomeFornecedor.Size = new System.Drawing.Size(61, 13);
             this.lblNomeFornecedor.TabIndex = 14;
-            this.lblNomeFornecedor.Text = "Nome Fornecedor";
+            this.lblNomeFornecedor.Text = "Fornecedor";
             // 
             // cboUf
             // 
@@ -216,7 +216,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
+            this.btnInsere.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsere.Location = new System.Drawing.Point(7, 5);
             this.btnInsere.Name = "btnInsere";
@@ -240,7 +240,7 @@
             // 
             // btnlimpar
             // 
-            this.btnlimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnlimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnlimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnlimpar.Location = new System.Drawing.Point(7, 46);
             this.btnlimpar.Name = "btnlimpar";

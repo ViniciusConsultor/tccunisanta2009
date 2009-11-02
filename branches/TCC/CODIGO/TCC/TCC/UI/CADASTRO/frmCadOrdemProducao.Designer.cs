@@ -64,7 +64,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(7, 48);
             this.btnLimpar.Name = "btnLimpar";
@@ -76,7 +76,7 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceitar.Location = new System.Drawing.Point(7, 6);
             this.btnAceitar.Name = "btnAceitar";

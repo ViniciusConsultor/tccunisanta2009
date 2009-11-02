@@ -231,7 +231,7 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceitar.BackgroundImage")));
+            this.btnAceitar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceitar.Location = new System.Drawing.Point(6, 5);
             this.btnAceitar.Name = "btnAceitar";
@@ -243,7 +243,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(6, 46);
             this.btnLimpar.Name = "btnLimpar";
@@ -257,7 +257,7 @@
             // 
             this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(6, 87);
+            this.btnVoltar.Location = new System.Drawing.Point(6, 128);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
             this.btnVoltar.TabIndex = 13;
@@ -352,7 +352,7 @@
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(517, 282);
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
             this.btnBuscaAlteracaoDelecao.TabIndex = 18;

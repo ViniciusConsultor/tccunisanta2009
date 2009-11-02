@@ -44,7 +44,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(0, 2);
             this.btnConfirma.Name = "btnConfirma";
@@ -55,7 +55,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(0, 29);
             this.btnLimpar.Name = "btnLimpar";
