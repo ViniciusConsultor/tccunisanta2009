@@ -53,6 +53,22 @@ namespace Controles.MegaTextBox
                     }
                 }
             }
+            else if (this._tipoTexto == TipoTexto.Decimal)
+            {
+                //Verifica se não é "BackSpace"
+                //-------------------------
+                if (e.KeyChar.Equals('\b') == false || e.KeyChar.Equals('.') == false || e.KeyChar.Equals(',') == false)
+                {
+                    //Verifica se é numérico
+                    //----------------------
+                    if (char.IsNumber(e.KeyChar) == false)
+                    {
+                        //Caso não seja não deixa escrever
+                        //--------------------------------
+                        e.Handled = true;
+                    }
+                }
+            }
         }
     }
 }
