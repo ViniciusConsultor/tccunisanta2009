@@ -89,6 +89,9 @@ namespace TCC.UI
 
         private void btnCdPeca_Click(object sender, EventArgs e)
         {
+            mUsinagem modelUsinagem = new mUsinagem();
+            rUsinagem regraUsinagem = new rUsinagem();
+
             this._modelPeca = new List<mPeca>();
             frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca, true, false);
             try
@@ -102,10 +105,26 @@ namespace TCC.UI
                 {
                     this.txtCdPeca.Text = this._modelPeca[0].Nom;
                 }
+
+                this.ValidaDadosNulos();
+                modelUsinagem = this.PegaDadosTela();
+                regraUsinagem.ValidarInsere(modelUsinagem);
+
             }
+            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            { 
+                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+
+            catch (BUSINESS.Exceptions.Validacoes.CheckBoxSemSelecaoException)
+            {
+                MessageBox.Show("É Necessário Selecionar o check de Peça OK", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                //throw ex;
             }
             finally
             {
@@ -113,12 +132,12 @@ namespace TCC.UI
             }
         }
 
-        private void ValidaDadosNulos()
-        {
-            if (this._modelPeca == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
-            }
-        }
+        //private void ValidaDadosNulos()
+        //{
+        //    if (this._modelPeca == null)
+        //    {
+        //        throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
+        //    }
+        //}
     }
 }
