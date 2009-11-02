@@ -17,7 +17,7 @@ ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO ITEMPECA(nom, dat_alt, flg_ativo)
+INSERT INTO ITEM(nom, dat_alt, flg_ativo)
 VALUES(@nom, @dat_alt, @flg_ativo)
 END
 END TRY
