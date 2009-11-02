@@ -12,7 +12,7 @@ CREATE PROCEDURE sp_insert_kitfamilia
 AS 
 BEGIN TRY
 --Validações na tabela kitgrupopeca
-IF(@kit='')
+IF(@id_kit='')
    RAISERROR('Informe o codigo do grupo de peças!',16,1)   
 ELSE IF(@id_fam_motor='')
    RAISERROR('Informe o codigo da familia de motores!',16,1)   
