@@ -4,26 +4,26 @@ IF OBJECT_ID('sp_update_itempeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_update_itempeca
-@id_item_peca     INT,
+@id_item	      INT,
 @id_peca          INT,
-@nom              VARCHAR(20),
-@flg_ativo        BIT
+@flg_ativo        BIT,
+@dat_alt		  DATETIME
 
 AS 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from itempeca where id_item_peca=@id_item_peca and id_peca=@id_peca)
+IF EXISTS(select 1 from itempeca where id_item=@id_item and id_peca=@id_peca)
 BEGIN
 --Validações na tabela itempeca
 
 --Insert na tabela itempeca
 UPDATE itempeca SET
-id_item_peca = @id_item_peca,
+id_item		 = @id_item,
 id_peca      = @id_peca,
-nom          = @nom, 
+dat_alt		 = @dat_alt, 
 flg_ativo    = @flg_ativo
 
-WHERE id_item_peca=@id_item_peca and id_peca=@id_peca
+WHERE id_item=@id_item and id_peca=@id_peca
 
 END
 ELSE

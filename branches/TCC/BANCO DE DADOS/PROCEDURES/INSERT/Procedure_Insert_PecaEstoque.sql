@@ -1,27 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_estoque', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_estoque;
+IF OBJECT_ID('sp_insert_pecaestoque', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_pecaestoque;
 GO
 
-CREATE PROCEDURE sp_insert_estoque
-@id_depto     INT,
-@dsc_estoq    VARCHAR(100),
+CREATE PROCEDURE sp_insert_pecaestoque
+@id_estoq     INT,
+@id_peca	  INT,
+@qtd_peca	  INT,
 @dat_alt      DATETIME,
-@flg_negativo BIT,
 @flg_ativo    BIT
 
 AS 
 BEGIN TRY
---Validações na tabela estoque
-IF(@id_depto='')
-   RAISERROR('Informe o código do departamento deste estoque!',16,1)
-ELSE IF(@dsc_estoq='')
-   RAISERROR('Informe o nome do estoque!',16,1)
+--Validações na tabela pecaestoque
+IF(@id_peca='')
+   RAISERROR('Informe o código da peça relacionada ao estoque!',16,1)
+ELSE IF(@id_estoq='')
+   RAISERROR('Informe o código do estoque!',16,1)
 ELSE
 BEGIN
 --Insert na tabela estoque
-INSERT INTO ESTOQUE(id_depto, dsc_estoq, dat_alt, flg_ativo, flg_negativo)
-VALUES(@id_depto, @dsc_estoq, @dat_alt, @flg_ativo, @flg_negativo)
+INSERT INTO PECAESTOQUE(id_peca, id_estoq, flg_ativo, dat_alt, qtd_peca)
+VALUES(@id_peca, @id_estoq, @flg_ativo, @dat_alt, @qtd_peca)
 END
 END TRY
 

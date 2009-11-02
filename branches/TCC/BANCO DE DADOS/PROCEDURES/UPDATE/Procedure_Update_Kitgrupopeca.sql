@@ -5,8 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_kitgrupopeca
 @id_kit        INT,
-@id_peca       INT,
-@id_item_peca  INT,
+@id_kit_real   VARCHAR(10),
 @nom           VARCHAR(50),
 @flg_ativo     BIT,
 @dat_alt       DATETIME
@@ -18,11 +17,10 @@ IF EXISTS(select 1 from kitgrupopeca where id_kit=@id_kit)
 BEGIN
 --Validações na tabela kitgrupopeca
 
---Update na tabela itempeca
+--Update na tabela kitgrupopeca
 UPDATE kitgrupopeca SET
 
-id_peca      = @id_peca, 
-id_item_peca = @id_item_peca, 
+id_kit_real  = @id_kit_real,
 nom          = @nom, 
 flg_ativo    = @flg_ativo,
 dat_alt      = @dat_alt
