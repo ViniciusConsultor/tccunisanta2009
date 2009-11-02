@@ -9,7 +9,6 @@ namespace TCC.MODEL
     {
         private int? idFamiliaMotor;
         private int idNumMotor;
-        private int idKit;
         private int idTipoMotor;
         private string dscFamiliaMotor;
         private bool flgAtivo;
@@ -29,13 +28,6 @@ namespace TCC.MODEL
         {
             get { return idNumMotor; }
             set { idNumMotor = value; }
-        }
-
-        [ColunasBancoDados ("id_kit", System.Data.SqlDbType.Int,false)]
-        public int IdKit
-        {
-            get { return idKit; }
-            set { idKit = value; }
         }
 
         [ColunasBancoDados ("id_tipo_motor", System.Data.SqlDbType.VarChar,false)]
