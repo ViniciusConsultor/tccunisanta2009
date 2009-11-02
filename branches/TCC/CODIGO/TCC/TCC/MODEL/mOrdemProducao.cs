@@ -15,6 +15,15 @@ namespace TCC.MODEL
         private int id_tipo_produto;
         private string nomeTabela = "Ordemproducao";
 
+
+        [ColunasBancoDados("id_fam_motor", System.Data.SqlDbType.Int, false)]
+        public int IdFamMotor
+        {
+            get { return idFamMotor; }
+            set { idFamMotor = value; }
+        }
+        
+
         [ColunasBancoDados ("id_ordem", System.Data.SqlDbType.Int,true)]
         public int? Id_ordem
         {
@@ -36,12 +45,8 @@ namespace TCC.MODEL
             set { id_depto = value; }
         }
 
-        [ColunasBancoDados("id_fam_motor", System.Data.SqlDbType.Int, false)]
-        public int Id_motor
-        {
-            get { return Id_motor; }
-            set { Id_motor = value; }
-        }
+       
+       
 
         [ColunasBancoDados ("id_kit", System.Data.SqlDbType.Int,false)]
         public int IdKit

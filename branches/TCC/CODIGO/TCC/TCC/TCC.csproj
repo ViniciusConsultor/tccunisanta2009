@@ -175,7 +175,6 @@
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\mMotor.cs" />
     <Compile Include="MODEL\mNumMotor.cs" />
-    <Compile Include="MODEL\ModelAuxiliar.cs" />
     <Compile Include="MODEL\ModelPai.cs" />
     <Compile Include="MODEL\mOrdemProducao.cs" />
     <Compile Include="MODEL\mPeca.cs" />

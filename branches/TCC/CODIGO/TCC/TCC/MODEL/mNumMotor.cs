@@ -8,10 +8,11 @@ namespace TCC.MODEL
     public class mNumMotor : ModelPai
     {
         private int? id_num_motor;
+        private string idNumMotorReal;
         private string dsc_num_motor;
         private bool flg_ativo;
         private string nomeTabela = "Numeromotor";
-        private string idNumMotorReal;
+
 
 
         [ColunasBancoDados ("id_num_motor",System.Data.SqlDbType.Int,true)]

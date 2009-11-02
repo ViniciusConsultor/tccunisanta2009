@@ -65,7 +65,7 @@ namespace TCC.UI
                     model = new mItemPeca();
                     model.Flg_ativo = true;
                     model.Id_peca = this._modelPeca[posicao].IdPeca;
-                    model.Nom_item_peca = this.txtNmItem.Text;
+                //    model.Nom_item_peca = this.txtNmItem.Text;
                     model.Id_item = idMaximo;
                     ListaModel.Add(model);
                 }
