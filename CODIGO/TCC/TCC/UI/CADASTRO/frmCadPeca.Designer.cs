@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPeca));
             this.lblCdTipoPeca = new System.Windows.Forms.Label();
             this.txtCdTipoPeca = new System.Windows.Forms.TextBox();
-            this.lblCdEstoque = new System.Windows.Forms.Label();
-            this.txtCdEstoque = new System.Windows.Forms.TextBox();
             this.lblNmPeca = new System.Windows.Forms.Label();
             this.txtNmPeca = new System.Windows.Forms.TextBox();
             this.lblDsPeca = new System.Windows.Forms.Label();
@@ -43,13 +41,13 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.btnCdEstoque = new System.Windows.Forms.Button();
             this.btnCdTipoPeca = new System.Windows.Forms.Button();
             this.txtCodigoReal = new System.Windows.Forms.TextBox();
             this.lblNomePecaReal = new System.Windows.Forms.Label();
             this.txtQtdPeca = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnRelacioranEstoque = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdTipoPeca
@@ -71,29 +69,10 @@
             this.txtCdTipoPeca.TabIndex = 1;
             this.txtCdTipoPeca.TabStop = false;
             // 
-            // lblCdEstoque
-            // 
-            this.lblCdEstoque.AutoSize = true;
-            this.lblCdEstoque.Location = new System.Drawing.Point(93, 62);
-            this.lblCdEstoque.Name = "lblCdEstoque";
-            this.lblCdEstoque.Size = new System.Drawing.Size(97, 13);
-            this.lblCdEstoque.TabIndex = 0;
-            this.lblCdEstoque.Text = "Codigo do Estoque";
-            // 
-            // txtCdEstoque
-            // 
-            this.txtCdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdEstoque.Location = new System.Drawing.Point(196, 60);
-            this.txtCdEstoque.Name = "txtCdEstoque";
-            this.txtCdEstoque.ReadOnly = true;
-            this.txtCdEstoque.Size = new System.Drawing.Size(40, 20);
-            this.txtCdEstoque.TabIndex = 1;
-            this.txtCdEstoque.TabStop = false;
-            // 
             // lblNmPeca
             // 
             this.lblNmPeca.AutoSize = true;
-            this.lblNmPeca.Location = new System.Drawing.Point(52, 94);
+            this.lblNmPeca.Location = new System.Drawing.Point(52, 64);
             this.lblNmPeca.Name = "lblNmPeca";
             this.lblNmPeca.Size = new System.Drawing.Size(78, 13);
             this.lblNmPeca.TabIndex = 0;
@@ -102,7 +81,7 @@
             // txtNmPeca
             // 
             this.txtNmPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmPeca.Location = new System.Drawing.Point(136, 92);
+            this.txtNmPeca.Location = new System.Drawing.Point(136, 62);
             this.txtNmPeca.MaxLength = 50;
             this.txtNmPeca.Name = "txtNmPeca";
             this.txtNmPeca.Size = new System.Drawing.Size(194, 20);
@@ -111,7 +90,7 @@
             // lblDsPeca
             // 
             this.lblDsPeca.AutoSize = true;
-            this.lblDsPeca.Location = new System.Drawing.Point(52, 115);
+            this.lblDsPeca.Location = new System.Drawing.Point(52, 85);
             this.lblDsPeca.Name = "lblDsPeca";
             this.lblDsPeca.Size = new System.Drawing.Size(83, 13);
             this.lblDsPeca.TabIndex = 0;
@@ -120,7 +99,7 @@
             // txtDsPeca
             // 
             this.txtDsPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsPeca.Location = new System.Drawing.Point(55, 131);
+            this.txtDsPeca.Location = new System.Drawing.Point(55, 101);
             this.txtDsPeca.MaxLength = 100;
             this.txtDsPeca.Multiline = true;
             this.txtDsPeca.Name = "txtDsPeca";
@@ -130,7 +109,7 @@
             // lblPesoPeca
             // 
             this.lblPesoPeca.AutoSize = true;
-            this.lblPesoPeca.Location = new System.Drawing.Point(193, 184);
+            this.lblPesoPeca.Location = new System.Drawing.Point(193, 154);
             this.lblPesoPeca.Name = "lblPesoPeca";
             this.lblPesoPeca.Size = new System.Drawing.Size(74, 13);
             this.lblPesoPeca.TabIndex = 0;
@@ -139,7 +118,7 @@
             // txtPesoPeca
             // 
             this.txtPesoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesoPeca.Location = new System.Drawing.Point(273, 182);
+            this.txtPesoPeca.Location = new System.Drawing.Point(273, 152);
             this.txtPesoPeca.MaxLength = 12;
             this.txtPesoPeca.Name = "txtPesoPeca";
             this.txtPesoPeca.Size = new System.Drawing.Size(57, 20);
@@ -181,18 +160,6 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
-            // btnCdEstoque
-            // 
-            this.btnCdEstoque.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdEstoque.BackgroundImage")));
-            this.btnCdEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdEstoque.Location = new System.Drawing.Point(242, 59);
-            this.btnCdEstoque.Name = "btnCdEstoque";
-            this.btnCdEstoque.Size = new System.Drawing.Size(27, 23);
-            this.btnCdEstoque.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnCdEstoque, "Buscar Estoque da Peça");
-            this.btnCdEstoque.UseVisualStyleBackColor = true;
-            this.btnCdEstoque.Click += new System.EventHandler(this.btnCdEstoque_Click);
-            // 
             // btnCdTipoPeca
             // 
             this.btnCdTipoPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdTipoPeca.BackgroundImage")));
@@ -226,7 +193,7 @@
             // txtQtdPeca
             // 
             this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdPeca.Location = new System.Drawing.Point(144, 182);
+            this.txtQtdPeca.Location = new System.Drawing.Point(144, 152);
             this.txtQtdPeca.MaxLength = 9;
             this.txtQtdPeca.Name = "txtQtdPeca";
             this.txtQtdPeca.Size = new System.Drawing.Size(43, 20);
@@ -235,7 +202,7 @@
             // lblQtdPeca
             // 
             this.lblQtdPeca.AutoSize = true;
-            this.lblQtdPeca.Location = new System.Drawing.Point(52, 184);
+            this.lblQtdPeca.Location = new System.Drawing.Point(52, 154);
             this.lblQtdPeca.Name = "lblQtdPeca";
             this.lblQtdPeca.Size = new System.Drawing.Size(91, 13);
             this.lblQtdPeca.TabIndex = 10;
@@ -246,6 +213,16 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnRelacioranEstoque
+            // 
+            this.btnRelacioranEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRelacioranEstoque.Location = new System.Drawing.Point(206, 183);
+            this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
+            this.btnRelacioranEstoque.Size = new System.Drawing.Size(124, 23);
+            this.btnRelacioranEstoque.TabIndex = 11;
+            this.btnRelacioranEstoque.Text = "Relacionar Estoque";
+            this.btnRelacioranEstoque.UseVisualStyleBackColor = true;
+            // 
             // frmCadPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +231,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.btnRelacioranEstoque);
             this.Controls.Add(this.txtQtdPeca);
             this.Controls.Add(this.lblQtdPeca);
             this.Controls.Add(this.txtCodigoReal);
@@ -261,16 +239,13 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdTipoPeca);
-            this.Controls.Add(this.btnCdEstoque);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.txtPesoPeca);
             this.Controls.Add(this.txtDsPeca);
             this.Controls.Add(this.txtNmPeca);
-            this.Controls.Add(this.txtCdEstoque);
             this.Controls.Add(this.lblPesoPeca);
             this.Controls.Add(this.lblDsPeca);
             this.Controls.Add(this.lblNmPeca);
-            this.Controls.Add(this.lblCdEstoque);
             this.Controls.Add(this.txtCdTipoPeca);
             this.Controls.Add(this.lblCdTipoPeca);
             this.MaximizeBox = false;
@@ -286,8 +261,6 @@
 
         private System.Windows.Forms.Label lblCdTipoPeca;
         private System.Windows.Forms.TextBox txtCdTipoPeca;
-        private System.Windows.Forms.Label lblCdEstoque;
-        private System.Windows.Forms.TextBox txtCdEstoque;
         private System.Windows.Forms.Label lblNmPeca;
         private System.Windows.Forms.TextBox txtNmPeca;
         private System.Windows.Forms.Label lblDsPeca;
@@ -297,12 +270,12 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnConfirma;
-        private System.Windows.Forms.Button btnCdEstoque;
         private System.Windows.Forms.Button btnCdTipoPeca;
         private System.Windows.Forms.TextBox txtCodigoReal;
         private System.Windows.Forms.Label lblNomePecaReal;
         private System.Windows.Forms.TextBox txtQtdPeca;
         private System.Windows.Forms.Label lblQtdPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnRelacioranEstoque;
     }
 }
