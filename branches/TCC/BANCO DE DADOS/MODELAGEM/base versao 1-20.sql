@@ -1,3 +1,8 @@
+CREATE DATABASE Megatechdatabase
+GO
+
+USE Megatechdatabase
+GO
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='CompraOrdemcompra')
 DROP TABLE CompraOrdemcompra
