@@ -255,11 +255,13 @@
             // 
             // btnPedidoVenda
             // 
-            this.btnPedidoVenda.Location = new System.Drawing.Point(315, 285);
+            this.btnPedidoVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedidoVenda.BackgroundImage")));
+            this.btnPedidoVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPedidoVenda.Location = new System.Drawing.Point(315, 273);
             this.btnPedidoVenda.Name = "btnPedidoVenda";
-            this.btnPedidoVenda.Size = new System.Drawing.Size(115, 23);
+            this.btnPedidoVenda.Size = new System.Drawing.Size(40, 35);
             this.btnPedidoVenda.TabIndex = 5;
-            this.btnPedidoVenda.Text = "Items de Venda";
+            this.toolTipLegenda.SetToolTip(this.btnPedidoVenda, "Item de Venda");
             this.btnPedidoVenda.UseVisualStyleBackColor = true;
             // 
             // btnOP
@@ -268,7 +270,7 @@
             this.btnOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOP.Location = new System.Drawing.Point(193, 273);
             this.btnOP.Name = "btnOP";
-            this.btnOP.Size = new System.Drawing.Size(45, 35);
+            this.btnOP.Size = new System.Drawing.Size(40, 35);
             this.btnOP.TabIndex = 6;
             this.btnOP.UseVisualStyleBackColor = true;
             // 
