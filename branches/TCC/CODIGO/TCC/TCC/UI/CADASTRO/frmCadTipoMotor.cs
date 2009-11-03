@@ -12,6 +12,8 @@ namespace TCC.UI
 {
     public partial class frmCadTipoMotor : FormPai
     {
+        mTipoMotor _mTipoMotor;
+
         public frmCadTipoMotor()
         {
             InitializeComponent();
@@ -63,10 +65,16 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
             }
+            catch (BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Numero do Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdReal.Focus();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
+         
             finally
             {
                 model = null;
@@ -93,6 +101,24 @@ namespace TCC.UI
             finally
             {
                 model = null;
+            }
+        }
+        public void ValidaDadosNulos()
+        {
+            try
+            {
+                if (this._mTipoMotor == null)
+                {
+                    throw new BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
             }
         }
     }
