@@ -26,13 +26,18 @@ namespace TCC.UI
             BUSINESS.rDepartamento regraDep = new TCC.BUSINESS.rDepartamento();
             try
             {
+                this.ValidaDadosNulos();
                 regraDep.ValidarInsere(this.PegaDadosTela());
                 base.LimpaDadosTela(this);
+            }
+            catch (BUSINESS.Exceptions.Departamento.DescDepartamentoVazioException)
+            {
+                MessageBox.Show("É necessário preencher o campo Descrição do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDescricaoDepartamento.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDescricaoDepartamento.Focus();
             }
         }
 
@@ -65,21 +70,12 @@ namespace TCC.UI
             }
         }
 
-        /*protected override void BuscaIdMaximo()
+        private void ValidaDadosNulos()
         {
-            rDepartamento regraDepartamento = new rDepartamento();
-            try
+            if (string.IsNullOrEmpty(this.txtDescricaoDepartamento.Text) == true)
             {
-                this.txtCodigoDepartamento.Text = regraDepartamento.BuscaIdMaximoDepartamento();
+                throw new BUSINESS.Exceptions.Departamento.DescDepartamentoVazioException();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regraDepartamento = null;
-            }
-        }*/
+        }
     }
 }

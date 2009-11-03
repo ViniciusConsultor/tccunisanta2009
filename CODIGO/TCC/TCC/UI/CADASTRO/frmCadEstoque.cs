@@ -30,6 +30,8 @@ namespace TCC.UI
                 model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
+                model.Flg_negativo = this.ckbFlgNegativo.Checked;
+
                 return model;
             }
             catch (Exception ex)
@@ -57,6 +59,12 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
                 MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaDepartamento.Focus();
+            }
+            catch (BUSINESS.Exceptions.Estoque.NomEstoqueVazioException)
+            {
+                MessageBox.Show("É Necessário cadastrar o nome do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNome.Focus();
             }
             catch (Exception ex)
             {
@@ -115,6 +123,10 @@ namespace TCC.UI
             if (this._modelDepartamento == null)
             {
                 throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+            }
+            else if (string.IsNullOrEmpty(this.txtNome.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Estoque.NomEstoqueVazioException();
             }
         }
     }
