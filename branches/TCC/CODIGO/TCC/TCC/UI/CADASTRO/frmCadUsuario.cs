@@ -56,6 +56,8 @@ namespace TCC.UI
             catch(BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
                 MessageBox.Show("É Necessário Buscar o código do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaPerfilUsuario.Focus();
+                // this.btnBuscaPerfilUsuario.PerformClick();
             }
             catch (BUSINESS.Exceptions.Login.LoginExistenteException)
             {
@@ -72,10 +74,6 @@ namespace TCC.UI
             {
                 MessageBox.Show("É necessário preenchimento do campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtSenha.Focus();
-            }
-            catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
-            {
-                MessageBox.Show("Não é Possivel Cadastrar um usuário sem Codigo", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
