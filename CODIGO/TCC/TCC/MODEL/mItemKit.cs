@@ -10,17 +10,24 @@ namespace TCC.MODEL
 
         private int? id_item;
         private int? id_kit;
+        private int qtd_item;
         private DateTime dat_alt;
         private bool flg_ativo;
         private string nomeTabela = "Itemkit";
 
-        [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.DateTime, false)]
         public DateTime Dat_alt
         {
             get { return dat_alt; }
             set { dat_alt = value; }
         }
 
+        [ColunasBancoDados("Qtd_item", System.Data.SqlDbType.Int, false)]
+        public int Qtd_item
+        {
+            get { return qtd_item; }
+            set { qtd_item = value; }
+        }
         [ColunasBancoDados("Flg_ativo", System.Data.SqlDbType.Int, false)]
         public bool Flg_ativo
         {
