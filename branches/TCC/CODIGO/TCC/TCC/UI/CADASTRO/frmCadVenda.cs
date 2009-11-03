@@ -17,6 +17,7 @@ namespace TCC.UI
         mOrdemProducao _modelOrdemProd;
         mTipoProduto _modelTipoProd;
         mKitGrupoPeca _modelKit;
+        bool _clickOp = false;
 
         public frmCadVenda()
         {
@@ -190,32 +191,6 @@ namespace TCC.UI
             }
         }
 
-       /* private void btnCdMotor_Click(object sender, EventArgs e)
-        {
-            this._modelMotor = new mMotor();
-            frmBuscaMotor objFrmBuscaMotor = new frmBuscaMotor(this._modelMotor);
-            try
-            {
-                DialogResult resultado = objFrmBuscaMotor.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelMotor = null;
-                }
-                else
-                {
-                    this.txtCdMotor.Text = this._modelMotor.DscMotor;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmBuscaMotor = null;
-            }
-        }
-        */
         private void btnCdOrdemMotor_Click(object sender, EventArgs e)
         {
             this._modelOrdemProd = new mOrdemProducao();
@@ -242,32 +217,6 @@ namespace TCC.UI
             }
         }
 
-       /* private void btnCdKit_Click(object sender, EventArgs e)
-        {
-            this._modelKit = new mKitGrupoPeca();
-            frmBuscaKit frmForm = new frmBuscaKit(this._modelKit);
-            try
-            {
-                DialogResult resultado = frmForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelKit = null;
-                }
-                else
-                {
-                    this.txtCdKit.Text = this._modelKit.Nom_grupo;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                frmForm = null;
-            }
-        }
-        */
         private void CdTipoProduto_Click(object sender, EventArgs e)
         {
             this._modelTipoProd = new mTipoProduto();
@@ -294,6 +243,24 @@ namespace TCC.UI
             }
         }
 
-
+        private void btnOP_Click(object sender, EventArgs e)
+        {
+            this._clickOp = true;
+            frmCadOrdemProducao objOrdem = new frmCadOrdemProducao();
+            try
+            {
+                this.Enabled = false;
+                objOrdem.MdiParent = this.MdiParent;
+                objOrdem.Show();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objOrdem = null;
+            }
+        }
     }
 }
