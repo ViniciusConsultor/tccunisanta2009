@@ -98,10 +98,7 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.CodigoItemPecaVazioException)
             {
                 MessageBox.Show("É Necessário Buscar o código do Item da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaItemPeca.Focus();
             }
             catch (Exception ex)
             {
