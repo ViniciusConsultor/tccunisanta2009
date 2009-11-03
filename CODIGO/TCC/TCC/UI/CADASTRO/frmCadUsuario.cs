@@ -65,7 +65,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Login.LoginVazioException)
             {
-                MessageBox.Show("É necessário preenchimento do campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É necessário preenchimento do campo Usuario", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Focus();
             }
             catch (BUSINESS.Exceptions.Login.SenhaVaziaException)
