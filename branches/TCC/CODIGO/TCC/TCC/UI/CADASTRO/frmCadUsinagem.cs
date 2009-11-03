@@ -116,7 +116,7 @@ namespace TCC.UI
                 MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
 
-            catch (BUSINESS.Exceptions.Validacoes.CheckBoxSemSelecaoException)
+            catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException)
             {
                 MessageBox.Show("É Necessário Selecionar o check de Peça OK", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -132,12 +132,12 @@ namespace TCC.UI
             }
         }
 
-        //private void ValidaDadosNulos()
-        //{
-        //    if (this._modelPeca == null)
-        //    {
-        //        throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
-        //    }
-        //}
+        private void ValidaDadosNulos()
+        {
+            if (this._modelPeca == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
+            }
+        }
     }
 }

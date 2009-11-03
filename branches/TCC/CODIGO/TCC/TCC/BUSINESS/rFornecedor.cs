@@ -36,23 +36,8 @@ namespace TCC.BUSINESS
             }
         }
 
-        private void ValidaDados(mFornecedor model)
-        {
-            try
-            {
-                UTIL.Validacoes.ValidaMasked(model.CepFornecedor.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cep);
-                UTIL.Validacoes.ValidaMasked(model.Telefone.ToString(), TCC.BUSINESS.UTIL.TipoMasked.tel);
-                UTIL.Validacoes.ValidaMasked(model.Ddd.ToString(), TCC.BUSINESS.UTIL.TipoMasked.ddd);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public override void ValidarInsere(ModelPai model)
         {
-            this.ValidaDados((mFornecedor)model);
             base.Insere(model);
         }
 

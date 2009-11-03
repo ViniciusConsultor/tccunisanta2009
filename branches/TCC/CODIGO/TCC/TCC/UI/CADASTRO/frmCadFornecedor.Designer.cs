@@ -37,7 +37,6 @@
             this.lblCep = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
-            this.txtNumeroEndereco = new System.Windows.Forms.TextBox();
             this.lblNumeroEndereco = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.lblRua = new System.Windows.Forms.Label();
@@ -58,6 +57,8 @@
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.megaTextBox1 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // txtCidade
@@ -122,15 +123,6 @@
             this.lblComplemento.Size = new System.Drawing.Size(71, 13);
             this.lblComplemento.TabIndex = 8;
             this.lblComplemento.Text = "Complemento";
-            // 
-            // txtNumeroEndereco
-            // 
-            this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroEndereco.Location = new System.Drawing.Point(160, 135);
-            this.txtNumeroEndereco.MaxLength = 5;
-            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
-            this.txtNumeroEndereco.Size = new System.Drawing.Size(65, 20);
-            this.txtNumeroEndereco.TabIndex = 3;
             // 
             // lblNumeroEndereco
             // 
@@ -315,9 +307,24 @@
             this.txtCnpj.Location = new System.Drawing.Point(150, 245);
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.ValidatingType = typeof(int);
             this.txtCnpj.Size = new System.Drawing.Size(147, 20);
             this.txtCnpj.TabIndex = 24;
+            this.txtCnpj.ValidatingType = typeof(int);
+            // 
+            // txtNumeroEndereco
+            // 
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(160, 135);
+            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
+            this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
+            this.txtNumeroEndereco.TabIndex = 25;
+            // 
+            // megaTextBox1
+            // 
+            this.megaTextBox1.Location = new System.Drawing.Point(196, 320);
+            this.megaTextBox1.Name = "megaTextBox1";
+            this.megaTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.megaTextBox1.TabIndex = 26;
+            this.megaTextBox1._tipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // frmCadFornecedor
             // 
@@ -327,6 +334,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.megaTextBox1);
+            this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCepFornecedor);
@@ -344,7 +353,6 @@
             this.Controls.Add(this.lblNomeFornecedor);
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lblRua);
-            this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.lblNumeroEndereco);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.lblComplemento);
@@ -372,7 +380,6 @@
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label lblComplemento;
-        private System.Windows.Forms.TextBox txtNumeroEndereco;
         private System.Windows.Forms.Label lblNumeroEndereco;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label lblRua;
@@ -393,5 +400,7 @@
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
+        private Controles.MegaTextBox.MegaTextBox txtNumeroEndereco;
+        private Controles.MegaTextBox.MegaTextBox megaTextBox1;
     }
 }
