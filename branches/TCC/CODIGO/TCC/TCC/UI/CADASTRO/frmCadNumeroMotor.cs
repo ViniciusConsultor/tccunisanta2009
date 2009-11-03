@@ -12,6 +12,9 @@ namespace TCC.UI
 {
     public partial class frmCadNumeroMotor : FormPai
     {
+
+        mNumMotor _mNumeroMotor;
+
         public frmCadNumeroMotor()
         {
             InitializeComponent();
@@ -55,8 +58,43 @@ namespace TCC.UI
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
-        }
 
+            mNumMotor modelNumeroMotor = new mNumMotor();
+            BUSINESS.rNumeroMotor regraNumeroMotor = new BUSINESS.rNumeroMotor();
+
+            try
+            {
+                if (base.Alteracao == false)
+                {
+                    this.validaDadosNulo();
+                    modelNumeroMotor = this.PegaDadoosTela();
+                    if (modelNumeroMotor != null)
+                    {
+                        regraNumeroMotor.ValidarInsere(modelNumeroMotor);
+                    }
+                    this.btnLimpar_Click(null, null);
+                }
+                else
+                {
+                    modelNumeroMotor = this.PegaDadoosTela();
+                    regraNumeroMotor.ValidarAltera(modelNumeroMotor);
+                }
+                this.btnLimpar_Click(null, null);
+            }
+            catch (BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption)
+            {
+                MessageBox.Show("inserir Numero do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdRealMotor.Focus();
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                modelNumeroMotor=null;
+            }
+        }
         private void Insere()
         {
             mNumMotor model;
@@ -101,5 +139,23 @@ namespace TCC.UI
                 model = null;
             }
         }
+            public void validaDadosNulo()
+            {
+                try 
+	            {
+                    if (this._mNumeroMotor == null)
+                        throw new BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption();
+	            }
+	            catch (Exception ex)
+	            {
+            		
+		            throw ex ;
+	            }
+                 finally
+                {
+
+                }
+           } 
     }
 }
+

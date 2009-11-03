@@ -77,6 +77,51 @@ namespace TCC.UI
                 MessageBox.Show("Preencher campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataNasc.Focus();
             }
+            catch (BUSINESS.Exceptions.Colaborador.NomeVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNome.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.DDDVazioExeption)
+            {
+                MessageBox.Show("Preencher campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDD.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.TelefoneVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtTelefone.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.RuaVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtRua.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.NumeroVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Numero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNumero.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.BairroVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtBairro.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CidadeVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.RgVazioExeption)
+            {
+                MessageBox.Show("Preencher campo RG", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtRg.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CpfVazioExeption)
+            {
+                MessageBox.Show("Preencher campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCpf.Focus();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -280,6 +325,42 @@ namespace TCC.UI
                 else if (string.IsNullOrEmpty(this.txtCep.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtNome.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.NomeVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.DDDVazioExeption();
+                }
+                else if (this.txtTelefone.Modified == false)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.TelefoneVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtRua.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.RuaVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtNumero.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.NumeroVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtBairro.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.BairroVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtCidade.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CidadeVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtRg.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.RgVazioExeption();
+                }
+                else if (string.IsNullOrEmpty(this.txtCpf.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CpfVazioExeption();
                 }
             }
             catch (Exception ex)
