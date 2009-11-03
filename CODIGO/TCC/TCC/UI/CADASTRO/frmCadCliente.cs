@@ -201,8 +201,8 @@ namespace TCC.UI
 
         private void AtribuiTipoTextBox()
         {
-            txtDDD._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            txtNumero._tipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
         }
 
         private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)

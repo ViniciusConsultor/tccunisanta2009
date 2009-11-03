@@ -30,53 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVenda));
-            this.lblCdOrdemMotor = new System.Windows.Forms.Label();
-            this.txtCdOrdemMotor = new System.Windows.Forms.TextBox();
             this.lblCdCliente = new System.Windows.Forms.Label();
             this.txtCdCliente = new System.Windows.Forms.TextBox();
-            this.lblCdTipoProduto = new System.Windows.Forms.Label();
-            this.txtCdTipoProduto = new System.Windows.Forms.TextBox();
             this.lblDtVenda = new System.Windows.Forms.Label();
             this.lblQtdVenda = new System.Windows.Forms.Label();
             this.txtQtdVenda = new System.Windows.Forms.TextBox();
             this.lblVlVenda = new System.Windows.Forms.Label();
-            this.txtValorVenda = new System.Windows.Forms.TextBox();
             this.lblNotaFiscal = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnCdCliente = new System.Windows.Forms.Button();
-            this.btnCdOrdemMotor = new System.Windows.Forms.Button();
-            this.CdTipoProduto = new System.Windows.Forms.Button();
             this.txtDataVenda = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnPedidoVenda = new System.Windows.Forms.Button();
             this.btnOP = new System.Windows.Forms.Button();
+            this.megaTextBox1 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
-            // 
-            // lblCdOrdemMotor
-            // 
-            this.lblCdOrdemMotor.AutoSize = true;
-            this.lblCdOrdemMotor.Location = new System.Drawing.Point(102, 93);
-            this.lblCdOrdemMotor.Name = "lblCdOrdemMotor";
-            this.lblCdOrdemMotor.Size = new System.Drawing.Size(136, 13);
-            this.lblCdOrdemMotor.TabIndex = 0;
-            this.lblCdOrdemMotor.Text = "Codigo da ordem Produção";
-            // 
-            // txtCdOrdemMotor
-            // 
-            this.txtCdOrdemMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdOrdemMotor.Location = new System.Drawing.Point(244, 91);
-            this.txtCdOrdemMotor.Name = "txtCdOrdemMotor";
-            this.txtCdOrdemMotor.ReadOnly = true;
-            this.txtCdOrdemMotor.Size = new System.Drawing.Size(121, 20);
-            this.txtCdOrdemMotor.TabIndex = 1;
             // 
             // lblCdCliente
             // 
             this.lblCdCliente.AutoSize = true;
-            this.lblCdCliente.Location = new System.Drawing.Point(102, 131);
+            this.lblCdCliente.Location = new System.Drawing.Point(97, 18);
             this.lblCdCliente.Name = "lblCdCliente";
             this.lblCdCliente.Size = new System.Drawing.Size(85, 13);
             this.lblCdCliente.TabIndex = 0;
@@ -85,34 +61,16 @@
             // txtCdCliente
             // 
             this.txtCdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdCliente.Location = new System.Drawing.Point(198, 129);
+            this.txtCdCliente.Location = new System.Drawing.Point(193, 16);
             this.txtCdCliente.Name = "txtCdCliente";
             this.txtCdCliente.ReadOnly = true;
-            this.txtCdCliente.Size = new System.Drawing.Size(73, 20);
+            this.txtCdCliente.Size = new System.Drawing.Size(208, 20);
             this.txtCdCliente.TabIndex = 1;
-            // 
-            // lblCdTipoProduto
-            // 
-            this.lblCdTipoProduto.AutoSize = true;
-            this.lblCdTipoProduto.Location = new System.Drawing.Point(319, 131);
-            this.lblCdTipoProduto.Name = "lblCdTipoProduto";
-            this.lblCdTipoProduto.Size = new System.Drawing.Size(125, 13);
-            this.lblCdTipoProduto.TabIndex = 0;
-            this.lblCdTipoProduto.Text = "Nome do tipo do Produto";
-            // 
-            // txtCdTipoProduto
-            // 
-            this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoProduto.Location = new System.Drawing.Point(455, 131);
-            this.txtCdTipoProduto.Name = "txtCdTipoProduto";
-            this.txtCdTipoProduto.ReadOnly = true;
-            this.txtCdTipoProduto.Size = new System.Drawing.Size(64, 20);
-            this.txtCdTipoProduto.TabIndex = 1;
             // 
             // lblDtVenda
             // 
             this.lblDtVenda.AutoSize = true;
-            this.lblDtVenda.Location = new System.Drawing.Point(111, 176);
+            this.lblDtVenda.Location = new System.Drawing.Point(106, 63);
             this.lblDtVenda.Name = "lblDtVenda";
             this.lblDtVenda.Size = new System.Drawing.Size(79, 13);
             this.lblDtVenda.TabIndex = 2;
@@ -121,7 +79,7 @@
             // lblQtdVenda
             // 
             this.lblQtdVenda.AutoSize = true;
-            this.lblQtdVenda.Location = new System.Drawing.Point(328, 176);
+            this.lblQtdVenda.Location = new System.Drawing.Point(323, 63);
             this.lblQtdVenda.Name = "lblQtdVenda";
             this.lblQtdVenda.Size = new System.Drawing.Size(111, 13);
             this.lblQtdVenda.TabIndex = 0;
@@ -130,7 +88,7 @@
             // txtQtdVenda
             // 
             this.txtQtdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdVenda.Location = new System.Drawing.Point(455, 174);
+            this.txtQtdVenda.Location = new System.Drawing.Point(450, 61);
             this.txtQtdVenda.MaxLength = 5;
             this.txtQtdVenda.Name = "txtQtdVenda";
             this.txtQtdVenda.Size = new System.Drawing.Size(73, 20);
@@ -139,34 +97,25 @@
             // lblVlVenda
             // 
             this.lblVlVenda.AutoSize = true;
-            this.lblVlVenda.Location = new System.Drawing.Point(111, 217);
+            this.lblVlVenda.Location = new System.Drawing.Point(106, 104);
             this.lblVlVenda.Name = "lblVlVenda";
             this.lblVlVenda.Size = new System.Drawing.Size(80, 13);
             this.lblVlVenda.TabIndex = 0;
             this.lblVlVenda.Text = "Valor da Venda";
             // 
-            // txtValorVenda
-            // 
-            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorVenda.Location = new System.Drawing.Point(196, 215);
-            this.txtValorVenda.MaxLength = 17;
-            this.txtValorVenda.Name = "txtValorVenda";
-            this.txtValorVenda.Size = new System.Drawing.Size(80, 20);
-            this.txtValorVenda.TabIndex = 1;
-            // 
             // lblNotaFiscal
             // 
             this.lblNotaFiscal.AutoSize = true;
-            this.lblNotaFiscal.Location = new System.Drawing.Point(312, 217);
+            this.lblNotaFiscal.Location = new System.Drawing.Point(307, 104);
             this.lblNotaFiscal.Name = "lblNotaFiscal";
-            this.lblNotaFiscal.Size = new System.Drawing.Size(62, 13);
+            this.lblNotaFiscal.Size = new System.Drawing.Size(60, 13);
             this.lblNotaFiscal.TabIndex = 0;
-            this.lblNotaFiscal.Text = "Noita Fiscal";
+            this.lblNotaFiscal.Text = "Nota Fiscal";
             // 
             // txtNotaFiscal
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNotaFiscal.Location = new System.Drawing.Point(380, 215);
+            this.txtNotaFiscal.Location = new System.Drawing.Point(375, 102);
             this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(148, 20);
@@ -212,7 +161,7 @@
             // 
             this.btnCdCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdCliente.BackgroundImage")));
             this.btnCdCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdCliente.Location = new System.Drawing.Point(277, 129);
+            this.btnCdCliente.Location = new System.Drawing.Point(407, 14);
             this.btnCdCliente.Name = "btnCdCliente";
             this.btnCdCliente.Size = new System.Drawing.Size(27, 22);
             this.btnCdCliente.TabIndex = 3;
@@ -220,33 +169,9 @@
             this.btnCdCliente.UseVisualStyleBackColor = true;
             this.btnCdCliente.Click += new System.EventHandler(this.btnCdCliente_Click);
             // 
-            // btnCdOrdemMotor
-            // 
-            this.btnCdOrdemMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdOrdemMotor.BackgroundImage")));
-            this.btnCdOrdemMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdOrdemMotor.Location = new System.Drawing.Point(371, 91);
-            this.btnCdOrdemMotor.Name = "btnCdOrdemMotor";
-            this.btnCdOrdemMotor.Size = new System.Drawing.Size(27, 22);
-            this.btnCdOrdemMotor.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnCdOrdemMotor, "Buscar Ordem Produção");
-            this.btnCdOrdemMotor.UseVisualStyleBackColor = true;
-            this.btnCdOrdemMotor.Click += new System.EventHandler(this.btnCdOrdemMotor_Click);
-            // 
-            // CdTipoProduto
-            // 
-            this.CdTipoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CdTipoProduto.BackgroundImage")));
-            this.CdTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CdTipoProduto.Location = new System.Drawing.Point(525, 131);
-            this.CdTipoProduto.Name = "CdTipoProduto";
-            this.CdTipoProduto.Size = new System.Drawing.Size(27, 22);
-            this.CdTipoProduto.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.CdTipoProduto, "Buscar Tipo Produto");
-            this.CdTipoProduto.UseVisualStyleBackColor = true;
-            this.CdTipoProduto.Click += new System.EventHandler(this.CdTipoProduto_Click);
-            // 
             // txtDataVenda
             // 
-            this.txtDataVenda.Location = new System.Drawing.Point(196, 173);
+            this.txtDataVenda.Location = new System.Drawing.Point(191, 60);
             this.txtDataVenda.Mask = "00/00/0000";
             this.txtDataVenda.Name = "txtDataVenda";
             this.txtDataVenda.Size = new System.Drawing.Size(66, 20);
@@ -257,7 +182,7 @@
             // 
             this.btnPedidoVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedidoVenda.BackgroundImage")));
             this.btnPedidoVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedidoVenda.Location = new System.Drawing.Point(315, 273);
+            this.btnPedidoVenda.Location = new System.Drawing.Point(353, 193);
             this.btnPedidoVenda.Name = "btnPedidoVenda";
             this.btnPedidoVenda.Size = new System.Drawing.Size(40, 35);
             this.btnPedidoVenda.TabIndex = 5;
@@ -268,11 +193,21 @@
             // 
             this.btnOP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOP.BackgroundImage")));
             this.btnOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOP.Location = new System.Drawing.Point(193, 273);
+            this.btnOP.Location = new System.Drawing.Point(231, 193);
             this.btnOP.Name = "btnOP";
             this.btnOP.Size = new System.Drawing.Size(40, 35);
             this.btnOP.TabIndex = 6;
             this.btnOP.UseVisualStyleBackColor = true;
+            this.btnOP.Click += new System.EventHandler(this.btnOP_Click);
+            // 
+            // megaTextBox1
+            // 
+            this.megaTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.megaTextBox1.Location = new System.Drawing.Point(193, 102);
+            this.megaTextBox1.Name = "megaTextBox1";
+            this.megaTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.megaTextBox1.TabIndex = 7;
+            this.megaTextBox1.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // frmCadVenda
             // 
@@ -282,28 +217,22 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.megaTextBox1);
             this.Controls.Add(this.btnOP);
             this.Controls.Add(this.btnPedidoVenda);
             this.Controls.Add(this.txtDataVenda);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
-            this.Controls.Add(this.CdTipoProduto);
-            this.Controls.Add(this.btnCdOrdemMotor);
             this.Controls.Add(this.btnCdCliente);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.lblDtVenda);
             this.Controls.Add(this.txtNotaFiscal);
-            this.Controls.Add(this.txtValorVenda);
             this.Controls.Add(this.txtQtdVenda);
-            this.Controls.Add(this.txtCdTipoProduto);
             this.Controls.Add(this.txtCdCliente);
-            this.Controls.Add(this.txtCdOrdemMotor);
             this.Controls.Add(this.lblNotaFiscal);
             this.Controls.Add(this.lblVlVenda);
             this.Controls.Add(this.lblQtdVenda);
-            this.Controls.Add(this.lblCdTipoProduto);
             this.Controls.Add(this.lblCdCliente);
-            this.Controls.Add(this.lblCdOrdemMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadVenda";
             this.Text = "Venda";
@@ -315,28 +244,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCdOrdemMotor;
-        private System.Windows.Forms.TextBox txtCdOrdemMotor;
         private System.Windows.Forms.Label lblCdCliente;
         private System.Windows.Forms.TextBox txtCdCliente;
-        private System.Windows.Forms.Label lblCdTipoProduto;
-        private System.Windows.Forms.TextBox txtCdTipoProduto;
         private System.Windows.Forms.Label lblDtVenda;
         private System.Windows.Forms.Label lblQtdVenda;
         private System.Windows.Forms.TextBox txtQtdVenda;
         private System.Windows.Forms.Label lblVlVenda;
-        private System.Windows.Forms.TextBox txtValorVenda;
         private System.Windows.Forms.Label lblNotaFiscal;
         private System.Windows.Forms.TextBox txtNotaFiscal;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnCdCliente;
-        private System.Windows.Forms.Button btnCdOrdemMotor;
-        private System.Windows.Forms.Button CdTipoProduto;
         private System.Windows.Forms.MaskedTextBox txtDataVenda;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnPedidoVenda;
         private System.Windows.Forms.Button btnOP;
+        private Controles.MegaTextBox.MegaTextBox megaTextBox1;
     }
 }
