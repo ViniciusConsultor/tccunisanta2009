@@ -58,7 +58,6 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.megaTextBox1 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // txtCidade
@@ -318,14 +317,6 @@
             this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroEndereco.TabIndex = 25;
             // 
-            // megaTextBox1
-            // 
-            this.megaTextBox1.Location = new System.Drawing.Point(196, 320);
-            this.megaTextBox1.Name = "megaTextBox1";
-            this.megaTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.megaTextBox1.TabIndex = 26;
-            this.megaTextBox1._tipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
-            // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,7 +325,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
-            this.Controls.Add(this.megaTextBox1);
             this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtTelefone);
@@ -401,6 +391,5 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
         private Controles.MegaTextBox.MegaTextBox txtNumeroEndereco;
-        private Controles.MegaTextBox.MegaTextBox megaTextBox1;
     }
 }
