@@ -48,6 +48,7 @@
             this.txtCdDepartamento.Enabled = false;
             this.txtCdDepartamento.Location = new System.Drawing.Point(199, 37);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
+            this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(68, 20);
             this.txtCdDepartamento.TabIndex = 0;
             this.txtCdDepartamento.TabStop = false;
@@ -136,11 +137,11 @@
             // ckbFlgNegativo
             // 
             this.ckbFlgNegativo.AutoSize = true;
-            this.ckbFlgNegativo.Location = new System.Drawing.Point(154, 177);
+            this.ckbFlgNegativo.Location = new System.Drawing.Point(109, 166);
             this.ckbFlgNegativo.Name = "ckbFlgNegativo";
-            this.ckbFlgNegativo.Size = new System.Drawing.Size(148, 17);
+            this.ckbFlgNegativo.Size = new System.Drawing.Size(157, 17);
             this.ckbFlgNegativo.TabIndex = 6;
-            this.ckbFlgNegativo.Text = "Remove Peça Defeituosa";
+            this.ckbFlgNegativo.Text = "Estoque Peças Defeituosas";
             this.ckbFlgNegativo.UseVisualStyleBackColor = true;
             // 
             // frmCadEstoque
