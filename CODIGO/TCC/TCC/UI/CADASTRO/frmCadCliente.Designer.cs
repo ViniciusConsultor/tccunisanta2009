@@ -285,7 +285,7 @@
             // txtDDD
             // 
             this.txtDDD.Location = new System.Drawing.Point(138, 289);
-            this.txtDDD.MaxLength = 3;
+            this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 12;
@@ -303,9 +303,9 @@
             this.txtCep.Location = new System.Drawing.Point(483, 153);
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
-            this.txtCep.ValidatingType = typeof(int);
             this.txtCep.Size = new System.Drawing.Size(63, 20);
             this.txtCep.TabIndex = 6;
+            this.txtCep.ValidatingType = typeof(int);
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -329,9 +329,9 @@
             this.txtCPF.Location = new System.Drawing.Point(147, 222);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.ValidatingType = typeof(int);
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
             this.txtCPF.TabIndex = 19;
+            this.txtCPF.ValidatingType = typeof(int);
             // 
             // txtCnpj
             // 
@@ -339,7 +339,6 @@
             this.txtCnpj.Location = new System.Drawing.Point(350, 222);
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.ValidatingType = typeof(int);
             this.txtCnpj.Size = new System.Drawing.Size(147, 20);
             this.txtCnpj.TabIndex = 25;
             this.txtCnpj.ValidatingType = typeof(int);
@@ -350,9 +349,9 @@
             this.txtTelefone.Location = new System.Drawing.Point(241, 290);
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.ValidatingType = typeof(int);
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone.TabIndex = 26;
+            this.txtTelefone.ValidatingType = typeof(int);
             // 
             // frmCadCliente
             // 
