@@ -12,6 +12,7 @@ namespace TCC.MODEL
         private string senha;
         private string obsUsuario;
         private bool flgAtivo;
+        private int id_perfil;
         private string nomeTabela = "usuario";
 
         [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit, false)]
@@ -21,6 +22,12 @@ namespace TCC.MODEL
             set { flgAtivo = value; }
         }
 
+        [ColunasBancoDados("Id_perfil", System.Data.SqlDbType.Int, false)]
+        public int Id_perfil
+        {
+            get { return id_perfil; }
+            set { id_perfil = value; }
+        }
         [ColunasBancoDados("obs_usu", System.Data.SqlDbType.VarChar, false)]
         public string ObsUsuario
         {
