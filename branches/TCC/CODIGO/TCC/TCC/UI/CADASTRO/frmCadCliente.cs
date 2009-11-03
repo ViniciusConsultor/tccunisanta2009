@@ -129,6 +129,7 @@ namespace TCC.UI
             mCliente model;
             try
             {
+                this.validaDadosNulos();
                 model = this.PegaDadosTela();
                 if (base.Alteracao == true)
                 {
@@ -139,6 +140,41 @@ namespace TCC.UI
                     regra.ValidarInsere(model);
                 }
                 this.btnLimpa_Click(null, null);
+            }
+            catch (BUSINESS.Exceptions.Cliente.NomeClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNome.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CpfCnpjVazioException)
+            {
+                MessageBox.Show("Preencher o CPF ou o CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCPF.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException)
+            {
+                MessageBox.Show("Preencher algum campo para contato(DDD e Telefone ou E-mail)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDD.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.DDDClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDD.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtTelefone.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.EmailClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo e-mail", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtTelefone.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CidadeClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCidade.Focus();
             }
             catch (Exception ex)
             {
@@ -214,6 +250,45 @@ namespace TCC.UI
                 this.txtRua.Text = this._modelCliente.NomeRua;
                 this.txtTelefone.Text = this._modelCliente.TelefoneCliente.ToString();
                 this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelCliente.SlgEstado);
+            }
+        }
+
+        public void validaDadosNulos()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(this.txtNome.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.NomeClienteVazioException();
+                }
+                else if (this.txtCnpj.Modified == true && this.txtCPF.Modified == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.CpfCnpjVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && this.txtTelefone.Modified == false)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(this.txtTelefone.Text) == false)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.DDDClienteVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == false && string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException();
+                }
+                else if (string.IsNullOrEmpty(txtEmail.Text) == true && string.IsNullOrEmpty(txtDDD.Text) == true && string.IsNullOrEmpty(txtTelefone.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.EmailClienteVazioException();
+                }
+                else if (string.IsNullOrEmpty(txtCidade.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.CidadeClienteVazioException();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
