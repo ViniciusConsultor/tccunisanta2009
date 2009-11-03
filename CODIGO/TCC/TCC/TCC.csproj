@@ -128,6 +128,7 @@
     <Compile Include="BUSINESS\Exceptions\NumeroMotor\NumeroMotorVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\tipoPeca\tipoPecaVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Usinagem\CheckBoxPecaOKVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />

@@ -12,6 +12,8 @@ namespace TCC.UI
 {
     public partial class frmCadTipoPeca : FormPai
     {
+        mTipoPeca _mtipoPeca;
+
         public frmCadTipoPeca()
         {
             InitializeComponent();
@@ -80,6 +82,11 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 this.LimparCampos();
             }
+            catch (BUSINESS.Exceptions.tipoPeca.tipoPecaVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDsTipoPeca.Focus();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -107,5 +114,23 @@ namespace TCC.UI
                 regra = null;
             }
         }*/
+        public void ValidaDadosNulos()
+        {
+            try
+            {
+                if (this._mtipoPeca == null)
+                {
+                    throw new BUSINESS.Exceptions.tipoPeca.tipoPecaVazioExeption();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
     }
 }
