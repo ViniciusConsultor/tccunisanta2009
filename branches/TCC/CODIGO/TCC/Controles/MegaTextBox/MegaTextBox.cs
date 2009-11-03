@@ -17,12 +17,20 @@ namespace Controles.MegaTextBox
 
     public partial class MegaTextBox : TextBox
     {
-        public TipoTexto _tipoTexto = TipoTexto.Texto;
+        private TipoTexto _tipoTexto;
 
+        public TipoTexto TipoTexto
+        {
+            get { return _tipoTexto; }
+            set { _tipoTexto = value; }
+        }
+
+        #region Construtores
         public MegaTextBox()
         {
             InitializeComponent();
             this.KeyPress += new KeyPressEventHandler(MegaTextBox_KeyPress);
+            this.BorderStyle = BorderStyle.FixedSingle;
         }
 
         public MegaTextBox(IContainer container)
@@ -32,7 +40,9 @@ namespace Controles.MegaTextBox
             InitializeComponent();
 
             this.KeyPress += new KeyPressEventHandler(MegaTextBox_KeyPress);
+            this.BorderStyle = BorderStyle.FixedSingle;
         }
+        #endregion Construtores
 
         void MegaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -166,10 +166,7 @@ namespace TCC.UI
             try
             {
                 model.Dat = DateTime.Now;
-                model.IdDepto = Convert.ToInt32( this._modelDepartamento.IdDepto);
                 model.IdFornecedor = Convert.ToInt32( this._modelFornecedor.IdFornecedor);
-                model.IdMotorCompra = Convert.ToInt32(this._modelMotor.IdMotor);
-                model.IdTipoProduto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
                 if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
                 {
                     model.NotaFiscal = null;
@@ -187,7 +184,6 @@ namespace TCC.UI
                     model.Obs = this.txtObservacao.Text;
                 }
                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
-                model.IdPeca = Convert.ToInt32(this._modelPeca[0].IdPeca);
 
                 return model;
             }
