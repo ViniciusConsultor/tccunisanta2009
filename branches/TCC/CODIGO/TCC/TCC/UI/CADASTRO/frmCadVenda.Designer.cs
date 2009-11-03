@@ -46,7 +46,7 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnPedidoVenda = new System.Windows.Forms.Button();
             this.btnOP = new System.Windows.Forms.Button();
-            this.megaTextBox1 = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtValorVenda = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblCdCliente
@@ -200,14 +200,14 @@
             this.btnOP.UseVisualStyleBackColor = true;
             this.btnOP.Click += new System.EventHandler(this.btnOP_Click);
             // 
-            // megaTextBox1
+            // txtValorVenda
             // 
-            this.megaTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.megaTextBox1.Location = new System.Drawing.Point(193, 102);
-            this.megaTextBox1.Name = "megaTextBox1";
-            this.megaTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.megaTextBox1.TabIndex = 7;
-            this.megaTextBox1.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorVenda.Location = new System.Drawing.Point(193, 102);
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(100, 20);
+            this.txtValorVenda.TabIndex = 7;
+            this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // frmCadVenda
             // 
@@ -217,7 +217,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
-            this.Controls.Add(this.megaTextBox1);
+            this.Controls.Add(this.txtValorVenda);
             this.Controls.Add(this.btnOP);
             this.Controls.Add(this.btnPedidoVenda);
             this.Controls.Add(this.txtDataVenda);
@@ -260,6 +260,6 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnPedidoVenda;
         private System.Windows.Forms.Button btnOP;
-        private Controles.MegaTextBox.MegaTextBox megaTextBox1;
+        private Controles.MegaTextBox.MegaTextBox txtValorVenda;
     }
 }

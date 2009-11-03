@@ -191,58 +191,6 @@ namespace TCC.UI
             }
         }
 
-        private void btnCdOrdemMotor_Click(object sender, EventArgs e)
-        {
-            this._modelOrdemProd = new mOrdemProducao();
-            frmBuscaOrdemMotor objFrmOrdemMotor = new frmBuscaOrdemMotor(this._modelOrdemProd);
-            try
-            {
-                DialogResult resultado = objFrmOrdemMotor.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelOrdemProd = null;
-                }
-                else
-                {
-                    this.txtCdOrdemMotor.Text = this._modelOrdemProd.Dsc_ordem;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmOrdemMotor = null;
-            }
-        }
-
-        private void CdTipoProduto_Click(object sender, EventArgs e)
-        {
-            this._modelTipoProd = new mTipoProduto();
-            frmBuscaTipoProduto objForm = new frmBuscaTipoProduto(this._modelTipoProd);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelTipoProd = null;
-                }
-                else
-                {
-                    this.txtCdTipoProduto.Text = this._modelTipoProd.Nom;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
         private void btnOP_Click(object sender, EventArgs e)
         {
             this._clickOp = true;
