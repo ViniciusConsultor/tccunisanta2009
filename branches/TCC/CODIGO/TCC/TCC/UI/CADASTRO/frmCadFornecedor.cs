@@ -143,7 +143,7 @@ namespace TCC.UI
             mFornecedor model;
             try
             {
-                this.ValidadadosNulos();
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);

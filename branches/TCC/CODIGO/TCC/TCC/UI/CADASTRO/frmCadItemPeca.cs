@@ -110,11 +110,11 @@ namespace TCC.UI
                     {
                         if (contador == 0)
                         {
-                            this.txtCdPeca.Text = this._modelPeca[contador].Nom;
+                           // this.txtCdPeca.Text = this._modelPeca[contador].Nom;
                         }
                         else
                         {
-                            this.txtCdPeca.Text += ", " + this._modelPeca[contador].Nom;
+                            //this.txtCdPeca.Text += ", " + this._modelPeca[contador].Nom;
                         }
                     }
                 }
