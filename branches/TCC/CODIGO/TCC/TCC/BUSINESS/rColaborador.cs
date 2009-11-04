@@ -11,6 +11,18 @@ namespace TCC.BUSINESS
 {
     class rColaborador:ComandosSql
     {
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_colab", "Colaborador"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable BuscaColaborador(string nomeColaborador)
         {
             SqlParameter param = null;

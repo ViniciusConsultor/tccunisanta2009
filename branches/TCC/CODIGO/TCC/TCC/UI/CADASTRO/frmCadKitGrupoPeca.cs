@@ -12,26 +12,43 @@ namespace TCC.UI
 {
     public partial class frmCadKitGrupoPeca : FormPai
     {
+        #region Atributos
         List<mPeca> _modelPeca;
         mItemPeca _modelItemPeca;
+        #endregion Atributos
 
+        #region Construtor
         public frmCadKitGrupoPeca()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Eventos
+
+        #region Form Load
+        private void frmCadKitGrupoPeca_Load(object sender, EventArgs e)
+        {
+        }
+        #endregion Form Load
+        
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
             this._modelItemPeca = null;
             this._modelPeca = null;
         }
+        #endregion btnLimpar Click
 
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
+        #region btnCdItemPeca Click
         private void btnCdItemPeca_Click(object sender, EventArgs e)
         {
             this._modelItemPeca = new mItemPeca();
@@ -45,7 +62,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                 //   this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
+                    //   this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
                 }
             }
             catch (Exception ex)
@@ -57,33 +74,23 @@ namespace TCC.UI
                 objTela = null;
             }
         }
+        #endregion btnCdItemPeca Click
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rKitGrupoPeca regra = new rKitGrupoPeca();
-            try
-            {
-                this.txtCdKit.Text = regra.BuscaIdMaximo();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
-        private void frmCadKitGrupoPeca_Load(object sender, EventArgs e)
-        {
-        }
-
+        #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
         }
+        #endregion btnAceitar Click
 
+        #endregion Eventos
+
+        #region Metodos
+
+        #region Insere
+        /// <summary>
+        /// Insere no banco os dados do model
+        /// </summary>
         private void Insere()
         {
             mKitGrupoPeca model;
@@ -110,7 +117,12 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Insere
 
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Valida os dados que não podem ser nulos na tela
+        /// </summary>
         private void ValidaDadosNulos()
         {
             if (this._modelItemPeca == null)
@@ -122,7 +134,13 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
             }
         }
+        #endregion Valida Dados Nulos
 
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados da tela para popular um model
+        /// </summary>
+        /// <returns>Model populado</returns>
         private mKitGrupoPeca PegaDadosTela()
         {
             mKitGrupoPeca model = new mKitGrupoPeca();
@@ -145,5 +163,8 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Pega Dados Tela 
+
+        #endregion Metodos
     }
 }

@@ -10,6 +10,18 @@ namespace TCC.BUSINESS
 {
     class rDepartamento :ComandosSql
     {
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_depto", "Departamento"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable BuscaDepartamento(string Descricao)
         {
             SqlParameter param = null;

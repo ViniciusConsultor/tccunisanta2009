@@ -12,13 +12,23 @@ namespace TCC.UI
 {
     public partial class frmCadCliente : FormPai
     {
+        #region Atributos
         mCliente _modelCliente;
+        #endregion Atributos
 
+        #region Construtor
         public frmCadCliente()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Metodos
+
+        #region Busca Estados
+        /// <summary>
+        /// Busca os estados para popular o combo
+        /// </summary>
         private void BuscaEstados()
         {
             rEstado regraEstado = new rEstado();
@@ -37,7 +47,13 @@ namespace TCC.UI
                 regraEstado = null;
             }
         }
+        #endregion Busca Estados
 
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados que estão na tela e popula o model
+        /// </summary>
+        /// <returns>Model populado</returns>
         private mCliente PegaDadosTela()
         {
             mCliente model = new mCliente();
@@ -45,6 +61,7 @@ namespace TCC.UI
 
             try
             {
+                model.IdCliente = regra.BuscaIdMaximo();
                 if (string.IsNullOrEmpty(this.txtBairro.Text) == true)
                 {
                     model.Bairro = null;
@@ -59,7 +76,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    model.Cep = Convert.ToInt32(this.txtCep.Text.Replace("-",String.Empty));
+                    model.Cep = Convert.ToInt32(this.txtCep.Text.Replace("-", String.Empty));
                 }
                 model.Cidade = this.txtCidade.Text;
                 if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
@@ -116,14 +133,13 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Pega Dados Tela
 
-        private void frmCadCliente_Load(object sender, EventArgs e)
-        {
-            this.BuscaEstados();
-            this.AtribuiTipoTextBox();
-        }
-
-        private void btnInsere_Click(object sender, EventArgs e)
+        #region Insere
+        /// <summary>
+        /// Insere os dados que estão no model
+        /// </summary>
+        private void Insere()
         {
             rCliente regra = new rCliente();
             mCliente model;
@@ -186,52 +202,12 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Insere
 
-        private void btnLimpa_Click(object sender, EventArgs e)
-        {
-            base.LimpaDadosTela(this);
-            this._modelCliente = null;
-            base.Alteracao = false;
-        }
-
-        void btnVolta_Click(object sender, System.EventArgs e)
-        {
-            base.FechaTela(this);
-        }
-
-        private void AtribuiTipoTextBox()
-        {
-            txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-        }
-
-        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
-        {
-            this.btnLimpa_Click(null, null);
-            this._modelCliente = new mCliente();
-            frmBuscaCliente objCliente = new frmBuscaCliente(this._modelCliente, true);
-            try
-            {
-                DialogResult resultado = objCliente.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelCliente = null;
-                }
-                else
-                {
-                    this.PopulaTelaComModelAlteracao();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objCliente = null;
-            }
-        }
-
+        #region Popula Tela Com Model Alteracao
+        /// <summary>
+        /// Popula a tela com o model construido pela tela de busca
+        /// </summary>
         private void PopulaTelaComModelAlteracao()
         {
             if (this._modelCliente != null)
@@ -252,7 +228,12 @@ namespace TCC.UI
                 this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelCliente.SlgEstado);
             }
         }
+        #endregion Popula Tela Com Model Alteracao
 
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Valida dados nulos
+        /// </summary>
         public void validaDadosNulos()
         {
             try
@@ -291,5 +272,69 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion Valida Dados Nulos
+
+        #endregion Metodos
+
+        #region Eventos
+        #region Form Load
+        private void frmCadCliente_Load(object sender, EventArgs e)
+        {
+            this.BuscaEstados();
+        }
+        #endregion Form Load
+
+        #region btnInsere Click
+        private void btnInsere_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion btnInsere Click
+
+        #region btnLimpa Click
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            this._modelCliente = null;
+            base.Alteracao = false;
+        }
+        #endregion btnLimpa Click
+
+        #region btnVolta Click
+        void btnVolta_Click(object sender, System.EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+        #endregion btnVolta Click
+
+        #region btnBuscaAlteracaoDelecao Click
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnLimpa_Click(null, null);
+            this._modelCliente = new mCliente();
+            frmBuscaCliente objCliente = new frmBuscaCliente(this._modelCliente, true);
+            try
+            {
+                DialogResult resultado = objCliente.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelCliente = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objCliente = null;
+            }
+        }
+        #endregion btnBuscaAlteracaoDelecao Click
+        #endregion Eventos
     }
 }

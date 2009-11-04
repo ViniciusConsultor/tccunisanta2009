@@ -13,125 +13,37 @@ namespace TCC.UI
 {
     public partial class frmCadColaborador : FormPai
     {
+        #region Atributos
         mUsuario _modelUsuario;
         mDepartamento _modelDepartamento;
         mColaborador _modelColaborador;
+        #endregion Atributos
 
+        #region Construtor
         public frmCadColaborador()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
         #region Eventos
+        
+        #region Form Load
         private void frmCadColaborador_Load(object sender, EventArgs e)
         {
             this.PopulaComboEstados();
             CbSexo.SelectedIndex = 0;
         }
+        #endregion Form Load
 
+        #region btnConfirma Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            mColaborador modelColaborador = new mColaborador();
-            BUSINESS.rColaborador regraColaborador = new BUSINESS.rColaborador();
-            try
-            {
-                if (base.Alteracao == false)
-                {
-                    this.ValidaDadosNulos();
-                    modelColaborador = this.PegaDadosTela();
-                    if (modelColaborador != null)
-                    {
-                        regraColaborador.ValidarInsere(modelColaborador);
-                    }
-                    this.btnApaga_Click(null, null);
-                }
-                else
-                {
-                    modelColaborador = this.PegaDadosTela();
-                    regraColaborador.ValidarAltera(modelColaborador);
-                }
-                this.btnApaga_Click(null, null);
-            }
-            catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
-            {
-                MessageBox.Show("Buscar Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdUsuario.Focus();
-            }
-            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
-            {
-                MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdDepartamento.Focus();
-            }
-            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
-            {
-                MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada ,"Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataNasc.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
-            {
-                MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCep.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException)
-            {
-                MessageBox.Show("Preencher campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataNasc.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.NomeVazioExeption)
-            {
-                MessageBox.Show("Preencher campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtNome.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.DDDVazioExeption)
-            {
-                MessageBox.Show("Preencher campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDDD.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.TelefoneVazioExeption)
-            {
-                MessageBox.Show("Preencher campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtTelefone.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.RuaVazioExeption)
-            {
-                MessageBox.Show("Preencher campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtRua.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.NumeroVazioExeption)
-            {
-                MessageBox.Show("Preencher campo Numero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtNumero.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.BairroVazioExeption)
-            {
-                MessageBox.Show("Preencher campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtBairro.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CidadeVazioExeption)
-            {
-                MessageBox.Show("Preencher campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCidade.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.RgVazioExeption)
-            {
-                MessageBox.Show("Preencher campo RG", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtRg.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CpfVazioExeption)
-            {
-                MessageBox.Show("Preencher campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCpf.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                modelColaborador = null;
-            }
+            this.Insere();
         }
+        #endregion btnConfirma Click
 
+        #region btnApaga Click
         private void btnApaga_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
@@ -140,10 +52,16 @@ namespace TCC.UI
             this._modelColaborador = null;
             base.Alteracao = false;
         }
+        #endregion btnApaga Click
+
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
+
+        #region btnBuscaUsuario Click
         private void btnBuscaUsuario_Click(object sender, EventArgs e)
         {
             _modelUsuario = new mUsuario();
@@ -169,7 +87,9 @@ namespace TCC.UI
                 buscarUsuario = null;
             }
         }
+        #endregion btnBuscaUsuario Click
 
+        #region btnBuscaDepartamento Click
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
             _modelDepartamento = new mDepartamento();
@@ -195,10 +115,46 @@ namespace TCC.UI
                 buscarDepartamento = null;
             }
         }
-        
-        #endregion
+        #endregion btnBuscaDepartamento Click
+
+        #region btnBuscaAlteracaoDelecao Click
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnApaga_Click(null, null);
+            this._modelColaborador = new mColaborador();
+            frmBuscaColaborador objColaborador = new frmBuscaColaborador(this._modelColaborador, true);
+            try
+            {
+                DialogResult resultado = objColaborador.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelColaborador = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objColaborador = null;
+            }
+        }
+        #endregion btnBuscaAlteracaoDelecao Click
+
+        #endregion Eventos
 
         #region Metodos
+
+        #region Popula Combo Estados
+        /// <summary>
+        /// Popula o combo com os estados no banco
+        /// </summary>
         private void PopulaComboEstados()
         {
             BUSINESS.rEstado estados = new rEstado();
@@ -206,7 +162,13 @@ namespace TCC.UI
             cbEstado.DisplayMember = "slg_est";
             cbEstado.DataSource = estados.BuscaEstado();
         }
+        #endregion Popula Combo Estados
 
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados da tela e popula o model
+        /// </summary>
+        /// <returns>Model populado</returns>
         private mColaborador PegaDadosTela()
         {
             mColaborador model = new mColaborador();
@@ -214,6 +176,7 @@ namespace TCC.UI
 
             try
             {
+                model.IdColab = regra.BuscaIdMaximo();
                 model.BairrEnd = txtBairro.Text;
                 if (this.txtCep.Modified == false)
                 {
@@ -305,7 +268,12 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion Pega Dados Tela
 
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Valida os dados que estão na tela
+        /// </summary>
         public void ValidaDadosNulos()
         {
             try
@@ -367,42 +335,13 @@ namespace TCC.UI
             {
                 throw ex;
             }
-            finally
-            {
-
-            }
         }
+        #endregion Valida Dados Nulos
 
-        #endregion
-
-        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
-        {
-            this.btnApaga_Click(null, null);
-            this._modelColaborador = new mColaborador();
-            frmBuscaColaborador objColaborador = new frmBuscaColaborador(this._modelColaborador,true);
-            try
-            {
-                DialogResult resultado = objColaborador.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelColaborador = null;
-                }
-                else
-                {
-                    this.PopulaTelaComModelAlteracao();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objColaborador = null;
-            }
-        }
-
+        #region Popula Tela Com Model Alteracao
+        /// <summary>
+        /// Popula a tela com o model buscado em alteração
+        /// </summary>
         private void PopulaTelaComModelAlteracao()
         {
             if (this._modelColaborador != null)
@@ -432,5 +371,116 @@ namespace TCC.UI
                 this.txtEmail.Text = this._modelColaborador.Email;
             }
         }
+        #endregion Popula Tela Com Model Alteracao
+
+        #region Insere
+        /// <summary>
+        /// Insere os dados do model no banco
+        /// </summary>
+        private void Insere()
+        {
+            mColaborador modelColaborador = new mColaborador();
+            BUSINESS.rColaborador regraColaborador = new BUSINESS.rColaborador();
+            try
+            {
+                if (base.Alteracao == false)
+                {
+                    this.ValidaDadosNulos();
+                    modelColaborador = this.PegaDadosTela();
+                    if (modelColaborador != null)
+                    {
+                        regraColaborador.ValidarInsere(modelColaborador);
+                    }
+                    this.btnApaga_Click(null, null);
+                }
+                else
+                {
+                    modelColaborador = this.PegaDadosTela();
+                    regraColaborador.ValidarAltera(modelColaborador);
+                }
+                this.btnApaga_Click(null, null);
+            }
+            catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
+            {
+                MessageBox.Show("Buscar Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdUsuario.Focus();
+            }
+            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdDepartamento.Focus();
+            }
+            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
+            {
+                MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataNasc.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
+            {
+                MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCep.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException)
+            {
+                MessageBox.Show("Preencher campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataNasc.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.NomeVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNome.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.DDDVazioExeption)
+            {
+                MessageBox.Show("Preencher campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDD.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.TelefoneVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtTelefone.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.RuaVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtRua.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.NumeroVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Numero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNumero.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.BairroVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtBairro.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CidadeVazioExeption)
+            {
+                MessageBox.Show("Preencher campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.RgVazioExeption)
+            {
+                MessageBox.Show("Preencher campo RG", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtRg.Focus();
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CpfVazioExeption)
+            {
+                MessageBox.Show("Preencher campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCpf.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                modelColaborador = null;
+            }
+        }
+        #endregion Insere
+
+        #endregion Metodos
     }
 }

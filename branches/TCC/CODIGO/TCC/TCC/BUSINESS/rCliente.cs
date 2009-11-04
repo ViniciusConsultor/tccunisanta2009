@@ -36,6 +36,18 @@ namespace TCC.BUSINESS
             }
         }
 
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_cli", "Cliente"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public override void ValidarInsere(ModelPai model)
         {
             base.Insere(model);

@@ -10,6 +10,17 @@ namespace TCC.BUSINESS
 {
     class rFornecedor : ComandosSql
     {
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_forn", "Fornecedor"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public DataTable BuscaFornecedor(string Descricao)
         {

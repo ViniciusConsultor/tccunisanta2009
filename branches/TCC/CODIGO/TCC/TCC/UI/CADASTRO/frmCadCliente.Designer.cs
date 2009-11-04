@@ -284,19 +284,23 @@
             // 
             // txtDDD
             // 
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDDD.Location = new System.Drawing.Point(138, 289);
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 12;
+            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // txtNumero
             // 
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumero.Location = new System.Drawing.Point(158, 114);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(63, 20);
             this.txtNumero.TabIndex = 3;
+            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // txtCep
             // 
