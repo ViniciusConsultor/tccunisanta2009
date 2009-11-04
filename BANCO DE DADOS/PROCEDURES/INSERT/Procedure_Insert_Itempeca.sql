@@ -6,6 +6,7 @@ GO
 CREATE PROCEDURE sp_insert_itempeca
 @id_item		  INT,
 @id_peca          INT,
+@qtd_peca		  INT,
 @dat_alt		  DATETIME,
 @flg_ativo        BIT
 
@@ -20,8 +21,8 @@ ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO ITEMPECA(id_item, id_peca, dat_alt, flg_ativo)
-VALUES(@id_item, @id_peca, @dat_alt, @flg_ativo)
+INSERT INTO ITEMPECA(id_item, id_peca, qtd_peca, dat_alt, flg_ativo)
+VALUES(@id_item, @id_peca, @qtd_peca, @dat_alt, @flg_ativo)
 END
 END TRY
 

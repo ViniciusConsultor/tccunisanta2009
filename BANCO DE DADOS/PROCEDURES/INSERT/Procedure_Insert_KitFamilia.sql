@@ -6,6 +6,7 @@ GO
 CREATE PROCEDURE sp_insert_kitfamilia
 @id_kit        INT,
 @id_fam_motor  INT,
+@qtd_kit	   INT,
 @dat_alt       DATETIME,
 @flg_ativo     BIT
 
@@ -20,8 +21,8 @@ ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO KITFAMILIA(id_kit, id_fam_motor, dat_alt, flg_ativo)
-VALUES(@id_kit, @id_fam_motor, @dat_alt, @flg_ativo)
+INSERT INTO KITFAMILIA(id_kit, id_fam_motor, qtd_kit, dat_alt, flg_ativo)
+VALUES(@id_kit, @id_fam_motor, @qtd_kit, @dat_alt, @flg_ativo)
 END
 END TRY
 

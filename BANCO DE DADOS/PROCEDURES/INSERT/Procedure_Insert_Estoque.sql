@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_estoque', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_estoque
+@id_estoq     INT,
 @id_depto     INT,
 @dsc_estoq    VARCHAR(100),
 @dat_alt      DATETIME,
@@ -20,8 +21,8 @@ ELSE IF(@dsc_estoq='')
 ELSE
 BEGIN
 --Insert na tabela estoque
-INSERT INTO ESTOQUE(id_depto, dsc_estoq, dat_alt, flg_ativo, flg_negativo)
-VALUES(@id_depto, @dsc_estoq, @dat_alt, @flg_ativo, @flg_negativo)
+INSERT INTO ESTOQUE(id_estoq, id_depto, dsc_estoq, dat_alt, flg_ativo, flg_negativo)
+VALUES(@id_estoq, @id_depto, @dsc_estoq, @dat_alt, @flg_ativo, @flg_negativo)
 END
 END TRY
 
