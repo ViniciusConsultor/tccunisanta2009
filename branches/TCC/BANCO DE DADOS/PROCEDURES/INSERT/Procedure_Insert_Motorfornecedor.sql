@@ -1,23 +1,25 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_motor', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_motor;
+IF OBJECT_ID('sp_insert_motorfornecedor', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_motorfornecedor;
 GO
 
-CREATE PROCEDURE sp_insert_motor
+CREATE PROCEDURE sp_insert_motorfornecedor
 @id_motor	 INT,
-@dsc_motor   VARCHAR(100),
+@id_forn	 INT,
+@dat_alt	 DATETIME,
 @flg_ativo   BIT
 AS
 
 BEGIN TRY
---Validações na tabela motor
-IF(@dsc_motor='')
-   RAISERROR('Informe a descrição do motor!',16,1)
-
+--Validações na tabela motorfornecedor
+IF(@id_motor='')
+   RAISERROR('Informe o código do motor!',16,1)
+ELSE IF(@id_forn='')
+   RAISERROR('Informe o código do fornecedor!',16,1)
 BEGIN
---Insert na tabela motor
-INSERT INTO Motor(id_motor, dsc_motor, flg_ativo)
-VALUES (@id_motor, @dsc_motor, @flg_ativo)
+--Insert na tabela motorfornecedor
+INSERT INTO Motorfornecedor(id_motor, id_forn, dat_alt, flg_ativo)
+VALUES (@id_motor, @id_forn, @dat_alt, @flg_ativo)
 END
 END TRY
 

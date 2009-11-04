@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_fornecedor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_fornecedor
+@id_forn				INT,
 @nom			        VARCHAR(100),
 @rua		            VARCHAR(50),
 @nro_ende		        INT,
@@ -34,8 +35,8 @@ ELSE
   
 BEGIN
 --Insert na tabela fornecedor
-INSERT INTO Fornecedor(slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
-VALUES(@slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
+INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
+VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
 END
 END TRY
 

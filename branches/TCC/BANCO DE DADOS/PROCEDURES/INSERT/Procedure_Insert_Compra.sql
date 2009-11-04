@@ -4,23 +4,18 @@ IF OBJECT_ID('sp_insert_compra', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_compra
-@id_forn          INT,
+@id_compra        INT,
 @dat              DATETIME,
 @valor            NUMERIC(15,2),
-@nota_fisc        VARCHAR(50),
 @obs              VARCHAR(500)
 AS
 
 BEGIN TRY
 --Validações para a tabela compra
-IF(@id_forn='')
-   RAISERROR('Informe o fornecedor da compra!',16,1)
-ELSE IF(@dat='')
+IF(@dat='')
    RAISERROR('Informe a data da compra!',16,1)
 ELSE IF(CONVERT(VARCHAR(15), @valor)='')
    RAISERROR('Informe o valor da compra!',16,1)
-ELSE IF(@nota_fisc='')
-   RAISERROR('Informe o número da nota fiscal!',16,1)
 ELSE IF(@obs='')
    RAISERROR('Informe alguma observacao para a compra!',16,1)
 ELSE
@@ -28,8 +23,8 @@ ELSE
 BEGIN
 --Insert na tabela compra
 INSERT INTO 
-Compra(id_forn, dat, valor, nota_fisc, obs)
-VALUES(@id_forn, @dat, @valor, @nota_fisc, @obs)
+Compra(id_compra, dat, valor, obs)
+VALUES(@id_compra, @dat, @valor, @obs)
 END
 END TRY
 
