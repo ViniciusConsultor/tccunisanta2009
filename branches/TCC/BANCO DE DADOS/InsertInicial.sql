@@ -1,16 +1,16 @@
 USE Megatechdatabase
 go
 
-/*--INSERT TABELA DEPARTAMENTO
-INSERT INTO Departamento (dsc_depto, dat_atl, flg_ativo) VALUES ('DEPARTAMENTO 1', GETDATE(), 1);
-INSERT INTO Departamento (dsc_depto, dat_atl, flg_ativo) VALUES ('DEPARTAMENTO 2', GETDATE(), 1);
-INSERT INTO Departamento (dsc_depto, dat_atl, flg_ativo) VALUES ('DEPARTAMENTO 3', GETDATE(), 1);
+INSERT TABELA DEPARTAMENTO
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 1);
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 1);
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 1);
 
 --INSERT TABELA TIPO_DE_USUÁRIO
 --INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
 
 --INSERT TABELA USUARIO
-INSERT INTO Usuario (id_perfil, log_usu, senha, obs_usu, flg_ativo) VALUES (1, 'kaue', '123', 'SEI LA', 1);*/
+INSERT INTO Usuario (id_usu, id_perfil, log_usu, senha, obs_usu, flg_ativo) VALUES (1, 1, 'kaue', '123', 'SEI LA', 1);
 
 --INSERT TABELA ESTADO
 INSERT INTO Estado (slg_est, nom_est) VALUES ('AC', 'ACRE');
@@ -43,7 +43,7 @@ INSERT INTO Estado (slg_est, nom_est) VALUES ('TO', 'TOCANTINS');
 
 
 --INSERT TABELA COLABORADOR
-/*INSERT INTO Colaborador (nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est) VALUES ('Kaue', '1988-06-02', 'Av. Ana Costa', 516, 'Sem Complemento', '11060002', 'Gonzaga', 13, 'Santos', '38828678', '321452015120321', '145266987125012', 'M', 'kauepaulo@hotmail.com', GETDATE(), 1, 1, 1, 'SP');*/
+INSERT INTO Colaborador (id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est) VALUES (1, 'Kaue', '1988-06-02', 'Av. Ana Costa', 516, 'Sem Complemento', '11060002', 'Gonzaga', 13, 'Santos', '38828678', '321452015120321', '145266987125012', 'M', 'kauepaulo@hotmail.com', GETDATE(), 1, 1, 1, 'SP');
 
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Venda', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Estoque', 'frmCadEstoque', GETDATE(), 1);
@@ -118,7 +118,7 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 32);--Perfil Menu
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (5, 33);--Perfil
 
 --INSERT TABELA PERFIL
-INSERT INTO Perfil (dsc_perfil, dat_atl, flg_ativo) VALUES ('DEFAULT', GETDATE(), 1);
+INSERT INTO Perfil (id_perfil, dsc_perfil, dat_atl, flg_ativo) VALUES (1, 'DEFAULT', GETDATE(), 1);
 
 --INSERT TABELA PERFILMENU
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 1, GETDATE(), 1);
@@ -132,4 +132,4 @@ INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Motor', 1, GETDATE())
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Kit', 1, GETDATE());
 
 --INSERT TABELA CLIENTE 
---INSERT INTO cliente (nom,tel,rua,nro_ende,compl,cep,bairr,cid,dat_atl,flg_ativo,slg_est,mail,ddd,cpf,cnpj) VALUES ('julio','32322970','baralho',666,'castelo','11111111','Iron Forge','Storm Wind',GETDATE(),1,'SP','wow@mail.com',99,'37006765811',null )
+INSERT INTO cliente (id_cli, nom,tel,rua,nro_ende,compl,cep,bairr,cid,dat_atl,flg_ativo,slg_est,mail,ddd,cpf,cnpj) VALUES (1, 'julio','32322970','baralho',666,'castelo','11111111','Iron Forge','Storm Wind',GETDATE(),1,'SP','wow@mail.com',99,'37006765811',null )
