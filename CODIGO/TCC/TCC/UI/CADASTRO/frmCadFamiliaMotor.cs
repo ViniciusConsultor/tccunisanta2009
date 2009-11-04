@@ -49,9 +49,6 @@ namespace TCC.UI
         #endregion btnLimpa Click
 
         #region Form Load
-        private void frmCadFamiliaMotor_Load(object sender, EventArgs e)
-        {
-        }
         #endregion Form Load
 
         #region btnConfirma Click
@@ -103,7 +100,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdKit.Text = this._modelKit.Nom_grupo;
+                   // this.txtCdKit.Text = this._modelKit.Nom_grupo;
                 }
             }
             catch (Exception ex)
