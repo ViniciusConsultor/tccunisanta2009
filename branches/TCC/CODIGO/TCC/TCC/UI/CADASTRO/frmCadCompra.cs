@@ -13,26 +13,32 @@ namespace TCC.UI
     public partial class frmCadCompra : FormPai
     {
         #region Atributos
+
         mMotor _modelMotor;
         mDepartamento _modelDepartamento;
         mFornecedor _modelFornecedor;
         List<mPeca> _modelPeca;
         mTipoProduto _modelTipoProd;
         mCompra _modelCompra;
-        #endregion
+
+        #endregion Atributos
 
         #region Construtor
         public frmCadCompra()
         {
             InitializeComponent();
         }
-        #endregion
+        #endregion Construtor
 
         #region Eventos
+
+        #region Form Load
         private void frmCadCompra_Load(object sender, EventArgs e)
         {
         }
+        #endregion Form Load
 
+        #region btnBuscaFornecedor Click
         private void btnBuscaFornecedor_Click(object sender, EventArgs e)
         {
             _modelFornecedor = new mFornecedor();
@@ -58,12 +64,16 @@ namespace TCC.UI
                 objTela = null;
             }
         }
+        #endregion btnBuscaFornecedor Click
 
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
@@ -72,11 +82,148 @@ namespace TCC.UI
             this._modelMotor = null;
             this._modelPeca = null;
             this._modelTipoProd = null;
-            
+
             this._modelCompra = null;
             base.Alteracao = false;
         }
+        #endregion btnLimpar Click
 
+        #region btnBuscaAlteracaoDelecao Click
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnLimpar_Click(null, null);
+            this._modelCompra = new mCompra();
+            frmBuscaCompra objCompra = new frmBuscaCompra(_modelCompra, true);
+            try
+            {
+                DialogResult resultado = objCompra.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelCompra = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objCompra = null;
+            }
+        }
+        #endregion btnBuscaAlteracaoDelecao Click
+
+        #region btnAceitar Click
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion btnAceitar Click
+
+        #endregion Eventos
+
+        #region Metodos
+
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados da tela e Popula o model
+        /// </summary>
+        /// <returns></returns>
+        private mCompra PegaDadosTela()
+        {
+            mCompra model = new mCompra();
+            rCompra regra = new rCompra();
+
+            try
+            {
+                model.IdCompra = regra.BuscaIdMaximo();
+                model.Dat = DateTime.Now;
+                model.IdFornecedor = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
+                if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
+                {
+                    model.NotaFiscal = null;
+                }
+                else
+                {
+                    model.NotaFiscal = this.txtNotaFiscal.Text;
+                }
+                if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
+                {
+                    model.Obs = null;
+                }
+                else
+                {
+                    model.Obs = this.txtObservacao.Text;
+                }
+                model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+        #endregion Pega Dados Tela
+
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Valida os dados vazios
+        /// </summary>
+        private void ValidaDadosNulos()
+        {
+            if (this._modelDepartamento == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+            }
+            else if (this._modelFornecedor == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoFornecedorVazioExeception();
+            }
+            else if (this._modelMotor == null && this._modelPeca == null)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraMotorPecaVazioException();
+            }
+            else if (this._modelTipoProd == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
+            }
+            else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
+            }
+        }
+        #endregion Valida Dados Nulos
+
+        #region Popula Tela Com Model Alteracao
+        /// <summary>
+        /// Pega os dados do model de alteração e popula a tela
+        /// </summary>
+        private void PopulaTelaComModelAlteracao()
+        {
+            if (this._modelCompra != null)
+            {
+                base.Alteracao = true;
+                this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
+                this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
+                this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
+                this.txtObservacao.Text = this._modelCompra.Obs;
+            }
+        }
+        #endregion Popula Tela Com Model Alteracao
+
+        #region Insere
+        /// <summary>
+        /// Insere os dados que estão no model
+        /// </summary>
         private void Insere()
         {
             mCompra model;
@@ -123,115 +270,8 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Insere
 
-        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
-        {
-            this.btnLimpar_Click(null, null);
-            this._modelCompra = new mCompra();
-            frmBuscaCompra objCompra = new frmBuscaCompra(_modelCompra, true);
-            try
-            {
-                DialogResult resultado = objCompra.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelCompra = null;
-                }
-                else
-                {
-                    this.PopulaTelaComModelAlteracao();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objCompra = null;
-            }
-        }
-
-        private void btnAceitar_Click(object sender, EventArgs e)
-        {
-            this.Insere();
-        }
-        #endregion
-
-        #region Metodos
-        private mCompra PegaDadosTela()
-        {
-            mCompra model = new mCompra();
-            rCompra regra = new rCompra();
-
-            try
-            {
-                model.Dat = DateTime.Now;
-                model.IdFornecedor = Convert.ToInt32( this._modelFornecedor.IdFornecedor);
-                if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
-                {
-                    model.NotaFiscal = null;
-                }
-                else
-                {
-                    model.NotaFiscal = this.txtNotaFiscal.Text;
-                }
-                if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
-                {
-                    model.Obs = null;
-                }
-                else
-                {
-                    model.Obs = this.txtObservacao.Text;
-                }
-                model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
-
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                model = null;
-            }
-        }
-
-        private void ValidaDadosNulos()
-        {
-            if (this._modelDepartamento == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
-            }
-            else if (this._modelFornecedor == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoFornecedorVazioExeception();
-            }
-            else if (this._modelMotor == null && this._modelPeca == null)
-            {
-                throw new BUSINESS.Exceptions.Compra.CompraMotorPecaVazioException();
-            }
-            else if (this._modelTipoProd == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
-            }
-            else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
-            {
-                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
-            }
-        }
-
-        private void PopulaTelaComModelAlteracao()
-        {
-            if (this._modelCompra != null)
-            {
-                base.Alteracao = true;
-                this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
-                this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
-                this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
-                this.txtObservacao.Text = this._modelCompra.Obs;
-            }
-        }
-        #endregion
+        #endregion Metodos
     }
 }

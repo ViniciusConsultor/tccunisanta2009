@@ -8,6 +8,18 @@ namespace TCC.BUSINESS
 {
     class rCompra : ComandosSql
     {
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_compra", "Compra"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable BuscaCompra(string parametro)
         {
             SqlParameter param = null;
