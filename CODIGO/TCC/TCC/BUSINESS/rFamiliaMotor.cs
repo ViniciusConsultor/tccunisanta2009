@@ -8,6 +8,17 @@ namespace TCC.BUSINESS
 {
     class rFamiliaMotor : ComandosSql
     {
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_fam_motor", "Familiamotor"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public DataTable BuscaFamiliaMotor(string parametro)
         {

@@ -12,22 +12,31 @@ namespace TCC.UI
 {
     public partial class frmCadFamiliaMotor : FormPai
     {
+        #region Atributos
         mNumMotor _modelNumeroMotor;
         mKitGrupoPeca _modelKit;
         mMotor _modelMotor;
         mTipoMotor _modelTipoMotor;
         mEstoque _modelEstoque;
+        #endregion Atributos
 
+        #region Construtor
         public frmCadFamiliaMotor()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Eventos
+
+        #region btnVolta Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVolta Click
 
+        #region btnLimpa Click
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
@@ -37,13 +46,37 @@ namespace TCC.UI
             this._modelNumeroMotor = null;
             this._modelTipoMotor = null;
         }
+        #endregion btnLimpa Click
 
-        /*protected override void BuscaIdMaximo()
+        #region Form Load
+        private void frmCadFamiliaMotor_Load(object sender, EventArgs e)
         {
-            rFamiliaMotor regra = new rFamiliaMotor();
+        }
+        #endregion Form Load
+
+        #region btnConfirma Click
+        private void btnConfirma_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion btnConfirma Click
+
+        #region btnBuscaCdNumMotor Click
+        private void btnBuscaCdNumMotor_Click(object sender, EventArgs e)
+        {
+            this._modelNumeroMotor = new mNumMotor();
+            frmBuscaNumMotor objForm = new frmBuscaNumMotor(this._modelNumeroMotor);
             try
             {
-                this.txtCdFamiliaMotor.Text = regra.BuscaIdMaximo();
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelNumeroMotor = null;
+                }
+                else
+                {
+                    this.txtCdNumeroMotor.Text = this._modelNumeroMotor.Dsc_num_motor;
+                }
             }
             catch (Exception ex)
             {
@@ -51,19 +84,131 @@ namespace TCC.UI
             }
             finally
             {
-                regra = null;
+                objForm = null;
             }
-        }*/
-
-        private void frmCadFamiliaMotor_Load(object sender, EventArgs e)
-        {
         }
+        #endregion btnBuscaCdNumMotor Click
 
-        private void btnConfirma_Click(object sender, EventArgs e)
+        #region btnCdKit Click
+        private void btnCdKit_Click(object sender, EventArgs e)
         {
-            this.Insere();
+            this._modelKit = new mKitGrupoPeca();
+            frmBuscaKit objForm = new frmBuscaKit(this._modelKit);
+            try
+            {
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelKit = null;
+                }
+                else
+                {
+                    this.txtCdKit.Text = this._modelKit.Nom_grupo;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objForm = null;
+            }
         }
+        #endregion btnCdKit Click
 
+        #region btnCdMotorCompra Click
+        private void btnCdMotorCompra_Click(object sender, EventArgs e)
+        {
+            this._modelMotor = new mMotor();
+            frmBuscaMotor objForm = new frmBuscaMotor(this._modelMotor);
+            try
+            {
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelMotor = null;
+                }
+                else
+                {
+                    this.txtCdMotor.Text = this._modelMotor.DscMotor;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objForm = null;
+            }
+        }
+        #endregion btnCdMotorCompra Click
+
+        #region btnCdTipoMotor Click
+        private void btnCdTipoMotor_Click(object sender, EventArgs e)
+        {
+            this._modelTipoMotor = new mTipoMotor();
+            frmBuscaTipoMotor objForm = new frmBuscaTipoMotor(this._modelTipoMotor);
+            try
+            {
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelTipoMotor = null;
+                }
+                else
+                {
+                    this.txtCdTipoMotor.Text = this._modelTipoMotor.DscTipoMotor;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objForm = null;
+            }
+        }
+        #endregion btnCdTipoMotor Click
+
+        #region btnCdEstoque Click
+        private void btnCdEstoque_Click(object sender, EventArgs e)
+        {
+            this._modelEstoque = new mEstoque();
+            frmBuscaEstoque objForm = new frmBuscaEstoque(this._modelEstoque);
+            try
+            {
+                DialogResult resultado = objForm.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelEstoque = null;
+                }
+                else
+                {
+                    this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objForm = null;
+            }
+        }
+        #endregion btnCdEstoque Click
+
+        #endregion Eventos
+
+        #region Metodos
+
+        #region Insere
+        /// <summary>
+        /// Cadastra no banco os dados que estão no model
+        /// </summary>
         private void Insere()
         {
             mFamiliaMotor model;
@@ -105,7 +250,12 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Insere
 
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Valida os dados que não podem ser nulos na tela
+        /// </summary>
         private void ValidaDadosNulos()
         {
             if (this._modelEstoque == null)
@@ -129,7 +279,13 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.CodigoTipoMotorVazioExeception();
             }
         }
+        #endregion Valida Dados Nulos
 
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados que estão na tela e popula o model
+        /// </summary>
+        /// <returns>Retorna o model populado</returns>
         private mFamiliaMotor PegaDadosTela()
         {
             mFamiliaMotor model = new mFamiliaMotor();
@@ -137,6 +293,7 @@ namespace TCC.UI
 
             try
             {
+                model.IdFamiliaMotor = regra.BuscaIdMaximo();
                 model.DscFamiliaMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;
                 model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
@@ -155,137 +312,8 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Pega Dados Tela 
 
-        private void btnBuscaCdNumMotor_Click(object sender, EventArgs e)
-        {
-            this._modelNumeroMotor = new mNumMotor();
-            frmBuscaNumMotor objForm = new frmBuscaNumMotor(this._modelNumeroMotor);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelNumeroMotor = null;
-                }
-                else
-                {
-                    this.txtCdNumeroMotor.Text = this._modelNumeroMotor.Dsc_num_motor;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
-        private void btnCdKit_Click(object sender, EventArgs e)
-        {
-            this._modelKit = new mKitGrupoPeca();
-            frmBuscaKit objForm = new frmBuscaKit(this._modelKit);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelKit = null;
-                }
-                else
-                {
-                    this.txtCdKit.Text = this._modelKit.Nom_grupo;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
-        private void btnCdMotorCompra_Click(object sender, EventArgs e)
-        {
-            this._modelMotor = new mMotor();
-            frmBuscaMotor objForm = new frmBuscaMotor(this._modelMotor);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelMotor = null;
-                }
-                else
-                {
-                    this.txtCdMotor.Text = this._modelMotor.DscMotor;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
-        private void btnCdTipoMotor_Click(object sender, EventArgs e)
-        {
-            this._modelTipoMotor = new mTipoMotor();
-            frmBuscaTipoMotor objForm = new frmBuscaTipoMotor(this._modelTipoMotor);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelTipoMotor = null;
-                }
-                else
-                {
-                    this.txtCdTipoMotor.Text = this._modelTipoMotor.DscTipoMotor;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
-        private void btnCdEstoque_Click(object sender, EventArgs e)
-        {
-            this._modelEstoque = new mEstoque();
-            frmBuscaEstoque objForm = new frmBuscaEstoque(this._modelEstoque);
-            try
-            {
-                DialogResult resultado = objForm.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelEstoque = null;
-                }
-                else
-                {
-                    this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objForm = null;
-            }
-        }
-
-        
+        #endregion Metodos
     }
 }

@@ -12,11 +12,19 @@ namespace TCC.UI
 {
     public partial class frmCadFornecedor : FormPai
     {
+        #region Construtor
         public frmCadFornecedor()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Metodos
+
+        #region Busca Estado
+        /// <summary>
+        /// Busca o estado para popular o combo
+        /// </summary>
         private void BuscaEstado()
         {
             rEstado regraEstado = new rEstado();
@@ -35,7 +43,13 @@ namespace TCC.UI
                 regraEstado = null;
             }
         }
+        #endregion Busca Estado
 
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados da tela e popula o model
+        /// </summary>
+        /// <returns>Model populado</returns>
         private mFornecedor PegaDadosTela()
         {
             mFornecedor model = new mFornecedor();
@@ -43,9 +57,11 @@ namespace TCC.UI
 
             try
             {
+                model.IdFornecedor = regra.BuscaIdMaximo();
                 model.Bairro = this.txtBairro.Text;
-                string cep = this.txtCepFornecedor.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
-                if (string.IsNullOrEmpty(cep)==true)
+                string cep = this.txtCepFornecedor.Text.Replace("-", string.Empty);
+                cep = cep.Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(cep) == true)
                 {
                     model.CepFornecedor = null;
                 }
@@ -84,7 +100,7 @@ namespace TCC.UI
                     model.Telefone = null;
                 }
                 else
-                {                    
+                {
                     model.Telefone = Convert.ToInt32(tel);
                 }
                 if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
@@ -115,13 +131,13 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Pega Dados Tela
 
-        private void frmCadFornecedor_Load(object sender, EventArgs e)
-        {
-            this.BuscaEstado();
-        }
-
-        private void btnInsere_Click(object sender, EventArgs e)
+        #region Insere
+        /// <summary>
+        /// Pega os dados do model e insere no banco
+        /// </summary>
+        private void Insere()
         {
             rFornecedor regra = new rFornecedor();
             mFornecedor model;
@@ -179,13 +195,13 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Insere
 
-        private void btnlimpar_Click(object sender, EventArgs e)
-        {
-            base.LimpaDadosTela(this);
-        }
-        
-        private void ValidadadosNulos()
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Valida os dados que não podem ser nulos na tela
+        /// </summary>
+        private void ValidaDadosNulos()
         {
             try
             {
@@ -228,10 +244,40 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion Valida Dados Nulos 
 
+        #endregion Metodos
+
+        #region Eventos
+
+        #region Form Load
+        private void frmCadFornecedor_Load(object sender, EventArgs e)
+        {
+            this.BuscaEstado();
+        }
+        #endregion Form Load
+
+        #region btnInsere Click
+        private void btnInsere_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion btnInsere Click
+
+        #region btnlimpar Click
+        private void btnlimpar_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+        }
+        #endregion btnlimpar Click
+
+        #region btnVolta Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVolta Click 
+
+        #endregion Eventos
     }
 }

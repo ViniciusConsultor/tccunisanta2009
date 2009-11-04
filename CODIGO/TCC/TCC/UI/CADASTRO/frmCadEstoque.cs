@@ -13,39 +13,84 @@ namespace TCC.UI
 {
     public partial class frmCadEstoque : FormPai
     {
+        #region Atributos
         mDepartamento _modelDepartamento;
+        #endregion Atributos
+
+        #region Construtor
         public frmCadEstoque()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
-        private mEstoque PegaDadosTela()
+        #region Eventos
+
+        #region Form Load
+        private void frmCadEstoque_Load(object sender, EventArgs e)
         {
-            mEstoque model = new mEstoque();
-            rEstoque regra = new rEstoque();
+        }
+        #endregion Form Load
 
+        #region btnInsere Click
+        private void btnInsere_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion btnInsere Click
+
+        #region btnBuscaDepartamento Click
+        private void btnBuscaDepartamento_Click(object sender, EventArgs e)
+        {
+            this._modelDepartamento = new mDepartamento();
+            frmBuscaDepartamento objFormBuscaDep = new frmBuscaDepartamento(this._modelDepartamento);
             try
             {
-                model.Id_depto = Convert.ToInt32 (this._modelDepartamento.IdDepto);
-                model.Dsc_estoque = this.txtNome.Text;
-                model.Dat_alt = DateTime.Now;
-                model.Flg_ativo = true;
-                model.Flg_negativo = this.ckbFlgNegativo.Checked;
-
-                return model;
+                DialogResult resultado = objFormBuscaDep.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelDepartamento = null;
+                }
+                else
+                {
+                    this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-            finally 
+            finally
             {
-                model = null;
+                objFormBuscaDep = null;
             }
         }
-        
-        private void btnInsere_Click(object sender, EventArgs e)
+        #endregion btnBuscaDepartamento Click
+
+        #region btnVolta Click
+        private void btnVolta_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+        #endregion btnVolta Click
+
+        #region btnLimpa Click
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            this._modelDepartamento = null;
+        }
+        #endregion btnLimpa Click
+
+        #endregion Eventos
+
+        #region Metodos
+
+        #region Insere
+        /// <summary>
+        /// Insere os dados do model
+        /// </summary>
+        private void Insere()
         {
             rEstoque regra = new rEstoque();
             mEstoque model;
@@ -76,48 +121,45 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Insere
 
-        private void frmCadEstoque_Load(object sender, EventArgs e)
+        #region Pega Dados Tela
+        /// <summary>
+        /// Pega os dados da tela e popula o model
+        /// </summary>
+        /// <returns>Model populado</returns>
+        private mEstoque PegaDadosTela()
         {
-        }
+            mEstoque model = new mEstoque();
+            rEstoque regra = new rEstoque();
 
-        private void btnBuscaDepartamento_Click(object sender, EventArgs e)
-        {
-            this._modelDepartamento = new mDepartamento();
-            frmBuscaDepartamento objFormBuscaDep = new frmBuscaDepartamento(this._modelDepartamento);
             try
             {
-                DialogResult resultado = objFormBuscaDep.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelDepartamento = null;
-                }
-                else
-                {
-                    this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
-                }
+                model.Id_estoque = regra.BuscaIdMaximo();
+                model.Id_depto = Convert.ToInt32(this._modelDepartamento.IdDepto);
+                model.Dsc_estoque = this.txtNome.Text;
+                model.Dat_alt = DateTime.Now;
+                model.Flg_ativo = true;
+                model.Flg_negativo = this.ckbFlgNegativo.Checked;
+
+                return model;
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
             finally
             {
-                objFormBuscaDep = null;
+                model = null;
             }
         }
+        #endregion Pega Dados Tela
 
-        private void btnVolta_Click(object sender, EventArgs e)
-        {
-            base.FechaTela(this);
-        }
-
-        private void btnLimpa_Click(object sender, EventArgs e)
-        {
-            base.LimpaDadosTela(this);
-            this._modelDepartamento = null;
-        }
-
+        #region Valida Campos Nulos
+        /// <summary>
+        /// Valida os campos vazios na tela
+        /// </summary>
         private void ValidaCamposNulos()
         {
             if (this._modelDepartamento == null)
@@ -129,5 +171,8 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.Estoque.NomEstoqueVazioException();
             }
         }
+        #endregion Valida Campos Nulos
+
+        #endregion Metodos
     }
 }
