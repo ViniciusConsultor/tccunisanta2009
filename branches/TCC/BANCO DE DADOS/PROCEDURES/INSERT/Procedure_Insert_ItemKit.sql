@@ -6,6 +6,7 @@ GO
 CREATE PROCEDURE sp_insert_itemkit
 @id_item		  INT,
 @id_kit			  INT,
+@qtd_item		  INT,
 @dat_alt		  DATETIME,
 @flg_ativo        BIT
 
@@ -20,8 +21,8 @@ ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO ITEMKIT(id_item, id_kit, dat_alt, flg_ativo)
-VALUES(@id_item, @id_kit, @dat_alt, @flg_ativo)
+INSERT INTO ITEMKIT(id_item, id_kit, qtd_item, dat_alt, flg_ativo)
+VALUES(@id_item, @id_kit, @qtd_item, @dat_alt, @flg_ativo)
 END
 END TRY
 

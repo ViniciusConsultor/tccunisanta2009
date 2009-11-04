@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_menu', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_menu
+@id_menu		  INT,
 @ende             VARCHAR(500),
 @dsc_menu         VARCHAR(50),
 @dat_atl          DATETIME,
@@ -20,8 +21,8 @@ ELSE
 
 BEGIN
 --Insert na tabela menu
-INSERT INTO Menu(ende, dsc_menu, dat_atl, flg_ativo)
-VALUES (@ende, @dsc_menu, @dat_atl, @flg_ativo)
+INSERT INTO Menu(id_menu, ende, dsc_menu, dat_atl, flg_ativo)
+VALUES (@id_menu, @ende, @dsc_menu, @dat_atl, @flg_ativo)
 END
 END TRY
 

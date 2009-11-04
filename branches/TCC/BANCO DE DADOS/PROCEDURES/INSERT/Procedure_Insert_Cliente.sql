@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_cliente', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_cliente
+@id_cli		INT,
 @nom		VARCHAR(60),
 @tel	    INT,
 @rua	    VARCHAR(100),
@@ -41,9 +42,9 @@ ELSE
 BEGIN
 --Insert na tabela cliente
 INSERT INTO Cliente
-(slg_est, nom, tel, ddd, mail, cnpj, cpf, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo)
+(id_cli, slg_est, nom, tel, ddd, mail, cnpj, cpf, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo)
 VALUES
-(@slg_est, @nom, @tel, @ddd, @mail, @cnpj, @cpf, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo)
+(@id_cli, @slg_est, @nom, @tel, @ddd, @mail, @cnpj, @cpf, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo)
 END
 END TRY
 

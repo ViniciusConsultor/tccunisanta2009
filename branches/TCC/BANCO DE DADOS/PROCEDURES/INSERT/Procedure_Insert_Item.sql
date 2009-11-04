@@ -4,6 +4,8 @@ IF OBJECT_ID('sp_insert_item', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_item
+@id_item		  INT,
+@id_item_real	  VARCHAR(25),
 @nom              VARCHAR(20),
 @dat_alt		  DATETIME,
 @flg_ativo        BIT
@@ -17,8 +19,8 @@ ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO ITEM(nom, dat_alt, flg_ativo)
-VALUES(@nom, @dat_alt, @flg_ativo)
+INSERT INTO ITEM(id_item, id_item_real, nom, dat_alt, flg_ativo)
+VALUES(@id_item, @id_item_real, @nom, @dat_alt, @flg_ativo)
 END
 END TRY
 

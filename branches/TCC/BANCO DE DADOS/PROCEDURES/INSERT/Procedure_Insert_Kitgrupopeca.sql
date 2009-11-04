@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_kitgrupopeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_kitgrupopeca
+@id_kit		   INT,
 @id_kit_real   VARCHAR(10),
 @nom           VARCHAR(50),
 @dat_alt       DATETIME,
@@ -18,8 +19,8 @@ ELSE
 
 BEGIN
 --Insert na tabela itempeca
-INSERT INTO KITGRUPOPECA(id_kit_real, nom, dat_alt, flg_ativo)
-VALUES(@id_kit_real, @nom, @dat_alt, @flg_ativo)
+INSERT INTO KITGRUPOPECA(id_kit, id_kit_real, nom, dat_alt, flg_ativo)
+VALUES(@id_kit, @id_kit_real, @nom, @dat_alt, @flg_ativo)
 END
 END TRY
 
