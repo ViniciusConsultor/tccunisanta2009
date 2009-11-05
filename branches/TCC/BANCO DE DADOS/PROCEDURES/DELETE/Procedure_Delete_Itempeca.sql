@@ -4,23 +4,19 @@ IF OBJECT_ID('sp_delete_itempeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_itempeca
-@id_item_peca	INT,
+@id_item		INT,
 @id_peca        INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from itempeca where id_item_peca=@id_item_peca and id_peca=@id_peca)
+IF EXISTS(select 1 from itempeca where id_item=@id_item and id_peca=@id_peca)
 BEGIN
   --deleta logicamente dependencias existentes
-  IF EXISTS(select 1 from Kitgrupopeca where id_item_peca=@id_item_peca)
-	BEGIN
-		UPDATE Kitgrupopeca SET flg_ativo = 0
-		WHERE id_item_peca=@id_item_peca
-	END
---realiza a exclusao logicamente
+  
+  --realiza a exclusao logicamente
 UPDATE Itempeca SET flg_ativo = 0
-WHERE id_item_peca=@id_item_peca and id_peca=@id_peca
+WHERE id_item=@id_item and id_peca=@id_peca
 
 END
 ELSE

@@ -22,6 +22,17 @@ BEGIN
 		UPDATE estoque SET flg_ativo = 0
 		WHERE id_depto=@id_depto
 	END	
+  IF EXISTS(select 1 from colaborador where id_depto=@id_depto)
+	BEGIN
+		UPDATE	colaborador SET flg_ativo = 0
+		WHERE id_depto=@id_depto
+	END
+  IF EXISTS(select 1 from ordemdepto where id_depto=@id_depto)
+	BEGIN
+		UPDATE	ordemdepto SET flg_ativo = 0
+		WHERE id_depto=@id_depto
+	END
+
 --realiza a exclusao logicamente
 UPDATE Departamento SET flg_ativo = 0
 WHERE id_depto=@id_depto
