@@ -1,7 +1,7 @@
 USE Megatechdatabase
 go
 
-INSERT TABELA DEPARTAMENTO
+--INSERT TABELA DEPARTAMENTO
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 1);
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 1);
 INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 1);
@@ -10,7 +10,7 @@ INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (3, 'D
 --INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
 
 --INSERT TABELA USUARIO
-INSERT INTO Usuario (id_usu, id_perfil, log_usu, senha, obs_usu, flg_ativo) VALUES (1, 1, 'kaue', '123', 'SEI LA', 1);
+INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'kaue', '123', 'SEI LA', 1, 1);
 
 --INSERT TABELA ESTADO
 INSERT INTO Estado (slg_est, nom_est) VALUES ('AC', 'ACRE');

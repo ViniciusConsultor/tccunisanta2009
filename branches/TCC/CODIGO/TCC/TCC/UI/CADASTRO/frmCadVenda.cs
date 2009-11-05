@@ -70,11 +70,11 @@ namespace TCC.UI
                 model.NotaFisc = this.txtNotaFiscal.Text;
                 if (string.IsNullOrEmpty(this.txtQtdVenda.Text) == true)
                 {
-                    model.Qtd = null;
+                 //   model.Qtd = null;
                 }
                 else
                 {
-                    model.Qtd = Convert.ToInt32(this.txtQtdVenda.Text);
+                //    model.Qtd = Convert.ToInt32(this.txtQtdVenda.Text);
                 }
                 if (string.IsNullOrEmpty(this.txtValorVenda.Text) == true)
                 {

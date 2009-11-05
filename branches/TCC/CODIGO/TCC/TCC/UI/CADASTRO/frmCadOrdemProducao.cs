@@ -232,7 +232,7 @@ namespace TCC.UI
             try
             {
                 model.Dsc_ordem = this.txtDs.Text;
-                model.Id_depto = Convert.ToInt32( this._modelDepartamento.IdDepto);
+             //   model.Id_depto = Convert.ToInt32( this._modelDepartamento.IdDepto);
                 model.IdKit = Convert.ToInt32(this._modelKit.IdKit);
                 model.Id_tipo_produto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
 

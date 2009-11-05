@@ -187,6 +187,7 @@
     <Compile Include="DAL\dUsuarioPerfil.cs" />
     <Compile Include="MODEL\ColunasBancoDados.cs" />
     <Compile Include="MODEL\mCompra.cs" />
+    <Compile Include="MODEL\mCompraOrdemCompra.cs" />
     <Compile Include="MODEL\mCompraPeca.cs" />
     <Compile Include="MODEL\mFamiliaMotor.cs" />
     <Compile Include="MODEL\mFornecedorDepto.cs" />
@@ -201,10 +202,13 @@
     <Compile Include="MODEL\mFornecedor.cs" />
     <Compile Include="MODEL\mKitFamilia.cs" />
     <Compile Include="MODEL\mKitGrupoPeca.cs" />
+    <Compile Include="MODEL\mOrdemDepartamento.cs" />
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\mMotor.cs" />
+    <Compile Include="MODEL\mMotorFornecedor.cs" />
     <Compile Include="MODEL\mNumMotor.cs" />
     <Compile Include="MODEL\ModelPai.cs" />
+    <Compile Include="MODEL\mOrdemCompra.cs" />
     <Compile Include="MODEL\mOrdemProducao.cs" />
     <Compile Include="MODEL\mPeca.cs" />
     <Compile Include="MODEL\mPecaEstoque.cs" />
@@ -409,6 +413,9 @@
     <EmbeddedResource Include="UI\CADASTRO\frmCadVenda.resx">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmPecaEstoque.resx">
+      <DependentUpon>frmPecaEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormPai.resx">
       <DependentUpon>FormPai.cs</DependentUpon>
@@ -713,6 +720,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadVenda.Designer.cs">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPecaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPecaEstoque.Designer.cs">
+      <DependentUpon>frmPecaEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormPai.cs">
       <SubType>Form</SubType>
