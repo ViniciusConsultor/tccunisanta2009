@@ -1,28 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_delete_cliente', 'P')IS NOT NULL
-	DROP PROCEDURE sp_delete_cliente;
+IF OBJECT_ID('sp_delete_itemkit', 'P')IS NOT NULL
+	DROP PROCEDURE sp_delete_itemkit;
 GO
 
-CREATE PROCEDURE sp_delete_cliente
-@id_cli	INT
+CREATE PROCEDURE sp_delete_itemkit
+@id_item	   INT,
+@id_kit        INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from cliente where id_cli=@id_cli)
+IF EXISTS(select 1 from itemkit where id_item=@id_item and id_kit=@id_kit)
 BEGIN
   --deleta logicamente dependencias existentes
-  /*DECLARE @idVenda INT
-		SET @idVenda = SELECT id_cliente from Cliente where id_cli=@id_cli
-		exec sp_delete_venda @idVenda*/
---realiza a exclusao logicamente
-UPDATE Cliente SET flg_ativo = 0
-WHERE id_cli = @id_cli
+  
+  --realiza a exclusao logicamente
+UPDATE itemkit SET flg_ativo = 0
+WHERE id_item=@id_item and id_kit=@id_kit
 
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Cliente inexistente!',16,1)
+RAISERROR('Item de peca inexistente!',16,1)
 END TRY
 
 BEGIN CATCH

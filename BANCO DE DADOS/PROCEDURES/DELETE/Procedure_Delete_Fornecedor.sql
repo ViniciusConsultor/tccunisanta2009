@@ -22,6 +22,16 @@ BEGIN
 		UPDATE Pecafornecedor SET flg_ativo = 0
 		WHERE id_forn=@id_forn
 	END  
+  IF EXISTS(select 1 from Motorfornecedor where id_forn=@id_forn)
+	BEGIN
+		UPDATE Motorfornecedor SET flg_ativo = 0
+		WHERE id_forn=@id_forn
+	END  
+  IF EXISTS(select 1 from Ordemcompra where id_forn=@id_forn)
+	BEGIN
+		UPDATE Ordemcompra SET flg_ativo = 0
+		WHERE id_forn=@id_forn
+	END  
 --realiza a exclusao logicamente
 UPDATE Fornecedor SET flg_ativo = 0
 WHERE id_forn = @id_forn

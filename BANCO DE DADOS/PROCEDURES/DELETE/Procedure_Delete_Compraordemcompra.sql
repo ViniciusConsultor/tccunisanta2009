@@ -1,28 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_delete_cliente', 'P')IS NOT NULL
-	DROP PROCEDURE sp_delete_cliente;
+IF OBJECT_ID('sp_delete_compraordemcompra', 'P')IS NOT NULL
+	DROP PROCEDURE sp_delete_compraordemcompra;
 GO
 
-CREATE PROCEDURE sp_delete_cliente
-@id_cli	INT
+CREATE PROCEDURE sp_delete_compraordemcompra
+@id_ordem_compra   INT,
+@id_compra		   INT
+
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from cliente where id_cli=@id_cli)
+IF EXISTS(select 1 from compraordemcompra where id_ordem_compra=@id_ordem_compra and id_compra=@id_compra)
 BEGIN
-  --deleta logicamente dependencias existentes
-  /*DECLARE @idVenda INT
-		SET @idVenda = SELECT id_cliente from Cliente where id_cli=@id_cli
-		exec sp_delete_venda @idVenda*/
---realiza a exclusao logicamente
-UPDATE Cliente SET flg_ativo = 0
-WHERE id_cli = @id_cli
-
+  --deleta dependencias existentes
+  
+  --realiza a exclusao  
+  UPDATE compraordemcompra SET flg_ativo = 0
+WHERE id_ordem_compra=@id_ordem_compra and id_compra=@id_compra
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Cliente inexistente!',16,1)
+RAISERROR('Não há ligação entre a Compra e a Ordem de compra!',16,1)
 END TRY
 
 BEGIN CATCH

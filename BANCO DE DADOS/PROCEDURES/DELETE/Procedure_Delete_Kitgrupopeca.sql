@@ -4,22 +4,32 @@ IF OBJECT_ID('sp_delete_kitgrupopeca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_delete_kitgrupopeca
-@id_grupo	INT
+@id_kit		INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from Kitgrupopeca where id_grupo=@id_grupo)
+IF EXISTS(select 1 from Kitgrupopeca where id_kit=@id_kit)
 BEGIN
   --deleta logicamente dependencias existentes
-  IF EXISTS(select 1 from familiamotor where id_grupo=@id_grupo)
+  IF EXISTS(select 1 from Itemkit where id_kit=@id_kit)
 	BEGIN
-		UPDATE familiamotor SET flg_ativo = 0
-		WHERE id_grupo=@id_grupo
+		UPDATE Itemkit SET flg_ativo = 0
+		WHERE id_kit=@id_kit
 	END
+  IF EXISTS(select 1 from Kitfamilia where id_kit=@id_kit)
+	BEGIN
+		UPDATE Itemkit SET flg_ativo = 0
+		WHERE id_kit=@id_kit
+	END
+  /*IF EXISTS(select 1 from Ordemproducao where id_kit=@id_kit)
+	BEGIN
+		UPDATE Itemkit SET flg_ativo = 0
+		WHERE id_kit=@id_kit
+	END*/
 --realiza a exclusao logicamente
 UPDATE Kitgrupopeca SET flg_ativo = 0
-WHERE id_grupo=@id_grupo
+WHERE id_kit=@id_kit
 
 END
 ELSE
