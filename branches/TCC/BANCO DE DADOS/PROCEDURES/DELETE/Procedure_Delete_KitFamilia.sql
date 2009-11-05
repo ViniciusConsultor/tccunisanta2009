@@ -1,25 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_delete_comprapeca', 'P')IS NOT NULL
-	DROP PROCEDURE sp_delete_comprapeca;
+IF OBJECT_ID('sp_delete_kitfamilia', 'P')IS NOT NULL
+	DROP PROCEDURE sp_delete_kitfamilia;
 GO
 
-CREATE PROCEDURE sp_delete_comprapeca
-@id_peca   INT,
-@id_compra INT
+CREATE PROCEDURE sp_delete_kitfamilia
+@id_kit			     INT,
+@id_fam_motor        INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from comprapeca where id_peca=@id_peca and id_compra=@id_compra)
+IF EXISTS(select 1 from kitfamilia where id_kit=@id_kit and id_fam_motor=@id_fam_motor)
 BEGIN
-  --deleta dependencias existentes
+  --deleta logicamente dependencias existentes
   
-  --realiza a exclusao  
-  DELETE comprapeca WHERE id_peca = @id_peca and id_compra=@id_compra
+  --realiza a exclusao logicamente
+UPDATE kitfamilia SET flg_ativo = 0
+WHERE id_kit=@id_kit and id_fam_motor=@id_fam_motor
+
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Item de Compra inexistente!',16,1)
+RAISERROR('Item de peca inexistente!',16,1)
 END TRY
 
 BEGIN CATCH

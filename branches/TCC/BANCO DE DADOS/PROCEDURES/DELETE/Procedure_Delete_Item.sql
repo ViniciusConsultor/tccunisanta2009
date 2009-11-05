@@ -1,40 +1,35 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_delete_motor', 'P')IS NOT NULL
-	DROP PROCEDURE sp_delete_motor;
+IF OBJECT_ID('sp_delete_item', 'P')IS NOT NULL
+	DROP PROCEDURE sp_delete_item;
 GO
 
-CREATE PROCEDURE sp_delete_motor
-@id_motor	INT
+CREATE PROCEDURE sp_delete_item
+@id_item		INT
 AS
 
 BEGIN TRY
 --verifica a exitencia do codigo recebido
-IF EXISTS(select 1 from motor where id_motor=@id_motor)
+IF EXISTS(select 1 from item where id_item=@id_item)
 BEGIN
   --deleta logicamente dependencias existentes
-  IF EXISTS(select 1 from familiamotor where id_motor=@id_motor)
+  IF EXISTS(select 1 from Itemkit where id_item=@id_item)
 	BEGIN
-		UPDATE familiamotor SET flg_ativo = 0
-		WHERE id_motor=@id_motor
-	END	
-  IF EXISTS(select 1 from motorfornecedor where id_motor=@id_motor)
+		UPDATE Itemkit SET flg_ativo = 0
+		WHERE id_item=@id_item
+	END
+  IF EXISTS(select 1 from Itempeca where id_item=@id_item)
 	BEGIN
-		UPDATE motorfornecedor SET flg_ativo = 0
-		WHERE id_motor=@id_motor
-	END	
-  IF EXISTS(select 1 from ordemcompra where id_motor=@id_motor)
-	BEGIN
-		UPDATE ordemcompra SET flg_ativo = 0
-		WHERE id_motor=@id_motor
-	END	
+		UPDATE Itempeca SET flg_ativo = 0
+		WHERE id_item=@id_item
+	END
 --realiza a exclusao logicamente
-UPDATE motor SET flg_ativo = 0
-WHERE id_motor=@id_motor
+UPDATE Item SET flg_ativo = 0
+WHERE id_item=@id_item
 
 END
 ELSE
 --retorna erro se não houver o codigo
-RAISERROR('Motor inexistente!',16,1)
+RAISERROR('Item inexistente!',16,1)
 END TRY
 
 BEGIN CATCH

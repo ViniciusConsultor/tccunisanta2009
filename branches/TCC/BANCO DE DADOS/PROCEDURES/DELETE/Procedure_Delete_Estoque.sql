@@ -12,7 +12,11 @@ BEGIN TRY
 IF EXISTS(select 1 from estoque where id_estoq=@id_estoq)
 BEGIN
   --deleta logicamente dependencias existentes
-  
+  IF EXISTS(select 1 from Pecaestoque where id_estoq=@id_estoq)
+	BEGIN
+		UPDATE pecaestoque SET flg_ativo=0
+	END	
+
 --realiza a exclusao logicamente
 UPDATE estoque SET flg_ativo = 0
 WHERE id_estoq = @id_estoq
