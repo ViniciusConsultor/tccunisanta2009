@@ -11,6 +11,7 @@ namespace TCC.MODEL
         private int? id_peca;
         private bool flg_ativo;
         private DateTime dat_alt;
+        private int qtd_peca;
         private string nomeTabela = "Itempeca";
 
         [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.DateTime, false)]
@@ -40,6 +41,12 @@ namespace TCC.MODEL
         {
             get { return flg_ativo; }
             set { flg_ativo = value; }
+        }
+        [ColunasBancoDados("Qtd_peca", System.Data.SqlDbType.Int, false)]
+        public int Qtd_peca
+        {
+            get { return qtd_peca; }
+            set { qtd_peca = value; }
         }
 
         public override string getNomeTabela()

@@ -10,6 +10,7 @@ namespace TCC.MODEL
         private int? id_kit;
         private int? id_farm_motor;
         private DateTime dat_alt;
+        private int qtd_kit;
         private bool flg_ativo;
         private string nomeTabela = "Kitfamilia";
 
@@ -40,7 +41,12 @@ namespace TCC.MODEL
             get { return flg_ativo; }
             set { flg_ativo = value; }
         }
-
+        [ColunasBancoDados("Qtd_kit", System.Data.SqlDbType.Int, false)]
+        public int Qtd_kit
+        {
+            get { return qtd_kit; }
+            set { qtd_kit = value; }
+        }
 
 
         public override string getNomeTabela()

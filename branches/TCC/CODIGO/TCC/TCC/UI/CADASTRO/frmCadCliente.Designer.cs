@@ -290,7 +290,7 @@
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 12;
-            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            //this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // txtNumero
             // 
@@ -300,7 +300,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(63, 20);
             this.txtNumero.TabIndex = 3;
-            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+           // this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // txtCep
             // 

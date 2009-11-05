@@ -8,6 +8,7 @@ namespace TCC.MODEL
     class mItem:ModelPai
     {
         private int id_item;
+        private string id_item_real;
         private string nom;
         private bool flg_ativo;
         private DateTime? dat_alt;
@@ -42,6 +43,12 @@ namespace TCC.MODEL
         {
             get { return id_item; }
             set { id_item = value; }
+        }
+        [ColunasBancoDados("Id_item_real", System.Data.SqlDbType.VarChar, true)]
+        public string Id_item_real
+        {
+            get { return id_item_real; }
+            set { id_item_real = value; }
         }
         public override string getNomeTabela()
         {
