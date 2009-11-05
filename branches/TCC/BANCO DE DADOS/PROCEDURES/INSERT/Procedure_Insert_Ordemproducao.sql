@@ -4,9 +4,10 @@ IF OBJECT_ID('sp_insert_ordemproducao', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_ordemproducao
+@id_ordem			INT,
 @id_tipo_produto    INT,
 @id_fam_motor       INT,
-@id_kit           INT,
+@id_kit				INT,
 @dsc_ordem          VARCHAR(500)
 AS
 
@@ -22,8 +23,8 @@ ELSE
 
 BEGIN
 --Insert na tabela ordemproducao
-INSERT INTO ORDEMPRODUCAO(id_tipo_produto, id_fam_motor, id_kit, dsc_ordem)
-VALUES (@id_tipo_produto, @id_fam_motor, @id_kit, @dsc_ordem)
+INSERT INTO ORDEMPRODUCAO(id_ordem, id_tipo_produto, id_fam_motor, id_kit, dsc_ordem)
+VALUES (@id_ordem, @id_tipo_produto, @id_fam_motor, @id_kit, @dsc_ordem)
 END
 END TRY
 

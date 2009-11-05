@@ -70,7 +70,7 @@
             // lblDtVenda
             // 
             this.lblDtVenda.AutoSize = true;
-            this.lblDtVenda.Location = new System.Drawing.Point(106, 63);
+            this.lblDtVenda.Location = new System.Drawing.Point(97, 63);
             this.lblDtVenda.Name = "lblDtVenda";
             this.lblDtVenda.Size = new System.Drawing.Size(79, 13);
             this.lblDtVenda.TabIndex = 2;
@@ -97,11 +97,11 @@
             // lblVlVenda
             // 
             this.lblVlVenda.AutoSize = true;
-            this.lblVlVenda.Location = new System.Drawing.Point(106, 104);
+            this.lblVlVenda.Location = new System.Drawing.Point(97, 109);
             this.lblVlVenda.Name = "lblVlVenda";
-            this.lblVlVenda.Size = new System.Drawing.Size(80, 13);
+            this.lblVlVenda.Size = new System.Drawing.Size(107, 13);
             this.lblVlVenda.TabIndex = 0;
-            this.lblVlVenda.Text = "Valor da Venda";
+            this.lblVlVenda.Text = "Valor Total da Venda";
             // 
             // lblNotaFiscal
             // 
@@ -197,17 +197,18 @@
             this.btnOP.Name = "btnOP";
             this.btnOP.Size = new System.Drawing.Size(40, 35);
             this.btnOP.TabIndex = 6;
+            this.toolTipLegenda.SetToolTip(this.btnOP, "Gerar Ordem de Produção");
             this.btnOP.UseVisualStyleBackColor = true;
             this.btnOP.Click += new System.EventHandler(this.btnOP_Click);
             // 
             // txtValorVenda
             // 
             this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorVenda.Location = new System.Drawing.Point(193, 102);
+            this.txtValorVenda.Location = new System.Drawing.Point(201, 102);
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(100, 20);
             this.txtValorVenda.TabIndex = 7;
-           // this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // frmCadVenda
             // 
