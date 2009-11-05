@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_perfil', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_perfil
+@id_perfil	   INT,
 @dsc_perfil    VARCHAR(50),
 @dat_atl       DATETIME,
 @flg_ativo     BIT
@@ -16,8 +17,8 @@ IF(@dsc_perfil='')
 
 BEGIN
 --Insert na tabela perfil
-INSERT INTO Perfil(dsc_perfil, dat_atl, flg_ativo)
-VALUES(@dsc_perfil, @dat_atl, @flg_ativo)
+INSERT INTO Perfil(id_perfil, dsc_perfil, dat_atl, flg_ativo)
+VALUES(@id_perfil, @dsc_perfil, @dat_atl, @flg_ativo)
 END
 END TRY
 

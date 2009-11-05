@@ -4,10 +4,11 @@ IF OBJECT_ID('sp_insert_peca', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_peca
+@id_peca			  INT,
 @id_peca_real         VARCHAR(50),
 @id_tipo_peca         INT,
 @nom                  VARCHAR(50),
-@dsc_peca             VARCHAR(100),
+@dsc_peca             VARCHAR(500),
 @peso                 DECIMAL(10,2),
 @qtd_min              INT,
 @dat_alt              DATETIME,
@@ -28,8 +29,8 @@ ELSE
 
 BEGIN
 --Insert na tabela peca
-INSERT INTO PECA(id_peca_real,id_tipo_peca, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
-VALUES (@id_peca_real, @id_tipo_peca, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
+INSERT INTO PECA(id_peca, id_peca_real,id_tipo_peca, nom, dsc_peca, peso, qtd_min, dat_alt, flg_ativo)
+VALUES (@id_peca, @id_peca_real, @id_tipo_peca, @nom, @dsc_peca, @peso, @qtd_min, @dat_alt, @flg_ativo)
 END
 END TRY
 

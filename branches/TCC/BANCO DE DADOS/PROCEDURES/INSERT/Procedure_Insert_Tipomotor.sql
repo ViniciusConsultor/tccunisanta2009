@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_tipomotor', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_tipomotor
+@id_tipo_motor		   INT,
 @id_tipo_motor_real    VARCHAR(20),
 @dsc_tipo_motor        VARCHAR(500),
 @flg_ativo             BIT
@@ -19,8 +20,8 @@ ELSE
 
 BEGIN
 --Insert na tabela tipomotor
-INSERT INTO TIPOMOTOR(id_tipo_motor_real, dsc_tipo_motor, flg_ativo)
-VALUES (@id_tipo_motor_real, @dsc_tipo_motor, @flg_ativo)
+INSERT INTO TIPOMOTOR(id_tipo_motor, id_tipo_motor_real, dsc_tipo_motor, flg_ativo)
+VALUES (@id_tipo_motor, @id_tipo_motor_real, @dsc_tipo_motor, @flg_ativo)
 END
 END TRY
 

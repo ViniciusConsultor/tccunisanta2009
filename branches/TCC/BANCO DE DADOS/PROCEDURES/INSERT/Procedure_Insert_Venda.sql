@@ -4,9 +4,10 @@ IF OBJECT_ID('sp_insert_venda', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_venda
+@id_venda			INT,
 @id_cli             INT,
 @dat_venda          DATETIME,
-@valor          NUMERIC(15,2),
+@valor				NUMERIC(15,2),
 @nota_fisc          VARCHAR(20),
 @dat_saida          DATETIME
 AS
@@ -24,8 +25,8 @@ ELSE
 
 BEGIN
 --Insert na tabela venda
-INSERT INTO Venda(id_cli, dat_venda, valor, nota_fisc, dat_saida)
-VALUES(@id_cli, @dat_venda, @valor, @nota_fisc, @dat_saida)
+INSERT INTO Venda(id_venda, id_cli, dat_venda, valor, nota_fisc, dat_saida)
+VALUES(@id_venda, @id_cli, @dat_venda, @valor, @nota_fisc, @dat_saida)
 END
 END TRY
 

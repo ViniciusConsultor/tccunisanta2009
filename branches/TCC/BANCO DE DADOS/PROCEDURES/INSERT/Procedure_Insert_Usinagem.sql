@@ -4,6 +4,7 @@ IF OBJECT_ID('sp_insert_usinagem', 'P')IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_insert_usinagem
+@id_usinagem	   INT,
 @id_peca           INT,
 @dta_envio         DATETIME,
 @flg_status        BIT
@@ -19,8 +20,8 @@ ELSE
 
 BEGIN
 --Insert na tabela Usinagem
-INSERT INTO Usinagem(id_peca, dta_envio, flg_status)
-VALUES (@id_peca, @dta_envio, @flg_status)
+INSERT INTO Usinagem(id_usinagem, id_peca, dta_envio, flg_status)
+VALUES (@id_usinagem, @id_peca, @dta_envio, @flg_status)
 END
 END TRY
 
