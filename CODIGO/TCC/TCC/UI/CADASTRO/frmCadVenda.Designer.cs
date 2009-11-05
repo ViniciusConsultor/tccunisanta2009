@@ -207,7 +207,7 @@
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(100, 20);
             this.txtValorVenda.TabIndex = 7;
-            this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+           // this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // frmCadVenda
             // 

@@ -9,7 +9,7 @@ namespace TCC.MODEL
     {
         private int? id_ordem;
         private string dsc_ordem;
-        private int id_depto;
+       // private int id_depto;
         private int idFamMotor;
         private int idKit;
         private int id_tipo_produto;
@@ -37,14 +37,14 @@ namespace TCC.MODEL
             get { return dsc_ordem; }
             set { dsc_ordem = value; }
         }
-
+        /*
         [ColunasBancoDados ("id_depto", System.Data.SqlDbType.Int,false)]
         public int Id_depto
         {
             get { return id_depto; }
             set { id_depto = value; }
         }
-
+        */
        
        
 

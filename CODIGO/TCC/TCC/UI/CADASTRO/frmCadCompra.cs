@@ -142,14 +142,14 @@ namespace TCC.UI
             {
                 model.IdCompra = regra.BuscaIdMaximo();
                 model.Dat = DateTime.Now;
-                model.IdFornecedor = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
+               // model.IdFornecedor = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
                 if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
                 {
-                    model.NotaFiscal = null;
+              //      model.NotaFiscal = null;
                 }
                 else
                 {
-                    model.NotaFiscal = this.txtNotaFiscal.Text;
+                //    model.NotaFiscal = this.txtNotaFiscal.Text;
                 }
                 if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
                 {
@@ -212,8 +212,8 @@ namespace TCC.UI
             if (this._modelCompra != null)
             {
                 base.Alteracao = true;
-                this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
-                this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
+               //this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
+               //this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
                 this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
                 this.txtObservacao.Text = this._modelCompra.Obs;
             }

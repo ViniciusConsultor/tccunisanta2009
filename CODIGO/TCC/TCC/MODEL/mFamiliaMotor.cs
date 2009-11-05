@@ -14,6 +14,7 @@ namespace TCC.MODEL
         private bool flgAtivo;
         private int idMotor;
         private int idEstoque;
+        private string id_fam_motor_real;
         private string nomeTabela = "Familiamotor";
 
         [ColunasBancoDados ("id_fam_motor", System.Data.SqlDbType.Int,true)]
@@ -64,6 +65,14 @@ namespace TCC.MODEL
             get { return idEstoque; }
             set { idEstoque = value; }
         }
+
+        [ColunasBancoDados("Id_fam_motor_real", System.Data.SqlDbType.VarChar, false)]
+        public string Id_fam_motor_real
+        {
+            get { return id_fam_motor_real; }
+            set { id_fam_motor_real = value; }
+        }
+
 
         public override string getNomeTabela()
         {

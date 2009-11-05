@@ -121,9 +121,9 @@
             // 
             this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(273, 37);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(273, 30);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
-            this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 20);
+            this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 27);
             this.btnBuscaDepartamento.TabIndex = 1;
             this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento Responsável");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
