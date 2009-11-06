@@ -60,6 +60,13 @@ namespace TCC.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap acquisition {
+            get {
+                object obj = ResourceManager.GetObject("acquisition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bg_principal {
             get {
                 object obj = ResourceManager.GetObject("bg_principal", resourceCulture);

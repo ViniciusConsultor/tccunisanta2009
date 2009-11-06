@@ -53,6 +53,7 @@ namespace TCC.UI
             rTipoPeca regra = new rTipoPeca();
             try
             {
+                model.IdTipoPeca = regra.BuscaIdMaximo();
                 model.DscTipoPeca = this.txtDsTipoPeca.Text;
                 model.FlgAtivo = true;
 
@@ -68,10 +69,6 @@ namespace TCC.UI
             }
         }
 
-        private void frmCadTipoPeca_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             mTipoPeca model = null;
@@ -82,7 +79,7 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 this.LimparCampos();
             }
-            catch (BUSINESS.Exceptions.tipoPeca.tipoPecaVazioExeption)
+            catch (BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption)
             {
                 MessageBox.Show("Preencher campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
@@ -98,38 +95,18 @@ namespace TCC.UI
             }
         }
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rTipoPeca regra = new rTipoPeca();
-            try
-            {
-                this.txtCdTipoPeca.Text = regra.BuscaIdMaximoTipoPeca();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
         public void ValidaDadosNulos()
         {
             try
             {
                 if (this._mtipoPeca == null)
                 {
-                    throw new BUSINESS.Exceptions.tipoPeca.tipoPecaVazioExeption();
+                    throw new BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption();
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-
             }
         }
     }
