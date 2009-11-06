@@ -46,21 +46,21 @@
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Enabled = false;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(199, 37);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(180, 37);
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
-            this.txtCdDepartamento.Size = new System.Drawing.Size(68, 20);
+            this.txtCdDepartamento.Size = new System.Drawing.Size(87, 20);
             this.txtCdDepartamento.TabIndex = 0;
             this.txtCdDepartamento.TabStop = false;
             // 
             // lblCodigoDepartamento
             // 
             this.lblCodigoDepartamento.AutoSize = true;
-            this.lblCodigoDepartamento.Location = new System.Drawing.Point(68, 39);
+            this.lblCodigoDepartamento.Location = new System.Drawing.Point(43, 44);
             this.lblCodigoDepartamento.Name = "lblCodigoDepartamento";
-            this.lblCodigoDepartamento.Size = new System.Drawing.Size(125, 13);
+            this.lblCodigoDepartamento.Size = new System.Drawing.Size(131, 13);
             this.lblCodigoDepartamento.TabIndex = 2;
-            this.lblCodigoDepartamento.Text = "Codigo do Departamento";
+            this.lblCodigoDepartamento.Text = "Departamento do Estoque";
             // 
             // txtNome
             // 
@@ -75,7 +75,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(68, 84);
+            this.lblNome.Location = new System.Drawing.Point(43, 86);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;

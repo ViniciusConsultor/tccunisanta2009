@@ -47,5 +47,18 @@ namespace TCC.BUSINESS
         {
             throw new NotImplementedException();
         }
+
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_tipo_peca", "tipopeca"));
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

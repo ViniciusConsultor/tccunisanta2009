@@ -126,10 +126,12 @@
     <Compile Include="BUSINESS\Exceptions\Login\LoginVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Login\SenhaVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\NumeroMotor\NumeroMotorVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Peca\CodigoPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Peca\NomePecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoMotor\NumeroTipoMotorVazioExeption.cs" />
-    <Compile Include="BUSINESS\Exceptions\tipoPeca\tipoPecaVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoPeca\tipoPecaVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Usinagem\CheckBoxPecaOKVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />
@@ -744,6 +746,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UI\img\acquisition.png" />
     <Content Include="UI\img\bg_login.jpg" />
     <Content Include="UI\img\bg_principal.jpg" />
     <Content Include="UI\img\bg_telas.jpg" />
