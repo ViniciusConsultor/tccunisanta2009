@@ -148,11 +148,6 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
             }
-            catch (BUSINESS.Exceptions.Fornecedor.CnpjVazioException)
-            {
-                MessageBox.Show("É Necessário preenchimento do campo CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCnpj.Focus();
-            }
             catch (BUSINESS.Exceptions.Fornecedor.NomeFornecedorVazioException)
             {
                 MessageBox.Show("É Necessário preenchimento do campo Nome Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -162,6 +157,11 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário preenchimento do campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CnpjVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCnpj.Focus();
             }
             catch (BUSINESS.Exceptions.Fornecedor.DadosComunicacaoVazioExeception)
             {
@@ -209,17 +209,17 @@ namespace TCC.UI
                 cnpj = cnpj.Replace(".", string.Empty);
                 cnpj = cnpj.Replace("/", string.Empty);
                 cnpj = cnpj.Replace(" ", string.Empty);
-                if (string.IsNullOrEmpty(cnpj) == true)
-                {
-                    throw new BUSINESS.Exceptions.Fornecedor.CnpjVazioException();
-                }
-                else if (string.IsNullOrEmpty(this.txtNomeFornecedor.Text) == true)
+                if (string.IsNullOrEmpty(this.txtNomeFornecedor.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.NomeFornecedorVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtCidade.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.CidadeVazioException();
+                }
+                else if (string.IsNullOrEmpty(cnpj) == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.CnpjVazioException();
                 }
                 else
                 {

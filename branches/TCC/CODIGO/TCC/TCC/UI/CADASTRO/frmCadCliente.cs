@@ -70,22 +70,28 @@ namespace TCC.UI
                 {
                     model.Bairro = this.txtBairro.Text;
                 }
-                if (this.txtCep.Modified == true)
+                string cep = txtCep.Text.Replace("-",string.Empty);
+                cep = cep.Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(cep) == true)
                 {
                     model.Cep = null;
                 }
                 else
                 {
-                    model.Cep = Convert.ToInt32(this.txtCep.Text.Replace("-", String.Empty));
+                    model.Cep = Convert.ToInt32(cep);
                 }
                 model.Cidade = this.txtCidade.Text;
-                if (string.IsNullOrEmpty(this.txtCnpj.Text) == true)
+                string cnpj = this.txtCnpj.Text.Replace("-", string.Empty);
+                cnpj = cnpj.Replace(".", string.Empty);
+                cnpj = cnpj.Replace("/", string.Empty);
+                cnpj = cnpj.Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(cnpj) == true)
                 {
                     model.Cnpj = null;
                 }
                 else
                 {
-                    model.Cnpj = Convert.ToInt32(this.txtCnpj.Text);
+                    model.Cnpj = Convert.ToInt32(cnpj);
                 }
                 model.ComplementoEndereco = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
@@ -101,7 +107,9 @@ namespace TCC.UI
                 {
                     model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
                 }
-                model.TelefoneCliente = Convert.ToInt32(this.txtTelefone.Text);
+                string tel = this.txtTelefone.Text.Replace("-", string.Empty);
+                tel = tel.Replace(" ", string.Empty);
+                model.TelefoneCliente = Convert.ToInt32(tel);
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     model.Ddd = null;
@@ -236,35 +244,44 @@ namespace TCC.UI
         /// </summary>
         public void validaDadosNulos()
         {
+            string cnpj = this.txtCnpj.Text.Replace("-", string.Empty);
+            cnpj = cnpj.Replace(" ", string.Empty);
+            cnpj = cnpj.Replace("/", string.Empty);
+            cnpj = cnpj.Replace(".", string.Empty);
+            string cpf = this.txtCPF.Text.Replace("-", string.Empty);
+            cpf = cpf.Replace(" ", string.Empty);
+            cpf = cpf.Replace(".", string.Empty);
+            string tel = this.txtTelefone.Text.Replace("-", string.Empty);
+            tel = tel.Replace(" ", string.Empty);
             try
             {
                 if (string.IsNullOrEmpty(this.txtNome.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.NomeClienteVazioException();
                 }
-                else if (this.txtCnpj.Modified == true && this.txtCPF.Modified == true)
+                else if (string.IsNullOrEmpty(cnpj) == true && string.IsNullOrEmpty(cpf) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.CpfCnpjVazioException();
+                }
+                else if (string.IsNullOrEmpty(txtCidade.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.CidadeClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && this.txtTelefone.Modified == false)
                 {
                     throw new BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(this.txtTelefone.Text) == false)
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(tel) == false)
                 {
                     throw new BUSINESS.Exceptions.Cliente.DDDClienteVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == false && string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == false && string.IsNullOrEmpty(tel) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException();
                 }
-                else if (string.IsNullOrEmpty(txtEmail.Text) == true && string.IsNullOrEmpty(txtDDD.Text) == true && string.IsNullOrEmpty(txtTelefone.Text) == true)
+                else if (string.IsNullOrEmpty(txtEmail.Text) == true && string.IsNullOrEmpty(txtDDD.Text) == true && string.IsNullOrEmpty(tel) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.EmailClienteVazioException();
-                }
-                else if (string.IsNullOrEmpty(txtCidade.Text) == true)
-                {
-                    throw new BUSINESS.Exceptions.Cliente.CidadeClienteVazioException();
                 }
             }
             catch (Exception ex)

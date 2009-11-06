@@ -36,7 +36,6 @@ namespace TCC.BUSINESS
             }
         }
         
-
         public DataTable VerificaLoginUsuario(string login, string senha)
         {
             dUsuario dal = new dUsuario();
@@ -132,6 +131,11 @@ namespace TCC.BUSINESS
             {
 
             }
+        }
+
+        public int BuscaMaxId()
+        {
+            return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_usu", "Usuario"));
         }
 
         public override void ValidarInsere(ModelPai model)
