@@ -126,7 +126,7 @@
             // lblNumeroEndereco
             // 
             this.lblNumeroEndereco.AutoSize = true;
-            this.lblNumeroEndereco.Location = new System.Drawing.Point(110, 137);
+            this.lblNumeroEndereco.Location = new System.Drawing.Point(106, 137);
             this.lblNumeroEndereco.Name = "lblNumeroEndereco";
             this.lblNumeroEndereco.Size = new System.Drawing.Size(44, 13);
             this.lblNumeroEndereco.TabIndex = 10;
@@ -135,10 +135,10 @@
             // txtRua
             // 
             this.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRua.Location = new System.Drawing.Point(143, 95);
+            this.txtRua.Location = new System.Drawing.Point(150, 95);
             this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(395, 20);
+            this.txtRua.Size = new System.Drawing.Size(388, 20);
             this.txtRua.TabIndex = 2;
             // 
             // lblRua
@@ -263,10 +263,10 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtEmail.Location = new System.Drawing.Point(148, 280);
+            this.txtEmail.Location = new System.Drawing.Point(150, 280);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(390, 20);
+            this.txtEmail.Size = new System.Drawing.Size(388, 20);
             this.txtEmail.TabIndex = 12;
             // 
             // lblEmail
@@ -307,15 +307,17 @@
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(147, 20);
-            this.txtCnpj.TabIndex = 24;
+            this.txtCnpj.TabIndex = 9;
             this.txtCnpj.ValidatingType = typeof(int);
             // 
             // txtNumeroEndereco
             // 
-            this.txtNumeroEndereco.Location = new System.Drawing.Point(160, 135);
+            this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 135);
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
-            this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
-            this.txtNumeroEndereco.TabIndex = 25;
+            this.txtNumeroEndereco.Size = new System.Drawing.Size(94, 20);
+            this.txtNumeroEndereco.TabIndex = 3;
+            this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // frmCadFornecedor
             // 
