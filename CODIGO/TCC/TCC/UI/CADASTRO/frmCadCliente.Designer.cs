@@ -95,10 +95,10 @@
             // txtRua
             // 
             this.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRua.Location = new System.Drawing.Point(141, 77);
+            this.txtRua.Location = new System.Drawing.Point(149, 77);
             this.txtRua.MaxLength = 100;
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(405, 20);
+            this.txtRua.Size = new System.Drawing.Size(397, 20);
             this.txtRua.TabIndex = 2;
             // 
             // lblNumero
@@ -167,10 +167,10 @@
             // txtCidade
             // 
             this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCidade.Location = new System.Drawing.Point(154, 189);
+            this.txtCidade.Location = new System.Drawing.Point(149, 189);
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(290, 20);
+            this.txtCidade.Size = new System.Drawing.Size(295, 20);
             this.txtCidade.TabIndex = 7;
             // 
             // lblEstado
@@ -241,7 +241,7 @@
             this.btnVolta.Location = new System.Drawing.Point(6, 129);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 16;
+            this.btnVolta.TabIndex = 17;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -267,10 +267,10 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(147, 253);
+            this.txtEmail.Location = new System.Drawing.Point(149, 253);
             this.txtEmail.MaxLength = 15;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(399, 20);
+            this.txtEmail.Size = new System.Drawing.Size(397, 20);
             this.txtEmail.TabIndex = 11;
             // 
             // lblEmail
@@ -285,22 +285,22 @@
             // txtDDD
             // 
             this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDDD.Location = new System.Drawing.Point(138, 289);
+            this.txtDDD.Location = new System.Drawing.Point(149, 290);
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 12;
-            //this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtNumero
             // 
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(158, 114);
+            this.txtNumero.Location = new System.Drawing.Point(149, 114);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(63, 20);
+            this.txtNumero.Size = new System.Drawing.Size(72, 20);
             this.txtNumero.TabIndex = 3;
-           // this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtCep
             // 
@@ -318,7 +318,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 88);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 17;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 16;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -330,11 +330,11 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(147, 222);
+            this.txtCPF.Location = new System.Drawing.Point(149, 221);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
-            this.txtCPF.TabIndex = 19;
+            this.txtCPF.TabIndex = 9;
             this.txtCPF.ValidatingType = typeof(int);
             // 
             // txtCnpj
@@ -344,7 +344,7 @@
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(147, 20);
-            this.txtCnpj.TabIndex = 25;
+            this.txtCnpj.TabIndex = 10;
             this.txtCnpj.ValidatingType = typeof(int);
             // 
             // txtTelefone
@@ -353,8 +353,8 @@
             this.txtTelefone.Location = new System.Drawing.Point(241, 290);
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 26;
+            this.txtTelefone.Size = new System.Drawing.Size(66, 20);
+            this.txtTelefone.TabIndex = 13;
             this.txtTelefone.ValidatingType = typeof(int);
             // 
             // frmCadCliente
