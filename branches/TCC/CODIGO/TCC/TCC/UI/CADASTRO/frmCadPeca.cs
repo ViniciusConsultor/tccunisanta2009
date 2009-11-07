@@ -90,7 +90,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    model.Peso = Convert.ToDouble(this.txtPesoPeca.Text);
+                    model.Peso = Convert.ToDecimal(this.txtPesoPeca.Text);
                 }
                 if (string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
                 {

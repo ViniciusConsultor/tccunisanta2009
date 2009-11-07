@@ -11,7 +11,7 @@ namespace TCC.MODEL
         private string idPecaReal;
         private string nom;
         private DateTime datAlt;
-        private double? peso;
+        private decimal? peso;
         private bool flgAtivo;
         private string dscPeca;
         private int? qtdMin;
@@ -47,7 +47,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("peso", System.Data.SqlDbType.Decimal,false)]
-        public double? Peso
+        public decimal? Peso
         {
             get { return peso; }
             set { peso = value; }

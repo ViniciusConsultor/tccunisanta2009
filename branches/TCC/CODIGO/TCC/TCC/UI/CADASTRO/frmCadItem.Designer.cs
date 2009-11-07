@@ -56,6 +56,7 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
+            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +123,7 @@
             // 
             this.btnAdicionaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaPeca.BackgroundImage")));
             this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaPeca.Location = new System.Drawing.Point(66, 175);
+            this.btnAdicionaPeca.Location = new System.Drawing.Point(36, 157);
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
             this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
             this.btnAdicionaPeca.TabIndex = 22;
@@ -149,6 +150,7 @@
             // 
             // gbBuscaPecaItem
             // 
+            this.gbBuscaPecaItem.Controls.Add(this.btnRemovePeca);
             this.gbBuscaPecaItem.Controls.Add(this.txtQtdPeca);
             this.gbBuscaPecaItem.Controls.Add(this.btnAdicionaPeca);
             this.gbBuscaPecaItem.Controls.Add(this.dgItems);
@@ -324,6 +326,18 @@
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
             // 
+            // btnRemovePeca
+            // 
+            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemovePeca.Location = new System.Drawing.Point(98, 157);
+            this.btnRemovePeca.Name = "btnRemovePeca";
+            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
+            this.btnRemovePeca.TabIndex = 24;
+            this.btnRemovePeca.Text = "Remove Peça";
+            this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remove Peça");
+            this.btnRemovePeca.UseVisualStyleBackColor = true;
+            this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
+            // 
             // frmCadItemPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,5 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
+        private System.Windows.Forms.Button btnRemovePeca;
     }
 }
