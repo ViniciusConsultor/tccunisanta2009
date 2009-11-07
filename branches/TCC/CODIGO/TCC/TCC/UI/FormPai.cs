@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using TCC.MODEL;
 using Controles;
+using System.Data;
 
 namespace TCC.UI
 {
@@ -36,6 +37,64 @@ namespace TCC.UI
                     {
                         ((ComboBox)controle).SelectedIndex = 0;
                     }
+                    else if (tipo.Equals(new DataGridView().GetType()) == true)
+                    {
+                        DataGridView grid = (DataGridView)controle;
+                        DataGridViewColumn[] colunas = new DataGridViewColumn[grid.Columns.Count];
+                        grid.Columns.CopyTo(colunas, 0);
+                        grid.DataSource = null;
+                        ReassociaColunasGrid(colunas, ref grid);
+                    }
+                    else if (tipo.Equals(new GroupBox().GetType()) == true)
+                    {
+                        this.LimpaDadosTela((GroupBox)controle);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                tipo = null;
+                if (combo != null)
+                {
+                    combo.Dispose();
+                    combo = null;
+                }
+            }
+        }
+
+        protected void LimpaDadosTela(GroupBox group)
+        {
+            Type tipo = null;
+            ComboBox combo = null;
+            try
+            {
+                foreach (Control controle in group.Controls)
+                {
+                    tipo = controle.GetType();
+                    if (tipo.Equals(new TextBox().GetType()) == true || tipo.Equals(new MaskedTextBox().GetType()) == true || tipo.Equals(new Controles.MegaTextBox.MegaTextBox().GetType()) == true)
+                    {
+                        controle.Text = string.Empty;
+                    }
+                    else if (tipo.Equals(new ComboBox().GetType()) == true)
+                    {
+                        ((ComboBox)controle).SelectedIndex = 0;
+                    }
+                    else if (tipo.Equals(new DataGridView().GetType()) == true)
+                    {
+                        DataGridView grid = (DataGridView)controle;
+                        DataGridViewColumn[] colunas = new DataGridViewColumn[grid.Columns.Count];
+                        grid.Columns.CopyTo(colunas, 0);
+                        grid.DataSource = null;
+                        ReassociaColunasGrid(colunas, ref grid);
+                    }
+                    else if (tipo.Equals(new GroupBox().GetType()) == true)
+                    {
+                        this.LimpaDadosTela((GroupBox)controle);
+                    }
                 }
             }
             catch (Exception ex)
@@ -64,6 +123,11 @@ namespace TCC.UI
             this.Name = "FormPai";
             this.ResumeLayout(false);
 
+        }
+
+        private void ReassociaColunasGrid(DataGridViewColumn[] colunas, ref DataGridView controle)
+        {
+            controle.Columns.AddRange(colunas);
         }
     }
 }
