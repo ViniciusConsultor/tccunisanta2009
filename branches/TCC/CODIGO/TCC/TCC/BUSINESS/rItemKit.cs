@@ -1,42 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Text;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace TCC.BUSINESS
 {
-    class rKitGrupoPeca:ComandosSql
+    class rItemKit : ComandosSql
     {
-        public DataTable BuscaKitGrupoPeca(string parametro)
+        public DataTable BuscaItemKit(string parametro)
         {
             SqlParameter param = null;
             try
             {
                 if (string.IsNullOrEmpty(parametro) == true)
                 {
-                    return base.BuscaDados("sp_busca_kitGrupoPeca");
+                    return base.BuscaDados("sp_busca_itemKit");
                 }
                 else
                 {
                     param = new SqlParameter("@nom", parametro);
-                    return base.BuscaDados("sp_busca_kitGrupoPeca_param", param);
+                    return base.BuscaDados("sp_busca_itemKit_param", param);
                 }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 param = null;
             }
-        }
-
-        public int BuscaIdMaximo()
-        {
-            return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_kit", "kitgrupopeca"));
         }
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
