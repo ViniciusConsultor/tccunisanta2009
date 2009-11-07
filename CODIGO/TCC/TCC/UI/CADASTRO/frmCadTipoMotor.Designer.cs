@@ -90,9 +90,9 @@
             this.lblNmTipoMotor.AutoSize = true;
             this.lblNmTipoMotor.Location = new System.Drawing.Point(74, 111);
             this.lblNmTipoMotor.Name = "lblNmTipoMotor";
-            this.lblNmTipoMotor.Size = new System.Drawing.Size(119, 13);
+            this.lblNmTipoMotor.Size = new System.Drawing.Size(139, 13);
             this.lblNmTipoMotor.TabIndex = 19;
-            this.lblNmTipoMotor.Text = "Nome do Tipo do Motor";
+            this.lblNmTipoMotor.Text = "Descrição do Tipo do Motor";
             // 
             // toolTipLegenda
             // 
@@ -104,9 +104,9 @@
             this.lblIdReal.AutoSize = true;
             this.lblIdReal.Location = new System.Drawing.Point(74, 62);
             this.lblIdReal.Name = "lblIdReal";
-            this.lblIdReal.Size = new System.Drawing.Size(128, 13);
+            this.lblIdReal.Size = new System.Drawing.Size(124, 13);
             this.lblIdReal.TabIndex = 19;
-            this.lblIdReal.Text = "Numero do Tipo do Motor";
+            this.lblIdReal.Text = "Código do Tipo do Motor";
             // 
             // txtIdReal
             // 
@@ -135,7 +135,6 @@
             this.MaximizeBox = false;
             this.Name = "frmCadTipoMotor";
             this.Text = "Tipo de Motor";
-            this.Load += new System.EventHandler(this.frmCadTipoMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

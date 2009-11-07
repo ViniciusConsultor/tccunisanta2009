@@ -8,7 +8,6 @@ namespace TCC.BUSINESS
 {
     class rTipoMotor : ComandosSql
     {
-
         public DataTable BuscaTipoMotor(string parametro)
         {
             SqlParameter param = null;
@@ -33,6 +32,11 @@ namespace TCC.BUSINESS
             {
                 param = null;
             }
+        }
+
+        public int BuscaMaxId()
+        {
+            return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_tipo_motor", "tipomotor"));
         }
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
