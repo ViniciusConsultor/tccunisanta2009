@@ -114,6 +114,7 @@
     <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\DescDepartamentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\CidadeVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\CnpjVazioException.cs" />
@@ -125,6 +126,8 @@
     <Compile Include="BUSINESS\Exceptions\Login\LoginExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Login\LoginVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Login\SenhaVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Motor\DescMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\NumeroMotor\DescMotorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\NumeroMotor\NumeroMotorVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\CodigoPecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\NomePecaVazioException.cs" />

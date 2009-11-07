@@ -12,13 +12,19 @@ namespace TCC.UI
 {
     public partial class frmCadPeca : FormPai
     {
+        #region Atributos
         mEstoque _modelEstoque;
         mTipoPeca _modelTipoPeca;
+        #endregion Atributos
+
+        #region Construtor
         public frmCadPeca()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Eventos
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
@@ -49,33 +55,6 @@ namespace TCC.UI
                 objTela = null;
             }
         }
-/*
-        private void btnCdEstoque_Click(object sender, EventArgs e)
-        {
-            this._modelEstoque = new mEstoque();
-            frmBuscaEstoque objTela = new frmBuscaEstoque(_modelEstoque);
-            try
-            {
-                DialogResult resultado = objTela.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelEstoque = null;
-                }
-                else
-                {
-                    this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objTela = null;
-            }
-        }
-        */
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
@@ -84,6 +63,13 @@ namespace TCC.UI
             this._modelTipoPeca = null;
         }
 
+        private void btnConfirma_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion Eventos
+
+        #region Metodos
         private mPeca PegaDadosTela()
         {
             mPeca model = new mPeca();
@@ -127,11 +113,6 @@ namespace TCC.UI
             }
         }
 
-        private void btnConfirma_Click(object sender, EventArgs e)
-        {
-            this.Insere();
-        }
-
         private void Insere()
         {
             mPeca model;
@@ -145,7 +126,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
             {
-                MessageBox.Show("É Necessário Buscar o código do Tipo da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                
                 this.btnCdTipoPeca.Focus();
             }
             catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
@@ -158,15 +139,15 @@ namespace TCC.UI
                 MessageBox.Show("Peça já existente favor cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
-            {
-                MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtQtdPeca.Focus();
-            }
             catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
             {
                 MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmPeca.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            {
+                MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdPeca.Focus();
             }
             catch (Exception ex)
             {
@@ -189,14 +170,15 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.Peca.CodigoPecaVazioException();
             }
-            else if (string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
-            {
-                throw new BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException();
-            }
             else if (string.IsNullOrEmpty(this.txtNmPeca.Text) == true)
             {
                 throw new BUSINESS.Exceptions.Peca.NomePecaVazioException();
             }
+            else if (string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException();
+            }
         }
+        #endregion Metodos
     }
 }

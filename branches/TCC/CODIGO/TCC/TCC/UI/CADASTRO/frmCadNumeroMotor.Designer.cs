@@ -48,7 +48,7 @@
             this.txtDscNumeroMotor.Multiline = true;
             this.txtDscNumeroMotor.Name = "txtDscNumeroMotor";
             this.txtDscNumeroMotor.Size = new System.Drawing.Size(260, 72);
-            this.txtDscNumeroMotor.TabIndex = 1;
+            this.txtDscNumeroMotor.TabIndex = 2;
             // 
             // lblDsNumeroMotor
             // 
@@ -66,7 +66,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 62);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 4;
+            this.btnVoltar.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -78,7 +78,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 33);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 3;
+            this.btnLimpar.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -90,7 +90,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(3, 4);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 2;
+            this.btnAceitar.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -107,7 +107,7 @@
             this.txtIdRealMotor.MaxLength = 50;
             this.txtIdRealMotor.Name = "txtIdRealMotor";
             this.txtIdRealMotor.Size = new System.Drawing.Size(227, 20);
-            this.txtIdRealMotor.TabIndex = 22;
+            this.txtIdRealMotor.TabIndex = 1;
             // 
             // lblIdReal
             // 
@@ -136,7 +136,6 @@
             this.MaximizeBox = false;
             this.Name = "frmCadNumeroMotor";
             this.Text = "Numero Motor";
-            this.Load += new System.EventHandler(this.frmCadNumeroMotor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

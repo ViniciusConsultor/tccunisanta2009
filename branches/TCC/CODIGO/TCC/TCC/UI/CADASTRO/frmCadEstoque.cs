@@ -103,7 +103,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
-                MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É necessário informar o Departamento do estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.Estoque.NomEstoqueVazioException)

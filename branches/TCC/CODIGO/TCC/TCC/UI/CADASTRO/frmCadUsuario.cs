@@ -74,6 +74,12 @@ namespace TCC.UI
         }
         #endregion btnBuscaPerfilUsuario Click
 
+        #region btnVoltar Click
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+        #endregion btnVoltar Click
         #endregion Eventos
 
         #region Metodos
@@ -159,12 +165,6 @@ namespace TCC.UI
             
         }
         #endregion Pega Dados Tela
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            base.FechaTela(this);
-        }
-
         #endregion Metodos
     }
 }

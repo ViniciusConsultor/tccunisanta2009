@@ -1,26 +1,27 @@
 USE Megatechdatabase
-IF OBJECT_ID('sp_insert_ordemcompra', 'P')IS NOT NULL
-	DROP PROCEDURE sp_insert_ordemcompra;
+IF OBJECT_ID('sp_insert_numeromotor', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_numeromotor;
 GO
 
-CREATE PROCEDURE sp_insert_ordemcompra
-@id_ordem_compra   INT,
-@id_peca		   INT,
-@ultim_preco	   NUMERIC(15,2),
-@id_motor			   INT,
-@dat_alt		   DATETIME,
-@nota_fisc		   VARCHAR(20),
-@id_forn		   INT,
+CREATE PROCEDURE sp_insert_numeromotor
+@id_num_motor	   INT,
+@id_num_motor_real VARCHAR(25),
+@dsc_num_motor     VARCHAR(500),
 @flg_ativo         BIT
 AS
 
 BEGIN TRY
---Validações na tabela ordemcompra
+--Validações na tabela numeromotor
+IF(@id_num_motor_real='')
+   RAISERROR('Informe o Número do motor!',16,1)      
+ELSE IF(@dsc_num_motor='')
+   RAISERROR('Informe a descricao para numero do motor!',16,1)      
+ELSE
 
 BEGIN
---Insert na tabela ordemcompra
-INSERT INTO ordemcompra (id_ordem_compra, id_peca, ultim_preco, id_motor, dat_alt, nota_fisc, id_forn, flg_ativo)
-VALUES (@id_ordem_compra, @id_peca, @ultim_preco, @id_motor, @dat_alt, @nota_fisc, @id_forn, @flg_ativo)
+--Insert na tabela numeromotor
+INSERT INTO Numeromotor(id_num_motor, id_num_motor_real, dsc_num_motor, flg_ativo)
+VALUES (@id_num_motor, @id_num_motor_real, @dsc_num_motor, @flg_ativo)
 END
 END TRY
 

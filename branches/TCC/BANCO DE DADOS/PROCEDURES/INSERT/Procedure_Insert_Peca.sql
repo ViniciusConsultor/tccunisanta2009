@@ -21,8 +21,6 @@ IF(@id_tipo_peca='')
    RAISERROR('Informe o codigo do tipo da peça!',16,1)
 ELSE IF(@nom='')
    RAISERROR('Informe o nome da peça!',16,1)
-ELSE IF(@dsc_peca='')
-   RAISERROR('Informe a descricao da peça!',16,1)   
 ELSE IF(@qtd_min='')
    RAISERROR('Informe a quantidade minima de estoque da peça!',16,1)      
 ELSE

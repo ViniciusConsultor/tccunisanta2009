@@ -21,30 +21,19 @@ namespace TCC.UI
         #endregion
 
         #region Eventos
-        private void frmCadPerfil_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            rPerfil regraPerfil = new rPerfil();
-            mPerfil modelPerfil = new mPerfil();
-            try
-            {
-                modelPerfil = this.PegaDadosTela();
-                regraPerfil.ValidarInsere(modelPerfil);
-                base.LimpaDadosTela(this);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-
+            this.Inserir();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this); 
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
         }
         #endregion
 
@@ -54,32 +43,40 @@ namespace TCC.UI
             mPerfil model = new mPerfil();
             rPerfil regra = new rPerfil();
 
+            model.IdPerfil = regra.BuscaMaxId();
             model.DescPerfil = txtDescPerfil.Text;
 
             return model;
         }
-        #endregion
 
-        /*protected override void BuscaIdMaximo()
+        private void Inserir()
         {
             rPerfil regraPerfil = new rPerfil();
+            mPerfil modelPerfil = new mPerfil();
             try
             {
-                this.txtIdPerfil.Text = regraPerfil.BuscaIdMaximoPerfil();
+                this.ValidaDadosNulos();
+                modelPerfil = this.PegaDadosTela();
+                regraPerfil.ValidarInsere(modelPerfil);
+                base.LimpaDadosTela(this);
+            }
+            catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
+            {
+                MessageBox.Show("É necessário informar a descrição do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            finally
-            {
-                regraPerfil = null;
-            }
-        }*/
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            base.FechaTela(this);
         }
+
+        private void ValidaDadosNulos()
+        {
+            if (string.IsNullOrEmpty(this.txtDescPerfil.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Perfil.DescPerfilVazioException();
+            }
+        }
+        #endregion
     }
 }
