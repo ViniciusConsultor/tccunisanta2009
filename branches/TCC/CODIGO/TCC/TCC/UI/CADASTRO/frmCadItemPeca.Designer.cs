@@ -40,9 +40,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAdicionaPeca = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigoItem = new System.Windows.Forms.TextBox();
             this.lblCdItemReal = new System.Windows.Forms.Label();
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
+            this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,6 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
-            this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -130,13 +130,13 @@
             this.btnAdicionaPeca.UseVisualStyleBackColor = true;
             this.btnAdicionaPeca.Click += new System.EventHandler(this.btnAdicionaPeca_Click);
             // 
-            // textBox1
+            // txtCodigoItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 22);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtCodigoItem.Location = new System.Drawing.Point(167, 22);
+            this.txtCodigoItem.MaxLength = 20;
+            this.txtCodigoItem.Name = "txtCodigoItem";
+            this.txtCodigoItem.Size = new System.Drawing.Size(133, 20);
+            this.txtCodigoItem.TabIndex = 2;
             // 
             // lblCdItemReal
             // 
@@ -159,12 +159,21 @@
             this.gbBuscaPecaItem.Controls.Add(this.rdbNome);
             this.gbBuscaPecaItem.Controls.Add(this.rdbCodigo);
             this.gbBuscaPecaItem.Controls.Add(this.TxtNmPeca);
-            this.gbBuscaPecaItem.Location = new System.Drawing.Point(80, 116);
+            this.gbBuscaPecaItem.Location = new System.Drawing.Point(83, 109);
             this.gbBuscaPecaItem.Name = "gbBuscaPecaItem";
-            this.gbBuscaPecaItem.Size = new System.Drawing.Size(498, 243);
+            this.gbBuscaPecaItem.Size = new System.Drawing.Size(489, 243);
             this.gbBuscaPecaItem.TabIndex = 8;
             this.gbBuscaPecaItem.TabStop = false;
             this.gbBuscaPecaItem.Text = "Peças do Item ";
+            // 
+            // txtQtdPeca
+            // 
+            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdPeca.Location = new System.Drawing.Point(36, 131);
+            this.txtQtdPeca.Name = "txtQtdPeca";
+            this.txtQtdPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdPeca.TabIndex = 23;
+            this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // dgItems
             // 
@@ -315,15 +324,6 @@
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
             // 
-            // txtQtdPeca
-            // 
-            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdPeca.Location = new System.Drawing.Point(36, 131);
-            this.txtQtdPeca.Name = "txtQtdPeca";
-            this.txtQtdPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdPeca.TabIndex = 23;
-            this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            // 
             // frmCadItemPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +335,7 @@
             this.Controls.Add(this.gbBuscaPecaItem);
             this.Controls.Add(this.lblCdItemReal);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodigoItem);
             this.Controls.Add(this.txtNmItem);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnVolta);
@@ -360,7 +360,7 @@
         private System.Windows.Forms.TextBox txtNmItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigoItem;
         private System.Windows.Forms.Label lblCdItemReal;
         private System.Windows.Forms.GroupBox gbBuscaPecaItem;
         private System.Windows.Forms.Button btnAdicionaPeca;
