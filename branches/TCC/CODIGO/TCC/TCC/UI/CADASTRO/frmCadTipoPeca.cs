@@ -12,13 +12,18 @@ namespace TCC.UI
 {
     public partial class frmCadTipoPeca : FormPai
     {
+        #region Atributos
         mTipoPeca _mtipoPeca;
+        #endregion Atributos
 
+        #region Construtor
         public frmCadTipoPeca()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Eventos
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
@@ -29,6 +34,13 @@ namespace TCC.UI
             base.LimpaDadosTela(this);
         }
 
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.Inserir();
+        }
+        #endregion Eventos
+
+        #region Metodos
         private void LimparCampos()
         {
             try
@@ -69,19 +81,20 @@ namespace TCC.UI
             }
         }
 
-        private void btnAceitar_Click(object sender, EventArgs e)
+        public void Inserir()
         {
             mTipoPeca model = null;
             rTipoPeca regra = new rTipoPeca();
             try
             {
+                this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.LimparCampos();
             }
             catch (BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption)
             {
-                MessageBox.Show("Preencher campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Preencher o campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
             }
             catch (Exception ex)
@@ -99,7 +112,7 @@ namespace TCC.UI
         {
             try
             {
-                if (this._mtipoPeca == null)
+                if (string.IsNullOrEmpty(this.txtDsTipoPeca.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption();
                 }
@@ -109,5 +122,6 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion Metodos
     }
 }
