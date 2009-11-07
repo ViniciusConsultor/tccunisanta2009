@@ -27,6 +27,11 @@ namespace TCC.BUSINESS
             }
         }
 
+        public int BuscaMaxId()
+        {
+            return Convert.ToInt32(this.BuscaIdMaximoTabelas("id_perfil", "perfil"));
+        }
+
         public override void ValidarInsere(ModelPai model)
         {
             base.Insere(model);

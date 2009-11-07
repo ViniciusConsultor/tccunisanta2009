@@ -22,6 +22,7 @@ namespace TCC.BUSINESS
         {
             throw new NotImplementedException();
         }
+
         public DataTable BuscaMotores(string descricaoMotor)
         {
             SqlParameter param = null;
@@ -45,6 +46,11 @@ namespace TCC.BUSINESS
             {
                 param = null;
             }
+        }
+
+        public int BuscaMaxId()
+        {
+            return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_motor", "Motor"));
         }
     }
 }

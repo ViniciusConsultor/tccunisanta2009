@@ -91,7 +91,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    model.Cnpj = Convert.ToInt32(cnpj);
+                    model.Cnpj = Convert.ToDecimal(cnpj);
                 }
                 model.ComplementoEndereco = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
@@ -109,7 +109,14 @@ namespace TCC.UI
                 }
                 string tel = this.txtTelefone.Text.Replace("-", string.Empty);
                 tel = tel.Replace(" ", string.Empty);
-                model.TelefoneCliente = Convert.ToInt32(tel);
+                if (string.IsNullOrEmpty(tel) == true)
+                {
+                    model.TelefoneCliente = null;
+                }
+                else
+                {
+                    model.TelefoneCliente = Convert.ToInt32(tel);
+                }
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     model.Ddd = null;
