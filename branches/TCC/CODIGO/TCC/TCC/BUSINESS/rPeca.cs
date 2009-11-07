@@ -9,6 +9,34 @@ namespace TCC.BUSINESS
 {
     class rPeca:ComandosSql
     {
+        public mPeca BuscaUnicoRegistro(int idPeca)
+        {
+            DataTable dtRetorno = null;
+            SqlParameter param = null;
+            mPeca modelPeca = new mPeca();
+            try
+            {
+                param = new SqlParameter("@id_peca", idPeca);
+                dtRetorno = base.BuscaDados("sp_select_peca", param);
+                modelPeca.Deserialize(dtRetorno);
+                return modelPeca;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                if (dtRetorno != null)
+                {
+                    dtRetorno.Dispose();
+                    dtRetorno = null;
+                }
+                modelPeca = null;
+            }
+        }
+
         public DataTable BuscaPecaNome(string parametro)
         {
             SqlParameter param = null;

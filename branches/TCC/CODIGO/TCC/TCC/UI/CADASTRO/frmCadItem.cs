@@ -29,7 +29,38 @@ namespace TCC.UI
         #region btnConfirmar Click
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            this.Insere();
+            try
+            {
+                this.ValidaDadosNulos();
+                this.AbreTelaResumo();
+                this.Insere();
+            }
+            catch (BUSINESS.Exceptions.Item.CodigoRealItemExistenteException)
+            {
+                MessageBox.Show("Código do item já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoItem.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.ItemSemPecaException)
+            {
+                MessageBox.Show("É necessário associar uma peça ao item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarPecaDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.NomeItemVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Item.CodigoRealItemVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Item.TelaResumoCanceladaException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
         }
         #endregion btnConfirmar Click
 
@@ -93,8 +124,6 @@ namespace TCC.UI
                     this.PopulaModelItemPeca();
                 }
                 this.AtualizaGrid();
-                //this.txtNmItem.Text = string.Empty;
-                //this.txtQtdPeca.Text = string.Empty;
             }
             catch (BUSINESS.Exceptions.Item.GridPecaSemDadosException)
             {
@@ -106,6 +135,11 @@ namespace TCC.UI
                 MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdPeca.Focus();
             }
+            catch (BUSINESS.Exceptions.Item.QuantidadeVaziaException)
+            {
+                MessageBox.Show("Campo quantidade deve ser preenchido.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdPeca.Focus();
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -113,10 +147,44 @@ namespace TCC.UI
         }
         #endregion btnAdicionaPeca Click
 
+        #region btnRemovePeca Click
+        private void btnRemovePeca_Click(object sender, EventArgs e)
+        {
+            this.RemovePeca();
+        }
+        #endregion btnRemovePeca Click
+
         #endregion Eventos
 
         #region Metodos
-        
+
+        #region Abre Tela Resumo
+        /// <summary>
+        /// Abre a tela de resumo antes de gravar os dados no banco
+        /// </summary>
+        private void AbreTelaResumo()
+        {
+            Resumo.frmResumoItemPeca ResumoPeca = new TCC.UI.Resumo.frmResumoItemPeca(this._modelItemPeca, this.txtNmItem.Text);
+            try
+            {
+                DialogResult resultado;
+                resultado = ResumoPeca.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    throw new BUSINESS.Exceptions.Item.TelaResumoCanceladaException();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                ResumoPeca = null;
+            }
+        }
+        #endregion Abre Tela Resumo
+
         #region Insere
         /// <summary>
         /// Insere os dados que estão no model
@@ -128,7 +196,6 @@ namespace TCC.UI
             rItemPeca regraItemPeca = new rItemPeca();
             try
             {
-                this.ValidaDadosNulos();
                 modelItem = this.PegaDadosTelaItem();
                 regraItem.ValidarInsere(modelItem);
                 this.CompletaListaModelItemPeca(modelItem);
@@ -137,24 +204,6 @@ namespace TCC.UI
                     regraItemPeca.ValidarInsere(modelItemPeca);
                 }
                 this.btnLimpa_Click(null, null);
-            }
-            catch (BUSINESS.Exceptions.Item.CodigoRealItemExistenteException)
-            {
-                MessageBox.Show("Código do item já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCodigoItem.Focus();
-            }
-            catch (BUSINESS.Exceptions.Item.ItemSemPecaException)
-            {
-                MessageBox.Show("É necessário associar uma peça ao item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.btnBuscarPecaDtGrid.Focus();
-            }
-            catch (BUSINESS.Exceptions.Item.NomeItemVazioException)
-            {
-                MessageBox.Show("É Necessário preencher o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Item.CodigoRealItemVazioException)
-            {
-                MessageBox.Show("É Necessário preencher o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -491,6 +540,10 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.Item.GridPecaSemDadosException();
             }
+            else if(string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Item.QuantidadeVaziaException();
+            }
             int quantidade = Convert.ToInt32(this.txtQtdPeca.Text);
             if (quantidade < 1)
             {
@@ -499,6 +552,38 @@ namespace TCC.UI
         }
         #endregion Valida Adicao Peca
 
+        #region Remove Peca
+        /// <summary>
+        /// Remove peça da lista
+        /// </summary>
+        private void RemovePeca()
+        {
+            int indice;
+            try
+            {
+                indice = this.ExisteModelItemPeca(this._idPeca);
+                if (indice > -1)
+                {
+                    this.txtQtdPeca.Text = "0";
+                    this._modelItemPeca.RemoveAt(indice);
+                    this.AtualizaGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Peça não associada ao Item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+        #endregion Remove Peca
+
         #endregion Metodos
     }
-} 
+}

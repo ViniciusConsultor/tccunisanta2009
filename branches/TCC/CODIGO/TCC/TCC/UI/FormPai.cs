@@ -127,7 +127,10 @@ namespace TCC.UI
 
         private void ReassociaColunasGrid(DataGridViewColumn[] colunas, ref DataGridView controle)
         {
-            controle.Columns.AddRange(colunas);
+            if (controle.Columns.Count <= 0)
+            {
+                controle.Columns.AddRange(colunas);
+            }
         }
     }
 }
