@@ -12,18 +12,18 @@ namespace TCC.UI
 {
     public partial class frmCadNumeroMotor : FormPai
     {
-
+        #region Atributos
         mNumMotor _mNumeroMotor;
+        #endregion Atributos
 
+        #region Construtor
         public frmCadNumeroMotor()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
-        private void frmNumeroMotor_Load(object sender, EventArgs e)
-        {
-        }
-
+        #region Eventos
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
@@ -34,76 +34,33 @@ namespace TCC.UI
             base.FechaTela(this);
         }
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rNumeroMotor regra = new rNumeroMotor();
-            try
-            {
-                this.txtCdNumeroMotor.Text = regra.BuscaIdMaximo();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
-        private void frmCadNumeroMotor_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
-
-            mNumMotor modelNumeroMotor = new mNumMotor();
-            BUSINESS.rNumeroMotor regraNumeroMotor = new BUSINESS.rNumeroMotor();
-
-            try
-            {
-                if (base.Alteracao == false)
-                {
-                    this.validaDadosNulo();
-                    modelNumeroMotor = this.PegaDadoosTela();
-                    if (modelNumeroMotor != null)
-                    {
-                        regraNumeroMotor.ValidarInsere(modelNumeroMotor);
-                    }
-                    this.btnLimpar_Click(null, null);
-                }
-                else
-                {
-                    modelNumeroMotor = this.PegaDadoosTela();
-                    regraNumeroMotor.ValidarAltera(modelNumeroMotor);
-                }
-                this.btnLimpar_Click(null, null);
-            }
-            catch (BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption)
-            {
-                MessageBox.Show("inserir Numero do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtIdRealMotor.Focus();
-            }
-             catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                modelNumeroMotor=null;
-            }
         }
+        #endregion Eventos
+
+        #region Metodos
         private void Insere()
         {
-            mNumMotor model;
+            mNumMotor model = new mNumMotor();
             rNumeroMotor regra = new rNumeroMotor();
             try
             {
-                model = this.PegaDadoosTela();
+                this.validaDadosNulo();
+                model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
+            }
+            catch (BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption)
+            {
+                MessageBox.Show("É necessário informar o Número de Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdRealMotor.Focus();
+            }
+            catch (BUSINESS.Exceptions.NumeroMotor.DescMotorVazioException)
+            {
+                MessageBox.Show("É necessário informar uma Descrição para o Número de Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDscNumeroMotor.Focus();
             }
             catch (Exception ex)
             {
@@ -116,7 +73,7 @@ namespace TCC.UI
             }
         }
 
-        private mNumMotor PegaDadoosTela()
+        private mNumMotor PegaDadosTela()
         {
 
             mNumMotor model = new mNumMotor();
@@ -124,6 +81,7 @@ namespace TCC.UI
 
             try
             {
+                model.Id_num_motor = regra.BuscaIdMaximo();
                 model.IdNumMotorReal = this.txtIdRealMotor.Text;
                 model.Dsc_num_motor = this.txtDscNumeroMotor.Text;
                 model.Flg_ativo = true;
@@ -139,23 +97,27 @@ namespace TCC.UI
                 model = null;
             }
         }
-            public void validaDadosNulo()
+
+        public void validaDadosNulo()
             {
                 try 
 	            {
-                    if (this._mNumeroMotor == null)
+                    if (string.IsNullOrEmpty(this.txtIdRealMotor.Text) == true)
+                    {
                         throw new BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption();
+                    }
+                    else if(string.IsNullOrEmpty(this.txtDscNumeroMotor.Text) == true)
+                    {
+                        throw new BUSINESS.Exceptions.NumeroMotor.DescMotorVazioException();
+                    }
 	            }
 	            catch (Exception ex)
 	            {
             		
 		            throw ex ;
 	            }
-                 finally
-                {
-
-                }
-           } 
+            }
+        #endregion Metodos
     }
 }
 

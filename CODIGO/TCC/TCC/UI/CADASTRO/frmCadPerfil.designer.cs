@@ -114,7 +114,6 @@
             this.MaximizeBox = false;
             this.Name = "frmCadPerfil";
             this.Text = "Cadastro de Perfil";
-            this.Load += new System.EventHandler(this.frmCadPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
