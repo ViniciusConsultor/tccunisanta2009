@@ -84,6 +84,7 @@ namespace TCC.UI
 
         #region Metodos
 
+        #region Insere
         /// <summary>
         /// Insere os dados que estão no model
         /// </summary>
@@ -91,7 +92,6 @@ namespace TCC.UI
         {
             rUsuario regraUsu = new rUsuario();
             mUsuario modelUsu = new mUsuario();
-            rUsuarioPerfil regraUsuarioPerfil = new rUsuarioPerfil();
             try
             {
                 this.ValidaDadosNulos();
@@ -99,22 +99,23 @@ namespace TCC.UI
                 //----------------
                 modelUsu = this.PegaDadosTela();
                 regraUsu.ValidarInsere(modelUsu);
+                base.LimpaDadosTela(this);
             }
             catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
-                MessageBox.Show("É Necessário Buscar o código do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário buscar um Perfil para o usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPerfilUsuario.Focus();
                 // this.btnBuscaPerfilUsuario.PerformClick();
+            }
+            catch (BUSINESS.Exceptions.Login.LoginVazioException)
+            {
+                MessageBox.Show("É necessário preenchimento do campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtLogin.Focus();
             }
             catch (BUSINESS.Exceptions.Login.LoginExistenteException)
             {
                 MessageBox.Show("Usuário já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Text = string.Empty;
-                this.txtLogin.Focus();
-            }
-            catch (BUSINESS.Exceptions.Login.LoginVazioException)
-            {
-                MessageBox.Show("É necessário preenchimento do campo Usuario", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Focus();
             }
             catch (BUSINESS.Exceptions.Login.SenhaVaziaException)
@@ -129,15 +130,16 @@ namespace TCC.UI
             finally
             {
                 regraUsu = null;
-                regraUsuarioPerfil = null;
                 modelUsu = null;
 
             }
         }
+        #endregion Insere
 
+        #region ValidaDadosNulos
         private void ValidaDadosNulos()
         {
-            if (this._modelPerfil == null)
+            if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == true)
             {
                 throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
             }
@@ -150,6 +152,7 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.Login.SenhaVaziaException();
             }
         }
+        #endregion ValidaDadosNulos
 
         #region Pega Dados Tela
         private mUsuario PegaDadosTela()
@@ -157,6 +160,7 @@ namespace TCC.UI
             mUsuario model = new mUsuario();
             rUsuario regra = new rUsuario();
             model.IdUsuario = regra.BuscaMaxId();
+            model.Id_perfil = Convert.ToInt32(this._modelPerfil.IdPerfil);
             model.Login = this.txtLogin.Text;
             model.ObsUsuario = this.txtObservacao.Text;
             model.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
