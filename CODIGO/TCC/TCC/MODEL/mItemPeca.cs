@@ -21,7 +21,7 @@ namespace TCC.MODEL
             set { dat_alt = value; }
         }
 
-        [ColunasBancoDados("id_item_peca", System.Data.SqlDbType.Int,true)]
+        [ColunasBancoDados("id_item", System.Data.SqlDbType.Int,true)]
         public int? Id_item
         {
             get { return id_item; }

@@ -13,7 +13,6 @@ namespace TCC.UI
     public partial class frmCadItemPeca : FormPai
     {
         #region Atributos
-        List<mPeca> _modelPeca;
         List<mItemPeca> _modelItemPeca;
         int _idPeca;
         #endregion Atributos
@@ -31,7 +30,6 @@ namespace TCC.UI
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             this.Insere();
-
         }
         #endregion btnConfirmar Click
 
@@ -46,47 +44,9 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this._modelPeca = null;
+            this._modelItemPeca = null;
         }
         #endregion btnLimpa Click
-
-        #region btnBuscaPeca Click
-        private void btnBuscaPeca_Click(object sender, EventArgs e)
-        {
-            this._modelPeca = new List<mPeca>();
-            frmBuscaPeca frmTela = new frmBuscaPeca(this._modelPeca, true, false);
-            try
-            {
-                DialogResult resultado = frmTela.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelPeca = null;
-                }
-                else
-                {
-                    for (int contador = 0; contador < this._modelPeca.Count; contador++)
-                    {
-                        if (contador == 0)
-                        {
-                            // this.txtCdPeca.Text = this._modelPeca[contador].Nom;
-                        }
-                        else
-                        {
-                            //this.txtCdPeca.Text += ", " + this._modelPeca[contador].Nom;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                frmTela = null;
-            }
-        }
-        #endregion btnBuscaPeca Click
 
         #region frmCadItemPeca Load
         private void frmCadItemPeca_Load(object sender, EventArgs e)
@@ -118,18 +78,38 @@ namespace TCC.UI
         #region btnAdicionaPeca Click
         private void btnAdicionaPeca_Click(object sender, EventArgs e)
         {
-            if (this._modelItemPeca != null)
+            try
             {
-                if (this._modelItemPeca.Count > 0)
+                this.ValidaAdicaoPeca();
+                if (this._modelItemPeca != null)
                 {
-                    this.AlteraModelItemPeca();
+                    if (this._modelItemPeca.Count > 0)
+                    {
+                        this.AlteraModelItemPeca();
+                    }
                 }
+                else
+                {
+                    this.PopulaModelItemPeca();
+                }
+                this.AtualizaGrid();
+                //this.txtNmItem.Text = string.Empty;
+                //this.txtQtdPeca.Text = string.Empty;
             }
-            else
+            catch (BUSINESS.Exceptions.Item.GridPecaSemDadosException)
             {
-                this.PopulaModelItemPeca();
+                MessageBox.Show("É Necessario buscar peças.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarPecaDtGrid.Focus();
             }
-            this.AtualizaGrid();
+            catch (BUSINESS.Exceptions.Item.QuantidadeMenorZeroException)
+            {
+                MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdPeca.Focus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion btnAdicionaPeca Click
 
@@ -143,21 +123,38 @@ namespace TCC.UI
         /// </summary>
         private void Insere()
         {
-            List<mItemPeca> ListaModel;
-            rItemPeca regra = new rItemPeca();
+            mItem modelItem;
+            rItem regraItem = new rItem();
+            rItemPeca regraItemPeca = new rItemPeca();
             try
             {
                 this.ValidaDadosNulos();
-                ListaModel = this.PegaDadosTela();
-                foreach (mItemPeca model in ListaModel)
+                modelItem = this.PegaDadosTelaItem();
+                regraItem.ValidarInsere(modelItem);
+                this.CompletaListaModelItemPeca(modelItem);
+                foreach (mItemPeca modelItemPeca in this._modelItemPeca)
                 {
-                    regra.ValidarInsere(model);
+                    regraItemPeca.ValidarInsere(modelItemPeca);
                 }
                 this.btnLimpa_Click(null, null);
             }
-            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            catch (BUSINESS.Exceptions.Item.CodigoRealItemExistenteException)
             {
-                MessageBox.Show("É Necessário Buscar o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Código do item já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoItem.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.ItemSemPecaException)
+            {
+                MessageBox.Show("É necessário associar uma peça ao item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarPecaDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.NomeItemVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Item.CodigoRealItemVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -165,35 +162,31 @@ namespace TCC.UI
             }
             finally
             {
-                regra = null;
+                modelItem = null;
+                regraItem = null;
+                regraItemPeca = null;
             }
         }
         #endregion Insere
 
         #region Pega Dados Tela
         /// <summary>
-        /// Pega os dados da tela e popula o model
+        /// Pega os dados da tela e popula o model de Item
         /// </summary>
-        /// <returns>Lista com o model itempeca</returns>
-        private List<mItemPeca> PegaDadosTela()
+        /// <returns>model item populado</returns>
+        private mItem PegaDadosTelaItem()
         {
-            List<mItemPeca> ListaModel = new List<mItemPeca>();
-            mItemPeca model;
-            rItemPeca regra = new rItemPeca();
+            mItem model = new mItem();
+            rItem regra = new rItem();
             try
             {
-                int idMaximo = regra.BuscaIdMaximo();
-                for (int posicao = 0; posicao < this._modelPeca.Count; posicao++)
-                {
-                    model = new mItemPeca();
-                    model.Flg_ativo = true;
-                    model.Id_peca = this._modelPeca[posicao].IdPeca;
-                    //    model.Nom_item_peca = this.txtNmItem.Text;
-                    model.Id_item = idMaximo;
-                    ListaModel.Add(model);
-                }
+                model.Dat_alt = DateTime.Now;
+                model.Flg_ativo = true;
+                model.Id_item = regra.BuscaIdMaximo();
+                model.Id_item_real = this.txtCodigoItem.Text;
+                model.Nom = this.txtNmItem.Text;
 
-                return ListaModel;
+                return model;
             }
             catch (Exception ex)
             {
@@ -201,11 +194,25 @@ namespace TCC.UI
             }
             finally
             {
-                ListaModel = null;
                 model = null;
+                regra = null;
             }
         }
         #endregion Pega Dados Tela
+
+        #region Completa Lista Model Item Peca
+        /// <summary>
+        /// Completa a lista de model Item peca com o id do item que foi gravado no Banco de dados
+        /// </summary>
+        /// <param name="modelItem">model do item onde esta o id</param>
+        private void CompletaListaModelItemPeca(mItem modelItem)
+        {
+            foreach (mItemPeca model in this._modelItemPeca)
+            {
+                model.Id_item = modelItem.Id_item;
+            }
+        }
+        #endregion Completa Lista Model Item Peca
 
         #region Valida Dados Nulos
         /// <summary>
@@ -213,9 +220,17 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (this._modelPeca == null)
+            if (string.IsNullOrEmpty(this.txtCodigoItem.Text) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
+                throw new BUSINESS.Exceptions.Item.CodigoRealItemVazioException();
+            }
+            else if (string.IsNullOrEmpty(this.txtNmItem.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Item.NomeItemVazioException();
+            }
+            else if (this._modelItemPeca == null)
+            {
+                throw new BUSINESS.Exceptions.Item.ItemSemPecaException();
             }
         }
         #endregion Valida Dados Nulos
@@ -294,7 +309,7 @@ namespace TCC.UI
                 }
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
-                //model.Id_item = 
+                model.Id_item = null;
                 model.Id_peca = this._idPeca;
                 model.Qtd_peca = Convert.ToInt32(this.txtQtdPeca.Text);
                 this._modelItemPeca.Add(model);
@@ -322,14 +337,21 @@ namespace TCC.UI
             int retorno = -1;
             try
             {
-                for (int cont = 0; cont < this._modelItemPeca.Count; cont++)
+                if (this._modelItemPeca != null)
                 {
-                    if (Convert.ToInt32(this._modelItemPeca[cont].Id_peca) == idPeca)
+                    for (int cont = 0; cont < this._modelItemPeca.Count; cont++)
                     {
-                        retorno = cont;
+                        if (Convert.ToInt32(this._modelItemPeca[cont].Id_peca) == idPeca)
+                        {
+                            retorno = cont;
+                        }
                     }
+                    return retorno;
                 }
-                return retorno;
+                else
+                {
+                    return retorno;
+                }
             }
             catch (Exception ex)
             {
@@ -350,6 +372,7 @@ namespace TCC.UI
         {
             try
             {
+                this.ComparaDadosGrid();
                 if (this.dgItems.Rows.Count > 0)
                 {
                     int indice = this.dgItems.CurrentRow.Index;
@@ -457,6 +480,24 @@ namespace TCC.UI
             }
         }
         #endregion Compara Dados Grid
+
+        #region Valida Adicao Peca
+        /// <summary>
+        /// Valida a adição de peças a lista
+        /// </summary>
+        private void ValidaAdicaoPeca()
+        {
+            if (this.dgItems.DataSource == null)
+            {
+                throw new BUSINESS.Exceptions.Item.GridPecaSemDadosException();
+            }
+            int quantidade = Convert.ToInt32(this.txtQtdPeca.Text);
+            if (quantidade < 1)
+            {
+                throw new BUSINESS.Exceptions.Item.QuantidadeMenorZeroException();
+            }
+        }
+        #endregion Valida Adicao Peca
 
         #endregion Metodos
     }

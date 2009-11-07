@@ -114,6 +114,12 @@
     <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\DescDepartamentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\GridPecaSemDadosException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\ItemSemPecaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\NomeItemVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\QuantidadeMenorZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\CidadeVazioException.cs" />
@@ -151,6 +157,7 @@
     <Compile Include="BUSINESS\rEstoque.cs" />
     <Compile Include="BUSINESS\rFamiliaMotor.cs" />
     <Compile Include="BUSINESS\rFornecedor.cs" />
+    <Compile Include="BUSINESS\rItem.cs" />
     <Compile Include="BUSINESS\rItemPeca.cs" />
     <Compile Include="BUSINESS\rKitGrupoPeca.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />

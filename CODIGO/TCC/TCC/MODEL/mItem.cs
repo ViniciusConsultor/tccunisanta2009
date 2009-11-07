@@ -26,12 +26,7 @@ namespace TCC.MODEL
             get { return flg_ativo; }
             set { flg_ativo = value; }
         }
-        [ColunasBancoDados("Nometabela", System.Data.SqlDbType.VarChar, false)]
-        public string Nometabela
-        {
-            get { return nometabela; }
-            set { nometabela = value; }
-        }
+
         [ColunasBancoDados("Nom", System.Data.SqlDbType.VarChar, false)]
         public string Nom
         {
