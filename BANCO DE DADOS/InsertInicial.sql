@@ -9,9 +9,6 @@ INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (3, 'D
 --INSERT TABELA TIPO_DE_USUÁRIO
 --INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
 
---INSERT TABELA USUARIO
-INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'kaue', '123', 'SEI LA', 1, 1);
-
 --INSERT TABELA ESTADO
 INSERT INTO Estado (slg_est, nom_est) VALUES ('AC', 'ACRE');
 INSERT INTO Estado (slg_est, nom_est) VALUES ('AL', 'ALAGOAS');
@@ -130,6 +127,9 @@ INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 5, GE
 --INSERT TABELA TIPOPRODUTO
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Motor', 1, GETDATE());
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Kit', 1, GETDATE());
+
+--INSERT TABELA USUARIO
+INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'kaue', '123', 'SEI LA', 1, 1);
 
 --INSERT TABELA CLIENTE 
 INSERT INTO cliente (id_cli, nom,tel,rua,nro_ende,compl,cep,bairr,cid,dat_atl,flg_ativo,slg_est,mail,ddd,cpf,cnpj) VALUES (1, 'julio','32322970','baralho',666,'castelo','11111111','Iron Forge','Storm Wind',GETDATE(),1,'SP','wow@mail.com',99,'37006765811',null )

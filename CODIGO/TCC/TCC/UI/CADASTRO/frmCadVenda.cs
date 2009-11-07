@@ -14,7 +14,7 @@ namespace TCC.UI
     {
         mCliente _modelCliente;
         mMotor _modelMotor;
-        mOrdemProducao _modelOrdemProd;
+        mProduto _modelProduto;
         mTipoProduto _modelTipoProd;
         mKitGrupoPeca _modelKit;
         bool _clickOp = false;
@@ -35,7 +35,7 @@ namespace TCC.UI
             this._modelCliente = null;
             this._modelKit = null;
             this._modelMotor = null;
-            this._modelOrdemProd = null;
+            this._modelProduto = null;
             this._modelTipoProd = null;
         }
 
@@ -65,7 +65,7 @@ namespace TCC.UI
                 }
                 model.DatSaida = DateTime.Now;
                 model.IdCli = this._modelCliente.IdCliente;
-                model.IdOrdem = Convert.ToInt32(this._modelOrdemProd.Id_ordem);
+                model.IdOrdem = Convert.ToInt32(this._modelProduto.Id_produto);
                 model.IdTipoProduto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
                 model.NotaFisc = this.txtNotaFiscal.Text;
                 if (string.IsNullOrEmpty(this.txtQtdVenda.Text) == true)
@@ -151,7 +151,7 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoClienteVazioException();
             }
-            else if (this._modelOrdemProd == null)
+            else if (this._modelProduto == null)
             {
                 throw new BUSINESS.Exceptions.CodigoOrdemProducaoVazioException();
             }

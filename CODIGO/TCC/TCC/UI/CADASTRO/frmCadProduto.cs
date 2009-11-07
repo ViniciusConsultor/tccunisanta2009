@@ -168,8 +168,8 @@ namespace TCC.UI
 
         private void Insere()
         {
-            mOrdemProducao model;
-            rOrdemProducao regra = new rOrdemProducao();
+            mProduto model;
+            rProduto regra = new rProduto();
             try
             {
                 this.ValidaDadosNulos();
@@ -224,14 +224,14 @@ namespace TCC.UI
             }
         }
 
-        private mOrdemProducao PegaDadosTela()
+        private mProduto PegaDadosTela()
         {
-            mOrdemProducao model = new mOrdemProducao();
-            rOrdemProducao regra = new rOrdemProducao();
+            mProduto model = new mProduto();
+            rProduto regra = new rProduto();
 
             try
             {
-                model.Dsc_ordem = this.txtDs.Text;
+                model.Dsc_produto = this.txtDs.Text;
              //   model.Id_depto = Convert.ToInt32( this._modelDepartamento.IdDepto);
                 model.IdKit = Convert.ToInt32(this._modelKit.IdKit);
                 model.Id_tipo_produto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);

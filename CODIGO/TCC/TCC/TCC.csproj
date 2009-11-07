@@ -115,11 +115,13 @@
     <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\DescDepartamentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemExistenteException.cs" />
-    <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\GridPecaSemDadosException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\ItemSemPecaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\NomeItemVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\QuantidadeMenorZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\QuantidadeVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\TelaResumoCanceladaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\CidadeVazioException.cs" />
@@ -164,12 +166,12 @@
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
-    <Compile Include="BUSINESS\rOrdemProducao.cs" />
     <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPecaFornecedor.cs" />
     <Compile Include="BUSINESS\rPedidoVenda.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
+    <Compile Include="BUSINESS\rProduto.cs" />
     <Compile Include="BUSINESS\rTipoMotor.cs" />
     <Compile Include="BUSINESS\rTipoPeca.cs" />
     <Compile Include="BUSINESS\rTipoProduto.cs" />
@@ -180,6 +182,7 @@
     <Compile Include="BUSINESS\UTIL\Auxiliar.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BUSINESS\UTIL\rProduto.cs" />
     <Compile Include="BUSINESS\UTIL\Validacoes.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
     <Compile Include="DAL\ConectaBanco.cs" />
@@ -221,13 +224,13 @@
     <Compile Include="MODEL\mNumMotor.cs" />
     <Compile Include="MODEL\ModelPai.cs" />
     <Compile Include="MODEL\mOrdemCompra.cs" />
-    <Compile Include="MODEL\mOrdemProducao.cs" />
     <Compile Include="MODEL\mPeca.cs" />
     <Compile Include="MODEL\mPecaEstoque.cs" />
     <Compile Include="MODEL\mPecaFornecedor.cs" />
     <Compile Include="MODEL\mPedidoVenda.cs" />
     <Compile Include="MODEL\mPerfil.cs" />
     <Compile Include="MODEL\mPerfilMenu.cs" />
+    <Compile Include="MODEL\mProduto.cs" />
     <Compile Include="MODEL\mSubMenu.cs" />
     <Compile Include="MODEL\mTipoMotor.cs" />
     <Compile Include="MODEL\mTipoPeca.cs" />
@@ -322,10 +325,6 @@
       <DependentUpon>frmBuscaVenda.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\BUSCA\frmBuscaOrdemMotor.resx">
-      <DependentUpon>frmBuscaOrdemMotor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadCliente.resx">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -358,8 +357,8 @@
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmCadItemPeca.resx">
-      <DependentUpon>frmCadItemPeca.cs</DependentUpon>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadItem.resx">
+      <DependentUpon>frmCadItem.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadKitGrupoPeca.resx">
@@ -376,10 +375,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadOrdemCompra.resx">
       <DependentUpon>frmCadOrdemCompra.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmCadOrdemProducao.resx">
-      <DependentUpon>frmCadOrdemProducao.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPeca.resx">
@@ -405,6 +400,9 @@
     <EmbeddedResource Include="UI\CADASTRO\frmCadPerfilMenu.resx">
       <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadProduto.resx">
+      <DependentUpon>frmCadProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadTipoMotor.resx">
       <DependentUpon>frmCadTipoMotor.cs</DependentUpon>
@@ -444,6 +442,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoItemPeca.resx">
+      <DependentUpon>frmResumoItemPeca.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -582,12 +584,6 @@
     <Compile Include="UI\BUSCA\frmBuscaVenda.Designer.cs">
       <DependentUpon>frmBuscaVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\BUSCA\frmBuscaOrdemMotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\BUSCA\frmBuscaOrdemMotor.Designer.cs">
-      <DependentUpon>frmBuscaOrdemMotor.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\CADASTRO\frmCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -636,11 +632,11 @@
     <Compile Include="UI\CADASTRO\frmCadFornecedor.Designer.cs">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmCadItemPeca.cs">
+    <Compile Include="UI\CADASTRO\frmCadItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmCadItemPeca.Designer.cs">
-      <DependentUpon>frmCadItemPeca.cs</DependentUpon>
+    <Compile Include="UI\CADASTRO\frmCadItem.Designer.cs">
+      <DependentUpon>frmCadItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadKitGrupoPeca.cs">
       <SubType>Form</SubType>
@@ -665,12 +661,6 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadOrdemCompra.Designer.cs">
       <DependentUpon>frmCadOrdemCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadOrdemProducao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadOrdemProducao.Designer.cs">
-      <DependentUpon>frmCadOrdemProducao.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadPeca.cs">
       <SubType>Form</SubType>
@@ -707,6 +697,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadPerfilMenu.Designer.cs">
       <DependentUpon>frmCadPerfilMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadProduto.Designer.cs">
+      <DependentUpon>frmCadProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadTipoMotor.cs">
       <SubType>Form</SubType>
@@ -765,16 +761,12 @@
     <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="UI\img\acquisition.png" />
-    <Content Include="UI\img\bg_login.jpg" />
-    <Content Include="UI\img\bg_principal.jpg" />
-    <Content Include="UI\img\bg_telas.jpg" />
-    <None Include="UI\img\btnSalvar.png" />
-    <None Include="UI\img\eraser.png" />
-    <None Include="UI\img\corel draw.png" />
-    <None Include="UI\img\trash_can.png" />
+    <Compile Include="UI\Resumo\frmResumoItemPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoItemPeca.Designer.cs">
+      <DependentUpon>frmResumoItemPeca.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
