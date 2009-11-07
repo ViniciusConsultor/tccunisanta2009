@@ -9,6 +9,79 @@ namespace TCC.BUSINESS
 {
     class rItem : ComandosSql
     {
+        public DataTable BuscaItemNome(string parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(parametro) == true)
+                {
+                    return base.BuscaDados("sp_busca_item");
+                }
+                else
+                {
+                    param = new SqlParameter("@nom", parametro);
+                    return base.BuscaDados("sp_busca_item_param_nome", param);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+                
+        public DataTable BuscaItemCodigo(string parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(parametro) == true)
+                {
+                    return base.BuscaDados("sp_busca_item");
+                }
+                else
+                {
+                    param = new SqlParameter("@id_item_real", parametro);
+                    return base.BuscaDados("sp_busca_item_param_codigo", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+        public bool VerificaExistenciaItem(string idItemReal)
+        {
+            SqlParameter param = new SqlParameter("@id_item_real", idItemReal);
+            DataTable dtRetorno;
+            try
+            {
+                dtRetorno = base.BuscaDados("sp_existe_item", param);
+                if (dtRetorno.Rows[0]["flg_existe"].ToString().Equals("1") == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public int BuscaIdMaximo()
         {
             return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_item", "Item"));

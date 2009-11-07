@@ -14,7 +14,8 @@ namespace TCC.UI
     {
         #region Atributos
         List<mPeca> _modelPeca;
-        mItemPeca _modelItemPeca;
+        List<mItemKit> _modelItemKit;
+        int _idItem;
         #endregion Atributos
 
         #region Construtor
@@ -36,7 +37,7 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this._modelItemPeca = null;
+            this._modelItemKit = null;
             this._modelPeca = null;
         }
         #endregion btnLimpar Click
@@ -48,40 +49,65 @@ namespace TCC.UI
         }
         #endregion btnVoltar Click
 
-        #region btnCdItemPeca Click
-        private void btnCdItemPeca_Click(object sender, EventArgs e)
-        {
-            this._modelItemPeca = new mItemPeca();
-            frmBuscaItemPeca objTela = new frmBuscaItemPeca(this._modelItemPeca);
-            try
-            {
-                DialogResult resultado = objTela.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelItemPeca = null;
-                }
-                else
-                {
-                    //   this.txtCdItemPeca.Text = this._modelItemPeca.Nom_item_peca;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objTela = null;
-            }
-        }
-        #endregion btnCdItemPeca Click
-
         #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
         }
         #endregion btnAceitar Click
+
+        #region btnBuscarPecaDtGrid Click
+        private void btnBuscarItemDtGrid_Click(object sender, EventArgs e)
+        {
+            this.PopulaGrid();
+            if (this._modelItemKit != null)
+            {
+                if (this._modelItemKit.Count > 0)
+                {
+                    this.ComparaDadosGrid();
+                }
+            }
+        }
+        #endregion btnBuscarPecaDtGrid Click
+
+        #region dgItems SelectionChanged
+        private void dgItems_SelectionChanged(object sender, EventArgs e)
+        {
+            this.PopulaTelaItem();
+        }
+        #endregion dgItems SelectionChanged
+
+        #region btnAdicionaItem Click
+        private void btnAdicionaItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.ValidaAdicaoItem();
+                if (this._modelItemKit != null)
+                {
+                    if (this._modelItemKit.Count > 0)
+                    {
+                        this.AlteraModelItemKit();
+                    }
+                }
+                else
+                {
+                    this.PopulaModelItemKit();
+                }
+                this.AtualizaGrid();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException)
+            {
+                MessageBox.Show("É Necessario buscar itens.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarItemDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException)
+            {
+                MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdItem.Focus();
+            }
+        }
+        #endregion btnAdicionaItem Click
 
         #endregion Eventos
 
@@ -95,17 +121,39 @@ namespace TCC.UI
         {
             mKitGrupoPeca model;
             rKitGrupoPeca regra = new rKitGrupoPeca();
+            rItemKit regraItemKit = new rItemKit();
+
             try
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
-                base.LimpaDadosTela(this);
+                this.CompletaListaModelItemKit(model);
+                foreach (mItemKit modelItemKit in this._modelItemKit)
+                {
+                    regraItemKit.ValidarInsere(modelItemKit);
+                }
+                this.btnLimpar_Click(null, null);
             }
-            catch (BUSINESS.Exceptions.CodigoItemPecaVazioException)
+            catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitExistenteException)
             {
-                MessageBox.Show("É Necessário Buscar o código do Item da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.btnBuscaItemPeca.Focus();
+                MessageBox.Show("Código do Kit já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoKit.Focus();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.KitSemItemException)
+            {
+                MessageBox.Show("É necessário associar um item ao kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarItemDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o nome do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.TxtNmItem.Focus();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o código da Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoKit.Focus();
             }
             catch (Exception ex)
             {
@@ -115,6 +163,7 @@ namespace TCC.UI
             {
                 model = null;
                 regra = null;
+                regraItemKit = null;
             }
         }
         #endregion Insere
@@ -125,13 +174,17 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (this._modelItemPeca == null)
+            if (string.IsNullOrEmpty(this.txtCodigoKit.Text) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoItemPecaVazioException();
+                throw new BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException();
             }
-            else if (this._modelPeca == null)
+            else if (string.IsNullOrEmpty(this.TxtNmItem.Text) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoPecaVazioExeception();
+                throw new BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException();
+            }
+            else if (this._modelItemKit == null)
+            {
+                throw new BUSINESS.Exceptions.KitGrupoPeca.KitSemItemException();
             }
         }
         #endregion Valida Dados Nulos
@@ -148,9 +201,11 @@ namespace TCC.UI
 
             try
             {
+                model.IdKit = regra.BuscaIdMaximo();
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
                 model.Nom_grupo = this.txtNmKit.Text;
+                model.IdKitReal = this.txtCodigoKit.Text;
 
                 return model;
             }
@@ -164,6 +219,280 @@ namespace TCC.UI
             }
         }
         #endregion Pega Dados Tela 
+
+        #region Completa Lista Model Item Kit
+        /// <summary>
+        /// Completa a lista de model Item Kit com o id do kit que foi gravado no Banco de dados
+        /// </summary>
+        /// <param name="modelKit">model do Kit onde esta o id</param>
+        private void CompletaListaModelItemKit(mKitGrupoPeca modeKit)
+        {
+            foreach (mItemKit model in this._modelItemKit)
+            {
+                model.Id_item = modeKit.IdKit;
+            }
+        }
+        #endregion Completa Lista Model Item Kit
+
+        #region Busca Item
+        /// <summary>
+        /// Busca Item atravez do filtro escolhido pelo usuario
+        /// </summary>
+        /// <param name="nomeItem">o filtro passado pelo usuário pode ser Vazio</param>
+        /// <returns>DataTable com o resultado da query</returns>
+        private DataTable BuscaItem(string nomeItem)
+        {
+            rItem regraItem = new rItem();
+            try
+            {
+                if (this.rdbCodigo.Checked == true)
+                {
+                    return regraItem.BuscaItemCodigo(nomeItem);
+                }
+                else
+                {
+                    return regraItem.BuscaItemNome(nomeItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraItem = null;
+            }
+        }
+        #endregion Busca Item
+        
+        #region Popula Grid
+        /// <summary>
+        /// Utiliza os dados da busca para popular o grid
+        /// </summary>
+        private void PopulaGrid()
+        {
+            DataTable dtSource = null;
+            try
+            {
+                dtSource = this.BuscaItem(this.txtBuscaFiltro.Text);
+                this.dgItems.DataSource = dtSource;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
+        }
+        #endregion Popula Grid
+        
+        #region Popula Model Item Kit
+        /// <summary>
+        /// Popula o model item kit com os dados que estão no painel da tela
+        /// </summary>
+        /// <returns>model populado</returns>
+        private mItemKit PopulaModelItemKit()
+        {
+            mItemKit model = new mItemKit();
+            try
+            {
+                if (this._modelItemKit == null)
+                {
+                    this._modelItemKit = new List<mItemKit>();
+                }
+                model.Dat_alt = DateTime.Now;
+                model.Flg_ativo = true;
+                model.Id_kit = null;
+                model.Id_item = this._idItem;
+                model.Qtd_item = Convert.ToInt32(this.txtQtdItem.Text);
+                this._modelItemKit.Add(model);
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+        #endregion Popula Model Item Kit
+
+        #region Existe Model Item Kit
+        /// <summary>
+        /// Verifica a Existencia da Item na Lista de Model
+        /// </summary>
+        /// <param name="idItem">Id do Item Procurado</param>
+        /// <returns>Indice da pocição; Caso não encontre retorna -1</returns>
+        private int ExisteModelItemKit(int idItem)
+        {
+            int retorno = -1;
+            try
+            {
+                if (this._modelItemKit != null)
+                {
+                    for (int cont = 0; cont < this._modelItemKit.Count; cont++)
+                    {
+                        if (Convert.ToInt32(this._modelItemKit[cont].Id_item) == idItem)
+                        {
+                            retorno = cont;
+                        }
+                    }
+                    return retorno;
+                }
+                else
+                {
+                    return retorno;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Existe Model Item Kit
+
+        #region Popula Tela Item
+        /// <summary>
+        /// Pega os dados do grid para popular os TextBox na tela
+        /// </summary>
+        private void PopulaTelaItem()
+        {
+            try
+            {
+                this.ComparaDadosGrid();
+                if (this.dgItems.Rows.Count > 0)
+                {
+                    int indice = this.dgItems.CurrentRow.Index;
+                    this.TxtNmItem.Text = this.dgItems["hNome", indice].Value.ToString();
+                    this.txtQtdItem.Text = this.dgItems["hQtd", indice].Value.ToString();
+                    this._idItem = Convert.ToInt32(this.dgItems["hIdItem", indice].Value);
+                    this.txtQtdItem.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Popula Tela Item
+
+        #region Altera Model Item Kit
+        /// <summary>
+        /// Caso o id da item já exista no model apenas troca para a quantidade certa
+        /// </summary>
+        private void AlteraModelItemKit()
+        {
+            int indice;
+            try
+            {
+                indice = this.ExisteModelItemKit(this._idItem);
+                if (indice > -1)
+                {
+                    this._modelItemKit[indice].Qtd_item = Convert.ToInt32(this.txtQtdItem.Text);
+                }
+                else
+                {
+                    this.PopulaModelItemKit();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Altera Model Item Kit
+
+        #region Atualiza Grid
+        /// <summary>
+        /// Atualiza o Grid com a quantidade do TextBox de quantidade
+        /// </summary>
+        private void AtualizaGrid()
+        {
+            DataTable dtSource = null;
+            try
+            {
+                dtSource = (DataTable)this.dgItems.DataSource;
+                dtSource.Columns["qtd"].ReadOnly = false;
+                dtSource.Rows[this.dgItems.CurrentRow.Index]["qtd"] = this.txtQtdItem.Text;
+                this.dgItems.DataSource = dtSource;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
+        }
+        #endregion Atualiza Grid
+        
+        #region Compara Dados Grid
+        /// <summary>
+        /// Compara os dados do Grid com os do model e substitui a quantidade caso exitam ids iguais
+        /// </summary>
+        private void ComparaDadosGrid()
+        {
+            DataTable dtSource = null;
+            int indice;
+            try
+            {
+                dtSource = (DataTable)this.dgItems.DataSource;
+                for (int contador = 0; contador < dtSource.Rows.Count; contador++)
+                {
+                    indice = this.ExisteModelItemKit(Convert.ToInt32(dtSource.Rows[contador]["id_item"]));
+                    if (indice > -1)
+                    {
+                        dtSource.Columns["qtd"].ReadOnly = false;
+                        dtSource.Rows[contador]["qtd"] = this._modelItemKit[indice].Qtd_item.ToString();
+                    }
+                }
+                this.dgItems.DataSource = dtSource;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
+        }
+        #endregion Compara Dados Grid
+        
+        #region Valida Adicao Item
+        /// <summary>
+        /// Valida a adição de Itens a lista
+        /// </summary>
+        private void ValidaAdicaoItem()
+        {
+            if (this.dgItems.DataSource == null)
+            {
+                throw new BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException();
+            }
+            int quantidade = Convert.ToInt32(this.txtQtdItem.Text);
+            if (quantidade < 1)
+            {
+                throw new BUSINESS.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException();
+            }
+        }
+        #endregion Valida Adicao Item
 
         #endregion Metodos
     }

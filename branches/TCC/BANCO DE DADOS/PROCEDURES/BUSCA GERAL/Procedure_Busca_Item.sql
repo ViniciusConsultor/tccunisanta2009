@@ -6,5 +6,5 @@
  
  CREATE PROCEDURE sp_busca_item
  AS
- SELECT id_item, nom as 'Item' FROM Item
+ SELECT id_item, id_item_real as 'Codigo', nom as 'Item', 0 as 'qtd' FROM Item
  WHERE flg_ativo = 1

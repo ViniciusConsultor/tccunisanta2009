@@ -205,6 +205,26 @@ namespace TCC.UI
                 }
                 this.btnLimpa_Click(null, null);
             }
+            catch (BUSINESS.Exceptions.Item.CodigoRealItemExistenteException)
+            {
+                MessageBox.Show("Código do item já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoItem.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.ItemSemPecaException)
+            {
+                MessageBox.Show("É necessário associar uma peça ao item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarPecaDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.NomeItemVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o nome da Item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNmItem.Focus();
+            }
+            catch (BUSINESS.Exceptions.Item.CodigoRealItemVazioException)
+            {
+                MessageBox.Show("É Necessário preencher o código da Item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoItem.Focus();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -405,10 +425,6 @@ namespace TCC.UI
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-
             }
         }
         #endregion Existe Model Item Peca
