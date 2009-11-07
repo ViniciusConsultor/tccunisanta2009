@@ -39,21 +39,23 @@
             this.txtNmItem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAdicionaPeca = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblCdItemReal = new System.Windows.Forms.Label();
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
-            this.btnAdicionaPeca = new System.Windows.Forms.Button();
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.CdPecaReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NmPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
-            this.txtQtdPeca = new System.Windows.Forms.TextBox();
             this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.lblNmPeca = new System.Windows.Forms.Label();
-            this.rdbFiltro1 = new System.Windows.Forms.RadioButton();
-            this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
+            this.rdbNome = new System.Windows.Forms.RadioButton();
+            this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
+            this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +118,18 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnAdicionaPeca
+            // 
+            this.btnAdicionaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaPeca.BackgroundImage")));
+            this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionaPeca.Location = new System.Drawing.Point(66, 175);
+            this.btnAdicionaPeca.Name = "btnAdicionaPeca";
+            this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
+            this.btnAdicionaPeca.TabIndex = 22;
+            this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adiciona Peça");
+            this.btnAdicionaPeca.UseVisualStyleBackColor = true;
+            this.btnAdicionaPeca.Click += new System.EventHandler(this.btnAdicionaPeca_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(167, 22);
@@ -135,15 +149,15 @@
             // 
             // gbBuscaPecaItem
             // 
+            this.gbBuscaPecaItem.Controls.Add(this.txtQtdPeca);
             this.gbBuscaPecaItem.Controls.Add(this.btnAdicionaPeca);
             this.gbBuscaPecaItem.Controls.Add(this.dgItems);
             this.gbBuscaPecaItem.Controls.Add(this.txtFiltro);
             this.gbBuscaPecaItem.Controls.Add(this.lblQtdPeca);
-            this.gbBuscaPecaItem.Controls.Add(this.txtQtdPeca);
             this.gbBuscaPecaItem.Controls.Add(this.btnBuscarPecaDtGrid);
             this.gbBuscaPecaItem.Controls.Add(this.lblNmPeca);
-            this.gbBuscaPecaItem.Controls.Add(this.rdbFiltro1);
-            this.gbBuscaPecaItem.Controls.Add(this.rdbfiltro0);
+            this.gbBuscaPecaItem.Controls.Add(this.rdbNome);
+            this.gbBuscaPecaItem.Controls.Add(this.rdbCodigo);
             this.gbBuscaPecaItem.Controls.Add(this.TxtNmPeca);
             this.gbBuscaPecaItem.Location = new System.Drawing.Point(80, 116);
             this.gbBuscaPecaItem.Name = "gbBuscaPecaItem";
@@ -151,17 +165,6 @@
             this.gbBuscaPecaItem.TabIndex = 8;
             this.gbBuscaPecaItem.TabStop = false;
             this.gbBuscaPecaItem.Text = "Peças do Item ";
-            // 
-            // btnAdicionaPeca
-            // 
-            this.btnAdicionaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaPeca.BackgroundImage")));
-            this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaPeca.Location = new System.Drawing.Point(66, 175);
-            this.btnAdicionaPeca.Name = "btnAdicionaPeca";
-            this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaPeca.TabIndex = 22;
-            this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adiciona Peça");
-            this.btnAdicionaPeca.UseVisualStyleBackColor = true;
             // 
             // dgItems
             // 
@@ -180,8 +183,10 @@
             this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CdPecaReal,
-            this.NmPeca});
+            this.hIdPeca,
+            this.hCodigo,
+            this.hNome,
+            this.hQtd});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,7 +195,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgItems.Location = new System.Drawing.Point(170, 56);
+            this.dgItems.Location = new System.Drawing.Point(188, 60);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
@@ -206,20 +211,40 @@
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
             this.dgItems.TabIndex = 21;
+            this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
-            // CdPecaReal
+            // hIdPeca
             // 
-            this.CdPecaReal.HeaderText = "Codigo";
-            this.CdPecaReal.Name = "CdPecaReal";
-            this.CdPecaReal.ReadOnly = true;
-            this.CdPecaReal.Width = 65;
+            this.hIdPeca.DataPropertyName = "id_peca";
+            this.hIdPeca.HeaderText = "IdPeca";
+            this.hIdPeca.Name = "hIdPeca";
+            this.hIdPeca.ReadOnly = true;
+            this.hIdPeca.Visible = false;
+            this.hIdPeca.Width = 66;
             // 
-            // NmPeca
+            // hCodigo
             // 
-            this.NmPeca.HeaderText = "Nome";
-            this.NmPeca.Name = "NmPeca";
-            this.NmPeca.ReadOnly = true;
-            this.NmPeca.Width = 60;
+            this.hCodigo.DataPropertyName = "Codigo";
+            this.hCodigo.HeaderText = "Código";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 65;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Peça";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 60;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 87;
             // 
             // txtFiltro
             // 
@@ -239,15 +264,6 @@
             this.lblQtdPeca.TabIndex = 18;
             this.lblQtdPeca.Text = "Quantidade";
             // 
-            // txtQtdPeca
-            // 
-            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdPeca.Location = new System.Drawing.Point(36, 130);
-            this.txtQtdPeca.MaxLength = 20;
-            this.txtQtdPeca.Name = "txtQtdPeca";
-            this.txtQtdPeca.Size = new System.Drawing.Size(102, 20);
-            this.txtQtdPeca.TabIndex = 16;
-            // 
             // btnBuscarPecaDtGrid
             // 
             this.btnBuscarPecaDtGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarPecaDtGrid.BackgroundImage")));
@@ -257,6 +273,7 @@
             this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
             this.btnBuscarPecaDtGrid.TabIndex = 13;
             this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarPecaDtGrid.Click += new System.EventHandler(this.btnBuscarPecaDtGrid_Click);
             // 
             // lblNmPeca
             // 
@@ -267,27 +284,27 @@
             this.lblNmPeca.TabIndex = 17;
             this.lblNmPeca.Text = "Nome Peça";
             // 
-            // rdbFiltro1
+            // rdbNome
             // 
-            this.rdbFiltro1.AutoSize = true;
-            this.rdbFiltro1.Location = new System.Drawing.Point(279, 19);
-            this.rdbFiltro1.Name = "rdbFiltro1";
-            this.rdbFiltro1.Size = new System.Drawing.Size(53, 17);
-            this.rdbFiltro1.TabIndex = 20;
-            this.rdbFiltro1.Text = "Nome";
-            this.rdbFiltro1.UseVisualStyleBackColor = true;
+            this.rdbNome.AutoSize = true;
+            this.rdbNome.Location = new System.Drawing.Point(279, 19);
+            this.rdbNome.Name = "rdbNome";
+            this.rdbNome.Size = new System.Drawing.Size(53, 17);
+            this.rdbNome.TabIndex = 20;
+            this.rdbNome.Text = "Nome";
+            this.rdbNome.UseVisualStyleBackColor = true;
             // 
-            // rdbfiltro0
+            // rdbCodigo
             // 
-            this.rdbfiltro0.AutoSize = true;
-            this.rdbfiltro0.Checked = true;
-            this.rdbfiltro0.Location = new System.Drawing.Point(215, 19);
-            this.rdbfiltro0.Name = "rdbfiltro0";
-            this.rdbfiltro0.Size = new System.Drawing.Size(58, 17);
-            this.rdbfiltro0.TabIndex = 19;
-            this.rdbfiltro0.TabStop = true;
-            this.rdbfiltro0.Text = "Codigo";
-            this.rdbfiltro0.UseVisualStyleBackColor = true;
+            this.rdbCodigo.AutoSize = true;
+            this.rdbCodigo.Checked = true;
+            this.rdbCodigo.Location = new System.Drawing.Point(215, 19);
+            this.rdbCodigo.Name = "rdbCodigo";
+            this.rdbCodigo.Size = new System.Drawing.Size(58, 17);
+            this.rdbCodigo.TabIndex = 19;
+            this.rdbCodigo.TabStop = true;
+            this.rdbCodigo.Text = "Codigo";
+            this.rdbCodigo.UseVisualStyleBackColor = true;
             // 
             // TxtNmPeca
             // 
@@ -297,6 +314,15 @@
             this.TxtNmPeca.Name = "TxtNmPeca";
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
+            // 
+            // txtQtdPeca
+            // 
+            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdPeca.Location = new System.Drawing.Point(36, 131);
+            this.txtQtdPeca.Name = "txtQtdPeca";
+            this.txtQtdPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdPeca.TabIndex = 23;
+            this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // frmCadItemPeca
             // 
@@ -339,15 +365,17 @@
         private System.Windows.Forms.GroupBox gbBuscaPecaItem;
         private System.Windows.Forms.Button btnAdicionaPeca;
         private System.Windows.Forms.DataGridView dgItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CdPecaReal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NmPeca;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label lblQtdPeca;
-        private System.Windows.Forms.TextBox txtQtdPeca;
         private System.Windows.Forms.Button btnBuscarPecaDtGrid;
         private System.Windows.Forms.Label lblNmPeca;
-        private System.Windows.Forms.RadioButton rdbFiltro1;
-        private System.Windows.Forms.RadioButton rdbfiltro0;
+        private System.Windows.Forms.RadioButton rdbNome;
+        private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.TextBox TxtNmPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
+        private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
     }
 }
