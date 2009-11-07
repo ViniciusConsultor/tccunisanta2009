@@ -109,10 +109,6 @@ namespace TCC.BUSINESS
             {
                 throw ex;
             }
-            finally
-            {
-
-            }
         }
 
         private void ValidaDados(mPeca model)

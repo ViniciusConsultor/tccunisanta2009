@@ -30,31 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadKitGrupoPeca));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
-            this.txtCdItemPeca = new System.Windows.Forms.TextBox();
-            this.lblCdItemPeca = new System.Windows.Forms.Label();
             this.txtNmKit = new System.Windows.Forms.TextBox();
             this.lblNmKit = new System.Windows.Forms.Label();
-            this.btnBuscaItemPeca = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.btnAdicionaItem = new System.Windows.Forms.Button();
+            this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NmItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.txtQtdItem = new System.Windows.Forms.TextBox();
             this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
             this.lblNmItem = new System.Windows.Forms.Label();
-            this.rdbFiltro1 = new System.Windows.Forms.RadioButton();
-            this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
+            this.rdbNome = new System.Windows.Forms.RadioButton();
+            this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmItem = new System.Windows.Forms.TextBox();
+            this.lblCdKitReal = new System.Windows.Forms.Label();
+            this.txtCodigoKit = new System.Windows.Forms.TextBox();
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -95,32 +96,13 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
-            // txtCdItemPeca
-            // 
-            this.txtCdItemPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdItemPeca.Location = new System.Drawing.Point(209, 15);
-            this.txtCdItemPeca.Name = "txtCdItemPeca";
-            this.txtCdItemPeca.ReadOnly = true;
-            this.txtCdItemPeca.Size = new System.Drawing.Size(32, 20);
-            this.txtCdItemPeca.TabIndex = 14;
-            this.txtCdItemPeca.TabStop = false;
-            // 
-            // lblCdItemPeca
-            // 
-            this.lblCdItemPeca.AutoSize = true;
-            this.lblCdItemPeca.Location = new System.Drawing.Point(94, 17);
-            this.lblCdItemPeca.Name = "lblCdItemPeca";
-            this.lblCdItemPeca.Size = new System.Drawing.Size(109, 13);
-            this.lblCdItemPeca.TabIndex = 15;
-            this.lblCdItemPeca.Text = "Codigo do Item Peca ";
-            // 
             // txtNmKit
             // 
             this.txtNmKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNmKit.Location = new System.Drawing.Point(156, 44);
             this.txtNmKit.MaxLength = 50;
             this.txtNmKit.Name = "txtNmKit";
-            this.txtNmKit.Size = new System.Drawing.Size(188, 20);
+            this.txtNmKit.Size = new System.Drawing.Size(133, 20);
             this.txtNmKit.TabIndex = 3;
             // 
             // lblNmKit
@@ -132,41 +114,10 @@
             this.lblNmKit.TabIndex = 15;
             this.lblNmKit.Text = "Nome do Kit";
             // 
-            // btnBuscaItemPeca
-            // 
-            this.btnBuscaItemPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaItemPeca.BackgroundImage")));
-            this.btnBuscaItemPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaItemPeca.Location = new System.Drawing.Point(247, 15);
-            this.btnBuscaItemPeca.Name = "btnBuscaItemPeca";
-            this.btnBuscaItemPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaItemPeca.TabIndex = 1;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaItemPeca, "Buscar Item Peça");
-            this.btnBuscaItemPeca.UseVisualStyleBackColor = true;
-            this.btnBuscaItemPeca.Click += new System.EventHandler(this.btnCdItemPeca_Click);
-            // 
             // toolTipLegenda
             // 
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
-            // 
-            // gbBuscaItem
-            // 
-            this.gbBuscaItem.Controls.Add(this.btnAdicionaItem);
-            this.gbBuscaItem.Controls.Add(this.dgItems);
-            this.gbBuscaItem.Controls.Add(this.txtBuscaFiltro);
-            this.gbBuscaItem.Controls.Add(this.lblQtdPeca);
-            this.gbBuscaItem.Controls.Add(this.txtQtdItem);
-            this.gbBuscaItem.Controls.Add(this.btnBuscarItemDtGrid);
-            this.gbBuscaItem.Controls.Add(this.lblNmItem);
-            this.gbBuscaItem.Controls.Add(this.rdbFiltro1);
-            this.gbBuscaItem.Controls.Add(this.rdbfiltro0);
-            this.gbBuscaItem.Controls.Add(this.TxtNmItem);
-            this.gbBuscaItem.Location = new System.Drawing.Point(83, 116);
-            this.gbBuscaItem.Name = "gbBuscaItem";
-            this.gbBuscaItem.Size = new System.Drawing.Size(498, 243);
-            this.gbBuscaItem.TabIndex = 16;
-            this.gbBuscaItem.TabStop = false;
-            this.gbBuscaItem.Text = "Items do Kit";
             // 
             // btnAdicionaItem
             // 
@@ -178,6 +129,26 @@
             this.btnAdicionaItem.TabIndex = 22;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adiciona ITem");
             this.btnAdicionaItem.UseVisualStyleBackColor = true;
+            this.btnAdicionaItem.Click += new System.EventHandler(this.btnAdicionaItem_Click);
+            // 
+            // gbBuscaItem
+            // 
+            this.gbBuscaItem.Controls.Add(this.btnAdicionaItem);
+            this.gbBuscaItem.Controls.Add(this.dgItems);
+            this.gbBuscaItem.Controls.Add(this.txtBuscaFiltro);
+            this.gbBuscaItem.Controls.Add(this.lblQtdPeca);
+            this.gbBuscaItem.Controls.Add(this.txtQtdItem);
+            this.gbBuscaItem.Controls.Add(this.btnBuscarItemDtGrid);
+            this.gbBuscaItem.Controls.Add(this.lblNmItem);
+            this.gbBuscaItem.Controls.Add(this.rdbNome);
+            this.gbBuscaItem.Controls.Add(this.rdbCodigo);
+            this.gbBuscaItem.Controls.Add(this.TxtNmItem);
+            this.gbBuscaItem.Location = new System.Drawing.Point(83, 116);
+            this.gbBuscaItem.Name = "gbBuscaItem";
+            this.gbBuscaItem.Size = new System.Drawing.Size(498, 243);
+            this.gbBuscaItem.TabIndex = 16;
+            this.gbBuscaItem.TabStop = false;
+            this.gbBuscaItem.Text = "Items do Kit";
             // 
             // dgItems
             // 
@@ -186,56 +157,78 @@
             this.dgItems.AllowUserToResizeColumns = false;
             this.dgItems.AllowUserToResizeRows = false;
             this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CdItem,
-            this.NmItem});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
+            this.hIdItem,
+            this.hCodigo,
+            this.hNome,
+            this.hQtd});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgItems.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgItems.Location = new System.Drawing.Point(170, 56);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
             this.dgItems.TabIndex = 21;
+            this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
-            // CdItem
+            // hIdItem
             // 
-            this.CdItem.HeaderText = "Codigo";
-            this.CdItem.Name = "CdItem";
-            this.CdItem.ReadOnly = true;
-            this.CdItem.Width = 65;
+            this.hIdItem.DataPropertyName = "id_item";
+            this.hIdItem.HeaderText = "IdItem";
+            this.hIdItem.Name = "hIdItem";
+            this.hIdItem.ReadOnly = true;
+            this.hIdItem.Visible = false;
+            this.hIdItem.Width = 59;
             // 
-            // NmItem
+            // hCodigo
             // 
-            this.NmItem.HeaderText = "Nome";
-            this.NmItem.Name = "NmItem";
-            this.NmItem.ReadOnly = true;
-            this.NmItem.Width = 60;
+            this.hCodigo.DataPropertyName = "Codigo";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Item";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 85;
             // 
             // txtBuscaFiltro
             // 
@@ -273,6 +266,7 @@
             this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(40, 35);
             this.btnBuscarItemDtGrid.TabIndex = 13;
             this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarItemDtGrid.Click += new System.EventHandler(this.btnBuscarItemDtGrid_Click);
             // 
             // lblNmItem
             // 
@@ -283,27 +277,27 @@
             this.lblNmItem.TabIndex = 17;
             this.lblNmItem.Text = "Nome Item";
             // 
-            // rdbFiltro1
+            // rdbNome
             // 
-            this.rdbFiltro1.AutoSize = true;
-            this.rdbFiltro1.Location = new System.Drawing.Point(279, 19);
-            this.rdbFiltro1.Name = "rdbFiltro1";
-            this.rdbFiltro1.Size = new System.Drawing.Size(53, 17);
-            this.rdbFiltro1.TabIndex = 20;
-            this.rdbFiltro1.Text = "Nome";
-            this.rdbFiltro1.UseVisualStyleBackColor = true;
+            this.rdbNome.AutoSize = true;
+            this.rdbNome.Location = new System.Drawing.Point(279, 19);
+            this.rdbNome.Name = "rdbNome";
+            this.rdbNome.Size = new System.Drawing.Size(53, 17);
+            this.rdbNome.TabIndex = 20;
+            this.rdbNome.Text = "Nome";
+            this.rdbNome.UseVisualStyleBackColor = true;
             // 
-            // rdbfiltro0
+            // rdbCodigo
             // 
-            this.rdbfiltro0.AutoSize = true;
-            this.rdbfiltro0.Checked = true;
-            this.rdbfiltro0.Location = new System.Drawing.Point(215, 19);
-            this.rdbfiltro0.Name = "rdbfiltro0";
-            this.rdbfiltro0.Size = new System.Drawing.Size(58, 17);
-            this.rdbfiltro0.TabIndex = 19;
-            this.rdbfiltro0.TabStop = true;
-            this.rdbfiltro0.Text = "Codigo";
-            this.rdbfiltro0.UseVisualStyleBackColor = true;
+            this.rdbCodigo.AutoSize = true;
+            this.rdbCodigo.Checked = true;
+            this.rdbCodigo.Location = new System.Drawing.Point(215, 19);
+            this.rdbCodigo.Name = "rdbCodigo";
+            this.rdbCodigo.Size = new System.Drawing.Size(58, 17);
+            this.rdbCodigo.TabIndex = 19;
+            this.rdbCodigo.TabStop = true;
+            this.rdbCodigo.Text = "Codigo";
+            this.rdbCodigo.UseVisualStyleBackColor = true;
             // 
             // TxtNmItem
             // 
@@ -314,6 +308,24 @@
             this.TxtNmItem.Size = new System.Drawing.Size(102, 20);
             this.TxtNmItem.TabIndex = 14;
             // 
+            // lblCdKitReal
+            // 
+            this.lblCdKitReal.AutoSize = true;
+            this.lblCdKitReal.Location = new System.Drawing.Point(85, 15);
+            this.lblCdKitReal.Name = "lblCdKitReal";
+            this.lblCdKitReal.Size = new System.Drawing.Size(70, 13);
+            this.lblCdKitReal.TabIndex = 24;
+            this.lblCdKitReal.Text = "Codigo do Kit";
+            // 
+            // txtCodigoKit
+            // 
+            this.txtCodigoKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoKit.Location = new System.Drawing.Point(156, 12);
+            this.txtCodigoKit.MaxLength = 20;
+            this.txtCodigoKit.Name = "txtCodigoKit";
+            this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
+            this.txtCodigoKit.TabIndex = 23;
+            // 
             // frmCadKitGrupoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,14 +334,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 366);
             this.ControlBox = false;
+            this.Controls.Add(this.lblCdKitReal);
+            this.Controls.Add(this.txtCodigoKit);
             this.Controls.Add(this.gbBuscaItem);
             this.Controls.Add(this.lblNmKit);
             this.Controls.Add(this.txtNmKit);
-            this.Controls.Add(this.lblCdItemPeca);
-            this.Controls.Add(this.txtCdItemPeca);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnBuscaItemPeca);
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
             this.Name = "frmCadKitGrupoPeca";
@@ -348,24 +359,25 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.TextBox txtCdItemPeca;
-        private System.Windows.Forms.Label lblCdItemPeca;
         private System.Windows.Forms.TextBox txtNmKit;
         private System.Windows.Forms.Label lblNmKit;
-        private System.Windows.Forms.Button btnBuscaItemPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.GroupBox gbBuscaItem;
         private System.Windows.Forms.Button btnAdicionaItem;
         private System.Windows.Forms.DataGridView dgItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CdItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NmItem;
         private System.Windows.Forms.TextBox txtBuscaFiltro;
         private System.Windows.Forms.Label lblQtdPeca;
         private System.Windows.Forms.TextBox txtQtdItem;
         private System.Windows.Forms.Button btnBuscarItemDtGrid;
         private System.Windows.Forms.Label lblNmItem;
-        private System.Windows.Forms.RadioButton rdbFiltro1;
-        private System.Windows.Forms.RadioButton rdbfiltro0;
+        private System.Windows.Forms.RadioButton rdbNome;
+        private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.TextBox TxtNmItem;
+        private System.Windows.Forms.Label lblCdKitReal;
+        private System.Windows.Forms.TextBox txtCodigoKit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
     }
 }
