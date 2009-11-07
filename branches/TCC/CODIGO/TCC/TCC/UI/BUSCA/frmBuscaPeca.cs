@@ -109,7 +109,7 @@ namespace TCC.UI
             DataTable dt = new DataTable();
             try
             {
-                dt = regra.BuscaPeca(this.txtFiltro.Text);
+                dt = regra.BuscaPecaNome(this.txtFiltro.Text);
                 IniciaHeaderDatagrid();
                 dgPeca.DataSource = dt;
             }

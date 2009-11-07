@@ -9,7 +9,7 @@ namespace TCC.BUSINESS
 {
     class rPeca:ComandosSql
     {
-        public DataTable BuscaPeca(string parametro)
+        public DataTable BuscaPecaNome(string parametro)
         {
             SqlParameter param = null;
             try
@@ -21,7 +21,33 @@ namespace TCC.BUSINESS
                 else
                 {
                     param = new SqlParameter("@nom", parametro);
-                    return base.BuscaDados("sp_busca_peca_param", param);
+                    return base.BuscaDados("sp_busca_peca_param_nome", param);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+        public DataTable BuscaPecaCodigo(string parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(parametro) == true)
+                {
+                    return base.BuscaDados("sp_busca_peca");
+                }
+                else
+                {
+                    param = new SqlParameter("@id_peca_real", parametro);
+                    return base.BuscaDados("sp_busca_peca_param_codigo", param);
                 }
             }
             catch (Exception ex)
