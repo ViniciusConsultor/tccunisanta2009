@@ -62,6 +62,7 @@
             // 
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoPeca.Location = new System.Drawing.Point(137, 14);
+            this.txtCdTipoPeca.MaxLength = 50;
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
             this.txtCdTipoPeca.ReadOnly = true;
             this.txtCdTipoPeca.Size = new System.Drawing.Size(118, 20);
@@ -181,7 +182,7 @@
             // 
             this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdPeca.Location = new System.Drawing.Point(145, 178);
-            this.txtQtdPeca.MaxLength = 9;
+            this.txtQtdPeca.MaxLength = 3;
             this.txtQtdPeca.Name = "txtQtdPeca";
             this.txtQtdPeca.Size = new System.Drawing.Size(43, 20);
             this.txtQtdPeca.TabIndex = 5;

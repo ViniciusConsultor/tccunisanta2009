@@ -39,11 +39,11 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaPeca = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAceitar = new System.Windows.Forms.Button();
             this.lblCodMotor = new System.Windows.Forms.Label();
             this.txtCodigoPeca = new System.Windows.Forms.TextBox();
             this.lblCodKit = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnAceitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -74,6 +74,7 @@
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Location = new System.Drawing.Point(191, 20);
+            this.txtCdDepartamento.MaxLength = 15;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(65, 20);
@@ -141,6 +142,18 @@
             this.toolTipLegenda.SetToolTip(this.button1, "Buscar Peça");
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnAceitar
+            // 
+            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(2, 4);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
+            this.btnAceitar.TabIndex = 7;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
+            this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
             // lblCodMotor
             // 
             this.lblCodMotor.AutoSize = true;
@@ -153,6 +166,7 @@
             // txtCodigoPeca
             // 
             this.txtCodigoPeca.Location = new System.Drawing.Point(156, 49);
+            this.txtCodigoPeca.MaxLength = 50;
             this.txtCodigoPeca.Name = "txtCodigoPeca";
             this.txtCodigoPeca.ReadOnly = true;
             this.txtCodigoPeca.Size = new System.Drawing.Size(100, 20);
@@ -171,23 +185,12 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(156, 75);
+            this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 26;
             this.textBox1.TabStop = false;
-            // 
-            // btnAceitar
-            // 
-            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
-            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(2, 4);
-            this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 7;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
-            this.btnAceitar.UseVisualStyleBackColor = true;
-            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // frmCadPedidoVenda
             // 

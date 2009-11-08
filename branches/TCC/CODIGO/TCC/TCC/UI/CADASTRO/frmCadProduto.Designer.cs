@@ -86,6 +86,7 @@
             // 
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdMotor.Location = new System.Drawing.Point(222, 45);
+            this.txtCdMotor.MaxLength = 5;
             this.txtCdMotor.Name = "txtCdMotor";
             this.txtCdMotor.ReadOnly = true;
             this.txtCdMotor.Size = new System.Drawing.Size(41, 20);
@@ -105,6 +106,7 @@
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Location = new System.Drawing.Point(454, 48);
+            this.txtCdDepartamento.MaxLength = 5;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(46, 20);
@@ -123,6 +125,7 @@
             // 
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdKit.Location = new System.Drawing.Point(222, 88);
+            this.txtCdKit.MaxLength = 5;
             this.txtCdKit.Name = "txtCdKit";
             this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(41, 20);
@@ -141,6 +144,7 @@
             // 
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdTipoProduto.Location = new System.Drawing.Point(455, 88);
+            this.txtCdTipoProduto.MaxLength = 5;
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
             this.txtCdTipoProduto.ReadOnly = true;
             this.txtCdTipoProduto.Size = new System.Drawing.Size(46, 20);

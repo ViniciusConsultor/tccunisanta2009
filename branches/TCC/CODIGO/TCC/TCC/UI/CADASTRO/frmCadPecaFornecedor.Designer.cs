@@ -92,6 +92,7 @@
             // txtFornecedor
             // 
             this.txtFornecedor.Location = new System.Drawing.Point(150, 69);
+            this.txtFornecedor.MaxLength = 50;
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.ReadOnly = true;
             this.txtFornecedor.Size = new System.Drawing.Size(100, 20);
@@ -100,6 +101,7 @@
             // txtPeca
             // 
             this.txtPeca.Location = new System.Drawing.Point(150, 98);
+            this.txtPeca.MaxLength = 50;
             this.txtPeca.Name = "txtPeca";
             this.txtPeca.ReadOnly = true;
             this.txtPeca.Size = new System.Drawing.Size(100, 20);

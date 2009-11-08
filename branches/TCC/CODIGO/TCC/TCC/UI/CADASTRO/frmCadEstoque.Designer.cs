@@ -37,8 +37,8 @@
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.ckbFlgNegativo = new System.Windows.Forms.CheckBox();
             this.btnInsere = new System.Windows.Forms.Button();
+            this.ckbFlgNegativo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtCdDepartamento
@@ -46,6 +46,7 @@
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Enabled = false;
             this.txtCdDepartamento.Location = new System.Drawing.Point(180, 37);
+            this.txtCdDepartamento.MaxLength = 15;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(87, 20);
@@ -121,16 +122,6 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
-            // ckbFlgNegativo
-            // 
-            this.ckbFlgNegativo.AutoSize = true;
-            this.ckbFlgNegativo.Location = new System.Drawing.Point(109, 166);
-            this.ckbFlgNegativo.Name = "ckbFlgNegativo";
-            this.ckbFlgNegativo.Size = new System.Drawing.Size(157, 17);
-            this.ckbFlgNegativo.TabIndex = 6;
-            this.ckbFlgNegativo.Text = "Estoque Peças Defeituosas";
-            this.ckbFlgNegativo.UseVisualStyleBackColor = true;
-            // 
             // btnInsere
             // 
             this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
@@ -142,6 +133,16 @@
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
+            // 
+            // ckbFlgNegativo
+            // 
+            this.ckbFlgNegativo.AutoSize = true;
+            this.ckbFlgNegativo.Location = new System.Drawing.Point(109, 166);
+            this.ckbFlgNegativo.Name = "ckbFlgNegativo";
+            this.ckbFlgNegativo.Size = new System.Drawing.Size(157, 17);
+            this.ckbFlgNegativo.TabIndex = 6;
+            this.ckbFlgNegativo.Text = "Estoque Peças Defeituosas";
+            this.ckbFlgNegativo.UseVisualStyleBackColor = true;
             // 
             // frmCadEstoque
             // 

@@ -66,6 +66,7 @@
             // txtCdPeca
             // 
             this.txtCdPeca.Location = new System.Drawing.Point(154, 57);
+            this.txtCdPeca.MaxLength = 25;
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
@@ -74,7 +75,7 @@
             // txtUltimoPreco
             // 
             this.txtUltimoPreco.Location = new System.Drawing.Point(154, 123);
-            this.txtUltimoPreco.MaxLength = 17;
+            this.txtUltimoPreco.MaxLength = 25;
             this.txtUltimoPreco.Name = "txtUltimoPreco";
             this.txtUltimoPreco.Size = new System.Drawing.Size(100, 20);
             this.txtUltimoPreco.TabIndex = 5;
@@ -82,6 +83,7 @@
             // txtCdCompra
             // 
             this.txtCdCompra.Location = new System.Drawing.Point(154, 89);
+            this.txtCdCompra.MaxLength = 25;
             this.txtCdCompra.Name = "txtCdCompra";
             this.txtCdCompra.ReadOnly = true;
             this.txtCdCompra.Size = new System.Drawing.Size(100, 20);

@@ -54,9 +54,9 @@
             this.txtCepFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnInsere = new System.Windows.Forms.Button();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.btnInsere = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCidade
@@ -223,7 +223,7 @@
             // 
             this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDDD.Location = new System.Drawing.Point(340, 246);
-            this.txtDDD.MaxLength = 50;
+            this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(36, 20);
             this.txtDDD.TabIndex = 10;
@@ -287,25 +287,6 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
-            // txtCnpj
-            // 
-            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCnpj.Location = new System.Drawing.Point(150, 245);
-            this.txtCnpj.Mask = "00,000,000/0000-00";
-            this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(147, 20);
-            this.txtCnpj.TabIndex = 9;
-            this.txtCnpj.ValidatingType = typeof(int);
-            // 
-            // txtNumeroEndereco
-            // 
-            this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 135);
-            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
-            this.txtNumeroEndereco.Size = new System.Drawing.Size(94, 20);
-            this.txtNumeroEndereco.TabIndex = 3;
-            this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
-            // 
             // btnInsere
             // 
             this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
@@ -317,6 +298,25 @@
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
+            // 
+            // txtCnpj
+            // 
+            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCnpj.Location = new System.Drawing.Point(150, 245);
+            this.txtCnpj.Mask = "00,000,000/0000-00";
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(147, 20);
+            this.txtCnpj.TabIndex = 15;
+            this.txtCnpj.ValidatingType = typeof(int);
+            // 
+            // txtNumeroEndereco
+            // 
+            this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 135);
+            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
+            this.txtNumeroEndereco.Size = new System.Drawing.Size(94, 20);
+            this.txtNumeroEndereco.TabIndex = 3;
+            this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // frmCadFornecedor
             // 

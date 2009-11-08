@@ -54,12 +54,12 @@
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnInsere = new System.Windows.Forms.Button();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblNome
@@ -77,7 +77,7 @@
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNome.Location = new System.Drawing.Point(149, 38);
-            this.txtNome.MaxLength = 60;
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(397, 20);
             this.txtNome.TabIndex = 1;
@@ -158,7 +158,7 @@
             // 
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBairro.Location = new System.Drawing.Point(149, 154);
-            this.txtBairro.MaxLength = 20;
+            this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(294, 20);
             this.txtBairro.TabIndex = 5;
@@ -243,7 +243,7 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Location = new System.Drawing.Point(149, 253);
-            this.txtEmail.MaxLength = 15;
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(397, 20);
             this.txtEmail.TabIndex = 11;
@@ -291,35 +291,6 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(149, 221);
-            this.txtCPF.Mask = "000,000,000-00";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(100, 20);
-            this.txtCPF.TabIndex = 9;
-            this.txtCPF.ValidatingType = typeof(int);
-            // 
-            // txtCnpj
-            // 
-            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCnpj.Location = new System.Drawing.Point(350, 222);
-            this.txtCnpj.Mask = "00,000,000/0000-00";
-            this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(147, 20);
-            this.txtCnpj.TabIndex = 10;
-            this.txtCnpj.ValidatingType = typeof(int);
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(241, 290);
-            this.txtTelefone.Mask = "0000-0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(66, 20);
-            this.txtTelefone.TabIndex = 13;
-            this.txtTelefone.ValidatingType = typeof(int);
-            // 
             // btnBuscaAlteracaoDelecao
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
@@ -355,6 +326,35 @@
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.Location = new System.Drawing.Point(149, 221);
+            this.txtCPF.Mask = "000,000,000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(100, 20);
+            this.txtCPF.TabIndex = 9;
+            this.txtCPF.ValidatingType = typeof(int);
+            // 
+            // txtCnpj
+            // 
+            this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCnpj.Location = new System.Drawing.Point(350, 222);
+            this.txtCnpj.Mask = "00,000,000/0000-00";
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(147, 20);
+            this.txtCnpj.TabIndex = 10;
+            this.txtCnpj.ValidatingType = typeof(int);
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.Location = new System.Drawing.Point(241, 290);
+            this.txtTelefone.Mask = "0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(66, 20);
+            this.txtTelefone.TabIndex = 13;
+            this.txtTelefone.ValidatingType = typeof(int);
             // 
             // frmCadCliente
             // 
