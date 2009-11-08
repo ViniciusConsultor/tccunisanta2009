@@ -116,7 +116,7 @@ namespace TCC.UI
             DataTable dt = new DataTable();
             try
             {
-                dt = regraFamiliaM.BuscaFamiliaMotor(this.txtFiltro.Text);
+                dt = regraFamiliaM.BuscaFamiliaMotorNome(this.txtFiltro.Text);
                 dgFamMotor.DataSource = dt;
                 dgFamMotor.Columns[0].Visible = false;
             }

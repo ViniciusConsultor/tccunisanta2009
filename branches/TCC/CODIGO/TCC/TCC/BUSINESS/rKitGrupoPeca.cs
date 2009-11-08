@@ -8,7 +8,7 @@ namespace TCC.BUSINESS
 {
     class rKitGrupoPeca:ComandosSql
     {
-        public DataTable BuscaKitGrupoPeca(string parametro)
+        public DataTable BuscaKitGrupoPecaNome(string parametro)
         {
             SqlParameter param = null;
             try
@@ -20,7 +20,33 @@ namespace TCC.BUSINESS
                 else
                 {
                     param = new SqlParameter("@nom", parametro);
-                    return base.BuscaDados("sp_busca_kitGrupoPeca_param", param);
+                    return base.BuscaDados("sp_busca_kitGrupoPeca_param_nome", param);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+        public DataTable BuscaKitGrupoPecaCodigo(string parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(parametro) == true)
+                {
+                    return base.BuscaDados("sp_busca_kitGrupoPeca");
+                }
+                else
+                {
+                    param = new SqlParameter("@id_kit_real", parametro);
+                    return base.BuscaDados("sp_busca_kitGrupoPeca_param_codigo", param);
                 }
             }
             catch (Exception ex)
