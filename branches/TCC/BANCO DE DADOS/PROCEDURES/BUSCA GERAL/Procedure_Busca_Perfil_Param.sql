@@ -11,4 +11,3 @@
  FROM Perfil
  WHERE dsc_perfil LIKE '%' + @dsc_perfil + '%'
  AND flg_ativo = 1
-go

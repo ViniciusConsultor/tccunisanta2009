@@ -11,4 +11,3 @@
 where dsc_num_motor like '%' + @dsc_num_motor +'%'
 AND flg_ativo = 1
 order by dsc_num_motor desc
-go

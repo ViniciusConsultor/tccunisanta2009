@@ -11,4 +11,3 @@
  FROM Kitgrupopeca
  WHERE id_kit_real LIKE '%' + @id_kit_real + '%'
  AND flg_ativo = 1
-go

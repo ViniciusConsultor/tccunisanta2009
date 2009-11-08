@@ -8,4 +8,3 @@
  AS
  SELECT id_perfil, dsc_perfil as 'Perfil' FROM Perfil
  WHERE flg_ativo = 1
-go

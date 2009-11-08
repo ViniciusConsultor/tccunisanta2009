@@ -10,4 +10,3 @@
  SELECT id_usu, log_usu 'Usuário' FROM Usuario
  WHERE log_usu LIKE '%' + @login + '%'
  AND flg_ativo = 1
-go
