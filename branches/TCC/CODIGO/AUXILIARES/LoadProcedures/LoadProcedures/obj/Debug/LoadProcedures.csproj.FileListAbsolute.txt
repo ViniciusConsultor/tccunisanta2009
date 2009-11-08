@@ -3,3 +3,8 @@ C:\Users\Kaue\Desktop\Exemplo\Chicken\LoadProcedures\LoadProcedures\bin\Debug\Lo
 C:\Users\Kaue\Desktop\Exemplo\Chicken\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Kaue\Desktop\Exemplo\Chicken\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
 C:\Users\Kaue\Desktop\Exemplo\Chicken\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.dll
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.pdb
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
+C:\Documents and Settings\Julio\Desktop\TCC\branches\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb
