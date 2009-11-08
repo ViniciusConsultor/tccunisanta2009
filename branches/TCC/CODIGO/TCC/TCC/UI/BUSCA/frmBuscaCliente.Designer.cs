@@ -42,8 +42,9 @@
             // 
             // txtFiltro
             // 
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltro.Location = new System.Drawing.Point(12, 13);
-            this.txtFiltro.MaxLength = 50;
+            this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(198, 20);
             this.txtFiltro.TabIndex = 1;
