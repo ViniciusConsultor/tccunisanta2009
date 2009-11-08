@@ -20,7 +20,7 @@ namespace TCC.BUSINESS
             }
         }
 
-        public DataTable BuscaFamiliaMotor(string parametro)
+        public DataTable BuscaFamiliaMotorNome(string parametro)
         {
             SqlParameter param = null;
             try
@@ -32,7 +32,33 @@ namespace TCC.BUSINESS
                 else
                 {
                     param = new SqlParameter("@dsc_fam_motor", parametro);
-                    return base.BuscaDados("sp_busca_familiaMotor_param", param);
+                    return base.BuscaDados("sp_busca_familiaMotor_param_nome", param);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+        public DataTable BuscaFamiliaMotorCodigo(string parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(parametro) == true)
+                {
+                    return base.BuscaDados("sp_busca_familiaMotor");
+                }
+                else
+                {
+                    param = new SqlParameter("@id_fam_motor_real", parametro);
+                    return base.BuscaDados("sp_busca_familiaMotor_param_codigo", param);
                 }
             }
             catch (Exception ex)

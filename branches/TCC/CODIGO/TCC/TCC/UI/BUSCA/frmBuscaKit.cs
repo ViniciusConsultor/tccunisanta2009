@@ -116,7 +116,7 @@ namespace TCC.UI
             DataTable dt = new DataTable();
             try
             {
-                dt = regra.BuscaKitGrupoPeca(this.txtFiltro.Text);
+                dt = regra.BuscaKitGrupoPecaNome(this.txtFiltro.Text);
                 dgKit.DataSource = dt;
                 dgKit.Columns[0].Visible = false;
             }
