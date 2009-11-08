@@ -880,6 +880,9 @@
     <None Include="UI\img\btnVoltar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="UI\img\btnLess.PNG" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="UI\ALTERA\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -47,12 +47,14 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).BeginInit();
             this.SuspendLayout();
             // 
             // gbBuscaPecaItem
             // 
+            this.gbBuscaPecaItem.Controls.Add(this.btnRemovePeca);
             this.gbBuscaPecaItem.Controls.Add(this.btnAdicionaPeca);
             this.gbBuscaPecaItem.Controls.Add(this.dgPeca);
             this.gbBuscaPecaItem.Controls.Add(this.txtFiltro);
@@ -245,6 +247,16 @@
             this.btnConfirmar.TabIndex = 10;
             this.btnConfirmar.UseVisualStyleBackColor = true;
             // 
+            // btnRemovePeca
+            // 
+            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemovePeca.Location = new System.Drawing.Point(98, 175);
+            this.btnRemovePeca.Name = "btnRemovePeca";
+            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
+            this.btnRemovePeca.TabIndex = 23;
+            this.btnRemovePeca.UseVisualStyleBackColor = true;
+            // 
             // frmPecaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,5 +295,6 @@
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnRemovePeca;
     }
 }
