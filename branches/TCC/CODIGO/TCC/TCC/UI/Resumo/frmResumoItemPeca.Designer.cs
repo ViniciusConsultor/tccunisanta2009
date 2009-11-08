@@ -132,7 +132,7 @@
             this.hCodigo.HeaderText = "Código";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
+            this.hCodigo.Width = 63;
             // 
             // hNome
             // 
@@ -140,7 +140,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.Width = 58;
             // 
             // hQtd
             // 
@@ -148,13 +148,13 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
+            this.hQtd.Width = 85;
             // 
             // frmResumoItemPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 264);
+            this.ClientSize = new System.Drawing.Size(410, 266);
             this.ControlBox = false;
             this.Controls.Add(this.dgItems);
             this.Controls.Add(this.lblNome);
@@ -164,7 +164,7 @@
             this.MaximizeBox = false;
             this.Name = "frmResumoItemPeca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmResumoItemPeca";
+            this.Text = "Resumo Item - Peças";
             this.Load += new System.EventHandler(this.frmResumoItemPeca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
             this.ResumeLayout(false);

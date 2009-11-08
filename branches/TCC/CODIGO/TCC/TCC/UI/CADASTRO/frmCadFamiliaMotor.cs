@@ -11,13 +11,14 @@ using TCC.MODEL;
 namespace TCC.UI
 {
     public partial class frmCadFamiliaMotor : FormPai
-    {
+    {/*
         #region Atributos
-        mNumMotor _modelNumeroMotor;
-        mKitGrupoPeca _modelKit;
+        List<mKitFamilia> _listaKitFamilia;
+        int _idKit;
+        mEstoque _modelEstoque;
         mMotor _modelMotor;
         mTipoMotor _modelTipoMotor;
-        mEstoque _modelEstoque;
+        mNumMotor _modelNumeroMotor;
         #endregion Atributos
 
         #region Construtor
@@ -72,7 +73,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdNumeroMotor.Text = this._modelNumeroMotor.Dsc_num_motor;
+                    this.txtNumeroMotor.Text = this._modelNumeroMotor.Dsc_num_motor;
                 }
             }
             catch (Exception ex)
@@ -128,7 +129,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdMotor.Text = this._modelMotor.DscMotor;
+                    this.txtMotorCompra.Text = this._modelMotor.DscMotor;
                 }
             }
             catch (Exception ex)
@@ -156,7 +157,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdTipoMotor.Text = this._modelTipoMotor.DscTipoMotor;
+                    this.txtTipoMotor.Text = this._modelTipoMotor.DscTipoMotor;
                 }
             }
             catch (Exception ex)
@@ -184,7 +185,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdEstoque.Text = this._modelEstoque.Dsc_estoque;
+                    this.txtEstoque.Text = this._modelEstoque.Dsc_estoque;
                 }
             }
             catch (Exception ex)
@@ -201,6 +202,36 @@ namespace TCC.UI
         #endregion Eventos
 
         #region Metodos
+
+        #region Abre Tela Resumo
+        /// <summary>
+        /// Abre a tela de resumo antes de gravar os dados no banco
+        /// </summary>
+        private void AbreTelaResumo()
+        {
+            string nomeFamMotor=this.txtNumeroMotor.Text+this.txtTipoMotor.Text;
+            string nomeMotor=this.txtMotorCompra.Text;
+
+            Resumo.frmResumoKitFamilia ResumoKit = new TCC.UI.Resumo.frmResumoKitFamilia(this._listaKitFamilia,nomeFamMotor,nomeMotor);
+            try
+            {
+                DialogResult resultado;
+                resultado = ResumoKit.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    throw new BUSINESS.Exceptions.Item.TelaResumoCanceladaException();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                ResumoKit = null;
+            }
+        }
+        #endregion Abre Tela Resumo
 
         #region Insere
         /// <summary>
@@ -311,6 +342,8 @@ namespace TCC.UI
         }
         #endregion Pega Dados Tela 
 
+
         #endregion Metodos
+      */
     }
 }
