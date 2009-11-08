@@ -25,6 +25,11 @@ namespace TCC.UI
             this._alteracao = Alteracao;
             this.dgPeca.MultiSelect = multiSelecao;
         }
+
+        public frmBuscaPeca()
+        {
+            InitializeComponent();
+        }
         #endregion
 
         #region Eventos
