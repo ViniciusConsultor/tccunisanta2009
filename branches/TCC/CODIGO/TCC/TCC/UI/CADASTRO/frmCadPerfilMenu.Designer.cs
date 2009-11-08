@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPerfilMenu));
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblCodigoPerfil = new System.Windows.Forms.Label();
             this.lblCodigoMenu = new System.Windows.Forms.Label();
             this.txtCodigoPerfil = new System.Windows.Forms.TextBox();
@@ -40,19 +38,8 @@
             this.btnBuscaPerfil = new System.Windows.Forms.Button();
             this.btnBuscaMenu = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadastrar.Location = new System.Drawing.Point(3, 3);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(27, 23);
-            this.btnCadastrar.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnCadastrar, "OK");
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblCodigoPerfil
             // 
@@ -94,7 +81,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(3, 30);
             this.btnLimpar.Name = "btnLimpar";
@@ -106,7 +93,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(3, 58);
             this.btnVoltar.Name = "btnVoltar";
@@ -118,7 +105,7 @@
             // 
             // btnBuscaPerfil
             // 
-            this.btnBuscaPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPerfil.BackgroundImage")));
+            this.btnBuscaPerfil.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPerfil.Location = new System.Drawing.Point(255, 62);
             this.btnBuscaPerfil.Name = "btnBuscaPerfil";
@@ -130,7 +117,7 @@
             // 
             // btnBuscaMenu
             // 
-            this.btnBuscaMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaMenu.BackgroundImage")));
+            this.btnBuscaMenu.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaMenu.Location = new System.Drawing.Point(255, 101);
             this.btnBuscaMenu.Name = "btnBuscaMenu";
@@ -140,11 +127,23 @@
             this.btnBuscaMenu.UseVisualStyleBackColor = true;
             this.btnBuscaMenu.Click += new System.EventHandler(this.btnBuscaMenu_Click);
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCadastrar.Location = new System.Drawing.Point(3, 3);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(27, 23);
+            this.btnCadastrar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnCadastrar, "OK");
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
             // frmCadPerfilMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(349, 210);
             this.ControlBox = false;

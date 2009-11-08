@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPecaFornecedor));
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnBuscaFornecedor = new System.Windows.Forms.Button();
@@ -40,23 +38,12 @@
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirmar.Location = new System.Drawing.Point(2, 5);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirmar.TabIndex = 0;
-            this.toolTipLegenda.SetToolTip(this.btnConfirmar, "OK");
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
@@ -68,7 +55,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(2, 63);
             this.btnVoltar.Name = "btnVoltar";
@@ -80,7 +67,7 @@
             // 
             // btnBuscaFornecedor
             // 
-            this.btnBuscaFornecedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaFornecedor.BackgroundImage")));
+            this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaFornecedor.Location = new System.Drawing.Point(268, 67);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
@@ -92,7 +79,7 @@
             // 
             // btnBuscaPeca
             // 
-            this.btnBuscaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPeca.BackgroundImage")));
+            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPeca.Location = new System.Drawing.Point(268, 96);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
@@ -136,11 +123,23 @@
             this.lblPeca.TabIndex = 8;
             this.lblPeca.Text = "Peça";
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirmar.Location = new System.Drawing.Point(2, 5);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(27, 23);
+            this.btnConfirmar.TabIndex = 0;
+            this.toolTipLegenda.SetToolTip(this.btnConfirmar, "OK");
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // frmCadPecaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;

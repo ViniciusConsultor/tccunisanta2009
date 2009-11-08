@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadDepartamento));
             this.txtDescricaoDepartamento = new System.Windows.Forms.TextBox();
             this.lblDescricaoDepartamento = new System.Windows.Forms.Label();
-            this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDescricaoDepartamento
@@ -57,21 +56,9 @@
             this.lblDescricaoDepartamento.TabIndex = 2;
             this.lblDescricaoDepartamento.Text = "Descição Departamento";
             // 
-            // btnConfirma
-            // 
-            this.btnConfirma.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(1, 3);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(30, 25);
-            this.btnConfirma.TabIndex = 2;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
-            this.btnConfirma.UseVisualStyleBackColor = true;
-            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
-            // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(1, 31);
             this.btnLimpar.Name = "btnLimpar";
@@ -83,7 +70,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(1, 57);
             this.btnVoltar.Name = "btnVoltar";
@@ -98,11 +85,23 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnConfirma
+            // 
+            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(1, 3);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(30, 25);
+            this.btnConfirma.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
             // frmCadDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;

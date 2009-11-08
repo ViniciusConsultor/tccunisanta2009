@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompra));
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.lblObservacao = new System.Windows.Forms.Label();
@@ -37,17 +36,17 @@
             this.lblVlCompra = new System.Windows.Forms.Label();
             this.lblNtFiscal = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
-            this.btnAceitar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnBuscaFornecedor = new System.Windows.Forms.Button();
             this.txtVlCompra = new System.Windows.Forms.TextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
-            this.pnlOrdemCompra = new System.Windows.Forms.Panel();
             this.dgPeca = new System.Windows.Forms.DataGridView();
-            this.pnlOrdemCompra.SuspendLayout();
+            this.pnlOrdemCompra = new System.Windows.Forms.Panel();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.btnAceitar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).BeginInit();
+            this.pnlOrdemCompra.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCdFornecedor
@@ -115,21 +114,9 @@
             this.txtNotaFiscal.Size = new System.Drawing.Size(192, 20);
             this.txtNotaFiscal.TabIndex = 7;
             // 
-            // btnAceitar
-            // 
-            this.btnAceitar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(6, 5);
-            this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 11;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
-            this.btnAceitar.UseVisualStyleBackColor = true;
-            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
-            // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(6, 46);
             this.btnLimpar.Name = "btnLimpar";
@@ -141,7 +128,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(6, 128);
             this.btnVoltar.Name = "btnVoltar";
@@ -153,7 +140,7 @@
             // 
             // btnBuscaFornecedor
             // 
-            this.btnBuscaFornecedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaFornecedor.BackgroundImage")));
+            this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaFornecedor.Location = new System.Drawing.Point(406, 144);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
@@ -177,26 +164,6 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
-            // btnBuscaAlteracaoDelecao
-            // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
-            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 87);
-            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 18;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
-            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
-            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
-            // 
-            // pnlOrdemCompra
-            // 
-            this.pnlOrdemCompra.Controls.Add(this.dgPeca);
-            this.pnlOrdemCompra.Location = new System.Drawing.Point(79, 173);
-            this.pnlOrdemCompra.Name = "pnlOrdemCompra";
-            this.pnlOrdemCompra.Size = new System.Drawing.Size(501, 185);
-            this.pnlOrdemCompra.TabIndex = 19;
-            // 
             // dgPeca
             // 
             this.dgPeca.AllowUserToAddRows = false;
@@ -214,11 +181,43 @@
             this.dgPeca.TabIndex = 1;
             this.toolTipLegenda.SetToolTip(this.dgPeca, "Apertar Ctrl para Selecionar mais de um item");
             // 
+            // pnlOrdemCompra
+            // 
+            this.pnlOrdemCompra.Controls.Add(this.dgPeca);
+            this.pnlOrdemCompra.Location = new System.Drawing.Point(79, 173);
+            this.pnlOrdemCompra.Name = "pnlOrdemCompra";
+            this.pnlOrdemCompra.Size = new System.Drawing.Size(501, 185);
+            this.pnlOrdemCompra.TabIndex = 19;
+            // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 87);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 18;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
+            // 
+            // btnAceitar
+            // 
+            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(6, 5);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
+            this.btnAceitar.TabIndex = 11;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
+            this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
             // frmCadCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -240,8 +239,8 @@
             this.Name = "frmCadCompra";
             this.Text = "Compra";
             this.Load += new System.EventHandler(this.frmCadCompra_Load);
-            this.pnlOrdemCompra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).EndInit();
+            this.pnlOrdemCompra.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

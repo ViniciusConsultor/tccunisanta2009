@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFornecedor));
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.cboUf = new System.Windows.Forms.ComboBox();
             this.lblestado = new System.Windows.Forms.Label();
             this.lblcnpj = new System.Windows.Forms.Label();
-            this.btnInsere = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnlimpar = new System.Windows.Forms.Button();
             this.txtDDD = new System.Windows.Forms.TextBox();
@@ -58,6 +56,7 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.btnInsere = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCidade
@@ -196,21 +195,9 @@
             this.lblcnpj.TabIndex = 2;
             this.lblcnpj.Text = "CNPJ";
             // 
-            // btnInsere
-            // 
-            this.btnInsere.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsere.Location = new System.Drawing.Point(7, 5);
-            this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 13;
-            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
-            this.btnInsere.UseVisualStyleBackColor = true;
-            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
-            // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 87);
             this.btnVolta.Name = "btnVolta";
@@ -222,7 +209,7 @@
             // 
             // btnlimpar
             // 
-            this.btnlimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnlimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnlimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnlimpar.Location = new System.Drawing.Point(7, 46);
             this.btnlimpar.Name = "btnlimpar";
@@ -319,11 +306,23 @@
             this.txtNumeroEndereco.TabIndex = 3;
             this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
+            // btnInsere
+            // 
+            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsere.Location = new System.Drawing.Point(7, 5);
+            this.btnInsere.Name = "btnInsere";
+            this.btnInsere.Size = new System.Drawing.Size(40, 35);
+            this.btnInsere.TabIndex = 13;
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
+            this.btnInsere.UseVisualStyleBackColor = true;
+            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
+            // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;

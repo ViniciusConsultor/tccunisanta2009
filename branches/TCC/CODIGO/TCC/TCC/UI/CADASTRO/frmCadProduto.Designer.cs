@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadOrdemProducao));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnAceitar = new System.Windows.Forms.Button();
             this.lblcdFamiliaMotor = new System.Windows.Forms.Label();
             this.txtCdMotor = new System.Windows.Forms.TextBox();
             this.lblCdDepartamento = new System.Windows.Forms.Label();
@@ -48,11 +46,12 @@
             this.btnCdKit = new System.Windows.Forms.Button();
             this.btnCdTipoProduto = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAceitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(7, 89);
             this.btnVoltar.Name = "btnVoltar";
@@ -64,7 +63,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(7, 48);
             this.btnLimpar.Name = "btnLimpar";
@@ -73,18 +72,6 @@
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnAceitar
-            // 
-            this.btnAceitar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(7, 6);
-            this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 14;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
-            this.btnAceitar.UseVisualStyleBackColor = true;
-            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // lblcdFamiliaMotor
             // 
@@ -135,7 +122,7 @@
             // txtCdKit
             // 
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdKit.Location = new System.Drawing.Point(187, 87);
+            this.txtCdKit.Location = new System.Drawing.Point(222, 88);
             this.txtCdKit.Name = "txtCdKit";
             this.txtCdKit.ReadOnly = true;
             this.txtCdKit.Size = new System.Drawing.Size(41, 20);
@@ -180,7 +167,7 @@
             // 
             // btnCdMotor
             // 
-            this.btnCdMotor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdMotor.BackgroundImage")));
+            this.btnCdMotor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdMotor.Location = new System.Drawing.Point(269, 45);
             this.btnCdMotor.Name = "btnCdMotor";
@@ -192,7 +179,7 @@
             // 
             // btnCdDep
             // 
-            this.btnCdDep.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdDep.BackgroundImage")));
+            this.btnCdDep.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdDep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdDep.Location = new System.Drawing.Point(506, 45);
             this.btnCdDep.Name = "btnCdDep";
@@ -204,9 +191,9 @@
             // 
             // btnCdKit
             // 
-            this.btnCdKit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdKit.BackgroundImage")));
+            this.btnCdKit.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdKit.Location = new System.Drawing.Point(234, 85);
+            this.btnCdKit.Location = new System.Drawing.Point(269, 86);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(27, 23);
             this.btnCdKit.TabIndex = 14;
@@ -216,7 +203,7 @@
             // 
             // btnCdTipoProduto
             // 
-            this.btnCdTipoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdTipoProduto.BackgroundImage")));
+            this.btnCdTipoProduto.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdTipoProduto.Location = new System.Drawing.Point(506, 87);
             this.btnCdTipoProduto.Name = "btnCdTipoProduto";
@@ -226,11 +213,23 @@
             this.btnCdTipoProduto.UseVisualStyleBackColor = true;
             this.btnCdTipoProduto.Click += new System.EventHandler(this.btnCdTipoProduto_Click);
             // 
+            // btnAceitar
+            // 
+            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(7, 6);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
+            this.btnAceitar.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
+            this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
             // frmCadOrdemProducao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
