@@ -57,6 +57,7 @@
             this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gbBuscaItem.SuspendLayout();
             this.gpTipoProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
@@ -147,6 +148,7 @@
             // 
             // gbBuscaItem
             // 
+            this.gbBuscaItem.Controls.Add(this.btnRemovePeca);
             this.gbBuscaItem.Controls.Add(this.gpTipoProduto);
             this.gbBuscaItem.Controls.Add(this.btnAdicionaItem);
             this.gbBuscaItem.Controls.Add(this.dgItems);
@@ -202,7 +204,7 @@
             // 
             this.btnAdicionaItem.BackgroundImage = global::TCC.resImg.btnAdd_;
             this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaItem.Location = new System.Drawing.Point(60, 198);
+            this.btnAdicionaItem.Location = new System.Drawing.Point(34, 198);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
             this.btnAdicionaItem.Size = new System.Drawing.Size(40, 35);
             this.btnAdicionaItem.TabIndex = 22;
@@ -353,6 +355,16 @@
             this.btnConfirma.TabIndex = 10;
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
+            // btnRemovePeca
+            // 
+            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemovePeca.Location = new System.Drawing.Point(96, 198);
+            this.btnRemovePeca.Name = "btnRemovePeca";
+            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
+            this.btnRemovePeca.TabIndex = 19;
+            this.btnRemovePeca.UseVisualStyleBackColor = true;
+            // 
             // frmCadOrdemCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,5 +423,6 @@
         private System.Windows.Forms.RadioButton rdbfiltro0;
         private System.Windows.Forms.TextBox TxtNmProduto;
         private System.Windows.Forms.GroupBox gpTipoProduto;
+        private System.Windows.Forms.Button btnRemovePeca;
     }
 }

@@ -40,6 +40,7 @@
             this.btnAdicionaItem = new System.Windows.Forms.Button();
             this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
             this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnAceitar = new System.Windows.Forms.Button();
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,6 @@
             this.TxtNmItem = new System.Windows.Forms.TextBox();
             this.lblCdKitReal = new System.Windows.Forms.Label();
             this.txtCodigoKit = new System.Windows.Forms.TextBox();
-            this.btnAceitar = new System.Windows.Forms.Button();
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -133,14 +133,26 @@
             // 
             // btnRemoveItem
             // 
+            this.btnRemoveItem.BackgroundImage = global::TCC.resImg.btnLess;
             this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemoveItem.Location = new System.Drawing.Point(98, 170);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(40, 35);
             this.btnRemoveItem.TabIndex = 25;
-            this.btnRemoveItem.Text = "Remove Peça";
             this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
             this.btnRemoveItem.UseVisualStyleBackColor = true;
+            // 
+            // btnAceitar
+            // 
+            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(6, 4);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
+            this.btnAceitar.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
+            this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // gbBuscaItem
             // 
@@ -326,18 +338,6 @@
             this.txtCodigoKit.Name = "txtCodigoKit";
             this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
             this.txtCodigoKit.TabIndex = 1;
-            // 
-            // btnAceitar
-            // 
-            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
-            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(6, 4);
-            this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
-            this.btnAceitar.UseVisualStyleBackColor = true;
-            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // frmCadKitGrupoPeca
             // 
