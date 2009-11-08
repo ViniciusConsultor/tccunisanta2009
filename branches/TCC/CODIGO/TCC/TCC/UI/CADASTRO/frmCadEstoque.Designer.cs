@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadEstoque));
             this.txtCdDepartamento = new System.Windows.Forms.TextBox();
             this.lblCodigoDepartamento = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.btnInsere = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.ckbFlgNegativo = new System.Windows.Forms.CheckBox();
+            this.btnInsere = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCdDepartamento
@@ -81,21 +80,9 @@
             this.lblNome.TabIndex = 4;
             this.lblNome.Text = "Nome";
             // 
-            // btnInsere
-            // 
-            this.btnInsere.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsere.Location = new System.Drawing.Point(1, 2);
-            this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(30, 25);
-            this.btnInsere.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
-            this.btnInsere.UseVisualStyleBackColor = true;
-            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
-            // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(1, 30);
             this.btnLimpa.Name = "btnLimpa";
@@ -107,7 +94,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(1, 59);
             this.btnVolta.Name = "btnVolta";
@@ -119,7 +106,7 @@
             // 
             // btnBuscaDepartamento
             // 
-            this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
+            this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(273, 30);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
@@ -144,11 +131,23 @@
             this.ckbFlgNegativo.Text = "Estoque Peças Defeituosas";
             this.ckbFlgNegativo.UseVisualStyleBackColor = true;
             // 
+            // btnInsere
+            // 
+            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsere.Location = new System.Drawing.Point(1, 2);
+            this.btnInsere.Name = "btnInsere";
+            this.btnInsere.Size = new System.Drawing.Size(30, 25);
+            this.btnInsere.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
+            this.btnInsere.UseVisualStyleBackColor = true;
+            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
+            // 
             // frmCadEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;

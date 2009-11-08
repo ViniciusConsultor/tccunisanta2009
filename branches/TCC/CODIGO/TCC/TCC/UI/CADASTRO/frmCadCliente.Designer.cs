@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCliente));
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblRua = new System.Windows.Forms.Label();
@@ -46,8 +45,6 @@
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblCnpj = new System.Windows.Forms.Label();
-            this.btnInsere = new System.Windows.Forms.Button();
-            this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.lblTlefone = new System.Windows.Forms.Label();
             this.lblDDD = new System.Windows.Forms.Label();
@@ -56,11 +53,13 @@
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
-            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.btnLimpa = new System.Windows.Forms.Button();
+            this.btnInsere = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -210,33 +209,9 @@
             this.lblCnpj.TabIndex = 0;
             this.lblCnpj.Text = "CNPJ";
             // 
-            // btnInsere
-            // 
-            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
-            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsere.Location = new System.Drawing.Point(6, 6);
-            this.btnInsere.Name = "btnInsere";
-            this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 14;
-            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
-            this.btnInsere.UseVisualStyleBackColor = true;
-            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
-            // 
-            // btnLimpa
-            // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
-            this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpa.Location = new System.Drawing.Point(6, 47);
-            this.btnLimpa.Name = "btnLimpa";
-            this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 15;
-            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
-            this.btnLimpa.UseVisualStyleBackColor = true;
-            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
-            // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(6, 129);
             this.btnVolta.Name = "btnVolta";
@@ -311,18 +286,6 @@
             this.txtCep.TabIndex = 6;
             this.txtCep.ValidatingType = typeof(int);
             // 
-            // btnBuscaAlteracaoDelecao
-            // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
-            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 88);
-            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 16;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
-            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
-            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
-            // 
             // toolTipLegenda
             // 
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
@@ -357,11 +320,47 @@
             this.txtTelefone.TabIndex = 13;
             this.txtTelefone.ValidatingType = typeof(int);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 88);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 16;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
+            // 
+            // btnLimpa
+            // 
+            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpa.Location = new System.Drawing.Point(6, 47);
+            this.btnLimpa.Name = "btnLimpa";
+            this.btnLimpa.Size = new System.Drawing.Size(40, 35);
+            this.btnLimpa.TabIndex = 15;
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
+            this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
+            // 
+            // btnInsere
+            // 
+            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsere.Location = new System.Drawing.Point(6, 6);
+            this.btnInsere.Name = "btnInsere";
+            this.btnInsere.Size = new System.Drawing.Size(40, 35);
+            this.btnInsere.TabIndex = 14;
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
+            this.btnInsere.UseVisualStyleBackColor = true;
+            this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPecaEstoque));
             this.lblQtd = new System.Windows.Forms.Label();
             this.txtQtdestoque = new System.Windows.Forms.TextBox();
             this.txtIdEstoque = new System.Windows.Forms.TextBox();
@@ -37,9 +36,9 @@
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnInsere = new System.Windows.Forms.Button();
-            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnCdEstoque = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblQtd
@@ -77,7 +76,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(2, 56);
             this.btnVolta.Name = "btnVolta";
@@ -88,7 +87,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.trash_can;
+            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(2, 29);
             this.btnLimpa.Name = "btnLimpa";
@@ -99,7 +98,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsere.BackgroundImage")));
+            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsere.Location = new System.Drawing.Point(2, 3);
             this.btnInsere.Name = "btnInsere";
@@ -108,20 +107,9 @@
             this.toolTipLegenda.SetToolTip(this.btnInsere, "OK");
             this.btnInsere.UseVisualStyleBackColor = true;
             // 
-            // btnBuscaAlteracaoDelecao
-            // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
-            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(271, 119);
-            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(29, 26);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 20;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar / Deletar");
-            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
-            // 
             // btnCdEstoque
             // 
-            this.btnCdEstoque.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdEstoque.BackgroundImage")));
+            this.btnCdEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdEstoque.Location = new System.Drawing.Point(271, 47);
             this.btnCdEstoque.Name = "btnCdEstoque";
@@ -130,11 +118,22 @@
             this.toolTipLegenda.SetToolTip(this.btnCdEstoque, "Buscar");
             this.btnCdEstoque.UseVisualStyleBackColor = true;
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(271, 119);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(29, 26);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 20;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar / Deletar");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
             // frmCadPecaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(357, 180);
             this.ControlBox = false;

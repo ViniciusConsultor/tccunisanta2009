@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadItemPeca));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.txtNmItem = new System.Windows.Forms.TextBox();
@@ -41,6 +39,7 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAdicionaPeca = new System.Windows.Forms.Button();
             this.btnRemovePeca = new System.Windows.Forms.Button();
+            this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.txtCodigoItem = new System.Windows.Forms.TextBox();
             this.lblCdItemReal = new System.Windows.Forms.Label();
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
@@ -52,30 +51,18 @@
             this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
-            this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.lblNmPeca = new System.Windows.Forms.Label();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirmar.Location = new System.Drawing.Point(6, 4);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirmar.TabIndex = 8;
-            this.toolTipLegenda.SetToolTip(this.btnConfirmar, "Cadastrar");
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 85);
             this.btnVolta.Name = "btnVolta";
@@ -87,7 +74,7 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(7, 44);
             this.btnLimpa.Name = "btnLimpa";
@@ -121,7 +108,7 @@
             // 
             // btnAdicionaPeca
             // 
-            this.btnAdicionaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaPeca.BackgroundImage")));
+            this.btnAdicionaPeca.BackgroundImage = global::TCC.resImg.btnAdd_;
             this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaPeca.Location = new System.Drawing.Point(36, 157);
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
@@ -142,6 +129,18 @@
             this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
             this.btnRemovePeca.UseVisualStyleBackColor = true;
             this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
+            // 
+            // btnBuscarPecaDtGrid
+            // 
+            this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(395, 22);
+            this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
+            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarPecaDtGrid.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarPecaDtGrid, "Buscar Peças");
+            this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarPecaDtGrid.Click += new System.EventHandler(this.btnBuscarPecaDtGrid_Click);
             // 
             // txtCodigoItem
             // 
@@ -251,7 +250,7 @@
             this.hCodigo.HeaderText = "Código";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
+            this.hCodigo.Width = 65;
             // 
             // hNome
             // 
@@ -259,7 +258,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
+            this.hNome.Width = 60;
             // 
             // hQtd
             // 
@@ -267,7 +266,7 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 85;
+            this.hQtd.Width = 87;
             // 
             // txtFiltro
             // 
@@ -286,18 +285,6 @@
             this.lblQtdPeca.Size = new System.Drawing.Size(62, 13);
             this.lblQtdPeca.TabIndex = 18;
             this.lblQtdPeca.Text = "Quantidade";
-            // 
-            // btnBuscarPecaDtGrid
-            // 
-            this.btnBuscarPecaDtGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarPecaDtGrid.BackgroundImage")));
-            this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(395, 22);
-            this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
-            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnBuscarPecaDtGrid, "Buscar Peças");
-            this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
-            this.btnBuscarPecaDtGrid.Click += new System.EventHandler(this.btnBuscarPecaDtGrid_Click);
             // 
             // lblNmPeca
             // 
@@ -339,11 +326,23 @@
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirmar.Location = new System.Drawing.Point(6, 4);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(40, 35);
+            this.btnConfirmar.TabIndex = 8;
+            this.toolTipLegenda.SetToolTip(this.btnConfirmar, "Cadastrar");
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // frmCadItemPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(584, 364);
             this.ControlBox = false;

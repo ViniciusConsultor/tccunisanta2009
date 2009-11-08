@@ -31,20 +31,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPecaEstoque));
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
+            this.btnAdicionaPeca = new System.Windows.Forms.Button();
             this.dgPeca = new System.Windows.Forms.DataGridView();
             this.CdPecaReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.txtQtdPeca = new System.Windows.Forms.TextBox();
+            this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.lblNmPeca = new System.Windows.Forms.Label();
             this.rdbFiltro1 = new System.Windows.Forms.RadioButton();
             this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
-            this.btnAdicionaPeca = new System.Windows.Forms.Button();
-            this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
@@ -70,6 +69,16 @@
             this.gbBuscaPecaItem.TabIndex = 9;
             this.gbBuscaPecaItem.TabStop = false;
             this.gbBuscaPecaItem.Text = "Peças do Estoque ";
+            // 
+            // btnAdicionaPeca
+            // 
+            this.btnAdicionaPeca.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionaPeca.Location = new System.Drawing.Point(36, 175);
+            this.btnAdicionaPeca.Name = "btnAdicionaPeca";
+            this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
+            this.btnAdicionaPeca.TabIndex = 22;
+            this.btnAdicionaPeca.UseVisualStyleBackColor = true;
             // 
             // dgPeca
             // 
@@ -156,6 +165,16 @@
             this.txtQtdPeca.Size = new System.Drawing.Size(102, 20);
             this.txtQtdPeca.TabIndex = 16;
             // 
+            // btnBuscarPecaDtGrid
+            // 
+            this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(395, 22);
+            this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
+            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarPecaDtGrid.TabIndex = 13;
+            this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
+            // 
             // lblNmPeca
             // 
             this.lblNmPeca.AutoSize = true;
@@ -196,29 +215,9 @@
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
             // 
-            // btnAdicionaPeca
-            // 
-            this.btnAdicionaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaPeca.BackgroundImage")));
-            this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaPeca.Location = new System.Drawing.Point(36, 175);
-            this.btnAdicionaPeca.Name = "btnAdicionaPeca";
-            this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaPeca.TabIndex = 22;
-            this.btnAdicionaPeca.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarPecaDtGrid
-            // 
-            this.btnBuscarPecaDtGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarPecaDtGrid.BackgroundImage")));
-            this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(395, 22);
-            this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
-            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 13;
-            this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
-            // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(8, 46);
             this.btnLimpa.Name = "btnLimpa";
@@ -228,7 +227,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(8, 87);
             this.btnVolta.Name = "btnVolta";
@@ -238,7 +237,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
+            this.btnConfirmar.BackgroundImage = global::TCC.resImg.btnSalvar;
             this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirmar.Location = new System.Drawing.Point(7, 6);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -250,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 366);
             this.Controls.Add(this.btnLimpa);
