@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -154,6 +154,7 @@
     <Compile Include="BUSINESS\Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\MaskedInvalidaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\GridProdutoSemDadosException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\VendaMotorGrupoVazioException.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="MODEL\mUsinagem.cs" />
     <Compile Include="MODEL\mUsuario.cs" />
     <Compile Include="MODEL\mVenda.cs" />
+    <Compile Include="MODEL\mVendaProduto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
