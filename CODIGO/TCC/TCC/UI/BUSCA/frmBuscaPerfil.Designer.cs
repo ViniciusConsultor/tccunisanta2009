@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscaPerfil));
             this.dgPerfil = new System.Windows.Forms.DataGridView();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -60,15 +59,16 @@
             // 
             // txtFiltro
             // 
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltro.Location = new System.Drawing.Point(12, 12);
-            this.txtFiltro.MaxLength = 50;
+            this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(199, 20);
             this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(232, 3);
             this.btnBuscar.Name = "btnBuscar";
@@ -80,7 +80,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.Location = new System.Drawing.Point(94, 229);
             this.btnFechar.Name = "btnFechar";
@@ -97,7 +97,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
+            this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcluir.Location = new System.Drawing.Point(232, 229);
             this.btnExcluir.Name = "btnExcluir";
@@ -109,7 +109,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnAdd_;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAlterar.Location = new System.Drawing.Point(186, 229);
             this.btnAlterar.Name = "btnAlterar";
@@ -121,7 +121,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOK.BackgroundImage")));
+            this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOK.Location = new System.Drawing.Point(140, 229);
             this.btnOK.Name = "btnOK";

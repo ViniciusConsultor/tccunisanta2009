@@ -33,10 +33,10 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.dgUsinagem = new System.Windows.Forms.DataGridView();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.dgUsinagem = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsinagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,31 +81,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(12, 12);
-            this.txtFiltro.MaxLength = 50;
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(195, 20);
-            this.txtFiltro.TabIndex = 6;
-            // 
-            // dgUsinagem
-            // 
-            this.dgUsinagem.AllowUserToAddRows = false;
-            this.dgUsinagem.AllowUserToDeleteRows = false;
-            this.dgUsinagem.AllowUserToResizeColumns = false;
-            this.dgUsinagem.AllowUserToResizeRows = false;
-            this.dgUsinagem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgUsinagem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsinagem.Location = new System.Drawing.Point(12, 44);
-            this.dgUsinagem.MultiSelect = false;
-            this.dgUsinagem.Name = "dgUsinagem";
-            this.dgUsinagem.ReadOnly = true;
-            this.dgUsinagem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUsinagem.ShowEditingIcon = false;
-            this.dgUsinagem.Size = new System.Drawing.Size(260, 177);
-            this.dgUsinagem.TabIndex = 5;
-            // 
             // btnExcluir
             // 
             this.btnExcluir.BackgroundImage = global::TCC.resImg.btnOk;
@@ -127,6 +102,32 @@
             this.btnAlterar.TabIndex = 10;
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltro.Location = new System.Drawing.Point(12, 12);
+            this.txtFiltro.MaxLength = 25;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(195, 20);
+            this.txtFiltro.TabIndex = 6;
+            // 
+            // dgUsinagem
+            // 
+            this.dgUsinagem.AllowUserToAddRows = false;
+            this.dgUsinagem.AllowUserToDeleteRows = false;
+            this.dgUsinagem.AllowUserToResizeColumns = false;
+            this.dgUsinagem.AllowUserToResizeRows = false;
+            this.dgUsinagem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgUsinagem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsinagem.Location = new System.Drawing.Point(12, 44);
+            this.dgUsinagem.MultiSelect = false;
+            this.dgUsinagem.Name = "dgUsinagem";
+            this.dgUsinagem.ReadOnly = true;
+            this.dgUsinagem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgUsinagem.ShowEditingIcon = false;
+            this.dgUsinagem.Size = new System.Drawing.Size(260, 177);
+            this.dgUsinagem.TabIndex = 5;
             // 
             // frmBuscaUsinagem
             // 
