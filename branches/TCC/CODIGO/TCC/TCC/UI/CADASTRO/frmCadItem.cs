@@ -10,7 +10,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadItemPeca : FormPai
+    public partial class frmCadItem : FormPai
     {
         #region Atributos
         List<mItemPeca> _modelItemPeca;
@@ -18,7 +18,7 @@ namespace TCC.UI
         #endregion Atributos
 
         #region Construtor
-        public frmCadItemPeca()
+        public frmCadItem()
         {
             InitializeComponent();
         }
@@ -594,10 +594,6 @@ namespace TCC.UI
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-
             }
         }
         #endregion Remove Peca
