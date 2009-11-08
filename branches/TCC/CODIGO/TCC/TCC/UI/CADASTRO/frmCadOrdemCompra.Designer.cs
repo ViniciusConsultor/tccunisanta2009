@@ -41,6 +41,7 @@
             this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.btnCdFornecedor = new System.Windows.Forms.Button();
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
+            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gpTipoProduto = new System.Windows.Forms.GroupBox();
             this.rdbTipoProduto1 = new System.Windows.Forms.RadioButton();
             this.rdbTipoProduto0 = new System.Windows.Forms.RadioButton();
@@ -57,7 +58,6 @@
             this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gbBuscaItem.SuspendLayout();
             this.gpTipoProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
@@ -96,6 +96,7 @@
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNotaFiscal.Location = new System.Drawing.Point(153, 73);
+            this.txtNotaFiscal.MaxLength = 25;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(100, 20);
             this.txtNotaFiscal.TabIndex = 14;
@@ -113,6 +114,7 @@
             // 
             this.txtUIltimoPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUIltimoPreco.Location = new System.Drawing.Point(343, 70);
+            this.txtUIltimoPreco.MaxLength = 15;
             this.txtUIltimoPreco.Name = "txtUIltimoPreco";
             this.txtUIltimoPreco.Size = new System.Drawing.Size(100, 20);
             this.txtUIltimoPreco.TabIndex = 14;
@@ -130,6 +132,7 @@
             // 
             this.txtCdFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdFornecedor.Location = new System.Drawing.Point(140, 27);
+            this.txtCdFornecedor.MaxLength = 50;
             this.txtCdFornecedor.Name = "txtCdFornecedor";
             this.txtCdFornecedor.ReadOnly = true;
             this.txtCdFornecedor.Size = new System.Drawing.Size(52, 20);
@@ -166,6 +169,16 @@
             this.gbBuscaItem.TabIndex = 18;
             this.gbBuscaItem.TabStop = false;
             this.gbBuscaItem.Text = "Items do Kit";
+            // 
+            // btnRemovePeca
+            // 
+            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemovePeca.Location = new System.Drawing.Point(96, 198);
+            this.btnRemovePeca.Name = "btnRemovePeca";
+            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
+            this.btnRemovePeca.TabIndex = 19;
+            this.btnRemovePeca.UseVisualStyleBackColor = true;
             // 
             // gpTipoProduto
             // 
@@ -290,7 +303,7 @@
             // 
             this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdItem.Location = new System.Drawing.Point(34, 155);
-            this.txtQtdItem.MaxLength = 20;
+            this.txtQtdItem.MaxLength = 2;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(102, 20);
             this.txtQtdItem.TabIndex = 16;
@@ -340,7 +353,7 @@
             // 
             this.TxtNmProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtNmProduto.Location = new System.Drawing.Point(34, 106);
-            this.TxtNmProduto.MaxLength = 20;
+            this.TxtNmProduto.MaxLength = 25;
             this.TxtNmProduto.Name = "TxtNmProduto";
             this.TxtNmProduto.Size = new System.Drawing.Size(102, 20);
             this.TxtNmProduto.TabIndex = 14;
@@ -354,16 +367,6 @@
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
             this.btnConfirma.TabIndex = 10;
             this.btnConfirma.UseVisualStyleBackColor = true;
-            // 
-            // btnRemovePeca
-            // 
-            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
-            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemovePeca.Location = new System.Drawing.Point(96, 198);
-            this.btnRemovePeca.Name = "btnRemovePeca";
-            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
-            this.btnRemovePeca.TabIndex = 19;
-            this.btnRemovePeca.UseVisualStyleBackColor = true;
             // 
             // frmCadOrdemCompra
             // 

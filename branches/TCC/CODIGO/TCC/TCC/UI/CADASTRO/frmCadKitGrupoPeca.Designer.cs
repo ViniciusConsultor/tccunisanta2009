@@ -258,7 +258,7 @@
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscaFiltro.Location = new System.Drawing.Point(216, 36);
-            this.txtBuscaFiltro.MaxLength = 20;
+            this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
             this.txtBuscaFiltro.TabIndex = 3;
@@ -276,7 +276,7 @@
             // 
             this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdItem.Location = new System.Drawing.Point(36, 130);
-            this.txtQtdItem.MaxLength = 20;
+            this.txtQtdItem.MaxLength = 2;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(102, 20);
             this.txtQtdItem.TabIndex = 6;
@@ -316,7 +316,7 @@
             // 
             this.TxtNmItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtNmItem.Location = new System.Drawing.Point(36, 72);
-            this.TxtNmItem.MaxLength = 20;
+            this.TxtNmItem.MaxLength = 25;
             this.TxtNmItem.Name = "TxtNmItem";
             this.TxtNmItem.Size = new System.Drawing.Size(102, 20);
             this.TxtNmItem.TabIndex = 5;

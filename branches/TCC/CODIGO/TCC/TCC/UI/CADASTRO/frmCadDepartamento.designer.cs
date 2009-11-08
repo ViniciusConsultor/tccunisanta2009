@@ -41,7 +41,7 @@
             // 
             this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescricaoDepartamento.Location = new System.Drawing.Point(64, 73);
-            this.txtDescricaoDepartamento.MaxLength = 30;
+            this.txtDescricaoDepartamento.MaxLength = 100;
             this.txtDescricaoDepartamento.Multiline = true;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
             this.txtDescricaoDepartamento.Size = new System.Drawing.Size(253, 60);

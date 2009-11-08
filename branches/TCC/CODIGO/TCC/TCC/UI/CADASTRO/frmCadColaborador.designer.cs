@@ -158,6 +158,7 @@
             this.txtCdUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdUsuario.Enabled = false;
             this.txtCdUsuario.Location = new System.Drawing.Point(182, 15);
+            this.txtCdUsuario.MaxLength = 10;
             this.txtCdUsuario.Name = "txtCdUsuario";
             this.txtCdUsuario.ReadOnly = true;
             this.txtCdUsuario.Size = new System.Drawing.Size(50, 20);
@@ -169,6 +170,7 @@
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Enabled = false;
             this.txtCdDepartamento.Location = new System.Drawing.Point(467, 14);
+            this.txtCdDepartamento.MaxLength = 10;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(50, 20);
@@ -179,7 +181,7 @@
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Location = new System.Drawing.Point(136, 53);
-            this.txtNome.MaxLength = 40;
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(410, 20);
             this.txtNome.TabIndex = 3;
@@ -188,7 +190,7 @@
             // 
             this.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRua.Location = new System.Drawing.Point(127, 121);
-            this.txtRua.MaxLength = 50;
+            this.txtRua.MaxLength = 100;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(419, 20);
             this.txtRua.TabIndex = 8;
@@ -197,7 +199,7 @@
             // 
             this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtComplemento.Location = new System.Drawing.Point(299, 156);
-            this.txtComplemento.MaxLength = 20;
+            this.txtComplemento.MaxLength = 25;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(247, 20);
             this.txtComplemento.TabIndex = 10;

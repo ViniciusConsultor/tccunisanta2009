@@ -34,9 +34,9 @@
             this.txtNmTipoMotor = new System.Windows.Forms.TextBox();
             this.lblNmTipoMotor = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAceitar = new System.Windows.Forms.Button();
             this.lblIdReal = new System.Windows.Forms.Label();
             this.txtIdReal = new System.Windows.Forms.TextBox();
-            this.btnAceitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -67,9 +67,10 @@
             // 
             this.txtNmTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNmTipoMotor.Location = new System.Drawing.Point(77, 127);
-            this.txtNmTipoMotor.MaxLength = 50;
+            this.txtNmTipoMotor.MaxLength = 500;
+            this.txtNmTipoMotor.Multiline = true;
             this.txtNmTipoMotor.Name = "txtNmTipoMotor";
-            this.txtNmTipoMotor.Size = new System.Drawing.Size(227, 20);
+            this.txtNmTipoMotor.Size = new System.Drawing.Size(227, 61);
             this.txtNmTipoMotor.TabIndex = 1;
             // 
             // lblNmTipoMotor
@@ -86,6 +87,18 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
+            // btnAceitar
+            // 
+            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceitar.Location = new System.Drawing.Point(2, 4);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
+            this.btnAceitar.TabIndex = 2;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
+            this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
             // lblIdReal
             // 
             this.lblIdReal.AutoSize = true;
@@ -99,22 +112,10 @@
             // 
             this.txtIdReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdReal.Location = new System.Drawing.Point(77, 78);
-            this.txtIdReal.MaxLength = 50;
+            this.txtIdReal.MaxLength = 20;
             this.txtIdReal.Name = "txtIdReal";
             this.txtIdReal.Size = new System.Drawing.Size(227, 20);
             this.txtIdReal.TabIndex = 1;
-            // 
-            // btnAceitar
-            // 
-            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
-            this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(2, 4);
-            this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 2;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
-            this.btnAceitar.UseVisualStyleBackColor = true;
-            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // frmCadTipoMotor
             // 
