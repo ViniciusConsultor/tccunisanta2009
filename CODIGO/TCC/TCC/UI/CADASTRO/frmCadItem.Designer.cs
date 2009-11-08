@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAdicionaPeca = new System.Windows.Forms.Button();
+            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.txtCodigoItem = new System.Windows.Forms.TextBox();
             this.lblCdItemReal = new System.Windows.Forms.Label();
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
@@ -56,7 +57,6 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
-            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.btnConfirmar.Location = new System.Drawing.Point(6, 4);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirmar.TabIndex = 3;
+            this.btnConfirmar.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnConfirmar, "Cadastrar");
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -80,7 +80,7 @@
             this.btnVolta.Location = new System.Drawing.Point(7, 85);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 5;
+            this.btnVolta.TabIndex = 10;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -92,7 +92,7 @@
             this.btnLimpa.Location = new System.Drawing.Point(7, 44);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 4;
+            this.btnLimpa.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -126,10 +126,22 @@
             this.btnAdicionaPeca.Location = new System.Drawing.Point(36, 157);
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
             this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaPeca.TabIndex = 22;
-            this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adiciona Peça");
+            this.btnAdicionaPeca.TabIndex = 6;
+            this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adicionar Peça");
             this.btnAdicionaPeca.UseVisualStyleBackColor = true;
             this.btnAdicionaPeca.Click += new System.EventHandler(this.btnAdicionaPeca_Click);
+            // 
+            // btnRemovePeca
+            // 
+            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemovePeca.Location = new System.Drawing.Point(98, 157);
+            this.btnRemovePeca.Name = "btnRemovePeca";
+            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
+            this.btnRemovePeca.TabIndex = 7;
+            this.btnRemovePeca.Text = "Remove Peça";
+            this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
+            this.btnRemovePeca.UseVisualStyleBackColor = true;
+            this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
             // 
             // txtCodigoItem
             // 
@@ -137,7 +149,7 @@
             this.txtCodigoItem.MaxLength = 20;
             this.txtCodigoItem.Name = "txtCodigoItem";
             this.txtCodigoItem.Size = new System.Drawing.Size(133, 20);
-            this.txtCodigoItem.TabIndex = 2;
+            this.txtCodigoItem.TabIndex = 1;
             // 
             // lblCdItemReal
             // 
@@ -174,7 +186,7 @@
             this.txtQtdPeca.Location = new System.Drawing.Point(36, 131);
             this.txtQtdPeca.Name = "txtQtdPeca";
             this.txtQtdPeca.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdPeca.TabIndex = 23;
+            this.txtQtdPeca.TabIndex = 5;
             this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // dgItems
@@ -221,7 +233,7 @@
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
-            this.dgItems.TabIndex = 21;
+            this.dgItems.TabIndex = 0;
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
             // hIdPeca
@@ -239,7 +251,7 @@
             this.hCodigo.HeaderText = "Código";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
+            this.hCodigo.Width = 63;
             // 
             // hNome
             // 
@@ -247,7 +259,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.Width = 58;
             // 
             // hQtd
             // 
@@ -255,7 +267,7 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
+            this.hQtd.Width = 85;
             // 
             // txtFiltro
             // 
@@ -264,7 +276,7 @@
             this.txtFiltro.MaxLength = 20;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtFiltro.TabIndex = 15;
+            this.txtFiltro.TabIndex = 3;
             // 
             // lblQtdPeca
             // 
@@ -282,7 +294,8 @@
             this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(395, 22);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
             this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 13;
+            this.btnBuscarPecaDtGrid.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarPecaDtGrid, "Buscar Peças");
             this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
             this.btnBuscarPecaDtGrid.Click += new System.EventHandler(this.btnBuscarPecaDtGrid_Click);
             // 
@@ -325,18 +338,6 @@
             this.TxtNmPeca.Name = "TxtNmPeca";
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
-            // 
-            // btnRemovePeca
-            // 
-            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemovePeca.Location = new System.Drawing.Point(98, 157);
-            this.btnRemovePeca.Name = "btnRemovePeca";
-            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
-            this.btnRemovePeca.TabIndex = 24;
-            this.btnRemovePeca.Text = "Remove Peça";
-            this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remove Peça");
-            this.btnRemovePeca.UseVisualStyleBackColor = true;
-            this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
             // 
             // frmCadItemPeca
             // 

@@ -10,40 +10,32 @@ using TCC.BUSINESS;
 
 namespace TCC.UI.Resumo
 {
-    public partial class frmResumoItemPeca : Form
+    public partial class frmResumoKitFamilia : Form
     {
         #region Atributos
-        List<mItemPeca> _listaModelItemPeca;
+        List<mKitFamilia> _listaModelKitFamilia;
         #endregion Atributos
 
         #region Construtor
-        public frmResumoItemPeca(List<mItemPeca> lista, string nomeItem)
+        frmResumoKitFamilia(List<mKitFamilia> lista, string nomeFamiliaMotor, string nomeMotor)
         {
             InitializeComponent();
-            this._listaModelItemPeca = lista;
-            this.lblNome.Text = nomeItem;
+            this._listaModelKitFamilia = lista;
+            this.lblNome.Text = nomeFamiliaMotor;
+            this.txtMotor.Text = nomeMotor;
         }
         #endregion Construtor
 
         #region Eventos
-
-        #region btnVoltar Click
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-        #endregion btnVoltar Click
-
-        #region frmResumoItemPeca Load
-        private void frmResumoItemPeca_Load(object sender, EventArgs e)
+        #region frmResumoKitFamilia Load
+        private void frmResumoKitFamilia_Load(object sender, EventArgs e)
         {
             DataTable dtSource = new DataTable();
             try
             {
                 this.CriaColunasDataTable(dtSource);
                 this.PopulaDataTableListaModel(dtSource);
-                this.dgItems.DataSource = dtSource;
+                this.dgKits.DataSource = dtSource;
             }
             catch (Exception ex)
             {
@@ -58,7 +50,15 @@ namespace TCC.UI.Resumo
                 }
             }
         }
-        #endregion frmResumoItemPeca Load
+        #endregion frmResumoKitFamilia Load
+
+        #region btnVoltar Click
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        #endregion btnVoltar Click
 
         #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
@@ -76,9 +76,9 @@ namespace TCC.UI.Resumo
         {
             try
             {
-                dt.Columns.Add("id_peca");
+                dt.Columns.Add("id_kit");
                 dt.Columns.Add("Codigo");
-                dt.Columns.Add("Peça");
+                dt.Columns.Add("Kit");
                 dt.Columns.Add("qtd");
             }
             catch (Exception ex)
@@ -95,18 +95,18 @@ namespace TCC.UI.Resumo
         private void PopulaDataTableListaModel(DataTable dt)
         {
             DataRow linha;
-            rPeca regraPeca = new rPeca();
-            mPeca modelPeca = new mPeca();
+            rKitGrupoPeca regraKit = new rKitGrupoPeca();
+            mKitGrupoPeca modelKit = new mKitGrupoPeca();
             try
             {
-                foreach (mItemPeca model in this._listaModelItemPeca)
+                foreach (mKitFamilia model in this._listaModelKitFamilia)
                 {
-                    modelPeca = regraPeca.BuscaUnicoRegistro(Convert.ToInt32(model.Id_peca));
+                    modelKit = regraKit.BuscaUnicoRegistro(Convert.ToInt32(model.Id_kit));
                     linha = dt.NewRow();
-                    linha["id_peca"] = model.Id_peca;
-                    linha["Codigo"] = modelPeca.IdPecaReal;
-                    linha["Peça"] = modelPeca.Nom;
-                    linha["qtd"] = model.Qtd_peca;
+                    linha["id_kit"] = model.Id_kit;
+                    linha["Codigo"] = modelKit.IdKitReal;
+                    linha["Kit"] = modelKit.Nom_grupo;
+                    linha["qtd"] = model.Qtd_kit;
                     dt.Rows.Add(linha);
                 }
             }
@@ -117,12 +117,13 @@ namespace TCC.UI.Resumo
             finally
             {
                 linha = null;
-                regraPeca = null;
-                modelPeca = null;
+                regraKit = null;
+                modelKit = null;
             }
         }
         #endregion Popula DataTable ListaModel
 
         #endregion Metodos
+
     }
 }

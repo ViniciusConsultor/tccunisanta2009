@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mItemKit : ModelPai
+    public class mItemKit : ModelPai
     {
 
         private int? id_item;

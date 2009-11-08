@@ -42,10 +42,6 @@
             this.btnAdicionaItem = new System.Windows.Forms.Button();
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.txtQtdItem = new System.Windows.Forms.TextBox();
@@ -56,6 +52,11 @@
             this.TxtNmItem = new System.Windows.Forms.TextBox();
             this.lblCdKitReal = new System.Windows.Forms.Label();
             this.txtCodigoKit = new System.Windows.Forms.TextBox();
+            this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +104,7 @@
             this.txtNmKit.MaxLength = 50;
             this.txtNmKit.Name = "txtNmKit";
             this.txtNmKit.Size = new System.Drawing.Size(133, 20);
-            this.txtNmKit.TabIndex = 3;
+            this.txtNmKit.TabIndex = 2;
             // 
             // lblNmKit
             // 
@@ -123,16 +124,17 @@
             // 
             this.btnAdicionaItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaItem.BackgroundImage")));
             this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaItem.Location = new System.Drawing.Point(62, 173);
+            this.btnAdicionaItem.Location = new System.Drawing.Point(36, 170);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
             this.btnAdicionaItem.Size = new System.Drawing.Size(40, 35);
             this.btnAdicionaItem.TabIndex = 22;
-            this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adiciona ITem");
+            this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adicionar Item");
             this.btnAdicionaItem.UseVisualStyleBackColor = true;
             this.btnAdicionaItem.Click += new System.EventHandler(this.btnAdicionaItem_Click);
             // 
             // gbBuscaItem
             // 
+            this.gbBuscaItem.Controls.Add(this.btnRemoveItem);
             this.gbBuscaItem.Controls.Add(this.btnAdicionaItem);
             this.gbBuscaItem.Controls.Add(this.dgItems);
             this.gbBuscaItem.Controls.Add(this.txtBuscaFiltro);
@@ -197,39 +199,6 @@
             this.dgItems.TabIndex = 21;
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
-            // hIdItem
-            // 
-            this.hIdItem.DataPropertyName = "id_item";
-            this.hIdItem.HeaderText = "IdItem";
-            this.hIdItem.Name = "hIdItem";
-            this.hIdItem.ReadOnly = true;
-            this.hIdItem.Visible = false;
-            this.hIdItem.Width = 59;
-            // 
-            // hCodigo
-            // 
-            this.hCodigo.DataPropertyName = "Codigo";
-            this.hCodigo.HeaderText = "Codigo";
-            this.hCodigo.Name = "hCodigo";
-            this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "Item";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 85;
-            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -237,7 +206,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 15;
+            this.txtBuscaFiltro.TabIndex = 3;
             // 
             // lblQtdPeca
             // 
@@ -255,7 +224,7 @@
             this.txtQtdItem.MaxLength = 20;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(102, 20);
-            this.txtQtdItem.TabIndex = 16;
+            this.txtQtdItem.TabIndex = 6;
             // 
             // btnBuscarItemDtGrid
             // 
@@ -264,7 +233,8 @@
             this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(394, 22);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
             this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarItemDtGrid.TabIndex = 13;
+            this.btnBuscarItemDtGrid.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
             this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
             this.btnBuscarItemDtGrid.Click += new System.EventHandler(this.btnBuscarItemDtGrid_Click);
             // 
@@ -306,7 +276,7 @@
             this.TxtNmItem.MaxLength = 20;
             this.TxtNmItem.Name = "TxtNmItem";
             this.TxtNmItem.Size = new System.Drawing.Size(102, 20);
-            this.TxtNmItem.TabIndex = 14;
+            this.TxtNmItem.TabIndex = 5;
             // 
             // lblCdKitReal
             // 
@@ -324,7 +294,51 @@
             this.txtCodigoKit.MaxLength = 20;
             this.txtCodigoKit.Name = "txtCodigoKit";
             this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
-            this.txtCodigoKit.TabIndex = 23;
+            this.txtCodigoKit.TabIndex = 1;
+            // 
+            // hIdItem
+            // 
+            this.hIdItem.DataPropertyName = "id_item";
+            this.hIdItem.HeaderText = "IdItem";
+            this.hIdItem.Name = "hIdItem";
+            this.hIdItem.ReadOnly = true;
+            this.hIdItem.Visible = false;
+            this.hIdItem.Width = 59;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "Codigo";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Item";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 85;
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemoveItem.Location = new System.Drawing.Point(98, 170);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(40, 35);
+            this.btnRemoveItem.TabIndex = 25;
+            this.btnRemoveItem.Text = "Remove Peça";
+            this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
+            this.btnRemoveItem.UseVisualStyleBackColor = true;
             // 
             // frmCadKitGrupoPeca
             // 
@@ -379,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
+        private System.Windows.Forms.Button btnRemoveItem;
     }
 }

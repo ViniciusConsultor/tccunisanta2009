@@ -10,22 +10,30 @@ using TCC.BUSINESS;
 
 namespace TCC.UI.Resumo
 {
-    public partial class frmResumoItemPeca : Form
+    public partial class frmResumoItemKit : Form
     {
         #region Atributos
-        List<mItemPeca> _listaModelItemPeca;
+        private List<mItemKit> _listaModelItemKit;
         #endregion Atributos
 
         #region Construtor
-        public frmResumoItemPeca(List<mItemPeca> lista, string nomeItem)
+        public frmResumoItemKit(List<mItemKit> lista, string nomeKit)
         {
             InitializeComponent();
-            this._listaModelItemPeca = lista;
-            this.lblNome.Text = nomeItem;
+            this._listaModelItemKit = lista;
+            this.lblNome.Text = nomeKit;
         }
         #endregion Construtor
 
         #region Eventos
+
+        #region btnAceitar Click
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+        #endregion btnAceitar Click
 
         #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -35,8 +43,8 @@ namespace TCC.UI.Resumo
         }
         #endregion btnVoltar Click
 
-        #region frmResumoItemPeca Load
-        private void frmResumoItemPeca_Load(object sender, EventArgs e)
+        #region frmResumoItemKit Load
+        private void frmResumoItemKit_Load(object sender, EventArgs e)
         {
             DataTable dtSource = new DataTable();
             try
@@ -58,15 +66,8 @@ namespace TCC.UI.Resumo
                 }
             }
         }
-        #endregion frmResumoItemPeca Load
+        #endregion frmResumoItemKit Load
 
-        #region btnAceitar Click
-        private void btnAceitar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-        #endregion btnAceitar Click
         #endregion Eventos
 
         #region Metodos
@@ -76,9 +77,9 @@ namespace TCC.UI.Resumo
         {
             try
             {
-                dt.Columns.Add("id_peca");
+                dt.Columns.Add("id_item");
                 dt.Columns.Add("Codigo");
-                dt.Columns.Add("Peça");
+                dt.Columns.Add("Item");
                 dt.Columns.Add("qtd");
             }
             catch (Exception ex)
@@ -95,18 +96,18 @@ namespace TCC.UI.Resumo
         private void PopulaDataTableListaModel(DataTable dt)
         {
             DataRow linha;
-            rPeca regraPeca = new rPeca();
-            mPeca modelPeca = new mPeca();
+            rItem regraItem = new rItem();
+            mItem modelItem = new mItem();
             try
             {
-                foreach (mItemPeca model in this._listaModelItemPeca)
+                foreach (mItemKit model in this._listaModelItemKit)
                 {
-                    modelPeca = regraPeca.BuscaUnicoRegistro(Convert.ToInt32(model.Id_peca));
+                    modelItem = regraItem.BuscaUnicoRegistro(Convert.ToInt32(model.Id_item));
                     linha = dt.NewRow();
-                    linha["id_peca"] = model.Id_peca;
-                    linha["Codigo"] = modelPeca.IdPecaReal;
-                    linha["Peça"] = modelPeca.Nom;
-                    linha["qtd"] = model.Qtd_peca;
+                    linha["id_item"] = model.Id_item;
+                    linha["Codigo"] = modelItem.Id_item_real;
+                    linha["Item"] = modelItem.Nom;
+                    linha["qtd"] = model.Qtd_item;
                     dt.Rows.Add(linha);
                 }
             }
@@ -117,8 +118,8 @@ namespace TCC.UI.Resumo
             finally
             {
                 linha = null;
-                regraPeca = null;
-                modelPeca = null;
+                regraItem = null;
+                modelItem = null;
             }
         }
         #endregion Popula DataTable ListaModel
