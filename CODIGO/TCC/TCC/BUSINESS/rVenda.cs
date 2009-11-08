@@ -39,13 +39,25 @@ namespace TCC.BUSINESS
 
         private void ValidaDados(mVenda model)
         {
-            if (model.Qtd == null || model.Qtd <= 0)
-            {
-                throw new Exceptions.Venda.QuantidadeVendaZeroOuNuloException();
-            }
-            else if (model.Valor == null || model.Valor <= 0)
+            if (model.Valor <= 0)
             {
                 throw new Exceptions.Venda.ValorVendaZeroOuNuloException();
+            }
+        }
+
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_venda", "Venda"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
             }
         }
 

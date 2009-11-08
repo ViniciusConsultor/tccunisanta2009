@@ -13,13 +13,9 @@ namespace TCC.UI
     public partial class frmCadVenda : FormPai
     {
         #region Atributos
-        List<mFamiliaMotor> _listaFamMotor;
-        List<mKitGrupoPeca> _listaKitGrupo;
+        List<mVendaProduto> _listaModelVendaProduto;
         mCliente _modelCliente;
-        mMotor _modelMotor;
-        mProduto _modelProduto;
-        mTipoProduto _modelTipoProd;
-        mKitGrupoPeca _modelKit;
+        int _idProduto;
         #endregion Atributos
 
         #region Construtor
@@ -30,6 +26,7 @@ namespace TCC.UI
         #endregion Construtor
 
         #region Eventos
+
         #region Form Load
         private void frmCadVenda_Load(object sender, EventArgs e)
         {
@@ -40,7 +37,43 @@ namespace TCC.UI
         #region btnConfirma Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            this.Insere();
+            try
+            {
+                this.ValidaDadosNulos();
+                this.AbreTelaResumo();
+                this.Insere();
+            }
+            catch (BUSINESS.Exceptions.Venda.DataVaziaException)
+            {
+                MessageBox.Show("É necessário preencher o campo data de venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataVenda.Focus();
+            }
+            catch (BUSINESS.Exceptions.Venda.ValorVendaVaziaException)
+            {
+                MessageBox.Show("É necessário preencher o campo valor de venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtValorVenda.Focus();
+            }
+            catch (BUSINESS.Exceptions.Venda.VendaSemProdutoException)
+            {
+                MessageBox.Show("É necessário associar um Produto a venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarItemDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.CodigoClienteVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar o código do Cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Venda.ValorVendaZeroOuNuloException)
+            {
+                MessageBox.Show("Valor da Venda não pode ser menor que 0(zero)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Item.TelaResumoCanceladaException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
         }
         #endregion btnConfirma Click
 
@@ -49,10 +82,7 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this._modelCliente = null;
-            this._modelKit = null;
-            this._modelMotor = null;
-            this._modelProduto = null;
-            this._modelTipoProd = null;
+            this._listaModelVendaProduto = null;
         }
         #endregion btnLimpa Click
 
@@ -97,6 +127,13 @@ namespace TCC.UI
             try
             {
                 this.PopulaGrid();
+                if (this._listaModelVendaProduto != null)
+                {
+                    if (this._listaModelVendaProduto.Count > 0)
+                    {
+                        this.ComparaDadosGrid();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -114,37 +151,17 @@ namespace TCC.UI
         {
             try
             {
-                int tipoProd = Convert.ToInt32(this.cboTipoProduto.SelectedValue);
                 this.ValidaAdicaoProduto();
-                //Se for Motor
-                //------------
-                if (tipoProd == 1)
+                if (this._listaModelVendaProduto != null)
                 {
-                    if (this._listaFamMotor != null)
+                    if (this._listaModelVendaProduto.Count > 0)
                     {
-                        if (this._listaFamMotor.Count > 0)
-                        {
-
-                        }
-                    }
-                    else
-                    {
-
+                        this.AlteraModelItemPeca();
                     }
                 }
                 else
                 {
-                    if (this._listaKitGrupo != null)
-                    {
-                        if (this._listaKitGrupo.Count > 0)
-                        {
-
-                        }
-                    }
-                    else
-                    {
-
-                    }
+                    this.PopulaModelVendaProduto();
                 }
                 this.AtualizaGrid();
             }
@@ -166,6 +183,34 @@ namespace TCC.UI
         }
         #endregion btnAdicionaProdutos Click
 
+        #region cboTipoProduto SelectedIndexChanged
+        private void cboTipoProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(this.cboTipoProduto.SelectedValue) == 0)
+            {
+                this.HabilitaControles(false);
+            }
+            else
+            {
+                this.HabilitaControles(true);
+            }
+        }
+        #endregion cboTipoProduto SelectedIndexChanged
+
+        #region dgProdutos SelectionChanged
+        private void dgProdutos_SelectionChanged(object sender, EventArgs e)
+        {
+            this.PopulaTelaProduto();
+        }
+        #endregion dgProdutos SelectionChanged
+
+        #region btnRemovePeca Click
+        private void btnRemovePeca_Click(object sender, EventArgs e)
+        {
+            this.RemoveProduto();
+        }
+        #endregion btnRemovePeca Click
+
         #endregion Eventos
 
         #region Metodos
@@ -181,8 +226,10 @@ namespace TCC.UI
             try
             {
                 dtSource = regraTipoProd.BuscaTipoProduto(string.Empty);
+
                 this.cboTipoProduto.DisplayMember = "Tipo Produto";
                 this.cboTipoProduto.ValueMember = "id_tipo_prod";
+                this.AdicionaTodosTipoProduto(dtSource);
                 this.cboTipoProduto.DataSource = dtSource;
             }
             catch (Exception ex)
@@ -196,46 +243,56 @@ namespace TCC.UI
         }
         #endregion Popula Combo Tipo Produto
 
-        #region Pega Dados Tela
+        #region Adiciona Todos Tipo Produto
+        /// <summary>
+        /// Adiciona Campo TODOS no combo
+        /// </summary>
+        /// <param name="dt">DataTable que sera o DataSource do combo</param>
+        private void AdicionaTodosTipoProduto(DataTable dt)
+        {
+            DataRow linha = null;
+            try
+            {
+                linha = dt.NewRow();
+                linha["id_tipo_prod"] = 0;
+                linha["Tipo Produto"] = "TODOS";
+                dt.Rows.InsertAt(linha, 0);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                linha = null;
+            }
+        }
+        #endregion Adiciona Todos Tipo Produto
+
+        #region Pega Dados Tela Venda
         /// <summary>
         /// Pega os dados que estão na tela e popula o model Venda
         /// </summary>
         /// <returns>model populado de acordo com os dados da tela</returns>
-        private mVenda PegaDadosTela()
+        private mVenda PegaDadosTelaVenda()
         {
             mVenda model = new mVenda();
             rVenda regra = new rVenda();
 
             try
             {
-                if (string.IsNullOrEmpty(this.txtDataVenda.Text) == true || this.txtDataVenda.Modified == false)
-                {
-                    model.DatVenda = null;
-                }
-                else
-                {
-                    model.DatVenda = Convert.ToDateTime(this.txtDataVenda.Text);
-                }
+                model.IdVenda = regra.BuscaIdMaximo();
+                model.DatVenda = Convert.ToDateTime(this.txtDataVenda.Text);
                 model.DatSaida = DateTime.Now;
                 model.IdCli = this._modelCliente.IdCliente;
-                model.IdOrdem = Convert.ToInt32(this._modelProduto.Id_produto);
-                model.IdTipoProduto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
-                model.NotaFisc = this.txtNotaFiscal.Text;
-                if (string.IsNullOrEmpty(this.txtQtdProdutos.Text) == true)
+                model.Valor = Convert.ToDouble(this.txtValorVenda.Text);
+                if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
                 {
-                    //   model.Qtd = null;
+                    model.NotaFisc = null;
                 }
                 else
                 {
-                    //    model.Qtd = Convert.ToInt32(this.txtQtdVenda.Text);
-                }
-                if (string.IsNullOrEmpty(this.txtValorVenda.Text) == true)
-                {
-                    model.Valor = null;
-                }
-                else
-                {
-                    model.Valor = Convert.ToDouble(this.txtValorVenda.Text);
+                    model.NotaFisc = this.txtNotaFiscal.Text;
                 }
 
                 return model;
@@ -249,7 +306,7 @@ namespace TCC.UI
                 model = null;
             }
         }
-        #endregion Pega Dados Tela
+        #endregion Pega Dados Tela Venda
 
         #region Insere
         /// <summary>
@@ -257,40 +314,19 @@ namespace TCC.UI
         /// </summary>
         private void Insere()
         {
-            mVenda model = new mVenda();
-            rVenda regra = new rVenda();
+            mVenda modelVenda = new mVenda();
+            rVenda regraVenda = new rVenda();
+            rPedidoVenda regraVendaPedido = new rPedidoVenda();
             try
             {
-                this.ValidaDadosNulos();
-                model = this.PegaDadosTela();
-                regra.ValidarInsere(model);
+                modelVenda = this.PegaDadosTelaVenda();
+                regraVenda.ValidarInsere(modelVenda);
+                this.CompletaListaModelVendaPedido(modelVenda);
+                foreach (mVendaProduto modelVendaProduto in this._listaModelVendaProduto)
+                {
+                    regraVendaPedido.ValidarInsere(modelVendaProduto);
+                }
                 this.btnLimpa_Click(null, null);
-            }
-            catch (BUSINESS.Exceptions.CodigoClienteVazioException)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Kit Grupo Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Venda.VendaMotorGrupoVazioException)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Motor ou do Grupo de Peças", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Tipo Produto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Venda.QuantidadeVendaZeroOuNuloException)
-            {
-                MessageBox.Show("O campo Quantidade Venda não pode se Zero ou Vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtQtdProdutos.Focus();
-            }
-            catch (BUSINESS.Exceptions.Venda.ValorVendaZeroOuNuloException)
-            {
-                MessageBox.Show("O campo Valor não pode se Zero ou Vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtValorVenda.Focus();
             }
             catch (Exception ex)
             {
@@ -298,8 +334,8 @@ namespace TCC.UI
             }
             finally
             {
-                model = null;
-                regra = null;
+                modelVenda = null;
+                regraVenda = null;
             }
         }
         #endregion Insere
@@ -314,18 +350,21 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoClienteVazioException();
             }
-            else if (this._modelProduto == null)
+            string data = this.txtDataVenda.Text.Replace("/", string.Empty);
+            data = data.Replace(" ", string.Empty);
+            if(string.IsNullOrEmpty(data) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoOrdemProducaoVazioException();
+                throw new BUSINESS.Exceptions.Venda.DataVaziaException();
             }
-            else if (this._modelTipoProd == null)
+            else if (string.IsNullOrEmpty(this.txtValorVenda.Text) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
+                throw new BUSINESS.Exceptions.Venda.ValorVendaVaziaException();
             }
-            else if (this._modelKit == null && this._modelMotor == null)
+            else if (this._listaModelVendaProduto == null)
             {
-                throw new BUSINESS.Exceptions.Venda.VendaMotorGrupoVazioException();
+                throw new BUSINESS.Exceptions.Venda.VendaSemProdutoException();
             }
+
         }
         #endregion Valida Dados Nulos
 
@@ -336,8 +375,7 @@ namespace TCC.UI
         /// <returns>DataTable com os dados escolhidos para o filtro</returns>
         private DataTable BuscaDadosGrid()
         {
-            rFamiliaMotor regraFamMotor = null;
-            rKitGrupoPeca regraKit = null;
+            rProduto regraProduto = new rProduto();
             int idTipoProduto;
             try
             {
@@ -346,29 +384,31 @@ namespace TCC.UI
                 //-------------------------------------------------
                 if (idTipoProduto == 1)
                 {
-                    regraFamMotor = new rFamiliaMotor();
                     if (rdbCodigo.Checked == true)
                     {
-                        return regraFamMotor.BuscaFamiliaMotorCodigo(this.txtBuscaFiltro.Text);
+                        return regraProduto.BuscaProdutoFamiliaMotorCodigo(this.txtBuscaFiltro.Text);
                     }
                     else
                     {
-                        return regraFamMotor.BuscaFamiliaMotorNome(this.txtBuscaFiltro.Text);
+                        return regraProduto.BuscaProdutoFamiliaMotorNome(this.txtBuscaFiltro.Text);
                     }
                 }
                 //Não verifica outro id pois, sistema abrange apenas venda de Motores e kits, por enquanto
                 //----------------------------------------------------------------------------------------
-                else
+                else if (idTipoProduto == 2)
                 {
-                    regraKit = new rKitGrupoPeca();
                     if (rdbCodigo.Checked == true)
                     {
-                        return regraKit.BuscaKitGrupoPecaCodigo(this.txtBuscaFiltro.Text);
+                        return regraProduto.BuscaProdutoKitCodigo(this.txtBuscaFiltro.Text);
                     }
                     else
                     {
-                        return regraKit.BuscaKitGrupoPecaNome(this.txtBuscaFiltro.Text);
+                        return regraProduto.BuscaProdutoKitNome(this.txtBuscaFiltro.Text);
                     }
+                }
+                else
+                {
+                    return regraProduto.BuscaTodosProdutos();
                 }
             }
             catch (Exception ex)
@@ -377,8 +417,7 @@ namespace TCC.UI
             }
             finally
             {
-                regraKit = null;
-                regraFamMotor = null;
+                regraProduto = null;
             }
         }
         #endregion Busca Dados Grid
@@ -460,6 +499,246 @@ namespace TCC.UI
             }
         }
         #endregion Atualiza Grid
+
+        #region Habilita Controles
+        /// <summary>
+        /// Habilita ou desabilita controles de busca
+        /// </summary>
+        /// <param name="habilitar">True Habilita, caso contrario false</param>
+        private void HabilitaControles(bool habilitar)
+        {
+            this.rdbCodigo.Checked = habilitar;
+            this.rdbCodigo.Enabled = habilitar;
+            this.rdbNome.Checked = false;
+            this.rdbNome.Enabled = habilitar;
+            this.txtBuscaFiltro.Text = string.Empty;
+            this.txtBuscaFiltro.Enabled = habilitar;
+        }
+        #endregion Habilita Controles
+
+        #region Popula Tela Produto
+        /// <summary>
+        /// Pega os dados do grid para popular os TextBox na tela
+        /// </summary>
+        private void PopulaTelaProduto()
+        {
+            try
+            {
+                this.ComparaDadosGrid();
+                if (this.dgProdutos.Rows.Count > 0)
+                {
+                    int indice = this.dgProdutos.CurrentRow.Index;
+                    this.TxtNmProduto.Text = this.dgProdutos["hDescricao", indice].Value.ToString();
+                    this.txtQtdProdutos.Text = this.dgProdutos["hQtd", indice].Value.ToString();
+                    this._idProduto = Convert.ToInt32(this.dgProdutos["hId", indice].Value);
+                    this.txtQtdProdutos.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Popula Tela Produto
+
+        #region Compara Dados Grid
+        /// <summary>
+        /// Compara os dados do Grid com os do model e substitui a quantidade caso exitam ids iguais
+        /// </summary>
+        private void ComparaDadosGrid()
+        {
+            DataTable dtSource = null;
+            int indice;
+            try
+            {
+                dtSource = (DataTable)this.dgProdutos.DataSource;
+                for (int contador = 0; contador < dtSource.Rows.Count; contador++)
+                {
+                    indice = this.ExisteModelProduto(Convert.ToInt32(dtSource.Rows[contador]["id_prdto"]));
+                    if (indice > -1)
+                    {
+                        dtSource.Columns["Qtd"].ReadOnly = false;
+                        dtSource.Rows[contador]["Qtd"] = this._listaModelVendaProduto[indice].Qtd.ToString();
+                    }
+                }
+                this.dgProdutos.DataSource = dtSource;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
+        }
+        #endregion Compara Dados Grid
+
+        #region Existe Model Produto
+        /// <summary>
+        /// Verifica a Existencia do Produto na Lista de Model
+        /// </summary>
+        /// <param name="idPeca">Id do Produto Procurado</param>
+        /// <returns>Indice da pocição; Caso não encontre retorna -1</returns>
+        private int ExisteModelProduto(int idProduto)
+        {
+            int retorno = -1;
+            try
+            {
+                if (this._listaModelVendaProduto != null)
+                {
+                    for (int cont = 0; cont < this._listaModelVendaProduto.Count; cont++)
+                    {
+                        if (Convert.ToInt32(this._listaModelVendaProduto[cont].IdProduto) == idProduto)
+                        {
+                            retorno = cont;
+                        }
+                    }
+                    return retorno;
+                }
+                else
+                {
+                    return retorno;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Existe Model Item Peca
+
+        #region Popula Model Venda Produto
+        /// <summary>
+        /// Popula o model venda produto com os dados que estão no painel da tela
+        /// </summary>
+        /// <returns>model populado</returns>
+        private void PopulaModelVendaProduto()
+        {
+            mVendaProduto model = new mVendaProduto();
+            try
+            {
+                if (this._listaModelVendaProduto == null)
+                {
+                    this._listaModelVendaProduto = new List<mVendaProduto>();
+                }
+                model.DatAlt = DateTime.Now;
+                model.FlgAtivo = true;
+                model.IdProduto = this._idProduto;
+                model.IdVenda = null;
+                model.Qtd = Convert.ToInt32(this.txtQtdProdutos.Text);
+
+                this._listaModelVendaProduto.Add(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+        #endregion Popula Model Item Peca
+
+        #region Altera Model Venda Produto
+        /// <summary>
+        /// Caso o id do produto já exista no model apenas troca para a quantidade certa
+        /// </summary>
+        private void AlteraModelItemPeca()
+        {
+            int indice;
+            try
+            {
+                indice = this.ExisteModelProduto(this._idProduto);
+                if (indice > -1)
+                {
+                    this._listaModelVendaProduto[indice].Qtd = Convert.ToInt32(this.txtQtdProdutos.Text);
+                }
+                else
+                {
+                    this.PopulaModelVendaProduto();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Altera Model Item Peca
+
+        #region Remove Produto
+        /// <summary>
+        /// Remove produto da lista
+        /// </summary>
+        private void RemoveProduto()
+        {
+            int indice;
+            try
+            {
+                indice = this.ExisteModelProduto(this._idProduto);
+                if (indice > -1)
+                {
+                    this.txtQtdProdutos.Text = "0";
+                    this._listaModelVendaProduto.RemoveAt(indice);
+                    this.AtualizaGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Produto não associado a Venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Remove Produto
+
+        #region Completa Lista Model Venda Pedido
+        /// <summary>
+        /// Completa a lista de model VendaPedido com o id da venda que foi gravado no Banco de dados
+        /// </summary>
+        /// <param name="modelItem">model da venda onde esta o id</param>
+        private void CompletaListaModelVendaPedido(mVenda modelVenda)
+        {
+            foreach (mVendaProduto model in this._listaModelVendaProduto)
+            {
+                model.IdVenda = modelVenda.IdVenda;
+            }
+        }
+        #endregion Completa Lista Model Venda Pedido
+
+        #region Abre Tela Resumo
+        /// <summary>
+        /// Abre a tela de resumo antes de gravar os dados no banco
+        /// </summary>
+        private void AbreTelaResumo()
+        {
+            Resumo.frmResumoVendaProduto ResumoPeca = new TCC.UI.Resumo.frmResumoVendaProduto(this._listaModelVendaProduto, this.txtDataVenda.Text);
+            try
+            {
+                DialogResult resultado;
+                resultado = ResumoPeca.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    throw new BUSINESS.Exceptions.Item.TelaResumoCanceladaException();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                ResumoPeca = null;
+            }
+        }
+        #endregion Abre Tela Resumo
 
         #endregion Metodos
     }

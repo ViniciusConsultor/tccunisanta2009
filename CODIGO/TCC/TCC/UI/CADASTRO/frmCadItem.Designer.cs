@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmCadItemPeca
+    partial class frmCadItem
     {
         /// <summary>
         /// Required designer variable.

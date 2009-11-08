@@ -10,12 +10,9 @@ namespace TCC.MODEL
         private int? idVenda;
         private int idCli;
         private DateTime? datVenda;
-        private int? qtd;
         private double? valor;
         private string notaFisc;
         private DateTime datSaida;
-        private int idOrdem;
-        private int idTipoProduto;
         private string nomeTabela = "Venda";
 
         [ColunasBancoDados ("id_venda", System.Data.SqlDbType.Int,true)]
@@ -39,13 +36,6 @@ namespace TCC.MODEL
             set { datVenda = value; }
         }
 
-        [ColunasBancoDados ("qtd", System.Data.SqlDbType.Int,false)]
-        public int? Qtd
-        {
-            get { return qtd; }
-            set { qtd = value; }
-        }
-        
         [ColunasBancoDados ("valor", System.Data.SqlDbType.Decimal,false)]
         public double? Valor
         {
@@ -65,20 +55,6 @@ namespace TCC.MODEL
         {
             get { return datSaida; }
             set { datSaida = value; }
-        }
-
-        [ColunasBancoDados ("id_ordem", System.Data.SqlDbType.Int,false)]
-        public int IdOrdem
-        {
-            get { return idOrdem; }
-            set { idOrdem = value; }
-        }
-
-        [ColunasBancoDados ("id_tipo_prod", System.Data.SqlDbType.Int,false)]
-        public int IdTipoProduto
-        {
-            get { return idTipoProduto; }
-            set { idTipoProduto = value; }
         }
 
         public override string getNomeTabela()
