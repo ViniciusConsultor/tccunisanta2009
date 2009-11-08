@@ -48,7 +48,7 @@
             // 
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLogin.Location = new System.Drawing.Point(114, 65);
-            this.txtLogin.MaxLength = 20;
+            this.txtLogin.MaxLength = 25;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(187, 20);
             this.txtLogin.TabIndex = 2;
@@ -129,7 +129,9 @@
             this.txtPerfilUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPerfilUsuario.Enabled = false;
             this.txtPerfilUsuario.Location = new System.Drawing.Point(146, 34);
+            this.txtPerfilUsuario.MaxLength = 50;
             this.txtPerfilUsuario.Name = "txtPerfilUsuario";
+            this.txtPerfilUsuario.ReadOnly = true;
             this.txtPerfilUsuario.Size = new System.Drawing.Size(125, 20);
             this.txtPerfilUsuario.TabIndex = 0;
             this.txtPerfilUsuario.TabStop = false;

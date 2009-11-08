@@ -64,6 +64,7 @@
             this.txtCodigoPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoPerfil.Enabled = false;
             this.txtCodigoPerfil.Location = new System.Drawing.Point(135, 65);
+            this.txtCodigoPerfil.MaxLength = 50;
             this.txtCodigoPerfil.Name = "txtCodigoPerfil";
             this.txtCodigoPerfil.ReadOnly = true;
             this.txtCodigoPerfil.Size = new System.Drawing.Size(114, 20);
@@ -74,6 +75,7 @@
             this.txtCodigoMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoMenu.Enabled = false;
             this.txtCodigoMenu.Location = new System.Drawing.Point(135, 101);
+            this.txtCodigoMenu.MaxLength = 50;
             this.txtCodigoMenu.Name = "txtCodigoMenu";
             this.txtCodigoMenu.ReadOnly = true;
             this.txtCodigoMenu.Size = new System.Drawing.Size(114, 20);

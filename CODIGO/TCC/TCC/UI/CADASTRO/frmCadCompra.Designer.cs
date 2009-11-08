@@ -42,9 +42,9 @@
             this.txtVlCompra = new System.Windows.Forms.TextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.dgPeca = new System.Windows.Forms.DataGridView();
-            this.pnlOrdemCompra = new System.Windows.Forms.Panel();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.pnlOrdemCompra = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).BeginInit();
             this.pnlOrdemCompra.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             // 
             this.txtCdFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdFornecedor.Location = new System.Drawing.Point(208, 147);
+            this.txtCdFornecedor.MaxLength = 25;
             this.txtCdFornecedor.Name = "txtCdFornecedor";
             this.txtCdFornecedor.ReadOnly = true;
             this.txtCdFornecedor.Size = new System.Drawing.Size(192, 20);
@@ -81,7 +82,7 @@
             // 
             this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObservacao.Location = new System.Drawing.Point(208, 69);
-            this.txtObservacao.MaxLength = 20;
+            this.txtObservacao.MaxLength = 25;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(192, 72);
@@ -154,7 +155,7 @@
             // 
             this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVlCompra.Location = new System.Drawing.Point(208, 43);
-            this.txtVlCompra.MaxLength = 17;
+            this.txtVlCompra.MaxLength = 20;
             this.txtVlCompra.Name = "txtVlCompra";
             this.txtVlCompra.Size = new System.Drawing.Size(192, 20);
             this.txtVlCompra.TabIndex = 9;
@@ -181,14 +182,6 @@
             this.dgPeca.TabIndex = 1;
             this.toolTipLegenda.SetToolTip(this.dgPeca, "Apertar Ctrl para Selecionar mais de um item");
             // 
-            // pnlOrdemCompra
-            // 
-            this.pnlOrdemCompra.Controls.Add(this.dgPeca);
-            this.pnlOrdemCompra.Location = new System.Drawing.Point(79, 173);
-            this.pnlOrdemCompra.Name = "pnlOrdemCompra";
-            this.pnlOrdemCompra.Size = new System.Drawing.Size(501, 185);
-            this.pnlOrdemCompra.TabIndex = 19;
-            // 
             // btnBuscaAlteracaoDelecao
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
@@ -212,6 +205,14 @@
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
+            // pnlOrdemCompra
+            // 
+            this.pnlOrdemCompra.Controls.Add(this.dgPeca);
+            this.pnlOrdemCompra.Location = new System.Drawing.Point(79, 173);
+            this.pnlOrdemCompra.Name = "pnlOrdemCompra";
+            this.pnlOrdemCompra.Size = new System.Drawing.Size(501, 185);
+            this.pnlOrdemCompra.TabIndex = 19;
             // 
             // frmCadCompra
             // 

@@ -53,6 +53,7 @@
             // txtQtdestoque
             // 
             this.txtQtdestoque.Location = new System.Drawing.Point(165, 93);
+            this.txtQtdestoque.MaxLength = 3;
             this.txtQtdestoque.Name = "txtQtdestoque";
             this.txtQtdestoque.Size = new System.Drawing.Size(135, 20);
             this.txtQtdestoque.TabIndex = 1;
@@ -60,6 +61,7 @@
             // txtIdEstoque
             // 
             this.txtIdEstoque.Location = new System.Drawing.Point(165, 50);
+            this.txtIdEstoque.MaxLength = 50;
             this.txtIdEstoque.Name = "txtIdEstoque";
             this.txtIdEstoque.ReadOnly = true;
             this.txtIdEstoque.Size = new System.Drawing.Size(100, 20);
