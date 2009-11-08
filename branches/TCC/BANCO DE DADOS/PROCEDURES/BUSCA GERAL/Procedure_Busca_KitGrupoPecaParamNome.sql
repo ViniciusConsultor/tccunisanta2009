@@ -11,4 +11,3 @@
  FROM Kitgrupopeca
  WHERE nom LIKE '%' + @nom + '%'
  AND flg_ativo = 1
-go

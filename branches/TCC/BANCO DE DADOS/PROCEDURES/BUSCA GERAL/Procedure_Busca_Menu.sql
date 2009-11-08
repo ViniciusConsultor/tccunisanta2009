@@ -1,5 +1,6 @@
 USE Megatechdatabase 
 go
+
  IF OBJECT_ID('sp_busca_menu', 'P')IS NOT NULL 
 	 DROP PROCEDURE sp_busca_menu; 
  GO
@@ -15,4 +16,3 @@ CREATE PROCEDURE sp_busca_menu
 	 ON pm.id_perfil = p.id_perfil
  WHERE pm.id_perfil = @id_perfil
  AND m.flg_ativo = 1
-go
