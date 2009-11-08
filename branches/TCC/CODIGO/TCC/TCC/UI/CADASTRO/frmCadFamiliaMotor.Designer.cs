@@ -44,6 +44,7 @@
             this.btnBuscaTipoMotor = new System.Windows.Forms.Button();
             this.btnRemoveKit = new System.Windows.Forms.Button();
             this.btnBuscaNumMotor = new System.Windows.Forms.Button();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.gbBuscaKit = new System.Windows.Forms.GroupBox();
             this.dgKits = new System.Windows.Forms.DataGridView();
             this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,6 @@
             this.lblMotorCompra = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.btnConfirma = new System.Windows.Forms.Button();
             this.gbBuscaKit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).BeginInit();
             this.gbMotor.SuspendLayout();
@@ -175,12 +175,12 @@
             // 
             // btnRemoveKit
             // 
+            this.btnRemoveKit.BackgroundImage = global::TCC.resImg.btnLess;
             this.btnRemoveKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemoveKit.Location = new System.Drawing.Point(98, 172);
             this.btnRemoveKit.Name = "btnRemoveKit";
             this.btnRemoveKit.Size = new System.Drawing.Size(40, 35);
             this.btnRemoveKit.TabIndex = 10;
-            this.btnRemoveKit.Text = "Remove Peça";
             this.toolTipLegenda.SetToolTip(this.btnRemoveKit, "Remover Kits");
             this.btnRemoveKit.UseVisualStyleBackColor = true;
             // 
@@ -194,6 +194,17 @@
             this.btnBuscaNumMotor.TabIndex = 37;
             this.toolTipLegenda.SetToolTip(this.btnBuscaNumMotor, "Buscar Número do Motor");
             this.btnBuscaNumMotor.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirma
+            // 
+            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(7, 4);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
+            this.btnConfirma.TabIndex = 7;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
+            this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // gbBuscaKit
             // 
@@ -454,17 +465,6 @@
             this.lblEstoque.Size = new System.Drawing.Size(46, 13);
             this.lblEstoque.TabIndex = 25;
             this.lblEstoque.Text = "Estoque";
-            // 
-            // btnConfirma
-            // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
-            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(7, 4);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 7;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
-            this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // frmCadFamiliaMotor
             // 

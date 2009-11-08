@@ -45,6 +45,7 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnOP = new System.Windows.Forms.Button();
             this.btnAdicionaProdutos = new System.Windows.Forms.Button();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.txtValorVenda = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
@@ -62,7 +63,7 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
-            this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnRemovePeca = new System.Windows.Forms.Button();
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.SuspendLayout();
@@ -189,6 +190,18 @@
             this.btnAdicionaProdutos.UseVisualStyleBackColor = true;
             this.btnAdicionaProdutos.Click += new System.EventHandler(this.btnAdicionaProdutos_Click);
             // 
+            // btnConfirma
+            // 
+            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(7, 7);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
+            this.btnConfirma.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "OK");
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
             // txtValorVenda
             // 
             this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -200,6 +213,7 @@
             // 
             // gbBuscaItem
             // 
+            this.gbBuscaItem.Controls.Add(this.btnRemovePeca);
             this.gbBuscaItem.Controls.Add(this.cboTipoProduto);
             this.gbBuscaItem.Controls.Add(this.lblTipoProduto);
             this.gbBuscaItem.Controls.Add(this.btnAdicionaProdutos);
@@ -394,17 +408,16 @@
             this.TxtNmProduto.Size = new System.Drawing.Size(102, 20);
             this.TxtNmProduto.TabIndex = 14;
             // 
-            // btnConfirma
+            // btnRemovePeca
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
-            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(7, 7);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "OK");
-            this.btnConfirma.UseVisualStyleBackColor = true;
-            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemovePeca.Location = new System.Drawing.Point(93, 183);
+            this.btnRemovePeca.Name = "btnRemovePeca";
+            this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
+            this.btnRemovePeca.TabIndex = 12;
+            this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
+            this.btnRemovePeca.UseVisualStyleBackColor = true;
             // 
             // frmCadVenda
             // 
@@ -473,5 +486,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private System.Windows.Forms.ComboBox cboTipoProduto;
         private System.Windows.Forms.Label lblTipoProduto;
+        private System.Windows.Forms.Button btnRemovePeca;
     }
 }

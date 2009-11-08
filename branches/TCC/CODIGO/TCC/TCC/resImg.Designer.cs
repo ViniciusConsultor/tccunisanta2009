@@ -102,6 +102,13 @@ namespace TCC {
             }
         }
         
+        internal static System.Drawing.Bitmap btnLess {
+            get {
+                object obj = ResourceManager.GetObject("btnLess", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap btnLimpa {
             get {
                 object obj = ResourceManager.GetObject("btnLimpa", resourceCulture);
