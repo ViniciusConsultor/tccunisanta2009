@@ -9,6 +9,34 @@ namespace TCC.BUSINESS
 {
     class rItem : ComandosSql
     {
+        public mItem BuscaUnicoRegistro(int idItem)
+        {
+            DataTable dtRetorno = null;
+            SqlParameter param = null;
+            mItem modelItem = new mItem();
+            try
+            {
+                param = new SqlParameter("@id_item", idItem);
+                dtRetorno = base.BuscaDados("sp_select_item", param);
+                modelItem.Deserialize(dtRetorno);
+                return modelItem;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                if (dtRetorno != null)
+                {
+                    dtRetorno.Dispose();
+                    dtRetorno = null;
+                }
+                modelItem = null;
+            }
+        }
+
         public DataTable BuscaItemNome(string parametro)
         {
             SqlParameter param = null;

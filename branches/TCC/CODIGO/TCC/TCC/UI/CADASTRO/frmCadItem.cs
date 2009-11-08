@@ -124,6 +124,8 @@ namespace TCC.UI
                     this.PopulaModelItemPeca();
                 }
                 this.AtualizaGrid();
+                this.TxtNmPeca.Text = "";
+                this.txtQtdPeca.Text = "";
             }
             catch (BUSINESS.Exceptions.Item.GridPecaSemDadosException)
             {

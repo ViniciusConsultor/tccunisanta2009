@@ -95,6 +95,8 @@ namespace TCC.UI
                     this.PopulaModelItemKit();
                 }
                 this.AtualizaGrid();
+                this.TxtNmItem.Text = "";
+                this.txtQtdItem.Text = "";
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException)
             {
@@ -113,6 +115,33 @@ namespace TCC.UI
 
         #region Metodos
 
+        #region Abre Tela Resumo
+        /// <summary>
+        /// Abre a tela de resumo antes de gravar os dados no banco
+        /// </summary>
+        private void AbreTelaResumo()
+        {
+            Resumo.frmResumoItemKit ResumoItem = new TCC.UI.Resumo.frmResumoItemKit(_modelItemKit, this.txtNmKit.Text);
+            try
+            {
+                DialogResult resultado;
+                resultado = ResumoItem.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    throw new BUSINESS.Exceptions.KitGrupoPeca.TelaResumoCanceladaException();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                ResumoItem = null;
+            }
+        }
+        #endregion Abre Tela Resumo
+
         #region Insere
         /// <summary>
         /// Insere no banco os dados do model
@@ -127,6 +156,7 @@ namespace TCC.UI
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
+                this.AbreTelaResumo();
                 regra.ValidarInsere(model);
                 this.CompletaListaModelItemKit(model);
                 foreach (mItemKit modelItemKit in this._modelItemKit)
@@ -148,12 +178,16 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException)
             {
                 MessageBox.Show("É Necessário preencher o nome do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.TxtNmItem.Focus();
+                this.txtNmKit.Focus();
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException)
             {
-                MessageBox.Show("É Necessário preencher o código da Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário preencher o código do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoKit.Focus();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.TelaResumoCanceladaException)
+            {
+
             }
             catch (Exception ex)
             {
@@ -178,7 +212,7 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException();
             }
-            else if (string.IsNullOrEmpty(this.TxtNmItem.Text) == true)
+            else if (string.IsNullOrEmpty(this.txtNmKit.Text) == true)
             {
                 throw new BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException();
             }
@@ -225,11 +259,11 @@ namespace TCC.UI
         /// Completa a lista de model Item Kit com o id do kit que foi gravado no Banco de dados
         /// </summary>
         /// <param name="modelKit">model do Kit onde esta o id</param>
-        private void CompletaListaModelItemKit(mKitGrupoPeca modeKit)
+        private void CompletaListaModelItemKit(mKitGrupoPeca modelKit)
         {
             foreach (mItemKit model in this._modelItemKit)
             {
-                model.Id_item = modeKit.IdKit;
+                model.Id_kit = modelKit.IdKit;
             }
         }
         #endregion Completa Lista Model Item Kit
