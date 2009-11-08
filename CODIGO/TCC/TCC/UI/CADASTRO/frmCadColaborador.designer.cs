@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadColaborador));
             this.lblCdUsuario = new System.Windows.Forms.Label();
             this.lblCdDepart = new System.Windows.Forms.Label();
             this.lblNmColaborador = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblSexo = new System.Windows.Forms.Label();
             this.CbSexo = new System.Windows.Forms.ComboBox();
-            this.btnConfirma = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnApaga = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -71,6 +69,7 @@
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCdUsuario
@@ -297,21 +296,9 @@
             this.CbSexo.Size = new System.Drawing.Size(47, 21);
             this.CbSexo.TabIndex = 5;
             // 
-            // btnConfirma
-            // 
-            this.btnConfirma.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(7, 6);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 18;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
-            this.btnConfirma.UseVisualStyleBackColor = true;
-            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
-            // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(7, 127);
             this.btnVoltar.Name = "btnVoltar";
@@ -323,7 +310,7 @@
             // 
             // btnApaga
             // 
-            this.btnApaga.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnApaga.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnApaga.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnApaga.Location = new System.Drawing.Point(7, 45);
             this.btnApaga.Name = "btnApaga";
@@ -344,7 +331,7 @@
             // 
             // btnBuscaUsuario
             // 
-            this.btnBuscaUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaUsuario.BackgroundImage")));
+            this.btnBuscaUsuario.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaUsuario.Location = new System.Drawing.Point(238, 14);
             this.btnBuscaUsuario.Name = "btnBuscaUsuario";
@@ -356,7 +343,7 @@
             // 
             // btnBuscaDepartamento
             // 
-            this.btnBuscaDepartamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaDepartamento.BackgroundImage")));
+            this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(523, 12);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
@@ -414,19 +401,23 @@
             // 
             // txtDDD
             // 
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDDD.Location = new System.Drawing.Point(390, 88);
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(28, 20);
             this.txtDDD.TabIndex = 6;
+            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtNumero
             // 
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumero.Location = new System.Drawing.Point(144, 156);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(76, 20);
             this.txtNumero.TabIndex = 9;
+            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtCep
             // 
@@ -452,7 +443,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Properties.Resources.corel_draw;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 86);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -462,11 +453,23 @@
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
+            // btnConfirma
+            // 
+            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(7, 6);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
+            this.btnConfirma.TabIndex = 18;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;

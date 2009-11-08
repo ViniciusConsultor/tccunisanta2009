@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompraPeca));
-            this.btnConfirma = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
@@ -40,22 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscaCompra = new System.Windows.Forms.Button();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnConfirma
-            // 
-            this.btnConfirma.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(0, 2);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(30, 25);
-            this.btnConfirma.TabIndex = 0;
-            this.btnConfirma.UseVisualStyleBackColor = true;
-            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(0, 29);
             this.btnLimpar.Name = "btnLimpar";
@@ -66,7 +54,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(0, 56);
             this.btnVoltar.Name = "btnVoltar";
@@ -101,7 +89,7 @@
             // 
             // btnBuscaPeca
             // 
-            this.btnBuscaPeca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaPeca.BackgroundImage")));
+            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPeca.Location = new System.Drawing.Point(260, 55);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
@@ -139,7 +127,7 @@
             // 
             // btnBuscaCompra
             // 
-            this.btnBuscaCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaCompra.BackgroundImage")));
+            this.btnBuscaCompra.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaCompra.Location = new System.Drawing.Point(260, 87);
             this.btnBuscaCompra.Name = "btnBuscaCompra";
@@ -148,11 +136,22 @@
             this.btnBuscaCompra.UseVisualStyleBackColor = true;
             this.btnBuscaCompra.Click += new System.EventHandler(this.btnBuscaCompra_Click);
             // 
+            // btnConfirma
+            // 
+            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(0, 2);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(30, 25);
+            this.btnConfirma.TabIndex = 0;
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
             // frmCadCompraPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(340, 216);
             this.ControlBox = false;

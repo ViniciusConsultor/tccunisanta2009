@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadOrdemCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
-            this.btnConfirma = new System.Windows.Forms.Button();
             this.lblNotafiscal = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.lblUltimoPreco = new System.Windows.Forms.Label();
@@ -43,6 +41,7 @@
             this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.btnCdFornecedor = new System.Windows.Forms.Button();
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
+            this.gpTipoProduto = new System.Windows.Forms.GroupBox();
             this.rdbTipoProduto1 = new System.Windows.Forms.RadioButton();
             this.rdbTipoProduto0 = new System.Windows.Forms.RadioButton();
             this.btnAdicionaItem = new System.Windows.Forms.Button();
@@ -57,15 +56,15 @@
             this.rdbFiltro1 = new System.Windows.Forms.RadioButton();
             this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
-            this.gpTipoProduto = new System.Windows.Forms.GroupBox();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.gbBuscaItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.gpTipoProduto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolta.BackgroundImage")));
+            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 96);
             this.btnVolta.Name = "btnVolta";
@@ -75,23 +74,13 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.Properties.Resources.eraser;
+            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(7, 55);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
             this.btnLimpa.TabIndex = 11;
             this.btnLimpa.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirma
-            // 
-            this.btnConfirma.BackgroundImage = global::TCC.Properties.Resources.btnSalvar;
-            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(7, 12);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 10;
-            this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // lblNotafiscal
             // 
@@ -148,7 +137,7 @@
             // 
             // btnCdFornecedor
             // 
-            this.btnCdFornecedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCdFornecedor.BackgroundImage")));
+            this.btnCdFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdFornecedor.Location = new System.Drawing.Point(198, 24);
             this.btnCdFornecedor.Name = "btnCdFornecedor";
@@ -176,6 +165,19 @@
             this.gbBuscaItem.TabStop = false;
             this.gbBuscaItem.Text = "Items do Kit";
             // 
+            // gpTipoProduto
+            // 
+            this.gpTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.gpTipoProduto.Controls.Add(this.rdbTipoProduto1);
+            this.gpTipoProduto.Controls.Add(this.rdbTipoProduto0);
+            this.gpTipoProduto.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.gpTipoProduto.Location = new System.Drawing.Point(73, 19);
+            this.gpTipoProduto.Name = "gpTipoProduto";
+            this.gpTipoProduto.Size = new System.Drawing.Size(67, 65);
+            this.gpTipoProduto.TabIndex = 23;
+            this.gpTipoProduto.TabStop = false;
+            this.gpTipoProduto.Visible = false;
+            // 
             // rdbTipoProduto1
             // 
             this.rdbTipoProduto1.AutoSize = true;
@@ -198,7 +200,7 @@
             // 
             // btnAdicionaItem
             // 
-            this.btnAdicionaItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionaItem.BackgroundImage")));
+            this.btnAdicionaItem.BackgroundImage = global::TCC.resImg.btnAdd_;
             this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaItem.Location = new System.Drawing.Point(60, 198);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
@@ -213,38 +215,38 @@
             this.dgItems.AllowUserToResizeColumns = false;
             this.dgItems.AllowUserToResizeRows = false;
             this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CdItem,
             this.NmItem});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgItems.Location = new System.Drawing.Point(170, 56);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
@@ -293,7 +295,7 @@
             // 
             // btnBuscarItemDtGrid
             // 
-            this.btnBuscarItemDtGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarItemDtGrid.BackgroundImage")));
+            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(394, 22);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
@@ -341,24 +343,21 @@
             this.TxtNmProduto.Size = new System.Drawing.Size(102, 20);
             this.TxtNmProduto.TabIndex = 14;
             // 
-            // gpTipoProduto
+            // btnConfirma
             // 
-            this.gpTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gpTipoProduto.Controls.Add(this.rdbTipoProduto1);
-            this.gpTipoProduto.Controls.Add(this.rdbTipoProduto0);
-            this.gpTipoProduto.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.gpTipoProduto.Location = new System.Drawing.Point(73, 19);
-            this.gpTipoProduto.Name = "gpTipoProduto";
-            this.gpTipoProduto.Size = new System.Drawing.Size(67, 65);
-            this.gpTipoProduto.TabIndex = 23;
-            this.gpTipoProduto.TabStop = false;
-            this.gpTipoProduto.Visible = false;
+            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirma.Location = new System.Drawing.Point(7, 12);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(40, 35);
+            this.btnConfirma.TabIndex = 10;
+            this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // frmCadOrdemCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(584, 364);
             this.Controls.Add(this.gbBuscaItem);
@@ -376,9 +375,9 @@
             this.Text = "frmCadOrdemCompra";
             this.gbBuscaItem.ResumeLayout(false);
             this.gbBuscaItem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
             this.gpTipoProduto.ResumeLayout(false);
             this.gpTipoProduto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -255,6 +255,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="resImg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>resImg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaCliente.resx">
       <DependentUpon>frmBuscaCliente.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -480,6 +484,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="resImg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resImg.resx</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaCliente.cs">
       <SubType>Form</SubType>
@@ -824,6 +833,51 @@
       <Project>{2C97DFB1-3649-478D-A09C-1D8F39FFFA89}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnAdd+.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnalterar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnBusca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnOk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\bg_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\bg_principal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\bg_telas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnSalvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\BtnVenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnVoltaCad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnLimpa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnLixo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnOP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnRlacionaEstoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnVoltar.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\ALTERA\" />
