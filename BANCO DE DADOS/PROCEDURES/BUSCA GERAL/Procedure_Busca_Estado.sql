@@ -7,4 +7,3 @@ GO
 CREATE PROCEDURE sp_busca_estado 
  AS 
  SELECT slg_est, nom_est 'Estado' FROM Estado 
-go

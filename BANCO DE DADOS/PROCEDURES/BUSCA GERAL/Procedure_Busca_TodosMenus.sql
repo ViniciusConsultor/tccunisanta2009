@@ -14,4 +14,3 @@
  m.id_menu NOT IN (SELECT id_menu_filho FROM submenu)
  AND flg_ativo = 1
  GROUP BY m.id_menu, m.dsc_menu
-go

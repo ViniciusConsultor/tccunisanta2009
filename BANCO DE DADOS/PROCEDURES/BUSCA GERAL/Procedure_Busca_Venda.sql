@@ -8,4 +8,3 @@
  AS
  SELECT id_venda 'Venda', dat_venda 'Data' FROM Venda
 order by dat_venda desc
-go
