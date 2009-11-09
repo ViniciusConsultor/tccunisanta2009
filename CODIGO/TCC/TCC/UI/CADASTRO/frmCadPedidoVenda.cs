@@ -108,7 +108,7 @@ namespace TCC.UI
         private mPedidoVenda PegaDadosTela()
         {
             mPedidoVenda model = new mPedidoVenda();
-            rPedidoVenda regra = new rPedidoVenda();
+            rVendaProduto regra = new rVendaProduto();
 
             try
             {
@@ -137,7 +137,7 @@ namespace TCC.UI
         private void Insere()
         {
             mPedidoVenda model;
-            rPedidoVenda regra = new rPedidoVenda();
+            rVendaProduto regra = new rVendaProduto();
             try
             {
                 this.ValidaDadosNulos();
