@@ -50,7 +50,6 @@
             this.lblDDD = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
@@ -60,6 +59,7 @@
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblNome
@@ -257,16 +257,6 @@
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email";
             // 
-            // txtDDD
-            // 
-            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDDD.Location = new System.Drawing.Point(149, 290);
-            this.txtDDD.MaxLength = 2;
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(31, 20);
-            this.txtDDD.TabIndex = 12;
-            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
-            // 
             // txtNumero
             // 
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -356,6 +346,16 @@
             this.txtTelefone.TabIndex = 13;
             this.txtTelefone.ValidatingType = typeof(int);
             // 
+            // txtDDD
+            // 
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDDD.Location = new System.Drawing.Point(149, 290);
+            this.txtDDD.MaxLength = 2;
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(31, 20);
+            this.txtDDD.TabIndex = 19;
+            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,13 +364,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDDD);
@@ -428,7 +428,6 @@
         private System.Windows.Forms.Label lblDDD;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private Controles.MegaTextBox.MegaTextBox txtDDD;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
@@ -436,5 +435,6 @@
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private Controles.MegaTextBox.MegaTextBox txtDDD;
     }
 }

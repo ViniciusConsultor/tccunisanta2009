@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblQtd = new System.Windows.Forms.Label();
-            this.txtQtdestoque = new System.Windows.Forms.TextBox();
             this.txtIdEstoque = new System.Windows.Forms.TextBox();
             this.lblCdEstoque = new System.Windows.Forms.Label();
             this.btnVolta = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.btnCdEstoque = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.txtQtdestoque = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblQtd
@@ -49,14 +49,6 @@
             this.lblQtd.Size = new System.Drawing.Size(62, 13);
             this.lblQtd.TabIndex = 0;
             this.lblQtd.Text = "Quantidade";
-            // 
-            // txtQtdestoque
-            // 
-            this.txtQtdestoque.Location = new System.Drawing.Point(165, 93);
-            this.txtQtdestoque.MaxLength = 3;
-            this.txtQtdestoque.Name = "txtQtdestoque";
-            this.txtQtdestoque.Size = new System.Drawing.Size(135, 20);
-            this.txtQtdestoque.TabIndex = 1;
             // 
             // txtIdEstoque
             // 
@@ -131,6 +123,16 @@
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar / Deletar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
+            // txtQtdestoque
+            // 
+            this.txtQtdestoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdestoque.Location = new System.Drawing.Point(165, 96);
+            this.txtQtdestoque.MaxLength = 2;
+            this.txtQtdestoque.Name = "txtQtdestoque";
+            this.txtQtdestoque.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdestoque.TabIndex = 22;
+            this.txtQtdestoque.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadPecaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +141,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(357, 180);
             this.ControlBox = false;
+            this.Controls.Add(this.txtQtdestoque);
             this.Controls.Add(this.btnCdEstoque);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnVolta);
@@ -146,7 +149,6 @@
             this.Controls.Add(this.btnInsere);
             this.Controls.Add(this.lblCdEstoque);
             this.Controls.Add(this.txtIdEstoque);
-            this.Controls.Add(this.txtQtdestoque);
             this.Controls.Add(this.lblQtd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -161,7 +163,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblQtd;
-        private System.Windows.Forms.TextBox txtQtdestoque;
         private System.Windows.Forms.TextBox txtIdEstoque;
         private System.Windows.Forms.Label lblCdEstoque;
         private System.Windows.Forms.Button btnVolta;
@@ -170,5 +171,6 @@
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.Button btnCdEstoque;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private Controles.MegaTextBox.MegaTextBox txtQtdestoque;
     }
 }

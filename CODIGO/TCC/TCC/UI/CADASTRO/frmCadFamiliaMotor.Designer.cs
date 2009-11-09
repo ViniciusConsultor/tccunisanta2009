@@ -53,7 +53,6 @@
             this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdKit = new System.Windows.Forms.Label();
-            this.txtQtdKit = new System.Windows.Forms.TextBox();
             this.lblNmItem = new System.Windows.Forms.Label();
             this.rdbFiltroNome = new System.Windows.Forms.RadioButton();
             this.rdbFiltroCodigo = new System.Windows.Forms.RadioButton();
@@ -67,6 +66,7 @@
             this.lblMotorCompra = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
+            this.txtQtdKit = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaKit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).BeginInit();
             this.gbMotor.SuspendLayout();
@@ -208,12 +208,12 @@
             // 
             // gbBuscaKit
             // 
+            this.gbBuscaKit.Controls.Add(this.txtQtdKit);
             this.gbBuscaKit.Controls.Add(this.btnRemoveKit);
             this.gbBuscaKit.Controls.Add(this.btnAdicionaKit);
             this.gbBuscaKit.Controls.Add(this.dgKits);
             this.gbBuscaKit.Controls.Add(this.txtBuscaFiltro);
             this.gbBuscaKit.Controls.Add(this.lblQtdKit);
-            this.gbBuscaKit.Controls.Add(this.txtQtdKit);
             this.gbBuscaKit.Controls.Add(this.btnBuscarKitDtGrid);
             this.gbBuscaKit.Controls.Add(this.lblNmItem);
             this.gbBuscaKit.Controls.Add(this.rdbFiltroNome);
@@ -323,15 +323,6 @@
             this.lblQtdKit.TabIndex = 18;
             this.lblQtdKit.Text = "Quantidade";
             // 
-            // txtQtdKit
-            // 
-            this.txtQtdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdKit.Location = new System.Drawing.Point(36, 130);
-            this.txtQtdKit.MaxLength = 20;
-            this.txtQtdKit.Name = "txtQtdKit";
-            this.txtQtdKit.Size = new System.Drawing.Size(102, 20);
-            this.txtQtdKit.TabIndex = 8;
-            // 
             // lblNmItem
             // 
             this.lblNmItem.AutoSize = true;
@@ -369,6 +360,7 @@
             this.TxtNmKit.Location = new System.Drawing.Point(36, 72);
             this.TxtNmKit.MaxLength = 20;
             this.TxtNmKit.Name = "TxtNmKit";
+            this.TxtNmKit.ReadOnly = true;
             this.TxtNmKit.Size = new System.Drawing.Size(102, 20);
             this.TxtNmKit.TabIndex = 6;
             // 
@@ -466,6 +458,16 @@
             this.lblEstoque.TabIndex = 25;
             this.lblEstoque.Text = "Estoque";
             // 
+            // txtQtdKit
+            // 
+            this.txtQtdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdKit.Location = new System.Drawing.Point(36, 131);
+            this.txtQtdKit.MaxLength = 2;
+            this.txtQtdKit.Name = "txtQtdKit";
+            this.txtQtdKit.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdKit.TabIndex = 21;
+            this.txtQtdKit.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadFamiliaMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,7 +512,6 @@
         private System.Windows.Forms.DataGridView dgKits;
         private System.Windows.Forms.TextBox txtBuscaFiltro;
         private System.Windows.Forms.Label lblQtdKit;
-        private System.Windows.Forms.TextBox txtQtdKit;
         private System.Windows.Forms.Button btnBuscarKitDtGrid;
         private System.Windows.Forms.Label lblNmItem;
         private System.Windows.Forms.RadioButton rdbFiltroNome;
@@ -534,5 +535,6 @@
         private System.Windows.Forms.Button btnBuscaNumMotor;
         private System.Windows.Forms.TextBox txtNumeroMotor;
         private System.Windows.Forms.Label lblNumeroMotor;
+        private Controles.MegaTextBox.MegaTextBox txtQtdKit;
     }
 }

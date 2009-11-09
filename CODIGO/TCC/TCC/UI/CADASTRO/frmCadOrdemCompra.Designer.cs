@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,7 +37,6 @@
             this.lblNotafiscal = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.lblUltimoPreco = new System.Windows.Forms.Label();
-            this.txtUIltimoPreco = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.btnCdFornecedor = new System.Windows.Forms.Button();
@@ -51,13 +51,14 @@
             this.NmItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
-            this.txtQtdItem = new System.Windows.Forms.TextBox();
             this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
             this.lblNmItem = new System.Windows.Forms.Label();
             this.rdbFiltro1 = new System.Windows.Forms.RadioButton();
             this.rdbfiltro0 = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.txtUIltimoPreco = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaItem.SuspendLayout();
             this.gpTipoProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
@@ -110,15 +111,6 @@
             this.lblUltimoPreco.TabIndex = 13;
             this.lblUltimoPreco.Text = "Ultimo Preço";
             // 
-            // txtUIltimoPreco
-            // 
-            this.txtUIltimoPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUIltimoPreco.Location = new System.Drawing.Point(343, 70);
-            this.txtUIltimoPreco.MaxLength = 15;
-            this.txtUIltimoPreco.Name = "txtUIltimoPreco";
-            this.txtUIltimoPreco.Size = new System.Drawing.Size(100, 20);
-            this.txtUIltimoPreco.TabIndex = 14;
-            // 
             // lblCdFornecedor
             // 
             this.lblCdFornecedor.AutoSize = true;
@@ -151,13 +143,13 @@
             // 
             // gbBuscaItem
             // 
+            this.gbBuscaItem.Controls.Add(this.txtQtdItem);
             this.gbBuscaItem.Controls.Add(this.btnRemovePeca);
             this.gbBuscaItem.Controls.Add(this.gpTipoProduto);
             this.gbBuscaItem.Controls.Add(this.btnAdicionaItem);
             this.gbBuscaItem.Controls.Add(this.dgItems);
             this.gbBuscaItem.Controls.Add(this.txtBuscaFiltro);
             this.gbBuscaItem.Controls.Add(this.lblQtdPeca);
-            this.gbBuscaItem.Controls.Add(this.txtQtdItem);
             this.gbBuscaItem.Controls.Add(this.btnBuscarItemDtGrid);
             this.gbBuscaItem.Controls.Add(this.lblNmItem);
             this.gbBuscaItem.Controls.Add(this.rdbFiltro1);
@@ -299,15 +291,6 @@
             this.lblQtdPeca.TabIndex = 18;
             this.lblQtdPeca.Text = "Quantidade";
             // 
-            // txtQtdItem
-            // 
-            this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdItem.Location = new System.Drawing.Point(34, 155);
-            this.txtQtdItem.MaxLength = 2;
-            this.txtQtdItem.Name = "txtQtdItem";
-            this.txtQtdItem.Size = new System.Drawing.Size(102, 20);
-            this.txtQtdItem.TabIndex = 16;
-            // 
             // btnBuscarItemDtGrid
             // 
             this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
@@ -355,6 +338,7 @@
             this.TxtNmProduto.Location = new System.Drawing.Point(34, 106);
             this.TxtNmProduto.MaxLength = 25;
             this.TxtNmProduto.Name = "TxtNmProduto";
+            this.TxtNmProduto.ReadOnly = true;
             this.TxtNmProduto.Size = new System.Drawing.Size(102, 20);
             this.TxtNmProduto.TabIndex = 14;
             // 
@@ -368,6 +352,26 @@
             this.btnConfirma.TabIndex = 10;
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
+            // txtUIltimoPreco
+            // 
+            this.txtUIltimoPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUIltimoPreco.Location = new System.Drawing.Point(385, 72);
+            this.txtUIltimoPreco.MaxLength = 15;
+            this.txtUIltimoPreco.Name = "txtUIltimoPreco";
+            this.txtUIltimoPreco.Size = new System.Drawing.Size(100, 20);
+            this.txtUIltimoPreco.TabIndex = 19;
+            this.txtUIltimoPreco.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            // 
+            // txtQtdItem
+            // 
+            this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdItem.Location = new System.Drawing.Point(34, 156);
+            this.txtQtdItem.MaxLength = 2;
+            this.txtQtdItem.Name = "txtQtdItem";
+            this.txtQtdItem.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdItem.TabIndex = 24;
+            this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadOrdemCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,11 +379,11 @@
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(584, 364);
+            this.Controls.Add(this.txtUIltimoPreco);
             this.Controls.Add(this.gbBuscaItem);
             this.Controls.Add(this.btnCdFornecedor);
             this.Controls.Add(this.txtCdFornecedor);
             this.Controls.Add(this.lblCdFornecedor);
-            this.Controls.Add(this.txtUIltimoPreco);
             this.Controls.Add(this.lblUltimoPreco);
             this.Controls.Add(this.txtNotaFiscal);
             this.Controls.Add(this.lblNotafiscal);
@@ -406,7 +410,6 @@
         private System.Windows.Forms.Label lblNotafiscal;
         private System.Windows.Forms.TextBox txtNotaFiscal;
         private System.Windows.Forms.Label lblUltimoPreco;
-        private System.Windows.Forms.TextBox txtUIltimoPreco;
         private System.Windows.Forms.Label lblCdFornecedor;
         private System.Windows.Forms.TextBox txtCdFornecedor;
         private System.Windows.Forms.Button btnCdFornecedor;
@@ -419,7 +422,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NmItem;
         private System.Windows.Forms.TextBox txtBuscaFiltro;
         private System.Windows.Forms.Label lblQtdPeca;
-        private System.Windows.Forms.TextBox txtQtdItem;
         private System.Windows.Forms.Button btnBuscarItemDtGrid;
         private System.Windows.Forms.Label lblNmItem;
         private System.Windows.Forms.RadioButton rdbFiltro1;
@@ -427,5 +429,7 @@
         private System.Windows.Forms.TextBox TxtNmProduto;
         private System.Windows.Forms.GroupBox gpTipoProduto;
         private System.Windows.Forms.Button btnRemovePeca;
+        private Controles.MegaTextBox.MegaTextBox txtUIltimoPreco;
+        private Controles.MegaTextBox.MegaTextBox txtQtdItem;
     }
 }

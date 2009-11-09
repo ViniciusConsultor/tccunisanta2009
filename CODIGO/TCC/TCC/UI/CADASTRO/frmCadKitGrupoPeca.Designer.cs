@@ -49,13 +49,13 @@
             this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
-            this.txtQtdItem = new System.Windows.Forms.TextBox();
             this.lblNmItem = new System.Windows.Forms.Label();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmItem = new System.Windows.Forms.TextBox();
             this.lblCdKitReal = new System.Windows.Forms.Label();
             this.txtCodigoKit = new System.Windows.Forms.TextBox();
+            this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -156,12 +156,12 @@
             // 
             // gbBuscaItem
             // 
+            this.gbBuscaItem.Controls.Add(this.txtQtdItem);
             this.gbBuscaItem.Controls.Add(this.btnRemoveItem);
             this.gbBuscaItem.Controls.Add(this.btnAdicionaItem);
             this.gbBuscaItem.Controls.Add(this.dgItems);
             this.gbBuscaItem.Controls.Add(this.txtBuscaFiltro);
             this.gbBuscaItem.Controls.Add(this.lblQtdPeca);
-            this.gbBuscaItem.Controls.Add(this.txtQtdItem);
             this.gbBuscaItem.Controls.Add(this.btnBuscarItemDtGrid);
             this.gbBuscaItem.Controls.Add(this.lblNmItem);
             this.gbBuscaItem.Controls.Add(this.rdbNome);
@@ -272,15 +272,6 @@
             this.lblQtdPeca.TabIndex = 18;
             this.lblQtdPeca.Text = "Quantidade";
             // 
-            // txtQtdItem
-            // 
-            this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdItem.Location = new System.Drawing.Point(36, 130);
-            this.txtQtdItem.MaxLength = 2;
-            this.txtQtdItem.Name = "txtQtdItem";
-            this.txtQtdItem.Size = new System.Drawing.Size(102, 20);
-            this.txtQtdItem.TabIndex = 6;
-            // 
             // lblNmItem
             // 
             this.lblNmItem.AutoSize = true;
@@ -318,6 +309,7 @@
             this.TxtNmItem.Location = new System.Drawing.Point(36, 72);
             this.TxtNmItem.MaxLength = 25;
             this.TxtNmItem.Name = "TxtNmItem";
+            this.TxtNmItem.ReadOnly = true;
             this.TxtNmItem.Size = new System.Drawing.Size(102, 20);
             this.TxtNmItem.TabIndex = 5;
             // 
@@ -338,6 +330,16 @@
             this.txtCodigoKit.Name = "txtCodigoKit";
             this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
             this.txtCodigoKit.TabIndex = 1;
+            // 
+            // txtQtdItem
+            // 
+            this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdItem.Location = new System.Drawing.Point(36, 131);
+            this.txtQtdItem.MaxLength = 2;
+            this.txtQtdItem.Name = "txtQtdItem";
+            this.txtQtdItem.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdItem.TabIndex = 26;
+            this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // frmCadKitGrupoPeca
             // 
@@ -380,7 +382,6 @@
         private System.Windows.Forms.DataGridView dgItems;
         private System.Windows.Forms.TextBox txtBuscaFiltro;
         private System.Windows.Forms.Label lblQtdPeca;
-        private System.Windows.Forms.TextBox txtQtdItem;
         private System.Windows.Forms.Button btnBuscarItemDtGrid;
         private System.Windows.Forms.Label lblNmItem;
         private System.Windows.Forms.RadioButton rdbNome;
@@ -393,5 +394,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private System.Windows.Forms.Button btnRemoveItem;
+        private Controles.MegaTextBox.MegaTextBox txtQtdItem;
     }
 }
