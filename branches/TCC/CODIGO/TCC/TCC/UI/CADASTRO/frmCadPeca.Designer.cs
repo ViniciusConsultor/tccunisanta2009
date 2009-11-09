@@ -36,17 +36,17 @@
             this.lblDsPeca = new System.Windows.Forms.Label();
             this.txtDsPeca = new System.Windows.Forms.TextBox();
             this.lblPesoPeca = new System.Windows.Forms.Label();
-            this.txtPesoPeca = new System.Windows.Forms.TextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCdTipoPeca = new System.Windows.Forms.Button();
             this.txtCodigoReal = new System.Windows.Forms.TextBox();
             this.lblNomePecaReal = new System.Windows.Forms.Label();
-            this.txtQtdPeca = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnRelacioranEstoque = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtPesoPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblCdTipoPeca
@@ -115,15 +115,6 @@
             this.lblPesoPeca.TabIndex = 0;
             this.lblPesoPeca.Text = "Peso da Peça";
             // 
-            // txtPesoPeca
-            // 
-            this.txtPesoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesoPeca.Location = new System.Drawing.Point(274, 178);
-            this.txtPesoPeca.MaxLength = 12;
-            this.txtPesoPeca.Name = "txtPesoPeca";
-            this.txtPesoPeca.Size = new System.Drawing.Size(57, 20);
-            this.txtPesoPeca.TabIndex = 6;
-            // 
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
@@ -178,15 +169,6 @@
             this.lblNomePecaReal.TabIndex = 8;
             this.lblNomePecaReal.Text = "Codigo da Peça";
             // 
-            // txtQtdPeca
-            // 
-            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdPeca.Location = new System.Drawing.Point(145, 178);
-            this.txtQtdPeca.MaxLength = 3;
-            this.txtQtdPeca.Name = "txtQtdPeca";
-            this.txtQtdPeca.Size = new System.Drawing.Size(43, 20);
-            this.txtQtdPeca.TabIndex = 5;
-            // 
             // lblQtdPeca
             // 
             this.lblQtdPeca.AutoSize = true;
@@ -224,6 +206,26 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
+            // txtQtdPeca
+            // 
+            this.txtQtdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdPeca.Location = new System.Drawing.Point(151, 176);
+            this.txtQtdPeca.MaxLength = 3;
+            this.txtQtdPeca.Name = "txtQtdPeca";
+            this.txtQtdPeca.Size = new System.Drawing.Size(37, 20);
+            this.txtQtdPeca.TabIndex = 11;
+            this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
+            // txtPesoPeca
+            // 
+            this.txtPesoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesoPeca.Location = new System.Drawing.Point(275, 176);
+            this.txtPesoPeca.MaxLength = 10;
+            this.txtPesoPeca.Name = "txtPesoPeca";
+            this.txtPesoPeca.Size = new System.Drawing.Size(56, 20);
+            this.txtPesoPeca.TabIndex = 12;
+            this.txtPesoPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            // 
             // frmCadPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,8 +234,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 270);
             this.ControlBox = false;
-            this.Controls.Add(this.btnRelacioranEstoque);
+            this.Controls.Add(this.txtPesoPeca);
             this.Controls.Add(this.txtQtdPeca);
+            this.Controls.Add(this.btnRelacioranEstoque);
             this.Controls.Add(this.lblQtdPeca);
             this.Controls.Add(this.txtCodigoReal);
             this.Controls.Add(this.lblNomePecaReal);
@@ -241,7 +244,6 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCdTipoPeca);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.txtPesoPeca);
             this.Controls.Add(this.txtDsPeca);
             this.Controls.Add(this.txtNmPeca);
             this.Controls.Add(this.lblPesoPeca);
@@ -266,16 +268,16 @@
         private System.Windows.Forms.Label lblDsPeca;
         private System.Windows.Forms.TextBox txtDsPeca;
         private System.Windows.Forms.Label lblPesoPeca;
-        private System.Windows.Forms.TextBox txtPesoPeca;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Button btnCdTipoPeca;
         private System.Windows.Forms.TextBox txtCodigoReal;
         private System.Windows.Forms.Label lblNomePecaReal;
-        private System.Windows.Forms.TextBox txtQtdPeca;
         private System.Windows.Forms.Label lblQtdPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnRelacioranEstoque;
+        private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
+        private Controles.MegaTextBox.MegaTextBox txtPesoPeca;
     }
 }

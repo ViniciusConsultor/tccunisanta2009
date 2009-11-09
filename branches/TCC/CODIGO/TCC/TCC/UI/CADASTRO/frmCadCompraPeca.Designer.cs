@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
-            this.txtUltimoPreco = new System.Windows.Forms.TextBox();
             this.txtCdCompra = new System.Windows.Forms.TextBox();
             this.btnBuscaPeca = new System.Windows.Forms.Button();
             this.lblCdPeca = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscaCompra = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.txtUltimoPreco = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // btnLimpar
@@ -71,14 +72,6 @@
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(100, 20);
             this.txtCdPeca.TabIndex = 1;
-            // 
-            // txtUltimoPreco
-            // 
-            this.txtUltimoPreco.Location = new System.Drawing.Point(154, 123);
-            this.txtUltimoPreco.MaxLength = 25;
-            this.txtUltimoPreco.Name = "txtUltimoPreco";
-            this.txtUltimoPreco.Size = new System.Drawing.Size(100, 20);
-            this.txtUltimoPreco.TabIndex = 5;
             // 
             // txtCdCompra
             // 
@@ -149,6 +142,16 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
+            // txtUltimoPreco
+            // 
+            this.txtUltimoPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUltimoPreco.Location = new System.Drawing.Point(154, 118);
+            this.txtUltimoPreco.MaxLength = 15;
+            this.txtUltimoPreco.Name = "txtUltimoPreco";
+            this.txtUltimoPreco.Size = new System.Drawing.Size(100, 20);
+            this.txtUltimoPreco.TabIndex = 10;
+            this.txtUltimoPreco.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            // 
             // frmCadCompraPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,13 +160,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(340, 216);
             this.ControlBox = false;
+            this.Controls.Add(this.txtUltimoPreco);
             this.Controls.Add(this.btnBuscaCompra);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCdPeca);
             this.Controls.Add(this.btnBuscaPeca);
             this.Controls.Add(this.txtCdCompra);
-            this.Controls.Add(this.txtUltimoPreco);
             this.Controls.Add(this.txtCdPeca);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
@@ -183,12 +186,12 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtCdPeca;
-        private System.Windows.Forms.TextBox txtUltimoPreco;
         private System.Windows.Forms.TextBox txtCdCompra;
         private System.Windows.Forms.Button btnBuscaPeca;
         private System.Windows.Forms.Label lblCdPeca;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscaCompra;
+        private Controles.MegaTextBox.MegaTextBox txtUltimoPreco;
     }
 }

@@ -39,12 +39,12 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnBuscaFornecedor = new System.Windows.Forms.Button();
-            this.txtVlCompra = new System.Windows.Forms.TextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.dgPeca = new System.Windows.Forms.DataGridView();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.pnlOrdemCompra = new System.Windows.Forms.Panel();
+            this.txtVlCompra = new Controles.MegaTextBox.MegaTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).BeginInit();
             this.pnlOrdemCompra.SuspendLayout();
             this.SuspendLayout();
@@ -151,15 +151,6 @@
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
-            // txtVlCompra
-            // 
-            this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVlCompra.Location = new System.Drawing.Point(208, 43);
-            this.txtVlCompra.MaxLength = 20;
-            this.txtVlCompra.Name = "txtVlCompra";
-            this.txtVlCompra.Size = new System.Drawing.Size(192, 20);
-            this.txtVlCompra.TabIndex = 9;
-            // 
             // toolTipLegenda
             // 
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
@@ -214,6 +205,16 @@
             this.pnlOrdemCompra.Size = new System.Drawing.Size(501, 185);
             this.pnlOrdemCompra.TabIndex = 19;
             // 
+            // txtVlCompra
+            // 
+            this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVlCompra.Location = new System.Drawing.Point(208, 43);
+            this.txtVlCompra.MaxLength = 20;
+            this.txtVlCompra.Name = "txtVlCompra";
+            this.txtVlCompra.Size = new System.Drawing.Size(192, 20);
+            this.txtVlCompra.TabIndex = 20;
+            this.txtVlCompra.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            // 
             // frmCadCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,9 +223,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtVlCompra);
             this.Controls.Add(this.pnlOrdemCompra);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
-            this.Controls.Add(this.txtVlCompra);
             this.Controls.Add(this.btnBuscaFornecedor);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.txtNotaFiscal);
@@ -259,11 +260,11 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnBuscaFornecedor;
-        private System.Windows.Forms.TextBox txtVlCompra;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Panel pnlOrdemCompra;
         private System.Windows.Forms.DataGridView dgPeca;
+        private Controles.MegaTextBox.MegaTextBox txtVlCompra;
     }
 }

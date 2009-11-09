@@ -46,7 +46,6 @@
             this.lblcnpj = new System.Windows.Forms.Label();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnlimpar = new System.Windows.Forms.Button();
-            this.txtDDD = new System.Windows.Forms.TextBox();
             this.lblDDD = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.btnInsere = new System.Windows.Forms.Button();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // txtCidade
@@ -219,15 +219,6 @@
             this.btnlimpar.UseVisualStyleBackColor = true;
             this.btnlimpar.Click += new System.EventHandler(this.btnlimpar_Click);
             // 
-            // txtDDD
-            // 
-            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDDD.Location = new System.Drawing.Point(340, 246);
-            this.txtDDD.MaxLength = 2;
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(36, 20);
-            this.txtDDD.TabIndex = 10;
-            // 
             // lblDDD
             // 
             this.lblDDD.AutoSize = true;
@@ -318,6 +309,16 @@
             this.txtNumeroEndereco.TabIndex = 3;
             this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
+            // txtDDD
+            // 
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDDD.Location = new System.Drawing.Point(341, 246);
+            this.txtDDD.MaxLength = 2;
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(35, 20);
+            this.txtDDD.TabIndex = 24;
+            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +327,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtTelefone);
@@ -333,7 +335,6 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelefone);
-            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.lblDDD);
             this.Controls.Add(this.btnlimpar);
             this.Controls.Add(this.btnVolta);
@@ -382,7 +383,6 @@
         private System.Windows.Forms.Button btnInsere;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnlimpar;
-        private System.Windows.Forms.TextBox txtDDD;
         private System.Windows.Forms.Label lblDDD;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.TextBox txtEmail;
@@ -392,5 +392,6 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
         private Controles.MegaTextBox.MegaTextBox txtNumeroEndereco;
+        private Controles.MegaTextBox.MegaTextBox txtDDD;
     }
 }

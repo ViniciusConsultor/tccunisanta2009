@@ -63,13 +63,13 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
-            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblCdUsuario
@@ -401,16 +401,6 @@
             this.txtDataNasc.TabIndex = 4;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
-            // txtDDD
-            // 
-            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDDD.Location = new System.Drawing.Point(390, 88);
-            this.txtDDD.MaxLength = 2;
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(28, 20);
-            this.txtDDD.TabIndex = 6;
-            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
-            // 
             // txtNumero
             // 
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -467,6 +457,16 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
+            // txtDDD
+            // 
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDDD.Location = new System.Drawing.Point(387, 87);
+            this.txtDDD.MaxLength = 2;
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(31, 20);
+            this.txtDDD.TabIndex = 27;
+            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,11 +475,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
@@ -561,11 +561,11 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtDataNasc;
-        private Controles.MegaTextBox.MegaTextBox txtDDD;
         private Controles.MegaTextBox.MegaTextBox txtNumero;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private Controles.MegaTextBox.MegaTextBox txtDDD;
     }
 }
