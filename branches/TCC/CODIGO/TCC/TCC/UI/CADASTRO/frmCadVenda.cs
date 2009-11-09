@@ -316,7 +316,7 @@ namespace TCC.UI
         {
             mVenda modelVenda = new mVenda();
             rVenda regraVenda = new rVenda();
-            rPedidoVenda regraVendaPedido = new rPedidoVenda();
+            rVendaProduto regraVendaPedido = new rVendaProduto();
             try
             {
                 modelVenda = this.PegaDadosTelaVenda();
@@ -739,6 +739,23 @@ namespace TCC.UI
             }
         }
         #endregion Abre Tela Resumo
+
+        private void AbrirOrdemProducao()
+        {
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
 
         #endregion Metodos
     }
