@@ -5,8 +5,9 @@ using System.Text;
 
 namespace TCC.BUSINESS
 {
-    class rPedidoVenda : ComandosSql
+    class rVendaProduto : ComandosSql
     {
+
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {

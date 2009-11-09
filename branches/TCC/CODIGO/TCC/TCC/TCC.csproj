@@ -180,7 +180,6 @@
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
     <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPecaFornecedor.cs" />
-    <Compile Include="BUSINESS\rPedidoVenda.cs" />
     <Compile Include="BUSINESS\rPerfil.cs" />
     <Compile Include="BUSINESS\rPerfilMenu.cs" />
     <Compile Include="BUSINESS\rProduto.cs" />
@@ -191,6 +190,7 @@
     <Compile Include="BUSINESS\rUsinagem.cs" />
     <Compile Include="BUSINESS\rUsuario.cs" />
     <Compile Include="BUSINESS\rVenda.cs" />
+    <Compile Include="BUSINESS\rVendaProduto.cs" />
     <Compile Include="BUSINESS\UTIL\Auxiliar.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -471,6 +471,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Resumo\frmResumoKitFamilia.resx">
       <DependentUpon>frmResumoKitFamilia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoOrdemProducao.resx">
+      <DependentUpon>frmResumoOrdemProducao.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Resumo\frmResumoVendaProduto.resx">
       <DependentUpon>frmResumoVendaProduto.cs</DependentUpon>
@@ -811,6 +815,12 @@
     </Compile>
     <Compile Include="UI\Resumo\frmResumoKitFamilia.Designer.cs">
       <DependentUpon>frmResumoKitFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoOrdemProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoOrdemProducao.Designer.cs">
+      <DependentUpon>frmResumoOrdemProducao.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Resumo\frmResumoVendaProduto.cs">
       <SubType>Form</SubType>
