@@ -336,10 +336,11 @@
             this.TxtNmPeca.Location = new System.Drawing.Point(36, 72);
             this.TxtNmPeca.MaxLength = 25;
             this.TxtNmPeca.Name = "TxtNmPeca";
+            this.TxtNmPeca.ReadOnly = true;
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
             // 
-            // frmCadItemPeca
+            // frmCadItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -356,7 +357,7 @@
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnConfirmar);
             this.MaximizeBox = false;
-            this.Name = "frmCadItemPeca";
+            this.Name = "frmCadItem";
             this.Text = "Item";
             this.Load += new System.EventHandler(this.frmCadItemPeca_Load);
             this.gbBuscaPecaItem.ResumeLayout(false);
