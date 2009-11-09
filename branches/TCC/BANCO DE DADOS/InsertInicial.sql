@@ -39,60 +39,59 @@ INSERT INTO Estado (slg_est, nom_est) VALUES ('SE', 'SERGIPE');
 INSERT INTO Estado (slg_est, nom_est) VALUES ('TO', 'TOCANTINS');
 
 --INSERT MENU
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Busca', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Buscas', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Compra', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Venda', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Estoque', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Produção', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastros', NULL, GETDATE(), 1);
 
---INSERT BUSCA 1
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Peça', 'frmBuscaPeca', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Item', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Busca Familha Motor', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Kit Peças', NULL, GETDATE(), 1);
+--INSERT BUSCAS 1
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Peças', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Itens', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Kit de Peças', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Familia de Motores', NULL, GETDATE(), 1);
 
 --INSERT COMPRA 2
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Fornecedor', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Fornecedor', 'frmCadFornecedor', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relaciona Peças do Fornecedor',NULL , GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Realiza Compra', 'frmCadCompra', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Fornecedores', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Fornecedores', 'frmCadFornecedor', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relacionar Peças ao Fornecedor',NULL , GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Realizar Compra', 'frmCadCompra', GETDATE(), 1);
 
 --INSERT VENDA 3
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Produto', 'frmCadOrdemProducao', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Cliente', 'frmCadCliente', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Produtos', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Clientes', 'frmCadCliente', GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Realizar Venda', 'frmCadVenda', GETDATE(), 1);
 
 --INSERT ESTOQUE 4
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro estoque', 'frmCadEstoque', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Movimenta Peça', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar estoques', 'frmCadEstoque', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Movimentação de Peças', NULL, GETDATE(), 1);
 
 --INSERT PRODUÇÃO 5
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Peças', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Tipo Peça', 'frmCadTipoPeca', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Tipo de Peça', 'frmCadTipoPeca', GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Informar Usinagem', 'frmCadUsinagem', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Peça', 'frmCadPeca', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Item', 'frmCadItemPeca', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Kit', 'frmCadKitGrupoPeca', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Peças', 'frmCadPeca', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Itens', 'frmCadItem', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Kits', 'frmCadKitGrupoPeca', GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Motores', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Tipo Motor', 'frmCadTipoMotor', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Número Motor', 'frmCadNumeroMotor', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('cadastro de Motor', 'frmCadMotor', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro Familha Motor', 'frmCadFamiliaMotor', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Tipo de Motor', 'frmCadTipoMotor', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Número Motor', 'frmCadNumeroMotor', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Motor', 'frmCadMotor', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Familia de Motores', 'frmCadFamiliaMotor', GETDATE(), 1);
 
 --INSERT CADASTRO GERAIS 6
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Departamento ', 'frmCadDepartamento', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Usuario', NULL, GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Perfil', 'frmCadPerfil', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Usuario', 'frmCadUsuario', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastro de Funcionario ', 'frmCadColaborador', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relacionar Perfil', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Departamentos ', 'frmCadDepartamento', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Usuarios', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Perfis', 'frmCadPerfil', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Funcionário ', 'frmCadColaborador', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relacionar Menus ao Perfil', NULL, GETDATE(), 1);
 
 --BUSCA
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--BuscaPeça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 8);--Busca Item
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 9);--Busca Familha motor
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 10);--kit
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 9);--kit
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 10);--Busca Familia motor
 
 --COMPRA
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (2, 11);--fornecedor
@@ -126,9 +125,8 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (26, 30);--motores/famil
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (6, 31);--cad departamento
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (6, 32);--cadastro/usuario
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 33);--usuario/cad perfil
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 34);--usuario/cad usuario
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 35);--usuario/cad funcionario
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 36);--usuario/relacionaperfilmenu
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 34);--usuario/cad funcionario
+INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 35);--usuario/relacionaperfilmenu
 
 
 --INSERT TABELA PERFIL

@@ -13,7 +13,7 @@ namespace TCC.MODEL
         private string dscFamiliaMotor;
         private bool flgAtivo;
         private int idMotor;
-        private int idEstoque;
+        private int? idEstoque;
         private string id_fam_motor_real;
         private string nomeTabela = "Familiamotor";
 
@@ -60,7 +60,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados ("id_estoque", System.Data.SqlDbType.Int,false)]
-        public int IdEstoque
+        public int? IdEstoque
         {
             get { return idEstoque; }
             set { idEstoque = value; }

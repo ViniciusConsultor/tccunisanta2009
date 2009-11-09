@@ -46,16 +46,16 @@
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
             this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.lblNmPeca = new System.Windows.Forms.Label();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
+            this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -248,39 +248,6 @@
             this.dgItems.TabIndex = 0;
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
-            // hIdPeca
-            // 
-            this.hIdPeca.DataPropertyName = "id_peca";
-            this.hIdPeca.HeaderText = "IdPeca";
-            this.hIdPeca.Name = "hIdPeca";
-            this.hIdPeca.ReadOnly = true;
-            this.hIdPeca.Visible = false;
-            this.hIdPeca.Width = 66;
-            // 
-            // hCodigo
-            // 
-            this.hCodigo.DataPropertyName = "Codigo";
-            this.hCodigo.HeaderText = "Código";
-            this.hCodigo.Name = "hCodigo";
-            this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "Peça";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
-            // 
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -341,6 +308,40 @@
             this.TxtNmPeca.TabIndex = 14;
             // 
             // frmCadItem
+            // hIdPeca
+            // 
+            this.hIdPeca.DataPropertyName = "id_peca";
+            this.hIdPeca.HeaderText = "IdPeca";
+            this.hIdPeca.Name = "hIdPeca";
+            this.hIdPeca.ReadOnly = true;
+            this.hIdPeca.Visible = false;
+            this.hIdPeca.Width = 64;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "id_peca_real";
+            this.hCodigo.HeaderText = "Código";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 85;
+            // 
+            // frmCadItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -388,11 +389,11 @@
         private System.Windows.Forms.RadioButton rdbNome;
         private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.TextBox TxtNmPeca;
+        private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
+        private System.Windows.Forms.Button btnRemovePeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdPeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
-        private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
-        private System.Windows.Forms.Button btnRemovePeca;
     }
 }

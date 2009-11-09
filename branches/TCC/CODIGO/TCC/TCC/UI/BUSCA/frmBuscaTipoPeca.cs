@@ -143,9 +143,9 @@ namespace TCC.UI
                         {
                             //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                             //------------------------------------------------------------------------------------
-                            dvC = this.dgTipoPeca["id_tipo_peca", this.dgTipoPeca.CurrentRow.Index];
+                            dvC = this.dgTipoPeca["hIdTipoPeca", this.dgTipoPeca.CurrentRow.Index];
                             this._model.IdTipoPeca = Convert.ToInt32(dvC.Value);
-                            dvC = this.dgTipoPeca["Tipo Peça", this.dgTipoPeca.CurrentRow.Index];
+                            dvC = this.dgTipoPeca["hDescricao", this.dgTipoPeca.CurrentRow.Index];
                             this._model.DscTipoPeca = dvC.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();

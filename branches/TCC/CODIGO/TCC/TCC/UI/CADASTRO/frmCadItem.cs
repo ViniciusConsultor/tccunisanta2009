@@ -76,6 +76,7 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this._modelItemPeca = null;
+            this.txtQtdPeca.Text = "";
         }
         #endregion btnLimpa Click
 

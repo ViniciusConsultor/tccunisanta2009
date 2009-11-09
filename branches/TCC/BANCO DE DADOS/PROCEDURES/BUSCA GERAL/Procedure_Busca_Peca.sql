@@ -6,5 +6,5 @@
  
  CREATE PROCEDURE sp_busca_peca
  AS
- SELECT id_peca, id_peca_real as 'Codigo', nom as 'Peça', 0 as 'qtd' FROM Peca
+ SELECT id_peca, id_peca_real, nom, 0 as 'qtd' FROM Peca
  WHERE flg_ativo = 1

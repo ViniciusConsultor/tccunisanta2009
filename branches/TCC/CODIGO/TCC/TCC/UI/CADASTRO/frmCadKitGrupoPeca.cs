@@ -39,6 +39,7 @@ namespace TCC.UI
             base.LimpaDadosTela(this);
             this._modelItemKit = null;
             this._modelPeca = null;
+            this.txtQtdItem.Text = "";
         }
         #endregion btnLimpar Click
 
@@ -80,34 +81,7 @@ namespace TCC.UI
         #region btnAdicionaItem Click
         private void btnAdicionaItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.ValidaAdicaoItem();
-                if (this._modelItemKit != null)
-                {
-                    if (this._modelItemKit.Count > 0)
-                    {
-                        this.AlteraModelItemKit();
-                    }
-                }
-                else
-                {
-                    this.PopulaModelItemKit();
-                }
-                this.AtualizaGrid();
-                this.TxtNmItem.Text = "";
-                this.txtQtdItem.Text = "";
-            }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException)
-            {
-                MessageBox.Show("É Necessario buscar itens.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.btnBuscarItemDtGrid.Focus();
-            }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException)
-            {
-                MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtQtdItem.Focus();
-            }
+            this.AdicionarItemLista();
         }
         #endregion btnAdicionaItem Click
 
@@ -325,7 +299,41 @@ namespace TCC.UI
             }
         }
         #endregion Popula Grid
-        
+
+        #region Adicionar Item Lista
+        private void AdicionarItemLista()
+        {
+            try
+            {
+                this.ValidaAdicaoItem();
+                if (this._modelItemKit != null)
+                {
+                    if (this._modelItemKit.Count > 0)
+                    {
+                        this.AlteraModelItemKit();
+                    }
+                }
+                else
+                {
+                    this.PopulaModelItemKit();
+                }
+                this.AtualizaGrid();
+                this.TxtNmItem.Text = "";
+                this.txtQtdItem.Text = "";
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException)
+            {
+                MessageBox.Show("É Necessario buscar itens.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarItemDtGrid.Focus();
+            }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException)
+            {
+                MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdItem.Focus();
+            }
+        }
+        #endregion Adicionar Item Lista
+
         #region Popula Model Item Kit
         /// <summary>
         /// Popula o model item kit com os dados que estão no painel da tela
