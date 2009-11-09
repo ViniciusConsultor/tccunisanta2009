@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hIdTipoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgTipoPeca.AllowUserToResizeRows = false;
             this.dgTipoPeca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgTipoPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTipoPeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hIdTipoPeca,
+            this.hDescricao});
             this.dgTipoPeca.Location = new System.Drawing.Point(12, 45);
             this.dgTipoPeca.MultiSelect = false;
             this.dgTipoPeca.Name = "dgTipoPeca";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hIdTipoPeca
+            // 
+            this.hIdTipoPeca.DataPropertyName = "id_tipo_peca";
+            this.hIdTipoPeca.HeaderText = "IdTipoPeca";
+            this.hIdTipoPeca.Name = "hIdTipoPeca";
+            this.hIdTipoPeca.ReadOnly = true;
+            this.hIdTipoPeca.Visible = false;
+            this.hIdTipoPeca.Width = 85;
+            // 
+            // hDescricao
+            // 
+            this.hDescricao.DataPropertyName = "Tipo Peça";
+            this.hDescricao.HeaderText = "Descricao";
+            this.hDescricao.Name = "hDescricao";
+            this.hDescricao.ReadOnly = true;
+            this.hDescricao.Width = 78;
+            // 
             // frmBuscaTipoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdTipoPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hDescricao;
     }
 }

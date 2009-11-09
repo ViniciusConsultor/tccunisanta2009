@@ -46,11 +46,8 @@
             this.btnBuscaNumMotor = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.gbBuscaKit = new System.Windows.Forms.GroupBox();
+            this.txtQtdKit = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgKits = new System.Windows.Forms.DataGridView();
-            this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NmKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdKit = new System.Windows.Forms.Label();
             this.lblNmItem = new System.Windows.Forms.Label();
@@ -66,7 +63,10 @@
             this.lblMotorCompra = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.txtQtdKit = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscaKit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).BeginInit();
             this.gbMotor.SuspendLayout();
@@ -101,6 +101,7 @@
             this.btnLimpa.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnVolta
             // 
@@ -112,6 +113,7 @@
             this.btnVolta.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // toolTipLegenda
             // 
@@ -128,6 +130,7 @@
             this.btnAdicionaKit.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaKit, "Adicionar Kits");
             this.btnAdicionaKit.UseVisualStyleBackColor = true;
+            this.btnAdicionaKit.Click += new System.EventHandler(this.btnAdicionaKit_Click);
             // 
             // btnBuscarKitDtGrid
             // 
@@ -139,6 +142,7 @@
             this.btnBuscarKitDtGrid.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnBuscarKitDtGrid, "Buscar Kits");
             this.btnBuscarKitDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarKitDtGrid.Click += new System.EventHandler(this.btnBuscarKitDtGrid_Click);
             // 
             // btnBuscaEstoque
             // 
@@ -150,6 +154,7 @@
             this.btnBuscaEstoque.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscaEstoque, "Buscar Estoque");
             this.btnBuscaEstoque.UseVisualStyleBackColor = true;
+            this.btnBuscaEstoque.Click += new System.EventHandler(this.btnBuscaEstoque_Click);
             // 
             // btnBuscaMotorCompra
             // 
@@ -161,6 +166,7 @@
             this.btnBuscaMotorCompra.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnBuscaMotorCompra, "Buscar Motor");
             this.btnBuscaMotorCompra.UseVisualStyleBackColor = true;
+            this.btnBuscaMotorCompra.Click += new System.EventHandler(this.btnBuscaMotorCompra_Click);
             // 
             // btnBuscaTipoMotor
             // 
@@ -172,6 +178,7 @@
             this.btnBuscaTipoMotor.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnBuscaTipoMotor, "Buscar Tipo do Motor");
             this.btnBuscaTipoMotor.UseVisualStyleBackColor = true;
+            this.btnBuscaTipoMotor.Click += new System.EventHandler(this.btnBuscaTipoMotor_Click);
             // 
             // btnRemoveKit
             // 
@@ -194,6 +201,7 @@
             this.btnBuscaNumMotor.TabIndex = 37;
             this.toolTipLegenda.SetToolTip(this.btnBuscaNumMotor, "Buscar Número do Motor");
             this.btnBuscaNumMotor.UseVisualStyleBackColor = true;
+            this.btnBuscaNumMotor.Click += new System.EventHandler(this.btnBuscaNumMotor_Click);
             // 
             // btnConfirma
             // 
@@ -205,6 +213,7 @@
             this.btnConfirma.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // gbBuscaKit
             // 
@@ -226,6 +235,16 @@
             this.gbBuscaKit.TabStop = false;
             this.gbBuscaKit.Text = "Kits da Familia Motor";
             // 
+            // txtQtdKit
+            // 
+            this.txtQtdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdKit.Location = new System.Drawing.Point(36, 131);
+            this.txtQtdKit.MaxLength = 2;
+            this.txtQtdKit.Name = "txtQtdKit";
+            this.txtQtdKit.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdKit.TabIndex = 21;
+            this.txtQtdKit.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // dgKits
             // 
             this.dgKits.AllowUserToAddRows = false;
@@ -244,8 +263,8 @@
             this.dgKits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hIdKit,
-            this.CdKit,
-            this.NmKit,
+            this.hCodigo,
+            this.hNome,
             this.hQtd});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -271,39 +290,7 @@
             this.dgKits.ShowEditingIcon = false;
             this.dgKits.Size = new System.Drawing.Size(295, 177);
             this.dgKits.TabIndex = 0;
-            // 
-            // hIdKit
-            // 
-            this.hIdKit.DataPropertyName = "id_kit";
-            this.hIdKit.HeaderText = "IdKit";
-            this.hIdKit.Name = "hIdKit";
-            this.hIdKit.ReadOnly = true;
-            this.hIdKit.Visible = false;
-            this.hIdKit.Width = 53;
-            // 
-            // CdKit
-            // 
-            this.CdKit.DataPropertyName = "Codigo";
-            this.CdKit.HeaderText = "Codigo";
-            this.CdKit.Name = "CdKit";
-            this.CdKit.ReadOnly = true;
-            this.CdKit.Width = 65;
-            // 
-            // NmKit
-            // 
-            this.NmKit.DataPropertyName = "Kit Grupo Peça";
-            this.NmKit.HeaderText = "Nome";
-            this.NmKit.Name = "NmKit";
-            this.NmKit.ReadOnly = true;
-            this.NmKit.Width = 60;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
+            this.dgKits.SelectionChanged += new System.EventHandler(this.dgKits_SelectionChanged);
             // 
             // txtBuscaFiltro
             // 
@@ -458,15 +445,38 @@
             this.lblEstoque.TabIndex = 25;
             this.lblEstoque.Text = "Estoque";
             // 
-            // txtQtdKit
+            // hIdKit
             // 
-            this.txtQtdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdKit.Location = new System.Drawing.Point(36, 131);
-            this.txtQtdKit.MaxLength = 2;
-            this.txtQtdKit.Name = "txtQtdKit";
-            this.txtQtdKit.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdKit.TabIndex = 21;
-            this.txtQtdKit.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.hIdKit.DataPropertyName = "id_kit";
+            this.hIdKit.HeaderText = "IdKit";
+            this.hIdKit.Name = "hIdKit";
+            this.hIdKit.ReadOnly = true;
+            this.hIdKit.Visible = false;
+            this.hIdKit.Width = 51;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "id_kit_real";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "Qtd";
+            this.hQtd.HeaderText = "Qtd";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 47;
             // 
             // frmCadFamiliaMotor
             // 
@@ -489,6 +499,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCadFamiliaMotor";
             this.Text = "Familia do  Motor";
+            this.Load += new System.EventHandler(this.frmCadFamiliaMotor_Load);
             this.gbBuscaKit.ResumeLayout(false);
             this.gbBuscaKit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).EndInit();
@@ -517,10 +528,6 @@
         private System.Windows.Forms.RadioButton rdbFiltroNome;
         private System.Windows.Forms.RadioButton rdbFiltroCodigo;
         private System.Windows.Forms.TextBox TxtNmKit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hIdKit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CdKit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NmKit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private System.Windows.Forms.GroupBox gbMotor;
         private System.Windows.Forms.Button btnBuscaTipoMotor;
         private System.Windows.Forms.TextBox txtTipoMotor;
@@ -536,5 +543,9 @@
         private System.Windows.Forms.TextBox txtNumeroMotor;
         private System.Windows.Forms.Label lblNumeroMotor;
         private Controles.MegaTextBox.MegaTextBox txtQtdKit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdKit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
     }
 }

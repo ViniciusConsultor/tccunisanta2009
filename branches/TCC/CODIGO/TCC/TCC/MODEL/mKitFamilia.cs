@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mKitFamilia : ModelPai
+    public class mKitFamilia : ModelPai
     {
         private int? id_kit;
         private int? id_farm_motor;
