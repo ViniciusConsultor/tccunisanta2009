@@ -1,8 +1,8 @@
 CREATE DATABASE Megatechdatabase
 go
-
 USE Megatechdatabase
 go
+
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motorfornecedor')
 DROP TABLE Motorfornecedor
@@ -98,6 +98,25 @@ ALTER TABLE Itempeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Vendaproduto')
+DROP TABLE Vendaproduto
+go
+
+CREATE TABLE Vendaproduto (
+       id_venda             int NOT NULL,
+       flg_ativo            bit NULL,
+       dat_alt              datetime NULL,
+       qtd                  int NULL,
+       id_prdto             integer NOT NULL
+)
+go
+
+
+ALTER TABLE Vendaproduto
+       ADD PRIMARY KEY CLUSTERED (id_venda ASC, id_prdto ASC)
+go
+
+
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Ordemdepartamento')
 DROP TABLE Ordemdepartamento
 go
@@ -116,41 +135,24 @@ ALTER TABLE Ordemdepartamento
 go
 
 
-IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Vendaordem')
-DROP TABLE Vendaordem
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Produto')
+DROP TABLE Produto
 go
 
-CREATE TABLE Vendaordem (
-       id_venda             int NOT NULL,
-       id_ordem             integer NOT NULL,
-       flg_ativo            bit NULL,
-       dat_alt              datetime NULL,
-       qtd                  int NULL
-)
-go
-
-
-ALTER TABLE Vendaordem
-       ADD PRIMARY KEY CLUSTERED (id_venda ASC, id_ordem ASC)
-go
-
-
-IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Ordemproducao')
-DROP TABLE Ordemproducao
-go
-
-CREATE TABLE Ordemproducao (
-       id_ordem             integer IDENTITY,
-       dsc_ordem            varchar(500) NULL,
+CREATE TABLE Produto (
+       id_prdto             integer NOT NULL,
+       dsc_prdto            varchar(500) NULL,
        id_fam_motor         integer NULL,
        id_kit               integer NULL,
-       id_tipo_produto      integer NOT NULL
+       id_tipo_produto      integer NOT NULL,
+       flg_ativo            bit NULL,
+       dat_alt              datetime NULL
 )
 go
 
 
-ALTER TABLE Ordemproducao
-       ADD PRIMARY KEY CLUSTERED (id_ordem ASC)
+ALTER TABLE Produto
+       ADD PRIMARY KEY CLUSTERED (id_prdto ASC)
 go
 
 
@@ -200,7 +202,7 @@ CREATE TABLE Familiamotor (
        dsc_fam_motor        varchar(500) NULL,
        flg_ativo            bit NULL,
        id_motor             integer NOT NULL,
-       id_estoque           integer NOT NULL,
+       id_estoque           integer NULL,
        id_fam_motor_real    varchar(25) NULL,
        id_tipo_motor        integer NOT NULL
 )
@@ -757,9 +759,21 @@ ALTER TABLE Itempeca
 go
 
 
+ALTER TABLE Vendaproduto
+       ADD FOREIGN KEY (id_prdto)
+                             REFERENCES Produto  (id_prdto)
+go
+
+
+ALTER TABLE Vendaproduto
+       ADD FOREIGN KEY (id_venda)
+                             REFERENCES Venda  (id_venda)
+go
+
+
 ALTER TABLE Ordemdepartamento
        ADD FOREIGN KEY (id_ordem)
-                             REFERENCES Ordemproducao  (id_ordem)
+                             REFERENCES Produto  (id_prdto)
 go
 
 
@@ -769,31 +783,19 @@ ALTER TABLE Ordemdepartamento
 go
 
 
-ALTER TABLE Vendaordem
-       ADD FOREIGN KEY (id_ordem)
-                             REFERENCES Ordemproducao  (id_ordem)
-go
-
-
-ALTER TABLE Vendaordem
-       ADD FOREIGN KEY (id_venda)
-                             REFERENCES Venda  (id_venda)
-go
-
-
-ALTER TABLE Ordemproducao
+ALTER TABLE Produto
        ADD FOREIGN KEY (id_tipo_produto)
                              REFERENCES Tipoproduto  (id_tipo_prod)
 go
 
 
-ALTER TABLE Ordemproducao
+ALTER TABLE Produto
        ADD FOREIGN KEY (id_kit)
                              REFERENCES Kitgrupopeca  (id_kit)
 go
 
 
-ALTER TABLE Ordemproducao
+ALTER TABLE Produto
        ADD FOREIGN KEY (id_fam_motor)
                              REFERENCES Familiamotor  (id_fam_motor)
 go
@@ -953,3 +955,6 @@ ALTER TABLE Usuario
        ADD FOREIGN KEY (id_perfil)
                              REFERENCES Perfil  (id_perfil)
 go
+
+
+
