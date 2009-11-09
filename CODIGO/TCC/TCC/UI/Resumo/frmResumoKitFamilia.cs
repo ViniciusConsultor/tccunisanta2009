@@ -17,7 +17,7 @@ namespace TCC.UI.Resumo
         #endregion Atributos
 
         #region Construtor
-        frmResumoKitFamilia(List<mKitFamilia> lista, string nomeFamiliaMotor, string nomeMotor)
+        public frmResumoKitFamilia(List<mKitFamilia> lista, string nomeFamiliaMotor, string nomeMotor)
         {
             InitializeComponent();
             this._listaModelKitFamilia = lista;
@@ -76,10 +76,10 @@ namespace TCC.UI.Resumo
         {
             try
             {
-                dt.Columns.Add("id_kit");
-                dt.Columns.Add("Codigo");
-                dt.Columns.Add("Kit");
-                dt.Columns.Add("qtd");
+                dt.Columns.Add("hIdkit");
+                dt.Columns.Add("hCodigo");
+                dt.Columns.Add("hKit");
+                dt.Columns.Add("hQtd");
             }
             catch (Exception ex)
             {
@@ -103,10 +103,10 @@ namespace TCC.UI.Resumo
                 {
                     modelKit = regraKit.BuscaUnicoRegistro(Convert.ToInt32(model.Id_kit));
                     linha = dt.NewRow();
-                    linha["id_kit"] = model.Id_kit;
-                    linha["Codigo"] = modelKit.IdKitReal;
-                    linha["Kit"] = modelKit.Nom_grupo;
-                    linha["qtd"] = model.Qtd_kit;
+                    linha["hIdKit"] = model.Id_kit;
+                    linha["hCodigo"] = modelKit.IdKitReal;
+                    linha["hKit"] = modelKit.Nom_grupo;
+                    linha["hQtd"] = model.Qtd_kit;
                     dt.Rows.Add(linha);
                 }
             }

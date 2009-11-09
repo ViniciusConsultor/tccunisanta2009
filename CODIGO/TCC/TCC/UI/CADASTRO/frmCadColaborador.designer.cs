@@ -517,7 +517,7 @@
             this.Controls.Add(this.lblCdUsuario);
             this.MaximizeBox = false;
             this.Name = "frmCadColaborador";
-            this.Text = "Cadastro de Colaborador";
+            this.Text = "Cadastro de Funcionários";
             this.Load += new System.EventHandler(this.frmCadColaborador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
