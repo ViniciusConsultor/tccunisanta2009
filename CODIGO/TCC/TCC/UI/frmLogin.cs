@@ -31,7 +31,13 @@ namespace TCC.UI
                 senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
                 dt = regraUsuario.VerificaLoginUsuario(this.txtLogin.Text, senha);
                 frmInicial.IdPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
-                this.Close();
+                frmInicial inicial = new frmInicial();
+                this.Visible = false;
+                DialogResult resultado = inicial.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
             }
             catch (Exception ex)
             {
