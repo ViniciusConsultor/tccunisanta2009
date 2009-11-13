@@ -88,7 +88,7 @@
             // txtNmKit
             // 
             this.txtNmKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmKit.Location = new System.Drawing.Point(156, 44);
+            this.txtNmKit.Location = new System.Drawing.Point(293, 73);
             this.txtNmKit.MaxLength = 50;
             this.txtNmKit.Name = "txtNmKit";
             this.txtNmKit.Size = new System.Drawing.Size(133, 20);
@@ -97,7 +97,7 @@
             // lblNmKit
             // 
             this.lblNmKit.AutoSize = true;
-            this.lblNmKit.Location = new System.Drawing.Point(85, 46);
+            this.lblNmKit.Location = new System.Drawing.Point(222, 75);
             this.lblNmKit.Name = "lblNmKit";
             this.lblNmKit.Size = new System.Drawing.Size(65, 13);
             this.lblNmKit.TabIndex = 15;
@@ -124,9 +124,9 @@
             // 
             this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(419, 22);
+            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(460, 35);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
-            this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarItemDtGrid.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
             this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             this.gbBuscaItem.Controls.Add(this.rdbNome);
             this.gbBuscaItem.Controls.Add(this.rdbCodigo);
             this.gbBuscaItem.Controls.Add(this.TxtNmItem);
-            this.gbBuscaItem.Location = new System.Drawing.Point(83, 116);
+            this.gbBuscaItem.Location = new System.Drawing.Point(83, 108);
             this.gbBuscaItem.Name = "gbBuscaItem";
             this.gbBuscaItem.Size = new System.Drawing.Size(498, 243);
             this.gbBuscaItem.TabIndex = 16;
@@ -279,10 +279,10 @@
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(238, 36);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(192, 36);
             this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
+            this.txtBuscaFiltro.Size = new System.Drawing.Size(262, 20);
             this.txtBuscaFiltro.TabIndex = 3;
             // 
             // lblQtdPeca
@@ -306,7 +306,7 @@
             // rdbNome
             // 
             this.rdbNome.AutoSize = true;
-            this.rdbNome.Location = new System.Drawing.Point(301, 19);
+            this.rdbNome.Location = new System.Drawing.Point(256, 13);
             this.rdbNome.Name = "rdbNome";
             this.rdbNome.Size = new System.Drawing.Size(53, 17);
             this.rdbNome.TabIndex = 20;
@@ -317,7 +317,7 @@
             // 
             this.rdbCodigo.AutoSize = true;
             this.rdbCodigo.Checked = true;
-            this.rdbCodigo.Location = new System.Drawing.Point(237, 19);
+            this.rdbCodigo.Location = new System.Drawing.Point(192, 13);
             this.rdbCodigo.Name = "rdbCodigo";
             this.rdbCodigo.Size = new System.Drawing.Size(58, 17);
             this.rdbCodigo.TabIndex = 19;
@@ -339,7 +339,7 @@
             // lblCdKitReal
             // 
             this.lblCdKitReal.AutoSize = true;
-            this.lblCdKitReal.Location = new System.Drawing.Point(85, 15);
+            this.lblCdKitReal.Location = new System.Drawing.Point(222, 44);
             this.lblCdKitReal.Name = "lblCdKitReal";
             this.lblCdKitReal.Size = new System.Drawing.Size(70, 13);
             this.lblCdKitReal.TabIndex = 24;
@@ -348,7 +348,7 @@
             // txtCodigoKit
             // 
             this.txtCodigoKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoKit.Location = new System.Drawing.Point(156, 12);
+            this.txtCodigoKit.Location = new System.Drawing.Point(293, 41);
             this.txtCodigoKit.MaxLength = 20;
             this.txtCodigoKit.Name = "txtCodigoKit";
             this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
@@ -360,7 +360,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 366);
+            this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.lblCdKitReal);

@@ -44,7 +44,7 @@
             // lblCodigoPerfil
             // 
             this.lblCodigoPerfil.AutoSize = true;
-            this.lblCodigoPerfil.Location = new System.Drawing.Point(95, 67);
+            this.lblCodigoPerfil.Location = new System.Drawing.Point(93, 77);
             this.lblCodigoPerfil.Name = "lblCodigoPerfil";
             this.lblCodigoPerfil.Size = new System.Drawing.Size(30, 13);
             this.lblCodigoPerfil.TabIndex = 1;
@@ -53,7 +53,7 @@
             // lblCodigoMenu
             // 
             this.lblCodigoMenu.AutoSize = true;
-            this.lblCodigoMenu.Location = new System.Drawing.Point(95, 103);
+            this.lblCodigoMenu.Location = new System.Drawing.Point(93, 113);
             this.lblCodigoMenu.Name = "lblCodigoMenu";
             this.lblCodigoMenu.Size = new System.Drawing.Size(34, 13);
             this.lblCodigoMenu.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             this.txtCodigoPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoPerfil.Enabled = false;
-            this.txtCodigoPerfil.Location = new System.Drawing.Point(135, 65);
+            this.txtCodigoPerfil.Location = new System.Drawing.Point(133, 75);
             this.txtCodigoPerfil.MaxLength = 50;
             this.txtCodigoPerfil.Name = "txtCodigoPerfil";
             this.txtCodigoPerfil.ReadOnly = true;
@@ -74,7 +74,7 @@
             // 
             this.txtCodigoMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoMenu.Enabled = false;
-            this.txtCodigoMenu.Location = new System.Drawing.Point(135, 101);
+            this.txtCodigoMenu.Location = new System.Drawing.Point(133, 111);
             this.txtCodigoMenu.MaxLength = 50;
             this.txtCodigoMenu.Name = "txtCodigoMenu";
             this.txtCodigoMenu.ReadOnly = true;
@@ -109,7 +109,7 @@
             // 
             this.btnBuscaPerfil.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPerfil.Location = new System.Drawing.Point(255, 62);
+            this.btnBuscaPerfil.Location = new System.Drawing.Point(253, 72);
             this.btnBuscaPerfil.Name = "btnBuscaPerfil";
             this.btnBuscaPerfil.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaPerfil.TabIndex = 1;
@@ -121,7 +121,7 @@
             // 
             this.btnBuscaMenu.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaMenu.Location = new System.Drawing.Point(255, 101);
+            this.btnBuscaMenu.Location = new System.Drawing.Point(253, 111);
             this.btnBuscaMenu.Name = "btnBuscaMenu";
             this.btnBuscaMenu.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaMenu.TabIndex = 2;
@@ -147,7 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(349, 210);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscaMenu);
             this.Controls.Add(this.btnBuscaPerfil);

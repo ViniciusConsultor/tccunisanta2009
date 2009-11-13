@@ -69,7 +69,7 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(268, 67);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(262, 68);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(25, 23);
             this.btnBuscaFornecedor.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPeca.Location = new System.Drawing.Point(268, 96);
+            this.btnBuscaPeca.Location = new System.Drawing.Point(262, 97);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(25, 23);
             this.btnBuscaPeca.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // txtFornecedor
             // 
-            this.txtFornecedor.Location = new System.Drawing.Point(150, 69);
+            this.txtFornecedor.Location = new System.Drawing.Point(144, 70);
             this.txtFornecedor.MaxLength = 50;
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.ReadOnly = true;
@@ -100,7 +100,7 @@
             // 
             // txtPeca
             // 
-            this.txtPeca.Location = new System.Drawing.Point(150, 98);
+            this.txtPeca.Location = new System.Drawing.Point(144, 99);
             this.txtPeca.MaxLength = 50;
             this.txtPeca.Name = "txtPeca";
             this.txtPeca.ReadOnly = true;
@@ -110,7 +110,7 @@
             // lblFornecedor
             // 
             this.lblFornecedor.AutoSize = true;
-            this.lblFornecedor.Location = new System.Drawing.Point(83, 72);
+            this.lblFornecedor.Location = new System.Drawing.Point(77, 73);
             this.lblFornecedor.Name = "lblFornecedor";
             this.lblFornecedor.Size = new System.Drawing.Size(61, 13);
             this.lblFornecedor.TabIndex = 7;
@@ -119,7 +119,7 @@
             // lblPeca
             // 
             this.lblPeca.AutoSize = true;
-            this.lblPeca.Location = new System.Drawing.Point(112, 101);
+            this.lblPeca.Location = new System.Drawing.Point(106, 102);
             this.lblPeca.Name = "lblPeca";
             this.lblPeca.Size = new System.Drawing.Size(32, 13);
             this.lblPeca.TabIndex = 8;

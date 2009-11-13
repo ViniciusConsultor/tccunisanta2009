@@ -44,7 +44,7 @@
             // lblDescPerfil
             // 
             this.lblDescPerfil.AutoSize = true;
-            this.lblDescPerfil.Location = new System.Drawing.Point(82, 42);
+            this.lblDescPerfil.Location = new System.Drawing.Point(74, 40);
             this.lblDescPerfil.Name = "lblDescPerfil";
             this.lblDescPerfil.Size = new System.Drawing.Size(96, 13);
             this.lblDescPerfil.TabIndex = 1;
@@ -53,7 +53,7 @@
             // txtDescPerfil
             // 
             this.txtDescPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescPerfil.Location = new System.Drawing.Point(85, 59);
+            this.txtDescPerfil.Location = new System.Drawing.Point(77, 57);
             this.txtDescPerfil.MaxLength = 500;
             this.txtDescPerfil.Multiline = true;
             this.txtDescPerfil.Name = "txtDescPerfil";
@@ -116,7 +116,7 @@
             // 
             this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
             this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacionarDepto.Location = new System.Drawing.Point(262, 164);
+            this.btnRelacionarDepto.Location = new System.Drawing.Point(254, 159);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
             this.btnRelacionarDepto.TabIndex = 31;
@@ -126,7 +126,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 186);
+            this.label2.Location = new System.Drawing.Point(190, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 33;
@@ -135,7 +135,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(198, 173);
+            this.label1.Location = new System.Drawing.Point(190, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 32;

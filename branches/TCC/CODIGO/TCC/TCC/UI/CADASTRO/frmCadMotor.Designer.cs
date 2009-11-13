@@ -47,7 +47,7 @@
             // lblDsMotor
             // 
             this.lblDsMotor.AutoSize = true;
-            this.lblDsMotor.Location = new System.Drawing.Point(65, 52);
+            this.lblDsMotor.Location = new System.Drawing.Point(65, 36);
             this.lblDsMotor.Name = "lblDsMotor";
             this.lblDsMotor.Size = new System.Drawing.Size(100, 13);
             this.lblDsMotor.TabIndex = 0;
@@ -56,7 +56,7 @@
             // txtDsMotor
             // 
             this.txtDsMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsMotor.Location = new System.Drawing.Point(68, 71);
+            this.txtDsMotor.Location = new System.Drawing.Point(68, 55);
             this.txtDsMotor.MaxLength = 100;
             this.txtDsMotor.Multiline = true;
             this.txtDsMotor.Name = "txtDsMotor";
@@ -119,7 +119,7 @@
             // 
             this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
             this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacionarDepto.Location = new System.Drawing.Point(128, 171);
+            this.btnRelacionarDepto.Location = new System.Drawing.Point(128, 155);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
             this.btnRelacionarDepto.TabIndex = 34;
@@ -130,7 +130,7 @@
             // 
             this.btnRelacioranEstoque.BackgroundImage = global::TCC.resImg.btnRlacionaEstoque;
             this.btnRelacioranEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacioranEstoque.Location = new System.Drawing.Point(278, 171);
+            this.btnRelacioranEstoque.Location = new System.Drawing.Point(278, 155);
             this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
             this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
             this.btnRelacioranEstoque.TabIndex = 33;
@@ -140,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(217, 193);
+            this.label3.Location = new System.Drawing.Point(217, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 38;
@@ -149,7 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 180);
+            this.label4.Location = new System.Drawing.Point(217, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 37;
@@ -158,7 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 193);
+            this.label2.Location = new System.Drawing.Point(64, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 36;
@@ -167,7 +167,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 180);
+            this.label1.Location = new System.Drawing.Point(64, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 35;

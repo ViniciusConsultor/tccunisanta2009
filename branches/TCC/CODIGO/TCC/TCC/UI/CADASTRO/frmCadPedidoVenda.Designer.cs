@@ -73,17 +73,17 @@
             // txtCdDepartamento
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(191, 20);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(139, 20);
             this.txtCdDepartamento.MaxLength = 15;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
-            this.txtCdDepartamento.Size = new System.Drawing.Size(65, 20);
+            this.txtCdDepartamento.Size = new System.Drawing.Size(137, 20);
             this.txtCdDepartamento.TabIndex = 20;
             // 
             // lblNmDepartamento
             // 
             this.lblNmDepartamento.AutoSize = true;
-            this.lblNmDepartamento.Location = new System.Drawing.Point(60, 22);
+            this.lblNmDepartamento.Location = new System.Drawing.Point(59, 22);
             this.lblNmDepartamento.Name = "lblNmDepartamento";
             this.lblNmDepartamento.Size = new System.Drawing.Size(74, 13);
             this.lblNmDepartamento.TabIndex = 21;
@@ -92,17 +92,17 @@
             // txtDsPedido
             // 
             this.txtDsPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsPedido.Location = new System.Drawing.Point(58, 116);
+            this.txtDsPedido.Location = new System.Drawing.Point(62, 120);
             this.txtDsPedido.MaxLength = 500;
             this.txtDsPedido.Multiline = true;
             this.txtDsPedido.Name = "txtDsPedido";
-            this.txtDsPedido.Size = new System.Drawing.Size(253, 72);
+            this.txtDsPedido.Size = new System.Drawing.Size(247, 72);
             this.txtDsPedido.TabIndex = 4;
             // 
             // lblDsPedido
             // 
             this.lblDsPedido.AutoSize = true;
-            this.lblDsPedido.Location = new System.Drawing.Point(55, 100);
+            this.lblDsPedido.Location = new System.Drawing.Point(59, 104);
             this.lblDsPedido.Name = "lblDsPedido";
             this.lblDsPedido.Size = new System.Drawing.Size(103, 13);
             this.lblDsPedido.TabIndex = 21;
@@ -112,7 +112,7 @@
             // 
             this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(262, 20);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(282, 20);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaDepartamento.TabIndex = 1;
@@ -124,7 +124,7 @@
             // 
             this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPeca.Location = new System.Drawing.Point(261, 48);
+            this.btnBuscaPeca.Location = new System.Drawing.Point(282, 48);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(28, 23);
             this.btnBuscaPeca.TabIndex = 2;
@@ -135,7 +135,7 @@
             // 
             this.button1.BackgroundImage = global::TCC.resImg.btnBusca;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(261, 74);
+            this.button1.Location = new System.Drawing.Point(282, 77);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 23);
             this.button1.TabIndex = 3;
@@ -157,7 +157,7 @@
             // lblCodMotor
             // 
             this.lblCodMotor.AutoSize = true;
-            this.lblCodMotor.Location = new System.Drawing.Point(60, 52);
+            this.lblCodMotor.Location = new System.Drawing.Point(59, 52);
             this.lblCodMotor.Name = "lblCodMotor";
             this.lblCodMotor.Size = new System.Drawing.Size(85, 13);
             this.lblCodMotor.TabIndex = 24;
@@ -165,18 +165,18 @@
             // 
             // txtCodigoPeca
             // 
-            this.txtCodigoPeca.Location = new System.Drawing.Point(156, 49);
+            this.txtCodigoPeca.Location = new System.Drawing.Point(150, 50);
             this.txtCodigoPeca.MaxLength = 50;
             this.txtCodigoPeca.Name = "txtCodigoPeca";
             this.txtCodigoPeca.ReadOnly = true;
-            this.txtCodigoPeca.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoPeca.Size = new System.Drawing.Size(126, 20);
             this.txtCodigoPeca.TabIndex = 23;
             this.txtCodigoPeca.TabStop = false;
             // 
             // lblCodKit
             // 
             this.lblCodKit.AutoSize = true;
-            this.lblCodKit.Location = new System.Drawing.Point(60, 78);
+            this.lblCodKit.Location = new System.Drawing.Point(59, 78);
             this.lblCodKit.Name = "lblCodKit";
             this.lblCodKit.Size = new System.Drawing.Size(70, 13);
             this.lblCodKit.TabIndex = 27;
@@ -184,11 +184,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 75);
+            this.textBox1.Location = new System.Drawing.Point(135, 76);
             this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 26;
             this.textBox1.TabStop = false;
             // 
