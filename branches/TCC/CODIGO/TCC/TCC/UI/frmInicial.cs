@@ -304,6 +304,7 @@ namespace TCC.UI
         {
             DAL.ConectaBanco.DesconectaBanco();
             GC.Collect();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         #endregion Metodos
