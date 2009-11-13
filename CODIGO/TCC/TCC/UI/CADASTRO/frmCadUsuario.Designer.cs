@@ -48,7 +48,7 @@
             // txtLogin
             // 
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogin.Location = new System.Drawing.Point(95, 65);
+            this.txtLogin.Location = new System.Drawing.Point(103, 65);
             this.txtLogin.MaxLength = 25;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(206, 20);
@@ -57,7 +57,7 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(56, 67);
+            this.lblLogin.Location = new System.Drawing.Point(64, 67);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(33, 13);
             this.lblLogin.TabIndex = 2;
@@ -66,7 +66,7 @@
             // txtObservacao
             // 
             this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacao.Location = new System.Drawing.Point(59, 143);
+            this.txtObservacao.Location = new System.Drawing.Point(67, 140);
             this.txtObservacao.MaxLength = 100;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
@@ -76,7 +76,7 @@
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(56, 127);
+            this.lblObservacao.Location = new System.Drawing.Point(64, 124);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(65, 13);
             this.lblObservacao.TabIndex = 4;
@@ -109,7 +109,7 @@
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSenha.Location = new System.Drawing.Point(95, 94);
+            this.txtSenha.Location = new System.Drawing.Point(103, 94);
             this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(206, 20);
@@ -119,7 +119,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(56, 96);
+            this.lblSenha.Location = new System.Drawing.Point(64, 96);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 11;
@@ -129,7 +129,7 @@
             // 
             this.txtPerfilUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPerfilUsuario.Enabled = false;
-            this.txtPerfilUsuario.Location = new System.Drawing.Point(139, 34);
+            this.txtPerfilUsuario.Location = new System.Drawing.Point(147, 31);
             this.txtPerfilUsuario.MaxLength = 50;
             this.txtPerfilUsuario.Name = "txtPerfilUsuario";
             this.txtPerfilUsuario.ReadOnly = true;
@@ -140,7 +140,7 @@
             // lblPerfilUsuario
             // 
             this.lblPerfilUsuario.AutoSize = true;
-            this.lblPerfilUsuario.Location = new System.Drawing.Point(56, 36);
+            this.lblPerfilUsuario.Location = new System.Drawing.Point(64, 33);
             this.lblPerfilUsuario.Name = "lblPerfilUsuario";
             this.lblPerfilUsuario.Size = new System.Drawing.Size(84, 13);
             this.lblPerfilUsuario.TabIndex = 13;
@@ -150,7 +150,7 @@
             // 
             this.btnBuscaPerfilUsuario.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPerfilUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPerfilUsuario.Location = new System.Drawing.Point(277, 32);
+            this.btnBuscaPerfilUsuario.Location = new System.Drawing.Point(285, 29);
             this.btnBuscaPerfilUsuario.Name = "btnBuscaPerfilUsuario";
             this.btnBuscaPerfilUsuario.Size = new System.Drawing.Size(24, 23);
             this.btnBuscaPerfilUsuario.TabIndex = 1;

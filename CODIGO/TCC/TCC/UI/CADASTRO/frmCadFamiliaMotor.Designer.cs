@@ -137,9 +137,9 @@
             // 
             this.btnBuscarKitDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarKitDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarKitDtGrid.Location = new System.Drawing.Point(397, 14);
+            this.btnBuscarKitDtGrid.Location = new System.Drawing.Point(439, 23);
             this.btnBuscarKitDtGrid.Name = "btnBuscarKitDtGrid";
-            this.btnBuscarKitDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarKitDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarKitDtGrid.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnBuscarKitDtGrid, "Buscar Kits");
             this.btnBuscarKitDtGrid.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             // 
             this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaEstoque.Location = new System.Drawing.Point(547, 40);
+            this.btnBuscaEstoque.Location = new System.Drawing.Point(547, 30);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
             this.btnBuscaEstoque.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaEstoque.TabIndex = 2;
@@ -340,10 +340,10 @@
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(217, 28);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(171, 26);
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
+            this.txtBuscaFiltro.Size = new System.Drawing.Size(262, 20);
             this.txtBuscaFiltro.TabIndex = 6;
             // 
             // lblQtdKit
@@ -367,7 +367,7 @@
             // rdbFiltroNome
             // 
             this.rdbFiltroNome.AutoSize = true;
-            this.rdbFiltroNome.Location = new System.Drawing.Point(280, 11);
+            this.rdbFiltroNome.Location = new System.Drawing.Point(234, 9);
             this.rdbFiltroNome.Name = "rdbFiltroNome";
             this.rdbFiltroNome.Size = new System.Drawing.Size(53, 17);
             this.rdbFiltroNome.TabIndex = 20;
@@ -378,7 +378,7 @@
             // 
             this.rdbFiltroCodigo.AutoSize = true;
             this.rdbFiltroCodigo.Checked = true;
-            this.rdbFiltroCodigo.Location = new System.Drawing.Point(216, 11);
+            this.rdbFiltroCodigo.Location = new System.Drawing.Point(170, 9);
             this.rdbFiltroCodigo.Name = "rdbFiltroCodigo";
             this.rdbFiltroCodigo.Size = new System.Drawing.Size(58, 17);
             this.rdbFiltroCodigo.TabIndex = 19;
@@ -479,7 +479,7 @@
             // 
             this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEstoque.Enabled = false;
-            this.txtEstoque.Location = new System.Drawing.Point(439, 43);
+            this.txtEstoque.Location = new System.Drawing.Point(439, 33);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.ReadOnly = true;
             this.txtEstoque.Size = new System.Drawing.Size(105, 20);
@@ -489,7 +489,7 @@
             // lblEstoque
             // 
             this.lblEstoque.AutoSize = true;
-            this.lblEstoque.Location = new System.Drawing.Point(442, 27);
+            this.lblEstoque.Location = new System.Drawing.Point(442, 17);
             this.lblEstoque.Name = "lblEstoque";
             this.lblEstoque.Size = new System.Drawing.Size(46, 13);
             this.lblEstoque.TabIndex = 25;

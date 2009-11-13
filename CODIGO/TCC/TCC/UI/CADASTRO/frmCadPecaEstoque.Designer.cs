@@ -44,7 +44,7 @@
             // lblQtd
             // 
             this.lblQtd.AutoSize = true;
-            this.lblQtd.Location = new System.Drawing.Point(62, 96);
+            this.lblQtd.Location = new System.Drawing.Point(83, 109);
             this.lblQtd.Name = "lblQtd";
             this.lblQtd.Size = new System.Drawing.Size(62, 13);
             this.lblQtd.TabIndex = 0;
@@ -52,17 +52,17 @@
             // 
             // txtIdEstoque
             // 
-            this.txtIdEstoque.Location = new System.Drawing.Point(165, 50);
+            this.txtIdEstoque.Location = new System.Drawing.Point(135, 66);
             this.txtIdEstoque.MaxLength = 50;
             this.txtIdEstoque.Name = "txtIdEstoque";
             this.txtIdEstoque.ReadOnly = true;
-            this.txtIdEstoque.Size = new System.Drawing.Size(100, 20);
+            this.txtIdEstoque.Size = new System.Drawing.Size(116, 20);
             this.txtIdEstoque.TabIndex = 2;
             // 
             // lblCdEstoque
             // 
             this.lblCdEstoque.AutoSize = true;
-            this.lblCdEstoque.Location = new System.Drawing.Point(62, 56);
+            this.lblCdEstoque.Location = new System.Drawing.Point(83, 69);
             this.lblCdEstoque.Name = "lblCdEstoque";
             this.lblCdEstoque.Size = new System.Drawing.Size(46, 13);
             this.lblCdEstoque.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(2, 56);
+            this.btnVolta.Location = new System.Drawing.Point(0, 56);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(30, 26);
             this.btnVolta.TabIndex = 19;
@@ -83,7 +83,7 @@
             // 
             this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpa.Location = new System.Drawing.Point(2, 29);
+            this.btnLimpa.Location = new System.Drawing.Point(0, 29);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(30, 25);
             this.btnLimpa.TabIndex = 18;
@@ -94,7 +94,7 @@
             // 
             this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsere.Location = new System.Drawing.Point(2, 3);
+            this.btnInsere.Location = new System.Drawing.Point(0, 3);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(30, 25);
             this.btnInsere.TabIndex = 17;
@@ -105,7 +105,7 @@
             // 
             this.btnCdEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdEstoque.Location = new System.Drawing.Point(271, 47);
+            this.btnCdEstoque.Location = new System.Drawing.Point(257, 66);
             this.btnCdEstoque.Name = "btnCdEstoque";
             this.btnCdEstoque.Size = new System.Drawing.Size(29, 25);
             this.btnCdEstoque.TabIndex = 21;
@@ -116,7 +116,7 @@
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(271, 119);
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(257, 106);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(29, 26);
             this.btnBuscaAlteracaoDelecao.TabIndex = 20;
@@ -126,7 +126,7 @@
             // txtQtdestoque
             // 
             this.txtQtdestoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdestoque.Location = new System.Drawing.Point(165, 96);
+            this.txtQtdestoque.Location = new System.Drawing.Point(151, 107);
             this.txtQtdestoque.MaxLength = 2;
             this.txtQtdestoque.Name = "txtQtdestoque";
             this.txtQtdestoque.Size = new System.Drawing.Size(100, 20);
@@ -139,7 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(357, 180);
+            this.ClientSize = new System.Drawing.Size(340, 216);
             this.ControlBox = false;
             this.Controls.Add(this.txtQtdestoque);
             this.Controls.Add(this.btnCdEstoque);

@@ -52,7 +52,7 @@
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(64, 32);
+            this.lblCdPeca.Location = new System.Drawing.Point(72, 27);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(32, 13);
             this.lblCdPeca.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.txtCdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdPeca.Enabled = false;
-            this.txtCdPeca.Location = new System.Drawing.Point(102, 27);
+            this.txtCdPeca.Location = new System.Drawing.Point(110, 22);
             this.txtCdPeca.Name = "txtCdPeca";
             this.txtCdPeca.ReadOnly = true;
             this.txtCdPeca.Size = new System.Drawing.Size(143, 20);
@@ -97,7 +97,7 @@
             // 
             this.btnCdPeca.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdPeca.Location = new System.Drawing.Point(251, 25);
+            this.btnCdPeca.Location = new System.Drawing.Point(259, 20);
             this.btnCdPeca.Name = "btnCdPeca";
             this.btnCdPeca.Size = new System.Drawing.Size(27, 23);
             this.btnCdPeca.TabIndex = 1;
@@ -137,7 +137,7 @@
             // 
             this.btnRelacioranEstoque.BackgroundImage = global::TCC.resImg.btnRlacionaEstoque;
             this.btnRelacioranEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacioranEstoque.Location = new System.Drawing.Point(75, 8);
+            this.btnRelacioranEstoque.Location = new System.Drawing.Point(78, 8);
             this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
             this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
             this.btnRelacioranEstoque.TabIndex = 38;
@@ -147,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 71);
+            this.label1.Location = new System.Drawing.Point(113, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 30;
@@ -156,15 +156,15 @@
             // txtQtdPecasDefeito
             // 
             this.txtQtdPecasDefeito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdPecasDefeito.Location = new System.Drawing.Point(102, 88);
+            this.txtQtdPecasDefeito.Location = new System.Drawing.Point(110, 82);
             this.txtQtdPecasDefeito.Name = "txtQtdPecasDefeito";
-            this.txtQtdPecasDefeito.Size = new System.Drawing.Size(129, 20);
+            this.txtQtdPecasDefeito.Size = new System.Drawing.Size(143, 20);
             this.txtQtdPecasDefeito.TabIndex = 31;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 119);
+            this.label2.Location = new System.Drawing.Point(130, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 32;
@@ -173,7 +173,7 @@
             // rdbDefeitoSim
             // 
             this.rdbDefeitoSim.AutoSize = true;
-            this.rdbDefeitoSim.Location = new System.Drawing.Point(102, 133);
+            this.rdbDefeitoSim.Location = new System.Drawing.Point(133, 125);
             this.rdbDefeitoSim.Name = "rdbDefeitoSim";
             this.rdbDefeitoSim.Size = new System.Drawing.Size(42, 17);
             this.rdbDefeitoSim.TabIndex = 33;
@@ -184,7 +184,7 @@
             // rdbDefeitoNao
             // 
             this.rdbDefeitoNao.AutoSize = true;
-            this.rdbDefeitoNao.Location = new System.Drawing.Point(149, 133);
+            this.rdbDefeitoNao.Location = new System.Drawing.Point(180, 125);
             this.rdbDefeitoNao.Name = "rdbDefeitoNao";
             this.rdbDefeitoNao.Size = new System.Drawing.Size(45, 17);
             this.rdbDefeitoNao.TabIndex = 34;
@@ -197,7 +197,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnRelacioranEstoque);
-            this.panel1.Location = new System.Drawing.Point(177, 156);
+            this.panel1.Location = new System.Drawing.Point(116, 151);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(129, 50);
             this.panel1.TabIndex = 35;
@@ -226,7 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(318, 218);
+            this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rdbDefeitoNao);

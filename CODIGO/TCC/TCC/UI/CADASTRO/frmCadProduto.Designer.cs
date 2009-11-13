@@ -76,7 +76,7 @@
             // lblcdFamiliaMotor
             // 
             this.lblcdFamiliaMotor.AutoSize = true;
-            this.lblcdFamiliaMotor.Location = new System.Drawing.Point(111, 50);
+            this.lblcdFamiliaMotor.Location = new System.Drawing.Point(111, 70);
             this.lblcdFamiliaMotor.Name = "lblcdFamiliaMotor";
             this.lblcdFamiliaMotor.Size = new System.Drawing.Size(105, 13);
             this.lblcdFamiliaMotor.TabIndex = 17;
@@ -85,7 +85,7 @@
             // txtCdMotor
             // 
             this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotor.Location = new System.Drawing.Point(222, 45);
+            this.txtCdMotor.Location = new System.Drawing.Point(222, 65);
             this.txtCdMotor.MaxLength = 5;
             this.txtCdMotor.Name = "txtCdMotor";
             this.txtCdMotor.ReadOnly = true;
@@ -95,7 +95,7 @@
             // lblCdDepartamento
             // 
             this.lblCdDepartamento.AutoSize = true;
-            this.lblCdDepartamento.Location = new System.Drawing.Point(324, 50);
+            this.lblCdDepartamento.Location = new System.Drawing.Point(324, 70);
             this.lblCdDepartamento.Name = "lblCdDepartamento";
             this.lblCdDepartamento.Size = new System.Drawing.Size(125, 13);
             this.lblCdDepartamento.TabIndex = 17;
@@ -105,7 +105,7 @@
             // txtCdDepartamento
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(454, 48);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(454, 68);
             this.txtCdDepartamento.MaxLength = 5;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
@@ -115,7 +115,7 @@
             // lblCdKit
             // 
             this.lblCdKit.AutoSize = true;
-            this.lblCdKit.Location = new System.Drawing.Point(111, 89);
+            this.lblCdKit.Location = new System.Drawing.Point(111, 109);
             this.lblCdKit.Name = "lblCdKit";
             this.lblCdKit.Size = new System.Drawing.Size(70, 13);
             this.lblCdKit.TabIndex = 17;
@@ -124,7 +124,7 @@
             // txtCdKit
             // 
             this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdKit.Location = new System.Drawing.Point(222, 88);
+            this.txtCdKit.Location = new System.Drawing.Point(222, 108);
             this.txtCdKit.MaxLength = 5;
             this.txtCdKit.Name = "txtCdKit";
             this.txtCdKit.ReadOnly = true;
@@ -134,7 +134,7 @@
             // lblCdTipoProduto
             // 
             this.lblCdTipoProduto.AutoSize = true;
-            this.lblCdTipoProduto.Location = new System.Drawing.Point(313, 89);
+            this.lblCdTipoProduto.Location = new System.Drawing.Point(313, 109);
             this.lblCdTipoProduto.Name = "lblCdTipoProduto";
             this.lblCdTipoProduto.Size = new System.Drawing.Size(136, 13);
             this.lblCdTipoProduto.TabIndex = 17;
@@ -143,7 +143,7 @@
             // txtCdTipoProduto
             // 
             this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoProduto.Location = new System.Drawing.Point(455, 88);
+            this.txtCdTipoProduto.Location = new System.Drawing.Point(455, 108);
             this.txtCdTipoProduto.MaxLength = 5;
             this.txtCdTipoProduto.Name = "txtCdTipoProduto";
             this.txtCdTipoProduto.ReadOnly = true;
@@ -162,18 +162,18 @@
             // txtDs
             // 
             this.txtDs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDs.Location = new System.Drawing.Point(172, 177);
+            this.txtDs.Location = new System.Drawing.Point(114, 195);
             this.txtDs.MaxLength = 500;
             this.txtDs.Multiline = true;
             this.txtDs.Name = "txtDs";
-            this.txtDs.Size = new System.Drawing.Size(361, 80);
+            this.txtDs.Size = new System.Drawing.Size(419, 80);
             this.txtDs.TabIndex = 18;
             // 
             // btnCdMotor
             // 
             this.btnCdMotor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdMotor.Location = new System.Drawing.Point(269, 45);
+            this.btnCdMotor.Location = new System.Drawing.Point(269, 65);
             this.btnCdMotor.Name = "btnCdMotor";
             this.btnCdMotor.Size = new System.Drawing.Size(27, 23);
             this.btnCdMotor.TabIndex = 14;
@@ -185,7 +185,7 @@
             // 
             this.btnCdDep.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdDep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdDep.Location = new System.Drawing.Point(506, 45);
+            this.btnCdDep.Location = new System.Drawing.Point(506, 65);
             this.btnCdDep.Name = "btnCdDep";
             this.btnCdDep.Size = new System.Drawing.Size(27, 23);
             this.btnCdDep.TabIndex = 14;
@@ -197,7 +197,7 @@
             // 
             this.btnCdKit.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdKit.Location = new System.Drawing.Point(269, 86);
+            this.btnCdKit.Location = new System.Drawing.Point(269, 106);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(27, 23);
             this.btnCdKit.TabIndex = 14;
@@ -209,7 +209,7 @@
             // 
             this.btnCdTipoProduto.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnCdTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdTipoProduto.Location = new System.Drawing.Point(506, 87);
+            this.btnCdTipoProduto.Location = new System.Drawing.Point(506, 107);
             this.btnCdTipoProduto.Name = "btnCdTipoProduto";
             this.btnCdTipoProduto.Size = new System.Drawing.Size(27, 23);
             this.btnCdTipoProduto.TabIndex = 14;
