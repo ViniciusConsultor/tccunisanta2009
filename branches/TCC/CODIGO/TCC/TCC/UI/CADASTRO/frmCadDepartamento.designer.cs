@@ -35,12 +35,15 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.txtNomeDepartamento = new System.Windows.Forms.TextBox();
+            this.lblNomeDepartamento = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtDescricaoDepartamento
             // 
             this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(64, 73);
+            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(64, 100);
             this.txtDescricaoDepartamento.MaxLength = 100;
             this.txtDescricaoDepartamento.Multiline = true;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
@@ -50,17 +53,17 @@
             // lblDescricaoDepartamento
             // 
             this.lblDescricaoDepartamento.AutoSize = true;
-            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(61, 57);
+            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(61, 84);
             this.lblDescricaoDepartamento.Name = "lblDescricaoDepartamento";
-            this.lblDescricaoDepartamento.Size = new System.Drawing.Size(122, 13);
+            this.lblDescricaoDepartamento.Size = new System.Drawing.Size(55, 13);
             this.lblDescricaoDepartamento.TabIndex = 2;
-            this.lblDescricaoDepartamento.Text = "Descição Departamento";
+            this.lblDescricaoDepartamento.Text = "Descrição";
             // 
             // btnLimpar
             // 
             this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Location = new System.Drawing.Point(1, 31);
+            this.btnLimpar.Location = new System.Drawing.Point(1, 29);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(30, 25);
             this.btnLimpar.TabIndex = 3;
@@ -72,7 +75,7 @@
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(1, 57);
+            this.btnVoltar.Location = new System.Drawing.Point(1, 83);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(30, 25);
             this.btnVoltar.TabIndex = 4;
@@ -97,14 +100,45 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(1, 56);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(30, 25);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 17;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
+            // txtNomeDepartamento
+            // 
+            this.txtNomeDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeDepartamento.Location = new System.Drawing.Point(64, 36);
+            this.txtNomeDepartamento.Name = "txtNomeDepartamento";
+            this.txtNomeDepartamento.Size = new System.Drawing.Size(253, 20);
+            this.txtNomeDepartamento.TabIndex = 5;
+            // 
+            // lblNomeDepartamento
+            // 
+            this.lblNomeDepartamento.AutoSize = true;
+            this.lblNomeDepartamento.Location = new System.Drawing.Point(64, 17);
+            this.lblNomeDepartamento.Name = "lblNomeDepartamento";
+            this.lblNomeDepartamento.Size = new System.Drawing.Size(120, 13);
+            this.lblNomeDepartamento.TabIndex = 6;
+            this.lblNomeDepartamento.Text = "Nome do Departamento";
+            // 
             // frmCadDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(342, 218);
+            this.ClientSize = new System.Drawing.Size(342, 234);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
+            this.Controls.Add(this.lblNomeDepartamento);
+            this.Controls.Add(this.txtNomeDepartamento);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
@@ -112,7 +146,7 @@
             this.Controls.Add(this.lblDescricaoDepartamento);
             this.MaximizeBox = false;
             this.Name = "frmCadDepartamento";
-            this.Text = "Cadastro Departamento";
+            this.Text = "Cadastro de Departamentos";
             this.Load += new System.EventHandler(this.frmCadDepartamento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,5 +161,8 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.TextBox txtNomeDepartamento;
+        private System.Windows.Forms.Label lblNomeDepartamento;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

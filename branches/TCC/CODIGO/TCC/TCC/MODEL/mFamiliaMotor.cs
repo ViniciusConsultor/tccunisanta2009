@@ -31,7 +31,7 @@ namespace TCC.MODEL
             set { idNumMotor = value; }
         }
 
-        [ColunasBancoDados ("id_tipo_motor", System.Data.SqlDbType.VarChar,false)]
+        [ColunasBancoDados ("id_tipo_motor", System.Data.SqlDbType.Int,false)]
         public int IdTipoMotor
         {
             get { return idTipoMotor; }

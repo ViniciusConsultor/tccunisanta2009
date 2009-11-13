@@ -38,25 +38,30 @@
             this.btnBuscaDepartamento = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnInsere = new System.Windows.Forms.Button();
-            this.ckbFlgNegativo = new System.Windows.Forms.CheckBox();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rdbDefeitoNao = new System.Windows.Forms.RadioButton();
+            this.rdbDefeitoSim = new System.Windows.Forms.RadioButton();
+            this.lblEstoqDefeito = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCdDepartamento
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Enabled = false;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(180, 37);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(91, 35);
             this.txtCdDepartamento.MaxLength = 15;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
-            this.txtCdDepartamento.Size = new System.Drawing.Size(87, 20);
+            this.txtCdDepartamento.Size = new System.Drawing.Size(172, 20);
             this.txtCdDepartamento.TabIndex = 0;
             this.txtCdDepartamento.TabStop = false;
             // 
             // lblCodigoDepartamento
             // 
             this.lblCodigoDepartamento.AutoSize = true;
-            this.lblCodigoDepartamento.Location = new System.Drawing.Point(43, 44);
+            this.lblCodigoDepartamento.Location = new System.Drawing.Point(88, 14);
             this.lblCodigoDepartamento.Name = "lblCodigoDepartamento";
             this.lblCodigoDepartamento.Size = new System.Drawing.Size(131, 13);
             this.lblCodigoDepartamento.TabIndex = 2;
@@ -65,17 +70,17 @@
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(109, 84);
+            this.txtNome.Location = new System.Drawing.Point(91, 95);
             this.txtNome.MaxLength = 100;
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(191, 62);
+            this.txtNome.Size = new System.Drawing.Size(205, 62);
             this.txtNome.TabIndex = 2;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(43, 86);
+            this.lblNome.Location = new System.Drawing.Point(88, 79);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;
@@ -85,7 +90,7 @@
             // 
             this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpa.Location = new System.Drawing.Point(1, 30);
+            this.btnLimpa.Location = new System.Drawing.Point(1, 28);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(30, 25);
             this.btnLimpa.TabIndex = 4;
@@ -97,7 +102,7 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(1, 59);
+            this.btnVolta.Location = new System.Drawing.Point(1, 82);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(30, 25);
             this.btnVolta.TabIndex = 5;
@@ -109,7 +114,7 @@
             // 
             this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(273, 30);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(269, 29);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 27);
             this.btnBuscaDepartamento.TabIndex = 1;
@@ -134,15 +139,57 @@
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
-            // ckbFlgNegativo
+            // btnBuscaAlteracaoDelecao
             // 
-            this.ckbFlgNegativo.AutoSize = true;
-            this.ckbFlgNegativo.Location = new System.Drawing.Point(109, 166);
-            this.ckbFlgNegativo.Name = "ckbFlgNegativo";
-            this.ckbFlgNegativo.Size = new System.Drawing.Size(157, 17);
-            this.ckbFlgNegativo.TabIndex = 6;
-            this.ckbFlgNegativo.Text = "Estoque Peças Defeituosas";
-            this.ckbFlgNegativo.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(1, 54);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(30, 25);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 18;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rdbDefeitoNao);
+            this.panel1.Controls.Add(this.rdbDefeitoSim);
+            this.panel1.Controls.Add(this.lblEstoqDefeito);
+            this.panel1.Location = new System.Drawing.Point(91, 163);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(205, 68);
+            this.panel1.TabIndex = 19;
+            // 
+            // rdbDefeitoNao
+            // 
+            this.rdbDefeitoNao.AutoSize = true;
+            this.rdbDefeitoNao.Location = new System.Drawing.Point(103, 36);
+            this.rdbDefeitoNao.Name = "rdbDefeitoNao";
+            this.rdbDefeitoNao.Size = new System.Drawing.Size(45, 17);
+            this.rdbDefeitoNao.TabIndex = 11;
+            this.rdbDefeitoNao.TabStop = true;
+            this.rdbDefeitoNao.Text = "Não";
+            this.rdbDefeitoNao.UseVisualStyleBackColor = true;
+            // 
+            // rdbDefeitoSim
+            // 
+            this.rdbDefeitoSim.AutoSize = true;
+            this.rdbDefeitoSim.Location = new System.Drawing.Point(49, 36);
+            this.rdbDefeitoSim.Name = "rdbDefeitoSim";
+            this.rdbDefeitoSim.Size = new System.Drawing.Size(42, 17);
+            this.rdbDefeitoSim.TabIndex = 10;
+            this.rdbDefeitoSim.TabStop = true;
+            this.rdbDefeitoSim.Text = "Sim";
+            this.rdbDefeitoSim.UseVisualStyleBackColor = true;
+            // 
+            // lblEstoqDefeito
+            // 
+            this.lblEstoqDefeito.AutoSize = true;
+            this.lblEstoqDefeito.Location = new System.Drawing.Point(23, 15);
+            this.lblEstoqDefeito.Name = "lblEstoqDefeito";
+            this.lblEstoqDefeito.Size = new System.Drawing.Size(158, 13);
+            this.lblEstoqDefeito.TabIndex = 9;
+            this.lblEstoqDefeito.Text = "Estoque de peças Defeituosas?";
             // 
             // frmCadEstoque
             // 
@@ -150,9 +197,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(342, 218);
+            this.ClientSize = new System.Drawing.Size(342, 243);
             this.ControlBox = false;
-            this.Controls.Add(this.ckbFlgNegativo);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
@@ -163,8 +211,10 @@
             this.Controls.Add(this.lblCodigoDepartamento);
             this.MaximizeBox = false;
             this.Name = "frmCadEstoque";
-            this.Text = "Cadastro de Estoque";
+            this.Text = "Cadastro de Estoques";
             this.Load += new System.EventHandler(this.frmCadEstoque_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +231,10 @@
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnBuscaDepartamento;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private System.Windows.Forms.CheckBox ckbFlgNegativo;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rdbDefeitoNao;
+        private System.Windows.Forms.RadioButton rdbDefeitoSim;
+        private System.Windows.Forms.Label lblEstoqDefeito;
     }
 }

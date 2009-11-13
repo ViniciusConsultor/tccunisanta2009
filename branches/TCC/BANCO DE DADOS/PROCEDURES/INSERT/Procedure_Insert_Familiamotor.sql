@@ -5,6 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_familiamotor
 @id_fam_motor	   INT,
+@id_fam_motor_real VARCHAR(25),
 @id_num_motor      INT,
 @id_tipo_motor     INT,
 @id_motor          INT,
@@ -28,8 +29,8 @@ ELSE IF(@dsc_fam_motor='')
 ELSE
 BEGIN
 --Insert na tabela falimiamotor
-INSERT INTO FAMILIAMOTOR(id_fam_motor, id_num_motor, id_tipo_motor, id_motor, id_estoque, dsc_fam_motor, flg_ativo)
-VALUES(@id_fam_motor, @id_num_motor, @id_tipo_motor, @id_motor, @id_estoque, @dsc_fam_motor, @flg_ativo)
+INSERT INTO FAMILIAMOTOR(id_fam_motor, id_fam_motor_real, id_num_motor, id_tipo_motor, id_motor, id_estoque, dsc_fam_motor, flg_ativo)
+VALUES(@id_fam_motor, @id_fam_motor_real, @id_num_motor, @id_tipo_motor, @id_motor, @id_estoque, @dsc_fam_motor, @flg_ativo)
 END
 END TRY
 

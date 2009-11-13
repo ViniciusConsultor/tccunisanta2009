@@ -61,7 +61,7 @@ namespace TCC.UI
         }
         #endregion btnVoltar Click
 
-        #region btnBuscaUsuario Click
+       /* #region btnBuscaUsuario Click
         private void btnBuscaUsuario_Click(object sender, EventArgs e)
         {
             _modelUsuario = new mUsuario();
@@ -87,7 +87,7 @@ namespace TCC.UI
                 buscarUsuario = null;
             }
         }
-        #endregion btnBuscaUsuario Click
+        #endregion btnBuscaUsuario Click*/
 
         #region btnBuscaDepartamento Click
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
@@ -352,7 +352,7 @@ namespace TCC.UI
                 this._modelDepartamento.IdDepto = this._modelColaborador.IdDepto;
 
                 base.Alteracao = true;
-                this.txtCdUsuario.Text = this._modelColaborador.IdUsuario.ToString();
+                //this.txtCdUsuario.Text = this._modelColaborador.IdUsuario.ToString();
                 this.txtCdDepartamento.Text = this._modelColaborador.IdDepto.ToString();
                 this.txtNome.Text = this._modelColaborador.NomeColab;
                 this.txtDataNasc.Text = this._modelColaborador.DatNasc.ToString("dd/MM/yyyy");
@@ -403,7 +403,7 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {
                 MessageBox.Show("Buscar Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdUsuario.Focus();
+                //this.txtCdUsuario.Focus();
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {

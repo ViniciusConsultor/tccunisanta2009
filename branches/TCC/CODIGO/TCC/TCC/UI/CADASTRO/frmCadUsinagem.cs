@@ -67,7 +67,7 @@ namespace TCC.UI
             try
             {
                 model.DtaEnvio = DateTime.Now;
-                model.FlgStatus = this.chkPecaOk.Checked;
+                //model.FlgStatus = this.chkPecaOk.Checked;
                 model.IdPeca = Convert.ToInt32(this._modelPeca[0].IdPeca);
 
                 return model;

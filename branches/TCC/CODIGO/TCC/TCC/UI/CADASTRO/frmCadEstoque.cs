@@ -140,7 +140,7 @@ namespace TCC.UI
                 model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
-                model.Flg_negativo = this.ckbFlgNegativo.Checked;
+                //model.Flg_negativo = this.ckbFlgNegativo.Checked;
 
                 return model;
             }

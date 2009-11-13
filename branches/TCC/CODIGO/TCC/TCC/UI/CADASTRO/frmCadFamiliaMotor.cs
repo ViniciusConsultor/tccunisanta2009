@@ -339,7 +339,7 @@ namespace TCC.UI
                 model.Id_fam_motor_real = idFamReal;
                 model.DscFamiliaMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;
-                string estoque=this.txtEstoque.Text;
+                string estoque= this.txtEstoque.Text;
                 if (string.IsNullOrEmpty(estoque) == true)
                 {
                     model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
