@@ -44,7 +44,7 @@
             // 
             this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Location = new System.Drawing.Point(230, 230);
+            this.btnExcluir.Location = new System.Drawing.Point(195, 228);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 35);
             this.btnExcluir.TabIndex = 6;
@@ -57,7 +57,7 @@
             // 
             this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.Location = new System.Drawing.Point(184, 230);
+            this.btnAlterar.Location = new System.Drawing.Point(149, 228);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(40, 35);
             this.btnAlterar.TabIndex = 5;
@@ -69,10 +69,10 @@
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Location = new System.Drawing.Point(10, 14);
+            this.txtFiltro.Location = new System.Drawing.Point(16, 14);
             this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(198, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(227, 20);
             this.txtFiltro.TabIndex = 1;
             // 
             // dgColaborador
@@ -83,7 +83,7 @@
             this.dgColaborador.AllowUserToResizeRows = false;
             this.dgColaborador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgColaborador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgColaborador.Location = new System.Drawing.Point(10, 46);
+            this.dgColaborador.Location = new System.Drawing.Point(16, 46);
             this.dgColaborador.MultiSelect = false;
             this.dgColaborador.Name = "dgColaborador";
             this.dgColaborador.ReadOnly = true;
@@ -102,7 +102,7 @@
             // 
             this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.Location = new System.Drawing.Point(92, 229);
+            this.btnFechar.Location = new System.Drawing.Point(57, 227);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 3;
@@ -115,7 +115,7 @@
             // 
             this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.Location = new System.Drawing.Point(138, 229);
+            this.btnOK.Location = new System.Drawing.Point(103, 227);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 4;
@@ -128,9 +128,9 @@
             // 
             this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(230, 5);
+            this.btnBuscar.Location = new System.Drawing.Point(249, 11);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(27, 23);
             this.btnBuscar.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
