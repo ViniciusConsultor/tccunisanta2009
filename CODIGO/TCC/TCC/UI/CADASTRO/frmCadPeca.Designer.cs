@@ -45,8 +45,14 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnRelacioranEstoque = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnRelacionarDepto = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtPesoPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCdTipoPeca
@@ -61,6 +67,7 @@
             // txtCdTipoPeca
             // 
             this.txtCdTipoPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdTipoPeca.Enabled = false;
             this.txtCdTipoPeca.Location = new System.Drawing.Point(137, 14);
             this.txtCdTipoPeca.MaxLength = 50;
             this.txtCdTipoPeca.Name = "txtCdTipoPeca";
@@ -119,7 +126,7 @@
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 63);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 94);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 10;
@@ -167,7 +174,7 @@
             this.lblNomePecaReal.Name = "lblNomePecaReal";
             this.lblNomePecaReal.Size = new System.Drawing.Size(83, 13);
             this.lblNomePecaReal.TabIndex = 8;
-            this.lblNomePecaReal.Text = "Codigo da Peça";
+            this.lblNomePecaReal.Text = "Código da Peça";
             // 
             // lblQtdPeca
             // 
@@ -187,9 +194,9 @@
             // 
             this.btnRelacioranEstoque.BackgroundImage = global::TCC.resImg.btnRlacionaEstoque;
             this.btnRelacioranEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacioranEstoque.Location = new System.Drawing.Point(287, 217);
+            this.btnRelacioranEstoque.Location = new System.Drawing.Point(291, 223);
             this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
-            this.btnRelacioranEstoque.Size = new System.Drawing.Size(44, 41);
+            this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
             this.btnRelacioranEstoque.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnRelacioranEstoque, "Relacionar Estoque");
             this.btnRelacioranEstoque.UseVisualStyleBackColor = true;
@@ -205,6 +212,28 @@
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
+            // btnRelacionarDepto
+            // 
+            this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
+            this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRelacionarDepto.Location = new System.Drawing.Point(120, 223);
+            this.btnRelacionarDepto.Name = "btnRelacionarDepto";
+            this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
+            this.btnRelacionarDepto.TabIndex = 27;
+            this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
+            this.btnRelacionarDepto.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 63);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 28;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // txtQtdPeca
             // 
@@ -226,6 +255,42 @@
             this.txtPesoPeca.TabIndex = 12;
             this.txtPesoPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 232);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Relacionar";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(56, 245);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Fornecedor";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(230, 245);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Estoque";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(230, 232);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Relacionar";
+            // 
             // frmCadPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +299,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 270);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
+            this.Controls.Add(this.btnRelacionarDepto);
             this.Controls.Add(this.txtPesoPeca);
             this.Controls.Add(this.txtQtdPeca);
             this.Controls.Add(this.btnRelacioranEstoque);
@@ -253,7 +324,7 @@
             this.Controls.Add(this.lblCdTipoPeca);
             this.MaximizeBox = false;
             this.Name = "frmCadPeca";
-            this.Text = "Cadastro de Peca";
+            this.Text = "Cadastro de Pecas";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +350,11 @@
         private System.Windows.Forms.Button btnRelacioranEstoque;
         private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
         private Controles.MegaTextBox.MegaTextBox txtPesoPeca;
+        private System.Windows.Forms.Button btnRelacionarDepto;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

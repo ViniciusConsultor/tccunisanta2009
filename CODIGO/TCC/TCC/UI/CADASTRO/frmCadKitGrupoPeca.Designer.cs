@@ -41,7 +41,9 @@
             this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
+            this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +57,6 @@
             this.TxtNmItem = new System.Windows.Forms.TextBox();
             this.lblCdKitReal = new System.Windows.Forms.Label();
             this.txtCodigoKit = new System.Windows.Forms.TextBox();
-            this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(6, 85);
+            this.btnVoltar.Location = new System.Drawing.Point(6, 126);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
             this.btnVoltar.TabIndex = 6;
@@ -123,7 +124,7 @@
             // 
             this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(394, 22);
+            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(419, 22);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
             this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(40, 35);
             this.btnBuscarItemDtGrid.TabIndex = 4;
@@ -154,6 +155,17 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 85);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 25;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
             // gbBuscaItem
             // 
             this.gbBuscaItem.Controls.Add(this.txtQtdItem);
@@ -173,6 +185,16 @@
             this.gbBuscaItem.TabIndex = 16;
             this.gbBuscaItem.TabStop = false;
             this.gbBuscaItem.Text = "Items do Kit";
+            // 
+            // txtQtdItem
+            // 
+            this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtdItem.Location = new System.Drawing.Point(36, 131);
+            this.txtQtdItem.MaxLength = 2;
+            this.txtQtdItem.Name = "txtQtdItem";
+            this.txtQtdItem.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdItem.TabIndex = 26;
+            this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // dgItems
             // 
@@ -203,7 +225,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgItems.Location = new System.Drawing.Point(170, 56);
+            this.dgItems.Location = new System.Drawing.Point(192, 61);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
@@ -236,7 +258,7 @@
             this.hCodigo.HeaderText = "Codigo";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
+            this.hCodigo.Width = 63;
             // 
             // hNome
             // 
@@ -244,7 +266,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.Width = 58;
             // 
             // hQtd
             // 
@@ -252,12 +274,12 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
+            this.hQtd.Width = 85;
             // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(216, 36);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(238, 36);
             this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
@@ -284,7 +306,7 @@
             // rdbNome
             // 
             this.rdbNome.AutoSize = true;
-            this.rdbNome.Location = new System.Drawing.Point(279, 19);
+            this.rdbNome.Location = new System.Drawing.Point(301, 19);
             this.rdbNome.Name = "rdbNome";
             this.rdbNome.Size = new System.Drawing.Size(53, 17);
             this.rdbNome.TabIndex = 20;
@@ -295,7 +317,7 @@
             // 
             this.rdbCodigo.AutoSize = true;
             this.rdbCodigo.Checked = true;
-            this.rdbCodigo.Location = new System.Drawing.Point(215, 19);
+            this.rdbCodigo.Location = new System.Drawing.Point(237, 19);
             this.rdbCodigo.Name = "rdbCodigo";
             this.rdbCodigo.Size = new System.Drawing.Size(58, 17);
             this.rdbCodigo.TabIndex = 19;
@@ -306,6 +328,7 @@
             // TxtNmItem
             // 
             this.TxtNmItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtNmItem.Enabled = false;
             this.TxtNmItem.Location = new System.Drawing.Point(36, 72);
             this.TxtNmItem.MaxLength = 25;
             this.TxtNmItem.Name = "TxtNmItem";
@@ -320,7 +343,7 @@
             this.lblCdKitReal.Name = "lblCdKitReal";
             this.lblCdKitReal.Size = new System.Drawing.Size(70, 13);
             this.lblCdKitReal.TabIndex = 24;
-            this.lblCdKitReal.Text = "Codigo do Kit";
+            this.lblCdKitReal.Text = "Código do Kit";
             // 
             // txtCodigoKit
             // 
@@ -331,16 +354,6 @@
             this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
             this.txtCodigoKit.TabIndex = 1;
             // 
-            // txtQtdItem
-            // 
-            this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdItem.Location = new System.Drawing.Point(36, 131);
-            this.txtQtdItem.MaxLength = 2;
-            this.txtQtdItem.Name = "txtQtdItem";
-            this.txtQtdItem.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdItem.TabIndex = 26;
-            this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            // 
             // frmCadKitGrupoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +362,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 366);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.lblCdKitReal);
             this.Controls.Add(this.txtCodigoKit);
             this.Controls.Add(this.gbBuscaItem);
@@ -395,5 +409,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private System.Windows.Forms.Button btnRemoveItem;
         private Controles.MegaTextBox.MegaTextBox txtQtdItem;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

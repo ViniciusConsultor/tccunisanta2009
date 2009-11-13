@@ -35,13 +35,14 @@
             this.txtDsTipoPeca = new System.Windows.Forms.TextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 60);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 80);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 4;
@@ -53,7 +54,7 @@
             // 
             this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Location = new System.Drawing.Point(2, 32);
+            this.btnLimpar.Location = new System.Drawing.Point(2, 29);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 3;
@@ -66,9 +67,9 @@
             this.lblDsTipoPeca.AutoSize = true;
             this.lblDsTipoPeca.Location = new System.Drawing.Point(68, 54);
             this.lblDsTipoPeca.Name = "lblDsTipoPeca";
-            this.lblDsTipoPeca.Size = new System.Drawing.Size(137, 13);
+            this.lblDsTipoPeca.Size = new System.Drawing.Size(117, 13);
             this.lblDsTipoPeca.TabIndex = 20;
-            this.lblDsTipoPeca.Text = "Descrição do Tipo de Peça";
+            this.lblDsTipoPeca.Text = "Nome do Tipo de Peça";
             // 
             // txtDsTipoPeca
             // 
@@ -97,6 +98,17 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 54);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 21;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
             // frmCadTipoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +117,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.lblDsTipoPeca);
             this.Controls.Add(this.txtDsTipoPeca);
             this.Controls.Add(this.btnVoltar);
@@ -112,7 +125,7 @@
             this.Controls.Add(this.btnAceitar);
             this.MaximizeBox = false;
             this.Name = "frmCadTipoPeca";
-            this.Text = "Tipo de Peca";
+            this.Text = "Tipo de Peças";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +139,6 @@
         private System.Windows.Forms.Label lblDsTipoPeca;
         private System.Windows.Forms.TextBox txtDsTipoPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

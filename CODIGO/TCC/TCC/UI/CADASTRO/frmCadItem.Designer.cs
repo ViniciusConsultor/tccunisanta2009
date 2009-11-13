@@ -41,21 +41,22 @@
             this.btnRemovePeca = new System.Windows.Forms.Button();
             this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.txtCodigoItem = new System.Windows.Forms.TextBox();
             this.lblCdItemReal = new System.Windows.Forms.Label();
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
             this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
+            this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.lblNmPeca = new System.Windows.Forms.Label();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmPeca = new System.Windows.Forms.TextBox();
-            this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscaPecaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(7, 85);
+            this.btnVolta.Location = new System.Drawing.Point(7, 126);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
             this.btnVolta.TabIndex = 10;
@@ -86,6 +87,7 @@
             // 
             // txtNmItem
             // 
+            this.txtNmItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNmItem.Location = new System.Drawing.Point(163, 51);
             this.txtNmItem.MaxLength = 20;
             this.txtNmItem.Name = "txtNmItem";
@@ -95,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 51);
+            this.label2.Location = new System.Drawing.Point(80, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 7;
@@ -134,7 +136,7 @@
             // 
             this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(395, 22);
+            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(397, 22);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
             this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
             this.btnBuscarPecaDtGrid.TabIndex = 4;
@@ -154,12 +156,24 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 85);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 17;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
             // txtCodigoItem
             // 
-            this.txtCodigoItem.Location = new System.Drawing.Point(167, 22);
+            this.txtCodigoItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoItem.Location = new System.Drawing.Point(163, 22);
             this.txtCodigoItem.MaxLength = 20;
             this.txtCodigoItem.Name = "txtCodigoItem";
-            this.txtCodigoItem.Size = new System.Drawing.Size(133, 20);
+            this.txtCodigoItem.Size = new System.Drawing.Size(137, 20);
             this.txtCodigoItem.TabIndex = 1;
             // 
             // lblCdItemReal
@@ -248,6 +262,39 @@
             this.dgItems.TabIndex = 0;
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
+            // hIdPeca
+            // 
+            this.hIdPeca.DataPropertyName = "id_peca";
+            this.hIdPeca.HeaderText = "IdPeca";
+            this.hIdPeca.Name = "hIdPeca";
+            this.hIdPeca.ReadOnly = true;
+            this.hIdPeca.Visible = false;
+            this.hIdPeca.Width = 64;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "id_peca_real";
+            this.hCodigo.HeaderText = "Código";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 85;
+            // 
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -300,46 +347,13 @@
             // TxtNmPeca
             // 
             this.TxtNmPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtNmPeca.Enabled = false;
             this.TxtNmPeca.Location = new System.Drawing.Point(36, 72);
             this.TxtNmPeca.MaxLength = 25;
             this.TxtNmPeca.Name = "TxtNmPeca";
             this.TxtNmPeca.ReadOnly = true;
             this.TxtNmPeca.Size = new System.Drawing.Size(102, 20);
             this.TxtNmPeca.TabIndex = 14;
-            // 
-            // frmCadItem
-            // hIdPeca
-            // 
-            this.hIdPeca.DataPropertyName = "id_peca";
-            this.hIdPeca.HeaderText = "IdPeca";
-            this.hIdPeca.Name = "hIdPeca";
-            this.hIdPeca.ReadOnly = true;
-            this.hIdPeca.Visible = false;
-            this.hIdPeca.Width = 64;
-            // 
-            // hCodigo
-            // 
-            this.hCodigo.DataPropertyName = "id_peca_real";
-            this.hCodigo.HeaderText = "Código";
-            this.hCodigo.Name = "hCodigo";
-            this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "nom";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 85;
             // 
             // frmCadItem
             // 
@@ -349,6 +363,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(584, 364);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.gbBuscaPecaItem);
             this.Controls.Add(this.lblCdItemReal);
             this.Controls.Add(this.label2);
@@ -359,7 +374,7 @@
             this.Controls.Add(this.btnConfirmar);
             this.MaximizeBox = false;
             this.Name = "frmCadItem";
-            this.Text = "Item";
+            this.Text = "Item de Peças";
             this.Load += new System.EventHandler(this.frmCadItemPeca_Load);
             this.gbBuscaPecaItem.ResumeLayout(false);
             this.gbBuscaPecaItem.PerformLayout();
@@ -395,5 +410,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

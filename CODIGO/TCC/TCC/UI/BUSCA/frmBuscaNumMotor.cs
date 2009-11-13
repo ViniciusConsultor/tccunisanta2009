@@ -118,6 +118,7 @@ namespace TCC.UI
             {
                 dt = regraNumMotor.BuscaNumeroMotor(this.txtFiltro.Text);
                 dgNumMotor.DataSource = dt;
+                this.dgNumMotor.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
