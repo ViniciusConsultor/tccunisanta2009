@@ -79,7 +79,7 @@
             // lblNmPeca
             // 
             this.lblNmPeca.AutoSize = true;
-            this.lblNmPeca.Location = new System.Drawing.Point(53, 90);
+            this.lblNmPeca.Location = new System.Drawing.Point(53, 88);
             this.lblNmPeca.Name = "lblNmPeca";
             this.lblNmPeca.Size = new System.Drawing.Size(78, 13);
             this.lblNmPeca.TabIndex = 0;
@@ -88,7 +88,7 @@
             // txtNmPeca
             // 
             this.txtNmPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmPeca.Location = new System.Drawing.Point(137, 88);
+            this.txtNmPeca.Location = new System.Drawing.Point(137, 86);
             this.txtNmPeca.MaxLength = 50;
             this.txtNmPeca.Name = "txtNmPeca";
             this.txtNmPeca.Size = new System.Drawing.Size(194, 20);
@@ -194,7 +194,7 @@
             // 
             this.btnRelacioranEstoque.BackgroundImage = global::TCC.resImg.btnRlacionaEstoque;
             this.btnRelacioranEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacioranEstoque.Location = new System.Drawing.Point(291, 223);
+            this.btnRelacioranEstoque.Location = new System.Drawing.Point(291, 219);
             this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
             this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
             this.btnRelacioranEstoque.TabIndex = 7;
@@ -217,7 +217,7 @@
             // 
             this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
             this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacionarDepto.Location = new System.Drawing.Point(120, 223);
+            this.btnRelacionarDepto.Location = new System.Drawing.Point(120, 219);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
             this.btnRelacionarDepto.TabIndex = 27;
@@ -258,7 +258,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 232);
+            this.label1.Location = new System.Drawing.Point(56, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 29;
@@ -267,7 +267,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 245);
+            this.label2.Location = new System.Drawing.Point(56, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 30;
@@ -276,7 +276,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 245);
+            this.label3.Location = new System.Drawing.Point(230, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 32;
@@ -285,7 +285,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 232);
+            this.label4.Location = new System.Drawing.Point(230, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 31;
@@ -297,7 +297,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(342, 270);
+            this.ClientSize = new System.Drawing.Size(342, 268);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);

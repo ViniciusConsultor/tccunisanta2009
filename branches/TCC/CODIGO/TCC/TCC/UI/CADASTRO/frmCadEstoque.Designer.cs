@@ -50,7 +50,7 @@
             // 
             this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCdDepartamento.Enabled = false;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(91, 35);
+            this.txtCdDepartamento.Location = new System.Drawing.Point(84, 41);
             this.txtCdDepartamento.MaxLength = 15;
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
@@ -61,7 +61,7 @@
             // lblCodigoDepartamento
             // 
             this.lblCodigoDepartamento.AutoSize = true;
-            this.lblCodigoDepartamento.Location = new System.Drawing.Point(88, 14);
+            this.lblCodigoDepartamento.Location = new System.Drawing.Point(81, 20);
             this.lblCodigoDepartamento.Name = "lblCodigoDepartamento";
             this.lblCodigoDepartamento.Size = new System.Drawing.Size(131, 13);
             this.lblCodigoDepartamento.TabIndex = 2;
@@ -70,7 +70,7 @@
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(91, 95);
+            this.txtNome.Location = new System.Drawing.Point(84, 88);
             this.txtNome.MaxLength = 100;
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
@@ -80,7 +80,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(88, 79);
+            this.lblNome.Location = new System.Drawing.Point(81, 72);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;
@@ -114,7 +114,7 @@
             // 
             this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(269, 29);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(262, 35);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 27);
             this.btnBuscaDepartamento.TabIndex = 1;
@@ -155,7 +155,7 @@
             this.panel1.Controls.Add(this.rdbDefeitoNao);
             this.panel1.Controls.Add(this.rdbDefeitoSim);
             this.panel1.Controls.Add(this.lblEstoqDefeito);
-            this.panel1.Location = new System.Drawing.Point(91, 163);
+            this.panel1.Location = new System.Drawing.Point(84, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 68);
             this.panel1.TabIndex = 19;

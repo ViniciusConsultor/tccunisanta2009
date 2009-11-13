@@ -43,7 +43,7 @@
             // txtDescricaoDepartamento
             // 
             this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(64, 100);
+            this.txtDescricaoDepartamento.Location = new System.Drawing.Point(62, 120);
             this.txtDescricaoDepartamento.MaxLength = 100;
             this.txtDescricaoDepartamento.Multiline = true;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
@@ -53,7 +53,7 @@
             // lblDescricaoDepartamento
             // 
             this.lblDescricaoDepartamento.AutoSize = true;
-            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(61, 84);
+            this.lblDescricaoDepartamento.Location = new System.Drawing.Point(59, 104);
             this.lblDescricaoDepartamento.Name = "lblDescricaoDepartamento";
             this.lblDescricaoDepartamento.Size = new System.Drawing.Size(55, 13);
             this.lblDescricaoDepartamento.TabIndex = 2;
@@ -114,7 +114,7 @@
             // txtNomeDepartamento
             // 
             this.txtNomeDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeDepartamento.Location = new System.Drawing.Point(64, 36);
+            this.txtNomeDepartamento.Location = new System.Drawing.Point(62, 56);
             this.txtNomeDepartamento.Name = "txtNomeDepartamento";
             this.txtNomeDepartamento.Size = new System.Drawing.Size(253, 20);
             this.txtNomeDepartamento.TabIndex = 5;
@@ -122,7 +122,7 @@
             // lblNomeDepartamento
             // 
             this.lblNomeDepartamento.AutoSize = true;
-            this.lblNomeDepartamento.Location = new System.Drawing.Point(64, 17);
+            this.lblNomeDepartamento.Location = new System.Drawing.Point(62, 37);
             this.lblNomeDepartamento.Name = "lblNomeDepartamento";
             this.lblNomeDepartamento.Size = new System.Drawing.Size(120, 13);
             this.lblNomeDepartamento.TabIndex = 6;

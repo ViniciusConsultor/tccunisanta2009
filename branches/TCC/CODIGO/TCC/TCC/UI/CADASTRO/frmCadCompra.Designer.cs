@@ -52,7 +52,7 @@
             // lblCdFornecedor
             // 
             this.lblCdFornecedor.AutoSize = true;
-            this.lblCdFornecedor.Location = new System.Drawing.Point(90, 149);
+            this.lblCdFornecedor.Location = new System.Drawing.Point(140, 145);
             this.lblCdFornecedor.Name = "lblCdFornecedor";
             this.lblCdFornecedor.Size = new System.Drawing.Size(112, 13);
             this.lblCdFornecedor.TabIndex = 11;
@@ -61,7 +61,7 @@
             // txtCdFornecedor
             // 
             this.txtCdFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdFornecedor.Location = new System.Drawing.Point(208, 147);
+            this.txtCdFornecedor.Location = new System.Drawing.Point(258, 143);
             this.txtCdFornecedor.MaxLength = 25;
             this.txtCdFornecedor.Name = "txtCdFornecedor";
             this.txtCdFornecedor.ReadOnly = true;
@@ -72,7 +72,7 @@
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(137, 71);
+            this.lblObservacao.Location = new System.Drawing.Point(187, 67);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(65, 13);
             this.lblObservacao.TabIndex = 11;
@@ -81,7 +81,7 @@
             // txtObservacao
             // 
             this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacao.Location = new System.Drawing.Point(208, 69);
+            this.txtObservacao.Location = new System.Drawing.Point(258, 65);
             this.txtObservacao.MaxLength = 25;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
@@ -91,7 +91,7 @@
             // lblVlCompra
             // 
             this.lblVlCompra.AutoSize = true;
-            this.lblVlCompra.Location = new System.Drawing.Point(132, 45);
+            this.lblVlCompra.Location = new System.Drawing.Point(182, 41);
             this.lblVlCompra.Name = "lblVlCompra";
             this.lblVlCompra.Size = new System.Drawing.Size(70, 13);
             this.lblVlCompra.TabIndex = 11;
@@ -100,7 +100,7 @@
             // lblNtFiscal
             // 
             this.lblNtFiscal.AutoSize = true;
-            this.lblNtFiscal.Location = new System.Drawing.Point(142, 19);
+            this.lblNtFiscal.Location = new System.Drawing.Point(192, 15);
             this.lblNtFiscal.Name = "lblNtFiscal";
             this.lblNtFiscal.Size = new System.Drawing.Size(60, 13);
             this.lblNtFiscal.TabIndex = 11;
@@ -109,7 +109,7 @@
             // txtNotaFiscal
             // 
             this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNotaFiscal.Location = new System.Drawing.Point(208, 17);
+            this.txtNotaFiscal.Location = new System.Drawing.Point(258, 13);
             this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(192, 20);
@@ -143,7 +143,7 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(406, 144);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(456, 140);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(34, 23);
             this.btnBuscaFornecedor.TabIndex = 1;
@@ -164,12 +164,12 @@
             this.dgPeca.AllowUserToResizeRows = false;
             this.dgPeca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPeca.Location = new System.Drawing.Point(14, 40);
+            this.dgPeca.Location = new System.Drawing.Point(39, 28);
             this.dgPeca.MultiSelect = false;
             this.dgPeca.Name = "dgPeca";
             this.dgPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPeca.ShowEditingIcon = false;
-            this.dgPeca.Size = new System.Drawing.Size(366, 125);
+            this.dgPeca.Size = new System.Drawing.Size(422, 140);
             this.dgPeca.TabIndex = 1;
             this.toolTipLegenda.SetToolTip(this.dgPeca, "Apertar Ctrl para Selecionar mais de um item");
             // 
@@ -208,7 +208,7 @@
             // txtVlCompra
             // 
             this.txtVlCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVlCompra.Location = new System.Drawing.Point(208, 43);
+            this.txtVlCompra.Location = new System.Drawing.Point(258, 39);
             this.txtVlCompra.MaxLength = 20;
             this.txtVlCompra.Name = "txtVlCompra";
             this.txtVlCompra.Size = new System.Drawing.Size(192, 20);
