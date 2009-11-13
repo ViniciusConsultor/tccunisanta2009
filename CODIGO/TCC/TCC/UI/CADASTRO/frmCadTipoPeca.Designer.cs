@@ -80,6 +80,7 @@
             this.txtDsTipoPeca.Name = "txtDsTipoPeca";
             this.txtDsTipoPeca.Size = new System.Drawing.Size(235, 79);
             this.txtDsTipoPeca.TabIndex = 1;
+            this.txtDsTipoPeca.TextChanged += new System.EventHandler(this.txtDsTipoPeca_TextChanged);
             // 
             // toolTipLegenda
             // 

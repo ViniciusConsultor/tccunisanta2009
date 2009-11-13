@@ -147,6 +147,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
+                this.btnInsere.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Fornecedor.NomeFornecedorVazioException)
             {
@@ -278,6 +279,12 @@ namespace TCC.UI
         }
         #endregion btnVolta Click 
 
+        #region txtNomeFornecedor TextChanged
+        private void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
+        {
+            this.btnInsere.Enabled = true;
+        }
+        #endregion txtNomeFornecedor TextChanged
         #endregion Eventos
     }
 }

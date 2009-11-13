@@ -21,23 +21,40 @@ namespace TCC.UI
         #endregion
 
         #region Eventos
+
+        #region btnConfirma Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             this.Inserir();
         }
+        #endregion btnConfirma Click
 
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            base.LimpaDadosTela(this); 
+            base.LimpaDadosTela(this);
         }
+        #endregion btnLimpar Click
 
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
+
+        #region txtDescPerfil TextChanged
+        private void txtDescPerfil_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirma.Enabled = true;
+        }
+        #endregion txtDescPerfil TextChanged
+
         #endregion
 
         #region Metodos
+
+        #region PegaDadosTela
         private mPerfil PegaDadosTela()
         {
             mPerfil model = new mPerfil();
@@ -48,7 +65,9 @@ namespace TCC.UI
 
             return model;
         }
+        #endregion PegaDadosTela
 
+        #region Inserir
         private void Inserir()
         {
             rPerfil regraPerfil = new rPerfil();
@@ -59,6 +78,7 @@ namespace TCC.UI
                 modelPerfil = this.PegaDadosTela();
                 regraPerfil.ValidarInsere(modelPerfil);
                 base.LimpaDadosTela(this);
+                this.btnConfirma.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
             {
@@ -69,7 +89,9 @@ namespace TCC.UI
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
         }
+        #endregion Inserir
 
+        #region ValidaDadosNulos
         private void ValidaDadosNulos()
         {
             if (string.IsNullOrEmpty(this.txtDescPerfil.Text) == true)
@@ -77,6 +99,8 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.Perfil.DescPerfilVazioException();
             }
         }
+        #endregion ValidaDadosNulos
+
         #endregion
     }
 }

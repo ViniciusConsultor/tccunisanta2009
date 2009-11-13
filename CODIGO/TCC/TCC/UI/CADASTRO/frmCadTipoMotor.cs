@@ -24,23 +24,40 @@ namespace TCC.UI
         #endregion
 
         #region Eventos
+
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
         }
+        #endregion btnLimpar Click
 
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
+        #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
         }
+        #endregion btnAceitar Click
+
+        #region txtIdReal TextChanged
+        private void txtIdReal_TextChanged(object sender, EventArgs e)
+        {
+            this.btnAceitar.Enabled = true;
+        }
+        #endregion txtIdReal TextChanged
+
         #endregion
 
         #region Metodos
+
+        #region Insere
         private void Insere()
         {
             mTipoMotor model;
@@ -48,9 +65,10 @@ namespace TCC.UI
             try
             {
                 this.ValidaDadosNulos();
-                model = this.PedaDadosTela();
+                model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
+                this.btnAceitar.Enabled = false;
             }
             catch (BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption)
             {
@@ -73,8 +91,10 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Insere
 
-        private mTipoMotor PedaDadosTela()
+        #region PegaDadosTela
+        private mTipoMotor PegaDadosTela()
         {
             mTipoMotor model = new mTipoMotor();
             rTipoMotor regra = new rTipoMotor();
@@ -96,7 +116,9 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion PegaDadosTela
 
+        #region ValidaDadosNulos
         public void ValidaDadosNulos()
         {
             try
@@ -115,6 +137,8 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion ValidaDadosNulos
+
         #endregion Metodos
     }
 }

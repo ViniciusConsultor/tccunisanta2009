@@ -35,9 +35,9 @@
             this.lblNmTipoMotor = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.lblIdReal = new System.Windows.Forms.Label();
             this.txtIdReal = new System.Windows.Forms.TextBox();
-            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -100,6 +100,17 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 53);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 29;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
             // lblIdReal
             // 
             this.lblIdReal.AutoSize = true;
@@ -117,17 +128,7 @@
             this.txtIdReal.Name = "txtIdReal";
             this.txtIdReal.Size = new System.Drawing.Size(227, 20);
             this.txtIdReal.TabIndex = 1;
-            // 
-            // btnBuscaAlteracaoDelecao
-            // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
-            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 53);
-            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 29;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
-            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.txtIdReal.TextChanged += new System.EventHandler(this.txtIdReal_TextChanged);
             // 
             // frmCadTipoMotor
             // 

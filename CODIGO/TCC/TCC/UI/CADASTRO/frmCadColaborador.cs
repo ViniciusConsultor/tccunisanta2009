@@ -147,6 +147,13 @@ namespace TCC.UI
         }
         #endregion btnBuscaAlteracaoDelecao Click
 
+        #region txtNome TextChanged
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirma.Enabled = true;
+        }
+        #endregion  txtNome TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -399,6 +406,7 @@ namespace TCC.UI
                     regraColaborador.ValidarAltera(modelColaborador);
                 }
                 this.btnApaga_Click(null, null);
+                this.btnConfirma.Enabled = false;
             }
             catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
             {

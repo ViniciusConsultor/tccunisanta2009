@@ -48,6 +48,13 @@ namespace TCC.UI
         }
         #endregion btnVoltar Click
 
+        #region txtNomeDepartamento TextChanged
+        private void txtNomeDepartamento_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirma.Enabled = true;
+        }
+        #endregion txtNomeDepartamento TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -64,6 +71,7 @@ namespace TCC.UI
                 this.ValidaDadosNulos();
                 regraDep.ValidarInsere(this.PegaDadosTela());
                 base.LimpaDadosTela(this);
+                this.btnConfirma.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Departamento.DescDepartamentoVazioException)
             {

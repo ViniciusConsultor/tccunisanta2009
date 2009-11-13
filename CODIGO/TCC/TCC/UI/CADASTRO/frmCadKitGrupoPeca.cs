@@ -24,7 +24,7 @@ namespace TCC.UI
             InitializeComponent();
         }
         #endregion Construtor
-
+        
         #region Eventos
 
         #region Form Load
@@ -85,6 +85,13 @@ namespace TCC.UI
         }
         #endregion btnAdicionaItem Click
 
+        #region txtCodigoKit TextChanged
+        private void txtCodigoKit_TextChanged(object sender, EventArgs e)
+        {
+            btnAceitar.Enabled = true;
+        }
+        #endregion txtCodigoKit TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -138,6 +145,7 @@ namespace TCC.UI
                     regraItemKit.ValidarInsere(modelItemKit);
                 }
                 this.btnLimpar_Click(null, null);
+                this.btnAceitar.Enabled = false;
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitExistenteException)
             {

@@ -157,6 +157,13 @@ namespace TCC.UI
         }
         #endregion btnRemovePeca Click
 
+        #region txtCodigoItem TextChanged
+        private void txtCodigoItem_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirmar.Enabled = true;
+        }
+        #endregion txtCodigoItem TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -207,6 +214,7 @@ namespace TCC.UI
                     regraItemPeca.ValidarInsere(modelItemPeca);
                 }
                 this.btnLimpa_Click(null, null);
+                this.btnConfirmar.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Item.CodigoRealItemExistenteException)
             {

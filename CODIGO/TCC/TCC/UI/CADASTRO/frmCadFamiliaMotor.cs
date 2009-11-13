@@ -203,6 +203,13 @@ namespace TCC.UI
         }
         #endregion btnBuscaEstoque Click
 
+        #region txtMotorCompra TextChanged
+        private void txtMotorCompra_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirma.Enabled = true;
+        }
+        #endregion  txtMotorCompra TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -259,6 +266,7 @@ namespace TCC.UI
                     regraKitFamilia.ValidarInsere(modelKitFamilia);
                 }
                 this.btnLimpa_Click(null, null);
+                this.btnConfirma.Enabled = false;
             }
             catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
             {
@@ -672,6 +680,11 @@ namespace TCC.UI
             }
         }
         #endregion Valida Adicao Kit
+
+        private void txtDsMotor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion Metodos
     }

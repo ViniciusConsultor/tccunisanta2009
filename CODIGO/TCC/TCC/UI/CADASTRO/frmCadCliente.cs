@@ -171,6 +171,7 @@ namespace TCC.UI
                     regra.ValidarInsere(model);
                 }
                 this.btnLimpa_Click(null, null);
+                this.btnInsere.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Cliente.NomeClienteVazioException)
             {
@@ -359,6 +360,13 @@ namespace TCC.UI
             }
         }
         #endregion btnBuscaAlteracaoDelecao Click
+
+        #region txtNome TextChanged
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            btnInsere.Enabled = true;
+        }
+        #endregion  txtNome TextChanged
         #endregion Eventos
     }
 }
