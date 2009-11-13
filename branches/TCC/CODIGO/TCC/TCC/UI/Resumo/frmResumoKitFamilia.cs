@@ -21,7 +21,7 @@ namespace TCC.UI.Resumo
         {
             InitializeComponent();
             this._listaModelKitFamilia = lista;
-            this.lblNome.Text = nomeFamiliaMotor;
+            this.txtNomeFamiliaMotor.Text = nomeFamiliaMotor;
             this.txtMotor.Text = nomeMotor;
         }
         #endregion Construtor
@@ -76,10 +76,10 @@ namespace TCC.UI.Resumo
         {
             try
             {
-                dt.Columns.Add("hIdkit");
-                dt.Columns.Add("hCodigo");
-                dt.Columns.Add("hKit");
-                dt.Columns.Add("hQtd");
+                dt.Columns.Add("id_kit");
+                dt.Columns.Add("id_kit_real");
+                dt.Columns.Add("nom");
+                dt.Columns.Add("Qtd");
             }
             catch (Exception ex)
             {
@@ -103,10 +103,10 @@ namespace TCC.UI.Resumo
                 {
                     modelKit = regraKit.BuscaUnicoRegistro(Convert.ToInt32(model.Id_kit));
                     linha = dt.NewRow();
-                    linha["hIdKit"] = model.Id_kit;
-                    linha["hCodigo"] = modelKit.IdKitReal;
-                    linha["hKit"] = modelKit.Nom_grupo;
-                    linha["hQtd"] = model.Qtd_kit;
+                    linha["id_kit"] = model.Id_kit;
+                    linha["id_kit_real"] = modelKit.IdKitReal;
+                    linha["nom"] = modelKit.Nom_grupo;
+                    linha["Qtd"] = model.Qtd_kit;
                     dt.Rows.Add(linha);
                 }
             }

@@ -37,13 +37,14 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.lblIdReal = new System.Windows.Forms.Label();
             this.txtIdReal = new System.Windows.Forms.TextBox();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 62);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 79);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 4;
@@ -55,7 +56,7 @@
             // 
             this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Location = new System.Drawing.Point(2, 33);
+            this.btnLimpar.Location = new System.Drawing.Point(2, 28);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 3;
@@ -66,7 +67,7 @@
             // txtNmTipoMotor
             // 
             this.txtNmTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNmTipoMotor.Location = new System.Drawing.Point(77, 127);
+            this.txtNmTipoMotor.Location = new System.Drawing.Point(77, 100);
             this.txtNmTipoMotor.MaxLength = 500;
             this.txtNmTipoMotor.Multiline = true;
             this.txtNmTipoMotor.Name = "txtNmTipoMotor";
@@ -76,7 +77,7 @@
             // lblNmTipoMotor
             // 
             this.lblNmTipoMotor.AutoSize = true;
-            this.lblNmTipoMotor.Location = new System.Drawing.Point(74, 111);
+            this.lblNmTipoMotor.Location = new System.Drawing.Point(74, 84);
             this.lblNmTipoMotor.Name = "lblNmTipoMotor";
             this.lblNmTipoMotor.Size = new System.Drawing.Size(139, 13);
             this.lblNmTipoMotor.TabIndex = 19;
@@ -102,7 +103,7 @@
             // lblIdReal
             // 
             this.lblIdReal.AutoSize = true;
-            this.lblIdReal.Location = new System.Drawing.Point(74, 62);
+            this.lblIdReal.Location = new System.Drawing.Point(74, 35);
             this.lblIdReal.Name = "lblIdReal";
             this.lblIdReal.Size = new System.Drawing.Size(124, 13);
             this.lblIdReal.TabIndex = 19;
@@ -111,11 +112,22 @@
             // txtIdReal
             // 
             this.txtIdReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdReal.Location = new System.Drawing.Point(77, 78);
+            this.txtIdReal.Location = new System.Drawing.Point(77, 51);
             this.txtIdReal.MaxLength = 20;
             this.txtIdReal.Name = "txtIdReal";
             this.txtIdReal.Size = new System.Drawing.Size(227, 20);
             this.txtIdReal.TabIndex = 1;
+            // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 53);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 29;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // frmCadTipoMotor
             // 
@@ -125,6 +137,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtIdReal);
             this.Controls.Add(this.lblIdReal);
             this.Controls.Add(this.txtNmTipoMotor);
@@ -150,5 +163,6 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Label lblIdReal;
         private System.Windows.Forms.TextBox txtIdReal;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

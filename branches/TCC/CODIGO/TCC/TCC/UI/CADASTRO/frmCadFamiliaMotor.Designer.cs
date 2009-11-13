@@ -45,9 +45,14 @@
             this.btnRemoveKit = new System.Windows.Forms.Button();
             this.btnBuscaNumMotor = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.gbBuscaKit = new System.Windows.Forms.GroupBox();
             this.txtQtdKit = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgKits = new System.Windows.Forms.DataGridView();
+            this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdKit = new System.Windows.Forms.Label();
             this.lblNmItem = new System.Windows.Forms.Label();
@@ -63,10 +68,6 @@
             this.lblMotorCompra = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscaKit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).BeginInit();
             this.gbMotor.SuspendLayout();
@@ -107,7 +108,7 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(7, 88);
+            this.btnVolta.Location = new System.Drawing.Point(7, 129);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
             this.btnVolta.TabIndex = 9;
@@ -136,7 +137,7 @@
             // 
             this.btnBuscarKitDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarKitDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarKitDtGrid.Location = new System.Drawing.Point(395, 14);
+            this.btnBuscarKitDtGrid.Location = new System.Drawing.Point(397, 14);
             this.btnBuscarKitDtGrid.Name = "btnBuscarKitDtGrid";
             this.btnBuscarKitDtGrid.Size = new System.Drawing.Size(40, 35);
             this.btnBuscarKitDtGrid.TabIndex = 7;
@@ -148,7 +149,7 @@
             // 
             this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaEstoque.Location = new System.Drawing.Point(554, 22);
+            this.btnBuscaEstoque.Location = new System.Drawing.Point(547, 40);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
             this.btnBuscaEstoque.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaEstoque.TabIndex = 2;
@@ -172,7 +173,7 @@
             // 
             this.btnBuscaTipoMotor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaTipoMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaTipoMotor.Location = new System.Drawing.Point(460, 37);
+            this.btnBuscaTipoMotor.Location = new System.Drawing.Point(465, 37);
             this.btnBuscaTipoMotor.Name = "btnBuscaTipoMotor";
             this.btnBuscaTipoMotor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaTipoMotor.TabIndex = 4;
@@ -195,7 +196,7 @@
             // 
             this.btnBuscaNumMotor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaNumMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaNumMotor.Location = new System.Drawing.Point(460, 8);
+            this.btnBuscaNumMotor.Location = new System.Drawing.Point(466, 8);
             this.btnBuscaNumMotor.Name = "btnBuscaNumMotor";
             this.btnBuscaNumMotor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaNumMotor.TabIndex = 37;
@@ -214,6 +215,17 @@
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
+            // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 26;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // gbBuscaKit
             // 
@@ -274,7 +286,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgKits.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgKits.Location = new System.Drawing.Point(171, 48);
+            this.dgKits.Location = new System.Drawing.Point(171, 52);
             this.dgKits.MultiSelect = false;
             this.dgKits.Name = "dgKits";
             this.dgKits.ReadOnly = true;
@@ -291,6 +303,39 @@
             this.dgKits.Size = new System.Drawing.Size(295, 177);
             this.dgKits.TabIndex = 0;
             this.dgKits.SelectionChanged += new System.EventHandler(this.dgKits_SelectionChanged);
+            // 
+            // hIdKit
+            // 
+            this.hIdKit.DataPropertyName = "id_kit";
+            this.hIdKit.HeaderText = "IdKit";
+            this.hIdKit.Name = "hIdKit";
+            this.hIdKit.ReadOnly = true;
+            this.hIdKit.Visible = false;
+            this.hIdKit.Width = 51;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "id_kit_real";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "Qtd";
+            this.hQtd.HeaderText = "Qtd";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 47;
             // 
             // txtBuscaFiltro
             // 
@@ -344,6 +389,7 @@
             // TxtNmKit
             // 
             this.TxtNmKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtNmKit.Enabled = false;
             this.TxtNmKit.Location = new System.Drawing.Point(36, 72);
             this.TxtNmKit.MaxLength = 20;
             this.TxtNmKit.Name = "TxtNmKit";
@@ -372,17 +418,18 @@
             // txtNumeroMotor
             // 
             this.txtNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroMotor.Location = new System.Drawing.Point(361, 11);
+            this.txtNumeroMotor.Enabled = false;
+            this.txtNumeroMotor.Location = new System.Drawing.Point(357, 11);
             this.txtNumeroMotor.Name = "txtNumeroMotor";
             this.txtNumeroMotor.ReadOnly = true;
-            this.txtNumeroMotor.Size = new System.Drawing.Size(93, 20);
+            this.txtNumeroMotor.Size = new System.Drawing.Size(105, 20);
             this.txtNumeroMotor.TabIndex = 36;
             this.txtNumeroMotor.TabStop = false;
             // 
             // lblNumeroMotor
             // 
             this.lblNumeroMotor.AutoSize = true;
-            this.lblNumeroMotor.Location = new System.Drawing.Point(270, 13);
+            this.lblNumeroMotor.Location = new System.Drawing.Point(259, 16);
             this.lblNumeroMotor.Name = "lblNumeroMotor";
             this.lblNumeroMotor.Size = new System.Drawing.Size(92, 13);
             this.lblNumeroMotor.TabIndex = 38;
@@ -391,17 +438,18 @@
             // txtTipoMotor
             // 
             this.txtTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTipoMotor.Location = new System.Drawing.Point(361, 37);
+            this.txtTipoMotor.Enabled = false;
+            this.txtTipoMotor.Location = new System.Drawing.Point(357, 37);
             this.txtTipoMotor.Name = "txtTipoMotor";
             this.txtTipoMotor.ReadOnly = true;
-            this.txtTipoMotor.Size = new System.Drawing.Size(93, 20);
+            this.txtTipoMotor.Size = new System.Drawing.Size(105, 20);
             this.txtTipoMotor.TabIndex = 0;
             this.txtTipoMotor.TabStop = false;
             // 
             // lblTipoMotor
             // 
             this.lblTipoMotor.AutoSize = true;
-            this.lblTipoMotor.Location = new System.Drawing.Point(270, 42);
+            this.lblTipoMotor.Location = new System.Drawing.Point(259, 45);
             this.lblTipoMotor.Name = "lblTipoMotor";
             this.lblTipoMotor.Size = new System.Drawing.Size(73, 13);
             this.lblTipoMotor.TabIndex = 34;
@@ -410,6 +458,7 @@
             // txtMotorCompra
             // 
             this.txtMotorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMotorCompra.Enabled = false;
             this.txtMotorCompra.Location = new System.Drawing.Point(50, 24);
             this.txtMotorCompra.Name = "txtMotorCompra";
             this.txtMotorCompra.ReadOnly = true;
@@ -429,7 +478,8 @@
             // txtEstoque
             // 
             this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstoque.Location = new System.Drawing.Point(443, 25);
+            this.txtEstoque.Enabled = false;
+            this.txtEstoque.Location = new System.Drawing.Point(439, 43);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.ReadOnly = true;
             this.txtEstoque.Size = new System.Drawing.Size(105, 20);
@@ -439,44 +489,11 @@
             // lblEstoque
             // 
             this.lblEstoque.AutoSize = true;
-            this.lblEstoque.Location = new System.Drawing.Point(442, 9);
+            this.lblEstoque.Location = new System.Drawing.Point(442, 27);
             this.lblEstoque.Name = "lblEstoque";
             this.lblEstoque.Size = new System.Drawing.Size(46, 13);
             this.lblEstoque.TabIndex = 25;
             this.lblEstoque.Text = "Estoque";
-            // 
-            // hIdKit
-            // 
-            this.hIdKit.DataPropertyName = "id_kit";
-            this.hIdKit.HeaderText = "IdKit";
-            this.hIdKit.Name = "hIdKit";
-            this.hIdKit.ReadOnly = true;
-            this.hIdKit.Visible = false;
-            this.hIdKit.Width = 51;
-            // 
-            // hCodigo
-            // 
-            this.hCodigo.DataPropertyName = "id_kit_real";
-            this.hCodigo.HeaderText = "Codigo";
-            this.hCodigo.Name = "hCodigo";
-            this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "nom";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "Qtd";
-            this.hQtd.HeaderText = "Qtd";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 47;
             // 
             // frmCadFamiliaMotor
             // 
@@ -486,6 +503,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnBuscaEstoque);
             this.Controls.Add(this.gbMotor);
             this.Controls.Add(this.gbBuscaKit);
@@ -547,5 +565,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

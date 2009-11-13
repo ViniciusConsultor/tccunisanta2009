@@ -42,21 +42,22 @@
             this.btnBuscaPerfilUsuario = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLogin
             // 
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogin.Location = new System.Drawing.Point(114, 65);
+            this.txtLogin.Location = new System.Drawing.Point(95, 65);
             this.txtLogin.MaxLength = 25;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(187, 20);
+            this.txtLogin.Size = new System.Drawing.Size(206, 20);
             this.txtLogin.TabIndex = 2;
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(76, 67);
+            this.lblLogin.Location = new System.Drawing.Point(56, 67);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(33, 13);
             this.lblLogin.TabIndex = 2;
@@ -65,17 +66,17 @@
             // txtObservacao
             // 
             this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacao.Location = new System.Drawing.Point(79, 143);
+            this.txtObservacao.Location = new System.Drawing.Point(59, 143);
             this.txtObservacao.MaxLength = 100;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(222, 44);
+            this.txtObservacao.Size = new System.Drawing.Size(242, 44);
             this.txtObservacao.TabIndex = 4;
             // 
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(76, 127);
+            this.lblObservacao.Location = new System.Drawing.Point(56, 127);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(65, 13);
             this.lblObservacao.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Location = new System.Drawing.Point(2, 32);
+            this.btnLimpar.Location = new System.Drawing.Point(2, 28);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
             this.btnLimpar.TabIndex = 6;
@@ -97,7 +98,7 @@
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(2, 61);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 78);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 7;
@@ -108,17 +109,17 @@
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSenha.Location = new System.Drawing.Point(114, 94);
+            this.txtSenha.Location = new System.Drawing.Point(95, 94);
             this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(187, 20);
+            this.txtSenha.Size = new System.Drawing.Size(206, 20);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(76, 96);
+            this.lblSenha.Location = new System.Drawing.Point(56, 96);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 11;
@@ -128,22 +129,22 @@
             // 
             this.txtPerfilUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPerfilUsuario.Enabled = false;
-            this.txtPerfilUsuario.Location = new System.Drawing.Point(146, 34);
+            this.txtPerfilUsuario.Location = new System.Drawing.Point(139, 34);
             this.txtPerfilUsuario.MaxLength = 50;
             this.txtPerfilUsuario.Name = "txtPerfilUsuario";
             this.txtPerfilUsuario.ReadOnly = true;
-            this.txtPerfilUsuario.Size = new System.Drawing.Size(125, 20);
+            this.txtPerfilUsuario.Size = new System.Drawing.Size(132, 20);
             this.txtPerfilUsuario.TabIndex = 0;
             this.txtPerfilUsuario.TabStop = false;
             // 
             // lblPerfilUsuario
             // 
             this.lblPerfilUsuario.AutoSize = true;
-            this.lblPerfilUsuario.Location = new System.Drawing.Point(76, 36);
+            this.lblPerfilUsuario.Location = new System.Drawing.Point(56, 36);
             this.lblPerfilUsuario.Name = "lblPerfilUsuario";
-            this.lblPerfilUsuario.Size = new System.Drawing.Size(69, 13);
+            this.lblPerfilUsuario.Size = new System.Drawing.Size(84, 13);
             this.lblPerfilUsuario.TabIndex = 13;
-            this.lblPerfilUsuario.Text = "Perfil Usuário";
+            this.lblPerfilUsuario.Text = "Perfil do Usuário";
             // 
             // btnBuscaPerfilUsuario
             // 
@@ -174,6 +175,17 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 53);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 30;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
             // frmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +194,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnBuscaPerfilUsuario);
             this.Controls.Add(this.txtPerfilUsuario);
             this.Controls.Add(this.lblPerfilUsuario);
@@ -196,7 +209,7 @@
             this.Controls.Add(this.lblLogin);
             this.MaximizeBox = false;
             this.Name = "frmCadUsuario";
-            this.Text = "Cadastro de Usuário";
+            this.Text = "Cadastro de Usuários";
             this.Load += new System.EventHandler(this.frmCadUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,5 +231,6 @@
         private System.Windows.Forms.Label lblPerfilUsuario;
         private System.Windows.Forms.Button btnBuscaPerfilUsuario;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }
