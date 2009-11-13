@@ -120,6 +120,7 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);

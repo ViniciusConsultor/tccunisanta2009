@@ -383,6 +383,9 @@
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadfornecedorDpto.resx">
+      <DependentUpon>frmCadfornecedorDpto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadItem.resx">
       <DependentUpon>frmCadItem.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -394,6 +397,9 @@
     <EmbeddedResource Include="UI\CADASTRO\frmCadMotor.resx">
       <DependentUpon>frmCadMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadMotorFornecedor.resx">
+      <DependentUpon>frmCadMotorFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadNumeroMotor.resx">
       <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
@@ -455,9 +461,11 @@
       <DependentUpon>frmCadVenda.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmPecaEstoque.resx">
-      <DependentUpon>frmPecaEstoque.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="UI\CADASTRO\frmPecaFornecedor.resx">
+      <DependentUpon>frmPecaFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmPerfilMenu.resx">
+      <DependentUpon>frmPerfilMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormPai.resx">
       <DependentUpon>FormPai.cs</DependentUpon>
@@ -678,6 +686,12 @@
     <Compile Include="UI\CADASTRO\frmCadFornecedor.Designer.cs">
       <DependentUpon>frmCadFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CADASTRO\frmCadfornecedorDpto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadfornecedorDpto.Designer.cs">
+      <DependentUpon>frmCadfornecedorDpto.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CADASTRO\frmCadItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -695,6 +709,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadMotor.Designer.cs">
       <DependentUpon>frmCadMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadMotorFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadMotorFornecedor.Designer.cs">
+      <DependentUpon>frmCadMotorFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadNumeroMotor.cs">
       <SubType>Form</SubType>
@@ -786,11 +806,17 @@
     <Compile Include="UI\CADASTRO\frmCadVenda.Designer.cs">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmPecaEstoque.cs">
+    <Compile Include="UI\CADASTRO\frmPecaFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmPecaEstoque.Designer.cs">
-      <DependentUpon>frmPecaEstoque.cs</DependentUpon>
+    <Compile Include="UI\CADASTRO\frmPecaFornecedor.Designer.cs">
+      <DependentUpon>frmPecaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPerfilMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPerfilMenu.Designer.cs">
+      <DependentUpon>frmPerfilMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormPai.cs">
       <SubType>Form</SubType>
