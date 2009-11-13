@@ -161,6 +161,7 @@
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.Size = new System.Drawing.Size(388, 20);
             this.txtNomeFornecedor.TabIndex = 1;
+            this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtNomeFornecedor_TextChanged);
             // 
             // lblNomeFornecedor
             // 

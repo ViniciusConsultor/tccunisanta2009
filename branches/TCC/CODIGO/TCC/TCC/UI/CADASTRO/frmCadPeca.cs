@@ -25,11 +25,15 @@ namespace TCC.UI
         #endregion Construtor
 
         #region Eventos
+
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
+        #region btnCdTipoPeca Click
         private void btnCdTipoPeca_Click(object sender, EventArgs e)
         {
             this._modelTipoPeca = new mTipoPeca();
@@ -55,21 +59,36 @@ namespace TCC.UI
                 objTela = null;
             }
         }
+        #endregion btnCdTipoPeca Click
 
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
             this._modelEstoque = null;
             this._modelTipoPeca = null;
         }
+        #endregion btnLimpar Click
 
+        #region btnConfirmar Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             this.Insere();
         }
+        #endregion btnConfirmar Click
+
+        #region txtCdTipoPeca Changed
+        private void txtCdTipoPeca_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirma.Enabled = true;
+        }
+        #endregion txtCdTipoPeca Changed
+
         #endregion Eventos
 
         #region Metodos
+
+        #region PegaDadosTela
         private mPeca PegaDadosTela()
         {
             mPeca model = new mPeca();
@@ -112,7 +131,9 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion PegaDadosTela
 
+        #region Insere
         private void Insere()
         {
             mPeca model;
@@ -123,6 +144,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
+                this.btnConfirma.Enabled = false;
             }
             catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
             {
@@ -159,7 +181,9 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Insere
 
+        #region ValidaDadosNulos
         private void ValidaDadosNulos()
         {
             if (this._modelTipoPeca == null)
@@ -179,6 +203,8 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException();
             }
         }
+        #endregion ValidaDadosNulos
+
         #endregion Metodos
     }
 }

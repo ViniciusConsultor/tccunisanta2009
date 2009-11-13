@@ -62,6 +62,7 @@
             this.txtDsMotor.Name = "txtDsMotor";
             this.txtDsMotor.Size = new System.Drawing.Size(249, 80);
             this.txtDsMotor.TabIndex = 1;
+            this.txtDsMotor.TextChanged += new System.EventHandler(this.txtDsMotor_TextChanged);
             // 
             // btnVoltar
             // 

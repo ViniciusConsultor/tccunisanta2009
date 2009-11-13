@@ -160,6 +160,7 @@
             this.txtQtdPecasDefeito.Name = "txtQtdPecasDefeito";
             this.txtQtdPecasDefeito.Size = new System.Drawing.Size(143, 20);
             this.txtQtdPecasDefeito.TabIndex = 31;
+            this.txtQtdPecasDefeito.TextChanged += new System.EventHandler(this.txtQtdPecasDefeito_TextChanged);
             // 
             // label2
             // 

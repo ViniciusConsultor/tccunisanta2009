@@ -75,6 +75,7 @@
             this.txtCdTipoPeca.Size = new System.Drawing.Size(118, 20);
             this.txtCdTipoPeca.TabIndex = 1;
             this.txtCdTipoPeca.TabStop = false;
+            this.txtCdTipoPeca.TextChanged += new System.EventHandler(this.txtCdTipoPeca_TextChanged);
             // 
             // lblNmPeca
             // 

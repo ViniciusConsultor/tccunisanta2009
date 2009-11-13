@@ -119,6 +119,7 @@
             this.txtIdRealMotor.Name = "txtIdRealMotor";
             this.txtIdRealMotor.Size = new System.Drawing.Size(260, 20);
             this.txtIdRealMotor.TabIndex = 1;
+            this.txtIdRealMotor.TextChanged += new System.EventHandler(this.txtIdRealMotor_TextChanged);
             // 
             // lblIdReal
             // 
