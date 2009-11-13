@@ -48,7 +48,7 @@
             this.dgPerfil.AllowUserToResizeRows = false;
             this.dgPerfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPerfil.Location = new System.Drawing.Point(12, 44);
+            this.dgPerfil.Location = new System.Drawing.Point(15, 42);
             this.dgPerfil.MultiSelect = false;
             this.dgPerfil.Name = "dgPerfil";
             this.dgPerfil.ReadOnly = true;
@@ -60,19 +60,19 @@
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Location = new System.Drawing.Point(12, 12);
+            this.txtFiltro.Location = new System.Drawing.Point(15, 10);
             this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(199, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(227, 20);
             this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(232, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(248, 10);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(27, 23);
             this.btnBuscar.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             // 
             this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.Location = new System.Drawing.Point(94, 229);
+            this.btnFechar.Location = new System.Drawing.Point(59, 225);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Location = new System.Drawing.Point(232, 229);
+            this.btnExcluir.Location = new System.Drawing.Point(197, 225);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 35);
             this.btnExcluir.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             this.btnAlterar.BackgroundImage = global::TCC.resImg.btnAdd_;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.Location = new System.Drawing.Point(186, 229);
+            this.btnAlterar.Location = new System.Drawing.Point(151, 225);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(40, 35);
             this.btnAlterar.TabIndex = 5;
@@ -123,7 +123,7 @@
             // 
             this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.Location = new System.Drawing.Point(140, 229);
+            this.btnOK.Location = new System.Drawing.Point(105, 225);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 7;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ClientSize = new System.Drawing.Size(290, 266);
             this.ControlBox = false;
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnExcluir);

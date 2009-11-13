@@ -44,7 +44,7 @@
             // 
             this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.Location = new System.Drawing.Point(140, 228);
+            this.btnOK.Location = new System.Drawing.Point(100, 227);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 4;
@@ -55,10 +55,10 @@
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Location = new System.Drawing.Point(12, 13);
+            this.txtFiltro.Location = new System.Drawing.Point(14, 12);
             this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(196, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(227, 20);
             this.txtFiltro.TabIndex = 1;
             this.txtFiltro.TabStop = false;
             // 
@@ -66,9 +66,9 @@
             // 
             this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(232, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(247, 11);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(27, 23);
             this.btnBuscar.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             this.dgCompra.AllowUserToResizeRows = false;
             this.dgCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCompra.Location = new System.Drawing.Point(12, 45);
+            this.dgCompra.Location = new System.Drawing.Point(14, 44);
             this.dgCompra.MultiSelect = false;
             this.dgCompra.Name = "dgCompra";
             this.dgCompra.ReadOnly = true;
@@ -95,7 +95,7 @@
             // 
             this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.Location = new System.Drawing.Point(94, 228);
+            this.btnFechar.Location = new System.Drawing.Point(54, 227);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 3;
@@ -112,7 +112,7 @@
             // 
             this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Location = new System.Drawing.Point(232, 228);
+            this.btnExcluir.Location = new System.Drawing.Point(192, 227);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 35);
             this.btnExcluir.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.Location = new System.Drawing.Point(186, 228);
+            this.btnAlterar.Location = new System.Drawing.Point(146, 227);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(40, 35);
             this.btnAlterar.TabIndex = 5;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ClientSize = new System.Drawing.Size(290, 266);
             this.ControlBox = false;
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);

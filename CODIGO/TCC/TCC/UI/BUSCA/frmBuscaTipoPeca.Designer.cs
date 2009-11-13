@@ -33,12 +33,12 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgTipoPeca = new System.Windows.Forms.DataGridView();
+            this.hIdTipoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.hIdTipoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             // 
             this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.Location = new System.Drawing.Point(140, 228);
+            this.btnOK.Location = new System.Drawing.Point(110, 224);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 4;
@@ -57,19 +57,19 @@
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Location = new System.Drawing.Point(12, 13);
+            this.txtFiltro.Location = new System.Drawing.Point(15, 9);
             this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(196, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(227, 20);
             this.txtFiltro.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(221, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(248, 9);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(27, 23);
             this.btnBuscar.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.dgTipoPeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hIdTipoPeca,
             this.hDescricao});
-            this.dgTipoPeca.Location = new System.Drawing.Point(12, 45);
+            this.dgTipoPeca.Location = new System.Drawing.Point(15, 41);
             this.dgTipoPeca.MultiSelect = false;
             this.dgTipoPeca.Name = "dgTipoPeca";
             this.dgTipoPeca.ReadOnly = true;
@@ -94,47 +94,6 @@
             this.dgTipoPeca.ShowEditingIcon = false;
             this.dgTipoPeca.Size = new System.Drawing.Size(260, 177);
             this.dgTipoPeca.TabIndex = 0;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
-            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.Location = new System.Drawing.Point(94, 228);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(40, 35);
-            this.btnFechar.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // toolTipLegenda
-            // 
-            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
-            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Location = new System.Drawing.Point(232, 227);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(40, 35);
-            this.btnExcluir.TabIndex = 8;
-            this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
-            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.Location = new System.Drawing.Point(186, 228);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(40, 35);
-            this.btnAlterar.TabIndex = 7;
-            this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // hIdTipoPeca
             // 
@@ -153,11 +112,52 @@
             this.hDescricao.ReadOnly = true;
             this.hDescricao.Width = 78;
             // 
+            // btnFechar
+            // 
+            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFechar.Location = new System.Drawing.Point(64, 224);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(40, 35);
+            this.btnFechar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.Location = new System.Drawing.Point(202, 223);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(40, 35);
+            this.btnExcluir.TabIndex = 8;
+            this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAlterar.Location = new System.Drawing.Point(156, 224);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(40, 35);
+            this.btnAlterar.TabIndex = 7;
+            this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // frmBuscaTipoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 264);
+            this.ClientSize = new System.Drawing.Size(290, 266);
             this.ControlBox = false;
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
