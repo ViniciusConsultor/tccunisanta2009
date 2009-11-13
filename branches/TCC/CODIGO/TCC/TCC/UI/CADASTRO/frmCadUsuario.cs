@@ -80,6 +80,14 @@ namespace TCC.UI
             base.FechaTela(this);
         }
         #endregion btnVoltar Click
+
+        #region txtLogin TextChanged
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+            this.btnAceitar.Enabled = true;
+        }
+        #endregion txtLogin TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -100,6 +108,7 @@ namespace TCC.UI
                 modelUsu = this.PegaDadosTela();
                 regraUsu.ValidarInsere(modelUsu);
                 base.LimpaDadosTela(this);
+                this.btnAceitar.Enabled = false;
             }
             catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
@@ -169,6 +178,7 @@ namespace TCC.UI
             
         }
         #endregion Pega Dados Tela
+
         #endregion Metodos
     }
 }

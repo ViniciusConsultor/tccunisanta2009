@@ -118,6 +118,7 @@
             this.txtNomeDepartamento.Name = "txtNomeDepartamento";
             this.txtNomeDepartamento.Size = new System.Drawing.Size(253, 20);
             this.txtNomeDepartamento.TabIndex = 5;
+            this.txtNomeDepartamento.TextChanged += new System.EventHandler(this.txtNomeDepartamento_TextChanged);
             // 
             // lblNomeDepartamento
             // 

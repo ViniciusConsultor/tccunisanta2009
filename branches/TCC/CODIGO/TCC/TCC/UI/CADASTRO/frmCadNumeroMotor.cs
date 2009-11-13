@@ -24,23 +24,39 @@ namespace TCC.UI
         #endregion Construtor
 
         #region Eventos
+
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
         }
+        #endregion btnLimpar Click
 
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
+        #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
         }
+        #endregion btnAceitar Click
+
+        #region txtIdRealMotor TextChanged
+        private void txtIdRealMotor_TextChanged(object sender, EventArgs e)
+        {
+            this.btnAceitar.Enabled = true;
+        }
+        #endregion txtIdRealMotor TextChanged
         #endregion Eventos
 
         #region Metodos
+
+        #region Insere
         private void Insere()
         {
             mNumMotor model = new mNumMotor();
@@ -51,6 +67,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
+                this.btnAceitar.Enabled = false;
             }
             catch (BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption)
             {
@@ -72,7 +89,9 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Insere
 
+        #region PegaDadosTela
         private mNumMotor PegaDadosTela()
         {
 
@@ -97,7 +116,9 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion PegaDadosTela
 
+        #region validaDadosNulo
         public void validaDadosNulo()
             {
                 try 
@@ -117,6 +138,8 @@ namespace TCC.UI
 		            throw ex ;
 	            }
             }
+        #endregion validaDadosNulo
+
         #endregion Metodos
     }
 }

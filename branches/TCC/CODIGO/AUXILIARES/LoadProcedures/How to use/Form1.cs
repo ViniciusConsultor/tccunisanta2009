@@ -25,7 +25,7 @@ namespace How_to_use
             DialogResult resultado = busca.ShowDialog();
             if (resultado == DialogResult.OK)
             {
-                Dispatcher dispatcher = new Dispatcher(@"Provider=SQLNCLI.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Megatechdatabase;Data Source=julioPc\SQLEXPRESS", busca.SelectedPath);
+                Dispatcher dispatcher = new Dispatcher(@"Provider=SQLNCLI.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Megatechdatabase;Data Source=Leandro\SQLEXPRESS", busca.SelectedPath);
 
                 try
                 {

@@ -353,6 +353,7 @@
             this.txtCodigoKit.Name = "txtCodigoKit";
             this.txtCodigoKit.Size = new System.Drawing.Size(133, 20);
             this.txtCodigoKit.TabIndex = 1;
+            this.txtCodigoKit.TextChanged += new System.EventHandler(this.txtCodigoKit_TextChanged);
             // 
             // frmCadKitGrupoPeca
             // 

@@ -82,6 +82,13 @@ namespace TCC.UI
         }
         #endregion btnLimpa Click
 
+        #region txtNome TextChanged
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            this.btnInsere.Enabled = true;
+        }
+        #endregion txtNome TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -100,6 +107,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
+                this.btnInsere.Enabled = false;
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {

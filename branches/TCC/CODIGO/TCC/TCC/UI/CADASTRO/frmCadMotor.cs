@@ -21,23 +21,38 @@ namespace TCC.UI
         #endregion Construtor
 
         #region Eventos
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
+        #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Inserir();
         }
+        #endregion btnAceitar Click
 
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
         }
+        #endregion btnLimpar Click
+
+        #region txtDsMotor TextChanged
+        private void txtDsMotor_TextChanged(object sender, EventArgs e)
+        {
+            this.btnAceitar.Enabled = true;
+        }
+        #endregion txtDsMotor TextChanged
         #endregion Eventos
 
         #region Metodos
+
+        #region PegaDadosTela
         private mMotor PegaDadosTela()
         {
             mMotor model = new mMotor();
@@ -60,7 +75,9 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion PegaDadosTela
 
+        #region ValidaDadosNulos
         private void ValidaDadosNulos()
         {
             if (string.IsNullOrEmpty(this.txtDsMotor.Text))
@@ -68,7 +85,9 @@ namespace TCC.UI
                 throw new BUSINESS.Exceptions.Motor.DescMotorVazioException();
             }
         }
+        #endregion ValidaDadosNulos
 
+        #region Inserir
         private void Inserir()
         {
             mMotor model;
@@ -79,6 +98,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
+                this.btnAceitar.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
             {
@@ -95,6 +115,8 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Inserir
+
         #endregion Metodos
 
     }
