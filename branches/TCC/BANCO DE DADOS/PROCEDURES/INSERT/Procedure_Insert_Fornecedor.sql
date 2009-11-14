@@ -18,7 +18,9 @@ CREATE PROCEDURE sp_insert_fornecedor
 @cnpj		            VARCHAR(15),
 @dat_alt				DATETIME,
 @flg_ativo				BIT,
-@slg_est				VARCHAR(2)
+@slg_est				VARCHAR(2),
+@nom_pais				VARCHAR(50),
+@nom_est_inter			VARCHAR(50)	
 AS
 
 BEGIN TRY
@@ -35,8 +37,8 @@ ELSE
   
 BEGIN
 --Insert na tabela fornecedor
-INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo)
-VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo)
+INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo,nom_pais,nom_est_inter)
+VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo,@nom_pais, @nom_est_inter)
 END
 END TRY
 

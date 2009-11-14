@@ -18,8 +18,10 @@ CREATE PROCEDURE sp_insert_cliente
 @dat_atl		DATETIME,
 @flg_ativo		BIT,
 @slg_est		VARCHAR(2),
-@mail  VARCHAR(100),
-@ddd    INT
+@mail		VARCHAR(100),
+@ddd    INT,
+@nom_pais	VARCHAR (50),
+@nom_est_inter VARCHAR(50)
 AS
 
 BEGIN TRY
@@ -36,9 +38,9 @@ ELSE
 BEGIN
 --Insert na tabela cliente
 INSERT INTO Cliente
-(id_cli, slg_est, nom, tel, ddd, mail, cnpj, cpf, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo)
+(id_cli, slg_est, nom, tel, ddd, mail, cnpj, cpf, rua, nro_ende, compl, cep, bairr, cid, dat_atl, flg_ativo,nom_est_inter,nom_pais  )
 VALUES
-(@id_cli, @slg_est, @nom, @tel, @ddd, @mail, @cnpj, @cpf, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo)
+(@id_cli, @slg_est, @nom, @tel, @ddd, @mail, @cnpj, @cpf, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @dat_atl, @flg_ativo,@nom_est_inter,@nom_pais )
 END
 END TRY
 

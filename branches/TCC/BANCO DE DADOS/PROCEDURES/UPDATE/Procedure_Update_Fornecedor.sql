@@ -18,7 +18,10 @@ CREATE PROCEDURE sp_update_fornecedor
 @cid		        VARCHAR(50),
 @cnpj		        VARCHAR(15),
 @dat_alt			DATETIME,
-@flg_ativo			BIT
+@flg_ativo			BIT,
+@nom_est_inter		VARCHAR(50),
+@nom_pais			VARCHAR(50)
+
 AS
 
 BEGIN TRY
@@ -43,7 +46,9 @@ bairr      = @bairr,
 cid        = @cid, 
 cnpj       = @cnpj, 
 dat_alt    = @dat_alt, 
-flg_ativo  = @flg_ativo
+flg_ativo  = @flg_ativo,
+nom_est_inter=@nom_est_inter,
+nom_pais=@nom_pais
 
 WHERE id_forn = @id_forn
 
