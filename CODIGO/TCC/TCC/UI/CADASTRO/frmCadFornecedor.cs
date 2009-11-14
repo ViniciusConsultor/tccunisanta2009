@@ -34,9 +34,9 @@ namespace TCC.UI
             rEstado regraEstado = new rEstado();
             try
             {
-                this.cboUf.DisplayMember = "slg_est";
-                this.cboUf.ValueMember = "Estado";
-                this.cboUf.DataSource = regraEstado.BuscaEstado();
+                this.cboEstado.DisplayMember = "slg_est";
+                this.cboEstado.ValueMember = "Estado";
+                this.cboEstado.DataSource = regraEstado.BuscaEstado();
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace TCC.UI
                 model.Complemento = this.txtComplemento.Text;
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                model.SlgEstado = this.cboUf.GetItemText(this.cboUf.SelectedItem);
+                model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
                 model.NomeFornecedor = this.txtNomeFornecedor.Text;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
