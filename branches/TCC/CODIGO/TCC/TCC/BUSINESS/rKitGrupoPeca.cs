@@ -195,6 +195,31 @@ namespace TCC.BUSINESS
             return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_kit", "kitgrupopeca"));
         }
 
+        /// <summary>
+        /// Este método é utilizado para preencher o TreeView
+        /// </summary>
+        /// <param name="parametro">ID_kit, NÃO utilizar o id_kit_real</param>
+        /// <returns></returns>
+        public DataTable BuscaKitGrupoPecaTree(int parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@id_kit", parametro);
+                return base.BuscaDados("sp_busca_tree_kitgrupopeca", param);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
             base.Insere(model);

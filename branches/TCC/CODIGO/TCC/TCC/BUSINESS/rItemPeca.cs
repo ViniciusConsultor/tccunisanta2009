@@ -34,6 +34,30 @@ namespace TCC.BUSINESS
             }
         }
 
+        /// <summary>
+        /// Este método é utilizado no Tree View "ResumoOrdemProdução"
+        /// </summary>
+        /// <param name="parametro">ID_item</param>
+        /// <returns></returns>
+        public DataTable BuscaItemPecaTree(int parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@id_item", parametro);
+                return base.BuscaDados("sp_busca_tree_itempeca", param);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
         public int BuscaIdMaximo()
         {
             try
