@@ -291,6 +291,10 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Cliente.EmailClienteVazioException();
                 }
+                else if (string.IsNullOrEmpty(txtPais.Text) == true && string.IsNullOrEmpty(cpf) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.paisVazioException();
+                }
             }
             catch (Exception ex)
             {
