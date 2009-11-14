@@ -186,6 +186,10 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário o campo Codigo Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
+            catch (BUSINESS.Exceptions.Fornecedor.paisVazioException)
+            {
+                MessageBox.Show("É Necessário Prencher o campo Pais", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
             catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
             {
                 MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -194,6 +198,7 @@ namespace TCC.UI
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
+
             finally
             {
                 regra = null;
@@ -225,6 +230,10 @@ namespace TCC.UI
                 else if (string.IsNullOrEmpty(cnpj) == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.CnpjVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtPais.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.paisVazioException();
                 }
                 else
                 {
