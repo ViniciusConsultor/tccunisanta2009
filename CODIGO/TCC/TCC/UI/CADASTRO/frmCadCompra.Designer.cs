@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompra));
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.lblObservacao = new System.Windows.Forms.Label();
@@ -86,7 +87,7 @@
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(192, 72);
-            this.txtObservacao.TabIndex = 10;
+            this.txtObservacao.TabIndex = 3;
             // 
             // lblVlCompra
             // 
@@ -113,16 +114,16 @@
             this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(192, 20);
-            this.txtNotaFiscal.TabIndex = 7;
+            this.txtNotaFiscal.TabIndex = 1;
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(6, 46);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -134,7 +135,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(6, 128);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 13;
+            this.btnVoltar.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -146,7 +147,7 @@
             this.btnBuscaFornecedor.Location = new System.Drawing.Point(456, 140);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscaFornecedor.TabIndex = 1;
+            this.btnBuscaFornecedor.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
@@ -170,7 +171,7 @@
             this.dgPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPeca.ShowEditingIcon = false;
             this.dgPeca.Size = new System.Drawing.Size(422, 140);
-            this.dgPeca.TabIndex = 1;
+            this.dgPeca.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.dgPeca, "Apertar Ctrl para Selecionar mais de um item");
             // 
             // btnBuscaAlteracaoDelecao
@@ -180,7 +181,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 18;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -192,7 +193,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(6, 5);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 11;
+            this.btnAceitar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -212,7 +213,7 @@
             this.txtVlCompra.MaxLength = 20;
             this.txtVlCompra.Name = "txtVlCompra";
             this.txtVlCompra.Size = new System.Drawing.Size(192, 20);
-            this.txtVlCompra.TabIndex = 20;
+            this.txtVlCompra.TabIndex = 2;
             this.txtVlCompra.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // frmCadCompra

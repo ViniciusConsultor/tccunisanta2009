@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPerfil));
             this.lblDescPerfil = new System.Windows.Forms.Label();
             this.txtDescPerfil = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -63,12 +64,12 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 30);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 3;
+            this.btnLimpar.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -80,7 +81,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 80);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 4;
+            this.btnVoltar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -97,7 +98,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(2, 4);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirma.TabIndex = 2;
+            this.btnConfirma.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -109,7 +110,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 54);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 29;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +121,7 @@
             this.btnRelacionarDepto.Location = new System.Drawing.Point(254, 159);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarDepto.TabIndex = 31;
+            this.btnRelacionarDepto.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
             this.btnRelacionarDepto.UseVisualStyleBackColor = true;
             // 

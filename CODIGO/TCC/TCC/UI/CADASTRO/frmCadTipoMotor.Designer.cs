@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadTipoMotor));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.txtNmTipoMotor = new System.Windows.Forms.TextBox();
@@ -47,19 +48,19 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 79);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 4;
+            this.btnVoltar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 28);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 3;
+            this.btnLimpar.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -72,7 +73,7 @@
             this.txtNmTipoMotor.Multiline = true;
             this.txtNmTipoMotor.Name = "txtNmTipoMotor";
             this.txtNmTipoMotor.Size = new System.Drawing.Size(227, 61);
-            this.txtNmTipoMotor.TabIndex = 1;
+            this.txtNmTipoMotor.TabIndex = 2;
             // 
             // lblNmTipoMotor
             // 
@@ -95,7 +96,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(2, 4);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 2;
+            this.btnAceitar.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -107,7 +108,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 53);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 29;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
