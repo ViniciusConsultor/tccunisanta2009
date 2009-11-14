@@ -22,7 +22,10 @@ namespace TCC.MODEL
         private int? ddd;
         private int? telefone;
         private string email;
+        private string nom_pais;
+        private string nom_erst_inter;
 
+       
         private string nomeTabela = "fornecedor";
 
         [ColunasBancoDados("slg_est", System.Data.SqlDbType.VarChar, false)]
@@ -129,6 +132,19 @@ namespace TCC.MODEL
             get { return email; }
             set { email = value; }
         }
+        [ColunasBancoDados("Nom_pais", System.Data.SqlDbType.VarChar, false)]
+        public string Nom_pais
+        {
+            get { return nom_pais; }
+            set { nom_pais = value; }
+        }
+        [ColunasBancoDados("Nom_erst_inter", System.Data.SqlDbType.VarChar, false)]
+        public string Nom_erst_inter
+        {
+            get { return nom_erst_inter; }
+            set { nom_erst_inter = value; }
+        }
+
 
         public override string getNomeTabela()
         {
