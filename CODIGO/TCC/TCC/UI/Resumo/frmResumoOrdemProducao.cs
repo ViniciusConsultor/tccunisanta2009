@@ -50,6 +50,8 @@ namespace TCC.UI.Resumo
         #endregion Form Load 
         #endregion Eventos
 
+        #region Metodos
+
         #region Cria Nos Tree View
         /// <summary>
         /// Cria os nós que apareceram no TreeView
@@ -82,7 +84,7 @@ namespace TCC.UI.Resumo
         }
         #endregion Cria Nos Tree View
 
-
+        #region Cria No Produto
         private void CriaNoProduto(int idProduto)
         {
             rProduto regraProduto = new rProduto();
@@ -130,7 +132,9 @@ namespace TCC.UI.Resumo
                 }
             }
         }
+        #endregion Cria No Produto
 
+        #region Cria No Familia Motor
         private TreeNode CriaNoFamiliaMotor(int idFamiliaMotor, int qtdeProduto)
         {
             DataTable dtFamiliaMotor = null;
@@ -165,7 +169,9 @@ namespace TCC.UI.Resumo
                 }
             }
         }
+        #endregion Cria No Familia Motor
 
+        #region Cria No Kit Grupo Peca
         private TreeNode CriaNoKitGrupoPeca(int idKitGrupoPeca, int qtdeProduto)
         {
             DataTable dtKitGrupoPeca = null;
@@ -198,7 +204,9 @@ namespace TCC.UI.Resumo
                 }
             }
         }
+        #endregion Cria No Kit Grupo Peca
 
+        #region Cria No Item Kit
         private TreeNode CriaNoItemKit(int idKit, int qtdeKit)
         {
             DataTable dtItem = null;
@@ -233,7 +241,9 @@ namespace TCC.UI.Resumo
                 }
             }
         }
+        #endregion Cria No Item Kit
 
+        #region Cria No Peca
         private TreeNode CriaNoPeca(int idItem, int qtdItem)
         {
             DataTable dtPeca = null;
@@ -265,7 +275,9 @@ namespace TCC.UI.Resumo
                 }
             }
         }
+        #endregion Cria No Peca
 
+        #region Cria Arquivo Ordem Producao
         /// <summary>
         /// Este método varre 4 niveis do treeView escrevendo no arquivo o conteúdo Text do nó.
         /// </summary>
@@ -333,5 +345,8 @@ namespace TCC.UI.Resumo
                 }
             }
         }
+        #endregion Cria Arquivo Ordem Producao
+        
+        #endregion Metodos
     }
 }

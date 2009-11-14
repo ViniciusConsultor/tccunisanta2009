@@ -23,7 +23,7 @@ namespace TCC.UI
         #endregion Atributos
 
         #region Propriedades
-        public static int _idPerfil = 1;
+        public static int _idPerfil;
 
         public static int IdPerfil
         {
