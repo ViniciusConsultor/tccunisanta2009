@@ -42,6 +42,7 @@ namespace TCC.UI
                 this.ValidaDadosNulos();
                 this.AbreTelaResumo();
                 this.Insere();
+                // Chama o Tree.
             }
             catch (BUSINESS.Exceptions.Venda.DataVaziaException)
             {

@@ -59,7 +59,7 @@ namespace TCC.UI.Resumo
                 dtVendaProduto = regraVendaProduto.BuscaProdutosVenda(this._idVenda);
                 foreach (DataRow linha in dtVendaProduto.Rows)
                 {
-
+                    this.CriaNoProduto(Convert.ToInt32(linha["id_prdto"]));
                 }
             }
             catch (Exception ex)
@@ -94,13 +94,13 @@ namespace TCC.UI.Resumo
                     noProduto = new TreeNode(linha["dsc_prdto"].ToString() + " - " + linha["qtd"].ToString());
                     if (linha["id_fam_motor"] != DBNull.Value)
                     {
-                        //noFamiliaMotor = this.CriaNoFamiliaMotor(Convert.ToInt32(linha["id_fam_motor"]));
+                        noFamiliaMotor = this.CriaNoFamiliaMotor(Convert.ToInt32(linha["id_fam_motor"]));
                         noProduto.Nodes.Add(noFamiliaMotor);
                     }
                     else if (linha["id_kit"] != DBNull.Value)
                     {
                         //noKit = this.CriaNoKit(Convert.ToInt32(linha["id_kit"]));
-                        noProduto.Nodes.Add(noKit);
+                        //noProduto.Nodes.Add(noKit);
                     }
 
                     this.tvOrdemProducao.Nodes.Add(noProduto);
@@ -124,14 +124,21 @@ namespace TCC.UI.Resumo
             }
         }
 
-        /*private TreeNode CriaNoFamiliaMotor(int idFamiliaMotor)
+        private TreeNode CriaNoFamiliaMotor(int idFamiliaMotor)
         {
             DataTable dtFamiliaMotor = null;
-            TreeNode noFamiliaMotor = null;
+            TreeNode noFamiliaMotor = null, noKitGrupoPeca = null;
             rFamiliaMotor regraFamiliaMotor = new rFamiliaMotor();
             try
             {
-                //dtFamiliaMotor = 
+                dtFamiliaMotor = regraFamiliaMotor.BuscaFamiliaMotorTree(idFamiliaMotor);
+                foreach (DataRow linhaFamMotor in dtFamiliaMotor.Rows)
+                {
+                    noFamiliaMotor = new TreeNode(linhaFamMotor["id_fam_motor_real"].ToString());
+                    noKitGrupoPeca = this.CriaNoKitGrupoPeca(Convert.ToInt32(linhaFamMotor["id_kit"]));
+                    noFamiliaMotor.Nodes.Add(noKitGrupoPeca);
+                }
+                return noFamiliaMotor;
             }
             catch (Exception ex)
             {
@@ -141,17 +148,108 @@ namespace TCC.UI.Resumo
             {
                 regraFamiliaMotor = null;
                 noFamiliaMotor = null;
+                noKitGrupoPeca = null;
                 if (dtFamiliaMotor != null)
                 {
                     dtFamiliaMotor.Dispose();
                     dtFamiliaMotor = null;
                 }
             }
-        }*/
+        }
 
-        /*private TreeNode CriaNoKit(int idKit)
+        private TreeNode CriaNoKitGrupoPeca(int idKitGrupoPeca)
         {
+            DataTable dtKitGrupoPeca = null;
+            TreeNode noKitGrupoPeca = null, noItem = null;
+            rKitGrupoPeca regraKitGrupoPeca = new rKitGrupoPeca();
+            try
+            {
+                dtKitGrupoPeca = regraKitGrupoPeca.BuscaKitGrupoPecaTree(idKitGrupoPeca);
+                foreach (DataRow linha in dtKitGrupoPeca.Rows)
+                {
+                    noKitGrupoPeca = new TreeNode(linha["id_kit_real"].ToString());
+                    noItem = this.CriaNoItemKit(Convert.ToInt32(linha["id_kit"]));
+                    noKitGrupoPeca.Nodes.Add(noItem);
+                }
+                return noKitGrupoPeca;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraKitGrupoPeca = null;
+                noKitGrupoPeca = null;
+                noItem = null;
+                if (dtKitGrupoPeca != null)
+                {
+                    dtKitGrupoPeca.Dispose();
+                    dtKitGrupoPeca = null;
+                }
+            }
+        }
 
-        }*/
+        private TreeNode CriaNoItemKit(int idKit)
+        {
+            DataTable dtItem = null;
+            TreeNode noItem = null, noPeca = null;
+            rItemKit regraItem = new rItemKit();
+            try
+            {
+                dtItem = regraItem.BuscaItemKitTree(idKit);
+                foreach (DataRow linha in dtItem.Rows)
+                {
+                    noItem = new TreeNode(linha["id_item_real"].ToString());
+                }
+                return noItem;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraItem = null;
+                noItem = null;
+                noPeca = null;
+                if (dtItem!= null)
+                {
+                    dtItem.Dispose();
+                    dtItem = null;
+                }
+            }
+        }
+
+        private TreeNode CriaNoPeca(int idItem)
+        {
+            DataTable dtPeca = null;
+            TreeNode noPeca = null;
+            rItemPeca regraPeca = new rItemPeca();
+            try
+            {
+                dtPeca = regraPeca.BuscaItemPecaTree(idItem);
+                foreach (DataRow linha in dtPeca.Rows)
+                {
+                    noPeca = new TreeNode(linha["id_peca_real"].ToString());
+                }
+                return noPeca;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraPeca = null;
+                noPeca = null;
+                if (dtPeca != null)
+                {
+                    dtPeca.Dispose();
+                    dtPeca = null;
+                }
+            }
+        }
+
     }
 }
