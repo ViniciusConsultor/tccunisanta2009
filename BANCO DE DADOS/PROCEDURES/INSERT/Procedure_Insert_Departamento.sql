@@ -5,6 +5,7 @@ GO
 
 CREATE PROCEDURE sp_insert_departamento
 @id_depto	 INT,
+@nom_depto	 VARCHAR(40),
 @dsc_depto   VARCHAR(30),
 @dat_atl     DATETIME,
 @flg_ativo   BIT
@@ -15,8 +16,8 @@ IF(@dsc_depto = '')
    RAISERROR('Informe o nome do departamento!',16,1)
 BEGIN
 --Insert na tabela departamento
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo)
-VALUES (@id_depto, @dsc_depto, @dat_atl, @flg_ativo)
+INSERT INTO Departamento (id_depto, nom_depto, dsc_depto, dat_atl, flg_ativo)
+VALUES (@id_depto, @nom_depto, @dsc_depto, @dat_atl, @flg_ativo)
 END
 END TRY
 

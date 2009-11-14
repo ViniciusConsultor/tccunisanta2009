@@ -2,8 +2,8 @@ USE Megatechdatabase
 go
 
 --fornecedor
-INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cep, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo,slg_est)VALUES (1,'Peças & Equips', 'Dom Bosco', 357,'Apartamento', 11070098, 33, 'Vila Nova', 56985880, 'Manaus', 'peçasequips@mail.com','123468579', GETDATE(), 1, 'am');
-INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cep, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo,slg_est)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de aneiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj');
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cep, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (1,'Peças & Equips', 'Dom Bosco', 357,'Apartamento', 11070098, 33, 'Vila Nova', 56985880, 'Manaus', 'peçasequips@mail.com','123468579', GETDATE(), 1, 'am', 'Brasil', NULL);
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cep, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de aneiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj', 'Brasil', NULL);
 
 --Numero Motor
 INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (1,'366','Default' , 1);

@@ -2,9 +2,9 @@ USE Megatechdatabase
 go
 
 --INSERT TABELA DEPARTAMENTO
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo, nom) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 1, 'Depto 1');
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo, nom) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 1, 'Depto 2');
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo, nom) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 1, 'Depto 3');
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 'Depto 01', 1);
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 'Depto 02', 1);
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 'Depto 03', 1);
 
 --INSERT TABELA TIPO_DE_USUÁRIO
 --INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
