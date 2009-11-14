@@ -9,6 +9,26 @@ namespace TCC.BUSINESS
 {
     class rProduto : ComandosSql
     {
+        public DataTable BuscaProdutosVenda(int idProduto, int idVenda)
+        {
+            SqlParameter[] param = new SqlParameter[2];
+            try
+            {
+                param[0] = new SqlParameter("@id_prdto", idProduto);
+                param[1] = new SqlParameter("@id_venda", idVenda);
+
+                return base.BuscaDados("sp_busca_tree_produto", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+
         public mProduto BuscaUnicoRegistro(int idProduto)
         {
             mProduto modelRetorno = new mProduto();
