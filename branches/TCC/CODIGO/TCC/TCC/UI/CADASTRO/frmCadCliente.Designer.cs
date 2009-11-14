@@ -58,12 +58,12 @@
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbxEscolhePaisEstado = new System.Windows.Forms.GroupBox();
+            this.lblNmPais = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.rdbOutros = new System.Windows.Forms.RadioButton();
             this.rdbBrasil = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblNmPais = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdbPessoaJuridica = new System.Windows.Forms.RadioButton();
             this.rdbPessoaFisica = new System.Windows.Forms.RadioButton();
@@ -93,7 +93,7 @@
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(399, 20);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 5;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblRua
@@ -112,7 +112,7 @@
             this.txtRua.MaxLength = 100;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(398, 20);
-            this.txtRua.TabIndex = 2;
+            this.txtRua.TabIndex = 12;
             // 
             // lblNumero
             // 
@@ -139,7 +139,7 @@
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(233, 20);
-            this.txtComplemento.TabIndex = 4;
+            this.txtComplemento.TabIndex = 14;
             // 
             // lblCep
             // 
@@ -175,7 +175,7 @@
             this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(296, 20);
-            this.txtBairro.TabIndex = 5;
+            this.txtBairro.TabIndex = 15;
             // 
             // txtCidade
             // 
@@ -184,7 +184,7 @@
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(362, 20);
-            this.txtCidade.TabIndex = 7;
+            this.txtCidade.TabIndex = 11;
             // 
             // lblEstado
             // 
@@ -212,7 +212,7 @@
             this.btnVolta.Location = new System.Drawing.Point(6, 129);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 19;
+            this.btnVolta.TabIndex = 23;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -242,7 +242,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(399, 20);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 17;
             // 
             // lblEmail
             // 
@@ -260,7 +260,7 @@
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(73, 20);
-            this.txtNumero.TabIndex = 3;
+            this.txtNumero.TabIndex = 13;
             this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtCep
@@ -270,7 +270,7 @@
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(63, 20);
-            this.txtCep.TabIndex = 6;
+            this.txtCep.TabIndex = 16;
             this.txtCep.ValidatingType = typeof(int);
             // 
             // toolTipLegenda
@@ -285,7 +285,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 88);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 18;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 22;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -297,7 +297,7 @@
             this.btnLimpa.Location = new System.Drawing.Point(6, 47);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 17;
+            this.btnLimpa.TabIndex = 21;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -309,7 +309,7 @@
             this.btnInsere.Location = new System.Drawing.Point(6, 6);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 16;
+            this.btnInsere.TabIndex = 20;
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
@@ -321,7 +321,7 @@
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(66, 20);
-            this.txtTelefone.TabIndex = 11;
+            this.txtTelefone.TabIndex = 19;
             this.txtTelefone.ValidatingType = typeof(int);
             // 
             // txtDDD
@@ -331,7 +331,7 @@
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
-            this.txtDDD.TabIndex = 10;
+            this.txtDDD.TabIndex = 18;
             this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // gbxEscolhePaisEstado
@@ -352,13 +352,22 @@
             this.gbxEscolhePaisEstado.TabIndex = 22;
             this.gbxEscolhePaisEstado.TabStop = false;
             // 
+            // lblNmPais
+            // 
+            this.lblNmPais.AutoSize = true;
+            this.lblNmPais.Location = new System.Drawing.Point(30, 60);
+            this.lblNmPais.Name = "lblNmPais";
+            this.lblNmPais.Size = new System.Drawing.Size(27, 13);
+            this.lblNmPais.TabIndex = 10;
+            this.lblNmPais.Text = "Pais";
+            // 
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEstado.Location = new System.Drawing.Point(273, 58);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(152, 20);
-            this.txtEstado.TabIndex = 9;
+            this.txtEstado.TabIndex = 10;
             // 
             // txtPais
             // 
@@ -374,7 +383,7 @@
             this.rdbOutros.Location = new System.Drawing.Point(41, 33);
             this.rdbOutros.Name = "rdbOutros";
             this.rdbOutros.Size = new System.Drawing.Size(56, 17);
-            this.rdbOutros.TabIndex = 0;
+            this.rdbOutros.TabIndex = 7;
             this.rdbOutros.Text = "Outros";
             this.rdbOutros.UseVisualStyleBackColor = true;
             // 
@@ -385,7 +394,7 @@
             this.rdbBrasil.Location = new System.Drawing.Point(41, 12);
             this.rdbBrasil.Name = "rdbBrasil";
             this.rdbBrasil.Size = new System.Drawing.Size(50, 17);
-            this.rdbBrasil.TabIndex = 0;
+            this.rdbBrasil.TabIndex = 6;
             this.rdbBrasil.TabStop = true;
             this.rdbBrasil.Text = "Brasil";
             this.rdbBrasil.UseVisualStyleBackColor = true;
@@ -398,15 +407,6 @@
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Província";
-            // 
-            // lblNmPais
-            // 
-            this.lblNmPais.AutoSize = true;
-            this.lblNmPais.Location = new System.Drawing.Point(30, 60);
-            this.lblNmPais.Name = "lblNmPais";
-            this.lblNmPais.Size = new System.Drawing.Size(27, 13);
-            this.lblNmPais.TabIndex = 10;
-            this.lblNmPais.Text = "Pais";
             // 
             // panel1
             // 
@@ -427,18 +427,18 @@
             this.rdbPessoaJuridica.Location = new System.Drawing.Point(275, 9);
             this.rdbPessoaJuridica.Name = "rdbPessoaJuridica";
             this.rdbPessoaJuridica.Size = new System.Drawing.Size(101, 17);
-            this.rdbPessoaJuridica.TabIndex = 13;
-            this.rdbPessoaJuridica.TabStop = true;
+            this.rdbPessoaJuridica.TabIndex = 2;
             this.rdbPessoaJuridica.Text = "Pessoa Jurídica";
             this.rdbPessoaJuridica.UseVisualStyleBackColor = true;
             // 
             // rdbPessoaFisica
             // 
             this.rdbPessoaFisica.AutoSize = true;
+            this.rdbPessoaFisica.Checked = true;
             this.rdbPessoaFisica.Location = new System.Drawing.Point(58, 9);
             this.rdbPessoaFisica.Name = "rdbPessoaFisica";
             this.rdbPessoaFisica.Size = new System.Drawing.Size(92, 17);
-            this.rdbPessoaFisica.TabIndex = 12;
+            this.rdbPessoaFisica.TabIndex = 1;
             this.rdbPessoaFisica.TabStop = true;
             this.rdbPessoaFisica.Text = "Pessoa Física";
             this.rdbPessoaFisica.UseVisualStyleBackColor = true;
@@ -450,7 +450,7 @@
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(115, 20);
-            this.txtCnpj.TabIndex = 15;
+            this.txtCnpj.TabIndex = 4;
             this.txtCnpj.ValidatingType = typeof(int);
             // 
             // txtCPF
@@ -460,7 +460,7 @@
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
-            this.txtCPF.TabIndex = 14;
+            this.txtCPF.TabIndex = 3;
             this.txtCPF.ValidatingType = typeof(int);
             // 
             // lblCnpj
