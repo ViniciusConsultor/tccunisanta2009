@@ -2,9 +2,9 @@ USE Megatechdatabase
 go
 
 --INSERT TABELA DEPARTAMENTO
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 1);
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 1);
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 1);
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo, nom) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 1, 'Depto 1');
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo, nom) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 1, 'Depto 2');
+INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, flg_ativo, nom) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 1, 'Depto 3');
 
 --INSERT TABELA TIPO_DE_USUÁRIO
 --INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
@@ -140,7 +140,6 @@ INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 4, GE
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 5, GETDATE(), 1);
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 6, GETDATE(), 1);
 
-
 --INSERT TABELA TIPOPRODUTO
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Motor', 1, GETDATE());
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Kit', 1, GETDATE());
@@ -152,4 +151,4 @@ INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALU
 INSERT INTO Colaborador (id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est) VALUES (1, 'Kaue', '1988-06-02', 'Av. Ana Costa', 516, 'Sem Complemento', '11060002', 'Gonzaga', 13, 'Santos', '38828678', '321452015120321', '145266987125012', 'M', 'kauepaulo@hotmail.com', GETDATE(), 1, 1, 1, 'SP');
 
 --INSERT TABELA CLIENTE 
-INSERT INTO cliente (id_cli, nom,tel,rua,nro_ende,compl,cep,bairr,cid,dat_atl,flg_ativo,slg_est,mail,ddd,cpf,cnpj) VALUES (1, 'julio','32322970','baralho',666,'castelo','11111111','Iron Forge','Storm Wind',GETDATE(),1,'SP','wow@mail.com',99,'37006765811',null )
+INSERT INTO cliente (id_cli, nom,tel,rua,nro_ende,compl,cep,bairr,cid,dat_atl,flg_ativo,slg_est,mail,ddd,cpf,cnpj, nom_pais) VALUES (1, 'julio','32322970','baralho',666,'castelo','11111111','Iron Forge','Storm Wind',GETDATE(),1,'SP','wow@mail.com',99,'37006765811',null, 'Brasil');
