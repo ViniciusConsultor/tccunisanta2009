@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_busca_tipoPeca_param
 @dsc_tipo_peca VARCHAR(500)
 AS
-SELECT id_tipo_peca, dsc 'Tipo Peça'
-FROM Tipodepeca
-WHERE dsc LIKE '%' + @dsc_tipo_peca  + '%'
+SELECT id_tipo_peca, dsc_tipo_peca
+FROM Tipopeca
+WHERE dsc_tipo_peca LIKE '%' + @dsc_tipo_peca  + '%'
 AND flg_ativo = 1

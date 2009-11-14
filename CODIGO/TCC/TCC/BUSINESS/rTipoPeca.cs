@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
@@ -33,8 +34,49 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mTipoPeca model)
+        {
+            if (this.ExisteTipoPeca(model.DscTipoPeca) == true)
+            {
+                throw new Exceptions.TipoPeca.TipoPecaExistenteException();
+            }
+        }
+
+        private bool ExisteTipoPeca(string dscTipoPeca)
+        {
+            SqlParameter param = null;
+            DataTable dt = null;
+            try
+            {
+                param = new SqlParameter("@dsc_tipo_peca", dscTipoPeca);
+                dt = base.BuscaDados("sp_existe_tipoPeca", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            this.ValidaDados((mTipoPeca)model);
             base.Insere(model);
         }
 

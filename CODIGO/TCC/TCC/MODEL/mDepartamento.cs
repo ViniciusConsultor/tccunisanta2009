@@ -11,6 +11,7 @@ namespace TCC.MODEL
         private string _dscDepto;
         private DateTime _datAtl;
         private bool _flgAtivo;
+        private string _nomeDepto;
         private string nomeTabela = "departamento";
 
         [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.VarChar, false)]
@@ -46,6 +47,13 @@ namespace TCC.MODEL
         {
             get { return _idDepto; }
             set { _idDepto = value; }
+        }
+
+        [ColunasBancoDados("nom", System.Data.SqlDbType.VarChar, false)]
+        public string NomeDepto
+        {
+            get { return _nomeDepto; }
+            set { _nomeDepto = value; }
         }
 
         public override string getNomeTabela()

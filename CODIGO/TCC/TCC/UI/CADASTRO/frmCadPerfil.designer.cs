@@ -55,7 +55,7 @@
             // 
             this.txtDescPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescPerfil.Location = new System.Drawing.Point(77, 57);
-            this.txtDescPerfil.MaxLength = 500;
+            this.txtDescPerfil.MaxLength = 50;
             this.txtDescPerfil.Multiline = true;
             this.txtDescPerfil.Name = "txtDescPerfil";
             this.txtDescPerfil.Size = new System.Drawing.Size(217, 80);

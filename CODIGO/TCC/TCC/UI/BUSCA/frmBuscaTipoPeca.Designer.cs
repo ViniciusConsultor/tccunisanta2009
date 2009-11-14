@@ -33,12 +33,12 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgTipoPeca = new System.Windows.Forms.DataGridView();
-            this.hIdTipoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hIdTipoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,23 +95,6 @@
             this.dgTipoPeca.Size = new System.Drawing.Size(260, 177);
             this.dgTipoPeca.TabIndex = 0;
             // 
-            // hIdTipoPeca
-            // 
-            this.hIdTipoPeca.DataPropertyName = "id_tipo_peca";
-            this.hIdTipoPeca.HeaderText = "IdTipoPeca";
-            this.hIdTipoPeca.Name = "hIdTipoPeca";
-            this.hIdTipoPeca.ReadOnly = true;
-            this.hIdTipoPeca.Visible = false;
-            this.hIdTipoPeca.Width = 85;
-            // 
-            // hDescricao
-            // 
-            this.hDescricao.DataPropertyName = "Tipo Peça";
-            this.hDescricao.HeaderText = "Descricao";
-            this.hDescricao.Name = "hDescricao";
-            this.hDescricao.ReadOnly = true;
-            this.hDescricao.Width = 78;
-            // 
             // btnFechar
             // 
             this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
@@ -152,6 +135,23 @@
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // hIdTipoPeca
+            // 
+            this.hIdTipoPeca.DataPropertyName = "id_tipo_peca";
+            this.hIdTipoPeca.HeaderText = "IdTipoPeca";
+            this.hIdTipoPeca.Name = "hIdTipoPeca";
+            this.hIdTipoPeca.ReadOnly = true;
+            this.hIdTipoPeca.Visible = false;
+            this.hIdTipoPeca.Width = 87;
+            // 
+            // hDescricao
+            // 
+            this.hDescricao.DataPropertyName = "dsc_tipo_peca";
+            this.hDescricao.HeaderText = "Descricao";
+            this.hDescricao.Name = "hDescricao";
+            this.hDescricao.ReadOnly = true;
+            this.hDescricao.Width = 80;
             // 
             // frmBuscaTipoPeca
             // 

@@ -15,12 +15,14 @@ namespace TCC.UI
     {
         #region Atributos
         mPerfil _modelPerfil;
-        #endregion
+        mUsuario _modelUsuario;
+        #endregion Atributos
 
         #region Construtor
-        public frmCadUsuario()
+        public frmCadUsuario(mUsuario modelUsu)
         {
             InitializeComponent();
+            this._modelUsuario = modelUsu;
         }
         #endregion Construtor
 
@@ -77,6 +79,7 @@ namespace TCC.UI
         #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             base.FechaTela(this);
         }
         #endregion btnVoltar Click
@@ -98,17 +101,18 @@ namespace TCC.UI
         /// </summary>
         private void Insere()
         {
-            rUsuario regraUsu = new rUsuario();
-            mUsuario modelUsu = new mUsuario();
             try
             {
                 this.ValidaDadosNulos();
                 //Insere o usuário
                 //----------------
-                modelUsu = this.PegaDadosTela();
-                regraUsu.ValidarInsere(modelUsu);
+                this.PegaDadosTela();
+                /*regraUsu.ValidarInsere(modelUsu);
+                this._idUsuario = modelUsu.IdUsuario;
                 base.LimpaDadosTela(this);
-                this.btnAceitar.Enabled = false;
+                this.btnAceitar.Enabled = false;*/
+                this.DialogResult = DialogResult.OK;
+                base.FechaTela(this);
             }
             catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
@@ -138,9 +142,6 @@ namespace TCC.UI
             }
             finally
             {
-                regraUsu = null;
-                modelUsu = null;
-
             }
         }
         #endregion Insere
@@ -164,18 +165,15 @@ namespace TCC.UI
         #endregion ValidaDadosNulos
 
         #region Pega Dados Tela
-        private mUsuario PegaDadosTela()
+        private void PegaDadosTela()
         {
-            mUsuario model = new mUsuario();
             rUsuario regra = new rUsuario();
-            model.IdUsuario = regra.BuscaMaxId();
-            model.Id_perfil = Convert.ToInt32(this._modelPerfil.IdPerfil);
-            model.Login = this.txtLogin.Text;
-            model.ObsUsuario = this.txtObservacao.Text;
-            model.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
-            model.FlgAtivo = true;
-            return model;
-            
+            this._modelUsuario.IdUsuario = regra.BuscaMaxId();
+            this._modelUsuario.Id_perfil = Convert.ToInt32(this._modelPerfil.IdPerfil);
+            this._modelUsuario.Login = this.txtLogin.Text;
+            this._modelUsuario.ObsUsuario = this.txtObservacao.Text;
+            this._modelUsuario.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
+            this._modelUsuario.FlgAtivo = true;
         }
         #endregion Pega Dados Tela
 
