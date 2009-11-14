@@ -13,3 +13,8 @@ C:\Documents and Settings\Administrador\Meus documentos\Facul\TCC\PROGRAMAÇÃO\
 C:\Documents and Settings\Administrador\Meus documentos\Facul\TCC\PROGRAMAÇÃO\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrador\Meus documentos\Facul\TCC\PROGRAMAÇÃO\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
 C:\Documents and Settings\Administrador\Meus documentos\Facul\TCC\PROGRAMAÇÃO\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb
+C:\Users\Kaue\DESENVOLVIMENTO\C#\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.dll
+C:\Users\Kaue\DESENVOLVIMENTO\C#\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.pdb
+C:\Users\Kaue\DESENVOLVIMENTO\C#\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\DESENVOLVIMENTO\C#\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
+C:\Users\Kaue\DESENVOLVIMENTO\C#\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb
