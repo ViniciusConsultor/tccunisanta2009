@@ -16,7 +16,8 @@ namespace TCC
             Application.SetCompatibleTextRenderingDefault(false);
             if (ConectaBanco.ConectaBancoDados() == true)
             {
-                Application.Run(new UI.frmInicial());
+                //Application.Run(new UI.frmInicial ());
+                Application.Run(new UI.frmLogin());
             }
             else
             {
