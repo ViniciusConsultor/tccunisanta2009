@@ -78,6 +78,7 @@
     <Compile Include="BUSINESS\Exceptions\Cliente\DDDClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\EmailClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\NomeClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\paisVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\TelefoneClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\CodigoEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\ComandosSql.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="BUSINESS\Exceptions\FamiliaMotor\TelaResumoCanceladaException.cs" />
     <Compile Include="BUSINESS\Exceptions\FornecedorDepto\DepartamentoNaoEscolhidoException.cs" />
     <Compile Include="BUSINESS\Exceptions\FornecedorDepto\FornecedorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\paisVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\GridPecaSemDadosException.cs" />

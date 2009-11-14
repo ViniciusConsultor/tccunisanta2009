@@ -19,7 +19,9 @@ CREATE PROCEDURE sp_update_cliente
 @bairr		     VARCHAR(20),
 @cid		     VARCHAR(50),
 @dat_atl		 DATETIME,
-@flg_ativo		 BIT
+@flg_ativo		 BIT,
+@nom_est_inter	 VARCHAR(50),
+@nom_pais		 VARCHAR(50)
 AS
 
 BEGIN TRY
@@ -45,7 +47,9 @@ cep       = @cep,
 bairr     = @bairr, 
 cid       = @cid, 
 dat_atl   = @dat_atl, 
-flg_ativo = @flg_ativo
+flg_ativo = @flg_ativo,
+nom_est_inter=@nom_est_inter,
+nom_pais  =@nom_pais
 
 WHERE id_cli = @id_cli
 

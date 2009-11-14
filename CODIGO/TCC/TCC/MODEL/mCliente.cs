@@ -23,6 +23,8 @@ namespace TCC.MODEL
         private bool flgAtivo;
         private string email;
         private int? ddd;
+        private string nom_pais;
+        private string nom_est_inter;
         private string nomeTabela = "cliente";
 
         [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit, false)]
@@ -137,6 +139,18 @@ namespace TCC.MODEL
         {
             get { return ddd; }
             set { ddd = value; }
+        }
+        [ColunasBancoDados("Nom_pais", System.Data.SqlDbType.VarChar, false)]
+        public string Nom_pais
+        {
+            get { return nom_pais; }
+            set { nom_pais = value; }
+        }
+        [ColunasBancoDados("Nom_est_inter", System.Data.SqlDbType.VarChar, false)]
+        public string Nom_est_inter
+        {
+            get { return nom_est_inter; }
+            set { nom_est_inter = value; }
         }
 
         public override string getNomeTabela()
