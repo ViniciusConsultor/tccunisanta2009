@@ -143,10 +143,16 @@ namespace TCC.UI
                     {
                         if (this.dgPeca.CurrentRow != null)
                         {
+                            //Varre o DataGrid linha por linha
+                            //--------------------------------
                             foreach (DataGridViewRow linha in this.dgPeca.Rows)
                             {
+                                //Verifica se a linha é nula
+                                //--------------------------
                                 if (linha.Cells[0].Value != null)
                                 {
+                                    //Converte o valor para Boolean e verifica se está checado
+                                    //--------------------------------------------------------
                                     if (Convert.ToBoolean(linha.Cells[0].Value) != false)
                                     {
                                         modelPeca = new mPeca();

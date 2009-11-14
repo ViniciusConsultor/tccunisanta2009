@@ -15,6 +15,7 @@ namespace TCC.UI
         #region Atributos
         List<mVendaProduto> _listaModelVendaProduto;
         mCliente _modelCliente;
+        mVenda _modelVenda;
         int _idProduto;
         #endregion Atributos
 
@@ -216,6 +217,13 @@ namespace TCC.UI
             this.RemoveProduto();
         }
         #endregion btnRemovePeca Click
+
+        #region btnBuscaAlteracaoDelecao Click
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion btnBuscaAlteracaoDelecao Click
 
         #endregion Eventos
 
@@ -772,5 +780,6 @@ namespace TCC.UI
         #endregion Abrir Ordem de Producao
 
         #endregion Metodos
+
     }
 }

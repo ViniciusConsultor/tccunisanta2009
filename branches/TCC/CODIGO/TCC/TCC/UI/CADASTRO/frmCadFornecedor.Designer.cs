@@ -318,6 +318,7 @@
             this.btnRelacionarDepto.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
             this.btnRelacionarDepto.UseVisualStyleBackColor = true;
+            this.btnRelacionarDepto.Click += new System.EventHandler(this.btnRelacionarDepto_Click);
             // 
             // txtCnpj
             // 
