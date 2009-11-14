@@ -101,6 +101,7 @@
     <Compile Include="BUSINESS\Exceptions\Colaborador\BairroVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CepVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CidadeVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CpfExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\CpfVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\DataNascimentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\DDDVazioExeption.cs" />
@@ -113,7 +114,8 @@
     <Compile Include="BUSINESS\Exceptions\Compra\CompraMotorPecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
-    <Compile Include="BUSINESS\Exceptions\Departamento\DescDepartamentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\FamiliaMotor\CodigoRealFamiliaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\FamiliaMotor\CodigoRealFamiliaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\FamiliaMotor\FamiliaSemKitsException.cs" />
@@ -128,6 +130,7 @@
     <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\GridPecaSemDadosException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\ItemSemPecaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\NomeItemExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\NomeItemVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\QuantidadeMenorZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\Item\QuantidadeVaziaException.cs" />
@@ -139,6 +142,7 @@
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\NomeKitVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\QuantidadeMenorZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\CidadeVazioException.cs" />
@@ -160,6 +164,7 @@
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoMotor\DescTipoMotorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoMotor\NumeroTipoMotorVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoPeca\TipoPecaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoPeca\tipoPecaVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Usinagem\CheckBoxPecaOKVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />

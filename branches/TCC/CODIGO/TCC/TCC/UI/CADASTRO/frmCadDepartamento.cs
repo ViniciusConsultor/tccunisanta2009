@@ -73,10 +73,15 @@ namespace TCC.UI
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
             }
-            catch (BUSINESS.Exceptions.Departamento.DescDepartamentoVazioException)
+            catch (BUSINESS.Exceptions.Departamento.NomeDepartamentoExistenteException)
             {
-                MessageBox.Show("É necessário preencher o campo Descrição do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDescricaoDepartamento.Focus();
+                MessageBox.Show("Nome do Departamento já cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNomeDepartamento.Focus();
+            }
+            catch (BUSINESS.Exceptions.Departamento.NomeDepartamentoVazioException)
+            {
+                MessageBox.Show("É necessário preencher o campo nome do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNomeDepartamento.Focus();
             }
             catch (Exception ex)
             {
@@ -101,6 +106,7 @@ namespace TCC.UI
                 model.DscDepto = this.txtDescricaoDepartamento.Text;
                 model.FlgAtivo = true;
                 model.DatAtl = DateTime.Now;
+                model.NomeDepto = this.txtNomeDepartamento.Text;
                 return model;
             }
             catch (Exception ex)
@@ -116,9 +122,9 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (string.IsNullOrEmpty(this.txtDescricaoDepartamento.Text) == true)
+            if (string.IsNullOrEmpty(this.txtNomeDepartamento.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Departamento.DescDepartamentoVazioException();
+                throw new BUSINESS.Exceptions.Departamento.NomeDepartamentoVazioException();
             }
         }
         #endregion Valida Dados Nulos 

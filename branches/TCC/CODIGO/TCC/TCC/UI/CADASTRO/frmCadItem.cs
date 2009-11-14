@@ -216,6 +216,11 @@ namespace TCC.UI
                 this.btnLimpa_Click(null, null);
                 this.btnConfirmar.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.Item.NomeItemExistenteException)
+            {
+                MessageBox.Show("Nome do item já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNmItem.Focus();
+            }
             catch (BUSINESS.Exceptions.Item.CodigoRealItemExistenteException)
             {
                 MessageBox.Show("Código do item já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);

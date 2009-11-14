@@ -12,3 +12,4 @@ AS
 SELECT COUNT(log_usu) as flg_existe
 FROM Usuario
 WHERE log_usu LIKE @usuario
+AND flg_ativo = 1

@@ -49,8 +49,52 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mColaborador model)
+        {
+            UTIL.Validacoes.ValidaMasked(model.Cep.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cep);
+            UTIL.Validacoes.ValidaMasked(model.Ddd.ToString(), TCC.BUSINESS.UTIL.TipoMasked.ddd);
+            UTIL.Validacoes.ValidaMasked(model.Telefone.ToString(), TCC.BUSINESS.UTIL.TipoMasked.tel);
+            if (this.ExisteCpfColaborador(model.Cpf) == true)
+            {
+                throw new Exceptions.Colaborador.CpfExistenteException();
+            }
+        }
+
+        private bool ExisteCpfColaborador(string cpf)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@cpf", cpf);
+                dt = base.BuscaDados("sp_existe_cpf_colaborador", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
+            }
+        }
+
         public override void ValidarInsere(ModelPai model)
         {
+            this.ValidaDados((mColaborador)model);
             base.Insere(model);
         }
 

@@ -47,8 +47,49 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mDepartamento model)
+        {
+            if (this.ExisteDepartamento(model.NomeDepto) == true)
+            {
+                throw new Exceptions.Departamento.NomeDepartamentoExistenteException();
+            }
+        }
+
+        private bool ExisteDepartamento(string nome)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@nom", nome);
+                dt = base.BuscaDados("sp_existe_departamento", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
+            }
+        }
+
         public override void ValidarInsere(ModelPai model)
         {
+            this.ValidaDados((mDepartamento)model);
             base.Insere(model);
         }
 

@@ -17,11 +17,6 @@ BEGIN
 		UPDATE colaborador SET flg_ativo = 0
 		WHERE id_usu=@id_usu
 	END
-  IF EXISTS(select 1 from usuarioperfil where id_usu=@id_usu)
-	BEGIN
-		UPDATE usuarioperfil SET flg_ativo = 0
-		WHERE id_usu=@id_usu
-	END  
 --realiza a exclusao logicamente
 UPDATE usuario SET flg_ativo = 0
 WHERE id_usu=@id_usu

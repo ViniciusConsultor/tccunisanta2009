@@ -5,5 +5,5 @@ IF OBJECT_ID('sp_busca_tipoPeca','P')IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_tipoPeca
 AS
-SELECT id_tipo_peca, dsc_tipo_peca as 'Tipo Peça' FROM Tipopeca
+SELECT id_tipo_peca, dsc_tipo_peca FROM Tipopeca
 WHERE flg_ativo = 1

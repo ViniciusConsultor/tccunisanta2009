@@ -45,7 +45,7 @@
             // 
             this.txtDescricaoDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescricaoDepartamento.Location = new System.Drawing.Point(62, 120);
-            this.txtDescricaoDepartamento.MaxLength = 100;
+            this.txtDescricaoDepartamento.MaxLength = 500;
             this.txtDescricaoDepartamento.Multiline = true;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
             this.txtDescricaoDepartamento.Size = new System.Drawing.Size(253, 60);
@@ -116,6 +116,7 @@
             // 
             this.txtNomeDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeDepartamento.Location = new System.Drawing.Point(62, 56);
+            this.txtNomeDepartamento.MaxLength = 25;
             this.txtNomeDepartamento.Name = "txtNomeDepartamento";
             this.txtNomeDepartamento.Size = new System.Drawing.Size(253, 20);
             this.txtNomeDepartamento.TabIndex = 1;

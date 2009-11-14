@@ -12,3 +12,4 @@ AS
 SELECT COUNT(id_peca_real) as flg_existe
 FROM Peca
 WHERE id_peca_real LIKE @id_peca_real
+AND flg_ativo = 1

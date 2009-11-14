@@ -8,7 +8,7 @@ namespace TCC.MODEL
     public class mColaborador : ModelPai
     {
         private int? idColab;
-        private int idUsuario;
+        private int? idUsuario;
         private int idDepto;
         private string nomeColab;
         private DateTime datNasc;
@@ -37,7 +37,7 @@ namespace TCC.MODEL
         }
        
         [ColunasBancoDados("id_usu", System.Data.SqlDbType.Int, false)]
-        public int IdUsuario
+        public int? IdUsuario
         {
             get { return idUsuario; }
             set { idUsuario = value; }

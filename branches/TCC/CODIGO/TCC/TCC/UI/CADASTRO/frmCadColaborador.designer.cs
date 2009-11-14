@@ -49,7 +49,6 @@
             this.lblRg = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.txtRg = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblSexo = new System.Windows.Forms.Label();
             this.CbSexo = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -71,6 +70,7 @@
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCdDepart
@@ -248,15 +248,6 @@
             this.txtRg.Size = new System.Drawing.Size(155, 20);
             this.txtRg.TabIndex = 13;
             // 
-            // txtCpf
-            // 
-            this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCpf.Location = new System.Drawing.Point(364, 244);
-            this.txtCpf.MaxLength = 15;
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(187, 20);
-            this.txtCpf.TabIndex = 14;
-            // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
@@ -379,7 +370,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(76, 20);
             this.txtNumero.TabIndex = 7;
-            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
+            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // txtCep
             // 
@@ -438,6 +429,7 @@
             this.btnCadUsuario.TabIndex = 18;
             this.toolTipLegenda.SetToolTip(this.btnCadUsuario, "Cadastrar Usuário");
             this.btnCadUsuario.UseVisualStyleBackColor = true;
+            this.btnCadUsuario.Click += new System.EventHandler(this.btnCadUsuario_Click);
             // 
             // txtDDD
             // 
@@ -467,6 +459,15 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "Cadastrar";
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(368, 241);
+            this.txtCpf.Mask = "000,000,000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.ValidatingType = typeof(int);
+            this.txtCpf.Size = new System.Drawing.Size(100, 20);
+            this.txtCpf.TabIndex = 35;
+            // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +476,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCadUsuario);
@@ -494,7 +496,6 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.CbSexo);
-            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCpf);
@@ -545,7 +546,6 @@
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.TextBox txtRg;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.ComboBox CbSexo;
         private System.Windows.Forms.Button btnConfirma;
@@ -567,5 +567,6 @@
         private System.Windows.Forms.Button btnCadUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
     }
 }
