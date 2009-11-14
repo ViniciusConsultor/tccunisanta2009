@@ -6,9 +6,9 @@ IF OBJECT_ID ('sp_busca_departamento_param', 'P') IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_busca_departamento_param
-@dsc_departamento VARCHAR(30)
+@nom VARCHAR(25)
 AS
-SELECT id_depto, dsc_depto 'Departamento'
+SELECT id_depto, nom, dsc_depto
 FROM Departamento
-WHERE dsc_depto LIKE '%' + @dsc_departamento + '%'
+WHERE nom LIKE '%' + @nom + '%'
 AND flg_ativo = 1

@@ -210,6 +210,13 @@ namespace TCC.UI
         }
         #endregion  txtMotorCompra TextChanged
 
+        #region txtDsMotor TextChanged
+        private void txtDsMotor_TextChanged(object sender, EventArgs e)
+        {
+            this.btnConfirma.Enabled = true;
+        }
+        #endregion txtDsMotor TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -680,11 +687,6 @@ namespace TCC.UI
             }
         }
         #endregion Valida Adicao Kit
-
-        private void txtDsMotor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         #endregion Metodos
     }

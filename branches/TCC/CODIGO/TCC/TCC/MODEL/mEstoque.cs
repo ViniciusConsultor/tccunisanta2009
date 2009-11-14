@@ -12,7 +12,7 @@ namespace TCC.MODEL
         private DateTime dat_alt;
         private bool flg_ativo;
         private int id_depto;
-        private bool flg_negativo;
+        private bool flag_negativo;
         private string nomeTabela = "estoque";
 
         [ColunasBancoDados("id_estoq", System.Data.SqlDbType.Int, true)]
@@ -50,11 +50,11 @@ namespace TCC.MODEL
             set { id_depto = value; }
         }
 
-        [ColunasBancoDados("flg_negativo", System.Data.SqlDbType.Bit, false)]
+        [ColunasBancoDados("flag_negativo", System.Data.SqlDbType.Bit, false)]
         public bool Flg_negativo
         {
-            get { return flg_negativo; }
-            set { flg_negativo = value; }
+            get { return flag_negativo; }
+            set { flag_negativo = value; }
         }
 
         public override string getNomeTabela()

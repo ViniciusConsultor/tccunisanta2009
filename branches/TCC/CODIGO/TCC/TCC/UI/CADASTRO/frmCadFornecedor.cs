@@ -12,6 +12,10 @@ namespace TCC.UI
 {
     public partial class frmCadFornecedor : FormPai
     {
+        #region Atributos
+        mFornecedor _modelFornecedor;
+        #endregion Atributos
+
         #region Construtor
         public frmCadFornecedor()
         {
@@ -247,6 +251,32 @@ namespace TCC.UI
         }
         #endregion Valida Dados Nulos 
 
+        /*#region Popula Tela Com Model Alteracao
+        /// <summary>
+        /// Popula a tela com o model construido pela tela de busca
+        /// </summary>
+        private void PopulaTelaComModelAlteracao()
+        {
+            if (this._modelFornecedor != null)
+            {
+                base.Alteracao = true;
+                this.txtBairro.Text = this._modelCliente.Bairro;
+                this.txtCep.Text = this._modelCliente.Cep.ToString();
+                this.txtCidade.Text = this._modelCliente.Cidade;
+                this.txtCnpj.Text = this._modelCliente.Cnpj.ToString();
+                this.txtCPF.Text = this._modelCliente.Cpf;
+                this.txtComplemento.Text = this._modelCliente.ComplementoEndereco;
+                this.txtDDD.Text = this._modelCliente.Ddd.ToString();
+                this.txtEmail.Text = this._modelCliente.Email;
+                this.txtNome.Text = this._modelCliente.NomeCliente;
+                this.txtNumero.Text = this._modelCliente.NumeroEndereco.ToString();
+                this.txtRua.Text = this._modelCliente.NomeRua;
+                this.txtTelefone.Text = this._modelCliente.TelefoneCliente.ToString();
+                this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelCliente.SlgEstado);
+            }
+        }
+        #endregion Popula Tela Com Model Alteracao*/
+
         #endregion Metodos
 
         #region Eventos
@@ -285,6 +315,16 @@ namespace TCC.UI
             this.btnInsere.Enabled = true;
         }
         #endregion txtNomeFornecedor TextChanged
+
+        #region btnRelacionarDepto Click
+        private void btnRelacionarDepto_Click(object sender, EventArgs e)
+        {
+            mFornecedor model = this.PegaDadosTela();
+            CADASTRO.frmCadfornecedorDepto obj = new TCC.UI.CADASTRO.frmCadfornecedorDepto(model.IdFornecedor, model.NomeFornecedor);
+            obj.ShowDialog();
+        }
+        #endregion btnRelacionarDepto Click
+
         #endregion Eventos
     }
 }
