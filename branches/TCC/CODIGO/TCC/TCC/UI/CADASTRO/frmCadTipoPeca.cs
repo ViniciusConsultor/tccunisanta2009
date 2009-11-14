@@ -114,6 +114,11 @@ namespace TCC.UI
                 this.LimparCampos();
                 this.btnAceitar.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.TipoPeca.TipoPecaExistenteException)
+            {
+                MessageBox.Show("tipo de Peça já cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDsTipoPeca.Focus();
+            }
             catch (BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption)
             {
                 MessageBox.Show("Preencher o campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);

@@ -61,21 +61,17 @@ namespace TCC.UI
         }
         #endregion btnVoltar Click
 
-       /* #region btnBuscaUsuario Click
-        private void btnBuscaUsuario_Click(object sender, EventArgs e)
+        #region btnCadUsuario Click
+        private void btnCadUsuario_Click(object sender, EventArgs e)
         {
-            _modelUsuario = new mUsuario();
-            frmBuscaUsuario buscarUsuario = new frmBuscaUsuario(_modelUsuario);
+            this._modelUsuario = new mUsuario();
+            frmCadUsuario telaUsuario = new frmCadUsuario(this._modelUsuario);
             try
             {
-                DialogResult resultado = buscarUsuario.ShowDialog();
+                DialogResult resultado = telaUsuario.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelUsuario = null;
-                }
-                else
-                {
-                    this.txtCdUsuario.Text = this._modelUsuario.Login;
                 }
             }
             catch (Exception ex)
@@ -84,10 +80,10 @@ namespace TCC.UI
             }
             finally
             {
-                buscarUsuario = null;
+
             }
         }
-        #endregion btnBuscaUsuario Click*/
+        #endregion btnCadUsuario Click
 
         #region btnBuscaDepartamento Click
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
@@ -196,26 +192,21 @@ namespace TCC.UI
                 }
                 model.Cidade = txtCidade.Text;
                 model.ComplEnd = txtComplemento.Text;
-                if (string.IsNullOrEmpty(txtCpf.Text) == true)
-                {
-                    model.Cpf = null;
-                }
-                else
-                {
+                string cpf = this.txtCpf.Text.Replace(".", string.Empty);
+                cpf = cpf.Replace("-", string.Empty);
                     model.Cpf = txtCpf.Text;
-                }
-                if (this.txtDataNasc.Modified == true)
-                {
-                    throw new BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException();
-                }
-                else
-                {
                     BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
                     model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
-                }
                 model.Estado = this.cbEstado.SelectedValue.ToString();
                 model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
-                model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
+                if (this._modelUsuario != null)
+                {
+                    model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
+                }
+                else
+                {
+                    model.IdUsuario = null;
+                }
                 model.NomeColab = txtNome.Text;
                 model.NomeRua = txtRua.Text;
                 if (string.IsNullOrEmpty(txtNumero.Text) == true)
@@ -227,14 +218,7 @@ namespace TCC.UI
                     model.NroEnd = Convert.ToInt32(txtNumero.Text);
                 }
                 model.Sexo = CbSexo.Text;
-                if (string.IsNullOrEmpty(this.txtRg.Text) == true)
-                {
-                    model.Rg = null;
-                }
-                else
-                {
-                    model.Rg = txtRg.Text;
-                }
+                model.Rg = txtRg.Text;
                 model.DatAtl = DateTime.Now;
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
@@ -285,19 +269,24 @@ namespace TCC.UI
         {
             try
             {
-                if (this._modelUsuario == null)
-                {
-                    throw new BUSINESS.Exceptions.CodigoUsuarioVazioExeception();
-                }
-                else if (this._modelDepartamento == null)
+                string cpf = this.txtCpf.Text.Replace(".", string.Empty);
+                cpf = cpf.Replace("-", string.Empty);
+                cpf = cpf.Replace(" ", string.Empty);
+                string cep = this.txtCep.Text.Replace("-", string.Empty);
+                cep = cep.Replace(" ", string.Empty);
+                string telefone = this.txtTelefone.Text.Replace("-", string.Empty);
+                telefone = telefone.Replace(" ", string.Empty);
+                string data = this.txtDataNasc.Text.Replace("/", string.Empty);
+                data = data.Replace(" ", string.Empty);
+                if (this._modelDepartamento == null)
                 {
                     throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtDataNasc.Text) == true)
+                else if (string.IsNullOrEmpty(data) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtCep.Text) == true)
+                else if (string.IsNullOrEmpty(cep) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
                 }
@@ -309,7 +298,7 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.DDDVazioExeption();
                 }
-                else if (this.txtTelefone.Modified == false)
+                else if (string.IsNullOrEmpty(telefone) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.TelefoneVazioExeption();
                 }
@@ -333,7 +322,7 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.RgVazioExeption();
                 }
-                else if (string.IsNullOrEmpty(this.txtCpf.Text) == true)
+                else if (string.IsNullOrEmpty(cpf) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CpfVazioExeption();
                 }
@@ -387,12 +376,20 @@ namespace TCC.UI
         private void Insere()
         {
             mColaborador modelColaborador = new mColaborador();
-            BUSINESS.rColaborador regraColaborador = new BUSINESS.rColaborador();
+            rColaborador regraColaborador = new rColaborador();
+            rUsuario regraUsuario = null;
             try
             {
+                this.ValidaDadosNulos();
                 if (base.Alteracao == false)
                 {
-                    this.ValidaDadosNulos();
+                    //Verifica se existe usuario para associar
+                    //----------------------------------------
+                    if (this._modelUsuario != null)
+                    {
+                        regraUsuario = new rUsuario();
+                        regraUsuario.ValidarInsere(this._modelUsuario);
+                    }
                     modelColaborador = this.PegaDadosTela();
                     if (modelColaborador != null)
                     {
@@ -407,11 +404,6 @@ namespace TCC.UI
                 }
                 this.btnApaga_Click(null, null);
                 this.btnConfirma.Enabled = false;
-            }
-            catch (BUSINESS.Exceptions.CodigoUsuarioVazioExeception)
-            {
-                MessageBox.Show("Buscar Codigo Usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                //this.txtCdUsuario.Focus();
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
@@ -478,6 +470,15 @@ namespace TCC.UI
                 MessageBox.Show("Preencher campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCpf.Focus();
             }
+            catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Colaborador.CpfExistenteException)
+            {
+                MessageBox.Show("CPF já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCpf.Focus();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -485,6 +486,8 @@ namespace TCC.UI
             finally
             {
                 modelColaborador = null;
+                regraColaborador = null;
+                regraUsuario = null;
             }
         }
         #endregion Insere

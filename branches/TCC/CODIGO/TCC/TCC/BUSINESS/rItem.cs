@@ -115,17 +115,21 @@ namespace TCC.BUSINESS
             return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_item", "Item"));
         }
 
-        private void ValidaDados(mItem model)
+        private bool ExisteItemReal(string ItemReal)
         {
             SqlParameter param = null;
             DataTable dtQuery = null;
             try
             {
-                param = new SqlParameter("@id_item_real", model.Id_item_real);
-                dtQuery = base.BuscaDados("sp_existe_item", param);
+                param = new SqlParameter("@id_item_real", ItemReal);
+                dtQuery = base.BuscaDados("sp_existe_itemReal", param);
                 if (Convert.ToInt32(dtQuery.Rows[0]["flg_existe"]) > 0)
                 {
-                    throw new Exceptions.Item.CodigoRealItemExistenteException();
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -140,6 +144,50 @@ namespace TCC.BUSINESS
                     dtQuery = null;
                 }
                 param = null;
+            }
+        }
+
+        private bool ExisteItemNome(string NomeItem)
+        {
+            SqlParameter param = null;
+            DataTable dtQuery = null;
+            try
+            {
+                param = new SqlParameter("@nom", NomeItem);
+                dtQuery = base.BuscaDados("sp_existe_itemNome", param);
+                if (Convert.ToInt32(dtQuery.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtQuery != null)
+                {
+                    dtQuery.Dispose();
+                    dtQuery = null;
+                }
+                param = null;
+            }
+        }
+
+        private void ValidaDados(mItem model)
+        {
+            if (this.ExisteItemReal(model.Id_item_real) == true)
+            {
+                throw new Exceptions.Item.CodigoRealItemExistenteException();
+            }
+            else if (this.ExisteItemNome(model.Nom) == true)
+            {
+                throw new Exceptions.Item.NomeItemExistenteException();
             }
         }
 

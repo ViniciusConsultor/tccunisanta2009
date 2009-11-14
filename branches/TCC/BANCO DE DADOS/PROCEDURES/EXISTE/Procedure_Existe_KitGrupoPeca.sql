@@ -12,3 +12,4 @@ AS
 SELECT COUNT(id_kit_real) as flg_existe
 FROM kitgrupopeca
 WHERE id_kit_real LIKE @id_kit_real
+AND flg_ativo = 1

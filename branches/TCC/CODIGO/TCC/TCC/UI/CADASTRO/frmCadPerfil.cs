@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.MODEL;
@@ -83,6 +82,10 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
             {
                 MessageBox.Show("É necessário informar a descrição do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Perfil.DescPerfilExistenteException)
+            {
+                MessageBox.Show("Descrição do Perfil já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
