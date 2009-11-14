@@ -43,20 +43,29 @@ namespace TCC.UI
                 else
                 {
                     dt = regraUsuario.BuscaUsuario(txtLogin.Text);
-                    idPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
-                    if (idPerfil == 0)
+                    // Valida usuario ativo
+                    if (dt.Rows.Count == 0)
                     {
-                        MessageBox.Show("Usuário não possui um perfil!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Usuário inativo!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        frmInicial.IdPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
-                        frmInicial inicial = new frmInicial();
-                        this.Visible = false;
-                        DialogResult resultado = inicial.ShowDialog();
-                        if (resultado == DialogResult.Cancel)
+                        idPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
+                        // Valida perifl do usuario
+                        if (idPerfil == 0)
                         {
-                            Application.Exit();
+                            MessageBox.Show("Usuário não possui um perfil!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            frmInicial.IdPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
+                            frmInicial inicial = new frmInicial();
+                            this.Visible = false;
+                            DialogResult resultado = inicial.ShowDialog();
+                            if (resultado == DialogResult.Cancel)
+                            {
+                                Application.Exit();
+                            }
                         }
                     }
                 }
