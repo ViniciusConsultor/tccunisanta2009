@@ -37,12 +37,13 @@ namespace TCC.UI
         #region btnConfirma Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
+            mVenda modelVenda = null;
             try
             {
                 this.ValidaDadosNulos();
                 this.AbreTelaResumo();
-                this.Insere();
-                // Chama o Tree.
+                this.Insere(ref modelVenda);
+                this.AbrirOrdemProducao(ref modelVenda);
             }
             catch (BUSINESS.Exceptions.Venda.DataVaziaException)
             {
@@ -74,6 +75,10 @@ namespace TCC.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                modelVenda = null;
             }
         }
         #endregion btnConfirma Click
@@ -313,9 +318,8 @@ namespace TCC.UI
         /// <summary>
         /// Insere os dados que estão no model
         /// </summary>
-        private void Insere()
+        private void Insere(ref mVenda modelVenda)
         {
-            mVenda modelVenda = new mVenda();
             rVenda regraVenda = new rVenda();
             rVendaProduto regraVendaPedido = new rVendaProduto();
             try
@@ -335,7 +339,6 @@ namespace TCC.UI
             }
             finally
             {
-                modelVenda = null;
                 regraVenda = null;
             }
         }
@@ -741,22 +744,32 @@ namespace TCC.UI
         }
         #endregion Abre Tela Resumo
 
-        private void AbrirOrdemProducao()
+        #region Abrir Ordem de Producao
+        /// <summary>
+        /// Abre a tela que cria a ordem de produção
+        /// </summary>
+        private void AbrirOrdemProducao(ref mVenda modelVenda)
         {
-
+            Resumo.frmResumoOrdemProducao resumoOrdemProducao = new TCC.UI.Resumo.frmResumoOrdemProducao(modelVenda.IdVenda);
             try
             {
-
+                DialogResult resultado;
+                resultado = MessageBox.Show("Deseja criar uma orde mde produção?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    resumoOrdemProducao.ShowDialog();
+                }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                throw e;
             }
             finally
             {
-
+                resumoOrdemProducao = null;
             }
         }
+        #endregion Abrir Ordem de Producao
 
         #endregion Metodos
     }
