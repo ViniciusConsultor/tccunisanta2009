@@ -5,6 +5,7 @@ GO
 
 CREATE PROCEDURE sp_update_departamento
 @id_depto          INT,
+@nom			   VARCHAR(25),
 @dsc_depto         VARCHAR(30),
 @dat_atl           DATETIME,
 @flg_ativo         BIT
@@ -18,6 +19,7 @@ BEGIN
 --Update na tabela departamento
 UPDATE Departamento SET
 
+nom			 = @nom,
 dsc_depto    = @dsc_depto, 
 dat_atl      = @dat_atl, 
 flg_ativo    = @flg_ativo

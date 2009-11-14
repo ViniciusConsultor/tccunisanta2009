@@ -47,6 +47,7 @@
             this.btnAdicionaProdutos = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnRemovePeca = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.txtValorVenda = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.txtQtdProdutos = new Controles.MegaTextBox.MegaTextBox(this.components);
@@ -137,7 +138,7 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(7, 89);
+            this.btnVolta.Location = new System.Drawing.Point(7, 132);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
             this.btnVolta.TabIndex = 16;
@@ -201,6 +202,18 @@
             this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
             this.btnRemovePeca.UseVisualStyleBackColor = true;
             this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
+            // 
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 89);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 19;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // txtValorVenda
             // 
@@ -324,7 +337,7 @@
             this.hDescricao.HeaderText = "Descrição";
             this.hDescricao.Name = "hDescricao";
             this.hDescricao.ReadOnly = true;
-            this.hDescricao.Width = 80;
+            this.hDescricao.Width = 78;
             // 
             // hQtd
             // 
@@ -332,7 +345,7 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
+            this.hQtd.Width = 85;
             // 
             // txtBuscaFiltro
             // 
@@ -412,6 +425,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.gbBuscaItem);
             this.Controls.Add(this.txtValorVenda);
             this.Controls.Add(this.txtDataVenda);
@@ -469,5 +483,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private Controles.MegaTextBox.MegaTextBox txtQtdProdutos;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }
