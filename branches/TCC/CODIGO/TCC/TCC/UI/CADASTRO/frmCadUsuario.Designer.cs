@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsuario));
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
@@ -85,7 +86,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 28);
             this.btnLimpar.Name = "btnLimpar";
@@ -102,7 +103,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 78);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 7;
+            this.btnVoltar.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -183,7 +184,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 53);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 30;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 

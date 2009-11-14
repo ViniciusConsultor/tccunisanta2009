@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFamiliaMotor));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDsMotor = new System.Windows.Forms.Label();
             this.txtDsMotor = new System.Windows.Forms.TextBox();
             this.btnLimpa = new System.Windows.Forms.Button();
@@ -95,12 +96,12 @@
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(7, 47);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 8;
+            this.btnLimpa.TabIndex = 14;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -112,7 +113,7 @@
             this.btnVolta.Location = new System.Drawing.Point(7, 129);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 9;
+            this.btnVolta.TabIndex = 16;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -129,7 +130,7 @@
             this.btnAdicionaKit.Location = new System.Drawing.Point(36, 172);
             this.btnAdicionaKit.Name = "btnAdicionaKit";
             this.btnAdicionaKit.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaKit.TabIndex = 9;
+            this.btnAdicionaKit.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaKit, "Adicionar Kits");
             this.btnAdicionaKit.UseVisualStyleBackColor = true;
             this.btnAdicionaKit.Click += new System.EventHandler(this.btnAdicionaKit_Click);
@@ -141,7 +142,7 @@
             this.btnBuscarKitDtGrid.Location = new System.Drawing.Point(439, 23);
             this.btnBuscarKitDtGrid.Name = "btnBuscarKitDtGrid";
             this.btnBuscarKitDtGrid.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscarKitDtGrid.TabIndex = 7;
+            this.btnBuscarKitDtGrid.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnBuscarKitDtGrid, "Buscar Kits");
             this.btnBuscarKitDtGrid.UseVisualStyleBackColor = true;
             this.btnBuscarKitDtGrid.Click += new System.EventHandler(this.btnBuscarKitDtGrid_Click);
@@ -177,7 +178,7 @@
             this.btnBuscaTipoMotor.Location = new System.Drawing.Point(465, 37);
             this.btnBuscaTipoMotor.Name = "btnBuscaTipoMotor";
             this.btnBuscaTipoMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaTipoMotor.TabIndex = 4;
+            this.btnBuscaTipoMotor.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnBuscaTipoMotor, "Buscar Tipo do Motor");
             this.btnBuscaTipoMotor.UseVisualStyleBackColor = true;
             this.btnBuscaTipoMotor.Click += new System.EventHandler(this.btnBuscaTipoMotor_Click);
@@ -189,7 +190,7 @@
             this.btnRemoveKit.Location = new System.Drawing.Point(98, 172);
             this.btnRemoveKit.Name = "btnRemoveKit";
             this.btnRemoveKit.Size = new System.Drawing.Size(40, 35);
-            this.btnRemoveKit.TabIndex = 10;
+            this.btnRemoveKit.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnRemoveKit, "Remover Kits");
             this.btnRemoveKit.UseVisualStyleBackColor = true;
             // 
@@ -200,7 +201,7 @@
             this.btnBuscaNumMotor.Location = new System.Drawing.Point(466, 8);
             this.btnBuscaNumMotor.Name = "btnBuscaNumMotor";
             this.btnBuscaNumMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaNumMotor.TabIndex = 37;
+            this.btnBuscaNumMotor.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnBuscaNumMotor, "Buscar Número do Motor");
             this.btnBuscaNumMotor.UseVisualStyleBackColor = true;
             this.btnBuscaNumMotor.Click += new System.EventHandler(this.btnBuscaNumMotor_Click);
@@ -212,7 +213,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(7, 4);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 7;
+            this.btnConfirma.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -224,7 +225,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 26;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 15;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -255,7 +256,7 @@
             this.txtQtdKit.MaxLength = 2;
             this.txtQtdKit.Name = "txtQtdKit";
             this.txtQtdKit.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdKit.TabIndex = 21;
+            this.txtQtdKit.TabIndex = 10;
             this.txtQtdKit.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // dgKits
@@ -265,40 +266,40 @@
             this.dgKits.AllowUserToResizeColumns = false;
             this.dgKits.AllowUserToResizeRows = false;
             this.dgKits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgKits.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgKits.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgKits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hIdKit,
             this.hCodigo,
             this.hNome,
             this.hQtd});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgKits.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgKits.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgKits.Location = new System.Drawing.Point(171, 52);
             this.dgKits.MultiSelect = false;
             this.dgKits.Name = "dgKits";
             this.dgKits.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgKits.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgKits.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgKits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKits.ShowEditingIcon = false;
             this.dgKits.Size = new System.Drawing.Size(295, 177);
@@ -320,7 +321,7 @@
             this.hCodigo.HeaderText = "Codigo";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
+            this.hCodigo.Width = 65;
             // 
             // hNome
             // 
@@ -328,7 +329,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
+            this.hNome.Width = 60;
             // 
             // hQtd
             // 
@@ -336,7 +337,7 @@
             this.hQtd.HeaderText = "Qtd";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 47;
+            this.hQtd.Width = 49;
             // 
             // txtBuscaFiltro
             // 
@@ -345,7 +346,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(262, 20);
-            this.txtBuscaFiltro.TabIndex = 6;
+            this.txtBuscaFiltro.TabIndex = 8;
             // 
             // lblQtdKit
             // 
@@ -371,7 +372,7 @@
             this.rdbFiltroNome.Location = new System.Drawing.Point(234, 9);
             this.rdbFiltroNome.Name = "rdbFiltroNome";
             this.rdbFiltroNome.Size = new System.Drawing.Size(53, 17);
-            this.rdbFiltroNome.TabIndex = 20;
+            this.rdbFiltroNome.TabIndex = 7;
             this.rdbFiltroNome.Text = "Nome";
             this.rdbFiltroNome.UseVisualStyleBackColor = true;
             // 
@@ -382,7 +383,7 @@
             this.rdbFiltroCodigo.Location = new System.Drawing.Point(170, 9);
             this.rdbFiltroCodigo.Name = "rdbFiltroCodigo";
             this.rdbFiltroCodigo.Size = new System.Drawing.Size(58, 17);
-            this.rdbFiltroCodigo.TabIndex = 19;
+            this.rdbFiltroCodigo.TabIndex = 6;
             this.rdbFiltroCodigo.TabStop = true;
             this.rdbFiltroCodigo.Text = "Codigo";
             this.rdbFiltroCodigo.UseVisualStyleBackColor = true;

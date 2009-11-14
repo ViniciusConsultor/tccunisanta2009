@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerfilMenu));
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,7 +88,7 @@
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
-            this.dgItems.TabIndex = 24;
+            this.dgItems.TabIndex = 4;
             // 
             // CdItem
             // 
@@ -110,7 +111,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 23;
+            this.txtBuscaFiltro.TabIndex = 2;
             // 
             // btnBuscarPerfilDtGrid
             // 
@@ -119,7 +120,7 @@
             this.btnBuscarPerfilDtGrid.Location = new System.Drawing.Point(269, 83);
             this.btnBuscarPerfilDtGrid.Name = "btnBuscarPerfilDtGrid";
             this.btnBuscarPerfilDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPerfilDtGrid.TabIndex = 22;
+            this.btnBuscarPerfilDtGrid.TabIndex = 3;
             this.btnBuscarPerfilDtGrid.UseVisualStyleBackColor = true;
             // 
             // btnVolta
@@ -129,17 +130,17 @@
             this.btnVolta.Location = new System.Drawing.Point(0, 107);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
-            this.btnVolta.TabIndex = 27;
+            this.btnVolta.TabIndex = 8;
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(0, 36);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
-            this.btnLimpa.TabIndex = 26;
+            this.btnLimpa.TabIndex = 6;
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
             // btnConfirma
@@ -149,7 +150,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(0, 2);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
-            this.btnConfirma.TabIndex = 25;
+            this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // lblCdPerfil
@@ -166,7 +167,7 @@
             this.textBox1.Location = new System.Drawing.Point(91, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 29;
+            this.textBox1.TabIndex = 1;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -175,7 +176,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(0, 72);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 30;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // frmPerfilMenu

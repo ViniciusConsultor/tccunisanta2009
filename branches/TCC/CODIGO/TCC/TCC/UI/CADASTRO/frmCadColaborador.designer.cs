@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadColaborador));
             this.lblCdDepart = new System.Windows.Forms.Label();
             this.lblNmColaborador = new System.Windows.Forms.Label();
             this.lblDtNasc = new System.Windows.Forms.Label();
@@ -153,7 +154,7 @@
             this.txtCdDepartamento.Name = "txtCdDepartamento";
             this.txtCdDepartamento.ReadOnly = true;
             this.txtCdDepartamento.Size = new System.Drawing.Size(120, 20);
-            this.txtCdDepartamento.TabIndex = 3;
+            this.txtCdDepartamento.TabIndex = 16;
             this.txtCdDepartamento.TabStop = false;
             // 
             // txtNome
@@ -163,7 +164,7 @@
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(404, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtRua
@@ -173,7 +174,7 @@
             this.txtRua.MaxLength = 100;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(404, 20);
-            this.txtRua.TabIndex = 8;
+            this.txtRua.TabIndex = 6;
             // 
             // txtComplemento
             // 
@@ -182,7 +183,7 @@
             this.txtComplemento.MaxLength = 25;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(247, 20);
-            this.txtComplemento.TabIndex = 10;
+            this.txtComplemento.TabIndex = 8;
             // 
             // txtBairro
             // 
@@ -191,7 +192,7 @@
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(291, 20);
-            this.txtBairro.TabIndex = 11;
+            this.txtBairro.TabIndex = 9;
             // 
             // lblCidade
             // 
@@ -209,7 +210,7 @@
             this.txtCidade.MaxLength = 40;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(291, 20);
-            this.txtCidade.TabIndex = 13;
+            this.txtCidade.TabIndex = 11;
             // 
             // lblEstado
             // 
@@ -245,7 +246,7 @@
             this.txtRg.MaxLength = 15;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(155, 20);
-            this.txtRg.TabIndex = 15;
+            this.txtRg.TabIndex = 13;
             // 
             // txtCpf
             // 
@@ -254,7 +255,7 @@
             this.txtCpf.MaxLength = 15;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(187, 20);
-            this.txtCpf.TabIndex = 16;
+            this.txtCpf.TabIndex = 14;
             // 
             // lblSexo
             // 
@@ -276,7 +277,7 @@
             this.CbSexo.Location = new System.Drawing.Point(308, 60);
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Size = new System.Drawing.Size(47, 21);
-            this.CbSexo.TabIndex = 5;
+            this.CbSexo.TabIndex = 3;
             // 
             // btnVoltar
             // 
@@ -285,19 +286,19 @@
             this.btnVoltar.Location = new System.Drawing.Point(7, 127);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 20;
+            this.btnVoltar.TabIndex = 22;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnApaga
             // 
-            this.btnApaga.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnApaga.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnApaga.BackgroundImage")));
             this.btnApaga.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnApaga.Location = new System.Drawing.Point(7, 45);
             this.btnApaga.Name = "btnApaga";
             this.btnApaga.Size = new System.Drawing.Size(40, 35);
-            this.btnApaga.TabIndex = 19;
+            this.btnApaga.TabIndex = 20;
             this.toolTipLegenda.SetToolTip(this.btnApaga, "Limpar");
             this.btnApaga.UseVisualStyleBackColor = true;
             this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
@@ -309,16 +310,16 @@
             this.cbEstado.Location = new System.Drawing.Point(481, 206);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(70, 21);
-            this.cbEstado.TabIndex = 14;
+            this.cbEstado.TabIndex = 12;
             // 
             // btnBuscaDepartamento
             // 
             this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaDepartamento.Location = new System.Drawing.Point(304, 319);
+            this.btnBuscaDepartamento.Location = new System.Drawing.Point(304, 311);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
-            this.btnBuscaDepartamento.Size = new System.Drawing.Size(24, 23);
-            this.btnBuscaDepartamento.TabIndex = 2;
+            this.btnBuscaDepartamento.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaDepartamento.TabIndex = 17;
             this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
@@ -358,7 +359,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(404, 20);
-            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TabIndex = 15;
             // 
             // txtDataNasc
             // 
@@ -367,7 +368,7 @@
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.Size = new System.Drawing.Size(71, 20);
-            this.txtDataNasc.TabIndex = 4;
+            this.txtDataNasc.TabIndex = 2;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
             // txtNumero
@@ -377,7 +378,7 @@
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(76, 20);
-            this.txtNumero.TabIndex = 9;
+            this.txtNumero.TabIndex = 7;
             this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtCep
@@ -387,7 +388,7 @@
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(70, 20);
-            this.txtCep.TabIndex = 12;
+            this.txtCep.TabIndex = 10;
             // 
             // txtTelefone
             // 
@@ -396,7 +397,7 @@
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(70, 20);
-            this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.TabIndex = 5;
             // 
             // toolTipLegenda
             // 
@@ -410,7 +411,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 86);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 26;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 21;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -422,7 +423,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(7, 6);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 18;
+            this.btnConfirma.TabIndex = 19;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -434,7 +435,7 @@
             this.btnCadUsuario.Location = new System.Drawing.Point(504, 307);
             this.btnCadUsuario.Name = "btnCadUsuario";
             this.btnCadUsuario.Size = new System.Drawing.Size(47, 42);
-            this.btnCadUsuario.TabIndex = 28;
+            this.btnCadUsuario.TabIndex = 18;
             this.toolTipLegenda.SetToolTip(this.btnCadUsuario, "Cadastrar Usuário");
             this.btnCadUsuario.UseVisualStyleBackColor = true;
             // 
@@ -445,7 +446,7 @@
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
-            this.txtDDD.TabIndex = 27;
+            this.txtDDD.TabIndex = 4;
             this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // label3

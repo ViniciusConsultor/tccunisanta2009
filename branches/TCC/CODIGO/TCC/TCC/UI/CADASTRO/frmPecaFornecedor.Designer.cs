@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPecaFornecedor));
             this.txtCdFornecedor = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.dgItems = new System.Windows.Forms.DataGridView();
@@ -51,7 +52,7 @@
             this.txtCdFornecedor.Location = new System.Drawing.Point(95, 42);
             this.txtCdFornecedor.Name = "txtCdFornecedor";
             this.txtCdFornecedor.Size = new System.Drawing.Size(179, 20);
-            this.txtCdFornecedor.TabIndex = 38;
+            this.txtCdFornecedor.TabIndex = 1;
             // 
             // lblCdFornecedor
             // 
@@ -104,7 +105,7 @@
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
-            this.dgItems.TabIndex = 33;
+            this.dgItems.TabIndex = 4;
             // 
             // CdItem
             // 
@@ -127,7 +128,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 32;
+            this.txtBuscaFiltro.TabIndex = 2;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -136,7 +137,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(0, 72);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 39;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // btnVolta
@@ -146,17 +147,17 @@
             this.btnVolta.Location = new System.Drawing.Point(0, 109);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
-            this.btnVolta.TabIndex = 36;
+            this.btnVolta.TabIndex = 8;
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(0, 36);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
-            this.btnLimpa.TabIndex = 35;
+            this.btnLimpa.TabIndex = 6;
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
             // btnConfirma
@@ -166,7 +167,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(0, 2);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
-            this.btnConfirma.TabIndex = 34;
+            this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // btnBuscarPecaDtGrid
@@ -176,7 +177,7 @@
             this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(276, 92);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
             this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 31;
+            this.btnBuscarPecaDtGrid.TabIndex = 3;
             this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
             // 
             // frmPecaFornecedor

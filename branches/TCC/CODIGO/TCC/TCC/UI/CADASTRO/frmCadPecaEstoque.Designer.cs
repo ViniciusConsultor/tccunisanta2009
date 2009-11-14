@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPecaEstoque));
             this.txtIdPeca = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
@@ -56,7 +57,7 @@
             this.txtIdPeca.MaxLength = 50;
             this.txtIdPeca.Name = "txtIdPeca";
             this.txtIdPeca.Size = new System.Drawing.Size(181, 20);
-            this.txtIdPeca.TabIndex = 2;
+            this.txtIdPeca.TabIndex = 1;
             // 
             // lblCdPeca
             // 
@@ -74,42 +75,42 @@
             this.dgPeças.AllowUserToResizeColumns = false;
             this.dgPeças.AllowUserToResizeRows = false;
             this.dgPeças.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPeças.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPeças.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPeças.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPeças.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CdItem,
             this.NmItem});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPeças.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPeças.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgPeças.Location = new System.Drawing.Point(62, 131);
             this.dgPeças.MultiSelect = false;
             this.dgPeças.Name = "dgPeças";
             this.dgPeças.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPeças.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPeças.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgPeças.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPeças.ShowEditingIcon = false;
             this.dgPeças.Size = new System.Drawing.Size(295, 177);
-            this.dgPeças.TabIndex = 27;
+            this.dgPeças.TabIndex = 5;
             // 
             // CdItem
             // 
@@ -132,7 +133,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 26;
+            this.txtBuscaFiltro.TabIndex = 3;
             // 
             // btnBuscarPecaDtGrid
             // 
@@ -141,7 +142,7 @@
             this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(266, 97);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
             this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 25;
+            this.btnBuscarPecaDtGrid.TabIndex = 4;
             this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
             // 
             // btnBuscaAlteracaoDelecao
@@ -151,7 +152,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(1, 71);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 34;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // btnVolta
@@ -161,17 +162,17 @@
             this.btnVolta.Location = new System.Drawing.Point(1, 104);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
-            this.btnVolta.TabIndex = 33;
+            this.btnVolta.TabIndex = 9;
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(1, 35);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
-            this.btnLimpa.TabIndex = 32;
+            this.btnLimpa.TabIndex = 7;
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
             // btnConfirma
@@ -181,7 +182,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(1, 1);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
-            this.btnConfirma.TabIndex = 31;
+            this.btnConfirma.TabIndex = 6;
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // lblQtd
@@ -199,7 +200,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(88, 71);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(179, 20);
-            this.txtQuantidade.TabIndex = 35;
+            this.txtQuantidade.TabIndex = 2;
             this.txtQuantidade.Text = "0";
             this.txtQuantidade.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
