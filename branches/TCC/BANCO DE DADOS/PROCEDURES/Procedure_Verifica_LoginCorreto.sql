@@ -17,3 +17,5 @@ IF (EXISTS(SELECT log_usu FROM Usuario WHERE log_usu = @login AND senha = @senha
 	WHERE us.log_usu = @login AND us.senha = @senha
 ELSE
 	SELECT 0 AS id_perfil
+
+
