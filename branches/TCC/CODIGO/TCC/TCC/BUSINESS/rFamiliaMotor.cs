@@ -8,6 +8,11 @@ namespace TCC.BUSINESS
 {
     class rFamiliaMotor : ComandosSql
     {
+        /*public DataTable BuscaFamiliaMotor(int idFamiliaMotor)
+        {
+
+        }*/
+
         public int BuscaIdMaximo()
         {
             try
