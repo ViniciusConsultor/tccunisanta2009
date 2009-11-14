@@ -33,6 +33,29 @@ namespace TCC.BUSINESS
             }
         }
 
+        /// <summary>
+        /// Este méto é utilizado o Tree View "Resumo Ordem de Produção"
+        /// </summary>
+        /// <param name="parametro">ID_kit</param>
+        /// <returns></returns>
+        public DataTable BuscaItemKitTree(int parametro)
+        {
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@id_kit", parametro);
+                return base.BuscaDados("sp_busca_tree_itemkit", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
             base.Insere(model);

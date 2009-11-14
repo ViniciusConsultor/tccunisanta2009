@@ -8,10 +8,28 @@ namespace TCC.BUSINESS
 {
     class rFamiliaMotor : ComandosSql
     {
-        /*public DataTable BuscaFamiliaMotor(int idFamiliaMotor)
+        /// <summary>
+        /// Método utilziado pelo Tree View em "ResumoOrdemProducao"
+        /// </summary>
+        /// <param name="idFamiliaMotor"></param>
+        /// <returns></returns>
+        public DataTable BuscaFamiliaMotorTree(int parametro)
         {
-
-        }*/
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@@id_fam_motor", parametro);
+                return base.BuscaDados("sp_busca_tree_familiamotor", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
 
         public int BuscaIdMaximo()
         {
