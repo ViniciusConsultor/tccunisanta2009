@@ -28,100 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerfilMenu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerfilMenu));
-            this.dgItems = new System.Windows.Forms.DataGridView();
-            this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NmItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
-            this.btnBuscarPerfilDtGrid = new System.Windows.Forms.Button();
+            this.btnBuscarPerfil = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.lblCdPerfil = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPerfil = new System.Windows.Forms.TextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
+            this.txtMenu = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarMenuDtGrid = new System.Windows.Forms.Button();
+            this.dgMenu = new System.Windows.Forms.DataGridView();
+            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgItems
+            // btnBuscarPerfil
             // 
-            this.dgItems.AllowUserToAddRows = false;
-            this.dgItems.AllowUserToDeleteRows = false;
-            this.dgItems.AllowUserToResizeColumns = false;
-            this.dgItems.AllowUserToResizeRows = false;
-            this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CdItem,
-            this.NmItem});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgItems.Location = new System.Drawing.Point(63, 118);
-            this.dgItems.MultiSelect = false;
-            this.dgItems.Name = "dgItems";
-            this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgItems.ShowEditingIcon = false;
-            this.dgItems.Size = new System.Drawing.Size(295, 177);
-            this.dgItems.TabIndex = 4;
-            // 
-            // CdItem
-            // 
-            this.CdItem.HeaderText = "Codigo";
-            this.CdItem.Name = "CdItem";
-            this.CdItem.ReadOnly = true;
-            this.CdItem.Width = 65;
-            // 
-            // NmItem
-            // 
-            this.NmItem.HeaderText = "Nome";
-            this.NmItem.Name = "NmItem";
-            this.NmItem.ReadOnly = true;
-            this.NmItem.Width = 60;
-            // 
-            // txtBuscaFiltro
-            // 
-            this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(91, 97);
-            this.txtBuscaFiltro.MaxLength = 20;
-            this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 2;
-            // 
-            // btnBuscarPerfilDtGrid
-            // 
-            this.btnBuscarPerfilDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscarPerfilDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPerfilDtGrid.Location = new System.Drawing.Point(269, 83);
-            this.btnBuscarPerfilDtGrid.Name = "btnBuscarPerfilDtGrid";
-            this.btnBuscarPerfilDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPerfilDtGrid.TabIndex = 3;
-            this.btnBuscarPerfilDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarPerfil.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(276, 21);
+            this.btnBuscarPerfil.Name = "btnBuscarPerfil";
+            this.btnBuscarPerfil.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarPerfil.TabIndex = 3;
+            this.btnBuscarPerfil.UseVisualStyleBackColor = true;
+            this.btnBuscarPerfil.Click += new System.EventHandler(this.btnBuscarPerfil_Click);
             // 
             // btnVolta
             // 
@@ -132,6 +69,7 @@
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
             this.btnVolta.TabIndex = 8;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnLimpa
             // 
@@ -142,6 +80,7 @@
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
             this.btnLimpa.TabIndex = 6;
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnConfirma
             // 
@@ -152,6 +91,7 @@
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
             this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // lblCdPerfil
             // 
@@ -162,12 +102,12 @@
             this.lblCdPerfil.TabIndex = 28;
             this.lblCdPerfil.Text = "Perfil";
             // 
-            // textBox1
+            // txtPerfil
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtPerfil.Location = new System.Drawing.Point(91, 36);
+            this.txtPerfil.Name = "txtPerfil";
+            this.txtPerfil.Size = new System.Drawing.Size(179, 20);
+            this.txtPerfil.TabIndex = 1;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -178,6 +118,103 @@
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
             this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
+            // 
+            // txtMenu
+            // 
+            this.txtMenu.Location = new System.Drawing.Point(91, 92);
+            this.txtMenu.Name = "txtMenu";
+            this.txtMenu.Size = new System.Drawing.Size(179, 20);
+            this.txtMenu.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(95, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Menu";
+            // 
+            // btnBuscarMenuDtGrid
+            // 
+            this.btnBuscarMenuDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarMenuDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarMenuDtGrid.Location = new System.Drawing.Point(276, 77);
+            this.btnBuscarMenuDtGrid.Name = "btnBuscarMenuDtGrid";
+            this.btnBuscarMenuDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarMenuDtGrid.TabIndex = 30;
+            this.btnBuscarMenuDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarMenuDtGrid.Click += new System.EventHandler(this.btnBuscarMenuDtGrid_Click);
+            // 
+            // dgMenu
+            // 
+            this.dgMenu.AllowUserToAddRows = false;
+            this.dgMenu.AllowUserToDeleteRows = false;
+            this.dgMenu.AllowUserToResizeColumns = false;
+            this.dgMenu.AllowUserToResizeRows = false;
+            this.dgMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hSelecionar,
+            this.hIdDepto,
+            this.hNome});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgMenu.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgMenu.Location = new System.Drawing.Point(70, 127);
+            this.dgMenu.MultiSelect = false;
+            this.dgMenu.Name = "dgMenu";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMenu.ShowEditingIcon = false;
+            this.dgMenu.Size = new System.Drawing.Size(295, 177);
+            this.dgMenu.TabIndex = 32;
+            // 
+            // hSelecionar
+            // 
+            this.hSelecionar.HeaderText = "Selecionar";
+            this.hSelecionar.Name = "hSelecionar";
+            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hSelecionar.Width = 82;
+            // 
+            // hIdDepto
+            // 
+            this.hIdDepto.DataPropertyName = "id_menu";
+            this.hIdDepto.HeaderText = "IdMenu";
+            this.hIdDepto.Name = "hIdDepto";
+            this.hIdDepto.ReadOnly = true;
+            this.hIdDepto.Visible = false;
+            this.hIdDepto.Width = 68;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Menu";
+            this.hNome.HeaderText = "Menu";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 59;
             // 
             // frmPerfilMenu
             // 
@@ -186,18 +223,20 @@
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(377, 316);
+            this.Controls.Add(this.dgMenu);
+            this.Controls.Add(this.txtMenu);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBuscarMenuDtGrid);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPerfil);
             this.Controls.Add(this.lblCdPerfil);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.dgItems);
-            this.Controls.Add(this.txtBuscaFiltro);
-            this.Controls.Add(this.btnBuscarPerfilDtGrid);
+            this.Controls.Add(this.btnBuscarPerfil);
             this.Name = "frmPerfilMenu";
             this.Text = "Perfil Menu";
-            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +244,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CdItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NmItem;
-        private System.Windows.Forms.TextBox txtBuscaFiltro;
-        private System.Windows.Forms.Button btnBuscarPerfilDtGrid;
+        private System.Windows.Forms.Button btnBuscarPerfil;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Label lblCdPerfil;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPerfil;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private System.Windows.Forms.TextBox txtMenu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscarMenuDtGrid;
+        private System.Windows.Forms.DataGridView dgMenu;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdDepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
     }
 }

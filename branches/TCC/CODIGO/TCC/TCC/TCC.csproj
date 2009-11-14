@@ -142,6 +142,8 @@
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\NomeKitVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\QuantidadeMenorZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PerfilMenu\MenuNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PerfilMenu\PerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
