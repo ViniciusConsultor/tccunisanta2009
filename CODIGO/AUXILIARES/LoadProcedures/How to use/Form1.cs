@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 using LoadProcedures;
 
@@ -20,22 +21,31 @@ namespace How_to_use
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ConnectionStringSettings settConex = ConfigurationManager.ConnectionStrings["TCC.Properties.Settings.MegatechConnectionString"];
             FolderBrowserDialog busca = new FolderBrowserDialog();
             busca.ShowNewFolderButton = false;
             DialogResult resultado = busca.ShowDialog();
+            Dispatcher dispatcher;
             if (resultado == DialogResult.OK)
             {
-                Dispatcher dispatcher = new Dispatcher(@"Provider=SQLNCLI.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Megatechdatabase;Data Source=Leandro\SQLEXPRESS", busca.SelectedPath);
+                dispatcher = new Dispatcher(settConex.ConnectionString, busca.SelectedPath);
 
                 try
                 {
                     dispatcher.Start();
+                    MessageBox.Show("Procedures Executadas com sucesso!");
                 }
                 catch (Exception ex)
                 {
                     Console.Write(ex.Message);
                 }
-                Console.Read();
+                finally
+                {
+                    settConex = null;
+                    busca.Dispose();
+                    busca = null;
+                    dispatcher = null;
+                }
             }
             else
             {
