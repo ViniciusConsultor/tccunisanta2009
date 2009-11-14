@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Text;
 using TCC.MODEL;
 using TCC.BUSINESS;
 
@@ -17,9 +20,10 @@ namespace TCC.UI.Resumo
         #endregion Atributos
 
         #region Construtor
-        public frmResumoOrdemProducao()
+        public frmResumoOrdemProducao(int? idVenda)
         {
             InitializeComponent();
+            _idVenda = (int)idVenda;
         }
         #endregion Construtor
 
@@ -34,14 +38,14 @@ namespace TCC.UI.Resumo
         #region btnGerarArquivo Click
         private void btnGerarArquivo_Click(object sender, EventArgs e)
         {
-
+            this.CriaArquivoOrdermProducao();
         }
         #endregion btnGerarArquivo Click
 
         #region Form Load
         private void frmResumoOrdemProducao_Load(object sender, EventArgs e)
         {
-
+            this.CriaNosTreeView();
         }
         #endregion Form Load 
         #endregion Eventos
@@ -88,19 +92,22 @@ namespace TCC.UI.Resumo
             DataTable dtProduto = null;
             try
             {
+                int qtdeProduto = 0;
                 dtProduto = regraProduto.BuscaProdutosVenda(idProduto, this._idVenda);
                 foreach (DataRow linha in dtProduto.Rows)
                 {
-                    noProduto = new TreeNode(linha["dsc_prdto"].ToString() + " - " + linha["qtd"].ToString());
+                    noProduto = new TreeNode("Produto: " + linha["dsc_prdto"].ToString() + " | Qtde: " + linha["qtd"].ToString());
+                    qtdeProduto = Convert.ToInt32(linha["qtd"]);
+
                     if (linha["id_fam_motor"] != DBNull.Value)
                     {
-                        noFamiliaMotor = this.CriaNoFamiliaMotor(Convert.ToInt32(linha["id_fam_motor"]));
+                        noFamiliaMotor = this.CriaNoFamiliaMotor(Convert.ToInt32(linha["id_fam_motor"]),qtdeProduto);
                         noProduto.Nodes.Add(noFamiliaMotor);
                     }
                     else if (linha["id_kit"] != DBNull.Value)
                     {
-                        //noKit = this.CriaNoKit(Convert.ToInt32(linha["id_kit"]));
-                        //noProduto.Nodes.Add(noKit);
+                        noKit = this.CriaNoKitGrupoPeca(Convert.ToInt32(linha["id_kit"]), qtdeProduto);
+                        noProduto.Nodes.Add(noKit);
                     }
 
                     this.tvOrdemProducao.Nodes.Add(noProduto);
@@ -124,18 +131,20 @@ namespace TCC.UI.Resumo
             }
         }
 
-        private TreeNode CriaNoFamiliaMotor(int idFamiliaMotor)
+        private TreeNode CriaNoFamiliaMotor(int idFamiliaMotor, int qtdeProduto)
         {
             DataTable dtFamiliaMotor = null;
             TreeNode noFamiliaMotor = null, noKitGrupoPeca = null;
             rFamiliaMotor regraFamiliaMotor = new rFamiliaMotor();
             try
             {
+                int qtde = 0;
                 dtFamiliaMotor = regraFamiliaMotor.BuscaFamiliaMotorTree(idFamiliaMotor);
                 foreach (DataRow linhaFamMotor in dtFamiliaMotor.Rows)
                 {
                     noFamiliaMotor = new TreeNode(linhaFamMotor["id_fam_motor_real"].ToString());
-                    noKitGrupoPeca = this.CriaNoKitGrupoPeca(Convert.ToInt32(linhaFamMotor["id_kit"]));
+                    qtde = Convert.ToInt32(linhaFamMotor["qtd_kit"]) * qtdeProduto;
+                    noKitGrupoPeca = this.CriaNoKitGrupoPeca(Convert.ToInt32(linhaFamMotor["id_kit"]), qtde);
                     noFamiliaMotor.Nodes.Add(noKitGrupoPeca);
                 }
                 return noFamiliaMotor;
@@ -157,7 +166,7 @@ namespace TCC.UI.Resumo
             }
         }
 
-        private TreeNode CriaNoKitGrupoPeca(int idKitGrupoPeca)
+        private TreeNode CriaNoKitGrupoPeca(int idKitGrupoPeca, int qtdeProduto)
         {
             DataTable dtKitGrupoPeca = null;
             TreeNode noKitGrupoPeca = null, noItem = null;
@@ -168,7 +177,7 @@ namespace TCC.UI.Resumo
                 foreach (DataRow linha in dtKitGrupoPeca.Rows)
                 {
                     noKitGrupoPeca = new TreeNode(linha["id_kit_real"].ToString());
-                    noItem = this.CriaNoItemKit(Convert.ToInt32(linha["id_kit"]));
+                    noItem = this.CriaNoItemKit(Convert.ToInt32(linha["id_kit"]), qtdeProduto);
                     noKitGrupoPeca.Nodes.Add(noItem);
                 }
                 return noKitGrupoPeca;
@@ -190,17 +199,21 @@ namespace TCC.UI.Resumo
             }
         }
 
-        private TreeNode CriaNoItemKit(int idKit)
+        private TreeNode CriaNoItemKit(int idKit, int qtdeKit)
         {
             DataTable dtItem = null;
             TreeNode noItem = null, noPeca = null;
             rItemKit regraItem = new rItemKit();
             try
             {
+                int qtde = 0;
                 dtItem = regraItem.BuscaItemKitTree(idKit);
                 foreach (DataRow linha in dtItem.Rows)
                 {
-                    noItem = new TreeNode(linha["id_item_real"].ToString());
+                    qtde = Convert.ToInt32(linha["qtd_item"]) * qtdeKit;
+                    noItem = new TreeNode("Item: " + linha["id_item_real"].ToString() + " | Qtde: " + qtde);
+                    noPeca = this.CriaNoPeca( Convert.ToInt32(linha["id_item"]), qtde);
+                    noItem.Nodes.Add(noPeca);
                 }
                 return noItem;
             }
@@ -221,17 +234,19 @@ namespace TCC.UI.Resumo
             }
         }
 
-        private TreeNode CriaNoPeca(int idItem)
+        private TreeNode CriaNoPeca(int idItem, int qtdItem)
         {
             DataTable dtPeca = null;
             TreeNode noPeca = null;
             rItemPeca regraPeca = new rItemPeca();
             try
             {
+                int qtde = 0;
                 dtPeca = regraPeca.BuscaItemPecaTree(idItem);
                 foreach (DataRow linha in dtPeca.Rows)
                 {
-                    noPeca = new TreeNode(linha["id_peca_real"].ToString());
+                    qtde = Convert.ToInt32(linha["qtd_peca"]) * qtdItem;
+                    noPeca = new TreeNode("Peça: " + linha["id_peca_real"].ToString() + " | Qtde: " + qtde);
                 }
                 return noPeca;
             }
@@ -251,5 +266,72 @@ namespace TCC.UI.Resumo
             }
         }
 
+        /// <summary>
+        /// Este método varre 4 niveis do treeView escrevendo no arquivo o conteúdo Text do nó.
+        /// </summary>
+        private void CriaArquivoOrdermProducao()
+        {
+            StreamWriter sw = null;
+            const string TAB1 = "     ";
+            const string TAB2 = "          ";
+            const string TAB3 = "               ";
+            const string TAB4 = "                    ";
+            try
+            {
+                string pasta = ConfigurationManager.AppSettings.Get("ordemProducao");
+                string nomeArquivo = pasta + "OP_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
+                sw = new StreamWriter(nomeArquivo);
+                foreach (TreeNode no in tvOrdemProducao.Nodes)
+                {
+                    if (no.Level == 0)
+                    {
+                        sw.WriteLine(no.Text);
+                        foreach (TreeNode no1 in no.Nodes)
+                        {
+                            if (no1.Level == 1)
+                            {
+                                sw.WriteLine(TAB1 + no1.Text);
+                                foreach (TreeNode no2 in no1.Nodes)
+                                {
+                                    if (no2.Level == 2)
+                                    {
+                                        sw.WriteLine(TAB2 + no2.Text);
+                                        foreach (TreeNode no3 in no2.Nodes)
+                                        {
+                                            if (no3.Level == 3)
+                                            {
+                                                sw.WriteLine(TAB3 + no3.Text);
+                                                foreach (TreeNode no4 in no3.Nodes)
+                                                {
+                                                    if (no4.Level == 4)
+                                                    {
+                                                        sw.WriteLine(TAB4 +no4.Text);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                sw.Close();
+                string mensagem = "Arquivo gerado com sucesso!\r\n Local:" + nomeArquivo;
+                MessageBox.Show(mensagem, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sw != null)
+                {
+                    sw.Dispose();
+                    sw = null;
+                }
+            }
+        }
     }
 }

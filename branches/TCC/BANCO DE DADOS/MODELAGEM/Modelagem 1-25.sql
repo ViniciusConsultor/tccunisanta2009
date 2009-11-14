@@ -1,11 +1,17 @@
+CREATE Megatechdatabase
+go
 
+USE Megatechdatabase
+go
+
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motorfornecedor')
 DROP TABLE Motorfornecedor
 go
 
 CREATE TABLE Motorfornecedor (
        id_motor             integer NOT NULL,
        id_forn              integer NOT NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Flag_Ativo           bit NULL
 )
 go
@@ -16,6 +22,7 @@ ALTER TABLE Motorfornecedor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='PecaEstoque')
 DROP TABLE PecaEstoque
 go
 
@@ -23,8 +30,8 @@ CREATE TABLE PecaEstoque (
        id_peca              integer NOT NULL,
        id_estoq             integer NOT NULL,
        Flag_Ativo           bit NULL,
-       Data_de_Atualização  datetime NULL,
-       Quantidade_Peça      int NULL
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
+       Quantidade_Peï¿½a      int NULL
 )
 go
 
@@ -34,13 +41,14 @@ ALTER TABLE PecaEstoque
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Kitfamilia')
 DROP TABLE Kitfamilia
 go
 
 CREATE TABLE Kitfamilia (
        id_kit               integer NOT NULL,
        id_fam_motor         integer NOT NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Quantidade_do_Kit    int NULL,
        Flag_Ativo           bit NULL
 )
@@ -52,13 +60,14 @@ ALTER TABLE Kitfamilia
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Itemkit')
 DROP TABLE Itemkit
 go
 
 CREATE TABLE Itemkit (
        id_item              integer NOT NULL,
        id_kit               integer NOT NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Quantidade_do_Item   int NULL,
        Flag_Ativo           bit NULL
 )
@@ -70,12 +79,13 @@ ALTER TABLE Itemkit
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Itempeca')
 DROP TABLE Itempeca
 go
 
 CREATE TABLE Itempeca (
        id_peca              integer NOT NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Flag_Ativo           bit NULL,
        id_item              integer NOT NULL,
        qtd_peca             int NULL
@@ -88,13 +98,14 @@ ALTER TABLE Itempeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Vendaproduto')
 DROP TABLE Vendaproduto
 go
 
 CREATE TABLE Vendaproduto (
        Codigo_da_Venda      int NOT NULL,
        Flag_Ativo           bit NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Quantidade           int NULL,
        id_prdto             integer NOT NULL
 )
@@ -106,6 +117,7 @@ ALTER TABLE Vendaproduto
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Ordemdepartamento')
 DROP TABLE Ordemdepartamento
 go
 
@@ -113,7 +125,7 @@ CREATE TABLE Ordemdepartamento (
        id_depto             integer NOT NULL,
        id_ordem             integer NOT NULL,
        Flag_Ativo           bit NULL,
-       Data_de_Atualização  datetime NULL
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL
 )
 go
 
@@ -123,6 +135,7 @@ ALTER TABLE Ordemdepartamento
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Produto')
 DROP TABLE Produto
 go
 
@@ -133,7 +146,7 @@ CREATE TABLE Produto (
        id_kit               integer NULL,
        id_tipo_produto      integer NOT NULL,
        Flag_Ativo           bit NULL,
-       Data_de_Atualização  datetime NULL
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL
 )
 go
 
@@ -143,6 +156,7 @@ ALTER TABLE Produto
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipoproduto')
 DROP TABLE Tipoproduto
 go
 
@@ -160,6 +174,7 @@ ALTER TABLE Tipoproduto
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usinagem')
 DROP TABLE Usinagem
 go
 
@@ -177,6 +192,7 @@ ALTER TABLE Usinagem
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Familiamotor')
 DROP TABLE Familiamotor
 go
 
@@ -198,6 +214,7 @@ ALTER TABLE Familiamotor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Estoque')
 DROP TABLE Estoque
 go
 
@@ -217,6 +234,7 @@ ALTER TABLE Estoque
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Pecafornecedor')
 DROP TABLE Pecafornecedor
 go
 
@@ -234,6 +252,7 @@ ALTER TABLE Pecafornecedor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Submenu')
 DROP TABLE Submenu
 go
 
@@ -250,6 +269,7 @@ ALTER TABLE Submenu
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Perfilmenu')
 DROP TABLE Perfilmenu
 go
 
@@ -267,6 +287,7 @@ ALTER TABLE Perfilmenu
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Venda')
 DROP TABLE Venda
 go
 
@@ -286,6 +307,7 @@ ALTER TABLE Venda
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Cliente')
 DROP TABLE Cliente
 go
 
@@ -315,6 +337,7 @@ ALTER TABLE Cliente
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Colaborador')
 DROP TABLE Colaborador
 go
 
@@ -348,6 +371,7 @@ ALTER TABLE Colaborador
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Compraordemcompra')
 DROP TABLE Compraordemcompra
 go
 
@@ -355,7 +379,7 @@ CREATE TABLE Compraordemcompra (
        id_compra            integer NOT NULL,
        Quantidade           int NULL,
        Codigo_da_Ordem_de_Compra integer NOT NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Flag_Ativo           bit NULL
 )
 go
@@ -367,6 +391,7 @@ ALTER TABLE Compraordemcompra
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Compra')
 DROP TABLE Compra
 go
 
@@ -384,6 +409,7 @@ ALTER TABLE Compra
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Fornecedordepto')
 DROP TABLE Fornecedordepto
 go
 
@@ -401,6 +427,7 @@ ALTER TABLE Fornecedordepto
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Departamento')
 DROP TABLE Departamento
 go
 
@@ -419,6 +446,7 @@ ALTER TABLE Departamento
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Ordemcompra')
 DROP TABLE Ordemcompra
 go
 
@@ -427,7 +455,7 @@ CREATE TABLE Ordemcompra (
        ultim_preco          numeric(15,2) NULL,
        id_ordem_compra      integer NOT NULL,
        id_motor             integer NULL,
-       Data_de_Atualização  datetime NULL,
+       Data_de_Atualizaï¿½ï¿½o  datetime NULL,
        Flag_Ativo           bit NULL,
        Nota_Fiscal          varchar(20) NULL,
        id_forn              integer NULL
@@ -440,6 +468,7 @@ ALTER TABLE Ordemcompra
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Fornecedor')
 DROP TABLE Fornecedor
 go
 
@@ -468,6 +497,7 @@ ALTER TABLE Fornecedor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Item')
 DROP TABLE Item
 go
 
@@ -486,6 +516,7 @@ ALTER TABLE Item
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Kitgrupopeca')
 DROP TABLE Kitgrupopeca
 go
 
@@ -504,6 +535,7 @@ ALTER TABLE Kitgrupopeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Menu')
 DROP TABLE Menu
 go
 
@@ -522,6 +554,7 @@ ALTER TABLE Menu
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Peca')
 DROP TABLE Peca
 go
 
@@ -544,6 +577,7 @@ ALTER TABLE Peca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Usuario')
 DROP TABLE Usuario
 go
 
@@ -563,6 +597,7 @@ ALTER TABLE Usuario
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Perfil')
 DROP TABLE Perfil
 go
 
@@ -580,6 +615,7 @@ ALTER TABLE Perfil
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipomotor')
 DROP TABLE Tipomotor
 go
 
@@ -597,6 +633,7 @@ ALTER TABLE Tipomotor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Tipopeca')
 DROP TABLE Tipopeca
 go
 
@@ -613,6 +650,7 @@ ALTER TABLE Tipopeca
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Numeromotor')
 DROP TABLE Numeromotor
 go
 
@@ -630,6 +668,7 @@ ALTER TABLE Numeromotor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motor')
 DROP TABLE Motor
 go
 
@@ -646,6 +685,7 @@ ALTER TABLE Motor
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Estado')
 DROP TABLE Estado
 go
 

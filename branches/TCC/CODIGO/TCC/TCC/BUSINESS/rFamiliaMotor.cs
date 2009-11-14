@@ -18,7 +18,7 @@ namespace TCC.BUSINESS
             SqlParameter param = null;
             try
             {
-                param = new SqlParameter("@@id_fam_motor", parametro);
+                param = new SqlParameter("@id_fam_motor", parametro);
                 return base.BuscaDados("sp_busca_tree_familiamotor", param);
             }
             catch (Exception ex)
