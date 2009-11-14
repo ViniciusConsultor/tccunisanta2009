@@ -85,7 +85,7 @@ INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Departa
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Usuarios', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Perfis', 'frmCadPerfil', GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Funcionário ', 'frmCadColaborador', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relacionar Menus ao Perfil', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relacionar Menus ao Perfil', 'frmPerfilMenu', GETDATE(), 1);
 
 --BUSCA
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--BuscaPeça

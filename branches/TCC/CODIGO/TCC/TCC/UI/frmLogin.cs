@@ -28,15 +28,37 @@ namespace TCC.UI
             string senha;
             try
             {
+                int idPerfil = 0;
+                int idUsuario = 0;
+
                 senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
                 dt = regraUsuario.VerificaLoginUsuario(this.txtLogin.Text, senha);
-                frmInicial.IdPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
-                frmInicial inicial = new frmInicial();
-                this.Visible = false;
-                DialogResult resultado = inicial.ShowDialog();
-                if (resultado == DialogResult.Cancel)
+                idUsuario = Convert.ToInt32(dt.Rows[0]["id_usu"]);
+                
+                // Valida usuaário e senha
+                if (idUsuario == 0)
                 {
-                    Application.Exit();
+                    MessageBox.Show("Usuário ou Senha inválidos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dt = regraUsuario.BuscaUsuario(txtLogin.Text);
+                    idPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
+                    if (idPerfil == 0)
+                    {
+                        MessageBox.Show("Usuário não possui um perfil!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        frmInicial.IdPerfil = Convert.ToInt32(dt.Rows[0]["id_perfil"]);
+                        frmInicial inicial = new frmInicial();
+                        this.Visible = false;
+                        DialogResult resultado = inicial.ShowDialog();
+                        if (resultado == DialogResult.Cancel)
+                        {
+                            Application.Exit();
+                        }
+                    }
                 }
             }
             catch (Exception ex)
