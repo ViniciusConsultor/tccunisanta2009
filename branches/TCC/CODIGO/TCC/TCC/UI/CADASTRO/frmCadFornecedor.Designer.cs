@@ -79,7 +79,7 @@
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(283, 20);
-            this.txtBairro.TabIndex = 5;
+            this.txtBairro.TabIndex = 11;
             // 
             // lblBairro
             // 
@@ -106,7 +106,7 @@
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(212, 20);
-            this.txtComplemento.TabIndex = 4;
+            this.txtComplemento.TabIndex = 10;
             // 
             // lblComplemento
             // 
@@ -133,7 +133,7 @@
             this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(387, 20);
-            this.txtRua.TabIndex = 2;
+            this.txtRua.TabIndex = 8;
             // 
             // lblRua
             // 
@@ -179,7 +179,7 @@
             this.btnVolta.Location = new System.Drawing.Point(7, 128);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 17;
+            this.btnVolta.TabIndex = 21;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -191,7 +191,7 @@
             this.btnlimpar.Location = new System.Drawing.Point(7, 46);
             this.btnlimpar.Name = "btnlimpar";
             this.btnlimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnlimpar.TabIndex = 15;
+            this.btnlimpar.TabIndex = 19;
             this.toolTipLegenda.SetToolTip(this.btnlimpar, "Limpar");
             this.btnlimpar.UseVisualStyleBackColor = true;
             this.btnlimpar.Click += new System.EventHandler(this.btnlimpar_Click);
@@ -222,7 +222,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(388, 20);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 16;
             // 
             // lblEmail
             // 
@@ -240,7 +240,7 @@
             this.txtCepFornecedor.Mask = "00000-000";
             this.txtCepFornecedor.Name = "txtCepFornecedor";
             this.txtCepFornecedor.Size = new System.Drawing.Size(52, 20);
-            this.txtCepFornecedor.TabIndex = 6;
+            this.txtCepFornecedor.TabIndex = 12;
             // 
             // txtTelefone
             // 
@@ -249,7 +249,7 @@
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(58, 20);
-            this.txtTelefone.TabIndex = 11;
+            this.txtTelefone.TabIndex = 15;
             // 
             // toolTipLegenda
             // 
@@ -263,7 +263,7 @@
             this.btnInsere.Location = new System.Drawing.Point(7, 5);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 14;
+            this.btnInsere.TabIndex = 18;
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
@@ -275,7 +275,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 16;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 20;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +286,7 @@
             this.btnRelacionarDepto.Location = new System.Drawing.Point(498, 321);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarDepto.TabIndex = 13;
+            this.btnRelacionarDepto.TabIndex = 17;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
             this.btnRelacionarDepto.UseVisualStyleBackColor = true;
             this.btnRelacionarDepto.Click += new System.EventHandler(this.btnRelacionarDepto_Click);
@@ -298,7 +298,7 @@
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(110, 20);
-            this.txtCnpj.TabIndex = 9;
+            this.txtCnpj.TabIndex = 13;
             this.txtCnpj.ValidatingType = typeof(int);
             // 
             // txtNumeroEndereco
@@ -307,7 +307,7 @@
             this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 195);
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(84, 20);
-            this.txtNumeroEndereco.TabIndex = 3;
+            this.txtNumeroEndereco.TabIndex = 9;
             this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtDDD
@@ -317,7 +317,7 @@
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(35, 20);
-            this.txtDDD.TabIndex = 10;
+            this.txtDDD.TabIndex = 14;
             this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // label2
@@ -371,7 +371,7 @@
             this.txtEstado.Location = new System.Drawing.Point(273, 58);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(152, 20);
-            this.txtEstado.TabIndex = 9;
+            this.txtEstado.TabIndex = 6;
             // 
             // txtPais
             // 
@@ -379,7 +379,7 @@
             this.txtPais.Location = new System.Drawing.Point(63, 56);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(138, 20);
-            this.txtPais.TabIndex = 9;
+            this.txtPais.TabIndex = 5;
             // 
             // rdbOutros
             // 
@@ -387,7 +387,7 @@
             this.rdbOutros.Location = new System.Drawing.Point(41, 33);
             this.rdbOutros.Name = "rdbOutros";
             this.rdbOutros.Size = new System.Drawing.Size(56, 17);
-            this.rdbOutros.TabIndex = 0;
+            this.rdbOutros.TabIndex = 3;
             this.rdbOutros.Text = "Outros";
             this.rdbOutros.UseVisualStyleBackColor = true;
             // 
@@ -398,7 +398,7 @@
             this.rdbBrasil.Location = new System.Drawing.Point(41, 12);
             this.rdbBrasil.Name = "rdbBrasil";
             this.rdbBrasil.Size = new System.Drawing.Size(50, 17);
-            this.rdbBrasil.TabIndex = 0;
+            this.rdbBrasil.TabIndex = 2;
             this.rdbBrasil.TabStop = true;
             this.rdbBrasil.Text = "Brasil";
             this.rdbBrasil.UseVisualStyleBackColor = true;
@@ -411,7 +411,7 @@
             this.cboEstado.Location = new System.Drawing.Point(130, 11);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(65, 21);
-            this.cboEstado.TabIndex = 8;
+            this.cboEstado.TabIndex = 4;
             // 
             // label3
             // 
