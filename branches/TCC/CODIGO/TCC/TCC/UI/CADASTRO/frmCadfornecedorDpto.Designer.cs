@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadfornecedorDpto));
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.dgItems = new System.Windows.Forms.DataGridView();
@@ -51,7 +52,7 @@
             this.txtFornecedor.Location = new System.Drawing.Point(115, 51);
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(179, 20);
-            this.txtFornecedor.TabIndex = 52;
+            this.txtFornecedor.TabIndex = 1;
             // 
             // lblCdFornecedor
             // 
@@ -104,7 +105,7 @@
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(295, 177);
-            this.dgItems.TabIndex = 50;
+            this.dgItems.TabIndex = 4;
             // 
             // CdItem
             // 
@@ -127,7 +128,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 49;
+            this.txtBuscaFiltro.TabIndex = 2;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -136,7 +137,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 70);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 56;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // btnVolta
@@ -146,17 +147,17 @@
             this.btnVolta.Location = new System.Drawing.Point(2, 107);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
-            this.btnVolta.TabIndex = 55;
+            this.btnVolta.TabIndex = 8;
             this.btnVolta.UseVisualStyleBackColor = true;
             // 
             // btnLimpa
             // 
-            this.btnLimpa.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpa.Location = new System.Drawing.Point(2, 34);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
-            this.btnLimpa.TabIndex = 54;
+            this.btnLimpa.TabIndex = 6;
             this.btnLimpa.UseVisualStyleBackColor = true;
             // 
             // btnConfirma
@@ -166,7 +167,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(2, 0);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
-            this.btnConfirma.TabIndex = 53;
+            this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // btnBuscarDepartamentoDtGrid
@@ -176,7 +177,7 @@
             this.btnBuscarDepartamentoDtGrid.Location = new System.Drawing.Point(296, 101);
             this.btnBuscarDepartamentoDtGrid.Name = "btnBuscarDepartamentoDtGrid";
             this.btnBuscarDepartamentoDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarDepartamentoDtGrid.TabIndex = 48;
+            this.btnBuscarDepartamentoDtGrid.TabIndex = 3;
             this.btnBuscarDepartamentoDtGrid.UseVisualStyleBackColor = true;
             // 
             // frmCadfornecedorDpto

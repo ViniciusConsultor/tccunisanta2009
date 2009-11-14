@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPeca));
             this.lblCdTipoPeca = new System.Windows.Forms.Label();
             this.txtCdTipoPeca = new System.Windows.Forms.TextBox();
             this.lblNmPeca = new System.Windows.Forms.Label();
@@ -130,19 +131,19 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 94);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.TabIndex = 14;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 9;
+            this.btnLimpar.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -198,7 +199,7 @@
             this.btnRelacioranEstoque.Location = new System.Drawing.Point(291, 219);
             this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
             this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacioranEstoque.TabIndex = 7;
+            this.btnRelacioranEstoque.TabIndex = 10;
             this.toolTipLegenda.SetToolTip(this.btnRelacioranEstoque, "Relacionar Estoque");
             this.btnRelacioranEstoque.UseVisualStyleBackColor = true;
             // 
@@ -209,7 +210,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(2, 4);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirma.TabIndex = 8;
+            this.btnConfirma.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -221,7 +222,7 @@
             this.btnRelacionarDepto.Location = new System.Drawing.Point(120, 219);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarDepto.TabIndex = 27;
+            this.btnRelacionarDepto.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
             this.btnRelacionarDepto.UseVisualStyleBackColor = true;
             // 
@@ -232,7 +233,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 63);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 28;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -243,7 +244,7 @@
             this.txtQtdPeca.MaxLength = 3;
             this.txtQtdPeca.Name = "txtQtdPeca";
             this.txtQtdPeca.Size = new System.Drawing.Size(37, 20);
-            this.txtQtdPeca.TabIndex = 11;
+            this.txtQtdPeca.TabIndex = 5;
             this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // txtPesoPeca
@@ -253,7 +254,7 @@
             this.txtPesoPeca.MaxLength = 10;
             this.txtPesoPeca.Name = "txtPesoPeca";
             this.txtPesoPeca.Size = new System.Drawing.Size(56, 20);
-            this.txtPesoPeca.TabIndex = 12;
+            this.txtPesoPeca.TabIndex = 8;
             this.txtPesoPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // label1

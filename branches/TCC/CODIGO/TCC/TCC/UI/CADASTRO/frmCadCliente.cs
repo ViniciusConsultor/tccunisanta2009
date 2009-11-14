@@ -367,6 +367,11 @@ namespace TCC.UI
             btnInsere.Enabled = true;
         }
         #endregion  txtNome TextChanged
+
+        private void rdbPessoaJuridica_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
         #endregion Eventos
     }
 }

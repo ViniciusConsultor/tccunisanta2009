@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompraPeca));
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
@@ -44,12 +45,12 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(0, 29);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(30, 25);
-            this.btnLimpar.TabIndex = 1;
+            this.btnLimpar.TabIndex = 5;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
@@ -60,7 +61,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(0, 56);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(30, 25);
-            this.btnVoltar.TabIndex = 2;
+            this.btnVoltar.TabIndex = 6;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -89,7 +90,7 @@
             this.btnBuscaPeca.Location = new System.Drawing.Point(260, 55);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaPeca.TabIndex = 2;
+            this.btnBuscaPeca.TabIndex = 1;
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
@@ -127,7 +128,7 @@
             this.btnBuscaCompra.Location = new System.Drawing.Point(260, 87);
             this.btnBuscaCompra.Name = "btnBuscaCompra";
             this.btnBuscaCompra.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaCompra.TabIndex = 4;
+            this.btnBuscaCompra.TabIndex = 2;
             this.btnBuscaCompra.UseVisualStyleBackColor = true;
             this.btnBuscaCompra.Click += new System.EventHandler(this.btnBuscaCompra_Click);
             // 
@@ -138,7 +139,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(0, 2);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(30, 25);
-            this.btnConfirma.TabIndex = 0;
+            this.btnConfirma.TabIndex = 4;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -149,7 +150,7 @@
             this.txtUltimoPreco.MaxLength = 15;
             this.txtUltimoPreco.Name = "txtUltimoPreco";
             this.txtUltimoPreco.Size = new System.Drawing.Size(100, 20);
-            this.txtUltimoPreco.TabIndex = 10;
+            this.txtUltimoPreco.TabIndex = 3;
             this.txtUltimoPreco.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // frmCadCompraPeca

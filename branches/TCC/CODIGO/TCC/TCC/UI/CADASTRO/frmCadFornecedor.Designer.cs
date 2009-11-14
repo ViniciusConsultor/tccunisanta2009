@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFornecedor));
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -207,19 +208,19 @@
             this.btnVolta.Location = new System.Drawing.Point(7, 128);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 15;
+            this.btnVolta.TabIndex = 17;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnlimpar
             // 
-            this.btnlimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnlimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnlimpar.BackgroundImage")));
             this.btnlimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnlimpar.Location = new System.Drawing.Point(7, 46);
             this.btnlimpar.Name = "btnlimpar";
             this.btnlimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnlimpar.TabIndex = 14;
+            this.btnlimpar.TabIndex = 15;
             this.toolTipLegenda.SetToolTip(this.btnlimpar, "Limpar");
             this.btnlimpar.UseVisualStyleBackColor = true;
             this.btnlimpar.Click += new System.EventHandler(this.btnlimpar_Click);
@@ -291,7 +292,7 @@
             this.btnInsere.Location = new System.Drawing.Point(7, 5);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 13;
+            this.btnInsere.TabIndex = 14;
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
@@ -303,7 +304,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 25;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 16;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -314,7 +315,7 @@
             this.btnRelacionarDepto.Location = new System.Drawing.Point(497, 313);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarDepto.TabIndex = 26;
+            this.btnRelacionarDepto.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
             this.btnRelacionarDepto.UseVisualStyleBackColor = true;
             // 
@@ -325,7 +326,7 @@
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(110, 20);
-            this.txtCnpj.TabIndex = 15;
+            this.txtCnpj.TabIndex = 9;
             this.txtCnpj.ValidatingType = typeof(int);
             // 
             // txtNumeroEndereco
@@ -344,7 +345,7 @@
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(35, 20);
-            this.txtDDD.TabIndex = 24;
+            this.txtDDD.TabIndex = 10;
             this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // label2

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsinagem));
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.txtCdPeca = new System.Windows.Forms.TextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -76,19 +77,19 @@
             this.btnVoltar.Location = new System.Drawing.Point(1, 76);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 5;
+            this.btnVoltar.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(1, 27);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -117,7 +118,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(1, 3);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 3;
+            this.btnAceitar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -129,7 +130,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(1, 51);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 29;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -140,7 +141,7 @@
             this.btnRelacioranEstoque.Location = new System.Drawing.Point(78, 8);
             this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
             this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacioranEstoque.TabIndex = 38;
+            this.btnRelacioranEstoque.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnRelacioranEstoque, "Relacionar Estoque");
             this.btnRelacioranEstoque.UseVisualStyleBackColor = true;
             // 
@@ -159,7 +160,7 @@
             this.txtQtdPecasDefeito.Location = new System.Drawing.Point(110, 82);
             this.txtQtdPecasDefeito.Name = "txtQtdPecasDefeito";
             this.txtQtdPecasDefeito.Size = new System.Drawing.Size(143, 20);
-            this.txtQtdPecasDefeito.TabIndex = 31;
+            this.txtQtdPecasDefeito.TabIndex = 2;
             this.txtQtdPecasDefeito.TextChanged += new System.EventHandler(this.txtQtdPecasDefeito_TextChanged);
             // 
             // label2
@@ -177,7 +178,7 @@
             this.rdbDefeitoSim.Location = new System.Drawing.Point(133, 125);
             this.rdbDefeitoSim.Name = "rdbDefeitoSim";
             this.rdbDefeitoSim.Size = new System.Drawing.Size(42, 17);
-            this.rdbDefeitoSim.TabIndex = 33;
+            this.rdbDefeitoSim.TabIndex = 3;
             this.rdbDefeitoSim.TabStop = true;
             this.rdbDefeitoSim.Text = "Sim";
             this.rdbDefeitoSim.UseVisualStyleBackColor = true;
@@ -188,7 +189,7 @@
             this.rdbDefeitoNao.Location = new System.Drawing.Point(180, 125);
             this.rdbDefeitoNao.Name = "rdbDefeitoNao";
             this.rdbDefeitoNao.Size = new System.Drawing.Size(45, 17);
-            this.rdbDefeitoNao.TabIndex = 34;
+            this.rdbDefeitoNao.TabIndex = 4;
             this.rdbDefeitoNao.TabStop = true;
             this.rdbDefeitoNao.Text = "Não";
             this.rdbDefeitoNao.UseVisualStyleBackColor = true;

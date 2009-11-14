@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadOrdemProducao));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblcdFamiliaMotor = new System.Windows.Forms.Label();
@@ -56,19 +57,19 @@
             this.btnVoltar.Location = new System.Drawing.Point(7, 89);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 16;
+            this.btnVoltar.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(7, 48);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpar.TabIndex = 15;
+            this.btnLimpar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -167,7 +168,7 @@
             this.txtDs.Multiline = true;
             this.txtDs.Name = "txtDs";
             this.txtDs.Size = new System.Drawing.Size(419, 80);
-            this.txtDs.TabIndex = 18;
+            this.txtDs.TabIndex = 5;
             // 
             // btnCdMotor
             // 
@@ -176,7 +177,7 @@
             this.btnCdMotor.Location = new System.Drawing.Point(269, 65);
             this.btnCdMotor.Name = "btnCdMotor";
             this.btnCdMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnCdMotor.TabIndex = 14;
+            this.btnCdMotor.TabIndex = 1;
             this.toolTipLegenda.SetToolTip(this.btnCdMotor, "Buscar Familia Motor");
             this.btnCdMotor.UseVisualStyleBackColor = true;
             this.btnCdMotor.Click += new System.EventHandler(this.btnCdMotor_Click);
@@ -188,7 +189,7 @@
             this.btnCdDep.Location = new System.Drawing.Point(506, 65);
             this.btnCdDep.Name = "btnCdDep";
             this.btnCdDep.Size = new System.Drawing.Size(27, 23);
-            this.btnCdDep.TabIndex = 14;
+            this.btnCdDep.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnCdDep, "Buscar Departamento");
             this.btnCdDep.UseVisualStyleBackColor = true;
             this.btnCdDep.Click += new System.EventHandler(this.btnCdDep_Click);
@@ -200,7 +201,7 @@
             this.btnCdKit.Location = new System.Drawing.Point(269, 106);
             this.btnCdKit.Name = "btnCdKit";
             this.btnCdKit.Size = new System.Drawing.Size(27, 23);
-            this.btnCdKit.TabIndex = 14;
+            this.btnCdKit.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnCdKit, "Buscar Kit");
             this.btnCdKit.UseVisualStyleBackColor = true;
             this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
@@ -212,7 +213,7 @@
             this.btnCdTipoProduto.Location = new System.Drawing.Point(506, 107);
             this.btnCdTipoProduto.Name = "btnCdTipoProduto";
             this.btnCdTipoProduto.Size = new System.Drawing.Size(27, 23);
-            this.btnCdTipoProduto.TabIndex = 14;
+            this.btnCdTipoProduto.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnCdTipoProduto, "Buscar Tipo Produto");
             this.btnCdTipoProduto.UseVisualStyleBackColor = true;
             this.btnCdTipoProduto.Click += new System.EventHandler(this.btnCdTipoProduto_Click);
@@ -224,7 +225,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(7, 6);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 14;
+            this.btnAceitar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
