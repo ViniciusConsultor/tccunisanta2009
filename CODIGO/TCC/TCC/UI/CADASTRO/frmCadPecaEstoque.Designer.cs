@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPecaEstoque));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPecaEstoque));
             this.txtIdPeca = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.dgPeças = new System.Windows.Forms.DataGridView();
-            this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NmItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
@@ -47,7 +44,11 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.lblQtd = new System.Windows.Forms.Label();
             this.txtQuantidade = new Controles.MegaTextBox.MegaTextBox(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgPeças)).BeginInit();
+            this.dgDeptos = new System.Windows.Forms.DataGridView();
+            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDeptos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdPeca
@@ -68,68 +69,10 @@
             this.lblCdPeca.TabIndex = 3;
             this.lblCdPeca.Text = "Peça";
             // 
-            // dgPeças
-            // 
-            this.dgPeças.AllowUserToAddRows = false;
-            this.dgPeças.AllowUserToDeleteRows = false;
-            this.dgPeças.AllowUserToResizeColumns = false;
-            this.dgPeças.AllowUserToResizeRows = false;
-            this.dgPeças.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPeças.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgPeças.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPeças.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CdItem,
-            this.NmItem});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPeças.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgPeças.Location = new System.Drawing.Point(62, 131);
-            this.dgPeças.MultiSelect = false;
-            this.dgPeças.Name = "dgPeças";
-            this.dgPeças.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPeças.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgPeças.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPeças.ShowEditingIcon = false;
-            this.dgPeças.Size = new System.Drawing.Size(295, 177);
-            this.dgPeças.TabIndex = 5;
-            // 
-            // CdItem
-            // 
-            this.CdItem.HeaderText = "Codigo";
-            this.CdItem.Name = "CdItem";
-            this.CdItem.ReadOnly = true;
-            this.CdItem.Width = 65;
-            // 
-            // NmItem
-            // 
-            this.NmItem.HeaderText = "Nome";
-            this.NmItem.Name = "NmItem";
-            this.NmItem.ReadOnly = true;
-            this.NmItem.Width = 60;
-            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(88, 111);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(88, 112);
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
@@ -139,7 +82,7 @@
             // 
             this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(266, 97);
+            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(268, 98);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
             this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
             this.btnBuscarPecaDtGrid.TabIndex = 4;
@@ -204,6 +147,75 @@
             this.txtQuantidade.Text = "0";
             this.txtQuantidade.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
+            // dgDeptos
+            // 
+            this.dgDeptos.AllowUserToAddRows = false;
+            this.dgDeptos.AllowUserToDeleteRows = false;
+            this.dgDeptos.AllowUserToResizeColumns = false;
+            this.dgDeptos.AllowUserToResizeRows = false;
+            this.dgDeptos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDeptos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgDeptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDeptos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hSelecionar,
+            this.hIdDepto,
+            this.hNome});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgDeptos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgDeptos.Location = new System.Drawing.Point(72, 135);
+            this.dgDeptos.MultiSelect = false;
+            this.dgDeptos.Name = "dgDeptos";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDeptos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgDeptos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgDeptos.ShowEditingIcon = false;
+            this.dgDeptos.Size = new System.Drawing.Size(295, 177);
+            this.dgDeptos.TabIndex = 10;
+            // 
+            // hSelecionar
+            // 
+            this.hSelecionar.HeaderText = "Selecionar";
+            this.hSelecionar.Name = "hSelecionar";
+            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hSelecionar.Width = 80;
+            // 
+            // hIdDepto
+            // 
+            this.hIdDepto.DataPropertyName = "id_depto";
+            this.hIdDepto.HeaderText = "IdDepto";
+            this.hIdDepto.Name = "hIdDepto";
+            this.hIdDepto.ReadOnly = true;
+            this.hIdDepto.Visible = false;
+            this.hIdDepto.Width = 68;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
             // frmCadPecaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,12 +224,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(372, 320);
             this.ControlBox = false;
+            this.Controls.Add(this.dgDeptos);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.dgPeças);
             this.Controls.Add(this.txtBuscaFiltro);
             this.Controls.Add(this.btnBuscarPecaDtGrid);
             this.Controls.Add(this.lblQtd);
@@ -228,7 +240,7 @@
             this.Name = "frmCadPecaEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Peças em Estoque ";
-            ((System.ComponentModel.ISupportInitialize)(this.dgPeças)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDeptos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,9 +251,6 @@
         private System.Windows.Forms.TextBox txtIdPeca;
         private System.Windows.Forms.Label lblCdPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private System.Windows.Forms.DataGridView dgPeças;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CdItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NmItem;
         private System.Windows.Forms.TextBox txtBuscaFiltro;
         private System.Windows.Forms.Button btnBuscarPecaDtGrid;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
@@ -250,5 +259,9 @@
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Label lblQtd;
         private Controles.MegaTextBox.MegaTextBox txtQuantidade;
+        private System.Windows.Forms.DataGridView dgDeptos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdDepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
     }
 }

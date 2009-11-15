@@ -145,11 +145,15 @@
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\NomeKitVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\QuantidadeMenorZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaFornecedor\FornecedorNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaFornecedor\PecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Motor\DescMotorExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\NumeroMotor\CodigoNumeroMotorExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\PerfilMenu\MenuNaoEscolhidoException.cs" />
     <Compile Include="BUSINESS\Exceptions\PerfilMenu\PerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorFornecedor\FornecedorNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorFornecedor\MotorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Fornecedor\CidadeVazioException.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="BUSINESS\rKitGrupoPeca.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />
+    <Compile Include="BUSINESS\rMotorFornecedor.cs" />
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
     <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPecaFornecedor.cs" />
@@ -219,6 +224,7 @@
     <Compile Include="BUSINESS\UTIL\Auxiliar.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BUSINESS\UTIL\rMotorFornecedor.cs" />
     <Compile Include="BUSINESS\UTIL\rProduto.cs" />
     <Compile Include="BUSINESS\UTIL\Validacoes.cs" />
     <Compile Include="DAL\AcessoDados.cs" />
@@ -380,10 +386,6 @@
       <DependentUpon>frmCadCompra.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmCadCompraPeca.resx">
-      <DependentUpon>frmCadCompraPeca.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadDepartamento.resx">
       <DependentUpon>frmCadDepartamento.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -436,10 +438,6 @@
       <DependentUpon>frmCadPecaEstoque.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmCadPecaFornecedor.resx">
-      <DependentUpon>frmCadPecaFornecedor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadPedidoVenda.resx">
       <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -462,10 +460,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadTipoProduto.resx">
       <DependentUpon>frmCadTipoProduto.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\CADASTRO\frmCadUsinagem.resx">
-      <DependentUpon>frmCadUsinagem.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmCadUsuario.resx">
@@ -675,12 +669,6 @@
     <Compile Include="UI\CADASTRO\frmCadCompra.Designer.cs">
       <DependentUpon>frmCadCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmCadCompraPeca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadCompraPeca.Designer.cs">
-      <DependentUpon>frmCadCompraPeca.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\CADASTRO\frmCadDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -759,12 +747,6 @@
     <Compile Include="UI\CADASTRO\frmCadPecaEstoque.Designer.cs">
       <DependentUpon>frmCadPecaEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CADASTRO\frmCadPecaFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadPecaFornecedor.Designer.cs">
-      <DependentUpon>frmCadPecaFornecedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\CADASTRO\frmCadPedidoVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -800,12 +782,6 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadTipoProduto.Designer.cs">
       <DependentUpon>frmCadTipoProduto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadUsinagem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CADASTRO\frmCadUsinagem.Designer.cs">
-      <DependentUpon>frmCadUsinagem.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadUsuario.cs">
       <SubType>Form</SubType>

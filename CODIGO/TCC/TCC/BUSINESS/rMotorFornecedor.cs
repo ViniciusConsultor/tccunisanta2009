@@ -5,7 +5,7 @@ using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
-    class rFornecedorDepto : ComandosSql
+    class rMotorFornecedor : ComandosSql
     {
         public override void ValidarInsere(ModelPai model)
         {
