@@ -33,7 +33,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuPrincipal
@@ -64,7 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::TCC.resImg.bg_principal;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(794, 574);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mnuPrincipal);
@@ -77,8 +76,6 @@
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.frmInicial_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInicial_FormClosing);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

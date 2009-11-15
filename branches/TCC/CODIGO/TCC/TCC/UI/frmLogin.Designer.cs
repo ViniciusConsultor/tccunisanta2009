@@ -40,7 +40,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(52, 56);
+            this.lblUsuario.Location = new System.Drawing.Point(47, 80);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 0;
@@ -49,7 +49,7 @@
             // txtLogin
             // 
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogin.Location = new System.Drawing.Point(101, 53);
+            this.txtLogin.Location = new System.Drawing.Point(96, 77);
             this.txtLogin.MaxLength = 20;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
@@ -58,7 +58,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(52, 84);
+            this.lblSenha.Location = new System.Drawing.Point(47, 108);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 0;
@@ -67,7 +67,7 @@
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSenha.Location = new System.Drawing.Point(101, 81);
+            this.txtSenha.Location = new System.Drawing.Point(96, 105);
             this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -78,7 +78,7 @@
             // 
             this.btnLogin.BackgroundImage = global::TCC.resImg.btnOk;
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogin.Location = new System.Drawing.Point(55, 166);
+            this.btnLogin.Location = new System.Drawing.Point(147, 166);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(40, 35);
             this.btnLogin.TabIndex = 3;
@@ -94,12 +94,13 @@
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
             this.btnLimpar.TabIndex = 4;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.Location = new System.Drawing.Point(147, 166);
+            this.btnFechar.Location = new System.Drawing.Point(55, 166);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 5;
