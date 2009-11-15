@@ -152,6 +152,7 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
                 this.btnInsere.Enabled = false;
+                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Fornecedor.NomeFornecedorVazioException)
             {

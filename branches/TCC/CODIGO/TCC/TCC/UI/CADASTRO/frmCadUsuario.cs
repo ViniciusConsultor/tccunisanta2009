@@ -113,6 +113,7 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;*/
                 this.DialogResult = DialogResult.OK;
                 base.FechaTela(this);
+                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
