@@ -173,7 +173,7 @@
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
             this.btnAceitar.TabIndex = 5;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Salvar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -185,7 +185,7 @@
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaAlteracaoDelecao.TabIndex = 7;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // frmCadUsuario

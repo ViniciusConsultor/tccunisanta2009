@@ -52,8 +52,8 @@
             this.btnFechar.Location = new System.Drawing.Point(61, 225);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
-            this.btnFechar.TabIndex = 8;
-            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.btnFechar.TabIndex = 3;
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar/Voltar");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -64,8 +64,8 @@
             this.btnOK.Location = new System.Drawing.Point(107, 225);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
-            this.btnOK.TabIndex = 9;
-            this.toolTipLegenda.SetToolTip(this.btnOK, "OK");
+            this.btnOK.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnOK, "Confirmar");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -76,7 +76,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(249, 10);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -88,7 +88,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(199, 225);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 35);
-            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnExcluir, "Excluir");
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -99,7 +99,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(153, 225);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(40, 35);
-            this.btnAlterar.TabIndex = 10;
+            this.btnAlterar.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -110,7 +110,7 @@
             this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(227, 20);
-            this.txtFiltro.TabIndex = 6;
+            this.txtFiltro.TabIndex = 1;
             // 
             // dgUsinagem
             // 
