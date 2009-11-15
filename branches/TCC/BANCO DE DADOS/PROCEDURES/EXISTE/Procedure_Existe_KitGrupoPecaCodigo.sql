@@ -1,11 +1,11 @@
 USE Megatechdatabase
 go
 
-IF OBJECT_ID('sp_existe_kitgrupopeca', 'P')IS NOT NULL 
-	 DROP PROCEDURE sp_existe_kitgrupopeca; 
+IF OBJECT_ID('sp_existe_kitgrupopeca_codigo', 'P')IS NOT NULL 
+	 DROP PROCEDURE sp_existe_kitgrupopeca_codigo; 
 GO 
 
-CREATE PROCEDURE sp_existe_kitgrupopeca
+CREATE PROCEDURE sp_existe_kitgrupopeca_codigo
 @id_kit_real VARCHAR(25)
 AS
 

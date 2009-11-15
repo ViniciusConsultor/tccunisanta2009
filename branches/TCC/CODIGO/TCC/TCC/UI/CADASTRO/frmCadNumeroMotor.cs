@@ -69,6 +69,11 @@ namespace TCC.UI
                 base.LimpaDadosTela(this);
                 this.btnAceitar.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.NumeroMotor.CodigoNumeroMotorExistenteException)
+            {
+                MessageBox.Show("Código Número de Motor já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdRealMotor.Focus();
+            }
             catch (BUSINESS.Exceptions.NumeroMotor.NumeroMotorVazioExeption)
             {
                 MessageBox.Show("É necessário informar o Número de Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
