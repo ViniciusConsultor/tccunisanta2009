@@ -69,7 +69,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(6, 126);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 14;
+            this.btnVoltar.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -81,7 +81,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(6, 44);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -116,7 +116,7 @@
             this.btnAdicionaItem.Location = new System.Drawing.Point(36, 170);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
             this.btnAdicionaItem.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaItem.TabIndex = 9;
+            this.btnAdicionaItem.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adicionar Item");
             this.btnAdicionaItem.UseVisualStyleBackColor = true;
             this.btnAdicionaItem.Click += new System.EventHandler(this.btnAdicionaItem_Click);
@@ -140,7 +140,7 @@
             this.btnRemoveItem.Location = new System.Drawing.Point(98, 170);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(40, 35);
-            this.btnRemoveItem.TabIndex = 10;
+            this.btnRemoveItem.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
             this.btnRemoveItem.UseVisualStyleBackColor = true;
             // 
@@ -151,8 +151,8 @@
             this.btnAceitar.Location = new System.Drawing.Point(6, 4);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 11;
-            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
+            this.btnAceitar.TabIndex = 10;
+            this.toolTipLegenda.SetToolTip(this.btnAceitar, "Salvar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
@@ -163,8 +163,8 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 85);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 13;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.TabIndex = 12;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // gbBuscaItem
@@ -194,7 +194,7 @@
             this.txtQtdItem.MaxLength = 2;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdItem.TabIndex = 8;
+            this.txtQtdItem.TabIndex = 7;
             this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // dgItems
@@ -259,7 +259,7 @@
             this.hCodigo.HeaderText = "Codigo";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
+            this.hCodigo.Width = 63;
             // 
             // hNome
             // 
@@ -267,7 +267,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.Width = 58;
             // 
             // hQtd
             // 
@@ -275,7 +275,7 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 87;
+            this.hQtd.Width = 85;
             // 
             // txtBuscaFiltro
             // 

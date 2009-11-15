@@ -48,7 +48,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnOK, "OK!");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "Confirmar");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -98,7 +98,7 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar/Voltar");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 

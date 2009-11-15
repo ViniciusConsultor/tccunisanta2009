@@ -33,12 +33,12 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgDepartamento = new System.Windows.Forms.DataGridView();
+            this.hDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hidDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.hDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hidDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnOK, "OK!");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "Confirmar");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -95,6 +95,23 @@
             this.dgDepartamento.Size = new System.Drawing.Size(260, 177);
             this.dgDepartamento.TabIndex = 0;
             // 
+            // hDepartamento
+            // 
+            this.hDepartamento.DataPropertyName = "nom";
+            this.hDepartamento.HeaderText = "Departamento";
+            this.hDepartamento.Name = "hDepartamento";
+            this.hDepartamento.ReadOnly = true;
+            this.hDepartamento.Width = 97;
+            // 
+            // hidDepto
+            // 
+            this.hidDepto.DataPropertyName = "id_depto";
+            this.hidDepto.HeaderText = "idDepto";
+            this.hidDepto.Name = "hidDepto";
+            this.hidDepto.ReadOnly = true;
+            this.hidDepto.Visible = false;
+            this.hidDepto.Width = 69;
+            // 
             // btnFechar
             // 
             this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
@@ -103,7 +120,7 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar/Voltar");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -135,23 +152,6 @@
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // hDepartamento
-            // 
-            this.hDepartamento.DataPropertyName = "nom";
-            this.hDepartamento.HeaderText = "Departamento";
-            this.hDepartamento.Name = "hDepartamento";
-            this.hDepartamento.ReadOnly = true;
-            this.hDepartamento.Width = 99;
-            // 
-            // hidDepto
-            // 
-            this.hidDepto.DataPropertyName = "id_depto";
-            this.hidDepto.HeaderText = "idDepto";
-            this.hidDepto.Name = "hidDepto";
-            this.hidDepto.ReadOnly = true;
-            this.hidDepto.Visible = false;
-            this.hidDepto.Width = 69;
             // 
             // frmBuscaDepartamento
             // 

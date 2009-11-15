@@ -131,7 +131,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 94);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 14;
+            this.btnVoltar.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -143,7 +143,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.TabIndex = 10;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -199,7 +199,7 @@
             this.btnRelacionarEstoque.Location = new System.Drawing.Point(291, 219);
             this.btnRelacionarEstoque.Name = "btnRelacionarEstoque";
             this.btnRelacionarEstoque.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarEstoque.TabIndex = 10;
+            this.btnRelacionarEstoque.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarEstoque, "Relacionar Estoque");
             this.btnRelacionarEstoque.UseVisualStyleBackColor = true;
             this.btnRelacionarEstoque.Click += new System.EventHandler(this.btnRelacionarEstoque_Click);
@@ -211,8 +211,8 @@
             this.btnConfirma.Location = new System.Drawing.Point(2, 4);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirma.TabIndex = 11;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
+            this.btnConfirma.TabIndex = 9;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Salvar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -223,7 +223,7 @@
             this.btnRelacionarFornecedor.Location = new System.Drawing.Point(120, 219);
             this.btnRelacionarFornecedor.Name = "btnRelacionarFornecedor";
             this.btnRelacionarFornecedor.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarFornecedor.TabIndex = 9;
+            this.btnRelacionarFornecedor.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarFornecedor, "Relacionar Departamento");
             this.btnRelacionarFornecedor.UseVisualStyleBackColor = true;
             this.btnRelacionarFornecedor.Click += new System.EventHandler(this.btnRelacionarFornecedor_Click);
@@ -235,8 +235,8 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 63);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 13;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.TabIndex = 11;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // txtQtdPeca
@@ -256,7 +256,7 @@
             this.txtPesoPeca.MaxLength = 10;
             this.txtPesoPeca.Name = "txtPesoPeca";
             this.txtPesoPeca.Size = new System.Drawing.Size(56, 20);
-            this.txtPesoPeca.TabIndex = 8;
+            this.txtPesoPeca.TabIndex = 6;
             this.txtPesoPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // label1
