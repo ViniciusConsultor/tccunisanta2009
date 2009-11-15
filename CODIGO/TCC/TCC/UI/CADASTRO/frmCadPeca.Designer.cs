@@ -44,9 +44,9 @@
             this.lblNomePecaReal = new System.Windows.Forms.Label();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.btnRelacioranEstoque = new System.Windows.Forms.Button();
+            this.btnRelacionarEstoque = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.btnRelacionarDepto = new System.Windows.Forms.Button();
+            this.btnRelacionarFornecedor = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtPesoPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
@@ -192,16 +192,17 @@
             this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
             this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
-            // btnRelacioranEstoque
+            // btnRelacionarEstoque
             // 
-            this.btnRelacioranEstoque.BackgroundImage = global::TCC.resImg.btnRlacionaEstoque;
-            this.btnRelacioranEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacioranEstoque.Location = new System.Drawing.Point(291, 219);
-            this.btnRelacioranEstoque.Name = "btnRelacioranEstoque";
-            this.btnRelacioranEstoque.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacioranEstoque.TabIndex = 10;
-            this.toolTipLegenda.SetToolTip(this.btnRelacioranEstoque, "Relacionar Estoque");
-            this.btnRelacioranEstoque.UseVisualStyleBackColor = true;
+            this.btnRelacionarEstoque.BackgroundImage = global::TCC.resImg.btnRlacionaEstoque;
+            this.btnRelacionarEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRelacionarEstoque.Location = new System.Drawing.Point(291, 219);
+            this.btnRelacionarEstoque.Name = "btnRelacionarEstoque";
+            this.btnRelacionarEstoque.Size = new System.Drawing.Size(40, 35);
+            this.btnRelacionarEstoque.TabIndex = 10;
+            this.toolTipLegenda.SetToolTip(this.btnRelacionarEstoque, "Relacionar Estoque");
+            this.btnRelacionarEstoque.UseVisualStyleBackColor = true;
+            this.btnRelacionarEstoque.Click += new System.EventHandler(this.btnRelacionarEstoque_Click);
             // 
             // btnConfirma
             // 
@@ -215,17 +216,17 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
-            // btnRelacionarDepto
+            // btnRelacionarFornecedor
             // 
-            this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
-            this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacionarDepto.Location = new System.Drawing.Point(120, 219);
-            this.btnRelacionarDepto.Name = "btnRelacionarDepto";
-            this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarDepto.TabIndex = 9;
-            this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
-            this.btnRelacionarDepto.UseVisualStyleBackColor = true;
-            this.btnRelacionarDepto.Click += new System.EventHandler(this.btnRelacionarDepto_Click);
+            this.btnRelacionarFornecedor.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
+            this.btnRelacionarFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRelacionarFornecedor.Location = new System.Drawing.Point(120, 219);
+            this.btnRelacionarFornecedor.Name = "btnRelacionarFornecedor";
+            this.btnRelacionarFornecedor.Size = new System.Drawing.Size(40, 35);
+            this.btnRelacionarFornecedor.TabIndex = 9;
+            this.toolTipLegenda.SetToolTip(this.btnRelacionarFornecedor, "Relacionar Departamento");
+            this.btnRelacionarFornecedor.UseVisualStyleBackColor = true;
+            this.btnRelacionarFornecedor.Click += new System.EventHandler(this.btnRelacionarFornecedor_Click);
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -307,10 +308,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
-            this.Controls.Add(this.btnRelacionarDepto);
+            this.Controls.Add(this.btnRelacionarFornecedor);
             this.Controls.Add(this.txtPesoPeca);
             this.Controls.Add(this.txtQtdPeca);
-            this.Controls.Add(this.btnRelacioranEstoque);
+            this.Controls.Add(this.btnRelacionarEstoque);
             this.Controls.Add(this.lblQtdPeca);
             this.Controls.Add(this.txtCodigoReal);
             this.Controls.Add(this.lblNomePecaReal);
@@ -350,10 +351,10 @@
         private System.Windows.Forms.Label lblNomePecaReal;
         private System.Windows.Forms.Label lblQtdPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private System.Windows.Forms.Button btnRelacioranEstoque;
+        private System.Windows.Forms.Button btnRelacionarEstoque;
         private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
         private Controles.MegaTextBox.MegaTextBox txtPesoPeca;
-        private System.Windows.Forms.Button btnRelacionarDepto;
+        private System.Windows.Forms.Button btnRelacionarFornecedor;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

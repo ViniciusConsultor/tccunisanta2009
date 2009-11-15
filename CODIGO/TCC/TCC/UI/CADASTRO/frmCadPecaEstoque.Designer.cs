@@ -33,60 +33,77 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtIdPeca = new System.Windows.Forms.TextBox();
+            this.txtPeca = new System.Windows.Forms.TextBox();
             this.lblCdPeca = new System.Windows.Forms.Label();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
-            this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
-            this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
+            this.btnBuscarEstoqueDtGrid = new System.Windows.Forms.Button();
+            this.btnBuscaPeca = new System.Windows.Forms.Button();
+            this.txtBuscaFiltroEstoque = new System.Windows.Forms.TextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.lblQtd = new System.Windows.Forms.Label();
-            this.txtQuantidade = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.dgDeptos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgEstoques = new System.Windows.Forms.DataGridView();
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDeptos)).BeginInit();
+            this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEstoques)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtIdPeca
+            // txtPeca
             // 
-            this.txtIdPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdPeca.Location = new System.Drawing.Point(86, 24);
-            this.txtIdPeca.MaxLength = 50;
-            this.txtIdPeca.Name = "txtIdPeca";
-            this.txtIdPeca.Size = new System.Drawing.Size(181, 20);
-            this.txtIdPeca.TabIndex = 1;
+            this.txtPeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPeca.Enabled = false;
+            this.txtPeca.Location = new System.Drawing.Point(86, 43);
+            this.txtPeca.MaxLength = 50;
+            this.txtPeca.Name = "txtPeca";
+            this.txtPeca.Size = new System.Drawing.Size(181, 20);
+            this.txtPeca.TabIndex = 1;
+            this.txtPeca.TabStop = false;
             // 
             // lblCdPeca
             // 
             this.lblCdPeca.AutoSize = true;
-            this.lblCdPeca.Location = new System.Drawing.Point(83, 9);
+            this.lblCdPeca.Location = new System.Drawing.Point(83, 28);
             this.lblCdPeca.Name = "lblCdPeca";
             this.lblCdPeca.Size = new System.Drawing.Size(32, 13);
             this.lblCdPeca.TabIndex = 3;
             this.lblCdPeca.Text = "Peça";
             // 
-            // txtBuscaFiltro
+            // btnBuscarEstoqueDtGrid
             // 
-            this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(88, 112);
-            this.txtBuscaFiltro.MaxLength = 20;
-            this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 3;
+            this.btnBuscarEstoqueDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarEstoqueDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarEstoqueDtGrid.Location = new System.Drawing.Point(268, 98);
+            this.btnBuscarEstoqueDtGrid.Name = "btnBuscarEstoqueDtGrid";
+            this.btnBuscarEstoqueDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarEstoqueDtGrid.TabIndex = 4;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarEstoqueDtGrid, "Buscar Estoques");
+            this.btnBuscarEstoqueDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarEstoqueDtGrid.Click += new System.EventHandler(this.btnBuscarEstoqueDtGrid_Click);
             // 
-            // btnBuscarPecaDtGrid
+            // btnBuscaPeca
             // 
-            this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(268, 98);
-            this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
-            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 4;
-            this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaPeca.Location = new System.Drawing.Point(268, 28);
+            this.btnBuscaPeca.Name = "btnBuscaPeca";
+            this.btnBuscaPeca.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaPeca.TabIndex = 1;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
+            this.btnBuscaPeca.UseVisualStyleBackColor = true;
+            this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
+            // 
+            // txtBuscaFiltroEstoque
+            // 
+            this.txtBuscaFiltroEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscaFiltroEstoque.Location = new System.Drawing.Point(86, 112);
+            this.txtBuscaFiltroEstoque.MaxLength = 20;
+            this.txtBuscaFiltroEstoque.Name = "txtBuscaFiltroEstoque";
+            this.txtBuscaFiltroEstoque.Size = new System.Drawing.Size(181, 20);
+            this.txtBuscaFiltroEstoque.TabIndex = 3;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -97,6 +114,7 @@
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
             this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // btnVolta
             // 
@@ -107,6 +125,7 @@
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
             this.btnVolta.TabIndex = 9;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnLimpa
             // 
@@ -117,6 +136,7 @@
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
             this.btnLimpa.TabIndex = 7;
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnConfirma
             // 
@@ -127,33 +147,24 @@
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
             this.btnConfirma.TabIndex = 6;
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
-            // lblQtd
+            // label1
             // 
-            this.lblQtd.AutoSize = true;
-            this.lblQtd.Location = new System.Drawing.Point(85, 54);
-            this.lblQtd.Name = "lblQtd";
-            this.lblQtd.Size = new System.Drawing.Size(62, 13);
-            this.lblQtd.TabIndex = 3;
-            this.lblQtd.Text = "Quantidade";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(83, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Estoque";
             // 
-            // txtQuantidade
+            // dgEstoques
             // 
-            this.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQuantidade.Location = new System.Drawing.Point(88, 71);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(179, 20);
-            this.txtQuantidade.TabIndex = 2;
-            this.txtQuantidade.Text = "0";
-            this.txtQuantidade.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            // 
-            // dgDeptos
-            // 
-            this.dgDeptos.AllowUserToAddRows = false;
-            this.dgDeptos.AllowUserToDeleteRows = false;
-            this.dgDeptos.AllowUserToResizeColumns = false;
-            this.dgDeptos.AllowUserToResizeRows = false;
-            this.dgDeptos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgEstoques.AllowUserToAddRows = false;
+            this.dgEstoques.AllowUserToDeleteRows = false;
+            this.dgEstoques.AllowUserToResizeColumns = false;
+            this.dgEstoques.AllowUserToResizeRows = false;
+            this.dgEstoques.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,12 +172,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDeptos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgDeptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDeptos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgEstoques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgEstoques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEstoques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hSelecionar,
-            this.hIdDepto,
-            this.hNome});
+            this.hIdEstoque,
+            this.hNome,
+            this.hQuantidade});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,10 +186,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgDeptos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgDeptos.Location = new System.Drawing.Point(72, 135);
-            this.dgDeptos.MultiSelect = false;
-            this.dgDeptos.Name = "dgDeptos";
+            this.dgEstoques.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgEstoques.Location = new System.Drawing.Point(72, 138);
+            this.dgEstoques.MultiSelect = false;
+            this.dgEstoques.Name = "dgEstoques";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,11 +197,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDeptos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgDeptos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDeptos.ShowEditingIcon = false;
-            this.dgDeptos.Size = new System.Drawing.Size(295, 177);
-            this.dgDeptos.TabIndex = 10;
+            this.dgEstoques.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgEstoques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgEstoques.ShowEditingIcon = false;
+            this.dgEstoques.Size = new System.Drawing.Size(295, 177);
+            this.dgEstoques.TabIndex = 39;
             // 
             // hSelecionar
             // 
@@ -199,22 +211,29 @@
             this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.hSelecionar.Width = 80;
             // 
-            // hIdDepto
+            // hIdEstoque
             // 
-            this.hIdDepto.DataPropertyName = "id_depto";
-            this.hIdDepto.HeaderText = "IdDepto";
-            this.hIdDepto.Name = "hIdDepto";
-            this.hIdDepto.ReadOnly = true;
-            this.hIdDepto.Visible = false;
-            this.hIdDepto.Width = 68;
+            this.hIdEstoque.DataPropertyName = "id_estoq";
+            this.hIdEstoque.HeaderText = "IdEstoque";
+            this.hIdEstoque.Name = "hIdEstoque";
+            this.hIdEstoque.ReadOnly = true;
+            this.hIdEstoque.Visible = false;
+            this.hIdEstoque.Width = 78;
             // 
             // hNome
             // 
-            this.hNome.DataPropertyName = "nom";
+            this.hNome.DataPropertyName = "Estoque";
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.Width = 58;
+            // 
+            // hQuantidade
+            // 
+            this.hQuantidade.DataPropertyName = "qtd_peca";
+            this.hQuantidade.HeaderText = "Quantidade";
+            this.hQuantidade.Name = "hQuantidade";
+            this.hQuantidade.Width = 85;
             // 
             // frmCadPecaEstoque
             // 
@@ -224,23 +243,23 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(372, 320);
             this.ControlBox = false;
-            this.Controls.Add(this.dgDeptos);
-            this.Controls.Add(this.txtQuantidade);
+            this.Controls.Add(this.dgEstoques);
+            this.Controls.Add(this.btnBuscaPeca);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.txtBuscaFiltro);
-            this.Controls.Add(this.btnBuscarPecaDtGrid);
-            this.Controls.Add(this.lblQtd);
+            this.Controls.Add(this.txtBuscaFiltroEstoque);
+            this.Controls.Add(this.btnBuscarEstoqueDtGrid);
             this.Controls.Add(this.lblCdPeca);
-            this.Controls.Add(this.txtIdPeca);
+            this.Controls.Add(this.txtPeca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadPecaEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Peças em Estoque ";
-            ((System.ComponentModel.ISupportInitialize)(this.dgDeptos)).EndInit();
+            this.Text = "Peça/Estoque";
+            ((System.ComponentModel.ISupportInitialize)(this.dgEstoques)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,20 +267,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtIdPeca;
+        private System.Windows.Forms.TextBox txtPeca;
         private System.Windows.Forms.Label lblCdPeca;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private System.Windows.Forms.TextBox txtBuscaFiltro;
-        private System.Windows.Forms.Button btnBuscarPecaDtGrid;
+        private System.Windows.Forms.TextBox txtBuscaFiltroEstoque;
+        private System.Windows.Forms.Button btnBuscarEstoqueDtGrid;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnConfirma;
-        private System.Windows.Forms.Label lblQtd;
-        private Controles.MegaTextBox.MegaTextBox txtQuantidade;
-        private System.Windows.Forms.DataGridView dgDeptos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscaPeca;
+        private System.Windows.Forms.DataGridView dgEstoques;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hIdDepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdEstoque;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQuantidade;
     }
 }
