@@ -147,6 +147,11 @@ namespace TCC.UI
                 this.btnLimpar_Click(null, null);
                 this.btnAceitar.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitExistenteException)
+            {
+                MessageBox.Show("Nome do Kit já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNmKit.Focus();
+            }
             catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitExistenteException)
             {
                 MessageBox.Show("Código do Kit já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);

@@ -70,6 +70,11 @@ namespace TCC.UI
                 base.LimpaDadosTela(this);
                 this.btnAceitar.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.TipoMotor.CodigoTipoMotorExistenteException)
+            {
+                MessageBox.Show("Código do Tipo do Motor já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdReal.Focus();
+            }
             catch (BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption)
             {
                 MessageBox.Show("É necessário informar o código do Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
