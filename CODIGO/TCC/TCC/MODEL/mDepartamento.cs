@@ -7,7 +7,6 @@ namespace TCC.MODEL
     public class mDepartamento : ModelPai
     {
         private int? _idDepto;
-        private string _nmDepto;
         private string _dscDepto;
         private DateTime _datAtl;
         private bool _flgAtivo;
@@ -21,12 +20,6 @@ namespace TCC.MODEL
             set { _flgAtivo = value; }
         }
 
-        [ColunasBancoDados("nom_depto", System.Data.SqlDbType.VarChar, false)]
-        public string NmDepto
-        {
-            get { return _nmDepto; }
-            set { _nmDepto = value; }
-        }
 
         [ColunasBancoDados("dat_atl", System.Data.SqlDbType.VarChar, false)]
         public DateTime DatAtl
