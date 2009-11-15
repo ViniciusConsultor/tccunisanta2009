@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Text;
 using TCC.MODEL;
@@ -21,6 +23,31 @@ namespace TCC.BUSINESS
         public override void ValidarAltera(ModelPai model)
         {
             throw new NotImplementedException();
+        }
+
+        public DataTable BuscaPerfilMenu(int idPerfil)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (idPerfil == 0)
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    param = new SqlParameter("@id_perfil", idPerfil);
+                    return base.BuscaDados("sp_busca_perfilmenu_param", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
         }
     }
 }

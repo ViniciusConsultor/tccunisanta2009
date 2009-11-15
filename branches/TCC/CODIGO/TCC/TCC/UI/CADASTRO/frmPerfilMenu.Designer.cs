@@ -39,9 +39,6 @@
             this.lblCdPerfil = new System.Windows.Forms.Label();
             this.txtPerfil = new System.Windows.Forms.TextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
-            this.txtMenu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarMenuDtGrid = new System.Windows.Forms.Button();
             this.dgMenu = new System.Windows.Forms.DataGridView();
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,33 +117,6 @@
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
-            // txtMenu
-            // 
-            this.txtMenu.Location = new System.Drawing.Point(91, 92);
-            this.txtMenu.Name = "txtMenu";
-            this.txtMenu.Size = new System.Drawing.Size(179, 20);
-            this.txtMenu.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Menu";
-            // 
-            // btnBuscarMenuDtGrid
-            // 
-            this.btnBuscarMenuDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscarMenuDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarMenuDtGrid.Location = new System.Drawing.Point(276, 77);
-            this.btnBuscarMenuDtGrid.Name = "btnBuscarMenuDtGrid";
-            this.btnBuscarMenuDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarMenuDtGrid.TabIndex = 30;
-            this.btnBuscarMenuDtGrid.UseVisualStyleBackColor = true;
-            this.btnBuscarMenuDtGrid.Click += new System.EventHandler(this.btnBuscarMenuDtGrid_Click);
-            // 
             // dgMenu
             // 
             this.dgMenu.AllowUserToAddRows = false;
@@ -175,7 +145,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgMenu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgMenu.Location = new System.Drawing.Point(70, 127);
+            this.dgMenu.Location = new System.Drawing.Point(70, 72);
             this.dgMenu.MultiSelect = false;
             this.dgMenu.Name = "dgMenu";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -188,7 +158,7 @@
             this.dgMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMenu.ShowEditingIcon = false;
-            this.dgMenu.Size = new System.Drawing.Size(295, 177);
+            this.dgMenu.Size = new System.Drawing.Size(295, 232);
             this.dgMenu.TabIndex = 32;
             // 
             // hSelecionar
@@ -223,10 +193,8 @@
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(377, 316);
+            this.ControlBox = false;
             this.Controls.Add(this.dgMenu);
-            this.Controls.Add(this.txtMenu);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnBuscarMenuDtGrid);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtPerfil);
             this.Controls.Add(this.lblCdPerfil);
@@ -234,6 +202,8 @@
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.btnBuscarPerfil);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPerfilMenu";
             this.Text = "Perfil Menu";
             ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).EndInit();
@@ -251,9 +221,6 @@
         private System.Windows.Forms.Label lblCdPerfil;
         private System.Windows.Forms.TextBox txtPerfil;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private System.Windows.Forms.TextBox txtMenu;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnBuscarMenuDtGrid;
         private System.Windows.Forms.DataGridView dgMenu;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdDepto;

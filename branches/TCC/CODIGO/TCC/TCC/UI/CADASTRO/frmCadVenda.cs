@@ -762,7 +762,7 @@ namespace TCC.UI
             try
             {
                 DialogResult resultado;
-                resultado = MessageBox.Show("Deseja criar uma orde mde produção?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                resultado = MessageBox.Show("Deseja criar uma ordem de produção?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     resumoOrdemProducao.ShowDialog();
