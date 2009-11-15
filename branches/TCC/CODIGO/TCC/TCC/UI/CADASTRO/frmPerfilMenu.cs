@@ -12,12 +12,12 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmPerfilMenu : Form
+    public partial class frmPerfilMenu : FormPai
     {
         #region Atributos
         mPerfil _modelPerfil;
         List<mPerfilMenu> _listaModelPerfilMenu;
-        int? _idPerfil;
+        //int? _idPerfil;
         #endregion Atributos
         
         #region Construtores
@@ -26,11 +26,13 @@ namespace TCC.UI
             InitializeComponent();
 
             _modelPerfil = modelPerfil;
-            _idPerfil = _modelPerfil.IdPerfil;
             txtPerfil.Text = _modelPerfil.DescPerfil;
 
             txtPerfil.Enabled = false;
             btnBuscarPerfil.Enabled = false;
+            this.PopulaGrid();
+            
+            this.MarcaPerfilMenu(_modelPerfil.IdPerfil);
         }
 
         public frmPerfilMenu()
@@ -40,11 +42,13 @@ namespace TCC.UI
         #endregion Construtores
 
         #region Eventos
-
-        private void btnBuscarMenuDtGrid_Click(object sender, EventArgs e)
+        
+        #region frmPerfilMenu_Load
+        private void frmPerfilMenu_Load(object sender, EventArgs e)
         {
             this.PopulaGrid();
         }
+        #endregion frmPerfilMenu_Load
 
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
@@ -60,7 +64,7 @@ namespace TCC.UI
                 else
                 {
                     this.txtPerfil.Text = this._modelPerfil.DescPerfil;
-                    this._idPerfil = this._modelPerfil.IdPerfil;
+                    this.MarcaPerfilMenu(_modelPerfil.IdPerfil);
                 }
             }
             catch (Exception ex)
@@ -75,12 +79,17 @@ namespace TCC.UI
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
+
             this.Insere();
         }
 
         private void btnLimpa_Click(object sender, EventArgs e)
         {
-
+            _modelPerfil = null;
+            _listaModelPerfilMenu = null;
+            base.LimpaDadosTela(this);
+            this.PopulaGrid();
+            dgMenu.Columns["id_menu"].Visible = false;
         }
 
         private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
@@ -105,6 +114,7 @@ namespace TCC.UI
             {
                 dtSource = this.BuscaMenu("");
                 this.dgMenu.DataSource = dtSource;
+                
             }
             catch (Exception ex)
             {
@@ -180,7 +190,7 @@ namespace TCC.UI
                                         dvC = linha.Cells[1];
                                         modelPerfilMenu.IdMenu = Convert.ToInt32(dvC.Value);
                                         //Pega id Perfil
-                                        modelPerfilMenu.IdPerfil = this._idPerfil;
+                                        modelPerfilMenu.IdPerfil = this._modelPerfil.IdPerfil ;
                                         modelPerfilMenu.DatTrans = DateTime.Now;
                                         modelPerfilMenu.FlgAtivo = true;
 
@@ -188,6 +198,7 @@ namespace TCC.UI
                                         if (this._listaModelPerfilMenu == null)
                                         {
                                             this._listaModelPerfilMenu = new List<mPerfilMenu>();
+                                            this._listaModelPerfilMenu.Add(modelPerfilMenu);
                                         }
                                         else
                                         {
@@ -196,8 +207,6 @@ namespace TCC.UI
                                     }
                                 }
                             }
-                            this.DialogResult = DialogResult.OK;
-                            base.Close();
                         }
                         else
                         {
@@ -258,17 +267,19 @@ namespace TCC.UI
         private void Insere()
         {
             rPerfilMenu regra = new rPerfilMenu();
-
             try
             {
                 this.PopulaListaModel();
                 this.ValidaDadosNulos();
+
+                // Exclui tudo por perfil antes de inserir
+                this.DeletaTudoPorPerfil();
+
                 foreach (mPerfilMenu modelPerfilMenu in this._listaModelPerfilMenu)
                 {
                     regra.ValidarInsere(modelPerfilMenu);
                 }
                 this.btnLimpa_Click(null, null);
-                this.btnConfirma.Enabled = false;
             }
             catch (BUSINESS.Exceptions.PerfilMenu.PerfilVazioException)
             {
@@ -290,7 +301,7 @@ namespace TCC.UI
         }
         #endregion Insere
 
-        private void MarcaPerfilMenu(int idPerfil)
+        private void MarcaPerfilMenu(int? idPerfil)
         {
             DataTable dtPerfilMenuTela = null;
             DataTable dtPerfilMenuBanco = null;
@@ -298,21 +309,45 @@ namespace TCC.UI
 
             try
             {
+                regraPerfilMenu = new rPerfilMenu();
                 int idMenuTela, idMenuBanco;
                 dtPerfilMenuBanco = regraPerfilMenu.BuscaPerfilMenu(idPerfil);
                 dtPerfilMenuTela = (DataTable)dgMenu.DataSource;
                 for (int linhaTela = 0; linhaTela < dtPerfilMenuTela.Rows.Count; linhaTela++)
                 {
+                    // desmarca este menu para limpar o controle
+                    this.dgMenu["hSelecionar", linhaTela].Value = false;
                     idMenuTela = Convert.ToInt32(dtPerfilMenuTela.Rows[linhaTela]["id_menu"]);
                     for (int linhaBanco = 0; linhaBanco < dtPerfilMenuBanco.Rows.Count; linhaBanco++)
                     {
-                        idMenuBanco = Convert.ToInt32(dtPerfilMenuTela.Rows[linhaBanco]["id_menu"]);
+                        idMenuBanco = Convert.ToInt32(dtPerfilMenuBanco.Rows[linhaBanco]["id_menu"]);
                         if (idMenuBanco == idMenuTela)
                         {
-                        // fazer alguma coisa
+                            // marca este menu pois foi localizado no banco
+                            this.dgMenu["hSelecionar", linhaTela].Value = true;
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraPerfilMenu = null;
+                dtPerfilMenuTela = null;
+                dtPerfilMenuBanco = null;
+            }
+        }
+
+        private void DeletaTudoPorPerfil()
+        {
+            rPerfilMenu regraPerfilMenu = null;
+            try
+            {
+                regraPerfilMenu = new rPerfilMenu();
+                regraPerfilMenu.DeletaPerfilMenuporPerfil(_modelPerfil.IdPerfil);
             }
             catch (Exception ex)
             {
@@ -325,5 +360,7 @@ namespace TCC.UI
         }
 
         #endregion Metodos
+
+        
     }
 }

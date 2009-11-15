@@ -25,7 +25,7 @@ namespace TCC.BUSINESS
             throw new NotImplementedException();
         }
 
-        public DataTable BuscaPerfilMenu(int idPerfil)
+        public DataTable BuscaPerfilMenu(int? idPerfil)
         {
             SqlParameter param = null;
             try
@@ -38,6 +38,31 @@ namespace TCC.BUSINESS
                 {
                     param = new SqlParameter("@id_perfil", idPerfil);
                     return base.BuscaDados("sp_busca_perfilmenu_param", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
+        public void DeletaPerfilMenuporPerfil(int? idPerfil)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (idPerfil == null)
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    param = new SqlParameter("@id_perfil", idPerfil);
+                    base.BuscaDados("sp_delete_perfilmenuporperfil", param);
                 }
             }
             catch (Exception ex)
