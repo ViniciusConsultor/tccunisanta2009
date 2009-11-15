@@ -15,7 +15,6 @@ namespace TCC.UI.CADASTRO
         #region Atributos
         mPeca _modelPeca;
         List<mPecaFornecedor> _listaModelPecaFornecedor;
-        //int? _idPeca;
         #endregion Atributos
 
         #region Construtor
@@ -24,13 +23,14 @@ namespace TCC.UI.CADASTRO
             InitializeComponent();
         }
 
-        public frmPecaFornecedor(string idPecaReal,string nomePeca)
+        public frmPecaFornecedor(int? idPeca,string nomePeca)
         {
             InitializeComponent();
+            this.btnBuscaPeca.Visible = false;
             _modelPeca = new mPeca();
-            _modelPeca.IdPecaReal = idPecaReal;
+            _modelPeca.IdPeca = idPeca;
             _modelPeca.Nom = nomePeca;
-            
+            this.txtNomePeca.Text = nomePeca;
         }
         #endregion Construtor
 
@@ -79,7 +79,6 @@ namespace TCC.UI.CADASTRO
                 else
                 {
                     this.txtNomePeca.Text = this._modelPeca.Nom;
-                    //this._idForn = this._modelFornecedor.IdFornecedor;
                 }
             }
             catch (Exception ex)
@@ -187,6 +186,7 @@ namespace TCC.UI.CADASTRO
                                         if (this._listaModelPecaFornecedor == null)
                                         {
                                             this._listaModelPecaFornecedor = new List<mPecaFornecedor>();
+                                            this._listaModelPecaFornecedor.Add(modelPecaFornecedor);
                                         }
                                         else
                                         {
@@ -292,7 +292,7 @@ namespace TCC.UI.CADASTRO
         {
             if (this._listaModelPecaFornecedor == null)
             {
-                throw new BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException(); ;
+                throw new BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException();
             }
             else if (this._modelPeca == null)
             {
