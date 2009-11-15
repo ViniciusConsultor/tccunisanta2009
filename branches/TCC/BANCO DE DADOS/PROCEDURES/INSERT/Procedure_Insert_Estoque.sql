@@ -8,7 +8,7 @@ CREATE PROCEDURE sp_insert_estoque
 @id_depto     INT,
 @dsc_estoq    VARCHAR(100),
 @dat_alt      DATETIME,
-@flag_negativo BIT,
+@flg_negativo BIT,
 @flg_ativo    BIT
 
 AS 
@@ -21,8 +21,8 @@ ELSE IF(@dsc_estoq='')
 ELSE
 BEGIN
 --Insert na tabela estoque
-INSERT INTO ESTOQUE(id_estoq, id_depto, dsc_estoq, dat_alt, flg_ativo, flag_negativo)
-VALUES(@id_estoq, @id_depto, @dsc_estoq, @dat_alt, @flg_ativo, @flag_negativo)
+INSERT INTO ESTOQUE(id_estoq, id_depto, dsc_estoq, dat_alt, flg_ativo, flg_negativo)
+VALUES(@id_estoq, @id_depto, @dsc_estoq, @dat_alt, @flg_ativo, @flg_negativo)
 END
 END TRY
 

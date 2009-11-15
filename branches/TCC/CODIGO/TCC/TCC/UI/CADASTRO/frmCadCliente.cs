@@ -310,6 +310,7 @@ namespace TCC.UI
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
             this.BuscaEstados();
+            this.rdbPessoaFisica_CheckedChanged(null, null);
         }
         #endregion Form Load
 
@@ -377,5 +378,69 @@ namespace TCC.UI
 
         }
         #endregion Eventos
+
+        private void rdbPessoaFisica_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rdbBrasil.Checked == true)
+            {
+                this.txtPais.Text = string.Empty;
+                this.txtEstado.Text = string.Empty;
+                this.txtPais.Enabled = false;
+                this.txtEstado.Enabled = false;
+                if (this.rdbPessoaFisica.Checked == true)
+                {
+                    this.txtCPF.Enabled = true;
+                    this.txtCnpj.Enabled = false;
+                    this.txtCnpj.Text = string.Empty;
+                }
+                else
+                {
+                    this.txtCPF.Text = string.Empty;
+                    this.txtCPF.Enabled = false;
+                    this.txtCnpj.Enabled = true;
+                }
+            }
+            else
+            {
+                this.txtCnpj.Text = string.Empty;
+                this.txtCPF.Text = string.Empty;
+                this.txtCPF.Enabled = false;
+                this.txtCnpj.Enabled = false;
+                this.txtPais.Enabled = true;
+                this.txtEstado.Enabled = true;
+            }
+        }
+
+        private void rdbBrasil_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rdbBrasil.Checked == true)
+            {
+                this.txtPais.Text = string.Empty;
+                this.txtEstado.Text = string.Empty;
+                this.txtPais.Enabled = false;
+                this.txtEstado.Enabled = false;
+                if (this.rdbPessoaFisica.Checked == true)
+                {
+                    this.txtCPF.Enabled = true;
+                    this.txtCnpj.Enabled = false;
+                    this.txtCnpj.Text = string.Empty;
+                }
+                else
+                {
+                    this.txtCPF.Text = string.Empty;
+                    this.txtCPF.Enabled = false;
+                    this.txtCnpj.Enabled = true;
+                }
+            }
+            else
+            {
+                this.txtCnpj.Text = string.Empty;
+                this.txtCPF.Text = string.Empty;
+                this.txtCPF.Enabled = false;
+                this.txtCnpj.Enabled = false;
+                this.txtPais.Enabled = true;
+                this.txtEstado.Enabled = true;
+            }
+        }
     }
 }

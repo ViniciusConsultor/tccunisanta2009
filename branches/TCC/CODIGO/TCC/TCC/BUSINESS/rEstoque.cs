@@ -47,8 +47,50 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mEstoque model)
+        {
+            if (this.ExisteEstoque(model.Dsc_estoque) == true)
+            {
+                throw new BUSINESS.Exceptions.Estoque.NomEstoqueExistenteException();
+            }
+        }
+
+        private bool ExisteEstoque(string NomeEstoque)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+
+                param = new SqlParameter("@dsc_estoq", NomeEstoque);
+                dt = base.BuscaDados("sp_existe_estoque", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+            }
+        }
+
         public override void ValidarInsere(ModelPai model)
         {
+            this.ValidaDados((mEstoque)model);
             base.Insere(model);
         }
 

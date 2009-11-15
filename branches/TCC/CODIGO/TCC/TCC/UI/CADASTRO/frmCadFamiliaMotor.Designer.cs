@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFamiliaMotor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDsMotor = new System.Windows.Forms.Label();
             this.txtDsMotor = new System.Windows.Forms.TextBox();
             this.btnLimpa = new System.Windows.Forms.Button();
@@ -69,6 +69,8 @@
             this.lblMotorCompra = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
+            this.txtCodigoFamMotor = new System.Windows.Forms.TextBox();
+            this.lblCodigoFamMotor = new System.Windows.Forms.Label();
             this.gbBuscaKit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).BeginInit();
             this.gbMotor.SuspendLayout();
@@ -77,7 +79,7 @@
             // lblDsMotor
             // 
             this.lblDsMotor.AutoSize = true;
-            this.lblDsMotor.Location = new System.Drawing.Point(79, 4);
+            this.lblDsMotor.Location = new System.Drawing.Point(76, 28);
             this.lblDsMotor.Name = "lblDsMotor";
             this.lblDsMotor.Size = new System.Drawing.Size(161, 13);
             this.lblDsMotor.TabIndex = 0;
@@ -86,11 +88,11 @@
             // txtDsMotor
             // 
             this.txtDsMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDsMotor.Location = new System.Drawing.Point(82, 20);
+            this.txtDsMotor.Location = new System.Drawing.Point(79, 44);
             this.txtDsMotor.MaxLength = 500;
             this.txtDsMotor.Multiline = true;
             this.txtDsMotor.Name = "txtDsMotor";
-            this.txtDsMotor.Size = new System.Drawing.Size(354, 44);
+            this.txtDsMotor.Size = new System.Drawing.Size(354, 20);
             this.txtDsMotor.TabIndex = 1;
             this.txtDsMotor.TextChanged += new System.EventHandler(this.txtDsMotor_TextChanged);
             // 
@@ -151,7 +153,7 @@
             // 
             this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaEstoque.Location = new System.Drawing.Point(547, 30);
+            this.btnBuscaEstoque.Location = new System.Drawing.Point(548, 41);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
             this.btnBuscaEstoque.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaEstoque.TabIndex = 2;
@@ -266,40 +268,40 @@
             this.dgKits.AllowUserToResizeColumns = false;
             this.dgKits.AllowUserToResizeRows = false;
             this.dgKits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgKits.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgKits.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgKits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hIdKit,
             this.hCodigo,
             this.hNome,
             this.hQtd});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgKits.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgKits.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgKits.Location = new System.Drawing.Point(171, 52);
             this.dgKits.MultiSelect = false;
             this.dgKits.Name = "dgKits";
             this.dgKits.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgKits.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgKits.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgKits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKits.ShowEditingIcon = false;
             this.dgKits.Size = new System.Drawing.Size(295, 177);
@@ -482,7 +484,7 @@
             // 
             this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEstoque.Enabled = false;
-            this.txtEstoque.Location = new System.Drawing.Point(439, 33);
+            this.txtEstoque.Location = new System.Drawing.Point(439, 44);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.ReadOnly = true;
             this.txtEstoque.Size = new System.Drawing.Size(105, 20);
@@ -492,11 +494,30 @@
             // lblEstoque
             // 
             this.lblEstoque.AutoSize = true;
-            this.lblEstoque.Location = new System.Drawing.Point(442, 17);
+            this.lblEstoque.Location = new System.Drawing.Point(439, 28);
             this.lblEstoque.Name = "lblEstoque";
             this.lblEstoque.Size = new System.Drawing.Size(46, 13);
             this.lblEstoque.TabIndex = 25;
             this.lblEstoque.Text = "Estoque";
+            // 
+            // txtCodigoFamMotor
+            // 
+            this.txtCodigoFamMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoFamMotor.Location = new System.Drawing.Point(187, 5);
+            this.txtCodigoFamMotor.MaxLength = 500;
+            this.txtCodigoFamMotor.Name = "txtCodigoFamMotor";
+            this.txtCodigoFamMotor.ReadOnly = true;
+            this.txtCodigoFamMotor.Size = new System.Drawing.Size(246, 20);
+            this.txtCodigoFamMotor.TabIndex = 27;
+            // 
+            // lblCodigoFamMotor
+            // 
+            this.lblCodigoFamMotor.AutoSize = true;
+            this.lblCodigoFamMotor.Location = new System.Drawing.Point(76, 7);
+            this.lblCodigoFamMotor.Name = "lblCodigoFamMotor";
+            this.lblCodigoFamMotor.Size = new System.Drawing.Size(105, 13);
+            this.lblCodigoFamMotor.TabIndex = 26;
+            this.lblCodigoFamMotor.Text = "Codigo Familia Motor";
             // 
             // frmCadFamiliaMotor
             // 
@@ -506,6 +527,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCodigoFamMotor);
+            this.Controls.Add(this.lblCodigoFamMotor);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnBuscaEstoque);
             this.Controls.Add(this.gbMotor);
@@ -569,5 +592,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private System.Windows.Forms.TextBox txtCodigoFamMotor;
+        private System.Windows.Forms.Label lblCodigoFamMotor;
     }
 }
