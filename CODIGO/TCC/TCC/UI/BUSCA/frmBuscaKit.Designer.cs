@@ -48,7 +48,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(40, 35);
             this.btnOK.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnOK, "OK!");
+            this.toolTipLegenda.SetToolTip(this.btnOK, "Confirmar");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -65,7 +65,7 @@
             // 
             this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(249, 9);
+            this.btnBuscar.Location = new System.Drawing.Point(249, 12);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(27, 23);
             this.btnBuscar.TabIndex = 2;
@@ -98,7 +98,7 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 35);
             this.btnFechar.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar Busca");
+            this.toolTipLegenda.SetToolTip(this.btnFechar, "Fechar/Voltar");
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 

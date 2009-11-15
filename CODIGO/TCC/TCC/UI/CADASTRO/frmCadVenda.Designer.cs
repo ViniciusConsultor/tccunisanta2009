@@ -129,7 +129,7 @@
             this.btnLimpa.Location = new System.Drawing.Point(7, 48);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 15;
+            this.btnLimpa.TabIndex = 14;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -142,7 +142,7 @@
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
             this.btnVolta.TabIndex = 16;
-            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar / Voltar");
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -174,7 +174,7 @@
             this.btnAdicionaProdutos.Location = new System.Drawing.Point(31, 183);
             this.btnAdicionaProdutos.Name = "btnAdicionaProdutos";
             this.btnAdicionaProdutos.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaProdutos.TabIndex = 12;
+            this.btnAdicionaProdutos.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaProdutos, "Adiciona ITem");
             this.btnAdicionaProdutos.UseVisualStyleBackColor = true;
             this.btnAdicionaProdutos.Click += new System.EventHandler(this.btnAdicionaProdutos_Click);
@@ -186,8 +186,8 @@
             this.btnConfirma.Location = new System.Drawing.Point(7, 7);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 14;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "OK");
+            this.btnConfirma.TabIndex = 13;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Salvar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -198,7 +198,7 @@
             this.btnRemovePeca.Location = new System.Drawing.Point(93, 183);
             this.btnRemovePeca.Name = "btnRemovePeca";
             this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
-            this.btnRemovePeca.TabIndex = 13;
+            this.btnRemovePeca.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
             this.btnRemovePeca.UseVisualStyleBackColor = true;
             this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
@@ -210,8 +210,8 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 89);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 19;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.btnBuscaAlteracaoDelecao.TabIndex = 15;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
@@ -254,7 +254,7 @@
             this.txtQtdProdutos.MaxLength = 2;
             this.txtQtdProdutos.Name = "txtQtdProdutos";
             this.txtQtdProdutos.Size = new System.Drawing.Size(100, 20);
-            this.txtQtdProdutos.TabIndex = 11;
+            this.txtQtdProdutos.TabIndex = 10;
             this.txtQtdProdutos.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // cboTipoProduto
@@ -264,7 +264,7 @@
             this.cboTipoProduto.Location = new System.Drawing.Point(31, 45);
             this.cboTipoProduto.Name = "cboTipoProduto";
             this.cboTipoProduto.Size = new System.Drawing.Size(102, 21);
-            this.cboTipoProduto.TabIndex = 10;
+            this.cboTipoProduto.TabIndex = 9;
             this.cboTipoProduto.SelectedIndexChanged += new System.EventHandler(this.cboTipoProduto_SelectedIndexChanged);
             // 
             // lblTipoProduto

@@ -120,7 +120,7 @@
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 27);
             this.btnBuscaDepartamento.TabIndex = 1;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento Responsável");
+            this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
             // 
@@ -137,7 +137,7 @@
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(30, 25);
             this.btnInsere.TabIndex = 5;
-            this.toolTipLegenda.SetToolTip(this.btnInsere, "Cadastrar");
+            this.toolTipLegenda.SetToolTip(this.btnInsere, "Salvar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
             // 
@@ -149,7 +149,7 @@
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(30, 25);
             this.btnBuscaAlteracaoDelecao.TabIndex = 7;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // panel1

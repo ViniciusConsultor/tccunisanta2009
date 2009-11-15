@@ -153,7 +153,7 @@
             // 
             this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaEstoque.Location = new System.Drawing.Point(548, 41);
+            this.btnBuscaEstoque.Location = new System.Drawing.Point(548, 42);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
             this.btnBuscaEstoque.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaEstoque.TabIndex = 2;
@@ -216,7 +216,7 @@
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
             this.btnConfirma.TabIndex = 13;
-            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Salvar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -228,7 +228,7 @@
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
             this.btnBuscaAlteracaoDelecao.TabIndex = 15;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // gbBuscaKit
@@ -323,7 +323,7 @@
             this.hCodigo.HeaderText = "Codigo";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
+            this.hCodigo.Width = 63;
             // 
             // hNome
             // 
@@ -331,7 +331,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.Width = 58;
             // 
             // hQtd
             // 
@@ -339,7 +339,7 @@
             this.hQtd.HeaderText = "Qtd";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 49;
+            this.hQtd.Width = 47;
             // 
             // txtBuscaFiltro
             // 
@@ -508,7 +508,8 @@
             this.txtCodigoFamMotor.Name = "txtCodigoFamMotor";
             this.txtCodigoFamMotor.ReadOnly = true;
             this.txtCodigoFamMotor.Size = new System.Drawing.Size(246, 20);
-            this.txtCodigoFamMotor.TabIndex = 27;
+            this.txtCodigoFamMotor.TabIndex = 0;
+            this.txtCodigoFamMotor.TabStop = false;
             // 
             // lblCodigoFamMotor
             // 
