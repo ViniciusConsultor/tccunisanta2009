@@ -27,7 +27,10 @@ namespace TCC.UI.CADASTRO
         public frmCadfornecedorDepto(int? idForn, string nomeFornecedor)
         {
             InitializeComponent();
-            this.btnBuscaFornecedor.Enabled = false;
+            this.btnBuscaFornecedor.Visible = false;
+            _modelFornecedor = new mFornecedor();
+            this._modelFornecedor.IdFornecedor = idForn;
+            this._modelFornecedor.NomeFornecedor = nomeFornecedor;
             this._idForn = idForn;
             this.txtFornecedor.Text = nomeFornecedor;
         }

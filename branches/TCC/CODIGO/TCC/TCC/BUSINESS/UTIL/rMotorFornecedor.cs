@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using TCC.MODEL;
 
-namespace TCC.BUSINESS
+namespace TCC.BUSINESS.UTIL
 {
-    class rFornecedorDepto : ComandosSql
+    class rMotorFornecedor : ComandosSql
     {
         public override void ValidarInsere(ModelPai model)
         {

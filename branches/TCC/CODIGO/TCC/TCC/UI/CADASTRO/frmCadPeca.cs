@@ -84,6 +84,15 @@ namespace TCC.UI
         }
         #endregion txtCdTipoPeca Changed
 
+        #region btnRelacionarDepto Click
+        private void btnRelacionarDepto_Click(object sender, EventArgs e)
+        {
+            mPeca model = this.PegaDadosTela();
+            CADASTRO.frmPecaFornecedor obj = new TCC.UI.CADASTRO.frmPecaFornecedor(model.IdPecaReal, model.Nom);
+            obj.ShowDialog();
+        }
+        #endregion btnRelacionarDepto Click
+
         #endregion Eventos
 
         #region Metodos

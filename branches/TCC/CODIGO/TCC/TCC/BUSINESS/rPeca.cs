@@ -37,6 +37,31 @@ namespace TCC.BUSINESS
             }
         }
 
+        public DataTable BuscaPeca(string nome)
+        {
+            SqlParameter param = null;
+            try
+            {
+                if (string.IsNullOrEmpty(nome) == true)
+                {
+                    return base.BuscaDados("sp_busca_peca");
+                }
+                else
+                {
+                    param = new SqlParameter("@nom", nome);
+                    return base.BuscaDados("sp_busca_peca_param", param);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
         public DataTable BuscaPecaNome(string parametro)
         {
             SqlParameter param = null;
