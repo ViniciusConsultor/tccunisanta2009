@@ -21,15 +21,16 @@ namespace TCC.UI
         #endregion Atributos
         
         #region Construtores
-        public frmPerfilMenu(int? idPerfil, string nomePerfil)
+        public frmPerfilMenu(mPerfil modelPerfil)
         {
             InitializeComponent();
 
-            _idPerfil = idPerfil;
-            txtPerfil.Text = nomePerfil;
+            _modelPerfil = modelPerfil;
+            _idPerfil = _modelPerfil.IdPerfil;
+            txtPerfil.Text = _modelPerfil.DescPerfil;
 
             txtPerfil.Enabled = false;
-            btnBuscarMenuDtGrid.Enabled = false;
+            btnBuscarPerfil.Enabled = false;
         }
 
         public frmPerfilMenu()
@@ -74,7 +75,7 @@ namespace TCC.UI
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-
+            this.Insere();
         }
 
         private void btnLimpa_Click(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace TCC.UI
 
         private void btnVolta_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.Close();
         }
 
         #endregion
@@ -102,7 +103,7 @@ namespace TCC.UI
             DataTable dtSource = null;
             try
             {
-                dtSource = this.BuscaMenu(this.txtMenu.Text);
+                dtSource = this.BuscaMenu("");
                 this.dgMenu.DataSource = dtSource;
             }
             catch (Exception ex)
@@ -196,7 +197,7 @@ namespace TCC.UI
                                 }
                             }
                             this.DialogResult = DialogResult.OK;
-                            this.Close();
+                            base.Close();
                         }
                         else
                         {
@@ -277,7 +278,6 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.PerfilMenu.MenuNaoEscolhidoException)
             {
                 MessageBox.Show("É necessário selecionar ao menos um menu", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.btnBuscarMenuDtGrid.Focus();
             }
             catch (Exception ex)
             {
@@ -289,6 +289,40 @@ namespace TCC.UI
             }
         }
         #endregion Insere
+
+        private void MarcaPerfilMenu(int idPerfil)
+        {
+            DataTable dtPerfilMenuTela = null;
+            DataTable dtPerfilMenuBanco = null;
+            rPerfilMenu regraPerfilMenu = null;
+
+            try
+            {
+                int idMenuTela, idMenuBanco;
+                dtPerfilMenuBanco = regraPerfilMenu.BuscaPerfilMenu(idPerfil);
+                dtPerfilMenuTela = (DataTable)dgMenu.DataSource;
+                for (int linhaTela = 0; linhaTela < dtPerfilMenuTela.Rows.Count; linhaTela++)
+                {
+                    idMenuTela = Convert.ToInt32(dtPerfilMenuTela.Rows[linhaTela]["id_menu"]);
+                    for (int linhaBanco = 0; linhaBanco < dtPerfilMenuBanco.Rows.Count; linhaBanco++)
+                    {
+                        idMenuBanco = Convert.ToInt32(dtPerfilMenuTela.Rows[linhaBanco]["id_menu"]);
+                        if (idMenuBanco == idMenuTela)
+                        {
+                        // fazer alguma coisa
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraPerfilMenu = null;
+            }
+        }
 
         #endregion Metodos
     }

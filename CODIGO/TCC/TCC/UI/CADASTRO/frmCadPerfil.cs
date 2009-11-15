@@ -73,9 +73,16 @@ namespace TCC.UI
             mPerfil modelPerfil = new mPerfil();
             try
             {
+                DialogResult resultado;
                 this.ValidaDadosNulos();
                 modelPerfil = this.PegaDadosTela();
                 regraPerfil.ValidarInsere(modelPerfil);
+
+                resultado = MessageBox.Show("Deseja associar este perfil aos menus agora?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    AbreTelaRelacionaPerfilMenu(modelPerfil);
+                }
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
             }
@@ -103,6 +110,22 @@ namespace TCC.UI
             }
         }
         #endregion ValidaDadosNulos
+
+        #region Abre tela Relaciona PerfilMenu
+        private void AbreTelaRelacionaPerfilMenu(mPerfil modelPerfil)
+        {
+            try
+            {
+                frmPerfilMenu frm = new frmPerfilMenu(modelPerfil);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
+            }
+        }
+        #endregion Abre tela Relaciona PerfilMenu
+
 
         #endregion
     }

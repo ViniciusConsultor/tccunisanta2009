@@ -43,13 +43,13 @@ namespace TCC.UI
         {
             this.PopulaModelDadosGrid();
             this.DialogResult = DialogResult.OK;
-            this.Close();
+            base.Close();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            base.Close();
         }
         #endregion
 
@@ -140,7 +140,7 @@ namespace TCC.UI
                 this.PopulaModelDadosGrid();
                 this.PopulaModelCompletoAlteracao();
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                base.Close();
             }
             catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
             {

@@ -48,7 +48,7 @@ namespace TCC.UI
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            base.Close();
         }
 
         private void frmBuscaPerfil_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace TCC.UI
                 this.RetornaModel();
                 this.PopulaModelCompletoAlteracao();
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                base.Close();
             }
             catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
             {
@@ -152,7 +152,7 @@ namespace TCC.UI
                             dvC = this.dgPerfil["Perfil", this.dgPerfil.CurrentRow.Index];
                             this._model.DescPerfil = dvC.Value.ToString();
                             this.DialogResult = DialogResult.OK;
-                            this.Close();
+                            base.Close();
                         }
                         else
                         {
