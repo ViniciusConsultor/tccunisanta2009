@@ -85,6 +85,7 @@ namespace TCC.UI
                 }
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
+                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
             {

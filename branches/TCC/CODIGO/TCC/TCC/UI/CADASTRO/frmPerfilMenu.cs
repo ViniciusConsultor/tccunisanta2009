@@ -288,6 +288,7 @@ namespace TCC.UI
                     regra.ValidarInsere(modelPerfilMenu);
                 }
                 this.btnLimpa_Click(null, null);
+                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.PerfilMenu.PerfilVazioException)
             {
