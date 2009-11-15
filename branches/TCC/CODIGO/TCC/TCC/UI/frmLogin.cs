@@ -9,7 +9,7 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : FormPai
     {
         #region Construtor
         public frmLogin()
@@ -88,6 +88,11 @@ namespace TCC.UI
         }
 
         #endregion Eventos
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+        }
 
 
     }
