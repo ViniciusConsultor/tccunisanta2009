@@ -101,6 +101,7 @@
             // 
             // txtPerfil
             // 
+            this.txtPerfil.Enabled = false;
             this.txtPerfil.Location = new System.Drawing.Point(91, 36);
             this.txtPerfil.Name = "txtPerfil";
             this.txtPerfil.Size = new System.Drawing.Size(179, 20);
@@ -206,6 +207,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPerfilMenu";
             this.Text = "Perfil Menu";
+            this.Load += new System.EventHandler(this.frmPerfilMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
