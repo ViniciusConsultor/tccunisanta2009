@@ -158,7 +158,7 @@
             this.hCodigo.HeaderText = "Código";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
+            this.hCodigo.Width = 65;
             // 
             // hNome
             // 
@@ -166,7 +166,7 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
+            this.hNome.Width = 60;
             // 
             // hQtd
             // 
@@ -174,7 +174,7 @@
             this.hQtd.HeaderText = "Quantidade";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 85;
+            this.hQtd.Width = 87;
             // 
             // btnVoltar
             // 
@@ -201,12 +201,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 268);
+            this.ControlBox = false;
             this.Controls.Add(this.gbKits);
             this.Controls.Add(this.txtNomeFamiliaMotor);
             this.Controls.Add(this.txtMotor);
             this.Controls.Add(this.lblMotor);
             this.Controls.Add(this.lblNome);
+            this.MaximizeBox = false;
             this.Name = "frmResumoKitFamilia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Resumo Familia Motor";
             this.Load += new System.EventHandler(this.frmResumoKitFamilia_Load);
             this.gbKits.ResumeLayout(false);

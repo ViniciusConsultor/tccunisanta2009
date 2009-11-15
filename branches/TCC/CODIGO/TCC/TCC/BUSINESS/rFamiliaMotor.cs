@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
@@ -95,9 +96,50 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mFamiliaMotor model)
+        {
+            if (this.ExisteFamiliaMotor(model.Id_fam_motor_real) == true)
+            {
+                throw new BUSINESS.Exceptions.FamiliaMotor.CodigoRealFamiliaExistenteException();
+            }
+        }
+
+        private bool ExisteFamiliaMotor(string CodigoFamiliaMotor)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@id_fam_motor_real", CodigoFamiliaMotor);
+                dt = base.BuscaDados("sp_existe_familiaMotor", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+            }
+        }
+
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            this.ValidaDados((mFamiliaMotor)model);
             base.Insere(model);
         }
 

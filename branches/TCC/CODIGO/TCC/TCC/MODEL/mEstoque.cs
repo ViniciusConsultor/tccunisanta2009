@@ -50,7 +50,7 @@ namespace TCC.MODEL
             set { id_depto = value; }
         }
 
-        [ColunasBancoDados("flag_negativo", System.Data.SqlDbType.Bit, false)]
+        [ColunasBancoDados("flg_negativo", System.Data.SqlDbType.Bit, false)]
         public bool Flg_negativo
         {
             get { return flag_negativo; }

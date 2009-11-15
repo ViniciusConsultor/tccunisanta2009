@@ -109,6 +109,11 @@ namespace TCC.UI
                 this.btnLimpa_Click(null, null);
                 this.btnInsere.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.Estoque.NomEstoqueExistenteException)
+            {
+                MessageBox.Show("Nome do Estoque já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaDepartamento.Focus();
+            }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
                 MessageBox.Show("É necessário informar o Departamento do estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);

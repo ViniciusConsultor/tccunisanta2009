@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_busca_departamento_param
 @nom VARCHAR(25)
 AS
-SELECT id_depto, nom, dsc_depto
+SELECT id_depto, nom
 FROM Departamento
 WHERE nom LIKE '%' + @nom + '%'
 AND flg_ativo = 1
