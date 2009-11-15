@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hidDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgDepartamento.AllowUserToResizeRows = false;
             this.dgDepartamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDepartamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hDepartamento,
+            this.hidDepto});
             this.dgDepartamento.Location = new System.Drawing.Point(16, 44);
             this.dgDepartamento.MultiSelect = false;
             this.dgDepartamento.Name = "dgDepartamento";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hDepartamento
+            // 
+            this.hDepartamento.DataPropertyName = "nom";
+            this.hDepartamento.HeaderText = "Departamento";
+            this.hDepartamento.Name = "hDepartamento";
+            this.hDepartamento.ReadOnly = true;
+            this.hDepartamento.Width = 99;
+            // 
+            // hidDepto
+            // 
+            this.hidDepto.DataPropertyName = "id_depto";
+            this.hidDepto.HeaderText = "idDepto";
+            this.hidDepto.Name = "hidDepto";
+            this.hidDepto.ReadOnly = true;
+            this.hidDepto.Visible = false;
+            this.hidDepto.Width = 69;
+            // 
             // frmBuscaDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hDepartamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hidDepto;
     }
 }

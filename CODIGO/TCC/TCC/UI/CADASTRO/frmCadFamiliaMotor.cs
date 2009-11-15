@@ -106,6 +106,8 @@ namespace TCC.UI
                 else
                 {
                     this.txtNumeroMotor.Text = this._modelNumeroMotor.Dsc_num_motor;
+                    this.txtCodigoFamMotor.Text = this.txtNumeroMotor.Text;
+                    this.txtCodigoFamMotor.Text += this.txtTipoMotor.Text;
                 }
             }
             catch (Exception ex)
@@ -162,6 +164,8 @@ namespace TCC.UI
                 else
                 {
                     this.txtTipoMotor.Text = this._modelTipoMotor.DscTipoMotor;
+                    this.txtCodigoFamMotor.Text = this.txtNumeroMotor.Text;
+                    this.txtCodigoFamMotor.Text += this.txtTipoMotor.Text;
                 }
             }
             catch (Exception ex)
@@ -357,11 +361,11 @@ namespace TCC.UI
                 string estoque= this.txtEstoque.Text;
                 if (string.IsNullOrEmpty(estoque) == true)
                 {
-                    model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
+                    model.IdEstoque = null;
                 }
                 else
                 {
-                    model.IdEstoque = null;
+                    model.IdEstoque = Convert.ToInt32(this._modelEstoque.Id_estoque);
                 }
                 model.IdMotor = Convert.ToInt32(this._modelMotor.IdMotor);
                 model.IdNumMotor = Convert.ToInt32(this._modelNumeroMotor.Id_num_motor);

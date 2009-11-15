@@ -21,7 +21,7 @@ namespace TCC.MODEL
             set { id_kit = value; }
         }
 
-        [ColunasBancoDados("nomId_farm_motor", System.Data.SqlDbType.VarChar, true)]
+        [ColunasBancoDados("Id_fam_motor", System.Data.SqlDbType.VarChar, true)]
         public int? Id_farm_motor
         {
             get { return id_farm_motor; }

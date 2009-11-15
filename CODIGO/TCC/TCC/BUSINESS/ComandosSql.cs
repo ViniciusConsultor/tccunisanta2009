@@ -294,7 +294,6 @@ namespace TCC.BUSINESS
                         contadorCorreto++;
                     }
                 }
-
                 return param;
             }
             catch (Exception ex)
