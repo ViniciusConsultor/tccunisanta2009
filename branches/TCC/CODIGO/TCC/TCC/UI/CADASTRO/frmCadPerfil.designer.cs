@@ -37,9 +37,6 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
-            this.btnRelacionarDepto = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDescPerfil
@@ -114,35 +111,6 @@
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
-            // btnRelacionarDepto
-            // 
-            this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
-            this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacionarDepto.Location = new System.Drawing.Point(254, 159);
-            this.btnRelacionarDepto.Name = "btnRelacionarDepto";
-            this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
-            this.btnRelacionarDepto.TabIndex = 2;
-            this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
-            this.btnRelacionarDepto.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(190, 178);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Menus";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Relacionar";
-            // 
             // frmCadPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,9 +119,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnRelacionarDepto);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
@@ -177,8 +142,5 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRelacionarDepto;
     }
 }
