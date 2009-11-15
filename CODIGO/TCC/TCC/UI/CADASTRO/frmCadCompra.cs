@@ -52,7 +52,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtCdFornecedor.Text = this._modelFornecedor.NomeFornecedor;
+                   // this.txtCdFornecedor.Text = this._modelFornecedor.NomeFornecedor;
                 }
             }
             catch (Exception ex)
@@ -138,40 +138,41 @@ namespace TCC.UI
             mCompra model = new mCompra();
             rCompra regra = new rCompra();
 
-            try
+              try
             {
-                model.IdCompra = regra.BuscaIdMaximo();
-                model.Dat = DateTime.Now;
-               // model.IdFornecedor = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
-                if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
-                {
-              //      model.NotaFiscal = null;
-                }
-                else
-                {
-                //    model.NotaFiscal = this.txtNotaFiscal.Text;
-                }
-                if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
-                {
-                    model.Obs = null;
-                }
-                else
-                {
-                    model.Obs = this.txtObservacao.Text;
-                }
-                model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
-
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                model = null;
-            }
+                 model.IdCompra = regra.BuscaIdMaximo();
+                 model.Dat = DateTime.Now;
+                // model.IdFornecedor = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
+                 if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
+                 {
+               //      model.NotaFiscal = null;
+                 }
+                 else
+                 {
+                 //    model.NotaFiscal = this.txtNotaFiscal.Text;
+                 }
+                 /*if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
+                 {
+                     model.Obs = null;
+                 }
+                 else
+                 {
+                     model.Obs = this.txtObservacao.Text;
+                 }
+                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
+                  */
+                 return model;
+             }
+             catch (Exception ex)
+             {
+                 throw ex;
+             }
+             finally
+             {
+                 model = null;
+             }
         }
+        
         #endregion Pega Dados Tela
 
         #region Valida Dados Nulos
@@ -196,10 +197,10 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
             }
-            else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
+           /* else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
             {
                 throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
-            }
+            }*/
         }
         #endregion Valida Dados Nulos
 
@@ -214,8 +215,8 @@ namespace TCC.UI
                 base.Alteracao = true;
                //this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
                //this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
-                this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
-                this.txtObservacao.Text = this._modelCompra.Obs;
+               // this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
+              //  this.txtObservacao.Text = this._modelCompra.Obs;
             }
         }
         #endregion Popula Tela Com Model Alteracao
