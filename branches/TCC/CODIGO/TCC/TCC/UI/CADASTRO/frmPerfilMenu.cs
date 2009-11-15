@@ -30,6 +30,8 @@ namespace TCC.UI
 
             txtPerfil.Enabled = false;
             btnBuscarPerfil.Enabled = false;
+            btnLimpa.Enabled = false;
+
             this.PopulaGrid();
             
             this.MarcaPerfilMenu(_modelPerfil.IdPerfil);
