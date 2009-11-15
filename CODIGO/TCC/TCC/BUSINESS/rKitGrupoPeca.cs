@@ -164,15 +164,63 @@ namespace TCC.BUSINESS
 
         private void ValidaDados(mKitGrupoPeca model)
         {
+            if (this.ExisteKitCodigo(model.IdKitReal) == true)
+            {
+                throw new Exceptions.KitGrupoPeca.CodigoRealKitExistenteException();
+            }
+            else if (this.ExisteKitNome(model.Nom_grupo) == true)
+            {
+                throw new Exceptions.KitGrupoPeca.NomeKitExistenteException();
+            }
+        }
+
+        private bool ExisteKitCodigo(string codigoKit)
+        {
             SqlParameter param = null;
             DataTable dtQuery = null;
             try
             {
-                param = new SqlParameter("@id_kit_real", model.IdKitReal);
-                dtQuery = base.BuscaDados("sp_existe_kitgrupopeca", param);
+                param = new SqlParameter("@id_kit_real", codigoKit);
+                dtQuery = base.BuscaDados("sp_existe_kitgrupopeca_codigo", param);
                 if (Convert.ToInt32(dtQuery.Rows[0]["flg_existe"]) > 0)
                 {
-                    throw new Exceptions.KitGrupoPeca.CodigoRealKitExistenteException();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtQuery != null)
+                {
+                    dtQuery.Dispose();
+                    dtQuery = null;
+                }
+                param = null;
+            }
+        }
+
+        private bool ExisteKitNome(string nomeKit)
+        {
+            SqlParameter param = null;
+            DataTable dtQuery = null;
+            try
+            {
+                param = new SqlParameter("@nom", nomeKit);
+                dtQuery = base.BuscaDados("sp_existe_kitgrupopeca_nome", param);
+                if (Convert.ToInt32(dtQuery.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -222,6 +270,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            this.ValidaDados((mKitGrupoPeca)model);
             base.Insere(model);
         }
 

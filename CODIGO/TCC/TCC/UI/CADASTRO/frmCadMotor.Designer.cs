@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadMotor));
-            this.lblDsMotor = new System.Windows.Forms.Label();
+            this.lblNomeMotor = new System.Windows.Forms.Label();
             this.txtDsMotor = new System.Windows.Forms.TextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -45,14 +45,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblDsMotor
+            // lblNomeMotor
             // 
-            this.lblDsMotor.AutoSize = true;
-            this.lblDsMotor.Location = new System.Drawing.Point(65, 36);
-            this.lblDsMotor.Name = "lblDsMotor";
-            this.lblDsMotor.Size = new System.Drawing.Size(100, 13);
-            this.lblDsMotor.TabIndex = 0;
-            this.lblDsMotor.Text = "Descrição do Motor";
+            this.lblNomeMotor.AutoSize = true;
+            this.lblNomeMotor.Location = new System.Drawing.Point(65, 36);
+            this.lblNomeMotor.Name = "lblNomeMotor";
+            this.lblNomeMotor.Size = new System.Drawing.Size(80, 13);
+            this.lblNomeMotor.TabIndex = 0;
+            this.lblNomeMotor.Text = "Nome do Motor";
             // 
             // txtDsMotor
             // 
@@ -194,7 +194,7 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtDsMotor);
-            this.Controls.Add(this.lblDsMotor);
+            this.Controls.Add(this.lblNomeMotor);
             this.MaximizeBox = false;
             this.Name = "frmCadMotor";
             this.Text = "Cadastro de Motores";
@@ -205,7 +205,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblDsMotor;
+        private System.Windows.Forms.Label lblNomeMotor;
         private System.Windows.Forms.TextBox txtDsMotor;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;

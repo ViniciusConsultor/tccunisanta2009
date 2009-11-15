@@ -100,6 +100,11 @@ namespace TCC.UI
                 base.LimpaDadosTela(this);
                 this.btnAceitar.Enabled = false;
             }
+            catch (BUSINESS.Exceptions.Motor.DescMotorExistenteException)
+            {
+                MessageBox.Show("Descrição para o Motor já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDsMotor.Focus();
+            }
             catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
             {
                 MessageBox.Show("É necessário digitar uma Descrição para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -118,6 +123,5 @@ namespace TCC.UI
         #endregion Inserir
 
         #endregion Metodos
-
     }
 }

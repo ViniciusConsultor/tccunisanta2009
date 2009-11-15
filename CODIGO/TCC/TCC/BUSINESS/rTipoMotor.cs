@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
@@ -39,8 +40,49 @@ namespace TCC.BUSINESS
             return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_tipo_motor", "tipomotor"));
         }
 
+        private bool ExisteTipoMotor(string CodigoTipoMotor)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@id_tipo_motor_real", CodigoTipoMotor);
+                dt = base.BuscaDados("sp_existe_tipoMotor", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
+            }
+        }
+
+        private void ValidaDados(mTipoMotor model)
+        {
+            if (this.ExisteTipoMotor(model.IdTipoMotorReal) == true)
+            {
+                throw new Exceptions.TipoMotor.CodigoTipoMotorExistenteException();
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            this.ValidaDados((mTipoMotor)model);
             base.Insere(model);
         }
 

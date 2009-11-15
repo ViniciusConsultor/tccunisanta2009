@@ -48,8 +48,49 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mNumMotor model)
+        {
+            if (this.ExisteCodigoNumeroMotor(model.IdNumMotorReal) == true)
+            {
+                throw new BUSINESS.Exceptions.NumeroMotor.CodigoNumeroMotorExistenteException();
+            }
+        }
+
+        private bool ExisteCodigoNumeroMotor(string CodigoNumeroMotor)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@id_num_motor_real", CodigoNumeroMotor);
+                dt = base.BuscaDados("sp_existe_numeroMotor", param);
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                param = null;
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+            }
+        }
+
         public override void ValidarInsere(TCC.MODEL.ModelPai model)
         {
+            this.ValidaDados((mNumMotor)model);
             base.Insere(model);
         }
 
