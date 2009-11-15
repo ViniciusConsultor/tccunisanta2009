@@ -165,6 +165,7 @@
             // rdbDefeitoNao
             // 
             this.rdbDefeitoNao.AutoSize = true;
+            this.rdbDefeitoNao.Checked = true;
             this.rdbDefeitoNao.Location = new System.Drawing.Point(103, 36);
             this.rdbDefeitoNao.Name = "rdbDefeitoNao";
             this.rdbDefeitoNao.Size = new System.Drawing.Size(45, 17);
@@ -180,7 +181,6 @@
             this.rdbDefeitoSim.Name = "rdbDefeitoSim";
             this.rdbDefeitoSim.Size = new System.Drawing.Size(42, 17);
             this.rdbDefeitoSim.TabIndex = 3;
-            this.rdbDefeitoSim.TabStop = true;
             this.rdbDefeitoSim.Text = "Sim";
             this.rdbDefeitoSim.UseVisualStyleBackColor = true;
             // 

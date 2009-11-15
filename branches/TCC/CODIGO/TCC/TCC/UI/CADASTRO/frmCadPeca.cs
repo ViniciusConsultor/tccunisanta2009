@@ -87,8 +87,9 @@ namespace TCC.UI
         #region btnRelacionarFornecedor Click
         private void btnRelacionarFornecedor_Click(object sender, EventArgs e)
         {
+            this.ValidaDadosNulos();
             mPeca model = this.PegaDadosTela();
-            CADASTRO.frmPecaFornecedor obj = new TCC.UI.CADASTRO.frmPecaFornecedor(model.IdPeca, model.Nom);
+            frmPecaFornecedor obj = new frmPecaFornecedor(model.IdPeca, model.Nom);
             obj.ShowDialog();
         }
         #endregion btnRelacionarFornecedor Click
@@ -96,8 +97,9 @@ namespace TCC.UI
         #region btnRelacionarEstoque Click
         private void btnRelacionarEstoque_Click(object sender, EventArgs e)
         {
+            this.ValidaDadosNulos();
             mPeca model = this.PegaDadosTela();
-            CADASTRO.frmCadPecaEstoque obj = new TCC.UI.CADASTRO.frmCadPecaEstoque(model.IdPeca, model.Nom);
+            frmCadPecaEstoque obj = new frmCadPecaEstoque(model);
             obj.ShowDialog();
         }
         #endregion btnRelacionarEstoque Click
