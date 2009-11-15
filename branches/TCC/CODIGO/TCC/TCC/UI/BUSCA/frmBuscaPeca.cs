@@ -13,22 +13,23 @@ namespace TCC.UI
     public partial class frmBuscaPeca : Form
     {
         #region Atributos
-        List<mPeca> _model;
+        mPeca _model;
         bool _alteracao;
         #endregion
 
         #region Construtor
-        public frmBuscaPeca(List<mPeca> modelPeca, bool multiSelecao, bool Alteracao)
+        public frmBuscaPeca(mPeca modelPeca)
+        {
+            InitializeComponent();
+            this._model = modelPeca;
+            this._alteracao = false;
+        }
+        
+        public frmBuscaPeca(mPeca modelPeca, bool Alteracao)
         {
             InitializeComponent();
             this._model = modelPeca;
             this._alteracao = Alteracao;
-            this.dgPeca.MultiSelect = multiSelecao;
-        }
-
-        public frmBuscaPeca()
-        {
-            InitializeComponent();
         }
         #endregion
 
@@ -46,6 +47,7 @@ namespace TCC.UI
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void frmBuscaPeca_Load(object sender, EventArgs e)
@@ -110,30 +112,30 @@ namespace TCC.UI
         #region Metodos
         private void PopulaGrid()
         {
-            rPeca regra = new rPeca();
+            rPeca regraPeca = new rPeca();
             DataTable dt = new DataTable();
             try
             {
-                dt = regra.BuscaPecaNome(this.txtFiltro.Text);
-                IniciaHeaderDatagrid();
+                dt = regraPeca.BuscaPeca(this.txtFiltro.Text);
                 dgPeca.DataSource = dt;
+                this.dgPeca.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
             finally
             {
-                regra = null;
+                regraPeca = null;
                 dt = null;
             }
         }
 
         private void RetornaModel()
         {
-            DataGridViewCell dvC = null;
+            DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
-            mPeca modelPeca;
             try
             {
                 dtSource = (DataTable)this.dgPeca.DataSource;
@@ -143,32 +145,10 @@ namespace TCC.UI
                     {
                         if (this.dgPeca.CurrentRow != null)
                         {
-                            //Varre o DataGrid linha por linha
-                            //--------------------------------
-                            foreach (DataGridViewRow linha in this.dgPeca.Rows)
-                            {
-                                //Verifica se a linha é nula
-                                //--------------------------
-                                if (linha.Cells[0].Value != null)
-                                {
-                                    //Converte o valor para Boolean e verifica se está checado
-                                    //--------------------------------------------------------
-                                    if (Convert.ToBoolean(linha.Cells[0].Value) != false)
-                                    {
-                                        modelPeca = new mPeca();
-
-                                        //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
-                                        //------------------------------------------------------------------------------------
-                                        //Pega id Peça
-                                        dvC = linha.Cells[1];
-                                        modelPeca.IdPeca = Convert.ToInt32(dvC.Value);
-                                        //Pega Peça
-                                        dvC = linha.Cells[2];
-                                        modelPeca.Nom = dvC.Value.ToString();
-                                        this._model.Add(modelPeca);
-                                    }
-                                }
-                            }
+                            dvc = this.dgPeca["id_peca", this.dgPeca.CurrentRow.Index];
+                            _model.IdPeca = Convert.ToInt32(dvc.Value);
+                            dvc = this.dgPeca["nom", this.dgPeca.CurrentRow.Index];
+                            _model.Nom = dvc.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
@@ -179,24 +159,25 @@ namespace TCC.UI
                     }
                     else
                     {
-                        MessageBox.Show("É necessário Cadastrar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("É necessário cadastrar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário Buscar e Selecionar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("É necessário buscar e selecionar um motor!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
             finally
             {
-                if (dvC != null)
+                if (dvc != null)
                 {
-                    dvC.Dispose();
-                    dvC = null;
+                    dvc.Dispose();
+                    dvc = null;
                 }
                 if (dtSource != null)
                 {
@@ -208,12 +189,12 @@ namespace TCC.UI
 
         private void PopulaModelCompletoAlteracao()
         {
-            rPeca regraPeca = new rPeca();
+            rPeca regraPeca = new rPeca ();
             DataTable dtRegistroPeca = null;
             try
             {
-                dtRegistroPeca = regraPeca.BuscaUmRegistro(this._model[0]);
-                this._model[0].Deserialize(dtRegistroPeca);
+                dtRegistroPeca = regraPeca.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroPeca);
             }
             catch (Exception ex)
             {
@@ -241,10 +222,10 @@ namespace TCC.UI
 
         private void DeletaCadastro()
         {
-            rPeca regraPeca = new rPeca();
+            rMotor regraMotor = new rMotor();
             try
             {
-                regraPeca.ValidarDeleta(this._model[0]);
+                regraMotor.ValidarDeleta(this._model);
             }
             catch (Exception ex)
             {
@@ -252,41 +233,10 @@ namespace TCC.UI
             }
             finally
             {
-                regraPeca = null;
+                regraMotor = null;
             }
         }
         #endregion
 
-        private void IniciaHeaderDatagrid()
-        {
-            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
-            DataGridViewTextBoxColumn peca = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn idPeca = new DataGridViewTextBoxColumn();
-            try
-            {
-                check.HeaderText = "Seleção";
-                check.Visible = true;
-                check.ReadOnly = false;
-                check.ValueType = typeof(bool);
-                peca.DataPropertyName = "Peça";
-                peca.HeaderText = "Peça";
-                peca.ReadOnly = true;
-                idPeca.DataPropertyName = "id_peca";
-                idPeca.HeaderText = "id_peca";
-                idPeca.ReadOnly = true;
-                this.dgPeca.Columns.Add(check);
-                this.dgPeca.Columns.Add(peca);
-                this.dgPeca.Columns.Add(idPeca);
-                this.dgPeca.Columns[2].Visible = false;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-
-            }
-        }
     }
 }

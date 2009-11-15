@@ -48,6 +48,16 @@ namespace TCC.UI
             this.btnAceitar.Enabled = true;
         }
         #endregion txtDsMotor TextChanged
+
+        #region btnRelacionarFornecedor Click
+        private void btnRelacionarFornecedor_Click(object sender, EventArgs e)
+        {
+            mMotor model = this.PegaDadosTela();
+            CADASTRO.frmCadMotorFornecedor obj = new TCC.UI.CADASTRO.frmCadMotorFornecedor(model.IdMotor, model.DscMotor);
+            obj.ShowDialog();
+        }
+        #endregion btnRelacionarFornecedor Click
+
         #endregion Eventos
 
         #region Metodos

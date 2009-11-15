@@ -28,107 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPecaFornecedor));
-            this.txtCdFornecedor = new System.Windows.Forms.TextBox();
-            this.lblCdFornecedor = new System.Windows.Forms.Label();
-            this.dgItems = new System.Windows.Forms.DataGridView();
-            this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NmItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtNomePeca = new System.Windows.Forms.TextBox();
+            this.lblNomePeca = new System.Windows.Forms.Label();
+            this.txtBuscaFiltroFornecedor = new System.Windows.Forms.TextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.btnBuscarPecaDtGrid = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
+            this.btnBuscarFornecedorDtGrid = new System.Windows.Forms.Button();
+            this.dgFornecedores = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscaPeca = new System.Windows.Forms.Button();
+            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtCdFornecedor
+            // txtNomePeca
             // 
-            this.txtCdFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdFornecedor.Location = new System.Drawing.Point(95, 42);
-            this.txtCdFornecedor.Name = "txtCdFornecedor";
-            this.txtCdFornecedor.Size = new System.Drawing.Size(179, 20);
-            this.txtCdFornecedor.TabIndex = 1;
+            this.txtNomePeca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomePeca.Enabled = false;
+            this.txtNomePeca.Location = new System.Drawing.Point(95, 42);
+            this.txtNomePeca.Name = "txtNomePeca";
+            this.txtNomePeca.ReadOnly = true;
+            this.txtNomePeca.Size = new System.Drawing.Size(179, 20);
+            this.txtNomePeca.TabIndex = 1;
             // 
-            // lblCdFornecedor
+            // lblNomePeca
             // 
-            this.lblCdFornecedor.AutoSize = true;
-            this.lblCdFornecedor.Location = new System.Drawing.Point(99, 26);
-            this.lblCdFornecedor.Name = "lblCdFornecedor";
-            this.lblCdFornecedor.Size = new System.Drawing.Size(61, 13);
-            this.lblCdFornecedor.TabIndex = 37;
-            this.lblCdFornecedor.Text = "Fornecedor";
+            this.lblNomePeca.AutoSize = true;
+            this.lblNomePeca.Location = new System.Drawing.Point(92, 26);
+            this.lblNomePeca.Name = "lblNomePeca";
+            this.lblNomePeca.Size = new System.Drawing.Size(32, 13);
+            this.lblNomePeca.TabIndex = 37;
+            this.lblNomePeca.Text = "Peca";
             // 
-            // dgItems
+            // txtBuscaFiltroFornecedor
             // 
-            this.dgItems.AllowUserToAddRows = false;
-            this.dgItems.AllowUserToDeleteRows = false;
-            this.dgItems.AllowUserToResizeColumns = false;
-            this.dgItems.AllowUserToResizeRows = false;
-            this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CdItem,
-            this.NmItem});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgItems.Location = new System.Drawing.Point(70, 127);
-            this.dgItems.MultiSelect = false;
-            this.dgItems.Name = "dgItems";
-            this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgItems.ShowEditingIcon = false;
-            this.dgItems.Size = new System.Drawing.Size(295, 177);
-            this.dgItems.TabIndex = 4;
-            // 
-            // CdItem
-            // 
-            this.CdItem.HeaderText = "Codigo";
-            this.CdItem.Name = "CdItem";
-            this.CdItem.ReadOnly = true;
-            this.CdItem.Width = 65;
-            // 
-            // NmItem
-            // 
-            this.NmItem.HeaderText = "Nome";
-            this.NmItem.Name = "NmItem";
-            this.NmItem.ReadOnly = true;
-            this.NmItem.Width = 60;
-            // 
-            // txtBuscaFiltro
-            // 
-            this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(98, 106);
-            this.txtBuscaFiltro.MaxLength = 20;
-            this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(179, 20);
-            this.txtBuscaFiltro.TabIndex = 2;
+            this.txtBuscaFiltroFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscaFiltroFornecedor.Location = new System.Drawing.Point(95, 106);
+            this.txtBuscaFiltroFornecedor.MaxLength = 20;
+            this.txtBuscaFiltroFornecedor.Name = "txtBuscaFiltroFornecedor";
+            this.txtBuscaFiltroFornecedor.Size = new System.Drawing.Size(182, 20);
+            this.txtBuscaFiltroFornecedor.TabIndex = 2;
             // 
             // btnBuscaAlteracaoDelecao
             // 
@@ -139,6 +86,7 @@
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
             this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // btnVolta
             // 
@@ -149,6 +97,7 @@
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
             this.btnVolta.TabIndex = 8;
             this.btnVolta.UseVisualStyleBackColor = true;
+            this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
             // btnLimpa
             // 
@@ -159,6 +108,7 @@
             this.btnLimpa.Size = new System.Drawing.Size(33, 33);
             this.btnLimpa.TabIndex = 6;
             this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnConfirma
             // 
@@ -169,16 +119,107 @@
             this.btnConfirma.Size = new System.Drawing.Size(33, 31);
             this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
-            // btnBuscarPecaDtGrid
+            // btnBuscarFornecedorDtGrid
             // 
-            this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(276, 92);
-            this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
-            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarPecaDtGrid.TabIndex = 3;
-            this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarFornecedorDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarFornecedorDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarFornecedorDtGrid.Location = new System.Drawing.Point(278, 92);
+            this.btnBuscarFornecedorDtGrid.Name = "btnBuscarFornecedorDtGrid";
+            this.btnBuscarFornecedorDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarFornecedorDtGrid.TabIndex = 3;
+            this.btnBuscarFornecedorDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarFornecedorDtGrid.Click += new System.EventHandler(this.btnBuscarFornecedorDtGrid_Click);
+            // 
+            // dgFornecedores
+            // 
+            this.dgFornecedores.AllowUserToAddRows = false;
+            this.dgFornecedores.AllowUserToDeleteRows = false;
+            this.dgFornecedores.AllowUserToResizeColumns = false;
+            this.dgFornecedores.AllowUserToResizeRows = false;
+            this.dgFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgFornecedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hSelecionar,
+            this.hIdFornecedor,
+            this.hNome});
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgFornecedores.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgFornecedores.Location = new System.Drawing.Point(73, 133);
+            this.dgFornecedores.MultiSelect = false;
+            this.dgFornecedores.Name = "dgFornecedores";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgFornecedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgFornecedores.ShowEditingIcon = false;
+            this.dgFornecedores.Size = new System.Drawing.Size(295, 177);
+            this.dgFornecedores.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(92, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Fornecedor";
+            // 
+            // btnBuscaPeca
+            // 
+            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaPeca.Location = new System.Drawing.Point(278, 27);
+            this.btnBuscaPeca.Name = "btnBuscaPeca";
+            this.btnBuscaPeca.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaPeca.TabIndex = 40;
+            this.btnBuscaPeca.UseVisualStyleBackColor = true;
+            this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
+            // 
+            // hSelecionar
+            // 
+            this.hSelecionar.HeaderText = "Selecionar";
+            this.hSelecionar.Name = "hSelecionar";
+            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hSelecionar.Width = 80;
+            // 
+            // hIdFornecedor
+            // 
+            this.hIdFornecedor.DataPropertyName = "id_forn";
+            this.hIdFornecedor.HeaderText = "IdFornecedor";
+            this.hIdFornecedor.Name = "hIdFornecedor";
+            this.hIdFornecedor.ReadOnly = true;
+            this.hIdFornecedor.Visible = false;
+            this.hIdFornecedor.Width = 93;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Fornecedor";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
             // 
             // frmPecaFornecedor
             // 
@@ -187,18 +228,22 @@
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(377, 316);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaPeca);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgFornecedores);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
-            this.Controls.Add(this.txtCdFornecedor);
-            this.Controls.Add(this.lblCdFornecedor);
+            this.Controls.Add(this.txtNomePeca);
+            this.Controls.Add(this.lblNomePeca);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.dgItems);
-            this.Controls.Add(this.txtBuscaFiltro);
-            this.Controls.Add(this.btnBuscarPecaDtGrid);
+            this.Controls.Add(this.txtBuscaFiltroFornecedor);
+            this.Controls.Add(this.btnBuscarFornecedorDtGrid);
+            this.MaximizeBox = false;
             this.Name = "frmPecaFornecedor";
-            this.Text = "frmPecaFornecedor";
-            ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
+            this.Text = "Peca/Fornecedor";
+            ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,15 +252,18 @@
         #endregion
 
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private System.Windows.Forms.TextBox txtCdFornecedor;
-        private System.Windows.Forms.Label lblCdFornecedor;
+        private System.Windows.Forms.TextBox txtNomePeca;
+        private System.Windows.Forms.Label lblNomePeca;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnConfirma;
-        private System.Windows.Forms.DataGridView dgItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CdItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NmItem;
-        private System.Windows.Forms.TextBox txtBuscaFiltro;
-        private System.Windows.Forms.Button btnBuscarPecaDtGrid;
+        private System.Windows.Forms.TextBox txtBuscaFiltroFornecedor;
+        private System.Windows.Forms.Button btnBuscarFornecedorDtGrid;
+        private System.Windows.Forms.DataGridView dgFornecedores;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscaPeca;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdFornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
     }
 }

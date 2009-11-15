@@ -225,6 +225,7 @@
             this.btnRelacionarDepto.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnRelacionarDepto, "Relacionar Departamento");
             this.btnRelacionarDepto.UseVisualStyleBackColor = true;
+            this.btnRelacionarDepto.Click += new System.EventHandler(this.btnRelacionarDepto_Click);
             // 
             // btnBuscaAlteracaoDelecao
             // 

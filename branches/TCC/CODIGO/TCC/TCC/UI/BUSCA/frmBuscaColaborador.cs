@@ -243,6 +243,5 @@ namespace TCC.UI
         }
 
         #endregion
-
     }
 }

@@ -32,11 +32,11 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgPeca = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.dgPeca = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,23 +72,6 @@
             this.toolTipLegenda.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // dgPeca
-            // 
-            this.dgPeca.AllowUserToAddRows = false;
-            this.dgPeca.AllowUserToDeleteRows = false;
-            this.dgPeca.AllowUserToResizeColumns = false;
-            this.dgPeca.AllowUserToResizeRows = false;
-            this.dgPeca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPeca.Location = new System.Drawing.Point(15, 43);
-            this.dgPeca.MultiSelect = false;
-            this.dgPeca.Name = "dgPeca";
-            this.dgPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPeca.ShowEditingIcon = false;
-            this.dgPeca.Size = new System.Drawing.Size(260, 177);
-            this.dgPeca.TabIndex = 0;
-            this.toolTipLegenda.SetToolTip(this.dgPeca, "Apertar Ctrl para Selecionar mais de um item");
             // 
             // btnFechar
             // 
@@ -131,19 +114,37 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // dgPeca
+            // 
+            this.dgPeca.AllowUserToAddRows = false;
+            this.dgPeca.AllowUserToDeleteRows = false;
+            this.dgPeca.AllowUserToResizeColumns = false;
+            this.dgPeca.AllowUserToResizeRows = false;
+            this.dgPeca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPeca.Location = new System.Drawing.Point(15, 45);
+            this.dgPeca.MultiSelect = false;
+            this.dgPeca.Name = "dgPeca";
+            this.dgPeca.ReadOnly = true;
+            this.dgPeca.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dgPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgPeca.ShowEditingIcon = false;
+            this.dgPeca.Size = new System.Drawing.Size(260, 177);
+            this.dgPeca.TabIndex = 7;
+            // 
             // frmBuscaPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 266);
             this.ControlBox = false;
+            this.Controls.Add(this.dgPeca);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgPeca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmBuscaPeca";
@@ -161,10 +162,10 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgPeca;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridView dgPeca;
     }
 }
