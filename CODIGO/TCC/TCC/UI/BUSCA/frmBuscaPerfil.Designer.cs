@@ -109,7 +109,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAlterar.Location = new System.Drawing.Point(151, 225);
             this.btnAlterar.Name = "btnAlterar";
