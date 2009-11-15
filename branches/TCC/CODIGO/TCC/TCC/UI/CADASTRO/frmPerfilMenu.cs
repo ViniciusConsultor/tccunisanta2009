@@ -257,7 +257,7 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (this._listaModelPerfilMenu == null)
+            if (this._listaModelPerfilMenu == null || this._listaModelPerfilMenu.Count<=0)
             {
                 throw new BUSINESS.Exceptions.PerfilMenu.MenuNaoEscolhidoException();
             }

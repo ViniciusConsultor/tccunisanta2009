@@ -38,7 +38,6 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.lblCdPerfil = new System.Windows.Forms.Label();
             this.txtPerfil = new System.Windows.Forms.TextBox();
-            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.dgMenu = new System.Windows.Forms.DataGridView();
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +49,9 @@
             // 
             this.btnBuscarPerfil.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPerfil.Location = new System.Drawing.Point(276, 21);
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(330, 15);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
-            this.btnBuscarPerfil.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarPerfil.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarPerfil.TabIndex = 3;
             this.btnBuscarPerfil.UseVisualStyleBackColor = true;
             this.btnBuscarPerfil.Click += new System.EventHandler(this.btnBuscarPerfil_Click);
@@ -61,7 +60,7 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(0, 107);
+            this.btnVolta.Location = new System.Drawing.Point(0, 72);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(33, 32);
             this.btnVolta.TabIndex = 8;
@@ -93,7 +92,7 @@
             // lblCdPerfil
             // 
             this.lblCdPerfil.AutoSize = true;
-            this.lblCdPerfil.Location = new System.Drawing.Point(95, 20);
+            this.lblCdPerfil.Location = new System.Drawing.Point(59, 21);
             this.lblCdPerfil.Name = "lblCdPerfil";
             this.lblCdPerfil.Size = new System.Drawing.Size(30, 13);
             this.lblCdPerfil.TabIndex = 28;
@@ -102,21 +101,10 @@
             // txtPerfil
             // 
             this.txtPerfil.Enabled = false;
-            this.txtPerfil.Location = new System.Drawing.Point(91, 36);
+            this.txtPerfil.Location = new System.Drawing.Point(95, 18);
             this.txtPerfil.Name = "txtPerfil";
-            this.txtPerfil.Size = new System.Drawing.Size(179, 20);
+            this.txtPerfil.Size = new System.Drawing.Size(229, 20);
             this.txtPerfil.TabIndex = 1;
-            // 
-            // btnBuscaAlteracaoDelecao
-            // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
-            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(0, 72);
-            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
-            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
-            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // dgMenu
             // 
@@ -146,7 +134,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgMenu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgMenu.Location = new System.Drawing.Point(70, 72);
+            this.dgMenu.Location = new System.Drawing.Point(62, 51);
             this.dgMenu.MultiSelect = false;
             this.dgMenu.Name = "dgMenu";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -159,7 +147,7 @@
             this.dgMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMenu.ShowEditingIcon = false;
-            this.dgMenu.Size = new System.Drawing.Size(295, 232);
+            this.dgMenu.Size = new System.Drawing.Size(295, 253);
             this.dgMenu.TabIndex = 32;
             // 
             // hSelecionar
@@ -196,7 +184,6 @@
             this.ClientSize = new System.Drawing.Size(377, 316);
             this.ControlBox = false;
             this.Controls.Add(this.dgMenu);
-            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtPerfil);
             this.Controls.Add(this.lblCdPerfil);
             this.Controls.Add(this.btnVolta);
@@ -222,7 +209,6 @@
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.Label lblCdPerfil;
         private System.Windows.Forms.TextBox txtPerfil;
-        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.DataGridView dgMenu;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdDepto;
