@@ -113,6 +113,7 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 this.LimparCampos();
                 this.btnAceitar.Enabled = false;
+                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.TipoPeca.TipoPecaExistenteException)
             {

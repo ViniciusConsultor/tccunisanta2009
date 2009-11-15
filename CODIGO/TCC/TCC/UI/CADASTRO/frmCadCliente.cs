@@ -172,6 +172,7 @@ namespace TCC.UI
                 }
                 this.btnLimpa_Click(null, null);
                 this.btnInsere.Enabled = false;
+                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Cliente.NomeClienteVazioException)
             {
