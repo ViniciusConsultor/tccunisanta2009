@@ -1,4 +1,4 @@
-﻿namespace TCC.UI.CADASTRO
+﻿namespace TCC.UI
 {
     partial class frmPecaFornecedor
     {

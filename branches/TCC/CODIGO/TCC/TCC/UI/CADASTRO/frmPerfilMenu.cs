@@ -19,7 +19,7 @@ namespace TCC.UI
         List<mPerfilMenu> _listaModelPerfilMenu;
         //int? _idPerfil;
         #endregion Atributos
-        
+
         #region Construtores
         public frmPerfilMenu(mPerfil modelPerfil)
         {
@@ -50,6 +50,7 @@ namespace TCC.UI
         }
         #endregion frmPerfilMenu_Load
 
+        #region btnBuscarPerfil_Click
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
             this._modelPerfil = new mPerfil();
@@ -76,13 +77,16 @@ namespace TCC.UI
                 objForm = null;
             }
         }
+        #endregion
 
+        #region btnConfirma_Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-
             this.Insere();
         }
+        #endregion
 
+        #region btnLimpa_Click
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             _modelPerfil = null;
@@ -91,16 +95,18 @@ namespace TCC.UI
             this.PopulaGrid();
             dgMenu.Columns["id_menu"].Visible = false;
         }
+        #endregion
 
         private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
         {
-
         }
 
+        #region btnVolta_Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
             base.Close();
         }
+        #endregion
 
         #endregion
 
@@ -301,6 +307,7 @@ namespace TCC.UI
         }
         #endregion Insere
 
+        #region MarcaPerfilMenu
         private void MarcaPerfilMenu(int? idPerfil)
         {
             DataTable dtPerfilMenuTela = null;
@@ -340,7 +347,9 @@ namespace TCC.UI
                 dtPerfilMenuBanco = null;
             }
         }
+        #endregion MarcaPerfilMenu
 
+        #region DeletaTudoPorPerfil
         private void DeletaTudoPorPerfil()
         {
             rPerfilMenu regraPerfilMenu = null;
@@ -358,9 +367,9 @@ namespace TCC.UI
                 regraPerfilMenu = null;
             }
         }
+        #endregion DeletaTudoPorPerfil
 
         #endregion Metodos
 
-        
     }
 }

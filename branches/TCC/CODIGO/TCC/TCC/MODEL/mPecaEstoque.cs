@@ -9,7 +9,7 @@ namespace TCC.MODEL
     {
         private int? id_peca;
         private int id_estoq;
-        private bool flg_alt;
+        private bool flg_ativo;
         private DateTime dat_alt;
         private int? qtd_peca;
         private string nomeTabela = "PecaEstoque";
@@ -26,11 +26,11 @@ namespace TCC.MODEL
             get { return id_estoq; }
             set { id_estoq = value; }
         }
-        [ColunasBancoDados("Flg_alt", System.Data.SqlDbType.Bit, false)]
-        public bool Flg_alt
+        [ColunasBancoDados("Flg_ativo", System.Data.SqlDbType.Bit, false)]
+        public bool Flg_ativo
         {
-            get { return flg_alt; }
-            set { flg_alt = value; }
+            get { return flg_ativo; }
+            set { flg_ativo = value; }
         }
         [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.DateTime, false)]
         public DateTime Dat_alt

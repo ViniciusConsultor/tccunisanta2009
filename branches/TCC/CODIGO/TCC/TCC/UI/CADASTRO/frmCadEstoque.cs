@@ -107,7 +107,6 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
-                this.btnInsere.Enabled = false;
             }
             catch (BUSINESS.Exceptions.Estoque.NomEstoqueExistenteException)
             {
@@ -153,7 +152,7 @@ namespace TCC.UI
                 model.Dsc_estoque = this.txtNome.Text;
                 model.Dat_alt = DateTime.Now;
                 model.Flg_ativo = true;
-                //model.Flg_negativo = this.ckbFlgNegativo.Checked;
+                model.Flg_negativo = rdbDefeitoSim.Checked;
 
                 return model;
             }

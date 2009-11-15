@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using TCC.BUSINESS;
 using TCC.MODEL;
 
-namespace TCC.UI.CADASTRO
+namespace TCC.UI
 {
     public partial class frmPecaFornecedor : Form
     {

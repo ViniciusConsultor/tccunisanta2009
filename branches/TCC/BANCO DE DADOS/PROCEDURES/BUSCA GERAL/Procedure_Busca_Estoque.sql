@@ -5,5 +5,5 @@ IF OBJECT_ID('sp_busca_estoque','P')IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_estoque
 AS
-SELECT id_estoq, dsc_estoq 'Estoque' FROM Estoque
+SELECT id_estoq, dsc_estoq 'Estoque' , 0 as 'qtd_peca' FROM Estoque
 WHERE flg_ativo = 1
