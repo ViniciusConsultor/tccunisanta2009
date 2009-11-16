@@ -65,7 +65,7 @@ INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Realizar Venda', 
 
 --INSERT ESTOQUE 4
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar estoques', 'frmCadEstoque', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Movimentação de Peças', NULL, GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Movimentação de Peças', 'frmCadPecaEstoque', GETDATE(), 1);
 
 --INSERT PRODUÇÃO 5
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Peças', NULL, GETDATE(), 1);
