@@ -61,30 +61,6 @@ namespace TCC.UI
         }
         #endregion btnVoltar Click
 
-        #region btnCadUsuario Click
-        private void btnCadUsuario_Click(object sender, EventArgs e)
-        {
-            this._modelUsuario = new mUsuario();
-            frmCadUsuario telaUsuario = new frmCadUsuario(this._modelUsuario);
-            try
-            {
-                DialogResult resultado = telaUsuario.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelUsuario = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-
-            }
-        }
-        #endregion btnCadUsuario Click
-
         #region btnBuscaDepartamento Click
         private void btnBuscaDepartamento_Click(object sender, EventArgs e)
         {
@@ -395,6 +371,11 @@ namespace TCC.UI
                     {
                         regraColaborador.ValidarInsere(modelColaborador);
                     }
+                    DialogResult resultado = MessageBox.Show("Deseja associar este funcionário com um usuário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        this.AbreTelaAssociaUsuario();
+                    }
                     this.btnApaga_Click(null, null);
                 }
                 else
@@ -492,6 +473,30 @@ namespace TCC.UI
             }
         }
         #endregion Insere
+        
+        #region AbreTelaAssociaUsuario
+        private void AbreTelaAssociaUsuario()
+        {
+            this._modelUsuario = new mUsuario();
+            frmCadUsuario telaUsuario = new frmCadUsuario(this._modelUsuario);
+            try
+            {
+                DialogResult resultado = telaUsuario.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelUsuario = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+        #endregion AbreTelaAssociaUsuario
 
         #endregion Metodos
     }
