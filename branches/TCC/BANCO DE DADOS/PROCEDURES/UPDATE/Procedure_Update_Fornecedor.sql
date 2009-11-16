@@ -5,22 +5,24 @@ GO
 
 CREATE PROCEDURE sp_update_fornecedor
 @id_forn			INT,
-@slg_est			VARCHAR(2),
 @nom			    VARCHAR(100),
-@DDD                INT,
-@tel                INT,
-@mail               VARCHAR(100),
 @rua		        VARCHAR(50),
 @nro_ende		    INT,
 @compl              VARCHAR(20),
-@cep			    INT,
+@cod_post		    VARCHAR(20),
+@ddd                INT,
 @bairr              VARCHAR(50),
+@tel                INT,
 @cid		        VARCHAR(50),
+@mail               VARCHAR(100),
 @cnpj		        VARCHAR(15),
 @dat_alt			DATETIME,
 @flg_ativo			BIT,
+@slg_est			VARCHAR(2),
+@nom_pais			VARCHAR(50),
 @nom_est_inter		VARCHAR(50),
-@nom_pais			VARCHAR(50)
+@ddi				char(4),
+@ident_inter		VARCHAR(50)
 
 AS
 
@@ -33,22 +35,25 @@ BEGIN
 --Update na tabela fornecedor
 UPDATE Fornecedor SET
 
-slg_est    = @slg_est, 
-nom        = @nom, 
+nom        = @nom,
 rua        = @rua, 
-DDD        = @DDD,
-tel        = @tel,
-mail       = @mail,
 nro_ende   = @nro_ende, 
 compl      = @compl, 
-cep        = @cep, 
+cod_post   = @cod_post,
+ddd        = @ddd,
 bairr      = @bairr, 
+tel        = @tel,
 cid        = @cid, 
+mail       = @mail,
 cnpj       = @cnpj, 
 dat_alt    = @dat_alt, 
 flg_ativo  = @flg_ativo,
+slg_est    = @slg_est,  
+nom_pais   = @nom_pais,
 nom_est_inter=@nom_est_inter,
-nom_pais=@nom_pais
+ddi		   = @ddi,
+ident_inter=@ident_inter
+
 
 WHERE id_forn = @id_forn
 

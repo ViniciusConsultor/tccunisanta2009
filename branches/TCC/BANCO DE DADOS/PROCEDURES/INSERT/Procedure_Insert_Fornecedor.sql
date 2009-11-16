@@ -9,18 +9,20 @@ CREATE PROCEDURE sp_insert_fornecedor
 @rua		            VARCHAR(50),
 @nro_ende		        INT,
 @compl                  VARCHAR(20),
-@cep			        INT,
+@cod_post		        VARCHAR(20),
 @ddd                    INT,
 @bairr                  VARCHAR(50),
 @tel                    INT,
 @cid		            VARCHAR(50),
-@mail                  VARCHAR(100),
+@mail                   VARCHAR(100),
 @cnpj		            VARCHAR(15),
 @dat_alt				DATETIME,
 @flg_ativo				BIT,
 @slg_est				VARCHAR(2),
 @nom_pais				VARCHAR(50),
-@nom_est_inter			VARCHAR(50)	
+@nom_est_inter			VARCHAR(50),
+@ddi					CHAR(4),
+@ident_inter			VARCHAR(50)
 AS
 
 BEGIN TRY
@@ -37,8 +39,8 @@ ELSE
   
 BEGIN
 --Insert na tabela fornecedor
-INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cep, bairr, cid, cnpj, dat_alt, flg_ativo,nom_pais,nom_est_inter)
-VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cep, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo,@nom_pais, @nom_est_inter)
+INSERT INTO Fornecedor(id_forn, slg_est, nom, tel, ddd, mail, rua, nro_ende, compl, cod_post, bairr, cid, cnpj, dat_alt, flg_ativo,nom_pais,nom_est_inter,ddi,ident_inter)
+VALUES(@id_forn, @slg_est, @nom, @tel, @ddd, @mail, @rua, @nro_ende, @compl, @cod_post, @bairr, @cid, @cnpj, @dat_alt, @flg_ativo,@nom_pais, @nom_est_inter, @ddi, @ident_inter)
 END
 END TRY
 

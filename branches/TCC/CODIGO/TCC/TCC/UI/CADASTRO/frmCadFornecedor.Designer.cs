@@ -69,6 +69,13 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtDDI = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.lblDDI = new System.Windows.Forms.Label();
+            this.lblIdentInter = new System.Windows.Forms.Label();
+            this.txtTelefoneInter = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtIdentInter = new System.Windows.Forms.TextBox();
+            this.lblCodPostal = new System.Windows.Forms.Label();
+            this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.gbxEscolhePaisEstado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +85,7 @@
             this.txtBairro.Location = new System.Drawing.Point(150, 225);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(283, 20);
+            this.txtBairro.Size = new System.Drawing.Size(252, 20);
             this.txtBairro.TabIndex = 11;
             // 
             // lblBairro
@@ -93,7 +100,7 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(451, 232);
+            this.lblCep.Location = new System.Drawing.Point(484, 230);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 6;
@@ -102,16 +109,16 @@
             // txtComplemento
             // 
             this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComplemento.Location = new System.Drawing.Point(325, 195);
+            this.txtComplemento.Location = new System.Drawing.Point(338, 195);
             this.txtComplemento.MaxLength = 20;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(212, 20);
+            this.txtComplemento.Size = new System.Drawing.Size(241, 20);
             this.txtComplemento.TabIndex = 10;
             // 
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(249, 197);
+            this.lblComplemento.Location = new System.Drawing.Point(263, 197);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(71, 13);
             this.lblComplemento.TabIndex = 8;
@@ -132,7 +139,7 @@
             this.txtRua.Location = new System.Drawing.Point(150, 160);
             this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(387, 20);
+            this.txtRua.Size = new System.Drawing.Size(429, 20);
             this.txtRua.TabIndex = 8;
             // 
             // lblRua
@@ -150,7 +157,7 @@
             this.txtNomeFornecedor.Location = new System.Drawing.Point(150, 9);
             this.txtNomeFornecedor.MaxLength = 100;
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(388, 20);
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(429, 20);
             this.txtNomeFornecedor.TabIndex = 1;
             this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtNomeFornecedor_TextChanged);
             // 
@@ -199,7 +206,7 @@
             // lblDDD
             // 
             this.lblDDD.AutoSize = true;
-            this.lblDDD.Location = new System.Drawing.Point(343, 257);
+            this.lblDDD.Location = new System.Drawing.Point(402, 257);
             this.lblDDD.Name = "lblDDD";
             this.lblDDD.Size = new System.Drawing.Size(31, 13);
             this.lblDDD.TabIndex = 19;
@@ -208,7 +215,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(425, 257);
+            this.lblTelefone.Location = new System.Drawing.Point(466, 257);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(49, 13);
             this.lblTelefone.TabIndex = 21;
@@ -221,7 +228,7 @@
             this.txtEmail.Location = new System.Drawing.Point(150, 287);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(388, 20);
+            this.txtEmail.Size = new System.Drawing.Size(430, 20);
             this.txtEmail.TabIndex = 16;
             // 
             // lblEmail
@@ -236,16 +243,16 @@
             // txtCepFornecedor
             // 
             this.txtCepFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCepFornecedor.Location = new System.Drawing.Point(486, 227);
+            this.txtCepFornecedor.Location = new System.Drawing.Point(522, 225);
             this.txtCepFornecedor.Mask = "00000-000";
             this.txtCepFornecedor.Name = "txtCepFornecedor";
-            this.txtCepFornecedor.Size = new System.Drawing.Size(52, 20);
+            this.txtCepFornecedor.Size = new System.Drawing.Size(58, 20);
             this.txtCepFornecedor.TabIndex = 12;
             // 
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(480, 255);
+            this.txtTelefone.Location = new System.Drawing.Point(522, 255);
             this.txtTelefone.Mask = "0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(58, 20);
@@ -283,7 +290,7 @@
             // 
             this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
             this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelacionarDepto.Location = new System.Drawing.Point(498, 321);
+            this.btnRelacionarDepto.Location = new System.Drawing.Point(540, 321);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
             this.btnRelacionarDepto.Size = new System.Drawing.Size(40, 35);
             this.btnRelacionarDepto.TabIndex = 17;
@@ -305,6 +312,7 @@
             // 
             this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 195);
+            this.txtNumeroEndereco.MaxLength = 5;
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(84, 20);
             this.txtNumeroEndereco.TabIndex = 9;
@@ -313,7 +321,7 @@
             // txtDDD
             // 
             this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDDD.Location = new System.Drawing.Point(380, 255);
+            this.txtDDD.Location = new System.Drawing.Point(432, 255);
             this.txtDDD.MaxLength = 2;
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(35, 20);
@@ -323,7 +331,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(421, 338);
+            this.label2.Location = new System.Drawing.Point(463, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 32;
@@ -332,7 +340,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(421, 325);
+            this.label1.Location = new System.Drawing.Point(463, 325);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 31;
@@ -352,7 +360,7 @@
             this.gbxEscolhePaisEstado.Controls.Add(this.txtCidade);
             this.gbxEscolhePaisEstado.Location = new System.Drawing.Point(100, 35);
             this.gbxEscolhePaisEstado.Name = "gbxEscolhePaisEstado";
-            this.gbxEscolhePaisEstado.Size = new System.Drawing.Size(437, 111);
+            this.gbxEscolhePaisEstado.Size = new System.Drawing.Size(479, 111);
             this.gbxEscolhePaisEstado.TabIndex = 34;
             this.gbxEscolhePaisEstado.TabStop = false;
             // 
@@ -368,7 +376,8 @@
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstado.Location = new System.Drawing.Point(273, 58);
+            this.txtEstado.Location = new System.Drawing.Point(317, 58);
+            this.txtEstado.MaxLength = 50;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(152, 20);
             this.txtEstado.TabIndex = 6;
@@ -377,8 +386,9 @@
             // 
             this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPais.Location = new System.Drawing.Point(63, 56);
+            this.txtPais.MaxLength = 50;
             this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(138, 20);
+            this.txtPais.Size = new System.Drawing.Size(191, 20);
             this.txtPais.TabIndex = 5;
             // 
             // rdbOutros
@@ -390,6 +400,7 @@
             this.rdbOutros.TabIndex = 3;
             this.rdbOutros.Text = "Outros";
             this.rdbOutros.UseVisualStyleBackColor = true;
+            this.rdbOutros.CheckedChanged += new System.EventHandler(this.rdbOutros_CheckedChanged);
             // 
             // rdbBrasil
             // 
@@ -402,6 +413,7 @@
             this.rdbBrasil.TabStop = true;
             this.rdbBrasil.Text = "Brasil";
             this.rdbBrasil.UseVisualStyleBackColor = true;
+            this.rdbBrasil.CheckedChanged += new System.EventHandler(this.rdbBrasil_CheckedChanged);
             // 
             // cboEstado
             // 
@@ -416,7 +428,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 60);
+            this.label3.Location = new System.Drawing.Point(260, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 0;
@@ -446,8 +458,73 @@
             this.txtCidade.Location = new System.Drawing.Point(63, 84);
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(362, 20);
+            this.txtCidade.Size = new System.Drawing.Size(406, 20);
             this.txtCidade.TabIndex = 7;
+            // 
+            // txtDDI
+            // 
+            this.txtDDI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDDI.Location = new System.Drawing.Point(367, 255);
+            this.txtDDI.MaxLength = 2;
+            this.txtDDI.Name = "txtDDI";
+            this.txtDDI.Size = new System.Drawing.Size(35, 20);
+            this.txtDDI.TabIndex = 37;
+            this.txtDDI.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
+            // lblDDI
+            // 
+            this.lblDDI.AutoSize = true;
+            this.lblDDI.Location = new System.Drawing.Point(338, 257);
+            this.lblDDI.Name = "lblDDI";
+            this.lblDDI.Size = new System.Drawing.Size(26, 13);
+            this.lblDDI.TabIndex = 38;
+            this.lblDDI.Text = "DDI";
+            // 
+            // lblIdentInter
+            // 
+            this.lblIdentInter.AutoSize = true;
+            this.lblIdentInter.Location = new System.Drawing.Point(97, 262);
+            this.lblIdentInter.Name = "lblIdentInter";
+            this.lblIdentInter.Size = new System.Drawing.Size(119, 13);
+            this.lblIdentInter.TabIndex = 39;
+            this.lblIdentInter.Text = "Código de Identificação";
+            // 
+            // txtTelefoneInter
+            // 
+            this.txtTelefoneInter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefoneInter.Location = new System.Drawing.Point(514, 255);
+            this.txtTelefoneInter.MaxLength = 10;
+            this.txtTelefoneInter.Name = "txtTelefoneInter";
+            this.txtTelefoneInter.Size = new System.Drawing.Size(66, 20);
+            this.txtTelefoneInter.TabIndex = 41;
+            this.txtTelefoneInter.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
+            // txtIdentInter
+            // 
+            this.txtIdentInter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdentInter.Location = new System.Drawing.Point(229, 255);
+            this.txtIdentInter.MaxLength = 50;
+            this.txtIdentInter.Name = "txtIdentInter";
+            this.txtIdentInter.Size = new System.Drawing.Size(100, 20);
+            this.txtIdentInter.TabIndex = 42;
+            // 
+            // lblCodPostal
+            // 
+            this.lblCodPostal.AutoSize = true;
+            this.lblCodPostal.Location = new System.Drawing.Point(409, 227);
+            this.lblCodPostal.Name = "lblCodPostal";
+            this.lblCodPostal.Size = new System.Drawing.Size(72, 13);
+            this.lblCodPostal.TabIndex = 44;
+            this.lblCodPostal.Text = "Código Postal";
+            // 
+            // txtCodPostal
+            // 
+            this.txtCodPostal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodPostal.Location = new System.Drawing.Point(481, 225);
+            this.txtCodPostal.MaxLength = 20;
+            this.txtCodPostal.Name = "txtCodPostal";
+            this.txtCodPostal.Size = new System.Drawing.Size(99, 20);
+            this.txtCodPostal.TabIndex = 45;
             // 
             // frmCadFornecedor
             // 
@@ -457,6 +534,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCodPostal);
+            this.Controls.Add(this.lblCodPostal);
+            this.Controls.Add(this.txtIdentInter);
+            this.Controls.Add(this.txtTelefoneInter);
+            this.Controls.Add(this.lblIdentInter);
+            this.Controls.Add(this.txtDDI);
+            this.Controls.Add(this.lblDDI);
             this.Controls.Add(this.gbxEscolhePaisEstado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -537,5 +621,12 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtCidade;
+        private Controles.MegaTextBox.MegaTextBox txtDDI;
+        private System.Windows.Forms.Label lblDDI;
+        private System.Windows.Forms.Label lblIdentInter;
+        private Controles.MegaTextBox.MegaTextBox txtTelefoneInter;
+        private System.Windows.Forms.TextBox txtIdentInter;
+        private System.Windows.Forms.Label lblCodPostal;
+        private System.Windows.Forms.TextBox txtCodPostal;
     }
 }
