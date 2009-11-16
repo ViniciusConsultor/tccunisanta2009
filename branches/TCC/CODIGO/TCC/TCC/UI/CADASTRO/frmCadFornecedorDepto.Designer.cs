@@ -36,6 +36,9 @@
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.dgDeptos = new System.Windows.Forms.DataGridView();
+            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
@@ -45,9 +48,6 @@
             this.btnBuscaFornecedor = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.lblDepto = new System.Windows.Forms.Label();
-            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgDeptos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +55,9 @@
             // 
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFornecedor.Enabled = false;
-            this.txtFornecedor.Location = new System.Drawing.Point(115, 51);
+            this.txtFornecedor.Location = new System.Drawing.Point(74, 33);
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(179, 20);
+            this.txtFornecedor.Size = new System.Drawing.Size(262, 20);
             this.txtFornecedor.TabIndex = 1;
             this.txtFornecedor.TabStop = false;
             this.txtFornecedor.TextChanged += new System.EventHandler(this.txtFornecedor_TextChanged);
@@ -65,7 +65,7 @@
             // lblCdFornecedor
             // 
             this.lblCdFornecedor.AutoSize = true;
-            this.lblCdFornecedor.Location = new System.Drawing.Point(112, 36);
+            this.lblCdFornecedor.Location = new System.Drawing.Point(71, 18);
             this.lblCdFornecedor.Name = "lblCdFornecedor";
             this.lblCdFornecedor.Size = new System.Drawing.Size(61, 13);
             this.lblCdFornecedor.TabIndex = 51;
@@ -99,7 +99,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgDeptos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgDeptos.Location = new System.Drawing.Point(90, 136);
+            this.dgDeptos.Location = new System.Drawing.Point(74, 133);
             this.dgDeptos.MultiSelect = false;
             this.dgDeptos.Name = "dgDeptos";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -115,13 +115,38 @@
             this.dgDeptos.Size = new System.Drawing.Size(295, 177);
             this.dgDeptos.TabIndex = 4;
             // 
+            // hSelecionar
+            // 
+            this.hSelecionar.HeaderText = "Selecionar";
+            this.hSelecionar.Name = "hSelecionar";
+            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hSelecionar.Width = 82;
+            // 
+            // hIdDepto
+            // 
+            this.hIdDepto.DataPropertyName = "id_depto";
+            this.hIdDepto.HeaderText = "IdDepto";
+            this.hIdDepto.Name = "hIdDepto";
+            this.hIdDepto.ReadOnly = true;
+            this.hIdDepto.Visible = false;
+            this.hIdDepto.Width = 68;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 60;
+            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(115, 113);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(74, 95);
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(182, 20);
+            this.txtBuscaFiltro.Size = new System.Drawing.Size(262, 20);
             this.txtBuscaFiltro.TabIndex = 2;
             // 
             // btnBuscaAlteracaoDelecao
@@ -176,9 +201,9 @@
             // 
             this.btnBuscarDepartamentoDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarDepartamentoDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarDepartamentoDtGrid.Location = new System.Drawing.Point(298, 99);
+            this.btnBuscarDepartamentoDtGrid.Location = new System.Drawing.Point(342, 95);
             this.btnBuscarDepartamentoDtGrid.Name = "btnBuscarDepartamentoDtGrid";
-            this.btnBuscarDepartamentoDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarDepartamentoDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarDepartamentoDtGrid.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnBuscarDepartamentoDtGrid, "Buscar Departamentos");
             this.btnBuscarDepartamentoDtGrid.UseVisualStyleBackColor = true;
@@ -188,9 +213,9 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(298, 36);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(342, 31);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
-            this.btnBuscaFornecedor.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaFornecedor.TabIndex = 52;
             this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
@@ -204,36 +229,11 @@
             // lblDepto
             // 
             this.lblDepto.AutoSize = true;
-            this.lblDepto.Location = new System.Drawing.Point(112, 97);
+            this.lblDepto.Location = new System.Drawing.Point(71, 79);
             this.lblDepto.Name = "lblDepto";
             this.lblDepto.Size = new System.Drawing.Size(74, 13);
             this.lblDepto.TabIndex = 53;
             this.lblDepto.Text = "Departamento";
-            // 
-            // hSelecionar
-            // 
-            this.hSelecionar.HeaderText = "Selecionar";
-            this.hSelecionar.Name = "hSelecionar";
-            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 80;
-            // 
-            // hIdDepto
-            // 
-            this.hIdDepto.DataPropertyName = "id_depto";
-            this.hIdDepto.HeaderText = "IdDepto";
-            this.hIdDepto.Name = "hIdDepto";
-            this.hIdDepto.ReadOnly = true;
-            this.hIdDepto.Visible = false;
-            this.hIdDepto.Width = 68;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "nom";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
             // 
             // frmCadfornecedorDepto
             // 
