@@ -37,6 +37,10 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.dgPeca = new System.Windows.Forms.DataGridView();
+            this.hIdPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdPecaReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +126,11 @@
             this.dgPeca.AllowUserToResizeRows = false;
             this.dgPeca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hIdPeca,
+            this.hIdPecaReal,
+            this.hNome,
+            this.hQuantidade});
             this.dgPeca.Location = new System.Drawing.Point(15, 45);
             this.dgPeca.MultiSelect = false;
             this.dgPeca.Name = "dgPeca";
@@ -131,6 +140,40 @@
             this.dgPeca.ShowEditingIcon = false;
             this.dgPeca.Size = new System.Drawing.Size(260, 177);
             this.dgPeca.TabIndex = 7;
+            // 
+            // hIdPeca
+            // 
+            this.hIdPeca.DataPropertyName = "id_peca";
+            this.hIdPeca.HeaderText = "IdPeca";
+            this.hIdPeca.Name = "hIdPeca";
+            this.hIdPeca.ReadOnly = true;
+            this.hIdPeca.Visible = false;
+            this.hIdPeca.Width = 66;
+            // 
+            // hIdPecaReal
+            // 
+            this.hIdPecaReal.DataPropertyName = "id_peca_real";
+            this.hIdPecaReal.HeaderText = "Código Peca";
+            this.hIdPecaReal.Name = "hIdPecaReal";
+            this.hIdPecaReal.ReadOnly = true;
+            this.hIdPecaReal.Width = 93;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome Peça";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 88;
+            // 
+            // hQuantidade
+            // 
+            this.hQuantidade.DataPropertyName = "qtd";
+            this.hQuantidade.HeaderText = "Quantidade";
+            this.hQuantidade.Name = "hQuantidade";
+            this.hQuantidade.ReadOnly = true;
+            this.hQuantidade.Visible = false;
+            this.hQuantidade.Width = 87;
             // 
             // frmBuscaPeca
             // 
@@ -167,5 +210,9 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.DataGridView dgPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdPecaReal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQuantidade;
     }
 }

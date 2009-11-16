@@ -14,7 +14,8 @@ namespace TCC.UI
     {
         #region Atributos
         mFornecedor _model;
-        bool _alteracao;
+        mMotor _modelMotor;
+        bool _alteracao, _filtroBusca;
         #endregion
 
         #region Construtor
@@ -30,6 +31,14 @@ namespace TCC.UI
             InitializeComponent();
             _model = modelFornecedor;
             _alteracao = Alteracao;
+        }
+
+        public frmBuscaFornecedor(mFornecedor modelFornecedor, mMotor modelMotor)
+        {
+            InitializeComponent();
+            _model = modelFornecedor;
+            _alteracao = false;
+            this._modelMotor = modelMotor;
         }
         #endregion
 

@@ -112,9 +112,14 @@
     <Compile Include="BUSINESS\Exceptions\Colaborador\RuaVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Colaborador\TelefoneVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\CompraPeca\UltimoPrecoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaFornecedorException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaMotorException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaMotorPecaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaPecaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraMotorPecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\DataCompraVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueExistenteException.cs" />
