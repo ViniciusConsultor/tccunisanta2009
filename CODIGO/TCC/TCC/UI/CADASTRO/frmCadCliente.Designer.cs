@@ -78,7 +78,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(96, 96);
+            this.lblNome.Location = new System.Drawing.Point(96, 84);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 0;
@@ -89,7 +89,7 @@
             this.txtNome.AccessibleDescription = "";
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNome.Location = new System.Drawing.Point(146, 94);
+            this.txtNome.Location = new System.Drawing.Point(146, 82);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(399, 20);
