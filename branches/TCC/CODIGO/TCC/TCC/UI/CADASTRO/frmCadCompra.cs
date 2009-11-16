@@ -14,12 +14,10 @@ namespace TCC.UI
     {
         #region Atributos
 
+        mOrdemCompra _listaOrdemCompra;
         mMotor _modelMotor;
-        mDepartamento _modelDepartamento;
+        mPeca _modelPeca;
         mFornecedor _modelFornecedor;
-        List<mPeca> _modelPeca;
-        mTipoProduto _modelTipoProd;
-        mCompra _modelCompra;
 
         #endregion Atributos
 
@@ -32,27 +30,49 @@ namespace TCC.UI
 
         #region Eventos
 
-        #region Form Load
-        private void frmCadCompra_Load(object sender, EventArgs e)
+        #region btnAdicionaItem Click
+        private void btnAdicionaItem_Click(object sender, EventArgs e)
         {
+
         }
-        #endregion Form Load
+        #endregion btnAdicionaItem Click
 
         #region btnBuscaFornecedor Click
         private void btnBuscaFornecedor_Click(object sender, EventArgs e)
         {
-            _modelFornecedor = new mFornecedor();
-            frmBuscaFornecedor objTela = new frmBuscaFornecedor(_modelFornecedor);
             try
             {
-                DialogResult resultado = objTela.ShowDialog();
-                if (resultado == DialogResult.Cancel)
+                this.ValidaBuscas();
+                this.AbreTelaBuscaFornecedor();
+            }
+            catch (BUSINESS.Exceptions.Compra.BuscaMotorPecaException)
+            {
+                MessageBox.Show("É Necessário buscar um Motor ou uma Peça antes de Buscar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarItemDtGrid.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+
+            }
+        }
+        #endregion btnBuscaFornecedor Click
+
+        #region btnBuscarItemDtGrid Click
+        private void btnBuscarItemDtGrid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.rdbMotor.Checked == true)
                 {
-                    this._modelFornecedor = null;
+                    this.AbreTelaBuscaMotor();
                 }
                 else
                 {
-                   // this.txtCdFornecedor.Text = this._modelFornecedor.NomeFornecedor;
+                    this.AbreTelaBuscaPeca();
                 }
             }
             catch (Exception ex)
@@ -61,10 +81,10 @@ namespace TCC.UI
             }
             finally
             {
-                objTela = null;
+
             }
         }
-        #endregion btnBuscaFornecedor Click
+        #endregion btnBuscarItemDtGrid Click
 
         #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -77,33 +97,50 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this._modelDepartamento = null;
             this._modelFornecedor = null;
             this._modelMotor = null;
             this._modelPeca = null;
-            this._modelTipoProd = null;
-
-            this._modelCompra = null;
-            base.Alteracao = false;
+            this._listaOrdemCompra = null;
         }
         #endregion btnLimpar Click
 
-        #region btnBuscaAlteracaoDelecao Click
-        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        #region rdbPeca CheckedChanged
+        private void rdbPeca_CheckedChanged(object sender, EventArgs e)
         {
-            this.btnLimpar_Click(null, null);
-            this._modelCompra = new mCompra();
-            frmBuscaCompra objCompra = new frmBuscaCompra(_modelCompra, true);
+            if (this.rdbMotor.Checked == true)
+            {
+                this._modelPeca = null;
+            }
+            else
+            {
+                this._modelMotor = null;
+            }
+        }
+        #endregion rdbPeca CheckedChanged
+
+        #endregion Eventos
+
+        #region Metodos
+
+        #region Abre Tela Busca Fornecedor
+        /// <summary>
+        /// Busca fornecedor para relacionar a compra
+        /// </summary>
+        private void AbreTelaBuscaFornecedor()
+        {
+            frmBuscaFornecedor telaFornecedor = null;
             try
             {
-                DialogResult resultado = objCompra.ShowDialog();
+                this._modelFornecedor = new mFornecedor();
+                telaFornecedor = new frmBuscaFornecedor(this._modelFornecedor);
+                DialogResult resultado = telaFornecedor.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
-                    this._modelCompra = null;
+                    this._modelFornecedor = null;
                 }
                 else
                 {
-                    this.PopulaTelaComModelAlteracao();
+                    this.txtFornecedor.Text = this._modelFornecedor.NomeFornecedor;
                 }
             }
             catch (Exception ex)
@@ -112,155 +149,93 @@ namespace TCC.UI
             }
             finally
             {
-                objCompra = null;
+                telaFornecedor = null;
             }
         }
-        #endregion btnBuscaAlteracaoDelecao Click
+        #endregion Abre Tela Busca Fornecedor
 
-        #region btnAceitar Click
-        private void btnAceitar_Click(object sender, EventArgs e)
-        {
-            this.Insere();
-        }
-        #endregion btnAceitar Click
-
-        #endregion Eventos
-
-        #region Metodos
-
-        #region Pega Dados Tela
+        #region Abre Tela Busca Peca
         /// <summary>
-        /// Pega os dados da tela e Popula o model
+        /// Abre a tela para buscar uma Peça
         /// </summary>
-        /// <returns></returns>
-        private mCompra PegaDadosTela()
+        private void AbreTelaBuscaPeca()
+        {
+            frmBuscaPeca telaPeca = null;
+            try
+            {
+                this._modelPeca = new mPeca();
+                telaPeca = new frmBuscaPeca(this._modelPeca);
+                DialogResult resultado = telaPeca.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelPeca = null;
+                }
+                else
+                {
+                    this.txtBuscaFiltro.Text = this._modelPeca.IdPecaReal;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                telaPeca = null;
+            }
+        }
+        #endregion Abre Tela Busca Peca
+
+        #region Abre Tela Busca Motor
+        /// <summary>
+        /// Abre a tela para buscar um motor
+        /// </summary>
+        private void AbreTelaBuscaMotor()
+        {
+            frmBuscaMotor telaMotor = null;
+            try
+            {
+                this._modelMotor = new mMotor();
+                telaMotor = new frmBuscaMotor(this._modelMotor);
+                DialogResult resultado = telaMotor.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelMotor = null;
+                }
+                else
+                {
+                    this.txtBuscaFiltro.Text = this._modelMotor.DscMotor;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                telaMotor = null;
+            }
+        }
+        #endregion Abre Tela Busca Motor
+
+        #region Pega Dados Tela Compra
+        /// <summary>
+        /// Popula o model de compra com os dados que estam na tela
+        /// </summary>
+        /// <returns>model com dados que estam na tela</returns>
+        private mCompra PegaDadosTelaCompra()
         {
             mCompra model = new mCompra();
             rCompra regra = new rCompra();
-
-              try
-            {
-                 model.IdCompra = regra.BuscaIdMaximo();
-                 model.Dat = DateTime.Now;
-                // model.IdFornecedor = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
-                 if (string.IsNullOrEmpty(this.txtNotaFiscal.Text) == true)
-                 {
-               //      model.NotaFiscal = null;
-                 }
-                 else
-                 {
-                 //    model.NotaFiscal = this.txtNotaFiscal.Text;
-                 }
-                 /*if (string.IsNullOrEmpty(this.txtObservacao.Text) == true)
-                 {
-                     model.Obs = null;
-                 }
-                 else
-                 {
-                     model.Obs = this.txtObservacao.Text;
-                 }
-                 model.Valor = Convert.ToDouble(this.txtVlCompra.Text);
-                  */
-                 return model;
-             }
-             catch (Exception ex)
-             {
-                 throw ex;
-             }
-             finally
-             {
-                 model = null;
-             }
-        }
-        
-        #endregion Pega Dados Tela
-
-        #region Valida Dados Nulos
-        /// <summary>
-        /// Valida os dados vazios
-        /// </summary>
-        private void ValidaDadosNulos()
-        {
-            if (this._modelDepartamento == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
-            }
-            else if (this._modelFornecedor == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoFornecedorVazioExeception();
-            }
-            else if (this._modelMotor == null && this._modelPeca == null)
-            {
-                throw new BUSINESS.Exceptions.Compra.CompraMotorPecaVazioException();
-            }
-            else if (this._modelTipoProd == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
-            }
-           /* else if (string.IsNullOrEmpty(this.txtVlCompra.Text) == true)
-            {
-                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
-            }*/
-        }
-        #endregion Valida Dados Nulos
-
-        #region Popula Tela Com Model Alteracao
-        /// <summary>
-        /// Pega os dados do model de alteração e popula a tela
-        /// </summary>
-        private void PopulaTelaComModelAlteracao()
-        {
-            if (this._modelCompra != null)
-            {
-                base.Alteracao = true;
-               //this.txtCdFornecedor.Text = this._modelCompra.IdFornecedor.ToString();
-               //this.txtNotaFiscal.Text = this._modelCompra.NotaFiscal;
-               // this.txtVlCompra.Text = this._modelCompra.Valor.ToString();
-              //  this.txtObservacao.Text = this._modelCompra.Obs;
-            }
-        }
-        #endregion Popula Tela Com Model Alteracao
-
-        #region Insere
-        /// <summary>
-        /// Insere os dados que estão no model
-        /// </summary>
-        private void Insere()
-        {
-            mCompra model;
-            rCompra regra = new rCompra();
             try
             {
-                this.ValidaDadosNulos();
-                model = this.PegaDadosTela();
-                regra.ValidarInsere(model);
-                this.btnLimpar_Click(null, null);
+                model.Dat = Convert.ToDateTime(this.txtDataCompra.Text);
+                model.IdCompra = regra.BuscaIdMaximo();
+                model.Obs = this.txtObs.Text;
+                model.Valor = Convert.ToDouble(this.txtValor.Text);
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
 
-            }
-            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoFornecedorVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException)
-            {
-                MessageBox.Show("É Necessário preencher o campo Quantidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Compra.CompraValorVazioException)
-            {
-                MessageBox.Show("É Necessário preencher o campo Valor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Compra.CompraMotorPecaVazioException)
-            {
-                MessageBox.Show("É Necessário busca o código do Motor ou da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                return model;
             }
             catch (Exception ex)
             {
@@ -269,10 +244,68 @@ namespace TCC.UI
             finally
             {
                 model = null;
-                regra = null;
             }
         }
-        #endregion Insere
+        #endregion Pega Dados Tela Compra
+
+        #region Valida Dados Nulos
+        /// <summary>
+        /// Verifica quais dados da tela não podem ser nulos
+        /// </summary>
+        private void ValidaDadosNulos()
+        {
+            string data = this.txtDataCompra.Text.Replace("/", string.Empty);
+            data = data.Replace(" ", string.Empty);
+            if (string.IsNullOrEmpty(this.txtValor.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
+            }
+            else if (string.IsNullOrEmpty(data) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.DataCompraVaziaException();
+            }
+            else
+            {
+                BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataCompra.Text);
+            }
+        }
+        #endregion Valida Dados Nulos
+
+        #region Valida Adicao Ordem Compra
+        /// <summary>
+        /// Valida adição da ordem de compra
+        /// </summary>
+        private void ValidaAdicaoOrdemCompra()
+        {
+            if (this.rdbMotor.Checked == true)
+            {
+                if (this._modelMotor == null)
+                {
+                    throw new BUSINESS.Exceptions.Compra.BuscaMotorException();
+                }
+            }
+            else
+            {
+                if (this._modelPeca == null)
+                {
+                    throw new BUSINESS.Exceptions.Compra.BuscaPecaException();
+                }
+            }
+        }
+        #endregion Valida Adicao Ordem Compra
+
+        #region Valida Buscas
+        /// <summary>
+        /// Valida se o Usuário pode Buscar a peça ou o motor
+        /// </summary>
+        private void ValidaBuscas()
+        {
+            if (this._modelMotor == null && this._modelPeca == null)
+            {
+                throw new BUSINESS.Exceptions.Compra.BuscaMotorPecaException();
+            }
+        }
+        #endregion Valida Buscas
 
         #endregion Metodos
     }

@@ -40,6 +40,8 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnAdicionaItem = new System.Windows.Forms.Button();
             this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
+            this.btnBuscaFornecedor = new System.Windows.Forms.Button();
             this.rdbMotor = new System.Windows.Forms.RadioButton();
             this.rdbPeca = new System.Windows.Forms.RadioButton();
             this.lblObs = new System.Windows.Forms.Label();
@@ -49,14 +51,13 @@
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.megaTextBox1 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.lblValorAntigo = new System.Windows.Forms.Label();
-            this.txtNotaFiscal = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtFornecedor = new System.Windows.Forms.TextBox();
+            this.lblFornecedor = new System.Windows.Forms.Label();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.mTxt = new System.Windows.Forms.MaskedTextBox();
+            this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
-            this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +100,6 @@
             this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
-            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // btnAceitar
             // 
@@ -111,7 +111,6 @@
             this.btnAceitar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
-            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // btnAdicionaItem
             // 
@@ -123,6 +122,7 @@
             this.btnAdicionaItem.TabIndex = 29;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adicionar Item");
             this.btnAdicionaItem.UseVisualStyleBackColor = true;
+            this.btnAdicionaItem.Click += new System.EventHandler(this.btnAdicionaItem_Click);
             // 
             // btnRemoveItem
             // 
@@ -134,6 +134,30 @@
             this.btnRemoveItem.TabIndex = 30;
             this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
             this.btnRemoveItem.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarItemDtGrid
+            // 
+            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(466, 105);
+            this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
+            this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarItemDtGrid.TabIndex = 40;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
+            this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarItemDtGrid.Click += new System.EventHandler(this.btnBuscarItemDtGrid_Click);
+            // 
+            // btnBuscaFornecedor
+            // 
+            this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(541, 67);
+            this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
+            this.btnBuscaFornecedor.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaFornecedor.TabIndex = 41;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
+            this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
+            this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
             // 
             // rdbMotor
             // 
@@ -156,6 +180,7 @@
             this.rdbPeca.TabStop = true;
             this.rdbPeca.Text = "Peça";
             this.rdbPeca.UseVisualStyleBackColor = true;
+            this.rdbPeca.CheckedChanged += new System.EventHandler(this.rdbPeca_CheckedChanged);
             // 
             // lblObs
             // 
@@ -254,23 +279,24 @@
             this.lblValorAntigo.TabIndex = 34;
             this.lblValorAntigo.Text = "Ultimo Preço";
             // 
-            // txtNotaFiscal
+            // txtFornecedor
             // 
-            this.txtNotaFiscal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNotaFiscal.Location = new System.Drawing.Point(367, 75);
-            this.txtNotaFiscal.Multiline = true;
-            this.txtNotaFiscal.Name = "txtNotaFiscal";
-            this.txtNotaFiscal.Size = new System.Drawing.Size(168, 21);
-            this.txtNotaFiscal.TabIndex = 36;
+            this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFornecedor.Location = new System.Drawing.Point(367, 75);
+            this.txtFornecedor.Multiline = true;
+            this.txtFornecedor.Name = "txtFornecedor";
+            this.txtFornecedor.ReadOnly = true;
+            this.txtFornecedor.Size = new System.Drawing.Size(168, 21);
+            this.txtFornecedor.TabIndex = 36;
             // 
-            // label1
+            // lblFornecedor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(364, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Nota Fiscal";
+            this.lblFornecedor.AutoSize = true;
+            this.lblFornecedor.Location = new System.Drawing.Point(364, 59);
+            this.lblFornecedor.Name = "lblFornecedor";
+            this.lblFornecedor.Size = new System.Drawing.Size(61, 13);
+            this.lblFornecedor.TabIndex = 35;
+            this.lblFornecedor.Text = "Fornecedor";
             // 
             // lblQtdPeca
             // 
@@ -291,14 +317,14 @@
             this.txtQtdItem.TabIndex = 28;
             this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
-            // mTxt
+            // txtDataCompra
             // 
-            this.mTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mTxt.Location = new System.Drawing.Point(260, 76);
-            this.mTxt.Mask = "__/__/____   ";
-            this.mTxt.Name = "mTxt";
-            this.mTxt.Size = new System.Drawing.Size(81, 20);
-            this.mTxt.TabIndex = 37;
+            this.txtDataCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDataCompra.Location = new System.Drawing.Point(260, 76);
+            this.txtDataCompra.Mask = "__/__/____   ";
+            this.txtDataCompra.Name = "txtDataCompra";
+            this.txtDataCompra.Size = new System.Drawing.Size(81, 20);
+            this.txtDataCompra.TabIndex = 37;
             // 
             // label2
             // 
@@ -315,19 +341,9 @@
             this.txtBuscaFiltro.Location = new System.Drawing.Point(192, 116);
             this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
+            this.txtBuscaFiltro.ReadOnly = true;
             this.txtBuscaFiltro.Size = new System.Drawing.Size(268, 20);
             this.txtBuscaFiltro.TabIndex = 39;
-            // 
-            // btnBuscarItemDtGrid
-            // 
-            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(466, 105);
-            this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
-            this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscarItemDtGrid.TabIndex = 40;
-            this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
-            this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
             // 
             // frmCadCompra
             // 
@@ -337,12 +353,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBuscaFornecedor);
             this.Controls.Add(this.txtBuscaFiltro);
             this.Controls.Add(this.btnBuscarItemDtGrid);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.mTxt);
-            this.Controls.Add(this.txtNotaFiscal);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDataCompra);
+            this.Controls.Add(this.txtFornecedor);
+            this.Controls.Add(this.lblFornecedor);
             this.Controls.Add(this.megaTextBox1);
             this.Controls.Add(this.lblValorAntigo);
             this.Controls.Add(this.txtQtdItem);
@@ -363,7 +380,6 @@
             this.MaximizeBox = false;
             this.Name = "frmCadCompra";
             this.Text = "Compra";
-            this.Load += new System.EventHandler(this.frmCadCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -386,15 +402,16 @@
         private System.Windows.Forms.DataGridView dgItems;
         private Controles.MegaTextBox.MegaTextBox megaTextBox1;
         private System.Windows.Forms.Label lblValorAntigo;
-        private System.Windows.Forms.TextBox txtNotaFiscal;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtFornecedor;
+        private System.Windows.Forms.Label lblFornecedor;
         private System.Windows.Forms.Label lblQtdPeca;
         private System.Windows.Forms.Button btnAdicionaItem;
         private System.Windows.Forms.Button btnRemoveItem;
         private Controles.MegaTextBox.MegaTextBox txtQtdItem;
-        private System.Windows.Forms.MaskedTextBox mTxt;
+        private System.Windows.Forms.MaskedTextBox txtDataCompra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscaFiltro;
         private System.Windows.Forms.Button btnBuscarItemDtGrid;
+        private System.Windows.Forms.Button btnBuscaFornecedor;
     }
 }
