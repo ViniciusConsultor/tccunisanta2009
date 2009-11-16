@@ -40,8 +40,8 @@
             this.txtPerfil = new System.Windows.Forms.TextBox();
             this.dgMenu = new System.Windows.Forms.DataGridView();
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,8 +124,8 @@
             this.dgMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hSelecionar,
-            this.hIdDepto,
-            this.hNome});
+            this.hIdMenu,
+            this.hMenu});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,22 +158,22 @@
             this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.hSelecionar.Width = 82;
             // 
-            // hIdDepto
+            // hIdMenu
             // 
-            this.hIdDepto.DataPropertyName = "id_menu";
-            this.hIdDepto.HeaderText = "IdMenu";
-            this.hIdDepto.Name = "hIdDepto";
-            this.hIdDepto.ReadOnly = true;
-            this.hIdDepto.Visible = false;
-            this.hIdDepto.Width = 68;
+            this.hIdMenu.DataPropertyName = "id_menu";
+            this.hIdMenu.HeaderText = "IdMenu";
+            this.hIdMenu.Name = "hIdMenu";
+            this.hIdMenu.ReadOnly = true;
+            this.hIdMenu.Visible = false;
+            this.hIdMenu.Width = 68;
             // 
-            // hNome
+            // hMenu
             // 
-            this.hNome.DataPropertyName = "Menu";
-            this.hNome.HeaderText = "Menu";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 59;
+            this.hMenu.DataPropertyName = "Menu";
+            this.hMenu.HeaderText = "Menu";
+            this.hMenu.Name = "hMenu";
+            this.hMenu.ReadOnly = true;
+            this.hMenu.Width = 59;
             // 
             // frmPerfilMenu
             // 
@@ -211,7 +211,7 @@
         private System.Windows.Forms.TextBox txtPerfil;
         private System.Windows.Forms.DataGridView dgMenu;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hIdDepto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hMenu;
     }
 }

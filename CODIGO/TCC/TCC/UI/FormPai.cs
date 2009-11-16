@@ -40,10 +40,10 @@ namespace TCC.UI
                     else if (tipo.Equals(new DataGridView().GetType()) == true)
                     {
                         DataGridView grid = (DataGridView)controle;
-                        DataGridViewColumn[] colunas = new DataGridViewColumn[grid.Columns.Count];
-                        grid.Columns.CopyTo(colunas, 0);
-                        grid.DataSource = null;
-                        ReassociaColunasGrid(colunas, ref grid);
+                        DataTable dt = (DataTable)grid.DataSource;
+                        dt.Rows.Clear();
+                        grid.DataSource = dt;
+                        dt = null;
                     }
                     else if (tipo.Equals(new GroupBox().GetType()) == true)
                     {
@@ -86,10 +86,16 @@ namespace TCC.UI
                     else if (tipo.Equals(new DataGridView().GetType()) == true)
                     {
                         DataGridView grid = (DataGridView)controle;
+                        DataTable dt = (DataTable)grid.DataSource;
+                        dt.Rows.Clear();
+                        grid.DataSource = dt;
+                        dt = null;
+                        /*
                         DataGridViewColumn[] colunas = new DataGridViewColumn[grid.Columns.Count];
                         grid.Columns.CopyTo(colunas, 0);
                         grid.DataSource = null;
                         ReassociaColunasGrid(colunas, ref grid);
+                         */
                     }
                     else if (tipo.Equals(new GroupBox().GetType()) == true)
                     {
