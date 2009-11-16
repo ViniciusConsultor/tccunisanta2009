@@ -66,10 +66,7 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.btnCadUsuario = new System.Windows.Forms.Button();
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
@@ -419,18 +416,6 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
-            // btnCadUsuario
-            // 
-            this.btnCadUsuario.BackgroundImage = global::TCC.resImg.btnNovoUsuario;
-            this.btnCadUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadUsuario.Location = new System.Drawing.Point(504, 307);
-            this.btnCadUsuario.Name = "btnCadUsuario";
-            this.btnCadUsuario.Size = new System.Drawing.Size(47, 42);
-            this.btnCadUsuario.TabIndex = 17;
-            this.toolTipLegenda.SetToolTip(this.btnCadUsuario, "Cadastrar Usuário");
-            this.btnCadUsuario.UseVisualStyleBackColor = true;
-            this.btnCadUsuario.Click += new System.EventHandler(this.btnCadUsuario_Click);
-            // 
             // txtDDD
             // 
             this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -440,24 +425,6 @@
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 4;
             this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(450, 329);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Usuário";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(450, 316);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Cadastrar";
             // 
             // txtCpf
             // 
@@ -477,9 +444,6 @@
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
             this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnCadUsuario);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtTelefone);
@@ -564,9 +528,6 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private Controles.MegaTextBox.MegaTextBox txtDDD;
-        private System.Windows.Forms.Button btnCadUsuario;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox txtCpf;
     }
 }
