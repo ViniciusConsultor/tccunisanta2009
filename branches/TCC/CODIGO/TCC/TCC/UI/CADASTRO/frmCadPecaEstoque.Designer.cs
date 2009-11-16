@@ -46,9 +46,9 @@
             this.dgEstoques = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hIdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoques)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,9 +169,9 @@
             this.dgEstoques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgEstoques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEstoques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hQuantidade,
             this.hIdEstoque,
-            this.hNome});
+            this.hNome,
+            this.hQuantidade});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,14 +217,6 @@
             this.txtQtde.TabIndex = 43;
             this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
-            // hQuantidade
-            // 
-            this.hQuantidade.DataPropertyName = "qtd_peca";
-            this.hQuantidade.HeaderText = "Quantidade";
-            this.hQuantidade.Name = "hQuantidade";
-            this.hQuantidade.ReadOnly = true;
-            this.hQuantidade.Width = 87;
-            // 
             // hIdEstoque
             // 
             this.hIdEstoque.DataPropertyName = "id_estoq";
@@ -241,6 +233,14 @@
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.Width = 60;
+            // 
+            // hQuantidade
+            // 
+            this.hQuantidade.DataPropertyName = "qtd_peca";
+            this.hQuantidade.HeaderText = "Quantidade";
+            this.hQuantidade.Name = "hQuantidade";
+            this.hQuantidade.ReadOnly = true;
+            this.hQuantidade.Width = 87;
             // 
             // frmCadPecaEstoque
             // 
@@ -289,8 +289,8 @@
         private System.Windows.Forms.Label label1;
         private Controles.MegaTextBox.MegaTextBox txtQtde;
         private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdEstoque;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQuantidade;
     }
 }

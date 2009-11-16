@@ -17,7 +17,12 @@ namespace TCC.UI
         #region Atributos
         mPerfil _modelPerfil;
         List<mPerfilMenu> _listaModelPerfilMenu;
-        //int? _idPerfil;
+        
+        // indicador de tela
+        // True - caso esta tela seja chamada de outra tela
+        // False - caso esta tela seja chamada direto do menu
+        bool _telaConsulta;
+
         #endregion Atributos
 
         #region Construtores
@@ -30,7 +35,7 @@ namespace TCC.UI
 
             txtPerfil.Enabled = false;
             btnBuscarPerfil.Enabled = false;
-            btnLimpa.Enabled = false;
+            _telaConsulta = true;
 
             this.PopulaGrid();
             
@@ -40,6 +45,7 @@ namespace TCC.UI
         public frmPerfilMenu()
         {
             InitializeComponent();
+            _telaConsulta = false;
         }
         #endregion Construtores
 
@@ -91,11 +97,23 @@ namespace TCC.UI
         #region btnLimpa_Click
         private void btnLimpa_Click(object sender, EventArgs e)
         {
+            if (_telaConsulta == false)
+            {
+                base.LimpaDadosTela(this);
+            }
+            else
+            {
+                DataTable dt = (DataTable)dgMenu.DataSource;
+                dt.Rows.Clear();
+                dgMenu.DataSource = dt;
+                dt = null;
+            }
+
             _modelPerfil = null;
             _listaModelPerfilMenu = null;
-            base.LimpaDadosTela(this);
             this.PopulaGrid();
-            dgMenu.Columns["id_menu"].Visible = false;
+            dgMenu.Columns["hIdMenu"].Visible = false;
+
         }
         #endregion
 
@@ -251,22 +269,31 @@ namespace TCC.UI
         }
         #endregion Popula Lista Model
 
-        #region Valida Dados Nulos
+        #region Valida Lista model
         /// <summary>
         /// Valida os dados que não podem ser nulos na tela
         /// </summary>
-        private void ValidaDadosNulos()
+        private void ValidaListaModel()
         {
             if (this._listaModelPerfilMenu == null || this._listaModelPerfilMenu.Count<=0)
             {
                 throw new BUSINESS.Exceptions.PerfilMenu.MenuNaoEscolhidoException();
             }
-            else if (this._modelPerfil == null)
+        }
+        #endregion Valida Lista model
+
+        #region Valida Model
+        /// <summary>
+        /// Valida os dados que não podem ser nulos na tela
+        /// </summary>
+        private void ValidaModel()
+        {
+            if (this._modelPerfil == null)
             {
                 throw new BUSINESS.Exceptions.PerfilMenu.PerfilVazioException();
             }
         }
-        #endregion Valida Dados Nulos
+        #endregion Valida Model
 
         #region Insere
         /// <summary>
@@ -277,8 +304,9 @@ namespace TCC.UI
             rPerfilMenu regra = new rPerfilMenu();
             try
             {
+                this.ValidaModel();
                 this.PopulaListaModel();
-                this.ValidaDadosNulos();
+                this.ValidaListaModel();
 
                 // Exclui tudo por perfil antes de inserir
                 this.DeletaTudoPorPerfil();
