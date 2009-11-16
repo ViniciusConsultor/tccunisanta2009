@@ -23,7 +23,7 @@ namespace TCC.MODEL
         private int? telefone;
         private string email;
         private string nom_pais;
-        private string nom_erst_inter;
+        private string nom_est_inter;
 
        
         private string nomeTabela = "fornecedor";
@@ -138,11 +138,11 @@ namespace TCC.MODEL
             get { return nom_pais; }
             set { nom_pais = value; }
         }
-        [ColunasBancoDados("Nom_erst_inter", System.Data.SqlDbType.VarChar, false)]
-        public string Nom_erst_inter
+        [ColunasBancoDados("nom_est_inter", System.Data.SqlDbType.VarChar, false)]
+        public string Nom_est_inter
         {
-            get { return nom_erst_inter; }
-            set { nom_erst_inter = value; }
+            get { return nom_est_inter; }
+            set { nom_est_inter = value; }
         }
 
 

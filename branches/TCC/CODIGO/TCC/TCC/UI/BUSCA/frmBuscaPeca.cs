@@ -145,10 +145,12 @@ namespace TCC.UI
                     {
                         if (this.dgPeca.CurrentRow != null)
                         {
-                            dvc = this.dgPeca["id_peca", this.dgPeca.CurrentRow.Index];
+                            dvc = this.dgPeca["hIdPeca", this.dgPeca.CurrentRow.Index];
                             _model.IdPeca = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgPeca["nom", this.dgPeca.CurrentRow.Index];
+                            dvc = this.dgPeca["hNome", this.dgPeca.CurrentRow.Index];
                             _model.Nom = dvc.Value.ToString();
+                            dvc = this.dgPeca["hIdPecaReal", this.dgPeca.CurrentRow.Index];
+                            _model.IdPecaReal = dvc.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
