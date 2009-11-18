@@ -49,7 +49,7 @@
             // 
             this.btnBuscarPerfil.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPerfil.Location = new System.Drawing.Point(330, 15);
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(301, 15);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
             this.btnBuscarPerfil.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarPerfil.TabIndex = 3;
@@ -60,9 +60,9 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(0, 72);
+            this.btnVolta.Location = new System.Drawing.Point(1, 60);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(33, 32);
+            this.btnVolta.Size = new System.Drawing.Size(27, 23);
             this.btnVolta.TabIndex = 8;
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -71,9 +71,9 @@
             // 
             this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpa.Location = new System.Drawing.Point(0, 36);
+            this.btnLimpa.Location = new System.Drawing.Point(1, 31);
             this.btnLimpa.Name = "btnLimpa";
-            this.btnLimpa.Size = new System.Drawing.Size(33, 33);
+            this.btnLimpa.Size = new System.Drawing.Size(27, 23);
             this.btnLimpa.TabIndex = 6;
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -82,9 +82,9 @@
             // 
             this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirma.Location = new System.Drawing.Point(0, 2);
+            this.btnConfirma.Location = new System.Drawing.Point(1, 2);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(33, 31);
+            this.btnConfirma.Size = new System.Drawing.Size(27, 23);
             this.btnConfirma.TabIndex = 5;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -92,7 +92,7 @@
             // lblCdPerfil
             // 
             this.lblCdPerfil.AutoSize = true;
-            this.lblCdPerfil.Location = new System.Drawing.Point(59, 21);
+            this.lblCdPerfil.Location = new System.Drawing.Point(50, 20);
             this.lblCdPerfil.Name = "lblCdPerfil";
             this.lblCdPerfil.Size = new System.Drawing.Size(30, 13);
             this.lblCdPerfil.TabIndex = 28;
@@ -101,9 +101,9 @@
             // txtPerfil
             // 
             this.txtPerfil.Enabled = false;
-            this.txtPerfil.Location = new System.Drawing.Point(95, 18);
+            this.txtPerfil.Location = new System.Drawing.Point(86, 17);
             this.txtPerfil.Name = "txtPerfil";
-            this.txtPerfil.Size = new System.Drawing.Size(229, 20);
+            this.txtPerfil.Size = new System.Drawing.Size(209, 20);
             this.txtPerfil.TabIndex = 1;
             // 
             // dgMenu
@@ -134,7 +134,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgMenu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgMenu.Location = new System.Drawing.Point(62, 51);
+            this.dgMenu.Location = new System.Drawing.Point(53, 50);
             this.dgMenu.MultiSelect = false;
             this.dgMenu.Name = "dgMenu";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -147,7 +147,7 @@
             this.dgMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMenu.ShowEditingIcon = false;
-            this.dgMenu.Size = new System.Drawing.Size(295, 253);
+            this.dgMenu.Size = new System.Drawing.Size(275, 180);
             this.dgMenu.TabIndex = 32;
             // 
             // hSelecionar
@@ -156,7 +156,7 @@
             this.hSelecionar.Name = "hSelecionar";
             this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 82;
+            this.hSelecionar.Width = 80;
             // 
             // hIdMenu
             // 
@@ -173,7 +173,7 @@
             this.hMenu.HeaderText = "Menu";
             this.hMenu.Name = "hMenu";
             this.hMenu.ReadOnly = true;
-            this.hMenu.Width = 59;
+            this.hMenu.Width = 57;
             // 
             // frmPerfilMenu
             // 
@@ -181,7 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(377, 316);
+            this.ClientSize = new System.Drawing.Size(342, 243);
             this.ControlBox = false;
             this.Controls.Add(this.dgMenu);
             this.Controls.Add(this.txtPerfil);
