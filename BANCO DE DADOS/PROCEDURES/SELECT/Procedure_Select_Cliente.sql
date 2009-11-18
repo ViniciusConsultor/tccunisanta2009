@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_cliente
 @id_cli INT
 AS
-SELECT id_cli, nom, tel, rua, nro_ende, compl, cep, bairr, cid, dat_atl, slg_est, mail, ddd, cpf, cnpj, flg_ativo
+SELECT id_cli, nom, tel, rua, nro_ende, compl, cod_post, bairr, cid, cpf, dat_atl, flg_ativo, mail, ddd, cnpj, nom_est_inter, nom_pais, slg_est, ident_inter, ddi
 FROM Cliente
 WHERE id_cli = @id_cli
 AND flg_ativo = 1
