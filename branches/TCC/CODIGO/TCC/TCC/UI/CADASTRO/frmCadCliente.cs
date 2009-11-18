@@ -62,6 +62,71 @@ namespace TCC.UI
             try
             {
                 model.IdCliente = regra.BuscaIdMaximo();
+                model.NomeCliente = this.txtNome.Text;
+
+                if (string.IsNullOrEmpty(this.txtDDI.Text) == true)
+                {
+                    model.Ddi = null;
+                }
+                else
+                {
+                    model.Ddi = this.txtDDI.Text;
+                }
+                if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
+                {
+                    model.Ddd = null;
+                }
+                else
+                {
+                    model.Ddd = Convert.ToInt32(this.txtDDD.Text);
+                }
+                if (this.txtTelefone.Visible == true)
+                {
+                    string tel = this.txtTelefone.Text.Replace("-", string.Empty);
+                    tel = tel.Replace(" ", string.Empty);
+                    if (string.IsNullOrEmpty(tel) == true)
+                    {
+                        model.TelefoneCliente = null;
+                    }
+                    else
+                    {
+                        model.TelefoneCliente = Convert.ToInt32(tel);
+                    }
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(this.txtTelefoneInter.Text) == true)
+                    {
+                        model.TelefoneCliente = null;
+                    }
+                    else
+                    {
+                        model.TelefoneCliente = Convert.ToInt32(this.txtTelefoneInter.Text);
+                    }
+                }
+
+                model.NomeRua = this.txtRua.Text;
+                if (string.IsNullOrEmpty(this.txtNumero.Text) == true)
+                {
+                    model.NumeroEndereco = null;
+                }
+                else
+                {
+                    model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
+                }
+                model.ComplementoEndereco = this.txtComplemento.Text;
+
+                string cep = txtCep.Text.Replace("-", string.Empty);
+                cep = cep.Replace(" ", string.Empty);
+                if (this.txtCep.Visible == true)
+                {
+                    model.CodPostal = cep;
+                }
+                else
+                {
+                    model.CodPostal = this.txtCodPostal.Text;
+                }
+
                 if (string.IsNullOrEmpty(this.txtBairro.Text) == true)
                 {
                     model.Bairro = null;
@@ -70,17 +135,20 @@ namespace TCC.UI
                 {
                     model.Bairro = this.txtBairro.Text;
                 }
-                string cep = txtCep.Text.Replace("-",string.Empty);
-                cep = cep.Replace(" ", string.Empty);
-                if (string.IsNullOrEmpty(cep) == true)
+                model.Cidade = this.txtCidade.Text;
+
+                string cpf = this.txtCPF.Text.Replace("-", string.Empty);
+                cpf = cpf.Replace(".", string.Empty);
+                cpf = cpf.Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(cpf) == true)
                 {
-                    model.Cep = null;
+                    model.Cpf = null;
                 }
                 else
                 {
-                    model.Cep = Convert.ToInt32(cep);
+                    model.Cpf = cpf;
                 }
-                model.Cidade = this.txtCidade.Text;
+
                 string cnpj = this.txtCnpj.Text.Replace("-", string.Empty);
                 cnpj = cnpj.Replace(".", string.Empty);
                 cnpj = cnpj.Replace("/", string.Empty);
@@ -93,38 +161,9 @@ namespace TCC.UI
                 {
                     model.Cnpj = Convert.ToDecimal(cnpj);
                 }
-                model.ComplementoEndereco = this.txtComplemento.Text;
+
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
-                model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
-                model.NomeCliente = this.txtNome.Text;
-                model.NomeRua = this.txtRua.Text;
-                if (string.IsNullOrEmpty(this.txtNumero.Text) == true)
-                {
-                    model.NumeroEndereco = null;
-                }
-                else
-                {
-                    model.NumeroEndereco = Convert.ToInt32(this.txtNumero.Text);
-                }
-                string tel = this.txtTelefone.Text.Replace("-", string.Empty);
-                tel = tel.Replace(" ", string.Empty);
-                if (string.IsNullOrEmpty(tel) == true)
-                {
-                    model.TelefoneCliente = null;
-                }
-                else
-                {
-                    model.TelefoneCliente = Convert.ToInt32(tel);
-                }
-                if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
-                {
-                    model.Ddd = null;
-                }
-                else
-                {
-                    model.Ddd = Convert.ToInt32(this.txtDDD.Text);
-                }
                 if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
                 {
                     model.Email = null;
@@ -133,6 +172,34 @@ namespace TCC.UI
                 {
                     model.Email = this.txtEmail.Text;
                 }
+
+                if (string.IsNullOrEmpty(this.txtEstado.Text) == true)
+                {
+                    model.Nom_est_inter = null;
+                }
+                else
+                {
+                    model.Nom_est_inter = this.txtEstado.Text;
+                }
+
+                if (string.IsNullOrEmpty(this.txtPais.Text) == true)
+                {
+                    model.Nom_pais = "Brasil";
+                }
+                else
+                {
+                    model.Nom_pais = this.txtPais.Text;
+                }
+
+                if (this.cboEstado.Enabled == true)
+                {
+                    model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
+                }
+                else
+                {
+                    model.SlgEstado = null;
+                }
+
                 if (base.Alteracao == true)
                 {
                     model.IdCliente = this._modelCliente.IdCliente;
@@ -172,6 +239,9 @@ namespace TCC.UI
                 }
                 this.btnLimpa_Click(null, null);
                 this.btnInsere.Enabled = false;
+                this.rdbBrasil.Checked = true;
+                this.txtCPF.Text = "";
+                this.txtCnpj.Text = "";
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Cliente.NomeClienteVazioException)
@@ -179,14 +249,54 @@ namespace TCC.UI
                 MessageBox.Show("Preencher o campo nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNome.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CpfCnpjVazioException)
+            catch (BUSINESS.Exceptions.Cliente.paisVazioException)
             {
-                MessageBox.Show("Preencher o CPF ou o CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCPF.Focus();
+                MessageBox.Show("Preencher o campo País", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtPais.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.EstadoVazioException)
+            {
+                MessageBox.Show("Preencher o campo Estado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtEstado.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CidadeClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.RuaClieteVazioException)
+            {
+                MessageBox.Show("Preencher o campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtRua.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.NroEnderecoClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo Número", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNumero.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.BairroClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtBairro.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CEPVazioException)
+            {
+                MessageBox.Show("Preencher o campo CEP", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCep.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CodigoPostalVazioException)
+            {
+                MessageBox.Show("Preencher o campo Código Postal", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodPostal.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException)
             {
-                MessageBox.Show("Preencher algum campo para contato(DDD e Telefone ou E-mail)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Preencher algum campo para contato ('DDI, DDD e Telefone' ou 'E-mail')", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDI.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.DDIClienteVazioException)
+            {
+                MessageBox.Show("Preencher o campo DDI", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDD.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.DDDClienteVazioException)
@@ -197,17 +307,29 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException)
             {
                 MessageBox.Show("Preencher o campo telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtTelefone.Focus();
+                if (this.txtTelefone.Visible == true)
+                {
+                    this.txtTelefone.Focus();
+                }
+                else
+                {
+                    this.txtTelefoneInter.Focus();
+                }
             }
             catch (BUSINESS.Exceptions.Cliente.EmailClienteVazioException)
             {
                 MessageBox.Show("Preencher o campo e-mail", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtTelefone.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CidadeClienteVazioException)
+            catch (BUSINESS.Exceptions.Cliente.CpfCnpjVazioException)
             {
-                MessageBox.Show("Preencher o campo cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCidade.Focus();
+                MessageBox.Show("Preencher o CPF ou o CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.rdbPessoaFisica.Checked = true;
+            }
+            catch (BUSINESS.Exceptions.Cliente.IdentidadeInterVazioException)
+            {
+                MessageBox.Show("Preencher o código de Identificação Internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
             }
             catch (Exception ex)
             {
@@ -231,7 +353,6 @@ namespace TCC.UI
             {
                 base.Alteracao = true;
                 this.txtBairro.Text = this._modelCliente.Bairro;
-                this.txtCep.Text = this._modelCliente.Cep.ToString();
                 this.txtCidade.Text = this._modelCliente.Cidade;
                 this.txtCnpj.Text = this._modelCliente.Cnpj.ToString();
                 this.txtCPF.Text = this._modelCliente.Cpf;
@@ -257,34 +378,68 @@ namespace TCC.UI
             cnpj = cnpj.Replace(" ", string.Empty);
             cnpj = cnpj.Replace("/", string.Empty);
             cnpj = cnpj.Replace(".", string.Empty);
+
             string cpf = this.txtCPF.Text.Replace("-", string.Empty);
             cpf = cpf.Replace(" ", string.Empty);
             cpf = cpf.Replace(".", string.Empty);
+
             string tel = this.txtTelefone.Text.Replace("-", string.Empty);
             tel = tel.Replace(" ", string.Empty);
+
+            string cep = this.txtCep.Text.Replace("-", string.Empty);
+            cep = cep.Replace(" ", string.Empty);
+
             try
             {
                 if (string.IsNullOrEmpty(this.txtNome.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.NomeClienteVazioException();
                 }
-                else if (string.IsNullOrEmpty(cnpj) == true && string.IsNullOrEmpty(cpf) == true)
+                else if (string.IsNullOrEmpty(this.txtPais.Text) == true && this.txtPais.Enabled == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.CpfCnpjVazioException();
+                    throw new BUSINESS.Exceptions.Cliente.paisVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEstado.Text) == true && this.txtEstado.Enabled == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.EstadoVazioException();
                 }
                 else if (string.IsNullOrEmpty(txtCidade.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.CidadeClienteVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && this.txtTelefone.Modified == false)
+                else if (string.IsNullOrEmpty(txtRua.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.RuaClieteVazioException();
+                }
+                else if (string.IsNullOrEmpty(txtNumero.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.NroEnderecoClienteVazioException();
+                }
+                else if (string.IsNullOrEmpty(txtBairro.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.BairroClienteVazioException();
+                }
+                else if (string.IsNullOrEmpty(cep) == true && this.txtCep.Visible == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.CEPVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtCodPostal.Text) == true && this.txtCodPostal.Visible == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.CodigoPostalVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDI.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(tel) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(tel) == false)
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDI.Text) == true && this.txtDDI.Enabled == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.DDIVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.DDDClienteVazioException();
                 }
-                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == false && string.IsNullOrEmpty(tel) == true)
+                else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(tel) == true && this.txtTelefone.Visible == true || string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtTelefoneInter.Text) == true && this.txtTelefoneInter.Visible == true)
                 {
                     throw new BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException();
                 }
@@ -292,9 +447,13 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Cliente.EmailClienteVazioException();
                 }
-                else if (string.IsNullOrEmpty(txtPais.Text) == true && string.IsNullOrEmpty(cpf) == true)
+                else if (this.panelOutros.Visible == false && string.IsNullOrEmpty(cnpj) == true && string.IsNullOrEmpty(cpf) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.paisVazioException();
+                    throw new BUSINESS.Exceptions.Cliente.CpfCnpjVazioException();
+                }
+                else if (this.panelOutros.Visible == true && string.IsNullOrEmpty(this.txtIdentInter.Text) == true)
+                {
+                    throw new BUSINESS.Exceptions.Cliente.IdentidadeInterVazioException();
                 }
             }
             catch (Exception ex)
@@ -307,11 +466,26 @@ namespace TCC.UI
         #endregion Metodos
 
         #region Eventos
+
         #region Form Load
         private void frmCadCliente_Load(object sender, EventArgs e)
         {
             this.BuscaEstados();
-            this.rdbPessoaFisica_CheckedChanged(null, null);
+
+            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Brasil)
+            //-------------------------------------------------------------------------------
+            this.txtPais.Enabled = false;
+            this.txtEstado.Enabled = false;
+
+            this.panelOutros.Visible = false;
+
+            this.lblCodPostal.Visible = false;
+            this.txtCodPostal.Visible = false;
+
+            this.txtDDI.Text = "55";
+            this.txtDDI.Enabled = false;
+
+            this.txtTelefoneInter.Visible = false;
         }
         #endregion Form Load
 
@@ -326,6 +500,7 @@ namespace TCC.UI
         private void btnLimpa_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
+            this.rdbBrasil.Checked = true;
             this._modelCliente = null;
             base.Alteracao = false;
         }
@@ -374,74 +549,95 @@ namespace TCC.UI
         }
         #endregion  txtNome TextChanged
 
-        private void rdbPessoaJuridica_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        #endregion Eventos
-
-        private void rdbPessoaFisica_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.rdbBrasil.Checked == true)
-            {
-                this.txtPais.Text = string.Empty;
-                this.txtEstado.Text = string.Empty;
-                this.txtPais.Enabled = false;
-                this.txtEstado.Enabled = false;
-                if (this.rdbPessoaFisica.Checked == true)
-                {
-                    this.txtCPF.Enabled = true;
-                    this.txtCnpj.Enabled = false;
-                    this.txtCnpj.Text = string.Empty;
-                }
-                else
-                {
-                    this.txtCPF.Text = string.Empty;
-                    this.txtCPF.Enabled = false;
-                    this.txtCnpj.Enabled = true;
-                }
-            }
-            else
-            {
-                this.txtCnpj.Text = string.Empty;
-                this.txtCPF.Text = string.Empty;
-                this.txtCPF.Enabled = false;
-                this.txtCnpj.Enabled = false;
-                this.txtPais.Enabled = true;
-                this.txtEstado.Enabled = true;
-            }
-        }
-
+        #region rdbBrasil CheckedChanged
         private void rdbBrasil_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.rdbBrasil.Checked == true)
-            {
-                this.txtPais.Text = string.Empty;
-                this.txtEstado.Text = string.Empty;
-                this.txtPais.Enabled = false;
-                this.txtEstado.Enabled = false;
-                if (this.rdbPessoaFisica.Checked == true)
-                {
-                    this.txtCPF.Enabled = true;
-                    this.txtCnpj.Enabled = false;
-                    this.txtCnpj.Text = string.Empty;
-                }
-                else
-                {
-                    this.txtCPF.Text = string.Empty;
-                    this.txtCPF.Enabled = false;
-                    this.txtCnpj.Enabled = true;
-                }
-            }
-            else
-            {
-                this.txtCnpj.Text = string.Empty;
-                this.txtCPF.Text = string.Empty;
-                this.txtCPF.Enabled = false;
-                this.txtCnpj.Enabled = false;
-                this.txtPais.Enabled = true;
-                this.txtEstado.Enabled = true;
-            }
+            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Brasil)
+            //-------------------------------------------------------------------------------
+            this.cboEstado.Enabled = true;
+
+            this.txtPais.Enabled = false;
+            this.txtPais.Text = "";
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Text = "";
+
+            this.panelOutros.Visible = false;
+            this.txtIdentInter.Text = "";
+            this.panelBrasil.Visible = true;
+            this.rdbPessoaFisica.Checked = true;
+            this.txtCPF.Text = "";
+
+            this.lblCodPostal.Visible = false;
+            this.txtCodPostal.Visible = false;
+            this.txtCodPostal.Text = "";
+            this.lblCep.Visible = true;
+            this.txtCep.Visible = true;
+
+            this.txtDDI.Text = "55";
+            this.txtDDI.Enabled = false;
+
+            this.txtTelefone.Visible = true;
+            this.txtTelefoneInter.Visible = false;
+            this.txtTelefoneInter.Text = "";
         }
+        #endregion rdbBrasil CheckedChanged
+
+        #region rdbOutros CheckedChanged
+        private void rdbOutros_CheckedChanged(object sender, EventArgs e)
+        {
+            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Internacional)
+            //-------------------------------------------------------------------------------
+            this.cboEstado.Enabled = false;
+            this.cboEstado.SelectedIndex = 0;
+
+            this.txtPais.Enabled = true;
+            this.txtEstado.Enabled = true;
+
+            this.panelOutros.Visible = true;
+            this.rdbPessoaFisica.Checked = true;
+            this.txtCPF.Text = "";
+
+            this.lblCep.Visible = false;
+            this.txtCep.Visible = false;
+            this.txtCep.Text = "";
+            this.lblCodPostal.Visible = true;
+            this.txtCodPostal.Visible = true;
+
+            this.txtDDI.Enabled = true;
+            this.txtDDI.Text = "";
+
+            this.txtTelefone.Visible = false;
+            this.txtTelefone.Text = "";
+            this.txtTelefoneInter.Visible = true;
+        }
+        #endregion rdbOutros CheckedChanged
+
+        #region rdbPessoaFisica CheckedChanged
+        private void rdbPessoaFisica_CheckedChanged(object sender, EventArgs e)
+        {
+            this.txtCnpj.Enabled = false;
+            this.txtCnpj.Text = "";
+            this.txtCPF.Enabled = true;
+            this.txtCPF.Focus();
+        }
+        #endregion rdbPessoaFisica CheckedChanged
+
+        #region rdbPessoaJuridica CheckedChanged
+        private void rdbPessoaJuridica_CheckedChanged(object sender, EventArgs e)
+        {
+            this.txtCPF.Enabled = false;
+            this.txtCPF.Text = "";
+            this.txtCnpj.Enabled = true;
+            this.txtCnpj.Focus();
+        }
+        #endregion rdbPessoaJuridica CheckedChanged
+
+        private void txtDDI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #endregion Eventos
     }
 }
