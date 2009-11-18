@@ -55,7 +55,7 @@
             this.txtDescPerfil.MaxLength = 50;
             this.txtDescPerfil.Multiline = true;
             this.txtDescPerfil.Name = "txtDescPerfil";
-            this.txtDescPerfil.Size = new System.Drawing.Size(217, 80);
+            this.txtDescPerfil.Size = new System.Drawing.Size(217, 107);
             this.txtDescPerfil.TabIndex = 1;
             this.txtDescPerfil.TextChanged += new System.EventHandler(this.txtDescPerfil_TextChanged);
             // 

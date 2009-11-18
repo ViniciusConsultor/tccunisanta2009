@@ -55,9 +55,9 @@
             // 
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFornecedor.Enabled = false;
-            this.txtFornecedor.Location = new System.Drawing.Point(74, 33);
+            this.txtFornecedor.Location = new System.Drawing.Point(54, 18);
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(262, 20);
+            this.txtFornecedor.Size = new System.Drawing.Size(232, 20);
             this.txtFornecedor.TabIndex = 1;
             this.txtFornecedor.TabStop = false;
             this.txtFornecedor.TextChanged += new System.EventHandler(this.txtFornecedor_TextChanged);
@@ -65,7 +65,7 @@
             // lblCdFornecedor
             // 
             this.lblCdFornecedor.AutoSize = true;
-            this.lblCdFornecedor.Location = new System.Drawing.Point(71, 18);
+            this.lblCdFornecedor.Location = new System.Drawing.Point(51, 5);
             this.lblCdFornecedor.Name = "lblCdFornecedor";
             this.lblCdFornecedor.Size = new System.Drawing.Size(61, 13);
             this.lblCdFornecedor.TabIndex = 51;
@@ -99,7 +99,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgDeptos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgDeptos.Location = new System.Drawing.Point(74, 133);
+            this.dgDeptos.Location = new System.Drawing.Point(54, 107);
             this.dgDeptos.MultiSelect = false;
             this.dgDeptos.Name = "dgDeptos";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -112,7 +112,7 @@
             this.dgDeptos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgDeptos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDeptos.ShowEditingIcon = false;
-            this.dgDeptos.Size = new System.Drawing.Size(295, 177);
+            this.dgDeptos.Size = new System.Drawing.Size(276, 124);
             this.dgDeptos.TabIndex = 4;
             // 
             // hSelecionar
@@ -121,7 +121,7 @@
             this.hSelecionar.Name = "hSelecionar";
             this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 82;
+            this.hSelecionar.Width = 80;
             // 
             // hIdDepto
             // 
@@ -138,24 +138,24 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.Width = 58;
             // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(74, 95);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(54, 69);
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(262, 20);
+            this.txtBuscaFiltro.Size = new System.Drawing.Size(232, 20);
             this.txtBuscaFiltro.TabIndex = 2;
             // 
             // btnBuscaAlteracaoDelecao
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 70);
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 58);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(33, 32);
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
@@ -165,9 +165,9 @@
             // 
             this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolta.Location = new System.Drawing.Point(2, 107);
+            this.btnVolta.Location = new System.Drawing.Point(2, 87);
             this.btnVolta.Name = "btnVolta";
-            this.btnVolta.Size = new System.Drawing.Size(33, 32);
+            this.btnVolta.Size = new System.Drawing.Size(27, 23);
             this.btnVolta.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar / Voltar");
             this.btnVolta.UseVisualStyleBackColor = true;
@@ -177,9 +177,9 @@
             // 
             this.btnLimpa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpa.BackgroundImage")));
             this.btnLimpa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpa.Location = new System.Drawing.Point(2, 34);
+            this.btnLimpa.Location = new System.Drawing.Point(2, 29);
             this.btnLimpa.Name = "btnLimpa";
-            this.btnLimpa.Size = new System.Drawing.Size(33, 33);
+            this.btnLimpa.Size = new System.Drawing.Size(27, 23);
             this.btnLimpa.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(2, 0);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(33, 31);
+            this.btnConfirma.Size = new System.Drawing.Size(27, 23);
             this.btnConfirma.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Cadastrar");
             this.btnConfirma.UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@
             // 
             this.btnBuscarDepartamentoDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarDepartamentoDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarDepartamentoDtGrid.Location = new System.Drawing.Point(342, 95);
+            this.btnBuscarDepartamentoDtGrid.Location = new System.Drawing.Point(303, 63);
             this.btnBuscarDepartamentoDtGrid.Name = "btnBuscarDepartamentoDtGrid";
             this.btnBuscarDepartamentoDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarDepartamentoDtGrid.TabIndex = 3;
@@ -213,7 +213,7 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(342, 31);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(303, 15);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaFornecedor.TabIndex = 52;
@@ -229,7 +229,7 @@
             // lblDepto
             // 
             this.lblDepto.AutoSize = true;
-            this.lblDepto.Location = new System.Drawing.Point(71, 79);
+            this.lblDepto.Location = new System.Drawing.Point(51, 50);
             this.lblDepto.Name = "lblDepto";
             this.lblDepto.Size = new System.Drawing.Size(74, 13);
             this.lblDepto.TabIndex = 53;
@@ -241,7 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(398, 327);
+            this.ClientSize = new System.Drawing.Size(342, 243);
             this.ControlBox = false;
             this.Controls.Add(this.lblDepto);
             this.Controls.Add(this.btnBuscaFornecedor);
