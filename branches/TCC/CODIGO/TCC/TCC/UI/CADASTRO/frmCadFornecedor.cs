@@ -74,10 +74,11 @@ namespace TCC.UI
                 }
                 model.Complemento = this.txtComplemento.Text;
 
-                if (this.txtCepFornecedor.Visible == true)
+                if (this.txtCep.Visible == true)
                 {
-                    string cep = this.txtCepFornecedor.Text.Replace("-", string.Empty);
+                    string cep = this.txtCep.Text.Replace("-", string.Empty);
                     cep = cep.Replace(" ", string.Empty);
+
                     if (string.IsNullOrEmpty(cep) == true)
                     {
                         model.CodPostal = null;
@@ -116,14 +117,28 @@ namespace TCC.UI
                 {
                     model.Ddd = Convert.ToInt32(this.txtDDD.Text);
                 }
-                string tel = this.txtTelefone.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
-                if (string.IsNullOrEmpty(tel) == true)
+                if (this.txtTelefone.Visible == true)
                 {
-                    model.Telefone = null;
+                    string tel = this.txtTelefone.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
+                    if (string.IsNullOrEmpty(tel) == true)
+                    {
+                        model.Telefone = null;
+                    }
+                    else
+                    {
+                        model.Telefone = Convert.ToInt32(tel);
+                    }
                 }
                 else
                 {
-                    model.Telefone = Convert.ToInt32(tel);
+                    if (string.IsNullOrEmpty(this.txtTelefoneInter.Text) == true)
+                    {
+                        model.Telefone = null;
+                    }
+                    else
+                    {
+                        model.Telefone = Convert.ToInt32(this.txtTelefoneInter.Text);
+                    }
                 }
                 
                 model.Bairro = this.txtBairro.Text;
@@ -151,7 +166,7 @@ namespace TCC.UI
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
 
-                if (this.cboEstado.Visible == true)
+                if (this.cboEstado.Enabled == true)
                 {
                     model.SlgEstado = this.cboEstado.GetItemText(this.cboEstado.SelectedItem);
                 }
@@ -208,19 +223,49 @@ namespace TCC.UI
                 MessageBox.Show("É Necessário preenchimento do campo Nome Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNomeFornecedor.Focus();
             }
+            catch (BUSINESS.Exceptions.Fornecedor.paisVazioException)
+            {
+                MessageBox.Show("É Necessário Prencher o campo País", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtPais.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.EstadoVazioException)
+            {
+                MessageBox.Show("É Necessário Prencher o campo Província(Estado)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtEstado.Focus();
+            }
             catch (BUSINESS.Exceptions.Fornecedor.CidadeVazioException)
             {
                 MessageBox.Show("É Necessário preenchimento do campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CEPVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo CEP", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCep.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CodigoPostalVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo Código Postal", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodPostal.Focus();
             }
             catch (BUSINESS.Exceptions.Fornecedor.CnpjVazioException)
             {
                 MessageBox.Show("É Necessário preenchimento do campo CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCnpj.Focus();
             }
+            catch (BUSINESS.Exceptions.Fornecedor.IdentidadeInterVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do código de identificação internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
+            }
             catch (BUSINESS.Exceptions.Fornecedor.DadosComunicacaoVazioExeception)
             {
-                MessageBox.Show("É Necessário preenchimento dos campos DDD e Telefone ou Email", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário preenchimento dos campos 'DDI, DDD e Telefone' ou 'E-mail'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.DDIVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo DDI", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDI.Focus();
             }
             catch (BUSINESS.Exceptions.Fornecedor.DddVazioException)
             {
@@ -230,15 +275,18 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Fornecedor.TelefoneVazioException)
             {
                 MessageBox.Show("É Necessário preenchimento do campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtTelefone.Focus();
+                if (this.txtTelefone.Visible == true)
+                {
+                    this.txtTelefone.Focus();
+                }
+                else
+                {
+                    this.txtTelefoneInter.Focus();
+                }
             }
             catch (BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption)
             {
                 MessageBox.Show("É Necessário o campo Codigo Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.Fornecedor.paisVazioException)
-            {
-                MessageBox.Show("É Necessário Prencher o campo Pais", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
             {
@@ -269,41 +317,65 @@ namespace TCC.UI
                 cnpj = cnpj.Replace(".", string.Empty);
                 cnpj = cnpj.Replace("/", string.Empty);
                 cnpj = cnpj.Replace(" ", string.Empty);
+
+                string cep = this.txtCep.Text.Replace("-", string.Empty);
+                cep = cep.Replace(" ", string.Empty);
+
                 if (string.IsNullOrEmpty(this.txtNomeFornecedor.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.NomeFornecedorVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtPais.Text) == true && this.txtPais.Enabled == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.paisVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtEstado.Text) == true && this.txtEstado.Enabled == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.EstadoVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtCidade.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.CidadeVazioException();
                 }
-                else if (string.IsNullOrEmpty(cnpj) == true && string.IsNullOrEmpty(this.txtIdentInter.Text) && this.txtCnpj.Visible == false)
+                else if (string.IsNullOrEmpty(cep) == true && this.txtCep.Visible == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.CEPVazioException();
+                }
+                else if (string.IsNullOrEmpty(this.txtCodPostal.Text) == true && this.txtCodPostal.Visible == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.CodigoPostalVazioException();
+                }
+                else if (string.IsNullOrEmpty(cnpj) == true && this.txtCnpj.Visible == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.CnpjVazioException();
                 }
-                else if (string.IsNullOrEmpty(cnpj) == true && string.IsNullOrEmpty(this.txtIdentInter.Text) && this.txtIdentInter.Visible == false)
+                else if (string.IsNullOrEmpty(this.txtIdentInter.Text) && this.txtIdentInter.Visible == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.IdentidadeInterVazioException();
-                }
-                else if (string.IsNullOrEmpty(this.txtPais.Text) == true && this.txtPais.Visible == true)
-                {
-                    throw new BUSINESS.Exceptions.Fornecedor.paisVazioException();
                 }
                 else
                 {
                     string telefone = this.txtTelefone.Text.Replace("-", string.Empty);
                     telefone = telefone.Replace(" ", string.Empty);
-                    if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(telefone) == true)
+                    if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDI.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(telefone) == true)
                     {
                         throw new BUSINESS.Exceptions.Fornecedor.DadosComunicacaoVazioExeception();
                     }
-                    else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == false && string.IsNullOrEmpty(this.txtTelefone.Text) == true)
+                    else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDI.Text) == true && this.txtDDI.Enabled == true)
+                    {
+                        throw new BUSINESS.Exceptions.Fornecedor.DDIVazioException();
+                    }
+                    else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true)
+                    {
+                        throw new BUSINESS.Exceptions.Fornecedor.DddVazioException();
+                    }
+                    else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(telefone) == true && this.txtTelefone.Visible == true || string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtTelefoneInter.Text) == true && this.txtTelefoneInter.Visible == true)
                     {
                         throw new BUSINESS.Exceptions.Fornecedor.TelefoneVazioException();
                     }
-                    else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(this.txtTelefone.Text) == false)
+                    else if (string.IsNullOrEmpty(txtEmail.Text) == true && string.IsNullOrEmpty(txtDDD.Text) == true && string.IsNullOrEmpty(telefone) == true)
                     {
-                        throw new BUSINESS.Exceptions.Fornecedor.DddVazioException();
+                        throw new BUSINESS.Exceptions.Fornecedor.EmailFornecedorVazioException();
                     }
                 }
             }
@@ -352,6 +424,7 @@ namespace TCC.UI
         private void btnlimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
+            this.rdbBrasil.Checked = true;
         }
         #endregion btnlimpar Click
 
@@ -386,15 +459,19 @@ namespace TCC.UI
             this.cboEstado.Enabled = true;
 
             this.txtPais.Enabled = false;
+            this.txtPais.Text = "";
             this.txtEstado.Enabled = false;
+            this.txtEstado.Text = "";
 
             this.lblCodPostal.Visible = false;
             this.txtCodPostal.Visible = false;
+            this.txtCodPostal.Text = "";
             this.lblCep.Visible = true;
-            this.txtCepFornecedor.Visible = true;
+            this.txtCep.Visible = true;
 
             this.lblIdentInter.Visible = false;
             this.txtIdentInter.Visible = false;
+            this.txtIdentInter.Text = "";
             this.lblcnpj.Visible = true;
             this.txtCnpj.Visible = true;
 
@@ -403,6 +480,7 @@ namespace TCC.UI
 
             this.txtTelefone.Visible = true;
             this.txtTelefoneInter.Visible = false;
+            this.txtTelefoneInter.Text = "";
         }
         #endregion rdbBrasil CheckedChanged
 
@@ -412,17 +490,20 @@ namespace TCC.UI
             //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Internacional)
             //---------------------------------------------------------------------------------------
             this.cboEstado.Enabled = false;
+            this.cboEstado.SelectedIndex = 0;
 
             this.txtPais.Enabled = true;
             this.txtEstado.Enabled = true;
 
-            this.lblcnpj.Visible = false;
-            this.txtCnpj.Visible = false;
             this.lblCodPostal.Visible = true;
             this.txtCodPostal.Visible = true;
+            this.lblCep.Visible = false;
+            this.txtCep.Visible = false;
+            this.txtCep.Text = "";
 
             this.lblcnpj.Visible = false;
             this.txtCnpj.Visible = false;
+            this.txtCnpj.Text = "";
             this.lblIdentInter.Visible = true;
             this.txtIdentInter.Visible = true;
 
@@ -430,6 +511,7 @@ namespace TCC.UI
             this.txtDDI.Enabled = true;
 
             this.txtTelefone.Visible = false;
+            this.txtTelefone.Text = "";
             this.txtTelefoneInter.Visible = true;
         }
         #endregion rdbOutros CheckedChanged

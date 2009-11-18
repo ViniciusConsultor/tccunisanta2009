@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_fornecedor
 @id_forn INT
 AS
-SELECT id_forn, nom, rua, nro_ende, compl, cep, ddd, bairr, tel, cid, mail, cnpj, dat_alt, slg_est, flg_ativo, nom_pais, nom_est_inter, ddi,ident_inter
+SELECT id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter, ddi,ident_inter
 FROM Fornecedor
 WHERE id_forn = @id_forn
 AND flg_ativo = 1
