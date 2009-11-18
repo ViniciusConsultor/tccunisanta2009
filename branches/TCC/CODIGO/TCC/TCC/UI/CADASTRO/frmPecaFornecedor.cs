@@ -302,6 +302,11 @@ namespace TCC.UI
         }
         #endregion Valida Dados Nulos
 
+        private void frmPecaFornecedor_Load(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion Metodos
     }
 }

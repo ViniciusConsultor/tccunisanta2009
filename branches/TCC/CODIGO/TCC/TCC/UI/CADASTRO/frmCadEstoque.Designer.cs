@@ -176,7 +176,6 @@
             // rdbDefeitoSim
             // 
             this.rdbDefeitoSim.AutoSize = true;
-            this.rdbDefeitoSim.Checked = true;
             this.rdbDefeitoSim.Location = new System.Drawing.Point(49, 36);
             this.rdbDefeitoSim.Name = "rdbDefeitoSim";
             this.rdbDefeitoSim.Size = new System.Drawing.Size(42, 17);

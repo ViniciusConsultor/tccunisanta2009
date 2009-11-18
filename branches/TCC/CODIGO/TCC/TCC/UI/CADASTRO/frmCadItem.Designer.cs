@@ -137,9 +137,9 @@
             // 
             this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(443, 25);
+            this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(456, 34);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
-            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscarPecaDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarPecaDtGrid.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnBuscarPecaDtGrid, "Buscar Peças");
             this.btnBuscarPecaDtGrid.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(188, 34);
             this.txtFiltro.MaxLength = 25;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(249, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(262, 20);
             this.txtFiltro.TabIndex = 5;
             // 
             // lblQtdPeca
