@@ -150,7 +150,7 @@
             this.Controls.Add(this.dgColaborador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmBuscaColaborador";
-            this.Text = "Busca Colaborador";
+            this.Text = "Busca Funcionário";
             this.Load += new System.EventHandler(this.frmBuscaColaborador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgColaborador)).EndInit();
             this.ResumeLayout(false);

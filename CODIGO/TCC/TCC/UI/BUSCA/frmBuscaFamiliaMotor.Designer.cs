@@ -37,6 +37,9 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hIdFamMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFamMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +84,10 @@
             this.dgFamMotor.AllowUserToResizeRows = false;
             this.dgFamMotor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgFamMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFamMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hIdFamMotor,
+            this.hCodigo,
+            this.hNome});
             this.dgFamMotor.Location = new System.Drawing.Point(15, 44);
             this.dgFamMotor.MultiSelect = false;
             this.dgFamMotor.Name = "dgFamMotor";
@@ -131,6 +138,31 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hIdFamMotor
+            // 
+            this.hIdFamMotor.DataPropertyName = "Id";
+            this.hIdFamMotor.HeaderText = "IdFamMotor";
+            this.hIdFamMotor.Name = "hIdFamMotor";
+            this.hIdFamMotor.ReadOnly = true;
+            this.hIdFamMotor.Visible = false;
+            this.hIdFamMotor.Width = 86;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "Codigo";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Nome";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 58;
+            // 
             // frmBuscaFamiliaMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +198,8 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdFamMotor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
     }
 }

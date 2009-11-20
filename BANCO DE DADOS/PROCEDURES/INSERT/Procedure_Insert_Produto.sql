@@ -5,10 +5,13 @@ GO
 
 CREATE PROCEDURE sp_insert_Produto
 @id_prdto			INT,
-@id_tipo_produto    INT,
-@id_fam_motor       INT,
+@dsc_prdto          VARCHAR(500),
+@id_fam_motor		INT,
 @id_kit				INT,
-@dsc_prdto          VARCHAR(500)
+@id_tipo_produto	INT,
+@flg_ativo			BIT,
+@dat_alt			DATETIME
+
 AS
 
 BEGIN TRY
@@ -23,8 +26,8 @@ ELSE
 
 BEGIN
 --Insert na tabela ordemproducao
-INSERT INTO Produto(id_prdto, id_tipo_produto, id_fam_motor, id_kit, dsc_prdto)
-VALUES (@id_prdto, @id_tipo_produto, @id_fam_motor, @id_kit, @dsc_prdto)
+INSERT INTO Produto(id_prdto, dsc_prdto, id_fam_motor, id_kit, id_tipo_produto, flg_ativo, dat_alt)
+VALUES (@id_prdto, @dsc_prdto, @id_fam_motor, @id_kit, @id_tipo_produto, @flg_ativo, @dat_alt)
 END
 END TRY
 

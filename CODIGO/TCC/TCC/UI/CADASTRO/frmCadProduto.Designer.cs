@@ -101,6 +101,7 @@
             this.btnBuscarProduto.TabIndex = 38;
             this.toolTipLegenda.SetToolTip(this.btnBuscarProduto, "Buscar Peças");
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
+            this.btnBuscarProduto.Click += new System.EventHandler(this.btnBuscarProduto_Click);
             // 
             // txtDescProduto
             // 
@@ -155,13 +156,15 @@
             // txtFiltroBusca
             // 
             this.txtFiltroBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltroBusca.Enabled = false;
             this.txtFiltroBusca.Location = new System.Drawing.Point(114, 143);
             this.txtFiltroBusca.MaxLength = 25;
             this.txtFiltroBusca.Name = "txtFiltroBusca";
             this.txtFiltroBusca.Size = new System.Drawing.Size(262, 20);
             this.txtFiltroBusca.TabIndex = 4;
+            this.txtFiltroBusca.TabStop = false;
             // 
-            // frmProduto
+            // frmCadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +185,7 @@
             this.Controls.Add(this.btnAceitar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "frmProduto";
+            this.Name = "frmCadProduto";
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.frmCadOrdemProducao_Load);
             this.ResumeLayout(false);
