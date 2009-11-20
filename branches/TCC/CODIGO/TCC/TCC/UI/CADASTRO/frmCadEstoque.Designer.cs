@@ -170,6 +170,7 @@
             this.rdbDefeitoNao.Name = "rdbDefeitoNao";
             this.rdbDefeitoNao.Size = new System.Drawing.Size(45, 17);
             this.rdbDefeitoNao.TabIndex = 4;
+            this.rdbDefeitoNao.TabStop = true;
             this.rdbDefeitoNao.Text = "Não";
             this.rdbDefeitoNao.UseVisualStyleBackColor = true;
             // 
@@ -210,6 +211,7 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtCdDepartamento);
             this.Controls.Add(this.lblCodigoDepartamento);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadEstoque";
             this.Text = "Cadastro de Estoques";

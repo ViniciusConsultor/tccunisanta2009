@@ -109,6 +109,7 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.btnFechar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MinimizeBox = false;
             this.Name = "frmCadTipoProduto";
             this.Text = "Tipo de Produto";

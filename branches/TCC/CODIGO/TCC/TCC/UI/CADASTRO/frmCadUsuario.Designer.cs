@@ -209,6 +209,7 @@
             this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadUsuario";
             this.Text = "Cadastro de Usuários";

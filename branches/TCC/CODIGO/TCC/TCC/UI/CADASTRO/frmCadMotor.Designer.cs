@@ -196,6 +196,7 @@
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtDsMotor);
             this.Controls.Add(this.lblNomeMotor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadMotor";
             this.Text = "Cadastro de Motores";

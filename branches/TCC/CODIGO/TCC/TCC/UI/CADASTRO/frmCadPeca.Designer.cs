@@ -326,6 +326,7 @@
             this.Controls.Add(this.lblNmPeca);
             this.Controls.Add(this.txtCdTipoPeca);
             this.Controls.Add(this.lblCdTipoPeca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadPeca";
             this.Text = "Cadastro de Pecas";
