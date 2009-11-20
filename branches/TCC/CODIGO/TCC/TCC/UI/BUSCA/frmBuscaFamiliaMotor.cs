@@ -119,6 +119,7 @@ namespace TCC.UI
                 dt = regraFamiliaM.BuscaFamiliaMotorNome(this.txtFiltro.Text);
                 dgFamMotor.DataSource = dt;
                 dgFamMotor.Columns[0].Visible = false;
+                dgFamMotor.Columns[3].Visible = false;
             }
             catch (Exception ex)
             {
@@ -144,9 +145,11 @@ namespace TCC.UI
                     {
                         if (this.dgFamMotor.CurrentRow != null)
                         {
-                            dvc = this.dgFamMotor["id_fam_motor", this.dgFamMotor.CurrentRow.Index];
+                            dvc = this.dgFamMotor["hIdFamMotor", this.dgFamMotor.CurrentRow.Index];
                             this._model.IdFamiliaMotor = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgFamMotor["Familia Motor", this.dgFamMotor.CurrentRow.Index];
+                            dvc = this.dgFamMotor["hCodigo", this.dgFamMotor.CurrentRow.Index];
+                            this._model.Id_fam_motor_real = Convert.ToString(dvc.Value);
+                            dvc = this.dgFamMotor["hNome", this.dgFamMotor.CurrentRow.Index];
                             this._model.DscFamiliaMotor = dvc.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();
