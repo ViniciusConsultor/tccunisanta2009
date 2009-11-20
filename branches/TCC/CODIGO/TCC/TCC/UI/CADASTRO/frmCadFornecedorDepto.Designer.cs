@@ -36,9 +36,6 @@
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblCdFornecedor = new System.Windows.Forms.Label();
             this.dgDeptos = new System.Windows.Forms.DataGridView();
-            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
@@ -48,6 +45,9 @@
             this.btnBuscaFornecedor = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.lblDepto = new System.Windows.Forms.Label();
+            this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hIdDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgDeptos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,31 +114,6 @@
             this.dgDeptos.ShowEditingIcon = false;
             this.dgDeptos.Size = new System.Drawing.Size(276, 124);
             this.dgDeptos.TabIndex = 4;
-            // 
-            // hSelecionar
-            // 
-            this.hSelecionar.HeaderText = "Selecionar";
-            this.hSelecionar.Name = "hSelecionar";
-            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 80;
-            // 
-            // hIdDepto
-            // 
-            this.hIdDepto.DataPropertyName = "id_depto";
-            this.hIdDepto.HeaderText = "IdDepto";
-            this.hIdDepto.Name = "hIdDepto";
-            this.hIdDepto.ReadOnly = true;
-            this.hIdDepto.Visible = false;
-            this.hIdDepto.Width = 68;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "nom";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
             // 
             // txtBuscaFiltro
             // 
@@ -234,6 +209,33 @@
             this.lblDepto.Size = new System.Drawing.Size(74, 13);
             this.lblDepto.TabIndex = 53;
             this.lblDepto.Text = "Departamento";
+            // 
+            // hSelecionar
+            // 
+            this.hSelecionar.HeaderText = "Selecionar";
+            this.hSelecionar.Name = "hSelecionar";
+            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hSelecionar.Width = 82;
+            // 
+            // hIdDepto
+            // 
+            this.hIdDepto.DataPropertyName = "id_depto";
+            this.hIdDepto.HeaderText = "IdDepto";
+            this.hIdDepto.Name = "hIdDepto";
+            this.hIdDepto.ReadOnly = true;
+            this.hIdDepto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdDepto.Visible = false;
+            this.hIdDepto.Width = 51;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
             // 
             // frmCadfornecedorDepto
             // 
