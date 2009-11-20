@@ -41,11 +41,11 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnBuscarFornecedorDtGrid = new System.Windows.Forms.Button();
             this.dgFornecedores = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscaPeca = new System.Windows.Forms.Button();
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscaPeca = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,31 +176,6 @@
             this.dgFornecedores.Size = new System.Drawing.Size(246, 138);
             this.dgFornecedores.TabIndex = 38;
             // 
-            // hSelecionar
-            // 
-            this.hSelecionar.HeaderText = "Selecionar";
-            this.hSelecionar.Name = "hSelecionar";
-            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 80;
-            // 
-            // hIdFornecedor
-            // 
-            this.hIdFornecedor.DataPropertyName = "id_forn";
-            this.hIdFornecedor.HeaderText = "IdFornecedor";
-            this.hIdFornecedor.Name = "hIdFornecedor";
-            this.hIdFornecedor.ReadOnly = true;
-            this.hIdFornecedor.Visible = false;
-            this.hIdFornecedor.Width = 93;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "Fornecedor";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -220,6 +195,33 @@
             this.btnBuscaPeca.TabIndex = 40;
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
+            // 
+            // hSelecionar
+            // 
+            this.hSelecionar.HeaderText = "Selecionar";
+            this.hSelecionar.Name = "hSelecionar";
+            this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hSelecionar.Width = 82;
+            // 
+            // hIdFornecedor
+            // 
+            this.hIdFornecedor.DataPropertyName = "id_forn";
+            this.hIdFornecedor.HeaderText = "IdFornecedor";
+            this.hIdFornecedor.Name = "hIdFornecedor";
+            this.hIdFornecedor.ReadOnly = true;
+            this.hIdFornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdFornecedor.Visible = false;
+            this.hIdFornecedor.Width = 76;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Fornecedor";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
             // 
             // frmPecaFornecedor
             // 

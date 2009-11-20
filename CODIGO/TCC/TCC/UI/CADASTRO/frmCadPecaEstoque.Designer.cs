@@ -44,11 +44,11 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.dgEstoques = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.hIdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoques)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,31 +198,6 @@
             this.dgEstoques.TabIndex = 39;
             this.dgEstoques.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEstoques_CellClick);
             // 
-            // hIdEstoque
-            // 
-            this.hIdEstoque.DataPropertyName = "id_estoq";
-            this.hIdEstoque.HeaderText = "IdEstoque";
-            this.hIdEstoque.Name = "hIdEstoque";
-            this.hIdEstoque.ReadOnly = true;
-            this.hIdEstoque.Visible = false;
-            this.hIdEstoque.Width = 80;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "Estoque";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
-            // 
-            // hQuantidade
-            // 
-            this.hQuantidade.DataPropertyName = "qtd_peca";
-            this.hQuantidade.HeaderText = "Quantidade";
-            this.hQuantidade.Name = "hQuantidade";
-            this.hQuantidade.ReadOnly = true;
-            this.hQuantidade.Width = 85;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -241,6 +216,34 @@
             this.txtQtde.Size = new System.Drawing.Size(94, 20);
             this.txtQtde.TabIndex = 43;
             this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
+            // hIdEstoque
+            // 
+            this.hIdEstoque.DataPropertyName = "id_estoq";
+            this.hIdEstoque.HeaderText = "IdEstoque";
+            this.hIdEstoque.Name = "hIdEstoque";
+            this.hIdEstoque.ReadOnly = true;
+            this.hIdEstoque.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdEstoque.Visible = false;
+            this.hIdEstoque.Width = 61;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Estoque";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
+            // 
+            // hQuantidade
+            // 
+            this.hQuantidade.DataPropertyName = "qtd_peca";
+            this.hQuantidade.HeaderText = "Quantidade";
+            this.hQuantidade.Name = "hQuantidade";
+            this.hQuantidade.ReadOnly = true;
+            this.hQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hQuantidade.Width = 68;
             // 
             // frmCadPecaEstoque
             // 

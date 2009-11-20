@@ -210,7 +210,7 @@
             this.hSelecionar.Name = "hSelecionar";
             this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 80;
+            this.hSelecionar.Width = 82;
             // 
             // hIdForn
             // 
@@ -218,8 +218,9 @@
             this.hIdForn.HeaderText = "IdForn";
             this.hIdForn.Name = "hIdForn";
             this.hIdForn.ReadOnly = true;
+            this.hIdForn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hIdForn.Visible = false;
-            this.hIdForn.Width = 60;
+            this.hIdForn.Width = 43;
             // 
             // hNome
             // 
@@ -227,7 +228,8 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
             // 
             // frmCadMotorFornecedor
             // 
@@ -271,9 +273,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.DataGridView dgFornecedores;
+        private System.Windows.Forms.Button btnBuscaMotor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdForn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
-        private System.Windows.Forms.Button btnBuscaMotor;
     }
 }
