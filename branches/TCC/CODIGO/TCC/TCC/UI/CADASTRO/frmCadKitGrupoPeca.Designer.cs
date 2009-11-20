@@ -46,10 +46,6 @@
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
             this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.lblNmItem = new System.Windows.Forms.Label();
@@ -58,6 +54,10 @@
             this.TxtNmItem = new System.Windows.Forms.TextBox();
             this.lblCdKitReal = new System.Windows.Forms.Label();
             this.txtCodigoKit = new System.Windows.Forms.TextBox();
+            this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -244,39 +244,6 @@
             this.dgItems.TabIndex = 7;
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
-            // hIdItem
-            // 
-            this.hIdItem.DataPropertyName = "id_item";
-            this.hIdItem.HeaderText = "IdItem";
-            this.hIdItem.Name = "hIdItem";
-            this.hIdItem.ReadOnly = true;
-            this.hIdItem.Visible = false;
-            this.hIdItem.Width = 61;
-            // 
-            // hCodigo
-            // 
-            this.hCodigo.DataPropertyName = "Codigo";
-            this.hCodigo.HeaderText = "Codigo";
-            this.hCodigo.Name = "hCodigo";
-            this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "Item";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 85;
-            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -356,6 +323,43 @@
             this.txtCodigoKit.TabIndex = 1;
             this.txtCodigoKit.TextChanged += new System.EventHandler(this.txtCodigoKit_TextChanged);
             // 
+            // hIdItem
+            // 
+            this.hIdItem.DataPropertyName = "id_item";
+            this.hIdItem.HeaderText = "IdItem";
+            this.hIdItem.Name = "hIdItem";
+            this.hIdItem.ReadOnly = true;
+            this.hIdItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdItem.Visible = false;
+            this.hIdItem.Width = 42;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "Codigo";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hCodigo.Width = 46;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Item";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hQtd.Width = 68;
+            // 
             // frmCadKitGrupoPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,12 +410,12 @@
         private System.Windows.Forms.TextBox TxtNmItem;
         private System.Windows.Forms.Label lblCdKitReal;
         private System.Windows.Forms.TextBox txtCodigoKit;
+        private System.Windows.Forms.Button btnRemoveItem;
+        private Controles.MegaTextBox.MegaTextBox txtQtdItem;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
-        private System.Windows.Forms.Button btnRemoveItem;
-        private Controles.MegaTextBox.MegaTextBox txtQtdItem;
-        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }

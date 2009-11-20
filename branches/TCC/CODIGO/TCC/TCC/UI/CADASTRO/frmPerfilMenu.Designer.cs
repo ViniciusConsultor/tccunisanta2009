@@ -156,7 +156,7 @@
             this.hSelecionar.Name = "hSelecionar";
             this.hSelecionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.hSelecionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hSelecionar.Width = 80;
+            this.hSelecionar.Width = 82;
             // 
             // hIdMenu
             // 
@@ -164,8 +164,9 @@
             this.hIdMenu.HeaderText = "IdMenu";
             this.hIdMenu.Name = "hIdMenu";
             this.hIdMenu.ReadOnly = true;
+            this.hIdMenu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hIdMenu.Visible = false;
-            this.hIdMenu.Width = 68;
+            this.hIdMenu.Width = 49;
             // 
             // hMenu
             // 
@@ -173,7 +174,8 @@
             this.hMenu.HeaderText = "Menu";
             this.hMenu.Name = "hMenu";
             this.hMenu.ReadOnly = true;
-            this.hMenu.Width = 57;
+            this.hMenu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hMenu.Width = 40;
             // 
             // frmPerfilMenu
             // 

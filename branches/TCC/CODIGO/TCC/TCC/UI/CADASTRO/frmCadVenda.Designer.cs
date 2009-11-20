@@ -54,9 +54,6 @@
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
             this.lblTipoProduto = new System.Windows.Forms.Label();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
-            this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
@@ -64,6 +61,9 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
+            this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.SuspendLayout();
@@ -322,31 +322,6 @@
             this.dgProdutos.TabIndex = 9;
             this.dgProdutos.SelectionChanged += new System.EventHandler(this.dgProdutos_SelectionChanged);
             // 
-            // hId
-            // 
-            this.hId.DataPropertyName = "id_prdto";
-            this.hId.HeaderText = "Id";
-            this.hId.Name = "hId";
-            this.hId.ReadOnly = true;
-            this.hId.Visible = false;
-            this.hId.Width = 41;
-            // 
-            // hDescricao
-            // 
-            this.hDescricao.DataPropertyName = "dsc_prdto";
-            this.hDescricao.HeaderText = "Descrição";
-            this.hDescricao.Name = "hDescricao";
-            this.hDescricao.ReadOnly = true;
-            this.hDescricao.Width = 78;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "Qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 85;
-            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -417,6 +392,34 @@
             this.TxtNmProduto.Size = new System.Drawing.Size(102, 20);
             this.TxtNmProduto.TabIndex = 14;
             // 
+            // hId
+            // 
+            this.hId.DataPropertyName = "id_prdto";
+            this.hId.HeaderText = "Id";
+            this.hId.Name = "hId";
+            this.hId.ReadOnly = true;
+            this.hId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hId.Visible = false;
+            this.hId.Width = 22;
+            // 
+            // hDescricao
+            // 
+            this.hDescricao.DataPropertyName = "dsc_prdto";
+            this.hDescricao.HeaderText = "Descrição";
+            this.hDescricao.Name = "hDescricao";
+            this.hDescricao.ReadOnly = true;
+            this.hDescricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hDescricao.Width = 61;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "Qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hQtd.Width = 68;
+            // 
             // frmCadVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,10 +483,10 @@
         private System.Windows.Forms.ComboBox cboTipoProduto;
         private System.Windows.Forms.Label lblTipoProduto;
         private System.Windows.Forms.Button btnRemovePeca;
+        private Controles.MegaTextBox.MegaTextBox txtQtdProdutos;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hId;
         private System.Windows.Forms.DataGridViewTextBoxColumn hDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
-        private Controles.MegaTextBox.MegaTextBox txtQtdProdutos;
-        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
     }
 }
