@@ -215,6 +215,7 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnBuscaDepartamento);
             this.Controls.Add(this.btnAceitar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadPedidoVenda";
             this.Text = "Pedido de Venda";

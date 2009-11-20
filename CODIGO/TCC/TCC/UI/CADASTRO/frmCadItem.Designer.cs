@@ -374,6 +374,7 @@
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnConfirmar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadItem";
             this.Text = "Item de Peças";

@@ -195,6 +195,8 @@
     <Compile Include="BUSINESS\Exceptions\Peca\NomePecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Produto\DescricaoProdutoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Produto\FamiliaOuKitVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoMotor\CodigoTipoMotorExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoMotor\DescTipoMotorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\TipoMotor\NumeroTipoMotorVazioExeption.cs" />

@@ -141,8 +141,9 @@
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgUsinagem);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmBuscaUsinagem";
-            this.Text = "frmBuscaUsinagem";
+            this.Text = "Busca Usinagem";
             ((System.ComponentModel.ISupportInitialize)(this.dgUsinagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

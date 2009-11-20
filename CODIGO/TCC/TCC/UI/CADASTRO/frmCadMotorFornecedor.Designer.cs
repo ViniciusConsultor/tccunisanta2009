@@ -248,6 +248,7 @@
             this.Controls.Add(this.lblCdRealMotor);
             this.Controls.Add(this.txtBuscaFiltro);
             this.Controls.Add(this.btnBuscarFornecedorDtGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadMotorFornecedor";
             this.Text = "Motor/Fornecedor";

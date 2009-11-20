@@ -125,6 +125,7 @@
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.txtDescPerfil);
             this.Controls.Add(this.lblDescPerfil);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadPerfil";
             this.Text = "Cadastro de Perfis";

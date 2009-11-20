@@ -480,6 +480,7 @@
             this.Controls.Add(this.lblDtNasc);
             this.Controls.Add(this.lblNmColaborador);
             this.Controls.Add(this.lblCdDepart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadColaborador";
             this.Text = "Cadastro de Funcionários";
