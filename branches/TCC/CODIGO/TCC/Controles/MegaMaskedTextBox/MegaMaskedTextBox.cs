@@ -7,8 +7,17 @@ using System.Windows.Forms;
 
 namespace Controles.MegaMaskedTextBox
 {
+    public enum TipoMascara
+    {
+        Rg,
+        Numerico
+    }
+    
     public partial class MegaMaskedTextBox : MaskedTextBox
     {
+        TipoMascara _tipoMasc;
+
+
         public MegaMaskedTextBox()
         {
             InitializeComponent();

@@ -41,9 +41,28 @@ namespace TCC.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.PopulaModelDadosGrid();
-            this.DialogResult = DialogResult.OK;
-            base.Close();
+            try
+            {
+                this.PopulaModelDadosGrid();
+                this.DialogResult = DialogResult.OK;
+                base.Close();
+            }
+            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -92,9 +111,9 @@ namespace TCC.UI
                     {
                         if (this.dgCliente.CurrentRow != null)
                         {
-                            dvc = this.dgCliente["id_cli", this.dgCliente.CurrentRow.Index];
+                            dvc = this.dgCliente["hId", this.dgCliente.CurrentRow.Index];
                             this._model.IdCliente = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgCliente["Cliente", this.dgCliente.CurrentRow.Index];
+                            dvc = this.dgCliente["hNome", this.dgCliente.CurrentRow.Index];
                             this._model.NomeCliente = dvc.Value.ToString();
                         }
                         else

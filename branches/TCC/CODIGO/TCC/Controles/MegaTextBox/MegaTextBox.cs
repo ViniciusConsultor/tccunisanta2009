@@ -12,7 +12,9 @@ namespace Controles.MegaTextBox
         Texto,
         Numerico,
         Decimal,
-        Email
+        Email,
+        SoLetra,
+        Rg
     }
 
     public partial class MegaTextBox : TextBox
@@ -111,6 +113,68 @@ namespace Controles.MegaTextBox
                         {
                             //Caso não seja não deixa escrever
                             //--------------------------------
+                            e.Handled = true;
+                        }
+                    }
+                    break;
+                case TipoTexto.SoLetra:
+                    //Verifica se não é "BackSpace"
+                    //-------------------------
+                    if (e.KeyChar.Equals('\b') == false)
+                    {
+                        //Verifica se é Letra
+                        //----------------------
+                        if (char.IsLetter(e.KeyChar) == false)
+                        {
+                            //Caso não seja não deixa escrever
+                            //--------------------------------
+                            e.Handled = true;
+                        }
+                    }
+                    break;
+                case TipoTexto.Rg:
+                    //Verifica se não é "BackSpace", "Virgula"
+                    //----------------------------------------
+                    if (e.KeyChar.Equals('\b') == false && e.KeyChar.Equals('.') == false && e.KeyChar.Equals('-') == false && e.KeyChar.Equals('x') == false && e.KeyChar.Equals('X') == false)
+                    {
+
+                        //Verifica se é numérico
+                        //----------------------
+                        if (char.IsNumber(e.KeyChar) == false)
+                        {
+                            //Caso não seja não deixa escrever
+                            //--------------------------------
+                            e.Handled = true;
+                        }
+                        else
+                        {
+                            if (this.Text.IndexOf(',') >= 0)
+                            {
+                                int local = this.Text.IndexOf(',');
+                                string texto = this.Text.Substring(local);
+                                if (texto.Length > 2)
+                                {
+                                    e.Handled = true;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (e.KeyChar == 'x')
+                        {
+                            e.KeyChar = 'X';
+                        }
+                        if (e.KeyChar.Equals('-') == true && this.Text.IndexOf('-') >= 0 && e.KeyChar.Equals('\b') == false)
+                        {
+                            e.Handled = true;
+                        }
+                        if (e.KeyChar.Equals('X') == true && this.Text.IndexOf('X') >= 0 && e.KeyChar.Equals('\b') == false)
+                        {
+                            e.Handled = true;
+                        }
+                        else if (e.KeyChar.Equals('.') == true &&this.Text.Split('.').Length >= 3 && e.KeyChar.Equals('\b') == false)
+                        {
                             e.Handled = true;
                         }
                     }

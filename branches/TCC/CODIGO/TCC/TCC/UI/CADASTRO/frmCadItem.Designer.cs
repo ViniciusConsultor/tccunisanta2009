@@ -264,6 +264,39 @@
             this.dgItems.TabIndex = 7;
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged);
             // 
+            // hIdPeca
+            // 
+            this.hIdPeca.DataPropertyName = "id_peca";
+            this.hIdPeca.HeaderText = "IdPeca";
+            this.hIdPeca.Name = "hIdPeca";
+            this.hIdPeca.ReadOnly = true;
+            this.hIdPeca.Visible = false;
+            this.hIdPeca.Width = 66;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "id_peca_real";
+            this.hCodigo.HeaderText = "Código";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 65;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 60;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.Width = 87;
+            // 
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

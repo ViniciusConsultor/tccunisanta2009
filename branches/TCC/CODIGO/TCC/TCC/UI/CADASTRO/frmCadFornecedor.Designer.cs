@@ -570,6 +570,7 @@
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.lblcnpj);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmCadFornecedor";
             this.Text = "Cadastro de Fornecedores";
