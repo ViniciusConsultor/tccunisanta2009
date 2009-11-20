@@ -37,6 +37,9 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +60,10 @@
             this.dgCliente.AllowUserToResizeRows = false;
             this.dgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hId,
+            this.hNome,
+            this.hEmail});
             this.dgCliente.Location = new System.Drawing.Point(16, 44);
             this.dgCliente.MultiSelect = false;
             this.dgCliente.Name = "dgCliente";
@@ -132,6 +139,31 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // hId
+            // 
+            this.hId.DataPropertyName = "id_cli";
+            this.hId.HeaderText = "Id";
+            this.hId.Name = "hId";
+            this.hId.ReadOnly = true;
+            this.hId.Visible = false;
+            this.hId.Width = 41;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.Width = 60;
+            // 
+            // hEmail
+            // 
+            this.hEmail.DataPropertyName = "mail";
+            this.hEmail.HeaderText = "Email";
+            this.hEmail.Name = "hEmail";
+            this.hEmail.ReadOnly = true;
+            this.hEmail.Width = 57;
+            // 
             // frmBuscaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,5 +200,8 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hEmail;
     }
 }

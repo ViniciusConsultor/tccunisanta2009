@@ -374,7 +374,9 @@ namespace TCC.UI
                     DialogResult resultado = MessageBox.Show("Deseja associar este funcionário com um usuário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (resultado == DialogResult.Yes)
                     {
+                        regraUsuario = new rUsuario();
                         this.AbreTelaAssociaUsuario();
+                        regraUsuario.ValidarInsere(this._modelUsuario);
                     }
                     this.btnApaga_Click(null, null);
                 }

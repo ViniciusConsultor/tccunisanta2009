@@ -37,8 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
-            this.txtIdRealMotor = new System.Windows.Forms.TextBox();
             this.lblIdReal = new System.Windows.Forms.Label();
+            this.txtIdRealMotor = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // txtDscNumeroMotor
@@ -112,16 +112,6 @@
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
-            // txtIdRealMotor
-            // 
-            this.txtIdRealMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdRealMotor.Location = new System.Drawing.Point(61, 48);
-            this.txtIdRealMotor.MaxLength = 50;
-            this.txtIdRealMotor.Name = "txtIdRealMotor";
-            this.txtIdRealMotor.Size = new System.Drawing.Size(260, 20);
-            this.txtIdRealMotor.TabIndex = 1;
-            this.txtIdRealMotor.TextChanged += new System.EventHandler(this.txtIdRealMotor_TextChanged);
-            // 
             // lblIdReal
             // 
             this.lblIdReal.AutoSize = true;
@@ -131,6 +121,15 @@
             this.lblIdReal.TabIndex = 23;
             this.lblIdReal.Text = "Numero do Motor";
             // 
+            // txtIdRealMotor
+            // 
+            this.txtIdRealMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdRealMotor.Location = new System.Drawing.Point(61, 48);
+            this.txtIdRealMotor.Name = "txtIdRealMotor";
+            this.txtIdRealMotor.Size = new System.Drawing.Size(260, 20);
+            this.txtIdRealMotor.TabIndex = 24;
+            this.txtIdRealMotor.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadNumeroMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,8 +138,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
-            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtIdRealMotor);
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.lblIdReal);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
@@ -164,8 +163,8 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private System.Windows.Forms.TextBox txtIdRealMotor;
         private System.Windows.Forms.Label lblIdReal;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private Controles.MegaTextBox.MegaTextBox txtIdRealMotor;
     }
 }

@@ -169,7 +169,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
             {
-                
+                MessageBox.Show("O código do Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnCdTipoPeca.Focus();
             }
             catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)

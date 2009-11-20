@@ -48,7 +48,6 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblRg = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txtRg = new System.Windows.Forms.TextBox();
             this.lblSexo = new System.Windows.Forms.Label();
             this.CbSexo = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -60,14 +59,15 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtRg = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblCdDepart
@@ -236,15 +236,6 @@
             this.lblCpf.TabIndex = 2;
             this.lblCpf.Text = "CPF";
             // 
-            // txtRg
-            // 
-            this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRg.Location = new System.Drawing.Point(147, 242);
-            this.txtRg.MaxLength = 15;
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(155, 20);
-            this.txtRg.TabIndex = 13;
-            // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
@@ -359,16 +350,6 @@
             this.txtDataNasc.TabIndex = 2;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
-            // txtNumero
-            // 
-            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(147, 130);
-            this.txtNumero.MaxLength = 5;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(76, 20);
-            this.txtNumero.TabIndex = 7;
-            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            // 
             // txtCep
             // 
             this.txtCep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -416,6 +397,15 @@
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(368, 241);
+            this.txtCpf.Mask = "000,000,000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(100, 20);
+            this.txtCpf.TabIndex = 14;
+            this.txtCpf.ValidatingType = typeof(int);
+            // 
             // txtDDD
             // 
             this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -426,14 +416,25 @@
             this.txtDDD.TabIndex = 4;
             this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
-            // txtCpf
+            // txtNumero
             // 
-            this.txtCpf.Location = new System.Drawing.Point(368, 241);
-            this.txtCpf.Mask = "000,000,000-00";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(100, 20);
-            this.txtCpf.TabIndex = 14;
-            this.txtCpf.ValidatingType = typeof(int);
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero.Location = new System.Drawing.Point(147, 130);
+            this.txtNumero.MaxLength = 5;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(76, 20);
+            this.txtNumero.TabIndex = 7;
+            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
+            // txtRg
+            // 
+            this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRg.Location = new System.Drawing.Point(147, 241);
+            this.txtRg.MaxLength = 13;
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(100, 20);
+            this.txtRg.TabIndex = 26;
+            this.txtRg.TipoTexto = Controles.MegaTextBox.TipoTexto.Rg;
             // 
             // frmCadColaborador
             // 
@@ -443,6 +444,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
@@ -460,7 +462,6 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.CbSexo);
-            this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.lblEstado);
@@ -510,7 +511,6 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.ComboBox CbSexo;
         private System.Windows.Forms.Button btnConfirma;
@@ -530,5 +530,6 @@
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private Controles.MegaTextBox.MegaTextBox txtDDD;
         private System.Windows.Forms.MaskedTextBox txtCpf;
+        private Controles.MegaTextBox.MegaTextBox txtRg;
     }
 }

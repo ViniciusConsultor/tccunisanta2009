@@ -101,6 +101,7 @@ namespace TCC.UI
         /// </summary>
         private void Insere()
         {
+            rUsuario regraUsu = new rUsuario();
             try
             {
                 this.ValidaDadosNulos();
@@ -111,6 +112,7 @@ namespace TCC.UI
                 this._idUsuario = modelUsu.IdUsuario;
                 base.LimpaDadosTela(this);
                 this.btnAceitar.Enabled = false;*/
+                regraUsu.ValidaDados(this._modelUsuario);
                 this.DialogResult = DialogResult.OK;
                 base.FechaTela(this);
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -143,6 +145,7 @@ namespace TCC.UI
             }
             finally
             {
+                regraUsu = null;
             }
         }
         #endregion Insere
