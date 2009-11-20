@@ -42,6 +42,7 @@ namespace How_to_use
             {
                 dispatcher.Start();
                 MessageBox.Show("Procedures Executadas com sucesso!");
+                Application.Exit();
             }
             catch (Exception ex)
             {

@@ -124,7 +124,14 @@ namespace TCC.UI
         #region btnVolta_Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
-            base.Close();
+            if (this._telaConsulta == false)
+            {
+                base.FechaTela(this);
+            }
+            else
+            {
+                base.Close();
+            }
         }
         #endregion
 

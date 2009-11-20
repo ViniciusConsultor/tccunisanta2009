@@ -8,7 +8,7 @@ namespace TCC.MODEL
    public class mOrdemCompra: ModelPai
     {
         private int id_peca;
-        private decimal ultim_preco;
+        private decimal? ultim_preco;
         private int? id_ordem_compra;
         private int id_motor;
         private DateTime dat_alt;
@@ -25,7 +25,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("Ultim_preco", System.Data.SqlDbType.Decimal, false)]
-        public decimal Ultim_preco
+        public decimal? Ultim_preco
         {
             get { return ultim_preco; }
             set { ultim_preco = value; }

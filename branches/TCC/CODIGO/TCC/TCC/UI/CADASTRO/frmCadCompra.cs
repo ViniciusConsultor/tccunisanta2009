@@ -33,7 +33,35 @@ namespace TCC.UI
         #region btnAdicionaItem Click
         private void btnAdicionaItem_Click(object sender, EventArgs e)
         {
-
+            rOrdemCompra regraOrdemCompra = new rOrdemCompra();
+            mOrdemCompra modelOrdemCompra = null;
+            try
+            {
+                this.ValidaAdicaoOrdemCompra();
+                modelOrdemCompra = this.PegaDadosTelaOrdemCompra();
+            }
+            catch (BUSINESS.Exceptions.Compra.BuscaMotorException)
+            {
+                MessageBox.Show("É necessário busca um motor para compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Compra.BuscaPecaException)
+            {
+                MessageBox.Show("É necessário buscar uma peça para compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException)
+            {
+                MessageBox.Show("Quantidade não pode ser vazia ou menor que 1", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdItem.Focus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraOrdemCompra = null;
+                modelOrdemCompra = null;
+            }
         }
         #endregion btnAdicionaItem Click
 
@@ -248,6 +276,54 @@ namespace TCC.UI
         }
         #endregion Pega Dados Tela Compra
 
+        #region Pega Dados Tela Ordem Compra
+        /// <summary>
+        /// Pega os dados da tela e popula o model de Ordem de Compra
+        /// </summary>
+        /// <returns>model de ordem de compra com dados</returns>
+        private mOrdemCompra PegaDadosTelaOrdemCompra()
+        {
+            mOrdemCompra modelOrdemCompra = new mOrdemCompra();
+            rOrdemCompra regraOrdemCompra = new rOrdemCompra();
+            try
+            {
+                modelOrdemCompra.Dat_alt = DateTime.Now;
+                modelOrdemCompra.Flg_ativo = true;
+                modelOrdemCompra.Id_forn = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
+                modelOrdemCompra.Nota_fisc = null;
+                if (string.IsNullOrEmpty(this.txtUltimoPreco.Text) == true)
+                {
+                    modelOrdemCompra.Ultim_preco = null;
+                }
+                else
+                {
+                    modelOrdemCompra.Ultim_preco = Convert.ToDecimal(this.txtUltimoPreco.Text);
+                }
+                //Verifica se é uma compra de motor ou peça
+                //-----------------------------------------
+                if (this.rdbMotor.Checked == true)
+                {
+                    modelOrdemCompra.Id_motor = Convert.ToInt32(this._modelMotor.IdMotor);
+                }
+                else
+                {
+                    modelOrdemCompra.Id_peca = Convert.ToInt32(this._modelPeca.IdPeca);
+                }
+
+                return modelOrdemCompra;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                modelOrdemCompra = null;
+                regraOrdemCompra = null;
+            }
+        }
+        #endregion Pega Dados Tela Ordem Compra
+
         #region Valida Dados Nulos
         /// <summary>
         /// Verifica quais dados da tela não podem ser nulos
@@ -289,6 +365,18 @@ namespace TCC.UI
                 if (this._modelPeca == null)
                 {
                     throw new BUSINESS.Exceptions.Compra.BuscaPecaException();
+                }
+            }
+            if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+            }
+            else
+            {
+                int qtd = Convert.ToInt32(this.txtQtdItem.Text);
+                if (qtd < 1)
+                {
+                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
                 }
             }
         }
