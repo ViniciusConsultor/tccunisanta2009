@@ -367,6 +367,10 @@ namespace TCC.UI
 
                 dtPecaEstoqueBanco = regraPecaEstoque.BuscaPecaEstoquePorPeca(_modelPeca);
                 dtPecaEstoqueTela = (DataTable)dgEstoques.DataSource;
+                if (dtPecaEstoqueTela == null)
+                {
+                    dtPecaEstoqueTela = new DataTable();
+                }
                 for (int linhaTela = 0; linhaTela < dtPecaEstoqueTela.Rows.Count; linhaTela++)
                 {
                     drLinha = dtTemp.NewRow();

@@ -231,7 +231,6 @@ namespace TCC.UI.Resumo
             finally
             {
                 regraItem = null;
-                noItem = null;
                 noPeca = null;
                 if (dtItem!= null)
                 {

@@ -15,6 +15,7 @@ namespace TCC.UI
         #region Atributos
         mFornecedor _model;
         mMotor _modelMotor;
+        mPeca _modelPeca;
         bool _alteracao, _filtroBusca;
         #endregion
 
@@ -24,6 +25,7 @@ namespace TCC.UI
             InitializeComponent();
             _model = modelFornecedor;
             _alteracao = false;
+            this._filtroBusca = false;
         }
 
         public frmBuscaFornecedor(mFornecedor modelFornecedor, bool Alteracao)
@@ -31,6 +33,7 @@ namespace TCC.UI
             InitializeComponent();
             _model = modelFornecedor;
             _alteracao = Alteracao;
+            this._filtroBusca = false;
         }
 
         public frmBuscaFornecedor(mFornecedor modelFornecedor, mMotor modelMotor)
@@ -39,8 +42,18 @@ namespace TCC.UI
             _model = modelFornecedor;
             _alteracao = false;
             this._modelMotor = modelMotor;
+            this._filtroBusca = true;
         }
-        #endregion
+
+        public frmBuscaFornecedor(mFornecedor modelFornecedor, mPeca modelPeca)
+        {
+            InitializeComponent();
+            _model = modelFornecedor;
+            _alteracao = false;
+            this._modelPeca = modelPeca;
+            this._filtroBusca = true;
+        }
+        #endregion Construtor
 
         #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -123,9 +136,18 @@ namespace TCC.UI
         private void PopulaGrid()
         {
             rFornecedor regra = new rFornecedor();
+            DataTable dt = null;
             try
             {
-                this.dgFornecedor.DataSource = regra.BuscaFornecedor(this.txtFiltro.Text);
+                if (this._filtroBusca == false)
+                {
+                    dt = regra.BuscaFornecedor(this.txtFiltro.Text);
+                }
+                else
+                {
+
+                }
+                this.dgFornecedor.DataSource = dt;
                 dgFornecedor.Columns[0].Visible = false;
             }
             catch (Exception ex)
@@ -135,6 +157,11 @@ namespace TCC.UI
             finally
             {
                 regra = null;
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
             }
         }
 
