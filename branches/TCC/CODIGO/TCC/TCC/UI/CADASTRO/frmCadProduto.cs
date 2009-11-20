@@ -32,6 +32,7 @@ namespace TCC.UI
             base.LimpaDadosTela(this);
             this._modelFamMotor = null;
             this._modelKit = null;
+            this.rdbFamMotor.Checked = true;
         }
         #endregion btnLimpar Click
 
@@ -54,6 +55,62 @@ namespace TCC.UI
             this.Insere();
         }
         #endregion btnAceitar Click
+
+        #region btnBuscarProduto Click
+        private void btnBuscarProduto_Click(object sender, EventArgs e)
+        {
+            if (rdbFamMotor.Checked == true)
+            {
+                this._modelFamMotor = new mFamiliaMotor();
+                frmBuscaFamiliaMotor objTela = new frmBuscaFamiliaMotor(_modelFamMotor);
+                try
+                {
+                    DialogResult resultado = objTela.ShowDialog();
+                    if (resultado == DialogResult.Cancel)
+                    {
+                        this._modelFamMotor = null;
+                    }
+                    else
+                    {
+                        this.txtFiltroBusca.Text = this._modelFamMotor.Id_fam_motor_real + " - " + this._modelFamMotor.DscFamiliaMotor;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    objTela = null;
+                }
+            }
+            else
+            {
+                this._modelKit = new mKitGrupoPeca();
+                frmBuscaKit objTela = new frmBuscaKit(_modelKit);
+                try
+                {
+                    DialogResult resultado = objTela.ShowDialog();
+                    if (resultado == DialogResult.Cancel)
+                    {
+                        this._modelKit = null;
+                    }
+                    else
+                    {
+                        this.txtFiltroBusca.Text = this._modelKit.IdKitReal + " - " + this._modelKit.Nom_grupo;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    objTela = null;
+                }
+            }
+        }
+        #endregion btnBuscarProduto Click
 
         #endregion Eventos
 
@@ -122,11 +179,13 @@ namespace TCC.UI
                 if (this.rdbFamMotor.Checked == true)
                 {
                     model.IdFamMotor = this._modelFamMotor.IdFamiliaMotor;
+                    model.IdKit = null;
                     model.IdTipoProduto = 1;
                 }
                 else
                 {
                     model.IdKit = this._modelKit.IdKit;
+                    model.IdFamMotor = null;
                     model.IdTipoProduto = 2;
                 }
                 model.FlgAtivo = true;

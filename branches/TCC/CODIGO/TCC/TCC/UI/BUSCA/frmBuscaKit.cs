@@ -116,9 +116,10 @@ namespace TCC.UI
             DataTable dt = new DataTable();
             try
             {
-//                dt = regra.BuscaKitGrupoPeca(this.txtFiltro.Text);
+                dt = regra.BuscaKitGrupoPecaNome(this.txtFiltro.Text);
                 dgKit.DataSource = dt;
                 dgKit.Columns[0].Visible = false;
+                dgKit.Columns[3].Visible = false;
             }
             catch (Exception ex)
             {
@@ -144,9 +145,11 @@ namespace TCC.UI
                     {
                         if (this.dgKit.CurrentRow != null)
                         {
-                            dvc = this.dgKit["id_kit", this.dgKit.CurrentRow.Index];
+                            dvc = this.dgKit["hIdKit", this.dgKit.CurrentRow.Index];
                             this._model.IdKit = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgKit["Kit Grupo Peça", this.dgKit.CurrentRow.Index];
+                            dvc = this.dgKit["hIdKitReal", this.dgKit.CurrentRow.Index];
+                            this._model.IdKitReal = Convert.ToString(dvc.Value);
+                            dvc = this.dgKit["hNome", this.dgKit.CurrentRow.Index];
                             this._model.Nom_grupo = dvc.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();
@@ -236,6 +239,5 @@ namespace TCC.UI
             }
         }
         #endregion
-
     }
 }
