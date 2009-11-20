@@ -2,9 +2,9 @@ USE Megatechdatabase
 go
 
 --INSERT TABELA DEPARTAMENTO
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 'Depto 01', 1);
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 'Depto 02', 1);
-INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 'Depto 03', 1);
+--INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (1, 'DEPARTAMENTO 1', GETDATE(), 'Depto 01', 1);
+--INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (2, 'DEPARTAMENTO 2', GETDATE(), 'Depto 02', 1);
+--INSERT INTO Departamento (id_depto, dsc_depto, dat_atl, nom, flg_ativo) VALUES (3, 'DEPARTAMENTO 3', GETDATE(), 'Depto 03', 1);
 
 --INSERT TABELA TIPO_DE_USUÁRIO
 --INSERT INTO Tipousuario (id_tipo_usuario, dsc_tipo_usuario) VALUES (1, 'ADM');
@@ -39,7 +39,7 @@ INSERT INTO Estado (slg_est, nom_est) VALUES ('SE', 'SERGIPE');
 INSERT INTO Estado (slg_est, nom_est) VALUES ('TO', 'TOCANTINS');
 
 --INSERT MENU
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Buscas', NULL, GETDATE(), 1);
+--INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Buscas', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Compra', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Venda', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Estoque', NULL, GETDATE(), 1);
@@ -88,11 +88,11 @@ INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Funcion
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Relacionar Menus ao Perfil', 'frmPerfilMenu', GETDATE(), 1);
 
 --BUSCA
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 1);--Estoque/Busca
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--BuscaPeça
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 8);--Busca Item
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 9);--kit
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 10);--Busca Familia motor
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 1);--Estoque/Busca
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 7);--BuscaPeça
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 8);--Busca Item
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 9);--kit
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (1, 10);--Busca Familia motor
 
 --COMPRA
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (2, 11);--fornecedor
@@ -134,7 +134,7 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (32, 35);--usuario/relac
 INSERT INTO Perfil (id_perfil, dsc_perfil, dat_atl, flg_ativo) VALUES (1, 'DEFAULT', GETDATE(), 1);
 
 --INSERT TABELA PERFILMENU
-INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 1, GETDATE(), 1);
+--INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 1, GETDATE(), 1);
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 2, GETDATE(), 1);
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 3, GETDATE(), 1);
 INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 4, GETDATE(), 1);
@@ -149,6 +149,51 @@ INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Kit', 1, GETDATE());
 
 --INSERT TABELA USUARIO senha: 123
 INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'kaue', 'MTIz', 'SEI LA', 1, 1);
+--fornecedor
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (1,'Peças & Equips', 'Dom Bosco', 357,'Apartamento', 11070098, 33, 'Vila Nova', 56985880, 'Manaus', 'peçasequips@mail.com','123468579', GETDATE(), 1, 'am', 'Brasil', NULL);
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de aneiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj', 'Brasil', NULL);
+
+--Numero Motor
+INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (1,'366','Default' , 1);
+INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (2,'447','Moto Bomba' ,1);
+
+--TipoMotor
+INSERT INTO Tipomotor(id_tipo_motor ,id_tipo_motor_real ,dsc_tipo_motor ,flg_ativo) VALUES (1,'LA', 'Turbo Aspirado', 1);
+INSERT INTO Tipomotor(id_tipo_motor ,id_tipo_motor_real ,dsc_tipo_motor ,flg_ativo) VALUES (2,'A', 'Aspirado', 1);
+
+--kitGrupoPeca
+INSERT INTO Kitgrupopeca(id_kit, id_kit_real,nom, flg_ativo,dat_alt) VALUES (1 ,'014', 'KIT 366 LA',1,GETDATE());
+INSERT INTO Kitgrupopeca(id_kit, id_kit_real,nom, flg_ativo,dat_alt) VALUES (2 ,'015', 'KIT 447 A',1,GETDATE());
+
+--tipo peca
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(1,'Pequenas',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(2,'rosquiaveis',1);
+
+--Peças
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (1 ,'0.0', 'Solenóide', GETDATE() , 1.0, 1, 'SOLENÓIDE DO MOTOR 366 LA',5, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (2 ,'1.0', 'Porca', GETDATE() , 0.1, 1, 'PORCA DO MOTOR 366 LA',10, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (3 ,'0.0', 'Filtro de Ar', GETDATE() , 0.5, 1, 'FILTRO DE AR  DO MOTOR 447 A',8, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (4 ,'0.0', 'Solenóide de Parada', GETDATE() , 1.0, 1, 'SOLENÓIDE DE PARADA DO MOTOR 447 A',6, 1 );
+
+--DEPARTAMENTO
+INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (1 ,'estoque de peças',GETDATE() , 'Almoxarifado', 1);
+INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (2 ,'ajuste de peças brutas',GETDATE() , 'Usinagem', 1);
+INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (3 ,'linha de montagem',GETDATE() , 'Produção', 1);
+
+--Estoque
+INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_negativo) VALUES (1 ,'Estoque do almoxarifado', GETDATE() , 1 , 1 ,0);
+INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_negativo) VALUES (2 ,'Estoque da Usinagem', GETDATE() , 1 , 2 ,0);
+INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_negativo) VALUES (3 ,'Estoque da Produção', GETDATE() , 1 , 3 ,0);
+INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_negativo) VALUES (4 ,'Estoque do Peças Defeituosas', GETDATE() , 1 , 2 ,0);
+
+--item 
+INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 1,'item de Peças ' ,1 ,'1.' ,GETDATE());
+INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 2,'item de Peças ' ,1 ,'2.' ,GETDATE());
+INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 3,'item de Peças ' ,1 ,'3.' ,GETDATE());
+
+--colaborador
+INSERT INTO Colaborador(id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est)VALUES (1, 'Andre',1982-05-04, 'Carvalho de Mendonça', 478, 'Casa', 11070102, 'Vila Belmiro', 13, 'Santos', 32398027, 441014227, 37006765811, 'M', 'andre@mail.com', GETDATE(), 1, 1,3,'SP');
+
 
 --INSERT TABELA COLABORADOR
 --INSERT INTO Colaborador (id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est) VALUES (1, 'Kaue', '1988-06-02', 'Av. Ana Costa', 516, 'Sem Complemento', '11060002', 'Gonzaga', 13, 'Santos', '38828678', '321452015120321', '145266987125012', 'M', 'kauepaulo@hotmail.com', GETDATE(), 1, 1, 1, 'SP');
