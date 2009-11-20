@@ -1,6 +1,6 @@
 ﻿namespace TCC.UI
 {
-    partial class frmCadOrdemProducao
+    partial class frmCadProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadOrdemProducao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadProduto));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.lblcdFamiliaMotor = new System.Windows.Forms.Label();
-            this.txtCdMotor = new System.Windows.Forms.TextBox();
-            this.lblCdDepartamento = new System.Windows.Forms.Label();
-            this.txtCdDepartamento = new System.Windows.Forms.TextBox();
-            this.lblCdKit = new System.Windows.Forms.Label();
-            this.txtCdKit = new System.Windows.Forms.TextBox();
-            this.lblCdTipoProduto = new System.Windows.Forms.Label();
-            this.txtCdTipoProduto = new System.Windows.Forms.TextBox();
-            this.lblDs = new System.Windows.Forms.Label();
-            this.txtDs = new System.Windows.Forms.TextBox();
-            this.btnCdMotor = new System.Windows.Forms.Button();
-            this.btnCdDep = new System.Windows.Forms.Button();
-            this.btnCdKit = new System.Windows.Forms.Button();
-            this.btnCdTipoProduto = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
+            this.btnBuscarProduto = new System.Windows.Forms.Button();
+            this.txtDescProduto = new System.Windows.Forms.TextBox();
+            this.lblDs = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rdbFamMotor = new System.Windows.Forms.RadioButton();
+            this.rdbKit = new System.Windows.Forms.RadioButton();
+            this.txtFiltroBusca = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(7, 89);
+            this.btnVoltar.Location = new System.Drawing.Point(7, 128);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
             this.btnVoltar.TabIndex = 8;
@@ -66,157 +60,13 @@
             // 
             this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Location = new System.Drawing.Point(7, 48);
+            this.btnLimpar.Location = new System.Drawing.Point(7, 47);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
             this.btnLimpar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // lblcdFamiliaMotor
-            // 
-            this.lblcdFamiliaMotor.AutoSize = true;
-            this.lblcdFamiliaMotor.Location = new System.Drawing.Point(111, 70);
-            this.lblcdFamiliaMotor.Name = "lblcdFamiliaMotor";
-            this.lblcdFamiliaMotor.Size = new System.Drawing.Size(105, 13);
-            this.lblcdFamiliaMotor.TabIndex = 17;
-            this.lblcdFamiliaMotor.Text = "Codigo Familia Motor";
-            // 
-            // txtCdMotor
-            // 
-            this.txtCdMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdMotor.Location = new System.Drawing.Point(222, 65);
-            this.txtCdMotor.MaxLength = 5;
-            this.txtCdMotor.Name = "txtCdMotor";
-            this.txtCdMotor.ReadOnly = true;
-            this.txtCdMotor.Size = new System.Drawing.Size(41, 20);
-            this.txtCdMotor.TabIndex = 18;
-            // 
-            // lblCdDepartamento
-            // 
-            this.lblCdDepartamento.AutoSize = true;
-            this.lblCdDepartamento.Location = new System.Drawing.Point(324, 70);
-            this.lblCdDepartamento.Name = "lblCdDepartamento";
-            this.lblCdDepartamento.Size = new System.Drawing.Size(125, 13);
-            this.lblCdDepartamento.TabIndex = 17;
-            this.lblCdDepartamento.Text = "Codigo do Departamento";
-            this.lblCdDepartamento.Click += new System.EventHandler(this.lblCdDepartamento_Click);
-            // 
-            // txtCdDepartamento
-            // 
-            this.txtCdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdDepartamento.Location = new System.Drawing.Point(454, 68);
-            this.txtCdDepartamento.MaxLength = 5;
-            this.txtCdDepartamento.Name = "txtCdDepartamento";
-            this.txtCdDepartamento.ReadOnly = true;
-            this.txtCdDepartamento.Size = new System.Drawing.Size(46, 20);
-            this.txtCdDepartamento.TabIndex = 18;
-            // 
-            // lblCdKit
-            // 
-            this.lblCdKit.AutoSize = true;
-            this.lblCdKit.Location = new System.Drawing.Point(111, 109);
-            this.lblCdKit.Name = "lblCdKit";
-            this.lblCdKit.Size = new System.Drawing.Size(70, 13);
-            this.lblCdKit.TabIndex = 17;
-            this.lblCdKit.Text = "Codigo do Kit";
-            // 
-            // txtCdKit
-            // 
-            this.txtCdKit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdKit.Location = new System.Drawing.Point(222, 108);
-            this.txtCdKit.MaxLength = 5;
-            this.txtCdKit.Name = "txtCdKit";
-            this.txtCdKit.ReadOnly = true;
-            this.txtCdKit.Size = new System.Drawing.Size(41, 20);
-            this.txtCdKit.TabIndex = 18;
-            // 
-            // lblCdTipoProduto
-            // 
-            this.lblCdTipoProduto.AutoSize = true;
-            this.lblCdTipoProduto.Location = new System.Drawing.Point(313, 109);
-            this.lblCdTipoProduto.Name = "lblCdTipoProduto";
-            this.lblCdTipoProduto.Size = new System.Drawing.Size(136, 13);
-            this.lblCdTipoProduto.TabIndex = 17;
-            this.lblCdTipoProduto.Text = "Codigo Do Tipo do Produto";
-            // 
-            // txtCdTipoProduto
-            // 
-            this.txtCdTipoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCdTipoProduto.Location = new System.Drawing.Point(455, 108);
-            this.txtCdTipoProduto.MaxLength = 5;
-            this.txtCdTipoProduto.Name = "txtCdTipoProduto";
-            this.txtCdTipoProduto.ReadOnly = true;
-            this.txtCdTipoProduto.Size = new System.Drawing.Size(46, 20);
-            this.txtCdTipoProduto.TabIndex = 18;
-            // 
-            // lblDs
-            // 
-            this.lblDs.AutoSize = true;
-            this.lblDs.Location = new System.Drawing.Point(111, 179);
-            this.lblDs.Name = "lblDs";
-            this.lblDs.Size = new System.Drawing.Size(55, 13);
-            this.lblDs.TabIndex = 17;
-            this.lblDs.Text = "Descrição";
-            // 
-            // txtDs
-            // 
-            this.txtDs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDs.Location = new System.Drawing.Point(114, 195);
-            this.txtDs.MaxLength = 500;
-            this.txtDs.Multiline = true;
-            this.txtDs.Name = "txtDs";
-            this.txtDs.Size = new System.Drawing.Size(419, 80);
-            this.txtDs.TabIndex = 5;
-            // 
-            // btnCdMotor
-            // 
-            this.btnCdMotor.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnCdMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdMotor.Location = new System.Drawing.Point(269, 65);
-            this.btnCdMotor.Name = "btnCdMotor";
-            this.btnCdMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnCdMotor.TabIndex = 1;
-            this.toolTipLegenda.SetToolTip(this.btnCdMotor, "Buscar Familia Motor");
-            this.btnCdMotor.UseVisualStyleBackColor = true;
-            this.btnCdMotor.Click += new System.EventHandler(this.btnCdMotor_Click);
-            // 
-            // btnCdDep
-            // 
-            this.btnCdDep.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnCdDep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdDep.Location = new System.Drawing.Point(506, 65);
-            this.btnCdDep.Name = "btnCdDep";
-            this.btnCdDep.Size = new System.Drawing.Size(27, 23);
-            this.btnCdDep.TabIndex = 3;
-            this.toolTipLegenda.SetToolTip(this.btnCdDep, "Buscar Departamento");
-            this.btnCdDep.UseVisualStyleBackColor = true;
-            this.btnCdDep.Click += new System.EventHandler(this.btnCdDep_Click);
-            // 
-            // btnCdKit
-            // 
-            this.btnCdKit.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnCdKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdKit.Location = new System.Drawing.Point(269, 106);
-            this.btnCdKit.Name = "btnCdKit";
-            this.btnCdKit.Size = new System.Drawing.Size(27, 23);
-            this.btnCdKit.TabIndex = 2;
-            this.toolTipLegenda.SetToolTip(this.btnCdKit, "Buscar Kit");
-            this.btnCdKit.UseVisualStyleBackColor = true;
-            this.btnCdKit.Click += new System.EventHandler(this.btnCdKit_Click);
-            // 
-            // btnCdTipoProduto
-            // 
-            this.btnCdTipoProduto.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnCdTipoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCdTipoProduto.Location = new System.Drawing.Point(506, 107);
-            this.btnCdTipoProduto.Name = "btnCdTipoProduto";
-            this.btnCdTipoProduto.Size = new System.Drawing.Size(27, 23);
-            this.btnCdTipoProduto.TabIndex = 4;
-            this.toolTipLegenda.SetToolTip(this.btnCdTipoProduto, "Buscar Tipo Produto");
-            this.btnCdTipoProduto.UseVisualStyleBackColor = true;
-            this.btnCdTipoProduto.Click += new System.EventHandler(this.btnCdTipoProduto_Click);
             // 
             // btnAceitar
             // 
@@ -230,7 +80,88 @@
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
-            // frmCadOrdemProducao
+            // btnBuscaAlteracaoDelecao
+            // 
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
+            this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 24;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
+            this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarProduto
+            // 
+            this.btnBuscarProduto.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarProduto.Location = new System.Drawing.Point(382, 141);
+            this.btnBuscarProduto.Name = "btnBuscarProduto";
+            this.btnBuscarProduto.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscarProduto.TabIndex = 38;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarProduto, "Buscar Peças");
+            this.btnBuscarProduto.UseVisualStyleBackColor = true;
+            // 
+            // txtDescProduto
+            // 
+            this.txtDescProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescProduto.Location = new System.Drawing.Point(114, 29);
+            this.txtDescProduto.MaxLength = 500;
+            this.txtDescProduto.Multiline = true;
+            this.txtDescProduto.Name = "txtDescProduto";
+            this.txtDescProduto.Size = new System.Drawing.Size(419, 43);
+            this.txtDescProduto.TabIndex = 1;
+            // 
+            // lblDs
+            // 
+            this.lblDs.AutoSize = true;
+            this.lblDs.Location = new System.Drawing.Point(111, 13);
+            this.lblDs.Name = "lblDs";
+            this.lblDs.Size = new System.Drawing.Size(55, 13);
+            this.lblDs.TabIndex = 26;
+            this.lblDs.Text = "Descrição";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(111, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Tipo do Produto";
+            // 
+            // rdbFamMotor
+            // 
+            this.rdbFamMotor.AutoSize = true;
+            this.rdbFamMotor.Checked = true;
+            this.rdbFamMotor.Location = new System.Drawing.Point(114, 114);
+            this.rdbFamMotor.Name = "rdbFamMotor";
+            this.rdbFamMotor.Size = new System.Drawing.Size(102, 17);
+            this.rdbFamMotor.TabIndex = 2;
+            this.rdbFamMotor.TabStop = true;
+            this.rdbFamMotor.Text = "Familia de Motor";
+            this.rdbFamMotor.UseVisualStyleBackColor = true;
+            // 
+            // rdbKit
+            // 
+            this.rdbKit.AutoSize = true;
+            this.rdbKit.Location = new System.Drawing.Point(222, 114);
+            this.rdbKit.Name = "rdbKit";
+            this.rdbKit.Size = new System.Drawing.Size(85, 17);
+            this.rdbKit.TabIndex = 3;
+            this.rdbKit.Text = "Kit de Peças";
+            this.rdbKit.UseVisualStyleBackColor = true;
+            // 
+            // txtFiltroBusca
+            // 
+            this.txtFiltroBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltroBusca.Location = new System.Drawing.Point(114, 143);
+            this.txtFiltroBusca.MaxLength = 25;
+            this.txtFiltroBusca.Name = "txtFiltroBusca";
+            this.txtFiltroBusca.Size = new System.Drawing.Size(262, 20);
+            this.txtFiltroBusca.TabIndex = 4;
+            // 
+            // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,26 +169,21 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
-            this.Controls.Add(this.txtDs);
+            this.Controls.Add(this.txtFiltroBusca);
+            this.Controls.Add(this.btnBuscarProduto);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rdbFamMotor);
+            this.Controls.Add(this.rdbKit);
+            this.Controls.Add(this.txtDescProduto);
             this.Controls.Add(this.lblDs);
-            this.Controls.Add(this.txtCdTipoProduto);
-            this.Controls.Add(this.lblCdTipoProduto);
-            this.Controls.Add(this.txtCdKit);
-            this.Controls.Add(this.lblCdKit);
-            this.Controls.Add(this.txtCdDepartamento);
-            this.Controls.Add(this.lblCdDepartamento);
-            this.Controls.Add(this.txtCdMotor);
-            this.Controls.Add(this.lblcdFamiliaMotor);
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnCdTipoProduto);
-            this.Controls.Add(this.btnCdKit);
-            this.Controls.Add(this.btnCdDep);
-            this.Controls.Add(this.btnCdMotor);
             this.Controls.Add(this.btnAceitar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "frmCadOrdemProducao";
-            this.Text = "Ordem de Produção";
+            this.Name = "frmProduto";
+            this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.frmCadOrdemProducao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,20 +195,14 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAceitar;
-        private System.Windows.Forms.Label lblcdFamiliaMotor;
-        private System.Windows.Forms.TextBox txtCdMotor;
-        private System.Windows.Forms.Label lblCdDepartamento;
-        private System.Windows.Forms.TextBox txtCdDepartamento;
-        private System.Windows.Forms.Label lblCdKit;
-        private System.Windows.Forms.TextBox txtCdKit;
-        private System.Windows.Forms.Label lblCdTipoProduto;
-        private System.Windows.Forms.TextBox txtCdTipoProduto;
-        private System.Windows.Forms.Label lblDs;
-        private System.Windows.Forms.TextBox txtDs;
-        private System.Windows.Forms.Button btnCdMotor;
-        private System.Windows.Forms.Button btnCdDep;
-        private System.Windows.Forms.Button btnCdKit;
-        private System.Windows.Forms.Button btnCdTipoProduto;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private System.Windows.Forms.TextBox txtDescProduto;
+        private System.Windows.Forms.Label lblDs;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rdbFamMotor;
+        private System.Windows.Forms.RadioButton rdbKit;
+        private System.Windows.Forms.TextBox txtFiltroBusca;
+        private System.Windows.Forms.Button btnBuscarProduto;
     }
 }

@@ -148,6 +148,7 @@
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgColaborador);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmBuscaColaborador";
             this.Text = "Busca Colaborador";
             this.Load += new System.EventHandler(this.frmBuscaColaborador_Load);

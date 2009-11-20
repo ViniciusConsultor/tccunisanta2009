@@ -254,6 +254,7 @@
             this.Controls.Add(this.dgDeptos);
             this.Controls.Add(this.txtBuscaFiltro);
             this.Controls.Add(this.btnBuscarDepartamentoDtGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadfornecedorDepto";
             this.Text = "Fornecedor/Departamento";

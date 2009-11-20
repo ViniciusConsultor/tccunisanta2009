@@ -607,6 +607,7 @@
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lblTlefone);
             this.Controls.Add(this.lblRua);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadCliente";
             this.Text = "Cadastro de Clientes";

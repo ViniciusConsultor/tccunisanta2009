@@ -35,7 +35,7 @@ namespace TCC.BUSINESS
             DataTable dtRetorno = new DataTable();
             try
             {
-                modelRetorno.Id_produto = idProduto;
+                modelRetorno.IdProduto = idProduto;
                 dtRetorno = base.BuscaUmRegistro(modelRetorno);
                 modelRetorno.Deserialize(dtRetorno);
                 return modelRetorno;
@@ -189,6 +189,18 @@ namespace TCC.BUSINESS
             finally
             {
                 param = null;
+            }
+        }
+
+        public int BuscaIdMaximo()
+        {
+            try
+            {
+                return Convert.ToInt32(base.BuscaIdMaximoTabelas("id_prdto", "Produto"));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 

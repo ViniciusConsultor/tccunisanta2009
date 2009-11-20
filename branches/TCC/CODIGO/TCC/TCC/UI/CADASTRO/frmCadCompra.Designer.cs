@@ -377,6 +377,7 @@
             this.Controls.Add(this.rdbMotor);
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.rdbPeca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadCompra";
             this.Text = "Compra";

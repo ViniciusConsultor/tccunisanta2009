@@ -147,6 +147,7 @@
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.txtDescricaoDepartamento);
             this.Controls.Add(this.lblDescricaoDepartamento);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadDepartamento";
             this.Text = "Cadastro de Departamentos";

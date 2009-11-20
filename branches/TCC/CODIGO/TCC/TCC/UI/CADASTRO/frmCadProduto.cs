@@ -10,162 +10,56 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmCadOrdemProducao : FormPai
+    public partial class frmCadProduto : FormPai
     {
-        mDepartamento _modelDepartamento;
-        mTipoProduto _modelTipoProd;
-        mFamiliaMotor _modelFamiliaMotor;
+        #region Atributos
         mKitGrupoPeca _modelKit;
+        mFamiliaMotor _modelFamMotor;
+        #endregion Atributos
 
-        public frmCadOrdemProducao()
+        #region Construtor
+        public frmCadProduto()
         {
             InitializeComponent();
         }
+        #endregion Construtor
 
+        #region Eventos
+
+        #region btnLimpar Click
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this._modelDepartamento = null;
-            this._modelFamiliaMotor = null;
+            this._modelFamMotor = null;
             this._modelKit = null;
-            this._modelTipoProd = null;
         }
+        #endregion btnLimpar Click
 
+        #region btnVoltar Click
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             base.FechaTela(this);
         }
+        #endregion btnVoltar Click
 
-        private void btnCdDep_Click(object sender, EventArgs e)
-        {
-            this._modelDepartamento = new mDepartamento();
-            frmBuscaDepartamento objFrmDepartamento = new frmBuscaDepartamento(this._modelDepartamento);
-            try
-            {
-                DialogResult resultado = objFrmDepartamento.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelDepartamento = null;
-                }
-                else
-                {
-                    this.txtCdDepartamento.Text = this._modelDepartamento.DscDepto;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmDepartamento = null;
-            }
-        }
-
-        private void btnCdMotor_Click(object sender, EventArgs e)
-        {
-            this._modelFamiliaMotor = new mFamiliaMotor();
-            frmBuscaFamiliaMotor objFrmBuscaMotor = new frmBuscaFamiliaMotor(this._modelFamiliaMotor);
-            try
-            {
-                DialogResult resultado = objFrmBuscaMotor.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelFamiliaMotor = null;
-                }
-                else
-                {
-                    this.txtCdMotor.Text = this._modelFamiliaMotor.DscFamiliaMotor;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmBuscaMotor = null;
-            }
-        }
-
-        private void btnCdKit_Click(object sender, EventArgs e)
-        {
-            this._modelKit = new mKitGrupoPeca();
-            frmBuscaKit objFrmBuscaKit = new frmBuscaKit(this._modelKit);
-            try
-            {
-                DialogResult resultado = objFrmBuscaKit.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelKit = null;
-                }
-                else
-                {
-                    this.txtCdKit.Text = this._modelKit.Nom_grupo;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmBuscaKit = null;
-            }
-        }
-
-        private void btnCdTipoProduto_Click(object sender, EventArgs e)
-        {
-            this._modelTipoProd = new mTipoProduto();
-            frmBuscaTipoProduto objFrmTipoProduto = new frmBuscaTipoProduto(this._modelTipoProd);
-            try
-            {
-                DialogResult resultado = objFrmTipoProduto.ShowDialog();
-                if (resultado == DialogResult.Cancel)
-                {
-                    this._modelTipoProd = null;
-                }
-                else
-                {
-                    this.txtCdTipoProduto.Text = this._modelTipoProd.Nom;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                objFrmTipoProduto = null;
-            }
-        }
-
+        #region frmCadOrdemProducao Load
         private void frmCadOrdemProducao_Load(object sender, EventArgs e)
         {
         }
+        #endregion frmCadOrdemProducao Load
 
-        /*protected override void BuscaIdMaximo()
-        {
-            rOrdemProducao regra = new rOrdemProducao();
-            try
-            {
-                this.txtCdOrdemMotor.Text = regra.BuscaIdMaximo();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regra = null;
-            }
-        }*/
-
+        #region btnAceitar Click
         private void btnAceitar_Click(object sender, EventArgs e)
         {
             this.Insere();
         }
+        #endregion btnAceitar Click
 
+        #endregion Eventos
+
+        #region Metodos
+
+        #region Insere
         private void Insere()
         {
             mProduto model;
@@ -178,21 +72,15 @@ namespace TCC.UI
                 this.btnLimpar_Click(null, null);
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            catch (BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException)
             {
-                MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Informe uma descrição para o produto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDescProduto.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoFamiliaMotorVazioException)
+            catch (BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException)
             {
-                MessageBox.Show("É Necessário Buscar o código da Familia do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Kit Grupo Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-            }
-            catch (BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception)
-            {
-                MessageBox.Show("É Necessário Buscar o código do Tipo de Produto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É necessário buscar uma Familia de Motores ou um Kit de Peças!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscarProduto.Focus();
             }
             catch (Exception ex)
             {
@@ -204,27 +92,23 @@ namespace TCC.UI
                 regra = null;
             }
         }
+        #endregion Insere
 
+        #region ValidaDadosNulos
         private void ValidaDadosNulos()
         {
-            if (this._modelDepartamento == null)
+            if (string.IsNullOrEmpty(this.txtDescProduto.Text) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+                throw new BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException();
             }
-            else if (this._modelFamiliaMotor == null)
+            else if (this._modelFamMotor == null && this._modelKit == null)
             {
-                throw new BUSINESS.Exceptions.CodigoFamiliaMotorVazioException();
-            }
-            else if (this._modelKit == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException();
-            }
-            else if (this._modelTipoProd == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoTipoProdutoVazioExeception();
-            }
+                throw new BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException();
+            }            
         }
+        #endregion ValidaDadosNulos
 
+        #region PegaDadosTela
         private mProduto PegaDadosTela()
         {
             mProduto model = new mProduto();
@@ -232,10 +116,21 @@ namespace TCC.UI
 
             try
             {
-                model.Dsc_produto = this.txtDs.Text;
-             //   model.Id_depto = Convert.ToInt32( this._modelDepartamento.IdDepto);
-                model.IdKit = Convert.ToInt32(this._modelKit.IdKit);
-                model.Id_tipo_produto = Convert.ToInt32(this._modelTipoProd.IdTipoProd);
+                model.IdProduto = regra.BuscaIdMaximo();
+                model.DescProduto = this.txtDescProduto.Text;
+
+                if (this.rdbFamMotor.Checked == true)
+                {
+                    model.IdFamMotor = this._modelFamMotor.IdFamiliaMotor;
+                    model.IdTipoProduto = 1;
+                }
+                else
+                {
+                    model.IdKit = this._modelKit.IdKit;
+                    model.IdTipoProduto = 2;
+                }
+                model.FlgAtivo = true;
+                model.DatAlt = DateTime.Now;
 
                 return model;
             }
@@ -248,10 +143,8 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion PegaDadosTela
 
-        private void lblCdDepartamento_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion Metodos
     }
 }

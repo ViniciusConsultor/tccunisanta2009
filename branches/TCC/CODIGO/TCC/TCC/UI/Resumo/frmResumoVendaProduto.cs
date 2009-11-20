@@ -100,8 +100,8 @@ namespace TCC.UI.Resumo
                 {
                     modelProduto = regraProduto.BuscaUnicoRegistro(model.IdProduto);
                     linha = dt.NewRow();
-                    linha["id_prdto"] = modelProduto.Id_produto;
-                    linha["dsc_prdto"] = modelProduto.Dsc_produto;
+                    linha["id_prdto"] = modelProduto.IdProduto;
+                    linha["dsc_prdto"] = modelProduto.DescProduto;
                     linha["Qtd"] = model.Qtd;
                     dt.Rows.Add(linha);
                 }

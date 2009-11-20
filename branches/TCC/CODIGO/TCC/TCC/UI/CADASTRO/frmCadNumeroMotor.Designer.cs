@@ -147,6 +147,7 @@
             this.Controls.Add(this.btnAceitar);
             this.Controls.Add(this.txtDscNumeroMotor);
             this.Controls.Add(this.lblDsNumeroMotor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frmCadNumeroMotor";
             this.Text = "Numero Motor";
