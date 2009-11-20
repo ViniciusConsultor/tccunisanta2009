@@ -70,7 +70,7 @@ INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Kits', 
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Motores', NULL, GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Tipo de Motor', 'frmCadTipoMotor', GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Número Motor', 'frmCadNumeroMotor', GETDATE(), 1);
-INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Motor', 'frmCadMotor', GETDATE(), 1);
+INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Motor',	NULL , GETDATE(), 1);
 INSERT INTO Menu (dsc_menu, ende, dat_atl, flg_ativo) VALUES ('Cadastrar Familia de Motores', 'frmCadFamiliaMotor', GETDATE(), 1);
 
 --INSERT CADASTRO GERAIS 6
@@ -178,9 +178,9 @@ INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_nega
 INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_negativo) VALUES (4 ,'Estoque do Peças Defeituosas', GETDATE() , 1 , 2 ,0);
 
 --item 
-INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 1,'item de Peças ' ,1 ,'1.' ,GETDATE());
-INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 2,'item de Peças ' ,1 ,'2.' ,GETDATE());
-INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 3,'item de Peças ' ,1 ,'3.' ,GETDATE());
+INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 1,'Bomba Dagua' ,1 ,'1.' ,GETDATE());
+INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 2,'Bomba Dagua' ,1 ,'2.' ,GETDATE());
+INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 3,'Bomba Dagua' ,1 ,'3.' ,GETDATE());
 
 --colaborador
 INSERT INTO Colaborador(id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est)VALUES (1, 'Andre',1982-05-04, 'Carvalho de Mendonça', 478, 'Casa', 11070102, 'Vila Belmiro', 13, 'Santos', 32398027, 441014227, 37006765811, 'M', 'andre@mail.com', GETDATE(), 1, 1,3,'SP');
