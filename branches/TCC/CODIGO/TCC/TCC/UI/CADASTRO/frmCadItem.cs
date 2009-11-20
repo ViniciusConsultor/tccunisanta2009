@@ -612,7 +612,6 @@ namespace TCC.UI
             }
         }
         #endregion Remove Peca
-
         #endregion Metodos
     }
 }

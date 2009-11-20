@@ -485,6 +485,8 @@ namespace TCC.UI
             this.txtDDI.Text = "55";
             this.txtDDI.Enabled = false;
 
+            this.txtCnpj.Enabled = false;
+
             this.txtTelefoneInter.Visible = false;
         }
         #endregion Form Load

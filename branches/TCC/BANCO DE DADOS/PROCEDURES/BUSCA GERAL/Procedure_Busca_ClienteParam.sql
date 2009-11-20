@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_busca_cliente_param
 @nom_cli AS VARCHAR(60)
 AS 
-SELECT id_cli, nom 'Cliente', mail
+SELECT id_cli, nom , mail
 FROM cliente 
 WHERE  nom like '%' + @nom_cli + '%'
 AND flg_ativo = 1

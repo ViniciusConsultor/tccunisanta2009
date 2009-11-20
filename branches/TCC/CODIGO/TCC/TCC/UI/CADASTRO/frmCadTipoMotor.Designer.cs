@@ -38,7 +38,7 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.lblIdReal = new System.Windows.Forms.Label();
-            this.txtIdReal = new System.Windows.Forms.TextBox();
+            this.txtIdReal = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -124,12 +124,11 @@
             // txtIdReal
             // 
             this.txtIdReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdReal.Location = new System.Drawing.Point(77, 51);
-            this.txtIdReal.MaxLength = 20;
+            this.txtIdReal.Location = new System.Drawing.Point(77, 52);
             this.txtIdReal.Name = "txtIdReal";
             this.txtIdReal.Size = new System.Drawing.Size(227, 20);
-            this.txtIdReal.TabIndex = 1;
-            this.txtIdReal.TextChanged += new System.EventHandler(this.txtIdReal_TextChanged);
+            this.txtIdReal.TabIndex = 20;
+            this.txtIdReal.TipoTexto = Controles.MegaTextBox.TipoTexto.SoLetra;
             // 
             // frmCadTipoMotor
             // 
@@ -139,8 +138,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
-            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtIdReal);
+            this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.lblIdReal);
             this.Controls.Add(this.txtNmTipoMotor);
             this.Controls.Add(this.lblNmTipoMotor);
@@ -165,7 +164,7 @@
         private System.Windows.Forms.Label lblNmTipoMotor;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Label lblIdReal;
-        private System.Windows.Forms.TextBox txtIdReal;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
+        private Controles.MegaTextBox.MegaTextBox txtIdReal;
     }
 }
