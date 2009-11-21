@@ -144,8 +144,9 @@
             this.hIdKit.HeaderText = "IdKit";
             this.hIdKit.Name = "hIdKit";
             this.hIdKit.ReadOnly = true;
+            this.hIdKit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hIdKit.Visible = false;
-            this.hIdKit.Width = 51;
+            this.hIdKit.Width = 34;
             // 
             // hIdKitReal
             // 
@@ -153,7 +154,8 @@
             this.hIdKitReal.HeaderText = "Codigo";
             this.hIdKitReal.Name = "hIdKitReal";
             this.hIdKitReal.ReadOnly = true;
-            this.hIdKitReal.Width = 63;
+            this.hIdKitReal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdKitReal.Width = 46;
             // 
             // hNome
             // 
@@ -161,7 +163,8 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
             // 
             // frmBuscaKit
             // 

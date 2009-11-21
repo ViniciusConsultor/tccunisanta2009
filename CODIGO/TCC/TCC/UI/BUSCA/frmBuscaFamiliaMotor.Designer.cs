@@ -144,8 +144,9 @@
             this.hIdFamMotor.HeaderText = "IdFamMotor";
             this.hIdFamMotor.Name = "hIdFamMotor";
             this.hIdFamMotor.ReadOnly = true;
+            this.hIdFamMotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hIdFamMotor.Visible = false;
-            this.hIdFamMotor.Width = 86;
+            this.hIdFamMotor.Width = 69;
             // 
             // hCodigo
             // 
@@ -153,7 +154,8 @@
             this.hCodigo.HeaderText = "Codigo";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 63;
+            this.hCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hCodigo.Width = 46;
             // 
             // hNome
             // 
@@ -161,7 +163,8 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 58;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
             // 
             // frmBuscaFamiliaMotor
             // 

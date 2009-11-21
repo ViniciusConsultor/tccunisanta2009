@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.id_tipo_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hdsc_tipo_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgTipoMotor.AllowUserToResizeRows = false;
             this.dgTipoMotor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgTipoMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTipoMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_tipo_motor,
+            this.hdsc_tipo_motor});
             this.dgTipoMotor.Location = new System.Drawing.Point(15, 42);
             this.dgTipoMotor.MultiSelect = false;
             this.dgTipoMotor.Name = "dgTipoMotor";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // id_tipo_motor
+            // 
+            this.id_tipo_motor.HeaderText = "id";
+            this.id_tipo_motor.Name = "id_tipo_motor";
+            this.id_tipo_motor.ReadOnly = true;
+            this.id_tipo_motor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id_tipo_motor.Visible = false;
+            this.id_tipo_motor.Width = 21;
+            // 
+            // hdsc_tipo_motor
+            // 
+            this.hdsc_tipo_motor.HeaderText = "Tipo do Motor";
+            this.hdsc_tipo_motor.Name = "hdsc_tipo_motor";
+            this.hdsc_tipo_motor.ReadOnly = true;
+            this.hdsc_tipo_motor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hdsc_tipo_motor.Width = 79;
+            // 
             // frmBuscaTipoMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_motor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hdsc_tipo_motor;
     }
 }

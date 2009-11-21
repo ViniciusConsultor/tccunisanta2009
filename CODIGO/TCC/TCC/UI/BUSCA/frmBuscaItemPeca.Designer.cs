@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hid_peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgCdItemPeca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgCdItemPeca.AllowUserToResizeRows = false;
             this.dgCdItemPeca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgCdItemPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCdItemPeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_item,
+            this.hid_peca});
             this.dgCdItemPeca.Location = new System.Drawing.Point(15, 43);
             this.dgCdItemPeca.MultiSelect = false;
             this.dgCdItemPeca.Name = "dgCdItemPeca";
@@ -131,6 +136,24 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid_item
+            // 
+            this.hid_item.HeaderText = "";
+            this.hid_item.Name = "hid_item";
+            this.hid_item.ReadOnly = true;
+            this.hid_item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_item.Visible = false;
+            this.hid_item.Width = 5;
+            // 
+            // hid_peca
+            // 
+            this.hid_peca.DataPropertyName = "id_peca";
+            this.hid_peca.HeaderText = "Peça";
+            this.hid_peca.Name = "hid_peca";
+            this.hid_peca.ReadOnly = true;
+            this.hid_peca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_peca.Width = 38;
+            // 
             // frmBuscaItemPeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +189,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_peca;
     }
 }
