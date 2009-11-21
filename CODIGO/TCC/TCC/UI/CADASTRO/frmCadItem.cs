@@ -97,15 +97,9 @@ namespace TCC.UI
                     this.ComparaDadosGrid();
                 }
             }
+            this.dgItems_Click(null, null);
         }
         #endregion btnBuscarPecaDtGrid Click
-
-        #region dgItems SelectionChanged
-        private void dgItems_SelectionChanged(object sender, EventArgs e)
-        {
-            this.PopulaTelaPeca();
-        }
-        #endregion dgItems SelectionChanged
 
         #region btnAdicionaPeca Click
         private void btnAdicionaPeca_Click(object sender, EventArgs e)
@@ -163,6 +157,13 @@ namespace TCC.UI
             this.btnConfirmar.Enabled = true;
         }
         #endregion txtCodigoItem TextChanged
+
+        #region dgItems Click
+        private void dgItems_Click(object sender, EventArgs e)
+        {
+            this.PopulaTelaPeca();
+        }
+        #endregion dgItems Click
 
         #endregion Eventos
 

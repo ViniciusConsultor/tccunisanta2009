@@ -1,8 +1,8 @@
 CREATE DATABASE Megatechdatabase
 go
+
 USE Megatechdatabase
 go
-
 
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motorfornecedor')
 DROP TABLE Motorfornecedor
@@ -192,6 +192,25 @@ ALTER TABLE Usinagem
 go
 
 
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Motorestoque')
+DROP TABLE Motorestoque
+go
+
+CREATE TABLE Motorestoque (
+       id_estoq             integer NOT NULL,
+       id_motor             integer NOT NULL,
+       dat_alt              datetime NULL,
+       qtd                  int NULL,
+       flg_ativo            bit NULL
+)
+go
+
+
+ALTER TABLE Motorestoque
+       ADD PRIMARY KEY CLUSTERED (id_estoq ASC, id_motor ASC)
+go
+
+
 IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='Familiamotor')
 DROP TABLE Familiamotor
 go
@@ -313,21 +332,25 @@ go
 
 CREATE TABLE Cliente (
        id_cli               integer NOT NULL,
-       nom                  varchar(60) NULL,
+       nom                  varchar(60) NOT NULL,
        tel                  integer NULL,
-       rua                  varchar(100) NULL,
-       nro_ende             integer NULL,
+       rua                  varchar(100) NOT NULL,
+       nro_ende             integer NOT NULL,
        compl                varchar(20) NULL,
-       cep                  integer NULL,
-       bairr                varchar(20) NULL,
-       cid                  varchar(50) NULL,
+       cod_post             varchar(20) NOT NULL,
+       bairr                varchar(20) NOT NULL,
+       cid                  varchar(50) NOT NULL,
        cpf                  varchar(15) NULL,
        dat_atl              datetime NULL,
        flg_ativo            bit NULL,
-       slg_est              varchar(2) NOT NULL,
        mail                 varchar(100) NULL,
        ddd                  integer NULL,
-       cnpj                 numeric(15) NULL
+       cnpj                 numeric(15) NULL,
+       nom_est_inter        varchar(50) NULL,
+       nom_pais             varchar(50) NOT NULL,
+       slg_est              varchar(2) NULL,
+       ident_inter          varchar(50) NULL,
+       ddi                  char(4) NULL
 )
 go
 
@@ -432,8 +455,9 @@ go
 
 CREATE TABLE Departamento (
        id_depto             integer NOT NULL,
-       dsc_depto            varchar(30) NULL,
+       dsc_depto            varchar(500) NULL,
        dat_atl              datetime NULL,
+       nom                  varchar(25) NOT NULL,
        flg_ativo            bit NULL
 )
 go
@@ -476,7 +500,6 @@ CREATE TABLE Fornecedor (
        rua                  varchar(50) NULL,
        nro_ende             integer NULL,
        compl                varchar(20) NULL,
-       cep                  integer NULL,
        ddd                  integer NULL,
        bairr                varchar(50) NULL,
        tel                  integer NULL,
@@ -485,7 +508,12 @@ CREATE TABLE Fornecedor (
        cnpj                 varchar(15) NULL,
        dat_alt              datetime NULL,
        flg_ativo            bit NULL,
-       slg_est              varchar(2) NULL
+       slg_est              varchar(2) NULL,
+       nom_pais             varchar(50) NOT NULL,
+       nom_est_inter        varchar(50) NULL,
+       ddi                  char(4) NULL,
+       ident_inter          varchar(50) NULL,
+       cod_post             varchar(20) NULL
 )
 go
 
@@ -804,6 +832,18 @@ go
 ALTER TABLE Usinagem
        ADD FOREIGN KEY (id_peca)
                              REFERENCES Peca  (id_peca)
+go
+
+
+ALTER TABLE Motorestoque
+       ADD FOREIGN KEY (id_motor)
+                             REFERENCES Motor  (id_motor)
+go
+
+
+ALTER TABLE Motorestoque
+       ADD FOREIGN KEY (id_estoq)
+                             REFERENCES Estoque  (id_estoq)
 go
 
 
