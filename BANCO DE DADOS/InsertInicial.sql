@@ -184,4 +184,5 @@ INSERT INTO Item (id_item, nom, flg_ativo, id_item_real, dat_alt)VALUES ( 3,'Bom
 --colaborador
 INSERT INTO Colaborador(id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bairr, ddd, cid, tel, rg, cpf, sex, mail, dat_atl, flg_ativo, id_usu, id_depto, slg_est)VALUES (1, 'Andre',1982-05-04, 'Carvalho de Mendonça', 478, 'Casa', 11070102, 'Vila Belmiro', 13, 'Santos', 32398027, 441014227, 37006765811, 'M', 'andre@mail.com', GETDATE(), 1, 1,3,'SP');
 
-
+--cliente
+INSERT INTO Cliente(id_cli, nom, tel, rua, nro_ende, compl, cod_post, bairr, cid, cpf, dat_atl, flg_ativo, mail, ddd, nom_pais, slg_est, ddi) VALUES (1, 'Jose', 32324251, 'Ana Costa', 75, 'APTO 35', 11060002, 'Gonzaga', 'Santos', 12345678901, GETDATE(), 1, 'kauepaulo@hotmail.com', '13', 'Brasil', 'SP', 55)
