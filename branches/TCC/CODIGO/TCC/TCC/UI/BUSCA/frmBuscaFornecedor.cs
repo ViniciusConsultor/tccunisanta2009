@@ -180,9 +180,9 @@ namespace TCC.UI
                         {
                             //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                             //------------------------------------------------------------------------------------
-                            dvC = this.dgFornecedor["id_forn", this.dgFornecedor.CurrentRow.Index];
+                            dvC = this.dgFornecedor["hid_forn", this.dgFornecedor.CurrentRow.Index];
                             _model.IdFornecedor = Convert.ToInt32(dvC.Value);
-                            dvC = this.dgFornecedor["Fornecedor", this.dgFornecedor.CurrentRow.Index];
+                            dvC = this.dgFornecedor["hnom", this.dgFornecedor.CurrentRow.Index];
                             _model.NomeFornecedor = dvC.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();

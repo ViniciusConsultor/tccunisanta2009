@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid_tipo_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgTipoProduto.AllowUserToResizeRows = false;
             this.dgTipoProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgTipoProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTipoProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_tipo_prod,
+            this.hnom});
             this.dgTipoProduto.Location = new System.Drawing.Point(16, 41);
             this.dgTipoProduto.MultiSelect = false;
             this.dgTipoProduto.Name = "dgTipoProduto";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid_tipo_prod
+            // 
+            this.hid_tipo_prod.HeaderText = "id";
+            this.hid_tipo_prod.Name = "hid_tipo_prod";
+            this.hid_tipo_prod.ReadOnly = true;
+            this.hid_tipo_prod.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_tipo_prod.Visible = false;
+            this.hid_tipo_prod.Width = 21;
+            // 
+            // hnom
+            // 
+            this.hnom.HeaderText = "Nome";
+            this.hnom.Name = "hnom";
+            this.hnom.ReadOnly = true;
+            this.hnom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hnom.Width = 41;
+            // 
             // frmBuscaTipoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_tipo_prod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hnom;
     }
 }

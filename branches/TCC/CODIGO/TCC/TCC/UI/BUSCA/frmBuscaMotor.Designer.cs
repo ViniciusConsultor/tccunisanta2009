@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hdescmotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgMotor.AllowUserToResizeRows = false;
             this.dgMotor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid,
+            this.hdescmotor});
             this.dgMotor.Location = new System.Drawing.Point(16, 44);
             this.dgMotor.MultiSelect = false;
             this.dgMotor.Name = "dgMotor";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid
+            // 
+            this.hid.HeaderText = "id";
+            this.hid.Name = "hid";
+            this.hid.ReadOnly = true;
+            this.hid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid.Visible = false;
+            this.hid.Width = 21;
+            // 
+            // hdescmotor
+            // 
+            this.hdescmotor.HeaderText = "nome ";
+            this.hdescmotor.Name = "hdescmotor";
+            this.hdescmotor.ReadOnly = true;
+            this.hdescmotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hdescmotor.Width = 42;
+            // 
             // frmBuscaMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hdescmotor;
     }
 }

@@ -37,6 +37,9 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hmid_menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hmdsc_menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hmende = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +84,10 @@
             this.dgMenu.AllowUserToResizeRows = false;
             this.dgMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hmid_menu,
+            this.hmdsc_menu,
+            this.hmende});
             this.dgMenu.Location = new System.Drawing.Point(16, 43);
             this.dgMenu.MultiSelect = false;
             this.dgMenu.Name = "dgMenu";
@@ -129,6 +136,32 @@
             this.toolTipLegenda.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
+            // hmid_menu
+            // 
+            this.hmid_menu.HeaderText = "id";
+            this.hmid_menu.Name = "hmid_menu";
+            this.hmid_menu.ReadOnly = true;
+            this.hmid_menu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hmid_menu.Visible = false;
+            this.hmid_menu.Width = 21;
+            // 
+            // hmdsc_menu
+            // 
+            this.hmdsc_menu.HeaderText = "descrição";
+            this.hmdsc_menu.Name = "hmdsc_menu";
+            this.hmdsc_menu.ReadOnly = true;
+            this.hmdsc_menu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hmdsc_menu.Width = 59;
+            // 
+            // hmende
+            // 
+            this.hmende.HeaderText = "end";
+            this.hmende.Name = "hmende";
+            this.hmende.ReadOnly = true;
+            this.hmende.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hmende.Visible = false;
+            this.hmende.Width = 31;
+            // 
             // frmBuscaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +196,8 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hmid_menu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hmdsc_menu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hmende;
     }
 }

@@ -74,6 +74,13 @@ namespace TCC {
             }
         }
         
+        internal static System.Drawing.Bitmap bg_principal1 {
+            get {
+                object obj = ResourceManager.GetObject("bg_principal1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bg_telas {
             get {
                 object obj = ResourceManager.GetObject("bg_telas", resourceCulture);
