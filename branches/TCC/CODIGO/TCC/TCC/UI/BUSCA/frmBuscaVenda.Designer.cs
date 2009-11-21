@@ -37,6 +37,9 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hdat_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgVenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +84,10 @@
             this.dgVenda.AllowUserToResizeRows = false;
             this.dgVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_venda,
+            this.hVenda,
+            this.hdat_venda});
             this.dgVenda.Location = new System.Drawing.Point(16, 42);
             this.dgVenda.MultiSelect = false;
             this.dgVenda.Name = "dgVenda";
@@ -131,6 +138,32 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid_venda
+            // 
+            this.hid_venda.HeaderText = "id";
+            this.hid_venda.Name = "hid_venda";
+            this.hid_venda.ReadOnly = true;
+            this.hid_venda.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_venda.Visible = false;
+            this.hid_venda.Width = 21;
+            // 
+            // hVenda
+            // 
+            this.hVenda.HeaderText = "Venda";
+            this.hVenda.Name = "hVenda";
+            this.hVenda.ReadOnly = true;
+            this.hVenda.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hVenda.Width = 44;
+            // 
+            // hdat_venda
+            // 
+            this.hdat_venda.HeaderText = "data";
+            this.hdat_venda.Name = "hdat_venda";
+            this.hdat_venda.ReadOnly = true;
+            this.hdat_venda.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hdat_venda.Visible = false;
+            this.hdat_venda.Width = 34;
+            // 
             // frmBuscaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +199,8 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_venda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hdat_venda;
     }
 }

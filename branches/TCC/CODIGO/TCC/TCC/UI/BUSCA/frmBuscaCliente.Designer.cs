@@ -145,8 +145,9 @@
             this.hId.HeaderText = "Id";
             this.hId.Name = "hId";
             this.hId.ReadOnly = true;
+            this.hId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hId.Visible = false;
-            this.hId.Width = 41;
+            this.hId.Width = 22;
             // 
             // hNome
             // 
@@ -154,7 +155,8 @@
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 60;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 41;
             // 
             // hEmail
             // 
@@ -162,7 +164,8 @@
             this.hEmail.HeaderText = "Email";
             this.hEmail.Name = "hEmail";
             this.hEmail.ReadOnly = true;
-            this.hEmail.Width = 57;
+            this.hEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hEmail.Width = 38;
             // 
             // frmBuscaCliente
             // 

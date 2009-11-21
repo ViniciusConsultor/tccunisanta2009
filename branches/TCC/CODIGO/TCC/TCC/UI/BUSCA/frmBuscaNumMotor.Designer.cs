@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hdsc_num_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgNumMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgNumMotor.AllowUserToResizeRows = false;
             this.dgNumMotor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgNumMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgNumMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid,
+            this.hdsc_num_motor});
             this.dgNumMotor.Location = new System.Drawing.Point(15, 42);
             this.dgNumMotor.MultiSelect = false;
             this.dgNumMotor.Name = "dgNumMotor";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid
+            // 
+            this.hid.HeaderText = "id";
+            this.hid.Name = "hid";
+            this.hid.ReadOnly = true;
+            this.hid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid.Visible = false;
+            this.hid.Width = 21;
+            // 
+            // hdsc_num_motor
+            // 
+            this.hdsc_num_motor.HeaderText = "Descrição";
+            this.hdsc_num_motor.Name = "hdsc_num_motor";
+            this.hdsc_num_motor.ReadOnly = true;
+            this.hdsc_num_motor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hdsc_num_motor.Width = 61;
+            // 
             // frmBuscaNumMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hdsc_num_motor;
     }
 }

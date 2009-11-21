@@ -147,8 +147,9 @@
             this.hIdPeca.HeaderText = "IdPeca";
             this.hIdPeca.Name = "hIdPeca";
             this.hIdPeca.ReadOnly = true;
+            this.hIdPeca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hIdPeca.Visible = false;
-            this.hIdPeca.Width = 66;
+            this.hIdPeca.Width = 47;
             // 
             // hIdPecaReal
             // 
@@ -156,7 +157,8 @@
             this.hIdPecaReal.HeaderText = "Código Peca";
             this.hIdPecaReal.Name = "hIdPecaReal";
             this.hIdPecaReal.ReadOnly = true;
-            this.hIdPecaReal.Width = 93;
+            this.hIdPecaReal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdPecaReal.Width = 74;
             // 
             // hNome
             // 
@@ -164,7 +166,8 @@
             this.hNome.HeaderText = "Nome Peça";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
-            this.hNome.Width = 88;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 69;
             // 
             // hQuantidade
             // 
@@ -172,8 +175,9 @@
             this.hQuantidade.HeaderText = "Quantidade";
             this.hQuantidade.Name = "hQuantidade";
             this.hQuantidade.ReadOnly = true;
+            this.hQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hQuantidade.Visible = false;
-            this.hQuantidade.Width = 87;
+            this.hQuantidade.Width = 68;
             // 
             // frmBuscaPeca
             // 

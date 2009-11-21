@@ -37,6 +37,8 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.hid_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hdsc_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +50,9 @@
             this.dgPerfil.AllowUserToResizeRows = false;
             this.dgPerfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPerfil.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_perfil,
+            this.hdsc_perfil});
             this.dgPerfil.Location = new System.Drawing.Point(15, 42);
             this.dgPerfil.MultiSelect = false;
             this.dgPerfil.Name = "dgPerfil";
@@ -131,6 +136,23 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click_1);
             // 
+            // hid_perfil
+            // 
+            this.hid_perfil.HeaderText = "id";
+            this.hid_perfil.Name = "hid_perfil";
+            this.hid_perfil.ReadOnly = true;
+            this.hid_perfil.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_perfil.Visible = false;
+            this.hid_perfil.Width = 21;
+            // 
+            // hdsc_perfil
+            // 
+            this.hdsc_perfil.HeaderText = "Perfil";
+            this.hdsc_perfil.Name = "hdsc_perfil";
+            this.hdsc_perfil.ReadOnly = true;
+            this.hdsc_perfil.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hdsc_perfil.Width = 36;
+            // 
             // frmBuscaPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hdsc_perfil;
     }
 }

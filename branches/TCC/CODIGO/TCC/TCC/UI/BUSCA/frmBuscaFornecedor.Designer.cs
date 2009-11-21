@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid_forn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgFornecedor.AllowUserToResizeRows = false;
             this.dgFornecedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_forn,
+            this.hnom});
             this.dgFornecedor.Location = new System.Drawing.Point(16, 42);
             this.dgFornecedor.MultiSelect = false;
             this.dgFornecedor.Name = "dgFornecedor";
@@ -131,6 +136,25 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid_forn
+            // 
+            this.hid_forn.DataPropertyName = "id_forn";
+            this.hid_forn.HeaderText = "id";
+            this.hid_forn.Name = "hid_forn";
+            this.hid_forn.ReadOnly = true;
+            this.hid_forn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_forn.Visible = false;
+            this.hid_forn.Width = 21;
+            // 
+            // hnom
+            // 
+            this.hnom.DataPropertyName = "Fornecedor";
+            this.hnom.HeaderText = "Fornecedor";
+            this.hnom.Name = "hnom";
+            this.hnom.ReadOnly = true;
+            this.hnom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hnom.Width = 67;
+            // 
             // frmBuscaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +190,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_forn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hnom;
     }
 }

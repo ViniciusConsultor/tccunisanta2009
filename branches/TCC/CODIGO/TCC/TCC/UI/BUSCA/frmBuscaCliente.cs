@@ -115,6 +115,8 @@ namespace TCC.UI
                             this._model.IdCliente = Convert.ToInt32(dvc.Value);
                             dvc = this.dgCliente["hNome", this.dgCliente.CurrentRow.Index];
                             this._model.NomeCliente = dvc.Value.ToString();
+                            dvc = this.dgCliente["hEmail", this.dgCliente.CurrentRow.Index];
+                            this._model.NomeCliente = dvc.Value.ToString();
                         }
                         else
                         {

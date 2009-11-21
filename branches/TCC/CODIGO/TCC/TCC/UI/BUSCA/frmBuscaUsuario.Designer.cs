@@ -37,6 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.hid_usu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.log_usu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             this.dgUsuario.AllowUserToResizeRows = false;
             this.dgUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_usu,
+            this.log_usu});
             this.dgUsuario.Location = new System.Drawing.Point(16, 41);
             this.dgUsuario.MultiSelect = false;
             this.dgUsuario.Name = "dgUsuario";
@@ -131,6 +136,23 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // hid_usu
+            // 
+            this.hid_usu.HeaderText = "id";
+            this.hid_usu.Name = "hid_usu";
+            this.hid_usu.ReadOnly = true;
+            this.hid_usu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_usu.Visible = false;
+            this.hid_usu.Width = 21;
+            // 
+            // log_usu
+            // 
+            this.log_usu.HeaderText = "Usuario";
+            this.log_usu.Name = "log_usu";
+            this.log_usu.ReadOnly = true;
+            this.log_usu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.log_usu.Width = 49;
+            // 
             // frmBuscaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_usu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn log_usu;
     }
 }

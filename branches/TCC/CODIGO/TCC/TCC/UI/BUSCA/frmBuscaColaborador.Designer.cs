@@ -37,6 +37,8 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.hid_colab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgColaborador)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,9 @@
             this.dgColaborador.AllowUserToResizeRows = false;
             this.dgColaborador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgColaborador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgColaborador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hid_colab,
+            this.hColaborador});
             this.dgColaborador.Location = new System.Drawing.Point(16, 46);
             this.dgColaborador.MultiSelect = false;
             this.dgColaborador.Name = "dgColaborador";
@@ -136,6 +141,23 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // hid_colab
+            // 
+            this.hid_colab.HeaderText = "id";
+            this.hid_colab.Name = "hid_colab";
+            this.hid_colab.ReadOnly = true;
+            this.hid_colab.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hid_colab.Visible = false;
+            this.hid_colab.Width = 21;
+            // 
+            // hColaborador
+            // 
+            this.hColaborador.HeaderText = "Funcionario";
+            this.hColaborador.Name = "hColaborador";
+            this.hColaborador.ReadOnly = true;
+            this.hColaborador.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hColaborador.Width = 68;
+            // 
             // frmBuscaColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,5 +190,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgColaborador;
         private System.Windows.Forms.ToolTip toolTipLegenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hid_colab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hColaborador;
     }
 }
