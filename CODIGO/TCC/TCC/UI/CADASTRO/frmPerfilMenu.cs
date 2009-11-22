@@ -324,6 +324,11 @@ namespace TCC.UI
                 }
                 this.btnLimpa_Click(null, null);
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                if (this._telaConsulta == true)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    base.FechaTela(this);
+                }
             }
             catch (BUSINESS.Exceptions.PerfilMenu.PerfilVazioException)
             {

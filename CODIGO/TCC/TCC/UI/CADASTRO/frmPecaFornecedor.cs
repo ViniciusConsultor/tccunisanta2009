@@ -16,7 +16,8 @@ namespace TCC.UI
         mPeca _modelPeca;
         List<mPecaFornecedor> _listaModelPecaFornecedor;
         /// <summary>
-        /// Diz se veio da tela de peça ou não
+        /// True - Chamada da tela de outra tela
+        /// False - Chamado diretamente do menu
         /// </summary>
         bool _telaPeca;
         #endregion Atributos
@@ -27,14 +28,13 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        public frmPecaFornecedor(int? idPeca, string nomePeca)
+        public frmPecaFornecedor(mPeca model, List<mPecaFornecedor> listaPecaFornecedor)
         {
             InitializeComponent();
             this.btnBuscaPeca.Visible = false;
-            _modelPeca = new mPeca();
-            _modelPeca.IdPeca = idPeca;
-            _modelPeca.Nom = nomePeca;
-            this.txtNomePeca.Text = nomePeca;
+            _modelPeca = model;
+            this.txtNomePeca.Text = this._modelPeca.IdPecaReal + " - " + this._modelPeca.Nom;
+            this._listaModelPecaFornecedor = listaPecaFornecedor;
             this._telaPeca = true;
         }
         #endregion Construtor
@@ -194,7 +194,14 @@ namespace TCC.UI
                                         dvC = linha.Cells[1];
                                         modelPecaFornecedor.Id_forn = Convert.ToInt32(dvC.Value);
                                         //Pega resto model
-                                        modelPecaFornecedor.Id_peca = this._modelPeca.IdPeca;
+                                        if (this._telaPeca == false)
+                                        {
+                                            modelPecaFornecedor.Id_peca = this._modelPeca.IdPeca;
+                                        }
+                                        else
+                                        {
+                                            modelPecaFornecedor.Id_peca = null;
+                                        }
                                         modelPecaFornecedor.DatInc = DateTime.Now;
                                         modelPecaFornecedor.FlgAtivo = true;
 

@@ -13,6 +13,8 @@ namespace TCC.UI
 {
     public partial class frmCadMotor : FormPai
     {
+        List<mMotorFornecedor> _listaModelMotorFornecedor;
+
         #region Construtor
         public frmCadMotor()
         {
@@ -52,15 +54,50 @@ namespace TCC.UI
         #region btnRelacionarFornecedor Click
         private void btnRelacionarFornecedor_Click(object sender, EventArgs e)
         {
-            mMotor model = this.PegaDadosTela();
-            CADASTRO.frmCadMotorFornecedor obj = new TCC.UI.CADASTRO.frmCadMotorFornecedor(model.IdMotor, model.DscMotor);
-            obj.ShowDialog();
+            this.AbreTelaMotorFornecedor();
         }
         #endregion btnRelacionarFornecedor Click
 
         #endregion Eventos
 
         #region Metodos
+
+        #region Abre Tela Motor Fornecedor
+        /// <summary>
+        /// Abre tela motor fornecedor
+        /// </summary>
+        private void AbreTelaMotorFornecedor()
+        {
+            mMotor model = null;
+            CADASTRO.frmCadMotorFornecedor telaMotorFornecedor = null;
+            try
+            {
+                this.ValidaDadosNulos();
+                _listaModelMotorFornecedor = new List<mMotorFornecedor>();
+                model = this.PegaDadosTela();
+                telaMotorFornecedor = new TCC.UI.CADASTRO.frmCadMotorFornecedor(model, this._listaModelMotorFornecedor);
+                DialogResult resultado = telaMotorFornecedor.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._listaModelMotorFornecedor = null;
+                }
+            }
+            catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
+            {
+                MessageBox.Show("É necessário digitar uma Descrição para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDsMotor.Focus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+                telaMotorFornecedor = null;
+            }
+        }
+        #endregion Abre Tela Motor Fornecedor
 
         #region PegaDadosTela
         private mMotor PegaDadosTela()
@@ -102,11 +139,23 @@ namespace TCC.UI
         {
             mMotor model;
             rMotor regra = new rMotor();
+            rMotorFornecedor regraMotorForn = new rMotorFornecedor();
             try
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
+                if (this._listaModelMotorFornecedor != null)
+                {
+                    if (this._listaModelMotorFornecedor.Count > 0)
+                    {
+                        this.PopulaListaMotorFornecedorIdMotor(Convert.ToInt32(model.IdMotor));
+                        foreach (mMotorFornecedor modelMotorForn in this._listaModelMotorFornecedor)
+                        {
+                            regraMotorForn.ValidarInsere(modelMotorForn);
+                        }
+                    }
+                }
                 base.LimpaDadosTela(this);
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -132,6 +181,21 @@ namespace TCC.UI
             }
         }
         #endregion Inserir
+
+        private void PopulaListaMotorFornecedorIdMotor(int idMotor)
+        {
+            try
+            {
+                foreach (mMotorFornecedor model in this._listaModelMotorFornecedor)
+                {
+                    model.Id_motor = idMotor;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #endregion Metodos
     }

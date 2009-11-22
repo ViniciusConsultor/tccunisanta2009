@@ -10,31 +10,36 @@ using TCC.BUSINESS;
 
 namespace TCC.UI.CADASTRO
 {
-    public partial class frmCadMotorFornecedor : Form
+    public partial class frmCadMotorFornecedor : FormPai
     {
         #region Atributos
         mMotor _modelMotor;
         List<mMotorFornecedor> _listaModelMotorFornecedor;
         int? _idMotor;
+        /// <summary>
+        /// True - tela chamada da tela de motor;
+        /// False - Tela chamada do menu principal
+        /// </summary>
+        bool _telaMotor;
         #endregion Atributos
 
-        #region frmCadMotorFornecedor
+        #region Construtor
         public frmCadMotorFornecedor()
         {
             InitializeComponent();
         }
 
-        public frmCadMotorFornecedor(int? idMotor, string dscMotor)
+        public frmCadMotorFornecedor(mMotor modelMotor, List<mMotorFornecedor> listaMotorFornecedor)
         {
             InitializeComponent();
             this.btnBuscaMotor.Visible = false;
-            _modelMotor=new mMotor();
-            this._modelMotor.IdMotor = idMotor;
-            this._modelMotor.DscMotor = dscMotor;
-            this.txtDescMotor.Text = dscMotor;
+            _modelMotor = modelMotor;
+            this._listaModelMotorFornecedor = listaMotorFornecedor;
+            this._telaMotor = true;
+            this.txtDescMotor.Text = modelMotor.DscMotor;
         }
-               
-        #endregion frmCadMotorFornecedor
+
+        #endregion Construtor
 
         #region Eventos
 
@@ -55,7 +60,8 @@ namespace TCC.UI.CADASTRO
         #region btnVolta Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
+            base.FechaTela(this);
         }
         #endregion btnVolta Click
 
@@ -113,18 +119,25 @@ namespace TCC.UI.CADASTRO
         private void Insere()
         {
             rMotorFornecedor regra = new rMotorFornecedor();
-
             try
             {
                 this.PopulaListaModel();
                 this.ValidaDadosNulos();
-                foreach (mMotorFornecedor modelMotorFornecedor in this._listaModelMotorFornecedor)
+                if (this._telaMotor == false)
                 {
-                    regra.ValidarInsere(modelMotorFornecedor);
+                    foreach (mMotorFornecedor modelMotorFornecedor in this._listaModelMotorFornecedor)
+                    {
+                        regra.ValidarInsere(modelMotorFornecedor);
+                    }
+                    this.btnLimpa_Click(null, null);
+                    this.btnConfirma.Enabled = false;
+                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
-                this.btnLimpa_Click(null, null);
-                this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                    base.FechaTela(this);
+                }
             }
             catch (BUSINESS.Exceptions.MotorFornecedor.MotorVazioException)
             {
@@ -182,7 +195,14 @@ namespace TCC.UI.CADASTRO
                                         dvC = linha.Cells[1];
                                         modelMotorFornecedor.Id_forn = Convert.ToInt32(dvC.Value);
                                         //Completa Model FornecedorDepto
-                                        modelMotorFornecedor.Id_motor = this._idMotor;
+                                        if (this._telaMotor == false)
+                                        {
+                                            modelMotorFornecedor.Id_motor = this._idMotor;
+                                        }
+                                        else
+                                        {
+                                            modelMotorFornecedor.Id_motor = null;
+                                        }
                                         modelMotorFornecedor.Dat_alt = DateTime.Now;
                                         modelMotorFornecedor.Flg_ativo = true;
 

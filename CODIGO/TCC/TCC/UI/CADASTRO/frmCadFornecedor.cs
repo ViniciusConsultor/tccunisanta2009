@@ -14,6 +14,7 @@ namespace TCC.UI
     {
         #region Atributos
         mFornecedor _modelFornecedor;
+        List<mFornecedorDepto> _listaModelFornecedorDepto;
         #endregion Atributos
 
         #region Construtor
@@ -208,12 +209,25 @@ namespace TCC.UI
         private void Insere()
         {
             rFornecedor regra = new rFornecedor();
+            rFornecedorDepto regraFornecedorDepto = new rFornecedorDepto();
             mFornecedor model;
             try
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
+                if (this._listaModelFornecedorDepto != null)
+                {
+                    if (this._listaModelFornecedorDepto.Count > 0)
+                    {
+                        this.PopulaListaFornecedorDeptoIdForn(Convert.ToInt32(model.IdFornecedor));
+                        foreach (mFornecedorDepto modelFornecedorDepto in this._listaModelFornecedorDepto)
+                        {
+                            regraFornecedorDepto.ValidarInsere(modelFornecedorDepto);
+                        }
+                    }
+                }
+
                 base.LimpaDadosTela(this);
                 this.btnInsere.Enabled = false;
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -301,6 +315,7 @@ namespace TCC.UI
             {
                 regra = null;
                 model = null;
+                regraFornecedorDepto = null;
             }
         }
         #endregion Insere
@@ -386,6 +401,133 @@ namespace TCC.UI
         }
         #endregion Valida Dados Nulos 
 
+        #region Abre Tela Releacionar Departamento
+        /// <summary>
+        /// Abre a tela de relacionar Fornecedor com departamento
+        /// </summary>
+        private void AbreTelaReleacionarDepartamento()
+        {
+            mFornecedor model = null;
+            CADASTRO.frmCadfornecedorDepto telaFornecedorDepto = null;
+            try
+            {
+                _listaModelFornecedorDepto = new List<mFornecedorDepto>();
+                this.ValidaDadosNulos();
+                model = this.PegaDadosTela();
+                telaFornecedorDepto = new TCC.UI.CADASTRO.frmCadfornecedorDepto(model, this._listaModelFornecedorDepto);
+                DialogResult resultado = telaFornecedorDepto.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._listaModelFornecedorDepto = null;
+                }
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.NomeFornecedorVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo Nome Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNomeFornecedor.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.paisVazioException)
+            {
+                MessageBox.Show("É Necessário Prencher o campo País", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtPais.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.EstadoVazioException)
+            {
+                MessageBox.Show("É Necessário Prencher o campo Província(Estado)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtEstado.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CidadeVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CEPVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo CEP", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCep.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CodigoPostalVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo Código Postal", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodPostal.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.CnpjVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCnpj.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.IdentidadeInterVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do código de identificação internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.DadosComunicacaoVazioExeception)
+            {
+                MessageBox.Show("É Necessário preenchimento dos campos 'DDI, DDD e Telefone' ou 'E-mail'", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.DDIVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo DDI", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDI.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.DddVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDDD.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.TelefoneVazioException)
+            {
+                MessageBox.Show("É Necessário preenchimento do campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                if (this.txtTelefone.Visible == true)
+                {
+                    this.txtTelefone.Focus();
+                }
+                else
+                { 
+                    this.txtTelefoneInter.Focus();
+                }
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.FornecedorSemIdExecption)
+            {
+                MessageBox.Show("É Necessário o campo Codigo Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+                telaFornecedorDepto = null;
+            }
+        }
+        #endregion Abre Tela Releacionar Departamento
+
+        #region Popula Lista Fornecedor Depto Id Forn
+        /// <summary>
+        /// Popula a lista de model de Fornecedor Departamento com o id do fornecedor que foi cadastrado
+        /// </summary>
+        /// <param name="idForn">id do fornecedor cadastrado</param>
+        private void PopulaListaFornecedorDeptoIdForn(int idForn)
+        {
+            try
+            {
+                foreach (mFornecedorDepto modelFornecedorDepto in this._listaModelFornecedorDepto)
+                {
+                    modelFornecedorDepto.IdFornecedor = idForn;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Popula Lista Fornecedor Depto Id Forn
+
         #endregion Metodos
 
         #region Eventos
@@ -425,6 +567,8 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.rdbBrasil.Checked = true;
+            this._listaModelFornecedorDepto = null;
+            this._modelFornecedor = null;
         }
         #endregion btnlimpar Click
 
@@ -445,9 +589,7 @@ namespace TCC.UI
         #region btnRelacionarDepto Click
         private void btnRelacionarDepto_Click(object sender, EventArgs e)
         {
-            mFornecedor model = this.PegaDadosTela();
-            CADASTRO.frmCadfornecedorDepto obj = new TCC.UI.CADASTRO.frmCadfornecedorDepto(model.IdFornecedor, model.NomeFornecedor);
-            obj.ShowDialog();
+            this.AbreTelaReleacionarDepartamento();
         }
         #endregion btnRelacionarDepto Click
 
