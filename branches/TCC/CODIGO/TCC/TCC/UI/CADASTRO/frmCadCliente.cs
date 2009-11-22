@@ -641,5 +641,10 @@ namespace TCC.UI
 
 
         #endregion Eventos
+
+        private void txtCodPostal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
