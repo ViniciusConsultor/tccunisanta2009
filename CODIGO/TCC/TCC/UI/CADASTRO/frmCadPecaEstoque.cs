@@ -14,23 +14,35 @@ namespace TCC.UI
     {
         #region Atributos
         mPeca _modelPeca;
+        /// <summary>
+        /// Utilizado para armazenar os itens escolhidos pelo usuário
+        /// </summary>
         List<mPecaEstoque> _listaModelPecaEstoque;
+        /// <summary>
+        /// Diz de onde foi chamada esta tela
+        /// True - tela de peça
+        /// False - menu principal
+        /// </summary>
+        bool _telaPeca;
         #endregion Atributos
 
         #region Construtores
         public frmCadPecaEstoque()
         {
             InitializeComponent();
+            this._telaPeca = false;
         }
 
-        public frmCadPecaEstoque(mPeca modelPeca)
+        public frmCadPecaEstoque(mPeca modelPeca, List<mPecaEstoque> listaPecaEstoque)
         {
             InitializeComponent();
             this.btnBuscaPeca.Visible = false;
             this._modelPeca = modelPeca;
-            this.txtPeca.Text = modelPeca.DscPeca;
+            this.txtPeca.Text = modelPeca.IdPecaReal + " - " + modelPeca.Nom;
 
             this.MarcaPecaEstoque();
+            this._listaModelPecaEstoque = listaPecaEstoque;
+            this._telaPeca = true;
         }
         #endregion Construtor
 
@@ -65,6 +77,7 @@ namespace TCC.UI
         #region btnVolta Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             base.FechaTela(this);
         }
         #endregion btnVolta Click
@@ -162,17 +175,25 @@ namespace TCC.UI
             try
             {
                 this.PopulaListaModel();
-                this.ValidaDadosNulos();
-
-                // exclui antes tudo antes de inserir
-                this.DeletaTudoPorPeca();
-
-                foreach (mPecaEstoque modelPecaEstoque in this._listaModelPecaEstoque)
+                if (this._telaPeca == false)
                 {
-                    regra.ValidarInsere(modelPecaEstoque);
+                    this.ValidaDadosNulos();
+
+                    // exclui antes tudo antes de inserir
+                    this.DeletaTudoPorPeca();
+
+                    foreach (mPecaEstoque modelPecaEstoque in this._listaModelPecaEstoque)
+                    {
+                        regra.ValidarInsere(modelPecaEstoque);
+                    }
+                    this.btnLimpa_Click(null, null);
+                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
-                this.btnLimpa_Click(null, null);
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                    base.FechaTela(this);
+                }
             }
             catch (BUSINESS.Exceptions.PecaEstoque.PecaVazioException)
             {
@@ -227,7 +248,14 @@ namespace TCC.UI
                                     //Pega resto model
                                     dvC = linha.Cells["hQuantidade"]; // Qtde
                                     modelPecaEstoque.Qtd_peca = Convert.ToInt32(dvC.Value);
-                                    modelPecaEstoque.Id_peca = this._modelPeca.IdPeca;
+                                    if (this._telaPeca == true)
+                                    {
+                                        modelPecaEstoque.Id_peca = null;
+                                    }
+                                    else
+                                    {
+                                        modelPecaEstoque.Id_peca = this._modelPeca.IdPeca;
+                                    }
                                     modelPecaEstoque.Dat_alt = DateTime.Now;
                                     modelPecaEstoque.Flg_ativo = true;
 
