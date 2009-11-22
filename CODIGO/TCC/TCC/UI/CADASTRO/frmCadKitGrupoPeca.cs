@@ -147,31 +147,31 @@ namespace TCC.UI
                 }
                 this.btnLimpar_Click(null, null);
                 this.btnAceitar.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitExistenteException)
             {
-                MessageBox.Show("Nome do Kit já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Nome do Kit já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmKit.Focus();
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitExistenteException)
             {
-                MessageBox.Show("Código do Kit já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Código do Kit já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoKit.Focus();
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.KitSemItemException)
             {
-                MessageBox.Show("É necessário associar um item ao kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Associar um Item ao Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarItemDtGrid.Focus();
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException)
             {
-                MessageBox.Show("É Necessário preencher o nome do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o Nome do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmKit.Focus();
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException)
             {
-                MessageBox.Show("É Necessário preencher o código do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o código do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoKit.Focus();
             }
             catch (BUSINESS.Exceptions.KitGrupoPeca.TelaResumoCanceladaException)

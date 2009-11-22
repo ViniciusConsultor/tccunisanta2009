@@ -115,28 +115,28 @@ namespace TCC.UI
                 regraUsu.ValidaDados(this._modelUsuario);
                 this.DialogResult = DialogResult.OK;
                 base.FechaTela(this);
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
             {
-                MessageBox.Show("É Necessário buscar um Perfil para o usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar um Perfil para o usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPerfilUsuario.Focus();
                 // this.btnBuscaPerfilUsuario.PerformClick();
             }
             catch (BUSINESS.Exceptions.Login.LoginVazioException)
             {
-                MessageBox.Show("É necessário preenchimento do campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Focus();
             }
             catch (BUSINESS.Exceptions.Login.LoginExistenteException)
             {
-                MessageBox.Show("Usuário já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Usuário já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Text = string.Empty;
                 this.txtLogin.Focus();
             }
             catch (BUSINESS.Exceptions.Login.SenhaVaziaException)
             {
-                MessageBox.Show("É necessário preenchimento do campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtSenha.Focus();
             }
             catch (Exception ex)

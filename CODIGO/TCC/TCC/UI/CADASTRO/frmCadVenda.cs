@@ -340,7 +340,7 @@ namespace TCC.UI
                     regraVendaPedido.ValidarInsere(modelVendaProduto);
                 }
                 this.btnLimpa_Click(null, null);
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {

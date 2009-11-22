@@ -187,7 +187,7 @@ namespace TCC.UI
                         regra.ValidarInsere(modelPecaEstoque);
                     }
                     this.btnLimpa_Click(null, null);
-                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
@@ -197,12 +197,12 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.PecaEstoque.PecaVazioException)
             {
-                MessageBox.Show("É necessário buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPeca.Focus();
             }
             catch (BUSINESS.Exceptions.PecaEstoque.EstoqueNaoEscolhidoException)
             {
-                MessageBox.Show("É necessário selecionar ao menos um estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Selecionar um Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
