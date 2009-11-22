@@ -13,8 +13,8 @@ namespace TCC.UI
     public partial class frmCadPeca : FormPai
     {
         #region Atributos
-        mEstoque _modelEstoque;
         mTipoPeca _modelTipoPeca;
+        List<mPecaEstoque> _listaPecaEstoque;
         #endregion Atributos
 
         #region Construtor
@@ -65,7 +65,6 @@ namespace TCC.UI
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             base.LimpaDadosTela(this);
-            this._modelEstoque = null;
             this._modelTipoPeca = null;
         }
         #endregion btnLimpar Click
@@ -87,20 +86,14 @@ namespace TCC.UI
         #region btnRelacionarFornecedor Click
         private void btnRelacionarFornecedor_Click(object sender, EventArgs e)
         {
-            this.ValidaDadosNulos();
-            mPeca model = this.PegaDadosTela();
-            frmPecaFornecedor obj = new frmPecaFornecedor(model.IdPeca, model.Nom);
-            obj.ShowDialog();
+            this.AbreTelaRelacionarFornecedor();
         }
         #endregion btnRelacionarFornecedor Click
 
         #region btnRelacionarEstoque Click
         private void btnRelacionarEstoque_Click(object sender, EventArgs e)
         {
-            this.ValidaDadosNulos();
-            mPeca model = this.PegaDadosTela();
-            frmCadPecaEstoque obj = new frmCadPecaEstoque(model);
-            obj.ShowDialog();
+            this.AbreTelaRelacionarEstoque();
         }
         #endregion btnRelacionarEstoque Click
 
@@ -108,13 +101,104 @@ namespace TCC.UI
 
         #region Metodos
 
+        #region Abre Tela Relacionar Fornecedor
+        /// <summary>
+        /// Abre a tela para relacionar a peça ao fornecedor
+        /// </summary>
+        private void AbreTelaRelacionarFornecedor()
+        {
+            mPeca modelPeca = null;
+            frmPecaFornecedor telaPecaFornecedor = null;
+            try
+            {
+                this.ValidaDadosNulos();
+                modelPeca = this.PegaDadosTela();
+                telaPecaFornecedor = new frmPecaFornecedor(modelPeca.IdPeca, modelPeca.Nom);
+                telaPecaFornecedor.ShowDialog();
+            }
+            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            {
+                MessageBox.Show("O código do Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnCdTipoPeca.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
+            {
+                MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoReal.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
+            {
+                MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNmPeca.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            {
+                MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdPeca.Focus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                modelPeca = null;
+                telaPecaFornecedor = null;
+            }
+        }
+        #endregion Abre Tela Relacionar Fornecedor
+
+        #region Abre Tela Relacionar Estoque
         /// <summary>
         /// Abre a tela de relacionar a peça com o estoque
         /// </summary>
         private void AbreTelaRelacionarEstoque()
         {
-
+            mPeca modelPeca = null;
+            frmCadPecaEstoque telaPecaEstoque = null;
+            _listaPecaEstoque = new List<mPecaEstoque>();
+            try
+            {
+                this.ValidaDadosNulos();
+                modelPeca = this.PegaDadosTela();
+                telaPecaEstoque = new frmCadPecaEstoque(modelPeca, _listaPecaEstoque);
+                DialogResult resultado = telaPecaEstoque.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._listaPecaEstoque = null;
+                }
+            }
+            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            {
+                MessageBox.Show("O código do Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnCdTipoPeca.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
+            {
+                MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoReal.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
+            {
+                MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNmPeca.Focus();
+            }
+            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            {
+                MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdPeca.Focus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                modelPeca = null;
+                telaPecaEstoque = null;
+            }
         }
+        #endregion Abre Tela Relacionar Estoque
 
         #region PegaDadosTela
         private mPeca PegaDadosTela()
@@ -166,11 +250,25 @@ namespace TCC.UI
         {
             mPeca model;
             rPeca regra = new rPeca();
+            rPecaEstoque regraPecaEstoque = new rPecaEstoque();
             try
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
+                //Verifica se existe itens na lista de peça estoque
+                //-------------------------------------------------
+                if (this._listaPecaEstoque != null)
+                {
+                    if (this._listaPecaEstoque.Count > 0)
+                    {
+                        this.PopulaListaPecaEstoqueIdPeca(Convert.ToInt32(model.IdPeca));
+                        foreach (mPecaEstoque modelPecaEstoque in this._listaPecaEstoque)
+                        {
+                            regraPecaEstoque.ValidarInsere(modelPecaEstoque);
+                        }
+                    }
+                }
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -185,11 +283,6 @@ namespace TCC.UI
                 MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.PecaJaExistenteException)
-            {
-                MessageBox.Show("Peça já existente favor cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCodigoReal.Focus();
-            }
             catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
             {
                 MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -200,6 +293,11 @@ namespace TCC.UI
                 MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdPeca.Focus();
             }
+            catch (BUSINESS.Exceptions.Peca.PecaJaExistenteException)
+            {
+                MessageBox.Show("Peça já existente favor cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoReal.Focus();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -208,6 +306,7 @@ namespace TCC.UI
             {
                 model = null;
                 regra = null;
+                regraPecaEstoque = null;
             }
         }
         #endregion Insere
@@ -233,6 +332,28 @@ namespace TCC.UI
             }
         }
         #endregion ValidaDadosNulos
+
+        #region Popula Lista Peca Estoque Id Peca
+        /// <summary>
+        /// Popula os models que estão na lista com o id da 
+        /// Peça que foi cadastrada.
+        /// </summary>
+        /// <param name="idPeca">id da Peça cadastrada</param>
+        private void PopulaListaPecaEstoqueIdPeca(int idPeca)
+        {
+            try
+            {
+                foreach (mPecaEstoque model in this._listaPecaEstoque)
+                {
+                    model.Id_peca = idPeca;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Popula Lista Peca Estoque Id Peca
 
         #endregion Metodos
     }
