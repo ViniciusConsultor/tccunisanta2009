@@ -117,7 +117,7 @@
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
             this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
             this.btnAdicionaPeca.TabIndex = 8;
-            this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adicionar Peça");
+            this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adicionar Motore");
             this.btnAdicionaPeca.UseVisualStyleBackColor = true;
             this.btnAdicionaPeca.Click += new System.EventHandler(this.btnAdicionaPeca_Click);
             // 
