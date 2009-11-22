@@ -28,6 +28,15 @@ namespace TCC.UI
             InitializeComponent();
         }
 
+        public frmPecaFornecedor(mPeca model)
+        {
+            InitializeComponent();
+            this.btnBuscaPeca.Visible = false;
+            _modelPeca = model;
+            this.txtNomePeca.Text = this._modelPeca.IdPecaReal + " - " + this._modelPeca.Nom;
+            this._telaPeca = false;
+        }
+
         public frmPecaFornecedor(mPeca model, List<mPecaFornecedor> listaPecaFornecedor)
         {
             InitializeComponent();
@@ -191,7 +200,7 @@ namespace TCC.UI
                                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                                         //------------------------------------------------------------------------------------
                                         //Pega id Fornecedor
-                                        dvC = linha.Cells[1];
+                                        dvC = linha.Cells["hIdFornecedor"];
                                         modelPecaFornecedor.Id_forn = Convert.ToInt32(dvC.Value);
                                         //Pega resto model
                                         if (this._telaPeca == false)

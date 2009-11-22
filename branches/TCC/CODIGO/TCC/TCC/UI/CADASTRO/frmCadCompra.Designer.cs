@@ -49,8 +49,6 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.txtUltimoPreco = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.lblValorAntigo = new System.Windows.Forms.Label();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.lblQtdPeca = new System.Windows.Forms.Label();
@@ -116,7 +114,7 @@
             // 
             this.btnAdicionaItem.BackgroundImage = global::TCC.resImg.btnAdd_;
             this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaItem.Location = new System.Drawing.Point(474, 158);
+            this.btnAdicionaItem.Location = new System.Drawing.Point(474, 115);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
             this.btnAdicionaItem.Size = new System.Drawing.Size(27, 23);
             this.btnAdicionaItem.TabIndex = 11;
@@ -128,7 +126,7 @@
             // 
             this.btnRemoveItem.BackgroundImage = global::TCC.resImg.btnLess;
             this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoveItem.Location = new System.Drawing.Point(507, 157);
+            this.btnRemoveItem.Location = new System.Drawing.Point(507, 114);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(27, 23);
             this.btnRemoveItem.TabIndex = 12;
@@ -151,7 +149,7 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(507, 114);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(315, 114);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaFornecedor.TabIndex = 5;
@@ -243,7 +241,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgItems.Location = new System.Drawing.Point(118, 186);
+            this.dgItems.Location = new System.Drawing.Point(118, 144);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
@@ -257,7 +255,7 @@
             this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
-            this.dgItems.Size = new System.Drawing.Size(416, 177);
+            this.dgItems.Size = new System.Drawing.Size(416, 219);
             this.dgItems.TabIndex = 27;
             // 
             // txtUltimoPreco
@@ -293,7 +291,7 @@
             // lblFornecedor
             // 
             this.lblFornecedor.AutoSize = true;
-            this.lblFornecedor.Location = new System.Drawing.Point(308, 101);
+            this.lblFornecedor.Location = new System.Drawing.Point(116, 101);
             this.lblFornecedor.Name = "lblFornecedor";
             this.lblFornecedor.Size = new System.Drawing.Size(61, 13);
             this.lblFornecedor.TabIndex = 35;
@@ -302,7 +300,7 @@
             // lblQtdPeca
             // 
             this.lblQtdPeca.AutoSize = true;
-            this.lblQtdPeca.Location = new System.Drawing.Point(289, 141);
+            this.lblQtdPeca.Location = new System.Drawing.Point(345, 101);
             this.lblQtdPeca.Name = "lblQtdPeca";
             this.lblQtdPeca.Size = new System.Drawing.Size(62, 13);
             this.lblQtdPeca.TabIndex = 32;
@@ -311,7 +309,7 @@
             // txtQtdItem
             // 
             this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQtdItem.Location = new System.Drawing.Point(292, 157);
+            this.txtQtdItem.Location = new System.Drawing.Point(348, 117);
             this.txtQtdItem.MaxLength = 2;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(120, 20);
@@ -362,8 +360,6 @@
             this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.lblFornecedor);
-            this.Controls.Add(this.txtUltimoPreco);
-            this.Controls.Add(this.lblValorAntigo);
             this.Controls.Add(this.txtQtdItem);
             this.Controls.Add(this.btnRemoveItem);
             this.Controls.Add(this.btnAdicionaItem);
@@ -383,6 +379,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCadCompra";
             this.Text = "Compra";
+            this.Load += new System.EventHandler(this.frmCadCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -403,8 +400,6 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.DataGridView dgItems;
-        private Controles.MegaTextBox.MegaTextBox txtUltimoPreco;
-        private System.Windows.Forms.Label lblValorAntigo;
         private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Label lblFornecedor;
         private System.Windows.Forms.Label lblQtdPeca;

@@ -75,6 +75,10 @@ namespace TCC.UI
         private void frmBuscaFornecedor_Load(object sender, EventArgs e)
         {
             this.HabilitaBotoes();
+            if (this._filtroBusca == true)
+            {
+                this.ExecutaBuscaFornecedoresAssociados();
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -149,11 +153,39 @@ namespace TCC.UI
                     //-----------------------------------------------------------------------------------------------------
                     if (this._modelMotor != null)
                     {
-
+                        dt = regra.BuscaFornecedorMotor(Convert.ToInt32(this._modelMotor.IdMotor));
+                        if (dt.Rows.Count <= 0)
+                        {
+                            DialogResult resultado = MessageBox.Show("Não existe fornecedores associados a esse motor, deseja associa-los agora?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                            if (resultado == DialogResult.Yes)
+                            {
+                                this.AbreTelaAssociacaoMotorFornecedor();
+                                dt = regra.BuscaFornecedorMotor(Convert.ToInt32(this._modelMotor.IdMotor));
+                            }
+                            else
+                            {
+                                this.DialogResult = DialogResult.Cancel;
+                                this.Close();
+                            }
+                        }
                     }
                     else
                     {
-
+                        dt = regra.BuscaFornecedorPeca(Convert.ToInt32(this._modelPeca.IdPeca));
+                        if (dt.Rows.Count <= 0)
+                        {
+                            DialogResult resultado = MessageBox.Show("Não existe fornecedores associados a essa peça, deseja associa-los agora?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                            if (resultado == DialogResult.Yes)
+                            {
+                                this.AbreTelaAssociacaoPecaFornecedor();
+                                dt = regra.BuscaFornecedorPeca(Convert.ToInt32(this._modelPeca.IdPeca));
+                            }
+                            else
+                            {
+                                this.DialogResult = DialogResult.Cancel;
+                                this.Close();
+                            }
+                        }
                     }
                 }
                 this.dgFornecedor.DataSource = dt;
@@ -254,6 +286,11 @@ namespace TCC.UI
             //Alteração negado!!
             //------------------
             this.btnOK.Visible = !this._alteracao;
+            if (this._filtroBusca == true)
+            {
+                this.txtFiltro.Visible = false;
+                this.btnBuscar.Visible = false;
+            }
         }
 
         private void PopulaModelCompletoAlteracao()
@@ -280,5 +317,64 @@ namespace TCC.UI
             }
         }
         #endregion
+
+        #region Executa Busca Fornecedores Associados
+        /// <summary>
+        /// Executa as buscas quando a tela é chamada da tela de compra
+        /// </summary>
+        private void ExecutaBuscaFornecedoresAssociados()
+        {
+            try
+            {
+                this.PopulaGrid();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Executa Busca Fornecedores Associados
+
+        /// <summary>
+        /// Abre a tela de associação de motor com fornecedor
+        /// </summary>
+        private void AbreTelaAssociacaoMotorFornecedor()
+        {
+            CADASTRO.frmCadMotorFornecedor telaMotorFornecedor = null;
+            try
+            {
+                telaMotorFornecedor = new TCC.UI.CADASTRO.frmCadMotorFornecedor(this._modelMotor);
+                telaMotorFornecedor.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                telaMotorFornecedor = null;
+            }
+        }
+
+        /// <summary>
+        /// Abre a tela de associação de Peça com Fornecedor
+        /// </summary>
+        private void AbreTelaAssociacaoPecaFornecedor()
+        {
+            frmPecaFornecedor telaPecaFornecedor = null;
+            try
+            {
+                telaPecaFornecedor = new frmPecaFornecedor(this._modelPeca);
+                telaPecaFornecedor.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                telaPecaFornecedor = null;
+            }
+        }
     }
 }
