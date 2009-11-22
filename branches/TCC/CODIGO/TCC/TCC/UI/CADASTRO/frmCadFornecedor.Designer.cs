@@ -333,7 +333,7 @@
             this.gbxEscolhePaisEstado.Location = new System.Drawing.Point(100, 35);
             this.gbxEscolhePaisEstado.Name = "gbxEscolhePaisEstado";
             this.gbxEscolhePaisEstado.Size = new System.Drawing.Size(479, 111);
-            this.gbxEscolhePaisEstado.TabIndex = 0;
+            this.gbxEscolhePaisEstado.TabIndex = 2;
             this.gbxEscolhePaisEstado.TabStop = false;
             // 
             // lblNmPais
@@ -523,7 +523,7 @@
             this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 194);
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
-            this.txtNumeroEndereco.TabIndex = 47;
+            this.txtNumeroEndereco.TabIndex = 9;
             this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // frmCadFornecedor
@@ -532,7 +532,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 368);
+            this.ClientSize = new System.Drawing.Size(593, 368);
             this.ControlBox = false;
             this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.txtCep);

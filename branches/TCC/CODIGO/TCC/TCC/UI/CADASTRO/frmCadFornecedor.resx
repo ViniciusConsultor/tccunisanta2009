@@ -124,8 +124,8 @@
   <data name="btnlimpar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALAwAA
-        CwMBSY6M0gAAkoBJREFUeF7t3QWYbld1PvAKxdpC0OJQCrRQWigUGuyPhyTECBKHhAhxd3cjLhCIERcc
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALAgAA
+        CwIBm8luNgAAkoBJREFUeF7t3QWYbld1PvAKxdpC0OJQCrRQWigUGuyPhyTECBKHhAhxd3cjLhCIERcc
         ggV3ijvFnZYKLvHzX7+TeS87h2+uZWauzLnPs+/3zcyn+6z3Xb72n3Zd9yfjv3EHxh0Yd2B52oE/rQ/z
         p4cccsifvfCFL/xzq+7fJmubbbb5i3GNe7C8yUAro43c/hlZnlrLE8aWz88C9FMX9o61iXfeYost7vHS
         l770PpttttkDXvKSlzyofn7wlltu+ZD63d/X7cNf9rKXPWJc4x4sKxkgg1Oy+BCySUbJKpklu2S45PmO
@@ -753,6 +753,9 @@
         yzHzh8BPQQ8/f87N/f8P7wQSq/Bppl8AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="toolTipLegenda.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>51</value>
   </metadata>
