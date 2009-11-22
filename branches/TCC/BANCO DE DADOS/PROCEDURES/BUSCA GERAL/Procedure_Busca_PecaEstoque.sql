@@ -5,5 +5,5 @@ IF OBJECT_ID('sp_busca_pecaestoque','P')IS NOT NULL
 GO
 CREATE PROCEDURE sp_busca_pecaestoque
 AS
-SELECT id_peca, id_estoq, qtd_peca as 'Quantidade da peça' FROM pecaestoque
+SELECT id_peca, id_estoq, qtd_peca FROM pecaestoque
 WHERE flg_ativo = 1

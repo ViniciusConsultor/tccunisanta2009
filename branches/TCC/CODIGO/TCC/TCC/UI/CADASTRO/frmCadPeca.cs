@@ -108,6 +108,14 @@ namespace TCC.UI
 
         #region Metodos
 
+        /// <summary>
+        /// Abre a tela de relacionar a peça com o estoque
+        /// </summary>
+        private void AbreTelaRelacionarEstoque()
+        {
+
+        }
+
         #region PegaDadosTela
         private mPeca PegaDadosTela()
         {

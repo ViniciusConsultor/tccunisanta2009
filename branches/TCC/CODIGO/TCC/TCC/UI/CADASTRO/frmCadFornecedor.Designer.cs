@@ -52,7 +52,6 @@
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnRelacionarDepto = new System.Windows.Forms.Button();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.lblCep = new System.Windows.Forms.Label();
+            this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbxEscolhePaisEstado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -289,16 +289,6 @@
             this.txtCnpj.Size = new System.Drawing.Size(110, 20);
             this.txtCnpj.TabIndex = 13;
             this.txtCnpj.ValidatingType = typeof(int);
-            // 
-            // txtNumeroEndereco
-            // 
-            this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 195);
-            this.txtNumeroEndereco.MaxLength = 5;
-            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
-            this.txtNumeroEndereco.Size = new System.Drawing.Size(84, 20);
-            this.txtNumeroEndereco.TabIndex = 9;
-            this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
             // 
             // txtDDD
             // 
@@ -527,6 +517,15 @@
             this.lblCep.TabIndex = 46;
             this.lblCep.Text = "CEP";
             // 
+            // txtNumeroEndereco
+            // 
+            this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 194);
+            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
+            this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
+            this.txtNumeroEndereco.TabIndex = 47;
+            this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,6 +534,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.lblCep);
             this.Controls.Add(this.txtCodPostal);
@@ -550,7 +550,6 @@
             this.Controls.Add(this.btnRelacionarDepto);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtDDD);
-            this.Controls.Add(this.txtNumeroEndereco);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtEmail);
@@ -604,7 +603,6 @@
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
-        private Controles.MegaTextBox.MegaTextBox txtNumeroEndereco;
         private Controles.MegaTextBox.MegaTextBox txtDDD;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.Button btnRelacionarDepto;
@@ -630,5 +628,6 @@
         private System.Windows.Forms.TextBox txtCodPostal;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Label lblCep;
+        private Controles.MegaTextBox.MegaTextBox txtNumeroEndereco;
     }
 }

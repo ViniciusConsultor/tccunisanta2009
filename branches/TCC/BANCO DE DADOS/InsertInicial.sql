@@ -51,7 +51,7 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (12, 'Rela
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (13, 'Realizar Compra', 'frmCadCompra', GETDATE(), 1);
 
 --INSERT VENDA 2
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (14, 'Cadastrar Produtos', NULL, GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (14, 'Cadastrar Produtos', 'frmCadProduto', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (15, 'Cadastrar Clientes', 'frmCadCliente', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (16, 'Realizar Venda', 'frmCadVenda', GETDATE(), 1);
 
@@ -70,7 +70,7 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (25, 'Cada
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (26, 'Motores', NULL, GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (27, 'Cadastrar Tipo de Motor', 'frmCadTipoMotor', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (28, 'Cadastrar Número Motor', 'frmCadNumeroMotor', GETDATE(), 1);
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (29, 'Cadastrar Motor',	NULL , GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (29, 'Cadastrar Motor',	'frmCadMotor' , GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (30, 'Cadastrar Familia de Motores', 'frmCadFamiliaMotor', GETDATE(), 1);
 
 --INSERT CADASTRO GERAIS 5

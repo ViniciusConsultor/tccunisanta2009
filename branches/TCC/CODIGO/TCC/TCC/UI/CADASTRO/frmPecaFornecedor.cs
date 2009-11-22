@@ -15,6 +15,10 @@ namespace TCC.UI
         #region Atributos
         mPeca _modelPeca;
         List<mPecaFornecedor> _listaModelPecaFornecedor;
+        /// <summary>
+        /// Diz se veio da tela de peça ou não
+        /// </summary>
+        bool _telaPeca;
         #endregion Atributos
 
         #region Construtor
@@ -23,7 +27,7 @@ namespace TCC.UI
             InitializeComponent();
         }
 
-        public frmPecaFornecedor(int? idPeca,string nomePeca)
+        public frmPecaFornecedor(int? idPeca, string nomePeca)
         {
             InitializeComponent();
             this.btnBuscaPeca.Visible = false;
@@ -31,11 +35,19 @@ namespace TCC.UI
             _modelPeca.IdPeca = idPeca;
             _modelPeca.Nom = nomePeca;
             this.txtNomePeca.Text = nomePeca;
+            this._telaPeca = true;
         }
         #endregion Construtor
 
         #region Eventos
 
+        #region Form Load
+        private void frmPecaFornecedor_Load(object sender, EventArgs e)
+        {
+
+        }
+        #endregion Form Load
+        
         #region btnConfirma Click
         private void btnConfirma_Click(object sender, EventArgs e)
         {
@@ -115,13 +127,16 @@ namespace TCC.UI
             {
                 this.PopulaListaModel();
                 this.ValidaDadosNulos();
-                foreach (mPecaFornecedor modelPecaFornecedor in this._listaModelPecaFornecedor)
+                if (this._telaPeca == false)
                 {
-                    regra.ValidarInsere(modelPecaFornecedor);
+                    foreach (mPecaFornecedor modelPecaFornecedor in this._listaModelPecaFornecedor)
+                    {
+                        regra.ValidarInsere(modelPecaFornecedor);
+                    }
+                    this.btnLimpa_Click(null, null);
+                    this.btnConfirma.Enabled = false;
+                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
-                this.btnLimpa_Click(null, null);
-                this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.PecaFornecedor.PecaVazioException)
             {
@@ -301,11 +316,6 @@ namespace TCC.UI
             }
         }
         #endregion Valida Dados Nulos
-
-        private void frmPecaFornecedor_Load(object sender, EventArgs e)
-        {
-
-        }
 
         #endregion Metodos
     }
