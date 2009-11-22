@@ -136,7 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(342, 218);
+            this.ClientSize = new System.Drawing.Size(340, 220);
             this.ControlBox = false;
             this.Controls.Add(this.txtIdReal);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
