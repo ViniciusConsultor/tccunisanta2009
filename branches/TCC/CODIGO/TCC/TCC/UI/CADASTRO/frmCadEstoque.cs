@@ -107,21 +107,21 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpa_Click(null, null);
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Estoque.NomEstoqueExistenteException)
             {
-                MessageBox.Show("Nome do Estoque já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Nome do Estoque já Cadastrado!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
-                MessageBox.Show("É necessário informar o Departamento do estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Informar o Departamento do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.Estoque.NomEstoqueVazioException)
             {
-                MessageBox.Show("É Necessário cadastrar o nome do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Cadastrar o nome do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNome.Focus();
             }
             catch (Exception ex)

@@ -139,12 +139,12 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException)
             {
-                MessageBox.Show("Informe uma descrição para o produto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Informe uma Descrição para o Produto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDescProduto.Focus();
             }
             catch (BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException)
             {
-                MessageBox.Show("É necessário buscar uma Familia de Motores ou um Kit de Peças!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar uma Familia de Motores ou um Kit de Peças!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarProduto.Focus();
             }
             catch (Exception ex)

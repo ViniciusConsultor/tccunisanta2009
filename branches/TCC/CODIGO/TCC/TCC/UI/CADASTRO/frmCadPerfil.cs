@@ -85,11 +85,11 @@ namespace TCC.UI
                 }
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
             {
-                MessageBox.Show("É necessário informar a descrição do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Informar a descrição do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Perfil.DescPerfilExistenteException)
             {

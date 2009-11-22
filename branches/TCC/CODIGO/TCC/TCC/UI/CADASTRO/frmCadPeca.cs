@@ -293,7 +293,7 @@ namespace TCC.UI
                 }
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
             {
@@ -307,7 +307,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
             {
-                MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmPeca.Focus();
             }
             catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
@@ -317,7 +317,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Peca.PecaJaExistenteException)
             {
-                MessageBox.Show("Peça já existente favor cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Peça já existente! Favor Cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
             }
             catch (Exception ex)

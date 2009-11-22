@@ -276,26 +276,26 @@ namespace TCC.UI
                 }
                 this.btnLimpa_Click(null, null);
                 this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
             {
-                MessageBox.Show("É necessário associar um motor a familia de motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Associar um Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaMotorCompra.Focus();
             }
             catch (BUSINESS.Exceptions.FamiliaMotor.CodigoRealFamiliaExistenteException)
             {
-                MessageBox.Show("Código da Familia de Motores já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Código da Familias de Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaNumMotor.Focus();
             }
             catch (BUSINESS.Exceptions.FamiliaMotor.CodigoRealFamiliaVazioException)
             {
-                MessageBox.Show("O Número de motor e o Tipo de motor não podem ser vazios", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("O Número de Motor e o Tipo de Motor não podem ser vazios", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaNumMotor.Focus();
             }
             catch (BUSINESS.Exceptions.FamiliaMotor.FamiliaSemKitsException)
             {
-                MessageBox.Show("É necessário associar um kit a familia de motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Associar um Kit a Familias de Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarKitDtGrid.Focus();
             }
             catch (BUSINESS.Exceptions.FamiliaMotor.TelaResumoCanceladaException)
