@@ -10,7 +10,7 @@ namespace TCC.MODEL
         private int? id_compra;
         private int qtd;
         private int? id_ordem_compra;
-        private DateTime dar_alt;
+        private DateTime dat_alt;
         private bool flg_ativo;
         private string nomeTabela = "Compraordemcompra";
 
@@ -35,11 +35,11 @@ namespace TCC.MODEL
           set { id_ordem_compra = value; }
         }
 
-       [ColunasBancoDados("Dar_alt", System.Data.SqlDbType.DateTime, false)]
-        public DateTime Dar_alt
+       [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.DateTime, false)]
+        public DateTime Dat_alt
         {
-          get { return dar_alt; }
-          set { dar_alt = value; }
+          get { return dat_alt; }
+          set { dat_alt = value; }
         }
 
        [ColunasBancoDados("Flg_ativo", System.Data.SqlDbType.Bit, false)]

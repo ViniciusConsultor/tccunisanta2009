@@ -14,10 +14,11 @@ namespace TCC.UI
     {
         #region Atributos
 
-        mOrdemCompra _listaOrdemCompra;
+        List<mOrdemCompra> _listaOrdemCompra;
         mMotor _modelMotor;
         mPeca _modelPeca;
         mFornecedor _modelFornecedor;
+        DataTable _dtSource;
 
         #endregion Atributos
 
@@ -39,6 +40,13 @@ namespace TCC.UI
             {
                 this.ValidaAdicaoOrdemCompra();
                 modelOrdemCompra = this.PegaDadosTelaOrdemCompra();
+                if (this._listaOrdemCompra == null)
+                {
+                    this._listaOrdemCompra = new List<mOrdemCompra>();
+                }
+                this._listaOrdemCompra.Add(modelOrdemCompra);
+                this.PopulaDataTableModelOrdemCompra(modelOrdemCompra);
+                this.dgItems.DataSource = this._dtSource;
             }
             catch (BUSINESS.Exceptions.Compra.BuscaMotorException)
             {
@@ -298,14 +306,7 @@ namespace TCC.UI
                 modelOrdemCompra.Flg_ativo = true;
                 modelOrdemCompra.Id_forn = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
                 modelOrdemCompra.Nota_fisc = null;
-                if (string.IsNullOrEmpty(this.txtUltimoPreco.Text) == true)
-                {
-                    modelOrdemCompra.Ultim_preco = null;
-                }
-                else
-                {
-                    modelOrdemCompra.Ultim_preco = Convert.ToDecimal(this.txtUltimoPreco.Text);
-                }
+                modelOrdemCompra.Ultim_preco = null;
                 //Verifica se é uma compra de motor ou peça
                 //-----------------------------------------
                 if (this.rdbMotor.Checked == true)
@@ -350,6 +351,18 @@ namespace TCC.UI
             else
             {
                 BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataCompra.Text);
+            } 
+            if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+            }
+            else
+            {
+                int qtd = Convert.ToInt32(this.txtQtdItem.Text);
+                if (qtd < 1)
+                {
+                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+                }
             }
         }
         #endregion Valida Dados Nulos
@@ -374,18 +387,7 @@ namespace TCC.UI
                     throw new BUSINESS.Exceptions.Compra.BuscaPecaException();
                 }
             }
-            if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
-            {
-                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
-            }
-            else
-            {
-                int qtd = Convert.ToInt32(this.txtQtdItem.Text);
-                if (qtd < 1)
-                {
-                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
-                }
-            }
+            
         }
         #endregion Valida Adicao Ordem Compra
 
@@ -402,6 +404,82 @@ namespace TCC.UI
         }
         #endregion Valida Buscas
 
+        private void IniciaDataTable()
+        {
+            this._dtSource = new DataTable();
+            DataColumn[] dtColuna = new DataColumn[3];
+            try
+            {
+                dtColuna[0] = new DataColumn("Item");
+                dtColuna[1] = new DataColumn("Fornecedor");
+                dtColuna[2] = new DataColumn("Quantidade");
+                this._dtSource.Columns.AddRange(dtColuna);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dtColuna = null;
+            }
+        }
+
+        private void PopulaDataTableModelOrdemCompra(mOrdemCompra model)
+        {
+            DataRow linha;
+            try
+            {
+                linha = this._dtSource.NewRow();
+                if (this._modelMotor == null)
+                {
+                    linha["Item"] = this._modelPeca.IdPecaReal + " - " + this._modelPeca.Nom;
+                }
+                else
+                {
+                    linha["Item"] = this._modelMotor.DscMotor;
+                }
+                linha["Fornecedor"] = this._modelFornecedor.NomeFornecedor;
+                this._dtSource.Rows.Add(linha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                linha = null;
+            }
+        }
+
+        private mCompraOrdemCompra PegaDadosTelaCompraOrdemCompra()
+        {
+            mCompraOrdemCompra model = new mCompraOrdemCompra();
+            try
+            {
+                model.Dat_alt = DateTime.Now;
+                model.Flg_ativo = true;
+                model.Id_compra = null;
+                model.Id_ordem_compra = null;
+                model.Qtd = Convert.ToInt32(this.txtQtdItem.Text);
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+
         #endregion Metodos
+
+        private void frmCadCompra_Load(object sender, EventArgs e)
+        {
+            IniciaDataTable();
+        }
     }
 }

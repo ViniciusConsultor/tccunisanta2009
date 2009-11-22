@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_busca_fornecedor_param
 @nomeFornecedor VARCHAR(100)
 AS
-SELECT id_forn, nom 'Fornecedor' 
+SELECT id_forn, nom, nom_pais
 FROM fornecedor
 WHERE nom LIKE '%' + @nomeFornecedor  + '%'
 AND flg_ativo = 1

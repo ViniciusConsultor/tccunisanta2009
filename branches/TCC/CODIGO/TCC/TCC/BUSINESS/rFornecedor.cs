@@ -47,16 +47,20 @@ namespace TCC.BUSINESS
             }
         }
 
-        /*/// <summary>
+        /// <summary>
         /// Busca o fornecedor que "vende" o motor escolhido.
         /// </summary>
         /// <param name="idMotor">id do motor para ser usado como filtro</param>
         /// <returns>Resultado da busca com os fornecedores que vendem este motor</returns>
         public DataTable BuscaFornecedorMotor(int idMotor)
         {
+            DataTable dt = null;
+            SqlParameter param = null;
             try
             {
-
+                param = new SqlParameter("@id_motor", idMotor);
+                dt = base.BuscaDados("sp_busca_motorFornecedor", param);
+                return dt;
             }
             catch (Exception ex)
             {
@@ -64,7 +68,12 @@ namespace TCC.BUSINESS
             }
             finally
             {
-
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
             }
         }
 
@@ -75,9 +84,13 @@ namespace TCC.BUSINESS
         /// <returns>Resultado da busca com os fornecedores que vendem esta peças</returns>
         public DataTable BuscaFornecedorPeca(int idPeca)
         {
+            DataTable dt = null;
+            SqlParameter param = null;
             try
             {
-
+                param = new SqlParameter("@id_peca", idPeca);
+                dt = base.BuscaDados("sp_busca_pecaFornecedor", param);
+                return dt;
             }
             catch (Exception ex)
             {
@@ -85,9 +98,14 @@ namespace TCC.BUSINESS
             }
             finally
             {
-
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
             }
-        }*/
+        }
 
         public void ValidaDados(mFornecedor model)
         {

@@ -29,6 +29,15 @@ namespace TCC.UI.CADASTRO
             InitializeComponent();
         }
 
+        public frmCadMotorFornecedor(mMotor modelMotor)
+        {
+            InitializeComponent();
+            this.btnBuscaMotor.Visible = false;
+            _modelMotor = modelMotor;
+            this._telaMotor = false;
+            this.txtDescMotor.Text = modelMotor.DscMotor;
+        }
+
         public frmCadMotorFornecedor(mMotor modelMotor, List<mMotorFornecedor> listaMotorFornecedor)
         {
             InitializeComponent();
@@ -192,7 +201,7 @@ namespace TCC.UI.CADASTRO
                                         //Atribui a coluna e a linha que esta selecionada a um objeto do tipo DataGridViewCell
                                         //------------------------------------------------------------------------------------
                                         //Pega id Fornecedor
-                                        dvC = linha.Cells[1];
+                                        dvC = linha.Cells["hIdForn"];
                                         modelMotorFornecedor.Id_forn = Convert.ToInt32(dvC.Value);
                                         //Completa Model FornecedorDepto
                                         if (this._telaMotor == false)
