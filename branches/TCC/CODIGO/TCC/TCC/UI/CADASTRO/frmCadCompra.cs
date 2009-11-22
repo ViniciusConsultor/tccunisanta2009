@@ -160,7 +160,14 @@ namespace TCC.UI
             try
             {
                 this._modelFornecedor = new mFornecedor();
-                telaFornecedor = new frmBuscaFornecedor(this._modelFornecedor);
+                if (rdbMotor.Checked == true)
+                {
+                    telaFornecedor = new frmBuscaFornecedor(this._modelFornecedor, this._modelMotor);
+                }
+                else
+                {
+                    telaFornecedor = new frmBuscaFornecedor(this._modelFornecedor, this._modelPeca);
+                }
                 DialogResult resultado = telaFornecedor.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {

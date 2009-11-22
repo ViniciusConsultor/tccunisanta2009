@@ -47,6 +47,48 @@ namespace TCC.BUSINESS
             }
         }
 
+        /*/// <summary>
+        /// Busca o fornecedor que "vende" o motor escolhido.
+        /// </summary>
+        /// <param name="idMotor">id do motor para ser usado como filtro</param>
+        /// <returns>Resultado da busca com os fornecedores que vendem este motor</returns>
+        public DataTable BuscaFornecedorMotor(int idMotor)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+
+        /// <summary>
+        /// Busca o fornecedor que "vende" a peça escolhida.
+        /// </summary>
+        /// <param name="idPeca">id da peça para ser utilizada como filtro</param>
+        /// <returns>Resultado da busca com os fornecedores que vendem esta peças</returns>
+        public DataTable BuscaFornecedorPeca(int idPeca)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }*/
+
         private void ValidaDados(mFornecedor model)
         {
             if (model.Cnpj == null)
