@@ -15,6 +15,7 @@ namespace TCC.UI
         #region Atributos
         mTipoPeca _modelTipoPeca;
         List<mPecaEstoque> _listaPecaEstoque;
+        List<mPecaFornecedor> _listaPecaFornecedor;
         #endregion Atributos
 
         #region Construtor
@@ -66,6 +67,8 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this._modelTipoPeca = null;
+            this._listaPecaEstoque = null;
+            this._listaPecaFornecedor = null;
         }
         #endregion btnLimpar Click
 
@@ -111,10 +114,15 @@ namespace TCC.UI
             frmPecaFornecedor telaPecaFornecedor = null;
             try
             {
+                this._listaPecaFornecedor = new List<mPecaFornecedor>();
                 this.ValidaDadosNulos();
                 modelPeca = this.PegaDadosTela();
-                telaPecaFornecedor = new frmPecaFornecedor(modelPeca.IdPeca, modelPeca.Nom);
-                telaPecaFornecedor.ShowDialog();
+                telaPecaFornecedor = new frmPecaFornecedor(modelPeca, this._listaPecaFornecedor);
+                DialogResult resultado = telaPecaFornecedor.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._listaPecaFornecedor = null;
+                }
             }
             catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
             {
@@ -251,6 +259,7 @@ namespace TCC.UI
             mPeca model;
             rPeca regra = new rPeca();
             rPecaEstoque regraPecaEstoque = new rPecaEstoque();
+            rPecaFornecedor regraPecaFornecedor = new rPecaFornecedor();
             try
             {
                 this.ValidaDadosNulos();
@@ -266,6 +275,19 @@ namespace TCC.UI
                         foreach (mPecaEstoque modelPecaEstoque in this._listaPecaEstoque)
                         {
                             regraPecaEstoque.ValidarInsere(modelPecaEstoque);
+                        }
+                    }
+                }
+                //Verifica se existe itens na lista de peça estoque
+                //-------------------------------------------------
+                if (this._listaPecaFornecedor != null)
+                {
+                    if (this._listaPecaFornecedor.Count > 0)
+                    {
+                        this.PopulaListaPecaFornecedorIdPeca(Convert.ToInt32(model.IdPeca));
+                        foreach (mPecaFornecedor modePecaFornecedor in this._listaPecaFornecedor)
+                        {
+                            regraPecaFornecedor.ValidarInsere(modePecaFornecedor);
                         }
                     }
                 }
@@ -354,6 +376,28 @@ namespace TCC.UI
             }
         }
         #endregion Popula Lista Peca Estoque Id Peca
+
+        #region Popula Lista Peca Fornecedor Id Peca
+        /// <summary>
+        /// Popula os models que estão na lista com o id da 
+        /// Peça que foi cadastrada.
+        /// </summary>
+        /// <param name="idPeca">id da Peça cadastrada</param>
+        private void PopulaListaPecaFornecedorIdPeca(int idPeca)
+        {
+            try
+            {
+                foreach (mPecaFornecedor model in this._listaPecaFornecedor)
+                {
+                    model.Id_peca = idPeca;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Popula Lista Peca Fornecedor Id Peca
 
         #endregion Metodos
     }
