@@ -10,12 +10,17 @@ using TCC.MODEL;
 
 namespace TCC.UI.CADASTRO
 {
-    public partial class frmCadfornecedorDepto : Form
+    public partial class frmCadfornecedorDepto : FormPai
     {
         #region Atributos
         mFornecedor _modelFornecedor;
         List<mFornecedorDepto> _listaModelFornecedorDepto;
         int? _idForn;
+        /// <summary>
+        /// True - Veio da Tela Fornecedor
+        /// False - Veio do menu principal
+        /// </summary>
+        bool _telaFornecedor;
         #endregion Atributos
 
         #region Construtor
@@ -24,15 +29,14 @@ namespace TCC.UI.CADASTRO
             InitializeComponent();
         }
 
-        public frmCadfornecedorDepto(int? idForn, string nomeFornecedor)
+        public frmCadfornecedorDepto(mFornecedor modelForn, List<mFornecedorDepto> listaFornecedorDepto)
         {
             InitializeComponent();
             this.btnBuscaFornecedor.Visible = false;
-            _modelFornecedor = new mFornecedor();
-            this._modelFornecedor.IdFornecedor = idForn;
-            this._modelFornecedor.NomeFornecedor = nomeFornecedor;
-            this._idForn = idForn;
-            this.txtFornecedor.Text = nomeFornecedor;
+            this._modelFornecedor = modelForn;
+            this._listaModelFornecedorDepto = listaFornecedorDepto;
+            this.txtFornecedor.Text = modelForn.NomeFornecedor;
+            this._telaFornecedor = true;
         }
         #endregion Construtor
 
@@ -105,6 +109,7 @@ namespace TCC.UI.CADASTRO
         #region btnVolta Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
         #endregion btnVolta Click
@@ -125,13 +130,21 @@ namespace TCC.UI.CADASTRO
             {
                 this.PopulaListaModel();
                 this.ValidaDadosNulos();
-                foreach (mFornecedorDepto modelFornecedorDepto in this._listaModelFornecedorDepto)
+                if (this._telaFornecedor == false)
                 {
-                    regra.ValidarInsere(modelFornecedorDepto);
+                    foreach (mFornecedorDepto modelFornecedorDepto in this._listaModelFornecedorDepto)
+                    {
+                        regra.ValidarInsere(modelFornecedorDepto);
+                    }
+                    this.btnLimpa_Click(null, null);
+                    this.btnConfirma.Enabled = false;
+                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
-                this.btnLimpa_Click(null, null);
-                this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                    base.FechaTela(this);
+                }
             }
             catch (BUSINESS.Exceptions.FornecedorDepto.FornecedorVazioException)
             {
@@ -189,7 +202,14 @@ namespace TCC.UI.CADASTRO
                                         dvC = linha.Cells[1];
                                         modelFornecedorDepto.IdDepto = Convert.ToInt32(dvC.Value);
                                         //Pega Depto
-                                        modelFornecedorDepto.IdFornecedor = this._idForn;
+                                        if (this._telaFornecedor == false)
+                                        {
+                                            modelFornecedorDepto.IdFornecedor = this._idForn;
+                                        }
+                                        else
+                                        {
+                                            modelFornecedorDepto.IdFornecedor = null;
+                                        }
                                         modelFornecedorDepto.DatAtl = DateTime.Now;
                                         modelFornecedorDepto.FlgAtivo = true;
 
