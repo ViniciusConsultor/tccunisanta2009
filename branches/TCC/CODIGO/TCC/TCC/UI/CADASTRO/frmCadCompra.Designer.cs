@@ -98,7 +98,7 @@
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
             this.btnBuscaAlteracaoDelecao.TabIndex = 8;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar Registro");
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
             // btnAceitar
@@ -282,7 +282,8 @@
             // txtFornecedor
             // 
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFornecedor.Location = new System.Drawing.Point(311, 117);
+            this.txtFornecedor.Enabled = false;
+            this.txtFornecedor.Location = new System.Drawing.Point(333, 75);
             this.txtFornecedor.Multiline = true;
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.ReadOnly = true;
@@ -338,7 +339,8 @@
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(311, 76);
+            this.txtBuscaFiltro.Enabled = false;
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(232, 111);
             this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.ReadOnly = true;

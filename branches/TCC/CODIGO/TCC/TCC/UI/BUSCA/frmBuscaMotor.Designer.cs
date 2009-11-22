@@ -38,7 +38,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.hid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hdescmotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@
             this.dgMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hid,
-            this.hdescmotor});
+            this.hMotor});
             this.dgMotor.Location = new System.Drawing.Point(16, 44);
             this.dgMotor.MultiSelect = false;
             this.dgMotor.Name = "dgMotor";
@@ -138,20 +138,22 @@
             // 
             // hid
             // 
-            this.hid.HeaderText = "id";
+            this.hid.DataPropertyName = "id_motor";
+            this.hid.HeaderText = "Id";
             this.hid.Name = "hid";
             this.hid.ReadOnly = true;
             this.hid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hid.Visible = false;
-            this.hid.Width = 21;
+            this.hid.Width = 20;
             // 
-            // hdescmotor
+            // hMotor
             // 
-            this.hdescmotor.HeaderText = "nome ";
-            this.hdescmotor.Name = "hdescmotor";
-            this.hdescmotor.ReadOnly = true;
-            this.hdescmotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hdescmotor.Width = 42;
+            this.hMotor.DataPropertyName = "Motor";
+            this.hMotor.HeaderText = "Motor";
+            this.hMotor.Name = "hMotor";
+            this.hMotor.ReadOnly = true;
+            this.hMotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hMotor.Width = 38;
             // 
             // frmBuscaMotor
             // 
@@ -189,6 +191,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hdescmotor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hMotor;
     }
 }

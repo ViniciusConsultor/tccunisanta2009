@@ -37,8 +37,9 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.id_tipo_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hdsc_tipo_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdTipoMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescTipoMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,8 +85,9 @@
             this.dgTipoMotor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgTipoMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTipoMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_tipo_motor,
-            this.hdsc_tipo_motor});
+            this.hIdTipoMotor,
+            this.hCodigo,
+            this.hDescTipoMotor});
             this.dgTipoMotor.Location = new System.Drawing.Point(15, 42);
             this.dgTipoMotor.MultiSelect = false;
             this.dgTipoMotor.Name = "dgTipoMotor";
@@ -136,22 +138,32 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // id_tipo_motor
+            // hIdTipoMotor
             // 
-            this.id_tipo_motor.HeaderText = "id";
-            this.id_tipo_motor.Name = "id_tipo_motor";
-            this.id_tipo_motor.ReadOnly = true;
-            this.id_tipo_motor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id_tipo_motor.Visible = false;
-            this.id_tipo_motor.Width = 21;
+            this.hIdTipoMotor.DataPropertyName = "id_tipo_motor";
+            this.hIdTipoMotor.HeaderText = "Id";
+            this.hIdTipoMotor.Name = "hIdTipoMotor";
+            this.hIdTipoMotor.ReadOnly = true;
+            this.hIdTipoMotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdTipoMotor.Visible = false;
+            this.hIdTipoMotor.Width = 20;
             // 
-            // hdsc_tipo_motor
+            // hCodigo
             // 
-            this.hdsc_tipo_motor.HeaderText = "Tipo do Motor";
-            this.hdsc_tipo_motor.Name = "hdsc_tipo_motor";
-            this.hdsc_tipo_motor.ReadOnly = true;
-            this.hdsc_tipo_motor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hdsc_tipo_motor.Width = 79;
+            this.hCodigo.DataPropertyName = "id_tipo_motor_real";
+            this.hCodigo.HeaderText = "Código";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hDescTipoMotor
+            // 
+            this.hDescTipoMotor.DataPropertyName = "dsc_tipo_motor";
+            this.hDescTipoMotor.HeaderText = "Descrição";
+            this.hDescTipoMotor.Name = "hDescTipoMotor";
+            this.hDescTipoMotor.ReadOnly = true;
+            this.hDescTipoMotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hDescTipoMotor.Width = 59;
             // 
             // frmBuscaTipoMotor
             // 
@@ -188,7 +200,8 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_motor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hdsc_tipo_motor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdTipoMotor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hDescTipoMotor;
     }
 }
