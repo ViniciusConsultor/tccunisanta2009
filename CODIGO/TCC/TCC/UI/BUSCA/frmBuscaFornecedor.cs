@@ -145,7 +145,16 @@ namespace TCC.UI
                 }
                 else
                 {
+                    //Verifica se o model é de motor ou de peça para filtrar quais distribuidores atendem esta "peça/motor"
+                    //-----------------------------------------------------------------------------------------------------
+                    if (this._modelMotor != null)
+                    {
 
+                    }
+                    else
+                    {
+
+                    }
                 }
                 this.dgFornecedor.DataSource = dt;
                 dgFornecedor.Columns[0].Visible = false;
