@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -286,6 +286,7 @@
     <Compile Include="MODEL\mFornecedor.cs" />
     <Compile Include="MODEL\mKitFamilia.cs" />
     <Compile Include="MODEL\mKitGrupoPeca.cs" />
+    <Compile Include="MODEL\mMotorEstoque.cs" />
     <Compile Include="MODEL\mOrdemDepartamento.cs" />
     <Compile Include="MODEL\mMenu.cs" />
     <Compile Include="MODEL\mMotor.cs" />
@@ -491,6 +492,9 @@
     <EmbeddedResource Include="UI\CADASTRO\frmCadVenda.resx">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmMotorEstoque.resx">
+      <DependentUpon>frmMotorEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CADASTRO\frmPecaFornecedor.resx">
       <DependentUpon>frmPecaFornecedor.cs</DependentUpon>
@@ -810,6 +814,12 @@
     </Compile>
     <Compile Include="UI\CADASTRO\frmCadVenda.Designer.cs">
       <DependentUpon>frmCadVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmMotorEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmMotorEstoque.Designer.cs">
+      <DependentUpon>frmMotorEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CADASTRO\frmPecaFornecedor.cs">
       <SubType>Form</SubType>
