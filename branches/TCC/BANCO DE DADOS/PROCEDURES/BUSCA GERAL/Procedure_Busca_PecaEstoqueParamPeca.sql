@@ -6,7 +6,7 @@ GO
 CREATE PROCEDURE sp_busca_pecaestoqueparampeca
 @id_peca INT
 AS
-SELECT id_peca, id_estoq, qtd_peca as 'Quantidade da peça' FROM pecaestoque
+SELECT id_peca, id_estoq, qtd_peca FROM pecaestoque
 WHERE flg_ativo = 1
 	AND id_peca = @id_peca
 
