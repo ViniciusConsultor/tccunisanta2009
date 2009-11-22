@@ -37,8 +37,8 @@
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.hid_estoq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hdsc_estoq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIdEstoq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescEstoq = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hqtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoque)).BeginInit();
             this.SuspendLayout();
@@ -85,8 +85,8 @@
             this.dgEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hid_estoq,
-            this.hdsc_estoq,
+            this.hIdEstoq,
+            this.hDescEstoq,
             this.hqtd});
             this.dgEstoque.Location = new System.Drawing.Point(14, 43);
             this.dgEstoque.MultiSelect = false;
@@ -138,26 +138,29 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // hid_estoq
+            // hIdEstoq
             // 
-            this.hid_estoq.HeaderText = "id";
-            this.hid_estoq.Name = "hid_estoq";
-            this.hid_estoq.ReadOnly = true;
-            this.hid_estoq.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hid_estoq.Visible = false;
-            this.hid_estoq.Width = 21;
+            this.hIdEstoq.DataPropertyName = "id_estoq";
+            this.hIdEstoq.HeaderText = "Id";
+            this.hIdEstoq.Name = "hIdEstoq";
+            this.hIdEstoq.ReadOnly = true;
+            this.hIdEstoq.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdEstoq.Visible = false;
+            this.hIdEstoq.Width = 20;
             // 
-            // hdsc_estoq
+            // hDescEstoq
             // 
-            this.hdsc_estoq.HeaderText = "nome ";
-            this.hdsc_estoq.Name = "hdsc_estoq";
-            this.hdsc_estoq.ReadOnly = true;
-            this.hdsc_estoq.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hdsc_estoq.Width = 42;
+            this.hDescEstoq.DataPropertyName = "Estoque";
+            this.hDescEstoq.HeaderText = "Nome";
+            this.hDescEstoq.Name = "hDescEstoq";
+            this.hDescEstoq.ReadOnly = true;
+            this.hDescEstoq.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hDescEstoq.Width = 39;
             // 
             // hqtd
             // 
-            this.hqtd.HeaderText = "quantidade";
+            this.hqtd.DataPropertyName = "qtd_peca";
+            this.hqtd.HeaderText = "Quantidade";
             this.hqtd.Name = "hqtd";
             this.hqtd.ReadOnly = true;
             this.hqtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -199,8 +202,8 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hid_estoq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hdsc_estoq;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hIdEstoq;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hDescEstoq;
         private System.Windows.Forms.DataGridViewTextBoxColumn hqtd;
     }
 }

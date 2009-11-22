@@ -6,6 +6,6 @@
  
  CREATE PROCEDURE sp_busca_numeromotor
  AS
- SELECT id_num_motor, dsc_num_motor 'Numero do motor' FROM Numeromotor
+ SELECT id_num_motor, id_num_motor_real, dsc_num_motor FROM Numeromotor
  WHERE flg_ativo = 1
 order by dsc_num_motor desc

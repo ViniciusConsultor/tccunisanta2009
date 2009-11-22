@@ -156,7 +156,7 @@ namespace TCC.UI
                 string cnpj = this.txtCnpj.Text.Replace(".", string.Empty);
                 cnpj = cnpj.Replace("/", string.Empty);
                 cnpj = cnpj.Replace("-", string.Empty);
-                if (this.txtCnpj.Modified == false)
+                if (string.IsNullOrEmpty(cnpj) == true)
                 {
                     model.Cnpj = null;
                 }
@@ -215,6 +215,7 @@ namespace TCC.UI
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
+                regra.ValidaDados(model);
                 regra.ValidarInsere(model);
                 if (this._listaModelFornecedorDepto != null)
                 {
@@ -302,6 +303,16 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário o campo Codigo Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
+            catch (BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente)
+            {
+                MessageBox.Show("Código de CNPJ já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCnpj.Focus();
+            }
+            catch (BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException)
+            {
+                MessageBox.Show("Código de Identificação Internacional já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
+            }
             catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
             {
                 MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -310,7 +321,6 @@ namespace TCC.UI
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-
             finally
             {
                 regra = null;

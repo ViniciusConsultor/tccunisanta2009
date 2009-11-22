@@ -145,9 +145,9 @@ namespace TCC.UI
                     {
                         if (this.dgMotor.CurrentRow != null)
                         {
-                            dvc = this.dgMotor["id_motor", this.dgMotor.CurrentRow.Index];
+                            dvc = this.dgMotor["hid", this.dgMotor.CurrentRow.Index];
                             _model.IdMotor = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgMotor["Motor", this.dgMotor.CurrentRow.Index];
+                            dvc = this.dgMotor["hMotor", this.dgMotor.CurrentRow.Index];
                             _model.DscMotor = dvc.Value.ToString();
                             this.DialogResult = DialogResult.OK;
                             this.Close();

@@ -207,7 +207,7 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtBuscaFiltro.Text = this._modelPeca.IdPecaReal;
+                    this.txtBuscaFiltro.Text = this._modelPeca.IdPecaReal + " - " + this._modelPeca.Nom;
                 }
             }
             catch (Exception ex)

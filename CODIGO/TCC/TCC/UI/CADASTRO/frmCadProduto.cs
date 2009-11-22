@@ -112,6 +112,13 @@ namespace TCC.UI
         }
         #endregion btnBuscarProduto Click
 
+        #region txtFiltroBusca TextChanged
+        private void txtFiltroBusca_TextChanged(object sender, EventArgs e)
+        {
+            this.btnAceitar.Enabled = true;
+        }
+        #endregion txtFiltroBusca TextChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -127,6 +134,7 @@ namespace TCC.UI
                 model = this.PegaDadosTela();
                 regra.ValidarInsere(model);
                 this.btnLimpar_Click(null, null);
+                this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException)
