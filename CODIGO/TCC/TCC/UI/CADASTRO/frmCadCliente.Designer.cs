@@ -212,7 +212,7 @@
             this.cboEstado.Location = new System.Drawing.Point(130, 11);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(65, 21);
-            this.cboEstado.TabIndex = 4;
+            this.cboEstado.TabIndex = 3;
             // 
             // btnVolta
             // 
@@ -221,7 +221,7 @@
             this.btnVolta.Location = new System.Drawing.Point(6, 129);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 24;
+            this.btnVolta.TabIndex = 21;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -294,7 +294,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 88);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 23;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 20;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -306,7 +306,7 @@
             this.btnLimpa.Location = new System.Drawing.Point(6, 47);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 22;
+            this.btnLimpa.TabIndex = 19;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -318,7 +318,7 @@
             this.btnInsere.Location = new System.Drawing.Point(6, 6);
             this.btnInsere.Name = "btnInsere";
             this.btnInsere.Size = new System.Drawing.Size(40, 35);
-            this.btnInsere.TabIndex = 21;
+            this.btnInsere.TabIndex = 18;
             this.toolTipLegenda.SetToolTip(this.btnInsere, "Salvar");
             this.btnInsere.UseVisualStyleBackColor = true;
             this.btnInsere.Click += new System.EventHandler(this.btnInsere_Click);
@@ -392,7 +392,7 @@
             this.rdbOutros.Location = new System.Drawing.Point(41, 33);
             this.rdbOutros.Name = "rdbOutros";
             this.rdbOutros.Size = new System.Drawing.Size(56, 17);
-            this.rdbOutros.TabIndex = 3;
+            this.rdbOutros.TabIndex = 4;
             this.rdbOutros.Text = "Outros";
             this.rdbOutros.UseVisualStyleBackColor = true;
             this.rdbOutros.CheckedChanged += new System.EventHandler(this.rdbOutros_CheckedChanged);
@@ -427,6 +427,7 @@
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(99, 20);
             this.txtCodPostal.TabIndex = 12;
+            this.txtCodPostal.TextChanged += new System.EventHandler(this.txtCodPostal_TextChanged);
             // 
             // lblCodPostal
             // 
@@ -549,7 +550,7 @@
             this.panelOutros.Location = new System.Drawing.Point(105, 294);
             this.panelOutros.Name = "panelOutros";
             this.panelOutros.Size = new System.Drawing.Size(440, 62);
-            this.panelOutros.TabIndex = 54;
+            this.panelOutros.TabIndex = 17;
             // 
             // txtIdentInter
             // 

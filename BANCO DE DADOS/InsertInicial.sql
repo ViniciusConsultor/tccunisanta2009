@@ -61,9 +61,9 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (18, 'Movi
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (19, 'Buscas', NULL, GETDATE(), 1);
 
 --INSERT PRODUÇÃO 4
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (20, 'Busca Peças', NULL, GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (20, 'Peças', NULL, GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (21, 'Tipo de Peça', 'frmCadTipoPeca', GETDATE(), 1);
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (22, 'Informar Usinagem', 'frmCadUsinagem', GETDATE(), 1);
+--INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (22, 'Informar Usinagem', 'frmCadUsinagem', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (23, 'Cadastrar Peças', 'frmCadPeca', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (24, 'Cadastrar Itens', 'frmCadItem', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (25, 'Cadastrar Kits', 'frmCadKitGrupoPeca', GETDATE(), 1);
@@ -104,7 +104,7 @@ INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (19, 9);--Busca Familia 
 
 --PRODUÇÃO
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (6, 21);--peças/tipo peca
-INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (6, 22);--peças/informar usinagem
+--INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (6, 22);--peças/informar usinagem
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (6, 23);--peças/cadastro peça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 6);--produção/peça
 INSERT INTO Submenu (id_menu_pai, id_menu_filho) VALUES (4, 24);--cadastra item peça
