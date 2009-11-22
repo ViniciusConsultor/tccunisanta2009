@@ -212,7 +212,7 @@
             this.cboEstado.Location = new System.Drawing.Point(130, 11);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(65, 21);
-            this.cboEstado.TabIndex = 3;
+            this.cboEstado.TabIndex = 4;
             // 
             // btnVolta
             // 
@@ -392,7 +392,7 @@
             this.rdbOutros.Location = new System.Drawing.Point(41, 33);
             this.rdbOutros.Name = "rdbOutros";
             this.rdbOutros.Size = new System.Drawing.Size(56, 17);
-            this.rdbOutros.TabIndex = 4;
+            this.rdbOutros.TabIndex = 3;
             this.rdbOutros.Text = "Outros";
             this.rdbOutros.UseVisualStyleBackColor = true;
             this.rdbOutros.CheckedChanged += new System.EventHandler(this.rdbOutros_CheckedChanged);
