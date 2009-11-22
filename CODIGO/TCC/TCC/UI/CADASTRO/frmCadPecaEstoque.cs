@@ -72,6 +72,7 @@ namespace TCC.UI
         #region btnBuscaPeca Click
         private void btnBuscaPeca_Click(object sender, EventArgs e)
         {
+            this.btnLimpa_Click(null, null);
             this._modelPeca = new mPeca();
             frmBuscaPeca objForm = new frmBuscaPeca(this._modelPeca);
             try
@@ -385,7 +386,7 @@ namespace TCC.UI
                         idEstoqueBanco = Convert.ToInt32(dtPecaEstoqueBanco.Rows[linhaBanco]["id_estoq"]);
                         if (idEstoqueBanco == idEstoqueTela)
                         {
-                            drLinha["qtd_peca"] = dtPecaEstoqueBanco.Rows[linhaBanco]["Quantidade da peça"];
+                            drLinha["qtd_peca"] = dtPecaEstoqueBanco.Rows[linhaBanco]["qtd_peca"];
                             continue;
                         }
                     }
@@ -458,6 +459,5 @@ namespace TCC.UI
         #endregion Atualiza Grid
 
         #endregion Metodos
-
     }
 }

@@ -47,6 +47,78 @@ namespace TCC.BUSINESS
             }
         }
 
+        private void ValidaDados(mFornecedor model)
+        {
+            if (model.Cnpj == null)
+            {
+                if (this.ExisteCnpj(model.Cnpj) == true)
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private bool ExisteIdentInter(string identInter)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@ident_inter", identInter);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
+            }
+        }
+
+        private bool ExisteCnpj(string cnpj)
+        {
+            DataTable dt = null;
+            SqlParameter param = null;
+            try
+            {
+                param = new SqlParameter("@cnpj", cnpj);
+                dt = base.BuscaDados("sp_existe_fornecedor_cnpj", param);
+
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) >= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dt != null)
+                {
+                    dt.Dispose();
+                    dt = null;
+                }
+                param = null;
+            }
+        }
+
         public override void ValidarInsere(ModelPai model)
         {
             base.Insere(model);
