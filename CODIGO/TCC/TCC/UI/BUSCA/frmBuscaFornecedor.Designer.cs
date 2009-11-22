@@ -38,6 +38,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.hid_forn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedor)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.dgFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hid_forn,
+            this.hPais,
             this.hnom});
             this.dgFornecedor.Location = new System.Drawing.Point(16, 42);
             this.dgFornecedor.MultiSelect = false;
@@ -146,9 +148,17 @@
             this.hid_forn.Visible = false;
             this.hid_forn.Width = 21;
             // 
+            // hPais
+            // 
+            this.hPais.DataPropertyName = "nom_pais";
+            this.hPais.HeaderText = "Pais";
+            this.hPais.Name = "hPais";
+            this.hPais.ReadOnly = true;
+            this.hPais.Width = 52;
+            // 
             // hnom
             // 
-            this.hnom.DataPropertyName = "Fornecedor";
+            this.hnom.DataPropertyName = "nom";
             this.hnom.HeaderText = "Fornecedor";
             this.hnom.Name = "hnom";
             this.hnom.ReadOnly = true;
@@ -191,6 +201,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hid_forn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hPais;
         private System.Windows.Forms.DataGridViewTextBoxColumn hnom;
     }
 }

@@ -41,9 +41,12 @@ namespace TCC.UI
                     {
                         DataGridView grid = (DataGridView)controle;
                         DataTable dt = (DataTable)grid.DataSource;
-                        dt.Rows.Clear();
-                        grid.DataSource = dt;
-                        dt = null;
+                        if (dt != null)
+                        {
+                            dt.Rows.Clear();
+                            grid.DataSource = dt;
+                            dt = null;
+                        }
                     }
                     else if (tipo.Equals(new GroupBox().GetType()) == true)
                     {
