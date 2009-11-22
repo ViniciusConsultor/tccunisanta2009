@@ -48,9 +48,9 @@
             // 
             this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Location = new System.Drawing.Point(7, 128);
+            this.btnVoltar.Location = new System.Drawing.Point(2, 75);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(40, 35);
+            this.btnVoltar.Size = new System.Drawing.Size(27, 23);
             this.btnVoltar.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -60,10 +60,10 @@
             // 
             this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Location = new System.Drawing.Point(7, 47);
+            this.btnLimpar.Location = new System.Drawing.Point(2, 25);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpar.TabIndex = 7;
+            this.btnLimpar.Size = new System.Drawing.Size(27, 23);
+            this.btnLimpar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -72,10 +72,10 @@
             // 
             this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceitar.Location = new System.Drawing.Point(7, 6);
+            this.btnAceitar.Location = new System.Drawing.Point(2, 1);
             this.btnAceitar.Name = "btnAceitar";
-            this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 6;
+            this.btnAceitar.Size = new System.Drawing.Size(27, 23);
+            this.btnAceitar.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -84,10 +84,10 @@
             // 
             this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
+            this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 49);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
-            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 24;
+            this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -106,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 16);
+            this.label1.Location = new System.Drawing.Point(53, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 36;
@@ -116,10 +116,10 @@
             // 
             this.rdbFamMotor.AutoSize = true;
             this.rdbFamMotor.Checked = true;
-            this.rdbFamMotor.Location = new System.Drawing.Point(111, 33);
+            this.rdbFamMotor.Location = new System.Drawing.Point(56, 36);
             this.rdbFamMotor.Name = "rdbFamMotor";
             this.rdbFamMotor.Size = new System.Drawing.Size(102, 17);
-            this.rdbFamMotor.TabIndex = 2;
+            this.rdbFamMotor.TabIndex = 1;
             this.rdbFamMotor.TabStop = true;
             this.rdbFamMotor.Text = "Familia de Motor";
             this.rdbFamMotor.UseVisualStyleBackColor = true;
@@ -127,10 +127,10 @@
             // rdbKit
             // 
             this.rdbKit.AutoSize = true;
-            this.rdbKit.Location = new System.Drawing.Point(219, 33);
+            this.rdbKit.Location = new System.Drawing.Point(164, 36);
             this.rdbKit.Name = "rdbKit";
             this.rdbKit.Size = new System.Drawing.Size(85, 17);
-            this.rdbKit.TabIndex = 3;
+            this.rdbKit.TabIndex = 2;
             this.rdbKit.Text = "Kit de Peças";
             this.rdbKit.UseVisualStyleBackColor = true;
             // 
@@ -138,28 +138,28 @@
             // 
             this.txtFiltroBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroBusca.Enabled = false;
-            this.txtFiltroBusca.Location = new System.Drawing.Point(111, 62);
+            this.txtFiltroBusca.Location = new System.Drawing.Point(56, 65);
             this.txtFiltroBusca.MaxLength = 25;
             this.txtFiltroBusca.Name = "txtFiltroBusca";
             this.txtFiltroBusca.Size = new System.Drawing.Size(262, 20);
-            this.txtFiltroBusca.TabIndex = 4;
+            this.txtFiltroBusca.TabIndex = 3;
             this.txtFiltroBusca.TabStop = false;
             this.txtFiltroBusca.TextChanged += new System.EventHandler(this.txtFiltroBusca_TextChanged);
             // 
             // txtDescProduto
             // 
             this.txtDescProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescProduto.Location = new System.Drawing.Point(111, 137);
+            this.txtDescProduto.Location = new System.Drawing.Point(56, 137);
             this.txtDescProduto.MaxLength = 500;
             this.txtDescProduto.Multiline = true;
             this.txtDescProduto.Name = "txtDescProduto";
-            this.txtDescProduto.Size = new System.Drawing.Size(419, 43);
-            this.txtDescProduto.TabIndex = 39;
+            this.txtDescProduto.Size = new System.Drawing.Size(262, 43);
+            this.txtDescProduto.TabIndex = 4;
             // 
             // lblDs
             // 
             this.lblDs.AutoSize = true;
-            this.lblDs.Location = new System.Drawing.Point(108, 121);
+            this.lblDs.Location = new System.Drawing.Point(53, 121);
             this.lblDs.Name = "lblDs";
             this.lblDs.Size = new System.Drawing.Size(55, 13);
             this.lblDs.TabIndex = 40;
@@ -171,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TCC.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 368);
+            this.ClientSize = new System.Drawing.Size(340, 220);
             this.ControlBox = false;
             this.Controls.Add(this.txtDescProduto);
             this.Controls.Add(this.lblDs);
