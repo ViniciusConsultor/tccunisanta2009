@@ -116,7 +116,7 @@ namespace TCC.UI
                             dvc = this.dgCliente["hNome", this.dgCliente.CurrentRow.Index];
                             this._model.NomeCliente = dvc.Value.ToString();
                             dvc = this.dgCliente["hEmail", this.dgCliente.CurrentRow.Index];
-                            this._model.NomeCliente = dvc.Value.ToString();
+                            this._model.Email = dvc.Value.ToString();
                         }
                         else
                         {

@@ -50,6 +50,10 @@
             this.gbBuscaKit = new System.Windows.Forms.GroupBox();
             this.txtQtdKit = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgKits = new System.Windows.Forms.DataGridView();
+            this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdKit = new System.Windows.Forms.Label();
             this.lblNmItem = new System.Windows.Forms.Label();
@@ -65,12 +69,8 @@
             this.lblMotorCompra = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.txtCodigoFamMotor = new System.Windows.Forms.TextBox();
             this.lblCodigoFamMotor = new System.Windows.Forms.Label();
-            this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCodigoFamiliaMotor = new System.Windows.Forms.Label();
             this.gbBuscaKit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKits)).BeginInit();
             this.gbMotor.SuspendLayout();
@@ -308,6 +308,43 @@
             this.dgKits.TabIndex = 0;
             this.dgKits.SelectionChanged += new System.EventHandler(this.dgKits_SelectionChanged);
             // 
+            // hIdKit
+            // 
+            this.hIdKit.DataPropertyName = "id_kit";
+            this.hIdKit.HeaderText = "IdKit";
+            this.hIdKit.Name = "hIdKit";
+            this.hIdKit.ReadOnly = true;
+            this.hIdKit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdKit.Visible = false;
+            this.hIdKit.Width = 34;
+            // 
+            // hCodigo
+            // 
+            this.hCodigo.DataPropertyName = "id_kit_real";
+            this.hCodigo.HeaderText = "Codigo";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hCodigo.Width = 44;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "nom";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 39;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "Qtd";
+            this.hQtd.HeaderText = "Qtd";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hQtd.Width = 28;
+            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -390,17 +427,17 @@
             // 
             this.txtNumeroMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumeroMotor.Enabled = false;
-            this.txtNumeroMotor.Location = new System.Drawing.Point(357, 11);
+            this.txtNumeroMotor.Location = new System.Drawing.Point(324, 11);
             this.txtNumeroMotor.Name = "txtNumeroMotor";
             this.txtNumeroMotor.ReadOnly = true;
-            this.txtNumeroMotor.Size = new System.Drawing.Size(105, 20);
+            this.txtNumeroMotor.Size = new System.Drawing.Size(138, 20);
             this.txtNumeroMotor.TabIndex = 36;
             this.txtNumeroMotor.TabStop = false;
             // 
             // lblNumeroMotor
             // 
             this.lblNumeroMotor.AutoSize = true;
-            this.lblNumeroMotor.Location = new System.Drawing.Point(259, 16);
+            this.lblNumeroMotor.Location = new System.Drawing.Point(235, 15);
             this.lblNumeroMotor.Name = "lblNumeroMotor";
             this.lblNumeroMotor.Size = new System.Drawing.Size(92, 13);
             this.lblNumeroMotor.TabIndex = 38;
@@ -410,17 +447,17 @@
             // 
             this.txtTipoMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTipoMotor.Enabled = false;
-            this.txtTipoMotor.Location = new System.Drawing.Point(357, 37);
+            this.txtTipoMotor.Location = new System.Drawing.Point(324, 37);
             this.txtTipoMotor.Name = "txtTipoMotor";
             this.txtTipoMotor.ReadOnly = true;
-            this.txtTipoMotor.Size = new System.Drawing.Size(105, 20);
+            this.txtTipoMotor.Size = new System.Drawing.Size(138, 20);
             this.txtTipoMotor.TabIndex = 0;
             this.txtTipoMotor.TabStop = false;
             // 
             // lblTipoMotor
             // 
             this.lblTipoMotor.AutoSize = true;
-            this.lblTipoMotor.Location = new System.Drawing.Point(259, 45);
+            this.lblTipoMotor.Location = new System.Drawing.Point(235, 44);
             this.lblTipoMotor.Name = "lblTipoMotor";
             this.lblTipoMotor.Size = new System.Drawing.Size(73, 13);
             this.lblTipoMotor.TabIndex = 34;
@@ -467,62 +504,22 @@
             this.lblEstoque.TabIndex = 25;
             this.lblEstoque.Text = "Estoque";
             // 
-            // txtCodigoFamMotor
-            // 
-            this.txtCodigoFamMotor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoFamMotor.Location = new System.Drawing.Point(187, 5);
-            this.txtCodigoFamMotor.MaxLength = 500;
-            this.txtCodigoFamMotor.Name = "txtCodigoFamMotor";
-            this.txtCodigoFamMotor.ReadOnly = true;
-            this.txtCodigoFamMotor.Size = new System.Drawing.Size(246, 20);
-            this.txtCodigoFamMotor.TabIndex = 0;
-            this.txtCodigoFamMotor.TabStop = false;
-            // 
             // lblCodigoFamMotor
             // 
             this.lblCodigoFamMotor.AutoSize = true;
             this.lblCodigoFamMotor.Location = new System.Drawing.Point(76, 7);
             this.lblCodigoFamMotor.Name = "lblCodigoFamMotor";
-            this.lblCodigoFamMotor.Size = new System.Drawing.Size(105, 13);
+            this.lblCodigoFamMotor.Size = new System.Drawing.Size(108, 13);
             this.lblCodigoFamMotor.TabIndex = 26;
-            this.lblCodigoFamMotor.Text = "Codigo Familia Motor";
+            this.lblCodigoFamMotor.Text = "Codigo Familia Motor:";
             // 
-            // hIdKit
+            // lblCodigoFamiliaMotor
             // 
-            this.hIdKit.DataPropertyName = "id_kit";
-            this.hIdKit.HeaderText = "IdKit";
-            this.hIdKit.Name = "hIdKit";
-            this.hIdKit.ReadOnly = true;
-            this.hIdKit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hIdKit.Visible = false;
-            this.hIdKit.Width = 34;
-            // 
-            // hCodigo
-            // 
-            this.hCodigo.DataPropertyName = "id_kit_real";
-            this.hCodigo.HeaderText = "Codigo";
-            this.hCodigo.Name = "hCodigo";
-            this.hCodigo.ReadOnly = true;
-            this.hCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hCodigo.Width = 46;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "nom";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hNome.Width = 41;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "Qtd";
-            this.hQtd.HeaderText = "Qtd";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQtd.Width = 30;
+            this.lblCodigoFamiliaMotor.AutoSize = true;
+            this.lblCodigoFamiliaMotor.Location = new System.Drawing.Point(185, 7);
+            this.lblCodigoFamiliaMotor.Name = "lblCodigoFamiliaMotor";
+            this.lblCodigoFamiliaMotor.Size = new System.Drawing.Size(0, 13);
+            this.lblCodigoFamiliaMotor.TabIndex = 27;
             // 
             // frmCadFamiliaMotor
             // 
@@ -532,7 +529,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
-            this.Controls.Add(this.txtCodigoFamMotor);
+            this.Controls.Add(this.lblCodigoFamiliaMotor);
             this.Controls.Add(this.lblCodigoFamMotor);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnBuscaEstoque);
@@ -594,11 +591,11 @@
         private System.Windows.Forms.Label lblNumeroMotor;
         private Controles.MegaTextBox.MegaTextBox txtQtdKit;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private System.Windows.Forms.TextBox txtCodigoFamMotor;
         private System.Windows.Forms.Label lblCodigoFamMotor;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdKit;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
+        private System.Windows.Forms.Label lblCodigoFamiliaMotor;
     }
 }

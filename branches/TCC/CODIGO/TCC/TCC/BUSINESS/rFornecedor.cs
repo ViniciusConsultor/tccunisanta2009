@@ -89,18 +89,21 @@ namespace TCC.BUSINESS
             }
         }*/
 
-        private void ValidaDados(mFornecedor model)
+        public void ValidaDados(mFornecedor model)
         {
-            if (model.Cnpj == null)
+            if (model.Cnpj != null)
             {
                 if (this.ExisteCnpj(model.Cnpj) == true)
                 {
-
+                    throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
                 }
             }
             else
             {
-
+                if (this.ExisteIdentInter(model.IdentInter) == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException();
+                }
             }
         }
 
@@ -111,7 +114,16 @@ namespace TCC.BUSINESS
             try
             {
                 param = new SqlParameter("@ident_inter", identInter);
-                return true;
+                dt = base.BuscaDados("sp_existe_fornecedor_ident_inter", param);
+
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) >= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {

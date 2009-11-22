@@ -115,9 +115,11 @@ namespace TCC.UI
             rVenda regra = new rVenda();
             DataTable dt = new DataTable();
 
+            string data = this.txtDataVenda.Text;
+            string cliente = this.txtNomeCliente.Text;
             try
             {
-                dt = regra.buscaVenda();
+                dt = regra.buscaVenda(data, cliente);
                 dgVenda.DataSource = dt;
                 dgVenda.Columns[0].Visible = true;
 
@@ -150,6 +152,7 @@ namespace TCC.UI
                             this._model.IdVenda = Convert.ToInt32(dvc.Value);
                             dvc = this.dgVenda["Data", this.dgVenda.CurrentRow.Index];
                             this._model.DatVenda = Convert.ToDateTime(dvc.Value);
+
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
@@ -238,6 +241,5 @@ namespace TCC.UI
             }
         }
         #endregion
-
     }
 }

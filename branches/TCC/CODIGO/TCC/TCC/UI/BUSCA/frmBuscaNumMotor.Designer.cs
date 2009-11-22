@@ -38,7 +38,8 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.hid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hdsc_num_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescNumMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgNumMotor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +86,8 @@
             this.dgNumMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgNumMotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hid,
-            this.hdsc_num_motor});
+            this.hCodigo,
+            this.hDescNumMotor});
             this.dgNumMotor.Location = new System.Drawing.Point(15, 42);
             this.dgNumMotor.MultiSelect = false;
             this.dgNumMotor.Name = "dgNumMotor";
@@ -138,20 +140,30 @@
             // 
             // hid
             // 
-            this.hid.HeaderText = "id";
+            this.hid.DataPropertyName = "id_num_motor";
+            this.hid.HeaderText = "Id";
             this.hid.Name = "hid";
             this.hid.ReadOnly = true;
             this.hid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hid.Visible = false;
-            this.hid.Width = 21;
+            this.hid.Width = 20;
             // 
-            // hdsc_num_motor
+            // hCodigo
             // 
-            this.hdsc_num_motor.HeaderText = "Descrição";
-            this.hdsc_num_motor.Name = "hdsc_num_motor";
-            this.hdsc_num_motor.ReadOnly = true;
-            this.hdsc_num_motor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hdsc_num_motor.Width = 61;
+            this.hCodigo.DataPropertyName = "id_num_motor_real";
+            this.hCodigo.HeaderText = "Código";
+            this.hCodigo.Name = "hCodigo";
+            this.hCodigo.ReadOnly = true;
+            this.hCodigo.Width = 63;
+            // 
+            // hDescNumMotor
+            // 
+            this.hDescNumMotor.DataPropertyName = "dsc_num_motor";
+            this.hDescNumMotor.HeaderText = "Descrição";
+            this.hDescNumMotor.Name = "hDescNumMotor";
+            this.hDescNumMotor.ReadOnly = true;
+            this.hDescNumMotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hDescNumMotor.Width = 59;
             // 
             // frmBuscaNumMotor
             // 
@@ -189,6 +201,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hdsc_num_motor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hDescNumMotor;
     }
 }

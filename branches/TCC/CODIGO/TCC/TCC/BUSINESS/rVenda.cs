@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,20 +11,21 @@ namespace TCC.BUSINESS
     class rVenda : ComandosSql
     {
 
-        public DataTable buscaVenda()
+        public DataTable buscaVenda(string data, string cliente)
         {
-            //SqlParameter param = null;
+            SqlParameter[] parametros = null;
             try
             {
-            /*    if (string.IsNullOrEmpty(venda) == true)
-                */    {
+                if (string.IsNullOrEmpty(data) == true && string.IsNullOrEmpty(cliente) == true)
+                    {
                     return base.BuscaDados("sp_busca_venda");
                 }
-            /*    else
+                else
                 {
-                    param = new SqlParameter("@id_venda", nomeCliente);
-                    return base.BuscaDados("sp_busca_venda_param", param);
-                }*/
+                    parametros[0] = new SqlParameter("@dat_venda", data);
+                    parametros[1] = new SqlParameter("@nom_cli", cliente);
+                    return base.BuscaDados("sp_busca_venda_param", parametros);
+                }
             }
             catch (Exception ex)
             {
@@ -33,7 +33,7 @@ namespace TCC.BUSINESS
             }
             finally
             {
-             //   param = null;
+                parametros = null;
             }
         }
 

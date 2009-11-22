@@ -105,9 +105,8 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtNumeroMotor.Text = this._modelNumeroMotor.Dsc_num_motor;
-                    this.txtCodigoFamMotor.Text = this.txtNumeroMotor.Text;
-                    this.txtCodigoFamMotor.Text += this.txtTipoMotor.Text;
+                    this.txtNumeroMotor.Text = this._modelNumeroMotor.IdNumMotorReal + " - " + this._modelNumeroMotor.Dsc_num_motor;
+                    this.lblCodigoFamiliaMotor.Text = this._modelNumeroMotor.IdNumMotorReal;
                 }
             }
             catch (Exception ex)
@@ -163,9 +162,8 @@ namespace TCC.UI
                 }
                 else
                 {
-                    this.txtTipoMotor.Text = this._modelTipoMotor.DscTipoMotor;
-                    this.txtCodigoFamMotor.Text = this.txtNumeroMotor.Text;
-                    this.txtCodigoFamMotor.Text += this.txtTipoMotor.Text;
+                    this.txtTipoMotor.Text = this._modelTipoMotor.IdTipoMotorReal + " - " + this._modelTipoMotor.DscTipoMotor;
+                    this.lblCodigoFamiliaMotor.Text += this._modelTipoMotor.IdTipoMotorReal;
                 }
             }
             catch (Exception ex)
@@ -231,7 +229,7 @@ namespace TCC.UI
         /// </summary>
         private void AbreTelaResumo()
         {
-            string nomeFamMotor=this.txtNumeroMotor.Text+this.txtTipoMotor.Text;
+            string nomeFamMotor = this._modelNumeroMotor.IdNumMotorReal + this._modelTipoMotor.IdTipoMotorReal;
             string nomeMotor=this.txtMotorCompra.Text;
 
             Resumo.frmResumoKitFamilia ResumoKit = new TCC.UI.Resumo.frmResumoKitFamilia(this._listaKitFamilia,nomeFamMotor,nomeMotor);
@@ -355,7 +353,7 @@ namespace TCC.UI
             try
             {
                 model.IdFamiliaMotor = regra.BuscaIdMaximo();
-                string idFamReal = this.txtNumeroMotor.Text + this.txtTipoMotor.Text;
+                string idFamReal = this._modelNumeroMotor.IdNumMotorReal + this._modelTipoMotor.IdTipoMotorReal;
                 model.Id_fam_motor_real = idFamReal;
                 model.DscFamiliaMotor = this.txtDsMotor.Text;
                 model.FlgAtivo = true;

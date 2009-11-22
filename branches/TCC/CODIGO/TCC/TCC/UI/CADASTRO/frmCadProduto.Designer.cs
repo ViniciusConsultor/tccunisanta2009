@@ -36,12 +36,12 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
-            this.txtDescProduto = new System.Windows.Forms.TextBox();
-            this.lblDs = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rdbFamMotor = new System.Windows.Forms.RadioButton();
             this.rdbKit = new System.Windows.Forms.RadioButton();
             this.txtFiltroBusca = new System.Windows.Forms.TextBox();
+            this.txtDescProduto = new System.Windows.Forms.TextBox();
+            this.lblDs = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -95,7 +95,7 @@
             // 
             this.btnBuscarProduto.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarProduto.Location = new System.Drawing.Point(382, 141);
+            this.btnBuscarProduto.Location = new System.Drawing.Point(379, 60);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarProduto.TabIndex = 38;
@@ -103,29 +103,10 @@
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
             this.btnBuscarProduto.Click += new System.EventHandler(this.btnBuscarProduto_Click);
             // 
-            // txtDescProduto
-            // 
-            this.txtDescProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescProduto.Location = new System.Drawing.Point(114, 29);
-            this.txtDescProduto.MaxLength = 500;
-            this.txtDescProduto.Multiline = true;
-            this.txtDescProduto.Name = "txtDescProduto";
-            this.txtDescProduto.Size = new System.Drawing.Size(419, 43);
-            this.txtDescProduto.TabIndex = 1;
-            // 
-            // lblDs
-            // 
-            this.lblDs.AutoSize = true;
-            this.lblDs.Location = new System.Drawing.Point(111, 13);
-            this.lblDs.Name = "lblDs";
-            this.lblDs.Size = new System.Drawing.Size(55, 13);
-            this.lblDs.TabIndex = 26;
-            this.lblDs.Text = "Descrição";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 97);
+            this.label1.Location = new System.Drawing.Point(108, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 36;
@@ -135,7 +116,7 @@
             // 
             this.rdbFamMotor.AutoSize = true;
             this.rdbFamMotor.Checked = true;
-            this.rdbFamMotor.Location = new System.Drawing.Point(114, 114);
+            this.rdbFamMotor.Location = new System.Drawing.Point(111, 33);
             this.rdbFamMotor.Name = "rdbFamMotor";
             this.rdbFamMotor.Size = new System.Drawing.Size(102, 17);
             this.rdbFamMotor.TabIndex = 2;
@@ -146,7 +127,7 @@
             // rdbKit
             // 
             this.rdbKit.AutoSize = true;
-            this.rdbKit.Location = new System.Drawing.Point(222, 114);
+            this.rdbKit.Location = new System.Drawing.Point(219, 33);
             this.rdbKit.Name = "rdbKit";
             this.rdbKit.Size = new System.Drawing.Size(85, 17);
             this.rdbKit.TabIndex = 3;
@@ -157,12 +138,32 @@
             // 
             this.txtFiltroBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroBusca.Enabled = false;
-            this.txtFiltroBusca.Location = new System.Drawing.Point(114, 143);
+            this.txtFiltroBusca.Location = new System.Drawing.Point(111, 62);
             this.txtFiltroBusca.MaxLength = 25;
             this.txtFiltroBusca.Name = "txtFiltroBusca";
             this.txtFiltroBusca.Size = new System.Drawing.Size(262, 20);
             this.txtFiltroBusca.TabIndex = 4;
             this.txtFiltroBusca.TabStop = false;
+            this.txtFiltroBusca.TextChanged += new System.EventHandler(this.txtFiltroBusca_TextChanged);
+            // 
+            // txtDescProduto
+            // 
+            this.txtDescProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescProduto.Location = new System.Drawing.Point(111, 137);
+            this.txtDescProduto.MaxLength = 500;
+            this.txtDescProduto.Multiline = true;
+            this.txtDescProduto.Name = "txtDescProduto";
+            this.txtDescProduto.Size = new System.Drawing.Size(419, 43);
+            this.txtDescProduto.TabIndex = 39;
+            // 
+            // lblDs
+            // 
+            this.lblDs.AutoSize = true;
+            this.lblDs.Location = new System.Drawing.Point(108, 121);
+            this.lblDs.Name = "lblDs";
+            this.lblDs.Size = new System.Drawing.Size(55, 13);
+            this.lblDs.TabIndex = 40;
+            this.lblDs.Text = "Descrição";
             // 
             // frmCadProduto
             // 
@@ -172,13 +173,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDescProduto);
+            this.Controls.Add(this.lblDs);
             this.Controls.Add(this.txtFiltroBusca);
             this.Controls.Add(this.btnBuscarProduto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rdbFamMotor);
             this.Controls.Add(this.rdbKit);
-            this.Controls.Add(this.txtDescProduto);
-            this.Controls.Add(this.lblDs);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
@@ -200,12 +201,12 @@
         private System.Windows.Forms.Button btnAceitar;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private System.Windows.Forms.TextBox txtDescProduto;
-        private System.Windows.Forms.Label lblDs;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdbFamMotor;
         private System.Windows.Forms.RadioButton rdbKit;
         private System.Windows.Forms.TextBox txtFiltroBusca;
         private System.Windows.Forms.Button btnBuscarProduto;
+        private System.Windows.Forms.TextBox txtDescProduto;
+        private System.Windows.Forms.Label lblDs;
     }
 }
