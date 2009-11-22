@@ -139,7 +139,7 @@
             // 
             this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(507, 111);
+            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(507, 76);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
             this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarItemDtGrid.TabIndex = 40;
@@ -151,7 +151,7 @@
             // 
             this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(507, 72);
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(507, 114);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaFornecedor.TabIndex = 41;
@@ -162,7 +162,7 @@
             // rdbMotor
             // 
             this.rdbMotor.AutoSize = true;
-            this.rdbMotor.Location = new System.Drawing.Point(174, 114);
+            this.rdbMotor.Location = new System.Drawing.Point(367, 57);
             this.rdbMotor.Name = "rdbMotor";
             this.rdbMotor.Size = new System.Drawing.Size(52, 17);
             this.rdbMotor.TabIndex = 4;
@@ -173,7 +173,7 @@
             // 
             this.rdbPeca.AutoSize = true;
             this.rdbPeca.Checked = true;
-            this.rdbPeca.Location = new System.Drawing.Point(118, 114);
+            this.rdbPeca.Location = new System.Drawing.Point(311, 57);
             this.rdbPeca.Name = "rdbPeca";
             this.rdbPeca.Size = new System.Drawing.Size(50, 17);
             this.rdbPeca.TabIndex = 3;
@@ -282,17 +282,17 @@
             // txtFornecedor
             // 
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFornecedor.Location = new System.Drawing.Point(333, 75);
+            this.txtFornecedor.Location = new System.Drawing.Point(311, 117);
             this.txtFornecedor.Multiline = true;
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.ReadOnly = true;
-            this.txtFornecedor.Size = new System.Drawing.Size(168, 21);
+            this.txtFornecedor.Size = new System.Drawing.Size(190, 21);
             this.txtFornecedor.TabIndex = 36;
             // 
             // lblFornecedor
             // 
             this.lblFornecedor.AutoSize = true;
-            this.lblFornecedor.Location = new System.Drawing.Point(330, 59);
+            this.lblFornecedor.Location = new System.Drawing.Point(308, 101);
             this.lblFornecedor.Name = "lblFornecedor";
             this.lblFornecedor.Size = new System.Drawing.Size(61, 13);
             this.lblFornecedor.TabIndex = 35;
@@ -338,11 +338,11 @@
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(232, 111);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(311, 76);
             this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.ReadOnly = true;
-            this.txtBuscaFiltro.Size = new System.Drawing.Size(269, 20);
+            this.txtBuscaFiltro.Size = new System.Drawing.Size(190, 20);
             this.txtBuscaFiltro.TabIndex = 39;
             // 
             // frmCadCompra

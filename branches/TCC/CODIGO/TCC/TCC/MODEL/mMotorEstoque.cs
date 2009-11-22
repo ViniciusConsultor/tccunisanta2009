@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mMotorEstoque
+    class mMotorEstoque : ModelPai
     {
         private int id_estoq;
         private int id_motorint;
@@ -50,9 +50,10 @@ namespace TCC.MODEL
             get { return flg_ativo; }
             set { flg_ativo = value; }
         }
+
         public override string getNomeTabela()
         {
-            return this.nometabela;
+            return nometabela;
         }
     }
 }
