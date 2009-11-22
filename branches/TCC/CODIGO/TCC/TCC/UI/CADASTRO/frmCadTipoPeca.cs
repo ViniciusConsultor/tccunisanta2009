@@ -113,16 +113,16 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 this.LimparCampos();
                 this.btnAceitar.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.TipoPeca.TipoPecaExistenteException)
             {
-                MessageBox.Show("tipo de Peça já cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Tipo de Peça já cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
             }
             catch (BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption)
             {
-                MessageBox.Show("Preencher o campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
             }
             catch (Exception ex)

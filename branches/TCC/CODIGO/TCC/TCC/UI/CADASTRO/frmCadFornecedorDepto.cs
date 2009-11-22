@@ -138,7 +138,7 @@ namespace TCC.UI.CADASTRO
                     }
                     this.btnLimpa_Click(null, null);
                     this.btnConfirma.Enabled = false;
-                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
@@ -148,12 +148,12 @@ namespace TCC.UI.CADASTRO
             }
             catch (BUSINESS.Exceptions.FornecedorDepto.FornecedorVazioException)
             {
-                MessageBox.Show("É necessário buscar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaFornecedor.Focus();
             }
             catch (BUSINESS.Exceptions.FornecedorDepto.DepartamentoNaoEscolhidoException)
             {
-                MessageBox.Show("É necessário selecionar ao menos um departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Selecionar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarDepartamentoDtGrid.Focus();
             }
             catch (Exception ex)

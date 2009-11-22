@@ -131,7 +131,7 @@ namespace TCC.UI.CADASTRO
                     }
                     this.btnLimpa_Click(null, null);
                     this.btnConfirma.Enabled = false;
-                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
@@ -141,12 +141,12 @@ namespace TCC.UI.CADASTRO
             }
             catch (BUSINESS.Exceptions.MotorFornecedor.MotorVazioException)
             {
-                MessageBox.Show("É necessário buscar um Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar um Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaMotor.Focus();
             }
             catch (BUSINESS.Exceptions.MotorFornecedor.FornecedorNaoEscolhidoException)
             {
-                MessageBox.Show("É necessário selecionar ao menos um fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Selecionar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarFornecedorDtGrid.Focus();
             }
             catch (Exception ex)

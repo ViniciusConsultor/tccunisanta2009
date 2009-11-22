@@ -135,17 +135,17 @@ namespace TCC.UI
                     }
                     this.btnLimpa_Click(null, null);
                     this.btnConfirma.Enabled = false;
-                    MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (BUSINESS.Exceptions.PecaFornecedor.PecaVazioException)
             {
-                MessageBox.Show("É necessário buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPeca.Focus();
             }
             catch (BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException)
             {
-                MessageBox.Show("É necessário selecionar ao menos um fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Selecionar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarFornecedorDtGrid.Focus();
             }
             catch (Exception ex)

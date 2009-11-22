@@ -69,21 +69,21 @@ namespace TCC.UI
                 regra.ValidarInsere(model);
                 base.LimpaDadosTela(this);
                 this.btnAceitar.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.TipoMotor.CodigoTipoMotorExistenteException)
             {
-                MessageBox.Show("Código do Tipo do Motor já existente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Código do Tipo do Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdReal.Focus();
             }
             catch (BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption)
             {
-                MessageBox.Show("É necessário informar o código do Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Informar o código do Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdReal.Focus();
             }
             catch (BUSINESS.Exceptions.TipoMotor.DescTipoMotorVazioException)
             {
-                MessageBox.Show("É necessário informar uma descrição para o Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Informar Descrição para o Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmTipoMotor.Focus();
             }
             catch (Exception ex)

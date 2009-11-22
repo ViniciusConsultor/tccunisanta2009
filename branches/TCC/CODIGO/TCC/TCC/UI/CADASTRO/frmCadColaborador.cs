@@ -371,7 +371,7 @@ namespace TCC.UI
                     {
                         regraColaborador.ValidarInsere(modelColaborador);
                     }
-                    DialogResult resultado = MessageBox.Show("Deseja associar este funcionário com um usuário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    DialogResult resultado = MessageBox.Show("Deseja associar este Funcionário com um Usuário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (resultado == DialogResult.Yes)
                     {
                         regraUsuario = new rUsuario();
@@ -387,7 +387,7 @@ namespace TCC.UI
                 }
                 this.btnApaga_Click(null, null);
                 this.btnConfirma.Enabled = false;
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
@@ -401,57 +401,57 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
             {
-                MessageBox.Show("Preencher campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCep.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException)
             {
-                MessageBox.Show("Preencher campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataNasc.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.NomeVazioExeption)
             {
-                MessageBox.Show("Preencher campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNome.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.DDDVazioExeption)
             {
-                MessageBox.Show("Preencher campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDD.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.TelefoneVazioExeption)
             {
-                MessageBox.Show("Preencher campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtTelefone.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.RuaVazioExeption)
             {
-                MessageBox.Show("Preencher campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtRua.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.NumeroVazioExeption)
             {
-                MessageBox.Show("Preencher campo Numero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Numero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNumero.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.BairroVazioExeption)
             {
-                MessageBox.Show("Preencher campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtBairro.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.CidadeVazioExeption)
             {
-                MessageBox.Show("Preencher campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCidade.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.RgVazioExeption)
             {
-                MessageBox.Show("Preencher campo RG", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo RG", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtRg.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.CpfVazioExeption)
             {
-                MessageBox.Show("Preencher campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCpf.Focus();
             }
             catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)

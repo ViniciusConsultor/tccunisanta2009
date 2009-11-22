@@ -323,7 +323,7 @@ namespace TCC.UI
                     regra.ValidarInsere(modelPerfilMenu);
                 }
                 this.btnLimpa_Click(null, null);
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 if (this._telaConsulta == true)
                 {
                     this.DialogResult = DialogResult.OK;
@@ -332,12 +332,12 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.PerfilMenu.PerfilVazioException)
             {
-                MessageBox.Show("É necessário buscar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Buscar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarPerfil.Focus();
             }
             catch (BUSINESS.Exceptions.PerfilMenu.MenuNaoEscolhidoException)
             {
-                MessageBox.Show("É necessário selecionar ao menos um menu", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Selecionar um Menu", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {

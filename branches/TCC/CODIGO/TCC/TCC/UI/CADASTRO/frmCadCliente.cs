@@ -242,71 +242,71 @@ namespace TCC.UI
                 this.rdbBrasil.Checked = true;
                 this.txtCPF.Text = "";
                 this.txtCnpj.Text = "";
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.Cliente.NomeClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNome.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.paisVazioException)
             {
-                MessageBox.Show("Preencher o campo País", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo País", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtPais.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.EstadoVazioException)
             {
-                MessageBox.Show("Preencher o campo Estado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Estado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtEstado.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.CidadeClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCidade.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.RuaClieteVazioException)
             {
-                MessageBox.Show("Preencher o campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtRua.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.NroEnderecoClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo Número", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Número", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNumero.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.BairroClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtBairro.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.CEPVazioException)
             {
-                MessageBox.Show("Preencher o campo CEP", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo CEP", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCep.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.CodigoPostalVazioException)
             {
-                MessageBox.Show("Preencher o campo Código Postal", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Código Postal", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodPostal.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException)
             {
-                MessageBox.Show("Preencher algum campo para contato ('DDI, DDD e Telefone' ou 'E-mail')", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher um dos campos para contato ('DDI, DDD e Telefone' ou 'E-mail')", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDI.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.DDIClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo DDI", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo DDI", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDD.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.DDDClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDD.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 if (this.txtTelefone.Visible == true)
                 {
                     this.txtTelefone.Focus();
@@ -318,17 +318,17 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Cliente.EmailClienteVazioException)
             {
-                MessageBox.Show("Preencher o campo e-mail", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo E-mail", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtTelefone.Focus();
             }
             catch (BUSINESS.Exceptions.Cliente.CpfCnpjVazioException)
             {
-                MessageBox.Show("Preencher o CPF ou o CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo CPF ou o CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.rdbPessoaFisica.Checked = true;
             }
             catch (BUSINESS.Exceptions.Cliente.IdentidadeInterVazioException)
             {
-                MessageBox.Show("Preencher o código de Identificação Internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o código de Identificação Internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdentInter.Focus();
             }
             catch (Exception ex)

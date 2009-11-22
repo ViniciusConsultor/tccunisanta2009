@@ -73,17 +73,17 @@ namespace TCC.UI
                 base.LimpaDadosTela(this);
                 this.btnConfirma.Enabled = false;
 
-                MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
 
             }
             catch (BUSINESS.Exceptions.Departamento.NomeDepartamentoExistenteException)
             {
-                MessageBox.Show("Nome do Departamento já cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Nome do Departamento já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNomeDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.Departamento.NomeDepartamentoVazioException)
             {
-                MessageBox.Show("É necessário preencher o campo nome do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Nome do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNomeDepartamento.Focus();
             }
             catch (Exception ex)
