@@ -7,35 +7,35 @@ using TCC.MODEL;
 
 namespace TCC.BUSINESS
 {
-    class rPecaEstoque : ComandosSql
+    class rMotorEstoque : ComandosSql
     {
-        public override void ValidarInsere(TCC.MODEL.ModelPai model)
+        public override void ValidarDeleta(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarAltera(ModelPai model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ValidarInsere(ModelPai model)
         {
             base.Insere(model);
         }
 
-        public override void ValidarDeleta(TCC.MODEL.ModelPai model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ValidarAltera(TCC.MODEL.ModelPai model)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
-        /// Este metodo busca todos os relacionamento entre peca e estoque por peca selecionada
+        /// Este metodo busca todos os relacionamento entre motor e estoque por motor selecionado
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public DataTable BuscaPecaEstoquePorPeca(mPeca model)
+        public DataTable BuscaMotorEstoquePorMotor(mMotor model)
         {
             SqlParameter param = null;
             try
             {
-                param = new SqlParameter("@id_peca", model.IdPeca);
-                return base.BuscaDados("sp_busca_pecaestoqueparampeca", param);
+                param = new SqlParameter("@id_motor", model.IdMotor);
+                return base.BuscaDados("sp_busca_motorestoqueparammotor", param);
             }
             catch (Exception ex)
             {
@@ -47,19 +47,19 @@ namespace TCC.BUSINESS
             }
         }
 
-        public void DeletaPecaEstoqueporPeca(int? idPeca)
+        public void DeletaMotorEstoqueporMotor(int? idMotor)
         {
             SqlParameter param = null;
             try
             {
-                if (idPeca == null)
+                if (idMotor == null)
                 {
                     throw new NotImplementedException();
                 }
                 else
                 {
-                    param = new SqlParameter("@id_peca", idPeca);
-                    base.BuscaDados("sp_delete_pecaestoqueporperfil", param);
+                    param = new SqlParameter("@id_motor", idMotor);
+                    base.BuscaDados("sp_delete_motorestoqueporperfil", param);
                 }
             }
             catch (Exception ex)

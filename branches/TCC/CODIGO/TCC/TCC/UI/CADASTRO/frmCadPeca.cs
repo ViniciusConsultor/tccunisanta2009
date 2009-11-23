@@ -278,7 +278,7 @@ namespace TCC.UI
                         }
                     }
                 }
-                //Verifica se existe itens na lista de peça estoque
+                //Verifica se existe itens na lista de peça fornecedor
                 //-------------------------------------------------
                 if (this._listaPecaFornecedor != null)
                 {

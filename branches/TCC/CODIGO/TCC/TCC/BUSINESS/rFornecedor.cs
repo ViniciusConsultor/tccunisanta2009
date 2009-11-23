@@ -111,6 +111,7 @@ namespace TCC.BUSINESS
         {
             if (model.Cnpj != null)
             {
+                UTIL.Validacoes.ValidaMasked(model.Cnpj, TCC.BUSINESS.UTIL.TipoMasked.cnpj);
                 if (this.ExisteCnpj(model.Cnpj) == true)
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
@@ -122,7 +123,7 @@ namespace TCC.BUSINESS
                 {
                     throw new BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException();
                 }
-            }
+            }            
         }
 
         private bool ExisteIdentInter(string identInter)
@@ -134,7 +135,7 @@ namespace TCC.BUSINESS
                 param = new SqlParameter("@ident_inter", identInter);
                 dt = base.BuscaDados("sp_existe_fornecedor_ident_inter", param);
 
-                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) >= 0)
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
                 {
                     return true;
                 }
@@ -167,7 +168,7 @@ namespace TCC.BUSINESS
                 param = new SqlParameter("@cnpj", cnpj);
                 dt = base.BuscaDados("sp_existe_fornecedor_cnpj", param);
 
-                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) >= 0)
+                if (Convert.ToInt32(dt.Rows[0]["flg_existe"]) > 0)
                 {
                     return true;
                 }

@@ -44,11 +44,11 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.dgEstoques = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.hIdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoques)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,11 @@
             this.lblCdPeca.Size = new System.Drawing.Size(32, 13);
             this.lblCdPeca.TabIndex = 3;
             this.lblCdPeca.Text = "Peça";
+            // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
             // 
             // btnBuscaPeca
             // 
@@ -116,6 +121,7 @@
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
             this.btnBuscaAlteracaoDelecao.TabIndex = 8;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
@@ -127,6 +133,7 @@
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
             this.btnVolta.TabIndex = 9;
+            this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -138,6 +145,7 @@
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
             this.btnLimpa.TabIndex = 7;
+            this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
@@ -149,6 +157,7 @@
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
             this.btnConfirma.TabIndex = 6;
+            this.toolTipLegenda.SetToolTip(this.btnConfirma, "Salvar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
@@ -198,6 +207,34 @@
             this.dgEstoques.TabIndex = 39;
             this.dgEstoques.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEstoques_CellClick);
             // 
+            // hIdEstoque
+            // 
+            this.hIdEstoque.DataPropertyName = "id_estoq";
+            this.hIdEstoque.HeaderText = "IdEstoque";
+            this.hIdEstoque.Name = "hIdEstoque";
+            this.hIdEstoque.ReadOnly = true;
+            this.hIdEstoque.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hIdEstoque.Visible = false;
+            this.hIdEstoque.Width = 61;
+            // 
+            // hNome
+            // 
+            this.hNome.DataPropertyName = "Estoque";
+            this.hNome.HeaderText = "Nome";
+            this.hNome.Name = "hNome";
+            this.hNome.ReadOnly = true;
+            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hNome.Width = 39;
+            // 
+            // hQuantidade
+            // 
+            this.hQuantidade.DataPropertyName = "qtd_peca";
+            this.hQuantidade.HeaderText = "Quantidade";
+            this.hQuantidade.Name = "hQuantidade";
+            this.hQuantidade.ReadOnly = true;
+            this.hQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hQuantidade.Width = 66;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -216,34 +253,6 @@
             this.txtQtde.Size = new System.Drawing.Size(94, 20);
             this.txtQtde.TabIndex = 43;
             this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            // 
-            // hIdEstoque
-            // 
-            this.hIdEstoque.DataPropertyName = "id_estoq";
-            this.hIdEstoque.HeaderText = "IdEstoque";
-            this.hIdEstoque.Name = "hIdEstoque";
-            this.hIdEstoque.ReadOnly = true;
-            this.hIdEstoque.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hIdEstoque.Visible = false;
-            this.hIdEstoque.Width = 61;
-            // 
-            // hNome
-            // 
-            this.hNome.DataPropertyName = "Estoque";
-            this.hNome.HeaderText = "Nome";
-            this.hNome.Name = "hNome";
-            this.hNome.ReadOnly = true;
-            this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hNome.Width = 41;
-            // 
-            // hQuantidade
-            // 
-            this.hQuantidade.DataPropertyName = "qtd_peca";
-            this.hQuantidade.HeaderText = "Quantidade";
-            this.hQuantidade.Name = "hQuantidade";
-            this.hQuantidade.ReadOnly = true;
-            this.hQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQuantidade.Width = 68;
             // 
             // frmCadPecaEstoque
             // 

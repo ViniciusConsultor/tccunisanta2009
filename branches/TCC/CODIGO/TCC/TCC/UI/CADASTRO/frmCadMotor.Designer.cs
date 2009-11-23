@@ -139,6 +139,7 @@
             this.btnRelacioranEstoque.TabIndex = 3;
             this.toolTipLegenda.SetToolTip(this.btnRelacioranEstoque, "Relacionar Estoque");
             this.btnRelacioranEstoque.UseVisualStyleBackColor = true;
+            this.btnRelacioranEstoque.Click += new System.EventHandler(this.btnRelacioranEstoque_Click);
             // 
             // label3
             // 
