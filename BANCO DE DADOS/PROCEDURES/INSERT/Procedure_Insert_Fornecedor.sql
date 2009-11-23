@@ -33,8 +33,6 @@ ELSE IF(@nom='')
    RAISERROR('Informe o nome do fornecedor!',16,1)
 ELSE IF(@cid='')
    RAISERROR('Informe a cidade do fornecedor!',16,1)
-ELSE IF(@cnpj='')
-   RAISERROR('Informe o nº de CNPJ do fornecedor!',16,1)   
 ELSE 
   
 BEGIN

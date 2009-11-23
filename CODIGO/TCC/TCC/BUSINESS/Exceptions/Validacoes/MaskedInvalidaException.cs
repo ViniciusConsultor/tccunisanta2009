@@ -15,7 +15,7 @@ namespace TCC.BUSINESS.Exceptions.Validacoes
 
         public MaskedInvalidaException(BUSINESS.UTIL.TipoMasked TipoMasked)
         {
-            _mensagem = TipoMasked.ToString() + " incompleto";
+            _mensagem = "Campo " + TipoMasked.ToString() + " incompleto";
         }
     }
 }

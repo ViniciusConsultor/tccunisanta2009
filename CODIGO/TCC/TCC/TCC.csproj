@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -167,6 +167,8 @@
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\NomeKitVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\QuantidadeMenorZeroException.cs" />
     <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorEstoque\EstoqueNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorEstoque\MotorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\PecaEstoque\EstoqueNaoEscolhidoException.cs" />
     <Compile Include="BUSINESS\Exceptions\PecaEstoque\PecaVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\PecaFornecedor\FornecedorNaoEscolhidoException.cs" />
@@ -232,6 +234,7 @@
     <Compile Include="BUSINESS\rKitGrupoPeca.cs" />
     <Compile Include="BUSINESS\rMenu.cs" />
     <Compile Include="BUSINESS\rMotor.cs" />
+    <Compile Include="BUSINESS\rMotorEstoque.cs" />
     <Compile Include="BUSINESS\rMotorFornecedor.cs" />
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
     <Compile Include="BUSINESS\rOrdemCompra.cs" />
@@ -972,6 +975,7 @@
     <None Include="Resources\btnNovoUsuario.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\btnFornecedorDepto.png" />
   </ItemGroup>
   <ItemGroup>

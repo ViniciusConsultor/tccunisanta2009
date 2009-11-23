@@ -156,13 +156,14 @@ namespace TCC.UI
                 string cnpj = this.txtCnpj.Text.Replace(".", string.Empty);
                 cnpj = cnpj.Replace("/", string.Empty);
                 cnpj = cnpj.Replace("-", string.Empty);
+                cnpj = cnpj.Replace(" ", string.Empty);
                 if (string.IsNullOrEmpty(cnpj) == true)
                 {
                     model.Cnpj = null;
                 }
                 else
                 {
-                    model.Cnpj = this.txtCnpj.Text;
+                    model.Cnpj = cnpj;
                 }
                 model.DatAtl = DateTime.Now;
                 model.FlgAtivo = true;
