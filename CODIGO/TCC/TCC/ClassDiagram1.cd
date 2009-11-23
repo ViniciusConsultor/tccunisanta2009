@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TCC.UI.frmCadCliente" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CCgUCUIkfTANGBABoACiYRAjoAACAIBjDUyEIpiCBIA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadColaborador" Collapsed="true">
+    <Position X="2.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>SAAcgEEENLiNSAiQARCAoDgCgCQCAIAjGAiIIjCAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadColaborador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadCompra" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>igACEHAElSALwBiIAgCIABADQCAIAAAUAIAQAjAqAQA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadDepartamento" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAEAAACAJSAgQAAGQABADQAAAAQAAEAAAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadDepartamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadEstoque" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CABQQEAAAKABSAAQAACDQBADACAAQAAJAAQAAwCAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadFamiliaMotor" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAVAgEiAYCYJGEmKEASCABALYGQACilEFAUyAhKFkkI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadFamiliaMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadFornecedor" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAwYCUIkNTgtGBoBgAGAYBCCoBBCAMAiDUgAJoCCAIg=</HashCode>
+      <FileName>UI\CADASTRO\frmCadFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmCadfornecedorDepto" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAGAAIyQJAQoAAACCABADAeQAAAgAEIAAAgAhAAI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadFornecedorDepto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadItem" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="TCC.UI.FormPai" ManuallyRouted="true">
+      <Path>
+        <Point X="4" Y="1.13" />
+        <Point X="4" Y="1.45" />
+        <Point X="6.789" Y="1.45" />
+        <Point X="6.789" Y="2.558" />
+        <Point X="9.039" Y="2.558" Type="JumpStart" />
+        <Point X="9.205" Y="2.558" Type="JumpEnd" />
+        <Point X="10" Y="2.558" />
+        <Point X="10" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CAESAEAAQCKJwFmAACKKQHMDAIACDMkAAAAAElACBkM=</HashCode>
+      <FileName>UI\CADASTRO\frmCadItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadKitGrupoPeca" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAFAgwCADTFg4AiSQQBATQSAADkhQBABQBjAKAgI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadKitGrupoPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadMotor" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABTBgIAACAARADQABAQCBQAAAgAgAAIAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmCadMotorFornecedor" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgQAGAAA6AZIBgBAACyABADACAAAAgAEAAwggAAAAI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadMotorFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadNumeroMotor" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="TCC.UI.FormPai" ManuallyRouted="true">
+      <Path>
+        <Point X="4" Y="1.13" />
+        <Point X="4" Y="1.45" />
+        <Point X="6.81" Y="1.45" />
+        <Point X="6.81" Y="2.558" />
+        <Point X="5.122" Y="2.558" />
+        <Point X="5.122" Y="3.558" />
+        <Point X="6" Y="3.558" />
+        <Point X="6" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAiADTAAIAADAABADQAAAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadNumeroMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPeca" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFCgIEGGACAJyBgAAECOEBADQACQACBQUAAADgAAAAQ=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPecaEstoque" Collapsed="true">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SEAJAUIgwiAJARwAEECCABADAAEAQAwAEAoAAgAAAIM=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPecaEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPedidoVenda" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEgACKABTAgYAACAABADQiAIAAIAkAAABACAAIA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPedidoVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPerfil" Collapsed="true">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAJWAgAAACAARBDQAAAAAAAEABAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPerfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadProduto" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAkAAACABTBgYEACAABADQAAAgAAQAIAAAgAQAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadTipoMotor" Collapsed="true">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgEAAAiABTAgIAACAABAHYAAAAAAAAAAACgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadTipoMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadUsuario" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="TCC.UI.FormPai" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="1.13" />
+        <Point X="4" Y="1.45" />
+        <Point X="0.372" Y="1.45" />
+        <Point X="0.372" Y="4.558" />
+        <Point X="1.312" Y="4.558" />
+        <Point X="1.312" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ICAAAEEAAKCBXEiIAQCAABADQgAAAAAAAAAAAgBAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadVenda" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iACAMEAAQCAJ0W4gEACOQRIbECIESEgAESoABjiAFAY=</HashCode>
+      <FileName>UI\CADASTRO\frmCadVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmChegadaInsumos" Collapsed="true">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAEIAAGABQACYAACAABAbACAIAAgAhCUABgASEoA=</HashCode>
+      <FileName>UI\CADASTRO\frmChegadaInsumos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmMotorEstoque" Collapsed="true">
+    <Position X="5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAUAEgAAyAZQBABAACoAAADACBAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmMotorEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmPecaFornecedor" Collapsed="true">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAAGAhgiBJABwAAAKyUAADAAAAAAgAEAAAAgAABII=</HashCode>
+      <FileName>UI\CADASTRO\frmPecaFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmPerfilMenu" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="TCC.UI.FormPai" ManuallyRouted="true">
+      <Path>
+        <Point X="4" Y="1.13" />
+        <Point X="4" Y="1.45" />
+        <Point X="4.362" Y="1.45" />
+        <Point X="4.362" Y="2.558" />
+        <Point X="5.122" Y="2.558" />
+        <Point X="5.122" Y="4.558" />
+        <Point X="3.75" Y="4.558" />
+        <Point X="3.75" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CCAAQkAAAjAJCAAgAASCAAADABAAIAggEAAEAAMAEEI=</HashCode>
+      <FileName>UI\CADASTRO\frmPerfilMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.FormPai" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACgAAAAAAAAAAAAAAACAAAIAAAAAAAAAAAAABA=</HashCode>
+      <FileName>UI\FormPai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmInicial" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JCAAAAkAASAAEAEACCCVAAILkAABAUgQAAAAAwEAAAE=</HashCode>
+      <FileName>UI\frmInicial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmLogin" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="TCC.UI.FormPai" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="0.5" />
+        <Point X="4" Y="0.21" />
+        <Point X="6.25" Y="0.21" />
+        <Point X="6.25" Y="0.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACCAAACAAACAAAADRQAACAAAAAAAAQBAAAA=</HashCode>
+      <FileName>UI\frmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
