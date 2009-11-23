@@ -94,8 +94,7 @@ namespace TCC.BUSINESS.UTIL
             return retorno;
         }
         #endregion Verifica Ano Bixesto
-
-
+        
         public static void ValidaMasked(string masked, TipoMasked tipo)
         {
             //string mensagem = "OK";

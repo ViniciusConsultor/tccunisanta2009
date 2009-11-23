@@ -5,12 +5,12 @@ using System.Text;
 
 namespace TCC.MODEL
 {
-    class mMotorEstoque : ModelPai
+    public class mMotorEstoque : ModelPai
     {
         private int id_estoq;
-        private int id_motorint;
+        private int? id_motor;
         private DateTime dat_alt;
-        private int qtd;
+        private int? qtd;
         private bool flg_ativo;
         private string nometabela = "Motorestoque";
 
@@ -23,11 +23,11 @@ namespace TCC.MODEL
             set { id_estoq = value; }
         }
 
-        [ColunasBancoDados("Id_motorint", System.Data.SqlDbType.Int, true)]
-        public int Id_motorint
+        [ColunasBancoDados("Id_motor", System.Data.SqlDbType.Int, true)]
+        public int? Id_motor
         {
-            get { return id_motorint; }
-            set { id_motorint = value; }
+            get { return id_motor; }
+            set { id_motor = value; }
         }
 
         [ColunasBancoDados("Dat_alt", System.Data.SqlDbType.DateTime, false)]
@@ -38,7 +38,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("Qtd", System.Data.SqlDbType.Int, false)]
-        public int Qtd
+        public int? Qtd
         {
             get { return qtd; }
             set { qtd = value; }
