@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="TCC.UI.frmBuscaCliente" Collapsed="true">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CACAAEAAACACAACABgCAEJEGBAAAAMgBABAAAYAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaColaborador" Collapsed="true">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQAAACACAACAAgCAEJEGBAAAGMgBAAAAAQAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaColaborador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaCompra" Collapsed="true">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAOACAACABgCAEJEGBAAAAMgDAAABAQAgAII=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaDepartamento" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAKACAACAAACEEJEGBAAAAMgBIEAAQQAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaDepartamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaEstoque" Collapsed="true">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAKACAAiAAgCBEJEGBAAABMgBAAAAgQAgAYA=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaFamiliaMotor" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEBAAKACAACAAgCAEJEGBAAAAMgBAAAAAYAgA5I=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaFamiliaMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaFornecedor" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAgKADAACAIgCAEZEGFQAAAMgBBAAQAQAiAYo=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaItemPeca" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAGAACAAgCAUJEGBACCAMgBAAAAAQAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaItemPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaKit" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgUAAAKACAACAAgCAGJEGBAAAAMgBAAAAAQAkAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaKit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaMenu" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACEKACAACAAgCAEJACBAAAAMABAAAAgQEAAAI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaMotor" Collapsed="true">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQKACAgCQAgCAEJEGBAAAAMghAAAAAQAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaNumMotor" Collapsed="true">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAAAAAKACAgCAAgCAEJEGBACAAMgBAAAAAQAgA4I=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaNumMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaPeca" Collapsed="true">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAgKACAACAAgCAEJEGBQAAAMiBAAAAAQAgAYM=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaPerfil" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAOACAACAAgSAEJEGBAABAMgBAAAAAQAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaPerfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaTipoMotor" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAKACAACAAgCAEJEGBAAAAMgBIQAAAQAgI4I=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaTipoMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaTipoPeca" Collapsed="true">
+    <Position X="1" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAKACAACAAgCAEJEWBCAAAMgBAAAAAQAgAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaTipoPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaTipoProduto" Collapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKACAACAAgCCEJEGBAAAAMoRAAAAAQAiAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaTipoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaUsuario" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAKACAACAAgCAEJEGBAAAAMgBAAABAQAkAYI=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmBuscaVenda">
+    <Position X="9.75" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAACACBBCAAgCEEZEGBBIAAMgBAQAAAQAgAYA=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.BUSCA.frmBuscaUsinagem" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAiAACEIgCAEJACBAAAAMABAAAAAQAAAAM=</HashCode>
+      <FileName>UI\BUSCA\frmBuscaUsinagem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
