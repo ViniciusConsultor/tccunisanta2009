@@ -30,14 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
+            this.btnBuscaFornecedor = new System.Windows.Forms.Button();
+            this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnAdicionaItem = new System.Windows.Forms.Button();
             this.lblObs = new System.Windows.Forms.Label();
             this.txtValor = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.lblValor = new System.Windows.Forms.Label();
@@ -45,14 +49,10 @@
             this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gpbOrdemCompra = new System.Windows.Forms.GroupBox();
-            this.btnBuscaFornecedor = new System.Windows.Forms.Button();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
-            this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.btnRemoveItem = new System.Windows.Forms.Button();
-            this.btnAdicionaItem = new System.Windows.Forms.Button();
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.rdbMotor = new System.Windows.Forms.RadioButton();
@@ -111,6 +111,53 @@
             this.btnAceitar.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaFornecedor
+            // 
+            this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaFornecedor.Location = new System.Drawing.Point(227, 80);
+            this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
+            this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaFornecedor.TabIndex = 37;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
+            this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
+            this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
+            // 
+            // btnBuscarItemDtGrid
+            // 
+            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(227, 38);
+            this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
+            this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscarItemDtGrid.TabIndex = 41;
+            this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
+            this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarItemDtGrid.Click += new System.EventHandler(this.btnBuscarItemDtGrid_Click);
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemoveItem.Location = new System.Drawing.Point(440, 81);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(27, 23);
+            this.btnRemoveItem.TabIndex = 44;
+            this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
+            this.btnRemoveItem.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionaItem
+            // 
+            this.btnAdicionaItem.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionaItem.Location = new System.Drawing.Point(407, 81);
+            this.btnAdicionaItem.Name = "btnAdicionaItem";
+            this.btnAdicionaItem.Size = new System.Drawing.Size(27, 23);
+            this.btnAdicionaItem.TabIndex = 43;
+            this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adicionar Item");
+            this.btnAdicionaItem.UseVisualStyleBackColor = true;
+            this.btnAdicionaItem.Click += new System.EventHandler(this.btnAdicionaItem_Click);
             // 
             // lblObs
             // 
@@ -188,57 +235,35 @@
             this.gpbOrdemCompra.TabStop = false;
             this.gpbOrdemCompra.Text = "Ordem de Compra";
             // 
-            // btnBuscaFornecedor
-            // 
-            this.btnBuscaFornecedor.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscaFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaFornecedor.Location = new System.Drawing.Point(227, 80);
-            this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
-            this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaFornecedor.TabIndex = 37;
-            this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
-            this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
-            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscaFiltro.Enabled = false;
-            this.txtBuscaFiltro.Location = new System.Drawing.Point(31, 81);
+            this.txtBuscaFiltro.Location = new System.Drawing.Point(30, 41);
             this.txtBuscaFiltro.MaxLength = 25;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.ReadOnly = true;
             this.txtBuscaFiltro.Size = new System.Drawing.Size(190, 20);
             this.txtBuscaFiltro.TabIndex = 40;
             // 
-            // btnBuscarItemDtGrid
-            // 
-            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(227, 38);
-            this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
-            this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscarItemDtGrid.TabIndex = 41;
-            this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
-            this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
-            // 
             // txtFornecedor
             // 
             this.txtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFornecedor.Enabled = false;
-            this.txtFornecedor.Location = new System.Drawing.Point(31, 41);
+            this.txtFornecedor.Location = new System.Drawing.Point(30, 81);
             this.txtFornecedor.Multiline = true;
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.ReadOnly = true;
             this.txtFornecedor.Size = new System.Drawing.Size(190, 21);
-            this.txtFornecedor.TabIndex = 36;
+            this.txtFornecedor.TabIndex = 4;
             // 
             // lblFornecedor
             // 
             this.lblFornecedor.AutoSize = true;
-            this.lblFornecedor.Location = new System.Drawing.Point(28, 65);
+            this.lblFornecedor.Location = new System.Drawing.Point(27, 64);
             this.lblFornecedor.Name = "lblFornecedor";
             this.lblFornecedor.Size = new System.Drawing.Size(61, 13);
-            this.lblFornecedor.TabIndex = 47;
+            this.lblFornecedor.TabIndex = 35;
             this.lblFornecedor.Text = "Fornecedor";
             // 
             // txtQtdItem
@@ -251,28 +276,6 @@
             this.txtQtdItem.TabIndex = 42;
             this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
-            // btnRemoveItem
-            // 
-            this.btnRemoveItem.BackgroundImage = global::TCC.resImg.btnLess;
-            this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoveItem.Location = new System.Drawing.Point(440, 81);
-            this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(27, 23);
-            this.btnRemoveItem.TabIndex = 44;
-            this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
-            this.btnRemoveItem.UseVisualStyleBackColor = true;
-            // 
-            // btnAdicionaItem
-            // 
-            this.btnAdicionaItem.BackgroundImage = global::TCC.resImg.btnAdd_;
-            this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionaItem.Location = new System.Drawing.Point(407, 81);
-            this.btnAdicionaItem.Name = "btnAdicionaItem";
-            this.btnAdicionaItem.Size = new System.Drawing.Size(27, 23);
-            this.btnAdicionaItem.TabIndex = 43;
-            this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adicionar Item");
-            this.btnAdicionaItem.UseVisualStyleBackColor = true;
-            // 
             // dgItems
             // 
             this.dgItems.AllowUserToAddRows = false;
@@ -280,35 +283,35 @@
             this.dgItems.AllowUserToResizeColumns = false;
             this.dgItems.AllowUserToResizeRows = false;
             this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgItems.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgItems.Location = new System.Drawing.Point(30, 110);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(437, 153);
