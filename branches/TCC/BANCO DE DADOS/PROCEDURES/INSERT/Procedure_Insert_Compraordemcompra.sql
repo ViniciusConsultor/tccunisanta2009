@@ -6,7 +6,6 @@ GO
 CREATE PROCEDURE sp_insert_compraordemcompra
 @id_compra			INT,
 @id_ordem_compra	INT,
-@qtd				INT,
 @dat_alt			DATETIME,
 @flg_ativo			BIT
 AS
@@ -17,14 +16,12 @@ IF(@id_compra='')
    RAISERROR('Informe o codigo do compra!',16,1)   
 ELSE IF(@id_ordem_compra='')
    RAISERROR('Informe o codigo do ordem de compra!',16,1)   
-ELSE IF(@qtd='')
-   RAISERROR('Informe a quantidade da ordem!',16,1)
 ELSE
 
 BEGIN
 --Insert na tabela compraordemcompra
-INSERT INTO compraordemcompra(id_compra, id_ordem_compra, qtd, dat_alt, flg_ativo)
-VALUES (@id_compra, @id_ordem_compra, @qtd, @dat_alt, @flg_ativo)
+INSERT INTO compraordemcompra(id_compra, id_ordem_compra, dat_alt, flg_ativo)
+VALUES (@id_compra, @id_ordem_compra, @dat_alt, @flg_ativo)
 END
 END TRY
 

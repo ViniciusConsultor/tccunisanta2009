@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
@@ -57,6 +57,12 @@
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.rdbMotor = new System.Windows.Forms.RadioButton();
             this.rdbPeca = new System.Windows.Forms.RadioButton();
+            this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNomeItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hFlg_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNovoRegistro = new System.Windows.Forms.Button();
             this.gpbOrdemCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -216,6 +222,7 @@
             // 
             // gpbOrdemCompra
             // 
+            this.gpbOrdemCompra.Controls.Add(this.btnNovoRegistro);
             this.gpbOrdemCompra.Controls.Add(this.btnBuscaFornecedor);
             this.gpbOrdemCompra.Controls.Add(this.txtBuscaFiltro);
             this.gpbOrdemCompra.Controls.Add(this.btnBuscarItemDtGrid);
@@ -283,39 +290,46 @@
             this.dgItems.AllowUserToResizeColumns = false;
             this.dgItems.AllowUserToResizeRows = false;
             this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hId,
+            this.hNomeItem,
+            this.hFornecedor,
+            this.hQuantidade,
+            this.hFlg_motor});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgItems.Location = new System.Drawing.Point(30, 110);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(437, 153);
             this.dgItems.TabIndex = 45;
+            this.dgItems.Click += new System.EventHandler(this.dgItems_Click);
             // 
             // lblQtdPeca
             // 
@@ -347,6 +361,59 @@
             this.rdbPeca.TabStop = true;
             this.rdbPeca.Text = "Peça";
             this.rdbPeca.UseVisualStyleBackColor = true;
+            // 
+            // hId
+            // 
+            this.hId.DataPropertyName = "id_item";
+            this.hId.HeaderText = "ID";
+            this.hId.Name = "hId";
+            this.hId.ReadOnly = true;
+            this.hId.Visible = false;
+            this.hId.Width = 43;
+            // 
+            // hNomeItem
+            // 
+            this.hNomeItem.DataPropertyName = "item";
+            this.hNomeItem.HeaderText = "Item";
+            this.hNomeItem.Name = "hNomeItem";
+            this.hNomeItem.ReadOnly = true;
+            this.hNomeItem.Width = 52;
+            // 
+            // hFornecedor
+            // 
+            this.hFornecedor.DataPropertyName = "fornecedor";
+            this.hFornecedor.HeaderText = "Fornecedor";
+            this.hFornecedor.Name = "hFornecedor";
+            this.hFornecedor.ReadOnly = true;
+            this.hFornecedor.Width = 86;
+            // 
+            // hQuantidade
+            // 
+            this.hQuantidade.DataPropertyName = "quantidade";
+            this.hQuantidade.HeaderText = "Quantidade";
+            this.hQuantidade.Name = "hQuantidade";
+            this.hQuantidade.ReadOnly = true;
+            this.hQuantidade.Width = 87;
+            // 
+            // hFlg_motor
+            // 
+            this.hFlg_motor.DataPropertyName = "flg_motor";
+            this.hFlg_motor.HeaderText = "flg_motor";
+            this.hFlg_motor.Name = "hFlg_motor";
+            this.hFlg_motor.ReadOnly = true;
+            this.hFlg_motor.Visible = false;
+            this.hFlg_motor.Width = 75;
+            // 
+            // btnNovoRegistro
+            // 
+            this.btnNovoRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovoRegistro.Location = new System.Drawing.Point(440, 19);
+            this.btnNovoRegistro.Name = "btnNovoRegistro";
+            this.btnNovoRegistro.Size = new System.Drawing.Size(27, 23);
+            this.btnNovoRegistro.TabIndex = 47;
+            this.toolTipLegenda.SetToolTip(this.btnNovoRegistro, "Adicionar Item");
+            this.btnNovoRegistro.UseVisualStyleBackColor = true;
+            this.btnNovoRegistro.Click += new System.EventHandler(this.btnNovoRegistro_Click);
             // 
             // frmCadCompra
             // 
@@ -406,5 +473,11 @@
         private System.Windows.Forms.Label lblQtdPeca;
         private System.Windows.Forms.RadioButton rdbMotor;
         private System.Windows.Forms.RadioButton rdbPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNomeItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hFornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hQuantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hFlg_motor;
+        private System.Windows.Forms.Button btnNovoRegistro;
     }
 }
