@@ -224,11 +224,11 @@ namespace TCC.UI
                 dtSource = (DataTable)this.dgItems.DataSource;
                 for (int contador = 0; contador < dtSource.Rows.Count; contador++)
                 {
-                    indice = this.ExisteModelItemKit(Convert.ToInt32(dtSource.Rows[contador]["id_item"]));
+                    //indice = this.ExisteModelItemKit(Convert.ToInt32(dtSource.Rows[contador]["id_item"]));
                     if (indice > -1)
                     {
                         dtSource.Columns["qtd"].ReadOnly = false;
-                        dtSource.Rows[contador]["qtd"] = this._modelItemKit[indice].Qtd_item.ToString();
+                        //dtSource.Rows[contador]["qtd"] = this._modelItemKit[indice].Qtd_item.ToString();
                     }
                 }
                 this.dgItems.DataSource = dtSource;
