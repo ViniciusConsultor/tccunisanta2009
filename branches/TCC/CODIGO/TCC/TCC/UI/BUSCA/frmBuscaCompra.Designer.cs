@@ -141,16 +141,18 @@
             // 
             // hid_compra
             // 
+            this.hid_compra.DataPropertyName = "id_compra";
             this.hid_compra.HeaderText = "id_compra";
             this.hid_compra.Name = "hid_compra";
             this.hid_compra.ReadOnly = true;
             this.hid_compra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hid_compra.Visible = false;
-            this.hid_compra.Width = 62;
+            this.hid_compra.Width = 60;
             // 
             // hobs
             // 
-            this.hobs.HeaderText = "observação de compra";
+            this.hobs.DataPropertyName = "obs";
+            this.hobs.HeaderText = "Observação da Compra";
             this.hobs.Name = "hobs";
             this.hobs.ReadOnly = true;
             this.hobs.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -158,11 +160,12 @@
             // 
             // hdat
             // 
-            this.hdat.HeaderText = "Data de Compra";
+            this.hdat.DataPropertyName = "dat";
+            this.hdat.HeaderText = "Data da Compra";
             this.hdat.Name = "hdat";
             this.hdat.ReadOnly = true;
             this.hdat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hdat.Width = 81;
+            this.hdat.Width = 79;
             // 
             // frmBuscaCompra
             // 

@@ -6,5 +6,5 @@ GO
 CREATE PROCEDURE sp_busca_compra_param
 @obs VARCHAR(20)
 AS 
-SELECT id_compra, obs 'Obs Compra', dat 'Data Compra' FROM Compra
+SELECT id_compra, obs, dat FROM Compra
 WHERE obs LIKE '%' + @obs + '%'

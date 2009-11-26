@@ -148,9 +148,10 @@ namespace TCC.UI
                     {
                         if (this.dgVenda.CurrentRow != null)
                         {
-                            dvc = this.dgVenda["Venda", this.dgVenda.CurrentRow.Index];
+                            dvc = this.dgVenda["hVenda", this.dgVenda.CurrentRow.Index];
                             this._model.IdVenda = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgVenda["Data", this.dgVenda.CurrentRow.Index];
+                            //hCliente??
+                            dvc = this.dgVenda["hData", this.dgVenda.CurrentRow.Index];
                             this._model.DatVenda = Convert.ToDateTime(dvc.Value);
 
                             this.DialogResult = DialogResult.OK;

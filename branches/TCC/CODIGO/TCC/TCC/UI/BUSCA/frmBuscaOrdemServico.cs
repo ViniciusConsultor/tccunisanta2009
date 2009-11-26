@@ -10,52 +10,60 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmBuscaCompra : Form
+    public partial class frmBuscaOrdemServico : Form
     {
         #region Atributos
-        mCompra _model;
+        mOrdemServico _modelOrdemServico;
         bool _alteracao;
-        #endregion
+        #endregion Atributos
 
         #region Construtor
-        public frmBuscaCompra(mCompra modelCompra)
+        public frmBuscaOrdemServico(mOrdemServico model)
         {
             InitializeComponent();
-            this._model = modelCompra;
-            this._alteracao = false;
+            _modelOrdemServico = model;
+            _alteracao = false;
         }
 
-        public frmBuscaCompra(mCompra modelCompra, bool alteracao)
+        public frmBuscaOrdemServico(mOrdemServico model, bool Alteracao)
         {
             InitializeComponent();
-            this._model = modelCompra;
-            this._alteracao = alteracao;
+            _modelOrdemServico = model;
+            _alteracao = Alteracao;
         }
-        #endregion
+        #endregion Construtor
 
         #region Eventos
-        private void btnOK_Click(object sender, EventArgs e)
+        
+        #region btnBuscarOrdemServico Click
+        private void btnBuscarOrdemServico_Click(object sender, EventArgs e)
         {
-            this.RetornaModel();
+            this.populaGrid();
         }
+        #endregion btnBuscarOrdemServico Click
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            this.PopulaGrid();
-        }
-
+        #region btnFechar Click
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+        #endregion btnFechar Click
 
+        #region btnOK Click
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.retornaModel();
+        }
+        #endregion btnOK Click
+
+        #region btnAlterar Click
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             try
             {
-                this.RetornaModel();
-                this.PopulaGrid();
+                this.retornaModel();
+                this.PopulaModelCompletoAlteracao();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -76,14 +84,16 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion btnAlterar Click
 
+        #region btnExcluir Click
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
             {
-                this.RetornaModel();
+                this.retornaModel();
                 this.DeletaCadastro();
-                this.PopulaGrid();
+                this.populaGrid();
             }
             catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
             {
@@ -102,23 +112,24 @@ namespace TCC.UI
                 throw ex;
             }
         }
+        #endregion btnExcluir Click
 
-        private void frmBuscaCompra_Load(object sender, EventArgs e)
-        {
-            this.HabilitaBotoes();
-        }
-        #endregion
+        #endregion Eventos
 
         #region Metodos
-        private void PopulaGrid()
+        
+        #region PopulaGrid
+        private void populaGrid()
         {
-            rCompra regra = new rCompra();
+            rOrdemServico regra = new rOrdemServico();
             DataTable dt = new DataTable();
+
+            string ordem = this.txtFiltroOrdemServico.Text;
             try
             {
-                dt = regra.BuscaCompra(this.txtFiltro.Text);
-                dgCompra.DataSource = dt;
-                dgCompra.Columns[0].Visible = false;
+                dt = regra.buscaOrdemServico(ordem);
+                dgOrdemServico.DataSource = dt;
+                dgOrdemServico.Columns[0].Visible = true;
             }
             catch (Exception ex)
             {
@@ -130,43 +141,44 @@ namespace TCC.UI
                 dt = null;
             }
         }
+        #endregion PopulaGrid
 
-        private void RetornaModel()
+        #region Retorna Model
+        private void retornaModel()
         {
             DataGridViewCell dvc = null;
             DataTable dtSource = new DataTable();
             try
             {
-                dtSource = (DataTable)this.dgCompra.DataSource;
-                if (this.dgCompra.DataSource != null)
+                dtSource = (DataTable)this.dgOrdemServico.DataSource;
+                if (this.dgOrdemServico.DataSource != null)
                 {
                     if (dtSource.Rows.Count > 0)
                     {
-                        if (this.dgCompra.CurrentRow != null)
+                        if (this.dgOrdemServico.CurrentRow != null)
                         {
-                            dvc = this.dgCompra["id_compra", this.dgCompra.CurrentRow.Index];
-                            this._model.IdCompra = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgCompra["obs", this.dgCompra.CurrentRow.Index];
-                            this._model.Obs = dvc.Value.ToString();
-                            dvc = this.dgCompra["dat", this.dgCompra.CurrentRow.Index];
-                            this._model.Dat = Convert.ToDateTime(dvc.Value);
+                            dvc = this.dgOrdemServico["hCodigoOrdemServ", this.dgOrdemServico.CurrentRow.Index];
+                            this._modelOrdemServico.IdOrdemServ = Convert.ToInt32(dvc.Value);
+                            //Outros campos, se houver
+
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("É necessário Selecionar uma linha!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("É necessário cadastrar um Cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("É necessário cadastrar uma Ordem de Serviço!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário buscar e selecionar um Cliente!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("É necessário buscar e selecionar uma Ordem de Serviço!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
+
             }
             catch (Exception ex)
             {
@@ -186,7 +198,35 @@ namespace TCC.UI
                 }
             }
         }
+        #endregion Retorna Model
 
+        #region PopulaModelCompletoAlteracao
+        private void PopulaModelCompletoAlteracao()
+        {
+            rOrdemServico regra = new rOrdemServico();
+            DataTable dtRegistroOrdem = null;
+            try
+            {
+                dtRegistroOrdem = regra.BuscaUmRegistro(this._modelOrdemServico);
+                this._modelOrdemServico.Deserialize(dtRegistroOrdem);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regra = null;
+                if (dtRegistroOrdem != null)
+                {
+                    dtRegistroOrdem.Dispose();
+                    dtRegistroOrdem = null;
+                }
+            }
+        }
+        #endregion PopulaModelCompletoAlteracao
+
+        #region HabiitaBotoes
         private void HabilitaBotoes()
         {
             this.btnAlterar.Visible = this._alteracao;
@@ -195,13 +235,15 @@ namespace TCC.UI
             //------------------
             this.btnOK.Visible = !this._alteracao;
         }
+        #endregion HabiitaBotoes
 
+        #region DeletaCadastro
         private void DeletaCadastro()
         {
-            rColaborador regraColaborador = new rColaborador();
+            rOrdemServico regra = new rOrdemServico();
             try
             {
-                regraColaborador.ValidarDeleta(this._model);
+                regra.ValidarDeleta(this._modelOrdemServico);
             }
             catch (Exception ex)
             {
@@ -209,10 +251,11 @@ namespace TCC.UI
             }
             finally
             {
-                regraColaborador = null;
+                regra = null;
             }
         }
+        #endregion DeletaCadastro
 
-        #endregion
+        #endregion Metodos
     }
 }
