@@ -239,6 +239,7 @@
     <Compile Include="BUSINESS\rMotorFornecedor.cs" />
     <Compile Include="BUSINESS\rNumeroMotor.cs" />
     <Compile Include="BUSINESS\rOrdemCompra.cs" />
+    <Compile Include="BUSINESS\rOrdemServico.cs" />
     <Compile Include="BUSINESS\rPeca.cs" />
     <Compile Include="BUSINESS\rPecaEstoque.cs" />
     <Compile Include="BUSINESS\rPecaFornecedor.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="MODEL\mNumMotor.cs" />
     <Compile Include="MODEL\ModelPai.cs" />
     <Compile Include="MODEL\mOrdemCompra.cs" />
+    <Compile Include="MODEL\mOrdemServico.cs" />
     <Compile Include="MODEL\mPeca.cs" />
     <Compile Include="MODEL\mPecaEstoque.cs" />
     <Compile Include="MODEL\mPecaFornecedor.cs" />
@@ -362,6 +364,9 @@
     <EmbeddedResource Include="UI\BUSCA\frmBuscaMotor.resx">
       <DependentUpon>frmBuscaMotor.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaOrdemServico.resx">
+      <DependentUpon>frmBuscaOrdemServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaPeca.resx">
       <DependentUpon>frmBuscaPeca.cs</DependentUpon>
@@ -621,6 +626,12 @@
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaMotor.Designer.cs">
       <DependentUpon>frmBuscaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaOrdemServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaOrdemServico.Designer.cs">
+      <DependentUpon>frmBuscaOrdemServico.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaPeca.cs">
       <SubType>Form</SubType>
