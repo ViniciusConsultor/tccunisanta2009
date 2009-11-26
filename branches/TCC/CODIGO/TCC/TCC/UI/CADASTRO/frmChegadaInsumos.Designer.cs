@@ -1,4 +1,4 @@
-﻿namespace TCC.UI.CADASTRO
+﻿namespace TCC.UI
 {
     partial class frmChegadaInsumos
     {
@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChegadaInsumos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnBuscarOrdemServDtGrid = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscaEstoque = new System.Windows.Forms.Button();
             this.btnRemovePeca = new System.Windows.Forms.Button();
             this.btnAdicionaPeca = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbBuscarVenda = new System.Windows.Forms.RadioButton();
+            this.rdbBuscarCompra = new System.Windows.Forms.RadioButton();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.rdbBuscaOrdemServ = new System.Windows.Forms.RadioButton();
             this.dgItems = new System.Windows.Forms.DataGridView();
@@ -56,7 +56,7 @@
             this.lblPecaMotor = new System.Windows.Forms.Label();
             this.txtInsumoRecebido = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEstoque = new System.Windows.Forms.TextBox();
             this.megaTextBox2 = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.lblUltimoPreco = new System.Windows.Forms.Label();
             this.txtQtdRecebida = new Controles.MegaTextBox.MegaTextBox(this.components);
@@ -82,6 +82,7 @@
             this.btnBuscaAlteracaoDelecao.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // btnVoltar
             // 
@@ -93,6 +94,7 @@
             this.btnVoltar.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -104,6 +106,7 @@
             this.btnLimpar.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAceitar
             // 
@@ -115,6 +118,7 @@
             this.btnAceitar.TabIndex = 10;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // btnBuscarOrdemServDtGrid
             // 
@@ -126,17 +130,19 @@
             this.btnBuscarOrdemServDtGrid.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnBuscarOrdemServDtGrid, "Buscar Ordem de Serviço");
             this.btnBuscarOrdemServDtGrid.UseVisualStyleBackColor = true;
+            this.btnBuscarOrdemServDtGrid.Click += new System.EventHandler(this.btnBuscarOrdemServDtGrid_Click);
             // 
-            // button1
+            // btnBuscaEstoque
             // 
-            this.button1.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(560, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 23);
-            this.button1.TabIndex = 43;
-            this.toolTipLegenda.SetToolTip(this.button1, "Buscar Itens");
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaEstoque.Location = new System.Drawing.Point(560, 296);
+            this.btnBuscaEstoque.Name = "btnBuscaEstoque";
+            this.btnBuscaEstoque.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaEstoque.TabIndex = 43;
+            this.toolTipLegenda.SetToolTip(this.btnBuscaEstoque, "Buscar Itens");
+            this.btnBuscaEstoque.UseVisualStyleBackColor = true;
+            this.btnBuscaEstoque.Click += new System.EventHandler(this.btnBuscaEstoque_Click);
             // 
             // btnRemovePeca
             // 
@@ -148,6 +154,7 @@
             this.btnRemovePeca.TabIndex = 57;
             this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
             this.btnRemovePeca.UseVisualStyleBackColor = true;
+            this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
             // 
             // btnAdicionaPeca
             // 
@@ -159,10 +166,11 @@
             this.btnAdicionaPeca.TabIndex = 56;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adicionar Peça");
             this.btnAdicionaPeca.UseVisualStyleBackColor = true;
+            this.btnAdicionaPeca.Click += new System.EventHandler(this.btnAdicionaPeca_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rdbBuscarVenda);
+            this.groupBox1.Controls.Add(this.rdbBuscarCompra);
             this.groupBox1.Controls.Add(this.txtBuscaFiltro);
             this.groupBox1.Controls.Add(this.btnBuscarOrdemServDtGrid);
             this.groupBox1.Controls.Add(this.rdbBuscaOrdemServ);
@@ -173,15 +181,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Código da Ordem de Serviço:";
             // 
-            // rdbBuscarVenda
+            // rdbBuscarCompra
             // 
-            this.rdbBuscarVenda.AutoSize = true;
-            this.rdbBuscarVenda.Location = new System.Drawing.Point(184, 33);
-            this.rdbBuscarVenda.Name = "rdbBuscarVenda";
-            this.rdbBuscarVenda.Size = new System.Drawing.Size(110, 17);
-            this.rdbBuscarVenda.TabIndex = 2;
-            this.rdbBuscarVenda.Text = "Buscar por Venda";
-            this.rdbBuscarVenda.UseVisualStyleBackColor = true;
+            this.rdbBuscarCompra.AutoSize = true;
+            this.rdbBuscarCompra.Location = new System.Drawing.Point(184, 33);
+            this.rdbBuscarCompra.Name = "rdbBuscarCompra";
+            this.rdbBuscarCompra.Size = new System.Drawing.Size(115, 17);
+            this.rdbBuscarCompra.TabIndex = 2;
+            this.rdbBuscarCompra.Text = "Buscar por Compra";
+            this.rdbBuscarCompra.UseVisualStyleBackColor = true;
             // 
             // txtBuscaFiltro
             // 
@@ -211,14 +219,14 @@
             this.dgItems.AllowUserToResizeColumns = false;
             this.dgItems.AllowUserToResizeRows = false;
             this.dgItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hIdInsumo,
@@ -227,26 +235,26 @@
             this.hEstoque,
             this.hQtd,
             this.hFornecedor});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItems.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgItems.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgItems.Location = new System.Drawing.Point(83, 106);
             this.dgItems.MultiSelect = false;
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(347, 248);
@@ -332,15 +340,15 @@
             this.lblEstoque.TabIndex = 20;
             this.lblEstoque.Text = "Estoque enviado";
             // 
-            // textBox2
+            // txtEstoque
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(438, 298);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 21;
-            this.textBox2.TabStop = false;
+            this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstoque.Enabled = false;
+            this.txtEstoque.Location = new System.Drawing.Point(438, 298);
+            this.txtEstoque.Name = "txtEstoque";
+            this.txtEstoque.Size = new System.Drawing.Size(121, 20);
+            this.txtEstoque.TabIndex = 21;
+            this.txtEstoque.TabStop = false;
             // 
             // megaTextBox2
             // 
@@ -411,8 +419,8 @@
             this.Controls.Add(this.lblQtdChegada);
             this.Controls.Add(this.megaTextBox2);
             this.Controls.Add(this.lblUltimoPreco);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnBuscaEstoque);
+            this.Controls.Add(this.txtEstoque);
             this.Controls.Add(this.lblEstoque);
             this.Controls.Add(this.txtInsumoRecebido);
             this.Controls.Add(this.lblPecaMotor);
@@ -449,9 +457,9 @@
         private System.Windows.Forms.Label lblPecaMotor;
         private System.Windows.Forms.TextBox txtInsumoRecebido;
         private System.Windows.Forms.Label lblEstoque;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton rdbBuscarVenda;
+        private System.Windows.Forms.TextBox txtEstoque;
+        private System.Windows.Forms.Button btnBuscaEstoque;
+        private System.Windows.Forms.RadioButton rdbBuscarCompra;
         private Controles.MegaTextBox.MegaTextBox megaTextBox2;
         private System.Windows.Forms.Label lblUltimoPreco;
         private Controles.MegaTextBox.MegaTextBox txtQtdRecebida;
