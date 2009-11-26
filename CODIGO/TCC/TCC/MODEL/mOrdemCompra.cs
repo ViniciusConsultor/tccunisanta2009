@@ -15,6 +15,7 @@ namespace TCC.MODEL
         private bool flg_ativo;
         private string nota_fisc;
         private int id_forn;
+        private int qtd;
         private string nomeTabela = "Ordemcompra";
 
         [ColunasBancoDados("Id_peca", System.Data.SqlDbType.Int, false)]
@@ -72,6 +73,14 @@ namespace TCC.MODEL
             get { return id_forn; }
             set { id_forn = value; }
         }
+
+        [ColunasBancoDados("qtd", System.Data.SqlDbType.Int, false)]
+        public int Qtd
+        {
+            get { return qtd; }
+            set { qtd = value; }
+        }
+
         public override string getNomeTabela()
         {
             return this.nomeTabela;

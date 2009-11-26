@@ -11,16 +11,18 @@ CREATE PROCEDURE  sp_insert_ordemcompra
 @dat_alt		   DATETIME,
 @nota_fisc		   VARCHAR(20),
 @id_forn		   INT,
-@flg_ativo         BIT
+@flg_ativo         BIT,
+@qtd			   INT
 AS
 
 BEGIN TRY
 --Validações na tabela ordemcompra
 
+
 BEGIN
 --Insert na tabela ordemcompra
-INSERT INTO ordemcompra (id_ordem_compra, id_peca, ultim_preco, id_motor, dat_alt, nota_fisc, id_forn, flg_ativo)
-VALUES (@id_ordem_compra, @id_peca, @ultim_preco, @id_motor, @dat_alt, @nota_fisc, @id_forn, @flg_ativo)
+INSERT INTO ordemcompra (id_ordem_compra, id_peca, ultim_preco, id_motor, dat_alt, nota_fisc, id_forn, flg_ativo, qtd)
+VALUES (@id_ordem_compra, @id_peca, @ultim_preco, @id_motor, @dat_alt, @nota_fisc, @id_forn, @flg_ativo, @qtd)
 END
 END TRY
 

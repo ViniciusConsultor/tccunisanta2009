@@ -19,6 +19,7 @@ namespace TCC.UI
         mPeca _modelPeca;
         mFornecedor _modelFornecedor;
         DataTable _dtSource;
+        int _id;
 
         #endregion Atributos
 
@@ -31,6 +32,13 @@ namespace TCC.UI
 
         #region Eventos
 
+        #region Form Load
+        private void frmCadCompra_Load(object sender, EventArgs e)
+        {
+            IniciaDataTable();
+        }
+        #endregion Form Load
+        
         #region btnAdicionaItem Click
         private void btnAdicionaItem_Click(object sender, EventArgs e)
         {
@@ -47,6 +55,7 @@ namespace TCC.UI
                 this._listaOrdemCompra.Add(modelOrdemCompra);
                 this.PopulaDataTableModelOrdemCompra(modelOrdemCompra);
                 this.dgItems.DataSource = this._dtSource;
+                this.LimpaGrupoOrdemCompra();
             }
             catch (BUSINESS.Exceptions.Compra.BuscaMotorException)
             {
@@ -58,7 +67,12 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException)
             {
-                MessageBox.Show("Quantidade não pode ser vazia ou menor que 1", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Quantidade não pode ser vazia", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtdItem.Focus();
+            }
+            catch (BUSINESS.Exceptions.Compra.CompraQuantidadeMenorQueUmException)
+            {
+                MessageBox.Show("Quantidade não pode ser 0(zero)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdItem.Focus();
             }
             catch (Exception ex)
@@ -154,9 +168,85 @@ namespace TCC.UI
         }
         #endregion rdbPeca CheckedChanged
 
+        #region btnNovoRegistro Click
+        private void btnNovoRegistro_Click(object sender, EventArgs e)
+        {
+            this.LimpaGrupoOrdemCompra();
+        }
+        #endregion btnNovoRegistro Click
+
+        #region dgItems Click
+        private void dgItems_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion dgItems Click
+
         #endregion Eventos
 
         #region Metodos
+
+        #region Popula Tela Ordem Compra
+        /// <summary>
+        /// Pega os dados do grid para popular os TextBox na tela
+        /// </summary>
+        private void PopulaTelaOrdemCompra()
+        {
+            try
+            {
+                this.ComparaDadosGrid();
+                if (this.dgItems.Rows.Count > 0)
+                {
+                    int indice = this.dgItems.CurrentRow.Index;
+                    this.txtBuscaFiltro.Text = this.dgItems["hNomeItem", indice].Value.ToString();
+                    this.txtQtdItem.Text = this.dgItems["hQuantidade", indice].Value.ToString();
+                    this._id = Convert.ToInt32(this.dgItems["hIdItem", indice].Value);
+                    this.txtQtdItem.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Popula Tela Ordem Compra
+
+        #region Compara Dados Grid
+        /// <summary>
+        /// Compara os dados do Grid com os do model e substitui a quantidade caso exitam ids iguais
+        /// </summary>
+        private void ComparaDadosGrid()
+        {
+            DataTable dtSource = null;
+            int indice;
+            try
+            {
+                dtSource = (DataTable)this.dgItems.DataSource;
+                for (int contador = 0; contador < dtSource.Rows.Count; contador++)
+                {
+                    indice = this.ExisteModelItemKit(Convert.ToInt32(dtSource.Rows[contador]["id_item"]));
+                    if (indice > -1)
+                    {
+                        dtSource.Columns["qtd"].ReadOnly = false;
+                        dtSource.Rows[contador]["qtd"] = this._modelItemKit[indice].Qtd_item.ToString();
+                    }
+                }
+                this.dgItems.DataSource = dtSource;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dtSource != null)
+                {
+                    dtSource.Dispose();
+                    dtSource = null;
+                }
+            }
+        }
+        #endregion Compara Dados Grid
 
         #region Abre Tela Busca Fornecedor
         /// <summary>
@@ -307,6 +397,7 @@ namespace TCC.UI
                 modelOrdemCompra.Id_forn = Convert.ToInt32(this._modelFornecedor.IdFornecedor);
                 modelOrdemCompra.Nota_fisc = null;
                 modelOrdemCompra.Ultim_preco = null;
+                modelOrdemCompra.Qtd = Convert.ToInt32(this.txtQtdItem.Text);
                 //Verifica se é uma compra de motor ou peça
                 //-----------------------------------------
                 if (this.rdbMotor.Checked == true)
@@ -387,7 +478,17 @@ namespace TCC.UI
                     throw new BUSINESS.Exceptions.Compra.BuscaPecaException();
                 }
             }
-            
+            if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+            }
+            else
+            {
+                if (Convert.ToInt32(this.txtQtdItem.Text) < 1)
+                {
+                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeMenorQueUmException();
+                }
+            }
         }
         #endregion Valida Adicao Ordem Compra
 
@@ -407,12 +508,15 @@ namespace TCC.UI
         private void IniciaDataTable()
         {
             this._dtSource = new DataTable();
-            DataColumn[] dtColuna = new DataColumn[3];
+            DataColumn[] dtColuna = new DataColumn[5];
             try
             {
-                dtColuna[0] = new DataColumn("Item");
-                dtColuna[1] = new DataColumn("Fornecedor");
-                dtColuna[2] = new DataColumn("Quantidade");
+                dtColuna[0] = new DataColumn("id_item");
+                dtColuna[0] = new DataColumn("flg_motor");
+                dtColuna[1] = new DataColumn("item");
+                dtColuna[2] = new DataColumn("fornecedor");
+                dtColuna[3] = new DataColumn("quantidade");
+
                 this._dtSource.Columns.AddRange(dtColuna);
             }
             catch (Exception ex)
@@ -433,13 +537,18 @@ namespace TCC.UI
                 linha = this._dtSource.NewRow();
                 if (this._modelMotor == null)
                 {
-                    linha["Item"] = this._modelPeca.IdPecaReal + " - " + this._modelPeca.Nom;
+                    linha["id_item"] = this._modelPeca.IdPeca;
+                    linha["item"] = this._modelPeca.IdPecaReal + " - " + this._modelPeca.Nom;
+                    linha["flg_motor"] = false;
                 }
                 else
                 {
-                    linha["Item"] = this._modelMotor.DscMotor;
+                    linha["id_item"] = _modelMotor.IdMotor;
+                    linha["item"] = this._modelMotor.DscMotor;
+                    linha["flg_motor"] = true;
                 }
-                linha["Fornecedor"] = this._modelFornecedor.NomeFornecedor;
+                linha["fornecedor"] = this._modelFornecedor.NomeFornecedor;
+                linha["quantidade"] = model.Qtd;
                 this._dtSource.Rows.Add(linha);
             }
             catch (Exception ex)
@@ -461,7 +570,6 @@ namespace TCC.UI
                 model.Flg_ativo = true;
                 model.Id_compra = null;
                 model.Id_ordem_compra = null;
-                model.Qtd = Convert.ToInt32(this.txtQtdItem.Text);
 
                 return model;
             }
@@ -475,11 +583,30 @@ namespace TCC.UI
             }
         }
 
-        #endregion Metodos
-
-        private void frmCadCompra_Load(object sender, EventArgs e)
+        private void LimpaGrupoOrdemCompra()
         {
-            IniciaDataTable();
+            try
+            {
+                foreach (Control controle in this.gpbOrdemCompra.Controls)
+                {
+                    Type tipo= controle.GetType();
+                    if (tipo.Equals(typeof(TextBox)) == true || tipo.Equals(typeof(Controles.MegaTextBox.MegaTextBox)) == true)
+                    {
+                        controle.Text = string.Empty;
+                    }
+                }
+                this._modelFornecedor = null;
+                this._modelMotor = null;
+                this._modelPeca = null;
+                this.rdbPeca.Checked = true;
+                this.rdbMotor.Checked = false;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
+
+        #endregion Metodos
     }
 }

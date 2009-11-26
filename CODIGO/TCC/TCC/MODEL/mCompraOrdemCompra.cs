@@ -8,7 +8,6 @@ namespace TCC.MODEL
    public class mCompraOrdemCompra: ModelPai
     {
         private int? id_compra;
-        private int qtd;
         private int? id_ordem_compra;
         private DateTime dat_alt;
         private bool flg_ativo;
@@ -19,13 +18,6 @@ namespace TCC.MODEL
         {
           get { return id_compra; }
           set { id_compra = value; }
-        }
-
-       [ColunasBancoDados("Qtd", System.Data.SqlDbType.Int, false)]
-        public int Qtd
-        {
-          get { return qtd; }
-          set { qtd = value; }
         }
 
        [ColunasBancoDados("Id_ordem_compra", System.Data.SqlDbType.Int, true)]
