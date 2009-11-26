@@ -1024,3 +1024,6 @@ ALTER TABLE Estoque
        ADD FOREIGN KEY (id_depto)
                              REFERENCES Departamento  (id_depto)
 go
+
+
+
