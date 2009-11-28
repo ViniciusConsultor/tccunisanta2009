@@ -178,7 +178,7 @@ namespace TCC.UI
         #region dgItems Click
         private void dgItems_Click(object sender, EventArgs e)
         {
-
+            this.PopulaTelaOrdemCompra();
         }
         #endregion dgItems Click
 
@@ -194,13 +194,14 @@ namespace TCC.UI
         {
             try
             {
-                this.ComparaDadosGrid();
                 if (this.dgItems.Rows.Count > 0)
                 {
+                    this.ComparaDadosGrid();
                     int indice = this.dgItems.CurrentRow.Index;
                     this.txtBuscaFiltro.Text = this.dgItems["hNomeItem", indice].Value.ToString();
                     this.txtQtdItem.Text = this.dgItems["hQuantidade", indice].Value.ToString();
-                    this._id = Convert.ToInt32(this.dgItems["hIdItem", indice].Value);
+                    this.txtFornecedor.Text = this.dgItems["hFornecedor", indice].Value.ToString();
+                    this._id = Convert.ToInt32(this.dgItems["hId", indice].Value);
                     this.txtQtdItem.Focus();
                 }
             }
@@ -224,11 +225,11 @@ namespace TCC.UI
                 dtSource = (DataTable)this.dgItems.DataSource;
                 for (int contador = 0; contador < dtSource.Rows.Count; contador++)
                 {
-                    //indice = this.ExisteModelItemKit(Convert.ToInt32(dtSource.Rows[contador]["id_item"]));
+                    indice = this.ExisteModelOrdemCompra(Convert.ToInt32(dtSource.Rows[contador]["id_item"]), Convert.ToBoolean(dtSource.Rows[contador]["flg_motor"]));
                     if (indice > -1)
                     {
-                        dtSource.Columns["qtd"].ReadOnly = false;
-                        //dtSource.Rows[contador]["qtd"] = this._modelItemKit[indice].Qtd_item.ToString();
+                        dtSource.Columns["quantidade"].ReadOnly = false;
+                        dtSource.Rows[contador]["quantidade"] = this._listaOrdemCompra[indice].Qtd.ToString();
                     }
                 }
                 this.dgItems.DataSource = dtSource;
@@ -247,6 +248,50 @@ namespace TCC.UI
             }
         }
         #endregion Compara Dados Grid
+
+        #region Existe Model Item Kit
+        /// <summary>
+        /// Verifica a Existencia de Item na Lista de Model
+        /// </summary>
+        /// <param name="idItem">Id do Item Procurado</param>
+        /// <returns>Indice da pocição; Caso não encontre retorna -1</returns>
+        private int ExisteModelOrdemCompra(int idItem, bool motor)
+        {
+            int retorno = -1;
+            try
+            {
+                if (this._listaOrdemCompra != null)
+                {
+                    for (int cont = 0; cont < this._listaOrdemCompra.Count; cont++)
+                    {
+                        if (motor == true)
+                        {
+                            if (Convert.ToInt32(this._listaOrdemCompra[cont].Id_motor) == idItem)
+                            {
+                                retorno = cont;
+                            }
+                        }
+                        else
+                        {
+                            if (Convert.ToInt32(this._listaOrdemCompra[cont].Id_peca) == idItem)
+                            {
+                                retorno = cont;
+                            }
+                        }
+                    }
+                    return retorno;
+                }
+                else
+                {
+                    return retorno;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Existe Model Item Kit
 
         #region Abre Tela Busca Fornecedor
         /// <summary>
@@ -512,10 +557,10 @@ namespace TCC.UI
             try
             {
                 dtColuna[0] = new DataColumn("id_item");
-                dtColuna[0] = new DataColumn("flg_motor");
-                dtColuna[1] = new DataColumn("item");
-                dtColuna[2] = new DataColumn("fornecedor");
-                dtColuna[3] = new DataColumn("quantidade");
+                dtColuna[1] = new DataColumn("flg_motor");
+                dtColuna[2] = new DataColumn("item");
+                dtColuna[3] = new DataColumn("fornecedor");
+                dtColuna[4] = new DataColumn("quantidade");
 
                 this._dtSource.Columns.AddRange(dtColuna);
             }
