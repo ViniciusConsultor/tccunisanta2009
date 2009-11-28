@@ -68,6 +68,11 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // toolTipLegenda
+            // 
+            this.toolTipLegenda.BackColor = System.Drawing.Color.LightGray;
+            this.toolTipLegenda.ForeColor = System.Drawing.Color.Black;
+            // 
             // btnAceitar
             // 
             this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
