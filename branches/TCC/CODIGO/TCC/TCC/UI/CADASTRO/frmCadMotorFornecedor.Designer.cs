@@ -77,7 +77,7 @@
             this.txtBuscaFiltro.MaxLength = 20;
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.Size = new System.Drawing.Size(220, 20);
-            this.txtBuscaFiltro.TabIndex = 2;
+            this.txtBuscaFiltro.TabIndex = 3;
             // 
             // btnBuscarFornecedorDtGrid
             // 
@@ -86,7 +86,7 @@
             this.btnBuscarFornecedorDtGrid.Location = new System.Drawing.Point(290, 61);
             this.btnBuscarFornecedorDtGrid.Name = "btnBuscarFornecedorDtGrid";
             this.btnBuscarFornecedorDtGrid.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscarFornecedorDtGrid.TabIndex = 3;
+            this.btnBuscarFornecedorDtGrid.TabIndex = 4;
             this.btnBuscarFornecedorDtGrid.UseVisualStyleBackColor = true;
             this.btnBuscarFornecedorDtGrid.Click += new System.EventHandler(this.btnBuscarFornecedorDtGrid_Click);
             // 
@@ -155,7 +155,7 @@
             this.btnBuscaMotor.Location = new System.Drawing.Point(290, 19);
             this.btnBuscaMotor.Name = "btnBuscaMotor";
             this.btnBuscaMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaMotor.TabIndex = 53;
+            this.btnBuscaMotor.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscaMotor, "Buscar Motor");
             this.btnBuscaMotor.UseVisualStyleBackColor = true;
             this.btnBuscaMotor.Click += new System.EventHandler(this.btnBuscaMotor_Click);

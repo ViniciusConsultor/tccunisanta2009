@@ -84,7 +84,7 @@
             this.btnBuscaPeca.Location = new System.Drawing.Point(300, 32);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaPeca.TabIndex = 1;
+            this.btnBuscaPeca.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
             this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
@@ -96,7 +96,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(464, 32);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(27, 23);
-            this.btnAdicionar.TabIndex = 41;
+            this.btnAdicionar.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnAdicionar, "Adicionar");
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -108,7 +108,7 @@
             this.btnRemover.Location = new System.Drawing.Point(497, 32);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(27, 23);
-            this.btnRemover.TabIndex = 44;
+            this.btnRemover.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnRemover, "Remover");
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -224,7 +224,7 @@
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hNome.Width = 39;
+            this.hNome.Width = 41;
             // 
             // hQuantidade
             // 
@@ -233,7 +233,7 @@
             this.hQuantidade.Name = "hQuantidade";
             this.hQuantidade.ReadOnly = true;
             this.hQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQuantidade.Width = 66;
+            this.hQuantidade.Width = 68;
             // 
             // label1
             // 
@@ -251,7 +251,7 @@
             this.txtQtde.MaxLength = 8;
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(94, 20);
-            this.txtQtde.TabIndex = 43;
+            this.txtQtde.TabIndex = 3;
             this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // frmCadPecaEstoque

@@ -121,7 +121,7 @@
             this.txtNotaFiscal.MaxLength = 20;
             this.txtNotaFiscal.Name = "txtNotaFiscal";
             this.txtNotaFiscal.Size = new System.Drawing.Size(168, 20);
-            this.txtNotaFiscal.TabIndex = 4;
+            this.txtNotaFiscal.TabIndex = 3;
             // 
             // btnLimpa
             // 
@@ -214,7 +214,7 @@
             this.txtValorVenda.MaxLength = 15;
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(100, 20);
-            this.txtValorVenda.TabIndex = 3;
+            this.txtValorVenda.TabIndex = 4;
             this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // gbBuscaItem
@@ -331,7 +331,7 @@
             this.hDescricao.Name = "hDescricao";
             this.hDescricao.ReadOnly = true;
             this.hDescricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hDescricao.Width = 59;
+            this.hDescricao.Width = 61;
             // 
             // hQtd
             // 
@@ -340,7 +340,7 @@
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
             this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQtd.Width = 66;
+            this.hQtd.Width = 68;
             // 
             // txtBuscaFiltro
             // 
@@ -419,7 +419,7 @@
             this.txtDataVenda.Mask = "00/00/0000";
             this.txtDataVenda.Name = "txtDataVenda";
             this.txtDataVenda.Size = new System.Drawing.Size(77, 20);
-            this.txtDataVenda.TabIndex = 17;
+            this.txtDataVenda.TabIndex = 2;
             this.txtDataVenda.ValidatingType = typeof(System.DateTime);
             // 
             // frmCadVenda
