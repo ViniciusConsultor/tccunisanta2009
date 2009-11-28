@@ -141,7 +141,9 @@ INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Kit', 1, GETDATE());
 INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'kaue', 'MTIz', 'SEI LA', 1, 1);
 --fornecedor
 INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (1,'Peças & Equips', 'Dom Bosco', 357,'Apartamento', 11070098, 33, 'Vila Nova', 56985880, 'Manaus', 'peçasequips@mail.com','123468579', GETDATE(), 1, 'am', 'Brasil', NULL);
-INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de aneiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj', 'Brasil', NULL);
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de Janeiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj', 'Brasil', NULL);
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (3,'Metais', 'Vinicius', 108,'casa', 11070100, 20, 'Amazonia', 56556680, 'Amazonia', 'metall@mail.com','321468579', GETDATE(), 1, 'am', 'Brasil', NULL);
+INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (4,'diversos', 'Morais', 85,'casa', 11070010, 55, 'Minas Gerais ', 56565680, 'Minas Gerais', 'diversos@mail.com','126458579', GETDATE(), 1, 'mg', 'Brasil', NULL);
 
 --Numero Motor
 INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (1,'366','Motor 366' , 1);
@@ -211,6 +213,8 @@ INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,
 INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (1 ,'estoque de peças',GETDATE() , 'Almoxarifado', 1);
 INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (2 ,'ajuste de peças brutas',GETDATE() , 'Usinagem', 1);
 INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (3 ,'linha de montagem',GETDATE() , 'Produção', 1);
+INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (4 ,'Compra & Venda',GETDATE() , 'Comercial', 1);
+
 
 --Estoque
 INSERT INTO Estoque (id_estoq, dsc_estoq,dat_alt , flg_ativo, id_depto, flg_negativo) VALUES (1 ,'Estoque do almoxarifado', GETDATE() , 1 , 1 ,0);
@@ -284,3 +288,85 @@ INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_m
 --kit familha
 INSERT INTO Kitfamilia(id_kit,id_fam_motor,dat_alt,qtd_kit,flg_ativo)VALUES(1,1,GETDATE(),2,1)
 INSERT INTO Kitfamilia(id_kit,id_fam_motor,dat_alt,qtd_kit,flg_ativo)VALUES(2,2,GETDATE(),1,1)
+
+--peca fornecedor
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (1,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (2,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (3,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (4,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (5,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (6,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (7,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (8,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (9,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (10,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (11,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (12,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (13,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (14,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (15,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (16,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (17,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (18,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (19,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (20,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (21,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (22,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (23,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (24,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (25,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (26,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (27,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (28,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (29,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (30,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (31,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (32,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (33,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (34,1,GETDATE(),1)
+INSERT INTO Pecafornecedor(id_peca,id_forn,dat_inc,flg_ativo)values (35,1,GETDATE(),1)
+
+--peca estoque
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (1,3,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (2,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (3,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (4,3,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (5,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (6,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (7,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (8,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (9,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (10,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (11,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (12,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (13,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (14,4,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (15,4,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (16,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (17,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (18,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (19,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (20,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (21,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (22,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (23,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (24,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (25,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (26,2,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (27,2,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (28,2,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (29,2,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (30,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (31,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (32,3,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (33,1,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (34,3,1,GETDATE(),10)
+INSERT INTO PecaEstoque(id_peca,id_estoq,flg_ativo,dat_alt,qtd_peca)VALUES (35,1,1,GETDATE(),10)
+
+--fornecedor depto
+INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (1,1,GETDATE(),1)
+INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (2,4,GETDATE(),1)
+INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (3,3,GETDATE(),1)
+INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (4,2,GETDATE(),1)
+
+
