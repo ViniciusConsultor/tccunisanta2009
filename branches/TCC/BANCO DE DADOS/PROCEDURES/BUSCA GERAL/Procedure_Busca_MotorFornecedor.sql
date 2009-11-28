@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_busca_motorFornecedor
 @id_motor INT
 AS
-SELECT f.nom, f.nom_pais
+SELECT f.id_forn, f.nom, f.nom_pais
 FROM Fornecedor f
 INNER JOIN Motorfornecedor mf
 ON f.id_forn = mf.id_forn

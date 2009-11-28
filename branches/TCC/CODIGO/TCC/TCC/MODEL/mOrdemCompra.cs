@@ -7,10 +7,10 @@ namespace TCC.MODEL
 {
    public class mOrdemCompra: ModelPai
     {
-        private int id_peca;
+        private int? id_peca;
         private decimal? ultim_preco;
         private int? id_ordem_compra;
-        private int id_motor;
+        private int? id_motor;
         private DateTime dat_alt;
         private bool flg_ativo;
         private string nota_fisc;
@@ -19,7 +19,7 @@ namespace TCC.MODEL
         private string nomeTabela = "Ordemcompra";
 
         [ColunasBancoDados("Id_peca", System.Data.SqlDbType.Int, false)]
-        public int Id_peca
+        public int? Id_peca
         {
             get { return id_peca; }
             set { id_peca = value; }
@@ -40,7 +40,7 @@ namespace TCC.MODEL
         }
 
         [ColunasBancoDados("Id_motor", System.Data.SqlDbType.Int, false)]
-        public int Id_motor
+        public int? Id_motor
         {
             get { return id_motor; }
             set { id_motor = value; }
@@ -53,7 +53,7 @@ namespace TCC.MODEL
             set { dat_alt = value; }
         }
 
-        [ColunasBancoDados("id_compra", System.Data.SqlDbType.Int, false)]
+        [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Int, false)]
         public bool Flg_ativo
         {
             get { return flg_ativo; }
