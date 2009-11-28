@@ -10,7 +10,7 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmPecaFornecedor : Form
+    public partial class frmPecaFornecedor : FormPai
     {
         #region Atributos
         mPeca _modelPeca;
@@ -67,7 +67,10 @@ namespace TCC.UI
         #region btnLimpa Click
         private void btnLimpa_Click(object sender, EventArgs e)
         {
-
+            base.LimpaDadosTela(this);
+            this._listaModelPecaFornecedor = null;
+            this._modelPeca = null;
+            //base.FechaTela(this);
         }
         #endregion btnLimpa Click
 
@@ -81,7 +84,7 @@ namespace TCC.UI
         #region btnVolta Click
         private void btnVolta_Click(object sender, EventArgs e)
         {
-            this.Close();
+            base.FechaTela(this);
         }
         #endregion btnVolta Click
 
@@ -96,6 +99,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelPeca = null;
+                    this.txtNomePeca.Text = string.Empty;
                 }
                 else
                 {
@@ -116,7 +120,14 @@ namespace TCC.UI
         #region btnBuscarFornecedorDtGrid Click
         private void btnBuscarFornecedorDtGrid_Click(object sender, EventArgs e)
         {
-            this.PopulaGrid();
+            if (this._modelPeca == null)
+            {
+                MessageBox.Show("É Necessário Buscar a peça antes dos fornecedores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+                this.PopulaGrid();
+            }
         }
         #endregion btnBuscarFornecedorDtGrid Click
 
@@ -134,6 +145,7 @@ namespace TCC.UI
 
             try
             {
+                regra.DeletaPecasAssociadasFornecedor(Convert.ToInt32(this._modelPeca.IdPeca));
                 this.PopulaListaModel();
                 this.ValidaDadosNulos();
                 if (this._telaPeca == false)
@@ -142,9 +154,8 @@ namespace TCC.UI
                     {
                         regra.ValidarInsere(modelPecaFornecedor);
                     }
-                    this.btnLimpa_Click(null, null);
-                    this.btnConfirma.Enabled = false;
                     MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    this.btnLimpa_Click(null, null);
                 }
             }
             catch (BUSINESS.Exceptions.PecaFornecedor.PecaVazioException)
@@ -228,7 +239,7 @@ namespace TCC.UI
                                 }
                             }
                             this.DialogResult = DialogResult.OK;
-                            this.Close();
+                            //this.Close();
                         }
                         else
                         {
@@ -296,10 +307,16 @@ namespace TCC.UI
         private void PopulaGrid()
         {
             DataTable dtSource = null;
+            DataTable dtPecaFornecedor = null;
+            rPecaFornecedor regraPecaFornecedor = new rPecaFornecedor();
             try
             {
                 dtSource = this.BuscaFornecedores(this.txtBuscaFiltroFornecedor.Text);
+                //Passa o data source primeiro para ser utilizado o check
+                //-------------------------------------------------------
                 this.dgFornecedores.DataSource = dtSource;
+                dtPecaFornecedor = regraPecaFornecedor.BuscaFornecedoresAssociadosPeca(Convert.ToInt32(this._modelPeca.IdPeca));
+                this.ChecaFornecedoresAssociados(dtPecaFornecedor);
             }
             catch (Exception ex)
             {
@@ -312,6 +329,7 @@ namespace TCC.UI
                     dtSource.Dispose();
                     dtSource = null;
                 }
+                regraPecaFornecedor = null;
             }
         }
         #endregion Popula Grid
@@ -332,6 +350,27 @@ namespace TCC.UI
             }
         }
         #endregion Valida Dados Nulos
+
+        private void ChecaFornecedoresAssociados(DataTable dtAux)
+        {
+            try
+            {
+                for (int contador = 0; contador < this.dgFornecedores.Rows.Count; contador++)
+                {
+                    foreach (DataRow linha in dtAux.Rows)
+                    {
+                        if (Convert.ToInt32(this.dgFornecedores["hIdFornecedor", contador].Value) == Convert.ToInt32(linha["id_forn"]))
+                        {
+                            this.dgFornecedores["hSelecionar", contador].Value = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #endregion Metodos
     }

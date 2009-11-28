@@ -277,6 +277,7 @@
     <Compile Include="DAL\dFornecedor.cs" />
     <Compile Include="DAL\dMenu.cs" />
     <Compile Include="DAL\dMenuSubMenu.cs" />
+    <Compile Include="DAL\dPecaFornecedor.cs" />
     <Compile Include="DAL\dPerfil.cs" />
     <Compile Include="DAL\dPerfilMenu.cs" />
     <Compile Include="DAL\dTipoUsuario.cs" />
