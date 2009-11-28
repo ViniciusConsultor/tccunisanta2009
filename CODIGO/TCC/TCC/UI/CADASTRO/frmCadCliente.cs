@@ -173,22 +173,17 @@ namespace TCC.UI
                     model.Email = this.txtEmail.Text;
                 }
 
-                if (string.IsNullOrEmpty(this.txtEstado.Text) == true)
-                {
-                    model.Nom_est_inter = null;
-                }
-                else
-                {
-                    model.Nom_est_inter = this.txtEstado.Text;
-                }
-
-                if (string.IsNullOrEmpty(this.txtPais.Text) == true)
+                if (this.rdbBrasil.Checked == true)
                 {
                     model.Nom_pais = "Brasil";
+                    model.Nom_est_inter = null;
+                    model.IdentInter = null;
                 }
                 else
                 {
                     model.Nom_pais = this.txtPais.Text;
+                    model.Nom_est_inter = this.txtEstado.Text;
+                    model.IdentInter = this.txtIdentInter.Text;
                 }
 
                 if (this.cboEstado.Enabled == true)
@@ -204,6 +199,7 @@ namespace TCC.UI
                 {
                     model.IdCliente = this._modelCliente.IdCliente;
                 }
+
                 return model;
             }
             catch (Exception ex)
@@ -235,6 +231,7 @@ namespace TCC.UI
                 }
                 else
                 {
+                    regra.ValidaDados(model);
                     regra.ValidarInsere(model);
                 }
                 this.btnLimpa_Click(null, null);
@@ -330,6 +327,30 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário Preencher o código de Identificação Internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdentInter.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CPFClienteExistente)
+            {
+                MessageBox.Show("Código de CPF já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCPF.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.CNPJClienteExistente)
+            {
+                MessageBox.Show("Código de CNPJ já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCnpj.Focus();
+            }
+            catch (BUSINESS.Exceptions.Cliente.IdentInterExistenteException)
+            {
+                MessageBox.Show("Código de Identificação Internacional já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
+            }
+            catch (BUSINESS.Exceptions.Validacoes.EmailInvalidoException)
+            {
+                MessageBox.Show("Campo E-mail incorreto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
+            }
+            catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
+            {
+                MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -566,7 +587,9 @@ namespace TCC.UI
             this.panelOutros.Visible = false;
             this.txtIdentInter.Text = "";
             this.panelBrasil.Visible = true;
+            this.rdbPessoaFisica.Enabled = true;
             this.rdbPessoaFisica.Checked = true;
+            this.txtCPF.Enabled = true;
             this.txtCPF.Text = "";
 
             this.lblCodPostal.Visible = false;
@@ -597,7 +620,9 @@ namespace TCC.UI
 
             this.panelOutros.Visible = true;
             this.rdbPessoaFisica.Checked = true;
+            this.rdbPessoaFisica.Enabled = false;
             this.txtCPF.Text = "";
+            this.txtCPF.Enabled = false;
 
             this.lblCep.Visible = false;
             this.txtCep.Visible = false;
@@ -634,17 +659,6 @@ namespace TCC.UI
         }
         #endregion rdbPessoaJuridica CheckedChanged
 
-        private void txtDDI_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         #endregion Eventos
-
-        private void txtCodPostal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -122,7 +122,7 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption)
             {
-                MessageBox.Show("É Necessário Preencher o campo Descrição do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Preencher o campo Nome do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
             }
             catch (Exception ex)

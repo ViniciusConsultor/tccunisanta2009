@@ -4,13 +4,17 @@ using System.Text;
 
 namespace TCC.BUSINESS.UTIL
 {
+    #region Enum
     public enum TipoMasked
     {
         cep,
         tel,
         ddd,
-        cnpj
+        ddi,
+        cnpj,
+        cpf
     }
+    #endregion Enum
 
     public static class Validacoes
     {
@@ -94,7 +98,8 @@ namespace TCC.BUSINESS.UTIL
             return retorno;
         }
         #endregion Verifica Ano Bixesto
-        
+
+        #region ValidaMasked
         public static void ValidaMasked(string masked, TipoMasked tipo)
         {
             //string mensagem = "OK";
@@ -102,6 +107,12 @@ namespace TCC.BUSINESS.UTIL
             {
                 case TipoMasked.cep:
                     if (masked.Length < 8)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
+                case TipoMasked.ddi:
+                    if (masked.Length < 2)
                     {
                         throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
                     }
@@ -118,6 +129,12 @@ namespace TCC.BUSINESS.UTIL
                         throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
                     }
                     break;
+                case TipoMasked.cpf:
+                    if (masked.Length < 11)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
                 case TipoMasked.cnpj:
                     if (masked.Length < 14)
                     {
@@ -126,16 +143,12 @@ namespace TCC.BUSINESS.UTIL
                     break;
             }
         }
+        #endregion ValidaMasked
 
-        /// <summary>
-        /// Retorna true se o email estiver OK ou false se estiver errado
-        /// </summary>
-        /// <param name="_email"></param>
-        /// <returns></returns>
-        public static bool ValidaEmail(string _email)
+        #region ValidaEmail
+        public static void ValidaEmail(string _email)
         {
             string email = _email;
-            bool retorno = true;
 
             //Verifica se o email é nulo
             if (string.IsNullOrEmpty(email) == false)
@@ -143,14 +156,14 @@ namespace TCC.BUSINESS.UTIL
                 //Verifica se o email contem '@' e '.'
                 if (email.Contains("@") == false || email.Contains(".") == false)
                 {
-                    retorno = false;
+                    throw new Exceptions.Validacoes.EmailInvalidoException();
                 }
                 else
                 {
                     //Verifica se o email inicia ou termina com '@' ou '.'
                     if (email.EndsWith("@") == true || email.EndsWith(".") == true || email.StartsWith("@") == true || email.StartsWith(".") == true)
                     {
-                        retorno = false;
+                        throw new Exceptions.Validacoes.EmailInvalidoException();
                     }
                     else
                     {
@@ -164,7 +177,7 @@ namespace TCC.BUSINESS.UTIL
                                 aux2 = Convert.ToChar(email.Substring(i + 1, 1));
                                 if (aux2.Equals('@') == true || aux2.Equals('.') == true)
                                 {
-                                    retorno = false;
+                                    throw new Exceptions.Validacoes.EmailInvalidoException();
                                 }
                             }
                         }
@@ -173,10 +186,9 @@ namespace TCC.BUSINESS.UTIL
             }
             else
             {
-                retorno = false;
+                throw new Exceptions.Validacoes.EmailInvalidoException();
             }
-            //Retorna true se o email estiver OK ou false se estiver errado
-            return retorno;
         }
+        #endregion ValidaEmail
     }
 }

@@ -49,7 +49,6 @@
             this.lblDDD = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
@@ -79,6 +78,7 @@
             this.panelOutros = new System.Windows.Forms.Panel();
             this.txtIdentInter = new System.Windows.Forms.TextBox();
             this.lblIdentInter = new System.Windows.Forms.Label();
+            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.gbxEscolhePaisEstado.SuspendLayout();
             this.panelBrasil.SuspendLayout();
             this.panelOutros.SuspendLayout();
@@ -262,16 +262,6 @@
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email";
             // 
-            // txtNumero
-            // 
-            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(147, 181);
-            this.txtNumero.MaxLength = 5;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(73, 20);
-            this.txtNumero.TabIndex = 9;
-            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Texto;
-            // 
             // txtCep
             // 
             this.txtCep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -358,7 +348,7 @@
             this.gbxEscolhePaisEstado.Location = new System.Drawing.Point(104, 38);
             this.gbxEscolhePaisEstado.Name = "gbxEscolhePaisEstado";
             this.gbxEscolhePaisEstado.Size = new System.Drawing.Size(440, 111);
-            this.gbxEscolhePaisEstado.TabIndex = 22;
+            this.gbxEscolhePaisEstado.TabIndex = 2;
             this.gbxEscolhePaisEstado.TabStop = false;
             // 
             // lblNmPais
@@ -427,7 +417,6 @@
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(99, 20);
             this.txtCodPostal.TabIndex = 12;
-            this.txtCodPostal.TextChanged += new System.EventHandler(this.txtCodPostal_TextChanged);
             // 
             // lblCodPostal
             // 
@@ -457,7 +446,6 @@
             this.txtDDI.Size = new System.Drawing.Size(35, 20);
             this.txtDDI.TabIndex = 14;
             this.txtDDI.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
-            this.txtDDI.TextChanged += new System.EventHandler(this.txtDDI_TextChanged);
             // 
             // lblDDI
             // 
@@ -479,7 +467,7 @@
             this.panelBrasil.Location = new System.Drawing.Point(104, 294);
             this.panelBrasil.Name = "panelBrasil";
             this.panelBrasil.Size = new System.Drawing.Size(440, 62);
-            this.panelBrasil.TabIndex = 53;
+            this.panelBrasil.TabIndex = 17;
             // 
             // rdbPessoaJuridica
             // 
@@ -570,6 +558,16 @@
             this.lblIdentInter.TabIndex = 45;
             this.lblIdentInter.Text = "Código de Identificação";
             // 
+            // txtNumero
+            // 
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero.Location = new System.Drawing.Point(147, 181);
+            this.txtNumero.MaxLength = 5;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(74, 20);
+            this.txtNumero.TabIndex = 9;
+            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,6 +576,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.panelOutros);
             this.Controls.Add(this.panelBrasil);
             this.Controls.Add(this.txtTelefoneInter);
@@ -590,7 +589,6 @@
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDDD);
@@ -647,7 +645,6 @@
         private System.Windows.Forms.Label lblDDD;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private Controles.MegaTextBox.MegaTextBox txtNumero;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.ToolTip toolTipLegenda;
@@ -675,5 +672,6 @@
         private System.Windows.Forms.Panel panelOutros;
         private System.Windows.Forms.TextBox txtIdentInter;
         private System.Windows.Forms.Label lblIdentInter;
+        private Controles.MegaTextBox.MegaTextBox txtNumero;
     }
 }

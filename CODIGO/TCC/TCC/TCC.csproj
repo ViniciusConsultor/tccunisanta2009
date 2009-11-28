@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -74,8 +74,10 @@
     <Compile Include="BUSINESS\Exceptions\Cliente\BairroClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\CEPVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\CidadeClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CNPJClienteExistente.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\CodigoClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\CodigoPostalVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CPFClienteExistente.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\CpfCnpjVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\DadosComunicacaoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\DDDClienteVazioException.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="BUSINESS\Exceptions\Cliente\EmailClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\EstadoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\IdentidadeInterVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\IdentInterExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\NomeClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\NroEnderecoClienteVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Cliente\paisVazioException.cs" />
@@ -211,6 +214,7 @@
     <Compile Include="BUSINESS\Exceptions\Usinagem\CheckBoxPecaOKVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Validacoes\EmailInvalidoException.cs" />
     <Compile Include="BUSINESS\Exceptions\Validacoes\MaskedInvalidaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\DataVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Venda\GridProdutoSemDadosException.cs" />
