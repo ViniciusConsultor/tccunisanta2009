@@ -69,6 +69,7 @@ namespace TCC.UI
                     if (resultado == DialogResult.Cancel)
                     {
                         this._modelFamMotor = null;
+                        this.txtFiltroBusca.Text = string.Empty;
                     }
                     else
                     {

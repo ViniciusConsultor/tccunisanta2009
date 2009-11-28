@@ -125,7 +125,7 @@
             this.btnBuscaFornecedor.Location = new System.Drawing.Point(227, 80);
             this.btnBuscaFornecedor.Name = "btnBuscaFornecedor";
             this.btnBuscaFornecedor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaFornecedor.TabIndex = 37;
+            this.btnBuscaFornecedor.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnBuscaFornecedor, "Buscar Fornecedor");
             this.btnBuscaFornecedor.UseVisualStyleBackColor = true;
             this.btnBuscaFornecedor.Click += new System.EventHandler(this.btnBuscaFornecedor_Click);
@@ -137,7 +137,7 @@
             this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(227, 38);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
             this.btnBuscarItemDtGrid.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscarItemDtGrid.TabIndex = 41;
+            this.btnBuscarItemDtGrid.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnBuscarItemDtGrid, "Buscar Itens");
             this.btnBuscarItemDtGrid.UseVisualStyleBackColor = true;
             this.btnBuscarItemDtGrid.Click += new System.EventHandler(this.btnBuscarItemDtGrid_Click);
@@ -149,7 +149,7 @@
             this.btnRemoveItem.Location = new System.Drawing.Point(440, 81);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(27, 23);
-            this.btnRemoveItem.TabIndex = 44;
+            this.btnRemoveItem.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
             this.btnRemoveItem.UseVisualStyleBackColor = true;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
@@ -161,7 +161,7 @@
             this.btnAdicionaItem.Location = new System.Drawing.Point(407, 81);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
             this.btnAdicionaItem.Size = new System.Drawing.Size(27, 23);
-            this.btnAdicionaItem.TabIndex = 43;
+            this.btnAdicionaItem.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaItem, "Adicionar Item");
             this.btnAdicionaItem.UseVisualStyleBackColor = true;
             this.btnAdicionaItem.Click += new System.EventHandler(this.btnAdicionaItem_Click);
@@ -242,7 +242,7 @@
             this.txtBuscaFiltro.Name = "txtBuscaFiltro";
             this.txtBuscaFiltro.ReadOnly = true;
             this.txtBuscaFiltro.Size = new System.Drawing.Size(190, 20);
-            this.txtBuscaFiltro.TabIndex = 40;
+            this.txtBuscaFiltro.TabIndex = 6;
             // 
             // txtFornecedor
             // 
@@ -253,7 +253,7 @@
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.ReadOnly = true;
             this.txtFornecedor.Size = new System.Drawing.Size(190, 21);
-            this.txtFornecedor.TabIndex = 4;
+            this.txtFornecedor.TabIndex = 8;
             // 
             // lblFornecedor
             // 
@@ -271,7 +271,7 @@
             this.txtQtdItem.MaxLength = 2;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(141, 20);
-            this.txtQtdItem.TabIndex = 42;
+            this.txtQtdItem.TabIndex = 10;
             this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // dgItems
@@ -378,7 +378,7 @@
             this.rdbMotor.Location = new System.Drawing.Point(80, 22);
             this.rdbMotor.Name = "rdbMotor";
             this.rdbMotor.Size = new System.Drawing.Size(52, 17);
-            this.rdbMotor.TabIndex = 38;
+            this.rdbMotor.TabIndex = 5;
             this.rdbMotor.Text = "Motor";
             this.rdbMotor.UseVisualStyleBackColor = true;
             // 
@@ -389,7 +389,7 @@
             this.rdbPeca.Location = new System.Drawing.Point(30, 22);
             this.rdbPeca.Name = "rdbPeca";
             this.rdbPeca.Size = new System.Drawing.Size(50, 17);
-            this.rdbPeca.TabIndex = 39;
+            this.rdbPeca.TabIndex = 4;
             this.rdbPeca.TabStop = true;
             this.rdbPeca.Text = "Peça";
             this.rdbPeca.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@
             this.txtDataCompra.Mask = "00/00/0000";
             this.txtDataCompra.Name = "txtDataCompra";
             this.txtDataCompra.Size = new System.Drawing.Size(71, 20);
-            this.txtDataCompra.TabIndex = 41;
+            this.txtDataCompra.TabIndex = 3;
             this.txtDataCompra.ValidatingType = typeof(System.DateTime);
             // 
             // frmCadCompra

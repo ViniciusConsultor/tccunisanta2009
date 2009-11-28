@@ -111,6 +111,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelCliente = null;
+                    this.txtCdCliente.Text = string.Empty;
                 }
                 else
                 {

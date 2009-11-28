@@ -45,6 +45,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelTipoPeca = null;
+                    this.txtCdTipoPeca.Text = string.Empty;
                 }
                 else
                 {

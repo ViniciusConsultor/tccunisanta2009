@@ -67,6 +67,7 @@ namespace TCC.UI.CADASTRO
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelFornecedor = null;
+                    this.txtFornecedor.Text = string.Empty;
                 }
                 else
                 {

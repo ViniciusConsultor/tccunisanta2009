@@ -89,6 +89,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelDepartamento = null;
+                    this.txtCdDepartamento.Text = string.Empty;
                 }
                 else
                 {
@@ -175,6 +176,11 @@ namespace TCC.UI
             {
                 throw new BUSINESS.Exceptions.CodigoVendaVazioException();
             }
+        }
+
+        private void btnBuscaPeca_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
