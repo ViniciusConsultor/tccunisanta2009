@@ -271,6 +271,11 @@ INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (33,GETDA
 INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (34,GETDATE(),1,1,3)
 INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (35,GETDATE(),1,3,5)
 
+--motor
+INSERT INTO Motor(id_motor,dsc_motor,flg_ativo)VALUES (1,'366',1)
+INSERT INTO Motor(id_motor,dsc_motor,flg_ativo)VALUES (2,'447',1)
+
+
 --FAMILHA MOTOR
 INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_motor,id_estoque,id_fam_motor_real,id_tipo_motor)VALUES (1,1,'366',1,1,2,'366LA',1)
 INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_motor,id_estoque,id_fam_motor_real,id_tipo_motor)VALUES (2,1,'366',1,2,1,'447A',2)
