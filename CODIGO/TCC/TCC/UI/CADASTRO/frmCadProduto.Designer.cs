@@ -51,7 +51,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(2, 75);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(27, 23);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar / Voltar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -63,7 +63,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(2, 25);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpar.TabIndex = 6;
+            this.btnLimpar.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -80,7 +80,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(2, 1);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(27, 23);
-            this.btnAceitar.TabIndex = 5;
+            this.btnAceitar.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "OK");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -92,7 +92,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 49);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 7;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             // 
@@ -103,7 +103,7 @@
             this.btnBuscarProduto.Location = new System.Drawing.Point(291, 65);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscarProduto.TabIndex = 38;
+            this.btnBuscarProduto.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnBuscarProduto, "Buscar Peças");
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
             this.btnBuscarProduto.Click += new System.EventHandler(this.btnBuscarProduto_Click);
@@ -159,7 +159,7 @@
             this.txtDescProduto.Multiline = true;
             this.txtDescProduto.Name = "txtDescProduto";
             this.txtDescProduto.Size = new System.Drawing.Size(262, 43);
-            this.txtDescProduto.TabIndex = 4;
+            this.txtDescProduto.TabIndex = 5;
             // 
             // lblDs
             // 

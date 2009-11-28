@@ -52,7 +52,7 @@
             this.btnBuscarPerfil.Location = new System.Drawing.Point(301, 15);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
             this.btnBuscarPerfil.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscarPerfil.TabIndex = 3;
+            this.btnBuscarPerfil.TabIndex = 2;
             this.btnBuscarPerfil.UseVisualStyleBackColor = true;
             this.btnBuscarPerfil.Click += new System.EventHandler(this.btnBuscarPerfil_Click);
             // 
@@ -63,7 +63,7 @@
             this.btnVolta.Location = new System.Drawing.Point(1, 60);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(27, 23);
-            this.btnVolta.TabIndex = 8;
+            this.btnVolta.TabIndex = 5;
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
             // 
@@ -74,7 +74,7 @@
             this.btnLimpa.Location = new System.Drawing.Point(1, 31);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(27, 23);
-            this.btnLimpa.TabIndex = 6;
+            this.btnLimpa.TabIndex = 4;
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
@@ -85,7 +85,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(1, 2);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(27, 23);
-            this.btnConfirma.TabIndex = 5;
+            this.btnConfirma.TabIndex = 3;
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 

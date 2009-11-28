@@ -41,12 +41,12 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnBuscarFornecedorDtGrid = new System.Windows.Forms.Button();
             this.dgFornecedores = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscaPeca = new System.Windows.Forms.Button();
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscaPeca = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,26 +178,6 @@
             this.dgFornecedores.Size = new System.Drawing.Size(269, 138);
             this.dgFornecedores.TabIndex = 38;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Fornecedor";
-            // 
-            // btnBuscaPeca
-            // 
-            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
-            this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPeca.Location = new System.Drawing.Point(310, 22);
-            this.btnBuscaPeca.Name = "btnBuscaPeca";
-            this.btnBuscaPeca.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaPeca.TabIndex = 40;
-            this.btnBuscaPeca.UseVisualStyleBackColor = true;
-            this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
-            // 
             // hSelecionar
             // 
             this.hSelecionar.HeaderText = "Selecionar";
@@ -231,6 +211,26 @@
             this.hPais.HeaderText = "Pais";
             this.hPais.Name = "hPais";
             this.hPais.Width = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(65, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Fornecedor";
+            // 
+            // btnBuscaPeca
+            // 
+            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaPeca.Location = new System.Drawing.Point(310, 22);
+            this.btnBuscaPeca.Name = "btnBuscaPeca";
+            this.btnBuscaPeca.Size = new System.Drawing.Size(27, 23);
+            this.btnBuscaPeca.TabIndex = 1;
+            this.btnBuscaPeca.UseVisualStyleBackColor = true;
+            this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
             // frmPecaFornecedor
             // 

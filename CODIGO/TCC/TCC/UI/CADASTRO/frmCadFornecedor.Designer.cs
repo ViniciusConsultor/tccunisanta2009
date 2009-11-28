@@ -515,7 +515,7 @@
             this.lblCep.Location = new System.Drawing.Point(483, 228);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
-            this.lblCep.TabIndex = 46;
+            this.lblCep.TabIndex = 12;
             this.lblCep.Text = "CEP";
             // 
             // txtNumeroEndereco
