@@ -40,7 +40,7 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (5, 'Cadas
 
 --INSERT BUSCAS 
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (6, 'Peças', NULL, GETDATE(), 1);
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (7, 'Itens', NULL, GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (7, 'Itens', 'frmBuscaItem', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (8, 'Kit de Peças', NULL, GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (9, 'Familia de Motores', NULL, GETDATE(), 1);
 
@@ -61,7 +61,7 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (18, 'Movi
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (19, 'Buscas', NULL, GETDATE(), 1);
 
 --INSERT PRODUÇÃO 4
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (20, 'Peças', NULL, GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (20, 'Peças', 'frmBuscaPeca', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (21, 'Tipo de Peça', 'frmCadTipoPeca', GETDATE(), 1);
 --INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (22, 'Informar Usinagem', 'frmCadUsinagem', GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (23, 'Cadastrar Peças', 'frmCadPeca', GETDATE(), 1);

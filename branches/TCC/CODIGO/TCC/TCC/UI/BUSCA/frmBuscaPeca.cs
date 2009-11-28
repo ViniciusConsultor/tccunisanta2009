@@ -10,14 +10,21 @@ using TCC.BUSINESS;
 
 namespace TCC.UI
 {
-    public partial class frmBuscaPeca : Form
+    public partial class frmBuscaPeca : FormPai
     {
         #region Atributos
         mPeca _model;
         bool _alteracao;
+        bool _buscaMenu;
         #endregion
 
         #region Construtor
+        public frmBuscaPeca()
+        {
+            InitializeComponent();
+            this._buscaMenu = true;
+        }
+
         public frmBuscaPeca(mPeca modelPeca)
         {
             InitializeComponent();
@@ -47,12 +54,21 @@ namespace TCC.UI
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            base.FechaTela(this);
         }
 
         private void frmBuscaPeca_Load(object sender, EventArgs e)
         {
-            this.HabilitaBotoes();
+            if (this._buscaMenu == true)
+            {
+                this.btnAlterar.Visible = false;
+                this.btnExcluir.Visible = false;
+                this.btnOK.Visible = false;
+            }
+            else
+            {
+                this.HabilitaBotoes();
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
