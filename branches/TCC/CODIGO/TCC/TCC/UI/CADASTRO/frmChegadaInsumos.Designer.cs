@@ -79,7 +79,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(5, 88);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 12;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 14;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -91,7 +91,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(5, 129);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 13;
+            this.btnVoltar.TabIndex = 15;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -103,7 +103,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(5, 47);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpar.TabIndex = 11;
+            this.btnLimpar.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -115,7 +115,7 @@
             this.btnAceitar.Location = new System.Drawing.Point(5, 6);
             this.btnAceitar.Name = "btnAceitar";
             this.btnAceitar.Size = new System.Drawing.Size(40, 35);
-            this.btnAceitar.TabIndex = 10;
+            this.btnAceitar.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
             this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
@@ -139,7 +139,7 @@
             this.btnBuscaEstoque.Location = new System.Drawing.Point(560, 296);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
             this.btnBuscaEstoque.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaEstoque.TabIndex = 43;
+            this.btnBuscaEstoque.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnBuscaEstoque, "Buscar Itens");
             this.btnBuscaEstoque.UseVisualStyleBackColor = true;
             this.btnBuscaEstoque.Click += new System.EventHandler(this.btnBuscaEstoque_Click);
@@ -151,7 +151,7 @@
             this.btnRemovePeca.Location = new System.Drawing.Point(519, 325);
             this.btnRemovePeca.Name = "btnRemovePeca";
             this.btnRemovePeca.Size = new System.Drawing.Size(40, 35);
-            this.btnRemovePeca.TabIndex = 57;
+            this.btnRemovePeca.TabIndex = 11;
             this.toolTipLegenda.SetToolTip(this.btnRemovePeca, "Remover Peça");
             this.btnRemovePeca.UseVisualStyleBackColor = true;
             this.btnRemovePeca.Click += new System.EventHandler(this.btnRemovePeca_Click);
@@ -163,7 +163,7 @@
             this.btnAdicionaPeca.Location = new System.Drawing.Point(459, 325);
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
             this.btnAdicionaPeca.Size = new System.Drawing.Size(40, 35);
-            this.btnAdicionaPeca.TabIndex = 56;
+            this.btnAdicionaPeca.TabIndex = 10;
             this.toolTipLegenda.SetToolTip(this.btnAdicionaPeca, "Adicionar Peça");
             this.btnAdicionaPeca.UseVisualStyleBackColor = true;
             this.btnAdicionaPeca.Click += new System.EventHandler(this.btnAdicionaPeca_Click);
@@ -277,7 +277,7 @@
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
             this.hCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hCodigo.Width = 44;
+            this.hCodigo.Width = 46;
             // 
             // hNome
             // 
@@ -286,14 +286,14 @@
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hNome.Width = 39;
+            this.hNome.Width = 41;
             // 
             // hEstoque
             // 
             this.hEstoque.HeaderText = "Estoque";
             this.hEstoque.Name = "hEstoque";
             this.hEstoque.ReadOnly = true;
-            this.hEstoque.Width = 69;
+            this.hEstoque.Width = 71;
             // 
             // hQtd
             // 
@@ -301,7 +301,7 @@
             this.hQtd.HeaderText = "Qtd.";
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
-            this.hQtd.Width = 50;
+            this.hQtd.Width = 52;
             // 
             // hFornecedor
             // 
@@ -310,7 +310,7 @@
             this.hFornecedor.Name = "hFornecedor";
             this.hFornecedor.ReadOnly = true;
             this.hFornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hFornecedor.Width = 65;
+            this.hFornecedor.Width = 67;
             // 
             // lblPecaMotor
             // 
@@ -347,7 +347,7 @@
             this.txtEstoque.Location = new System.Drawing.Point(438, 298);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(121, 20);
-            this.txtEstoque.TabIndex = 21;
+            this.txtEstoque.TabIndex = 8;
             this.txtEstoque.TabStop = false;
             // 
             // megaTextBox2
@@ -356,7 +356,7 @@
             this.megaTextBox2.Location = new System.Drawing.Point(438, 208);
             this.megaTextBox2.Name = "megaTextBox2";
             this.megaTextBox2.Size = new System.Drawing.Size(149, 20);
-            this.megaTextBox2.TabIndex = 7;
+            this.megaTextBox2.TabIndex = 6;
             this.megaTextBox2.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
             // 
             // lblUltimoPreco
@@ -374,7 +374,7 @@
             this.txtQtdRecebida.Location = new System.Drawing.Point(439, 254);
             this.txtQtdRecebida.Name = "txtQtdRecebida";
             this.txtQtdRecebida.Size = new System.Drawing.Size(149, 20);
-            this.txtQtdRecebida.TabIndex = 8;
+            this.txtQtdRecebida.TabIndex = 7;
             this.txtQtdRecebida.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // lblQtdChegada

@@ -127,7 +127,7 @@
             this.txtIdReal.Location = new System.Drawing.Point(77, 52);
             this.txtIdReal.Name = "txtIdReal";
             this.txtIdReal.Size = new System.Drawing.Size(227, 20);
-            this.txtIdReal.TabIndex = 20;
+            this.txtIdReal.TabIndex = 1;
             this.txtIdReal.TipoTexto = Controles.MegaTextBox.TipoTexto.SoLetra;
             // 
             // frmCadTipoMotor

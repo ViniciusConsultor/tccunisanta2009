@@ -59,7 +59,7 @@
             this.btnRemover.Location = new System.Drawing.Point(495, 33);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(27, 23);
-            this.btnRemover.TabIndex = 52;
+            this.btnRemover.TabIndex = 5;
             this.toolTipLegenda.SetToolTip(this.btnRemover, "Remover");
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -71,7 +71,7 @@
             this.txtQtde.MaxLength = 8;
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(94, 20);
-            this.txtQtde.TabIndex = 51;
+            this.txtQtde.TabIndex = 3;
             this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
             // 
             // btnAdicionar
@@ -81,7 +81,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(462, 33);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(27, 23);
-            this.btnAdicionar.TabIndex = 49;
+            this.btnAdicionar.TabIndex = 4;
             this.toolTipLegenda.SetToolTip(this.btnAdicionar, "Adicionar");
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -158,7 +158,7 @@
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hNome.Width = 39;
+            this.hNome.Width = 41;
             // 
             // hQuantidade
             // 
@@ -167,7 +167,7 @@
             this.hQuantidade.Name = "hQuantidade";
             this.hQuantidade.ReadOnly = true;
             this.hQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQuantidade.Width = 66;
+            this.hQuantidade.Width = 68;
             // 
             // btnBuscaMotor
             // 
@@ -176,7 +176,7 @@
             this.btnBuscaMotor.Location = new System.Drawing.Point(298, 33);
             this.btnBuscaMotor.Name = "btnBuscaMotor";
             this.btnBuscaMotor.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaMotor.TabIndex = 45;
+            this.btnBuscaMotor.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscaMotor, "Buscar Peça");
             this.btnBuscaMotor.UseVisualStyleBackColor = true;
             this.btnBuscaMotor.Click += new System.EventHandler(this.btnBuscaMotor_Click);
@@ -198,7 +198,7 @@
             this.txtMotor.MaxLength = 50;
             this.txtMotor.Name = "txtMotor";
             this.txtMotor.Size = new System.Drawing.Size(181, 20);
-            this.txtMotor.TabIndex = 46;
+            this.txtMotor.TabIndex = 1;
             this.txtMotor.TabStop = false;
             // 
             // btnBuscaAlteracaoDelecao
@@ -208,7 +208,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 84);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 55;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 8;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -220,7 +220,7 @@
             this.btnVolta.Location = new System.Drawing.Point(6, 125);
             this.btnVolta.Name = "btnVolta";
             this.btnVolta.Size = new System.Drawing.Size(40, 35);
-            this.btnVolta.TabIndex = 56;
+            this.btnVolta.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnVolta, "Fechar");
             this.btnVolta.UseVisualStyleBackColor = true;
             this.btnVolta.Click += new System.EventHandler(this.btnVolta_Click);
@@ -232,7 +232,7 @@
             this.btnLimpa.Location = new System.Drawing.Point(6, 43);
             this.btnLimpa.Name = "btnLimpa";
             this.btnLimpa.Size = new System.Drawing.Size(40, 35);
-            this.btnLimpa.TabIndex = 54;
+            this.btnLimpa.TabIndex = 7;
             this.toolTipLegenda.SetToolTip(this.btnLimpa, "Limpar");
             this.btnLimpa.UseVisualStyleBackColor = true;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
@@ -244,7 +244,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(6, 2);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 53;
+            this.btnConfirma.TabIndex = 6;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Salvar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
