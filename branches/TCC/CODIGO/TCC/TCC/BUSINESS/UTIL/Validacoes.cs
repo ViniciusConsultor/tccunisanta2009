@@ -12,7 +12,8 @@ namespace TCC.BUSINESS.UTIL
         ddd,
         ddi,
         cnpj,
-        cpf
+        cpf,
+        data
     }
     #endregion Enum
 
@@ -137,6 +138,12 @@ namespace TCC.BUSINESS.UTIL
                     break;
                 case TipoMasked.cnpj:
                     if (masked.Length < 14)
+                    {
+                        throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
+                    }
+                    break;
+                case TipoMasked.data:
+                    if (masked.Length < 6)
                     {
                         throw new Exceptions.Validacoes.MaskedInvalidaException(tipo);
                     }

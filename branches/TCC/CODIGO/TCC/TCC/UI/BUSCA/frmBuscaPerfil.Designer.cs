@@ -138,20 +138,22 @@
             // 
             // hid_perfil
             // 
+            this.hid_perfil.DataPropertyName = "id_perfil";
             this.hid_perfil.HeaderText = "id";
             this.hid_perfil.Name = "hid_perfil";
             this.hid_perfil.ReadOnly = true;
             this.hid_perfil.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hid_perfil.Visible = false;
-            this.hid_perfil.Width = 21;
+            this.hid_perfil.Width = 19;
             // 
             // hdsc_perfil
             // 
+            this.hdsc_perfil.DataPropertyName = "Perfil";
             this.hdsc_perfil.HeaderText = "Perfil";
             this.hdsc_perfil.Name = "hdsc_perfil";
             this.hdsc_perfil.ReadOnly = true;
             this.hdsc_perfil.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hdsc_perfil.Width = 36;
+            this.hdsc_perfil.Width = 34;
             // 
             // frmBuscaPerfil
             // 

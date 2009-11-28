@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCC.MODEL;
@@ -158,9 +157,11 @@ namespace TCC.UI
                 model.IdColab = regra.BuscaIdMaximo();
                 model.NomeColab = txtNome.Text;
 
-                if (string.IsNullOrEmpty(this.txtDataNasc.Text) != null)
+                if (string.IsNullOrEmpty(this.txtDataNasc.Text) != true)
                 {
-                    BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
+                    string data = this.txtDataNasc.Text.Replace("/", string.Empty);
+                    data = data.Replace(" ", string.Empty);
+                    BUSINESS.UTIL.Validacoes.ValidaMasked(data, TCC.BUSINESS.UTIL.TipoMasked.data);
                     model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
                 }
                 model.Sexo = CbSexo.Text;
@@ -195,14 +196,15 @@ namespace TCC.UI
                 }
                 model.ComplEnd = txtComplemento.Text;
                 model.BairrEnd = txtBairro.Text;
-                if (this.txtCep.Modified == false)
+
+                string cep = txtCep.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
+                if (string.IsNullOrEmpty(cep) == true)
                 {
-                    string cep = txtCep.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
-                    model.Cep = Convert.ToInt32(cep);
+                    model.Cep = null;
                 }
                 else
                 {
-                    model.Cep = null;
+                    model.Cep = Convert.ToInt32(cep);
                 }
                 model.Cidade = txtCidade.Text;
                 model.Estado = this.cbEstado.SelectedValue.ToString();
@@ -228,8 +230,14 @@ namespace TCC.UI
                 string cpf = this.txtCpf.Text.Replace(".", string.Empty);
                 cpf = cpf.Replace("-", string.Empty);
                 cpf = cpf.Replace(" ", string.Empty);
-                model.Cpf = cpf;
-
+                if (string.IsNullOrEmpty(cpf) == true)
+                {
+                    model.Cpf = null;
+                }
+                else
+                {
+                    model.Cpf = cpf;
+                }
                 model.DatAtl = DateTime.Now;
                 if (base.Alteracao == true)
                 {
@@ -314,6 +322,7 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CpfVazioExeption();
                 }
+                BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
             }
             catch (Exception ex)
             {
@@ -370,6 +379,7 @@ namespace TCC.UI
             {
                 this.ValidaDadosNulos();
                 modelColaborador = this.PegaDadosTela();
+                regraColaborador.ValidaDados(modelColaborador);
                 if (base.Alteracao == false)
                 {
                     //Verifica se existe usuario para associar
@@ -469,6 +479,11 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
             {
                 MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Validacoes.EmailInvalidoException)
+            {
+                MessageBox.Show("Campo E-mail incorreto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtEmail.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.CpfExistenteException)
             {
