@@ -41,13 +41,13 @@ INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (5, 'Cadas
 --INSERT BUSCAS 
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (6, 'Peças', NULL, GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (7, 'Itens', 'frmBuscaItem', GETDATE(), 1);
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (8, 'Kit de Peças', NULL, GETDATE(), 1);
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (9, 'Familia de Motores', NULL, GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (8, 'Kit de Peças', 'frmBuscaKit', GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (9, 'Familia de Motores', 'frmBuscaFamiliaMotor', GETDATE(), 1);
 
 --INSERT COMPRA 1
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (10, 'Fornecedores', NULL, GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (11, 'Cadastrar Fornecedores', 'frmCadFornecedor', GETDATE(), 1);
-INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (12, 'Relacionar Peças ao Fornecedor',NULL , GETDATE(), 1);
+INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (12, 'Relacionar Peças ao Fornecedor','frmPecaFornecedor' , GETDATE(), 1);
 INSERT INTO Menu (id_menu, dsc_menu, ende, dat_atl, flg_ativo) VALUES (13, 'Realizar Compra', 'frmCadCompra', GETDATE(), 1);
 
 --INSERT VENDA 2

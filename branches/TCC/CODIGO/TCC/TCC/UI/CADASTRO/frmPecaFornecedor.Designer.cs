@@ -46,6 +46,7 @@
             this.hSelecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.txtNomePeca.Location = new System.Drawing.Point(68, 23);
             this.txtNomePeca.Name = "txtNomePeca";
             this.txtNomePeca.ReadOnly = true;
-            this.txtNomePeca.Size = new System.Drawing.Size(213, 20);
+            this.txtNomePeca.Size = new System.Drawing.Size(236, 20);
             this.txtNomePeca.TabIndex = 1;
             // 
             // lblNomePeca
@@ -74,7 +75,7 @@
             this.txtBuscaFiltroFornecedor.Location = new System.Drawing.Point(68, 66);
             this.txtBuscaFiltroFornecedor.MaxLength = 20;
             this.txtBuscaFiltroFornecedor.Name = "txtBuscaFiltroFornecedor";
-            this.txtBuscaFiltroFornecedor.Size = new System.Drawing.Size(213, 20);
+            this.txtBuscaFiltroFornecedor.Size = new System.Drawing.Size(236, 20);
             this.txtBuscaFiltroFornecedor.TabIndex = 2;
             // 
             // btnBuscaAlteracaoDelecao
@@ -125,7 +126,7 @@
             // 
             this.btnBuscarFornecedorDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarFornecedorDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarFornecedorDtGrid.Location = new System.Drawing.Point(287, 64);
+            this.btnBuscarFornecedorDtGrid.Location = new System.Drawing.Point(310, 65);
             this.btnBuscarFornecedorDtGrid.Name = "btnBuscarFornecedorDtGrid";
             this.btnBuscarFornecedorDtGrid.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarFornecedorDtGrid.TabIndex = 3;
@@ -151,7 +152,8 @@
             this.dgFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hSelecionar,
             this.hIdFornecedor,
-            this.hNome});
+            this.hNome,
+            this.hPais});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,7 +175,7 @@
             this.dgFornecedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFornecedores.ShowEditingIcon = false;
-            this.dgFornecedores.Size = new System.Drawing.Size(246, 138);
+            this.dgFornecedores.Size = new System.Drawing.Size(269, 138);
             this.dgFornecedores.TabIndex = 38;
             // 
             // label1
@@ -189,7 +191,7 @@
             // 
             this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaPeca.Location = new System.Drawing.Point(287, 20);
+            this.btnBuscaPeca.Location = new System.Drawing.Point(310, 22);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
             this.btnBuscaPeca.Size = new System.Drawing.Size(27, 23);
             this.btnBuscaPeca.TabIndex = 40;
@@ -216,12 +218,19 @@
             // 
             // hNome
             // 
-            this.hNome.DataPropertyName = "Fornecedor";
+            this.hNome.DataPropertyName = "nom";
             this.hNome.HeaderText = "Nome";
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hNome.Width = 41;
+            // 
+            // hPais
+            // 
+            this.hPais.DataPropertyName = "nom_pais";
+            this.hPais.HeaderText = "Pais";
+            this.hPais.Name = "hPais";
+            this.hPais.Width = 52;
             // 
             // frmPecaFornecedor
             // 
@@ -269,5 +278,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn hSelecionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hPais;
     }
 }
