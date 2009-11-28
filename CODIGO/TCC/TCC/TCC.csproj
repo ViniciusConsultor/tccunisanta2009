@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -355,6 +355,10 @@
       <DependentUpon>frmBuscaFornecedor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaItem.resx">
+      <DependentUpon>frmBuscaItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaItemPeca.resx">
       <DependentUpon>frmBuscaItemPeca.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -373,6 +377,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaOrdemServico.resx">
       <DependentUpon>frmBuscaOrdemServico.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BUSCA\frmBuscaPeca.resx">
       <DependentUpon>frmBuscaPeca.cs</DependentUpon>
@@ -608,6 +613,12 @@
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaFornecedor.Designer.cs">
       <DependentUpon>frmBuscaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItem.Designer.cs">
+      <DependentUpon>frmBuscaItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BUSCA\frmBuscaItemPeca.cs">
       <SubType>Form</SubType>
