@@ -369,4 +369,10 @@ INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (2,4,GETDA
 INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (3,3,GETDATE(),1)
 INSERT INTO Fornecedordepto(id_depto,id_forn,dat_alt,flg_ativo)VALUES (4,2,GETDATE(),1)
 
+--fornecedor Motor
+INSERT INTO Motorfornecedor(id_motor,id_forn,dat_alt,flg_ativo)VALUES (1,2,GETDATE(),1)
+INSERT INTO Motorfornecedor(id_motor,id_forn,dat_alt,flg_ativo)VALUES (2,2,GETDATE(),1)
 
+--motor estoque
+INSERT INTO Motorestoque (id_estoq,id_motor,dat_alt,qtd,flg_ativo)VALUES(1,1,GETDATE(),1,1)
+INSERT INTO Motorestoque (id_estoq,id_motor,dat_alt,qtd,flg_ativo)VALUES(1,2,GETDATE(),1,1)
