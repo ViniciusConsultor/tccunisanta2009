@@ -298,7 +298,7 @@
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(534, 280);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
             this.btnBuscaDepartamento.Size = new System.Drawing.Size(27, 23);
-            this.btnBuscaDepartamento.TabIndex = 16;
+            this.btnBuscaDepartamento.TabIndex = 15;
             this.toolTipLegenda.SetToolTip(this.btnBuscaDepartamento, "Buscar Departamento");
             this.btnBuscaDepartamento.UseVisualStyleBackColor = true;
             this.btnBuscaDepartamento.Click += new System.EventHandler(this.btnBuscaDepartamento_Click);
@@ -399,11 +399,12 @@
             // 
             // txtCpf
             // 
+            this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCpf.Location = new System.Drawing.Point(461, 317);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(100, 20);
-            this.txtCpf.TabIndex = 16;
+            this.txtCpf.TabIndex = 17;
             this.txtCpf.ValidatingType = typeof(int);
             // 
             // txtDDD
@@ -433,7 +434,7 @@
             this.txtRg.MaxLength = 13;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(114, 20);
-            this.txtRg.TabIndex = 15;
+            this.txtRg.TabIndex = 16;
             this.txtRg.TipoTexto = Controles.MegaTextBox.TipoTexto.Rg;
             // 
             // frmCadColaborador
