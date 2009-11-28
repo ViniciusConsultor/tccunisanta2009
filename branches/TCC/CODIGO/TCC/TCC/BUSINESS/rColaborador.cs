@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
@@ -49,12 +48,29 @@ namespace TCC.BUSINESS
             }
         }
 
-        private void ValidaDados(mColaborador model)
+        public void ValidaDados(mColaborador model)
         {
-            UTIL.Validacoes.ValidaMasked(model.Cep.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cep);
-            UTIL.Validacoes.ValidaMasked(model.Ddd.ToString(), TCC.BUSINESS.UTIL.TipoMasked.ddd);
-            UTIL.Validacoes.ValidaMasked(model.Telefone.ToString(), TCC.BUSINESS.UTIL.TipoMasked.tel);
-            string data = Convert.ToString(model.DatNasc);
+            if (model.Ddd != null)
+            {
+                UTIL.Validacoes.ValidaMasked(model.Ddd.ToString(), TCC.BUSINESS.UTIL.TipoMasked.ddd);
+            }
+            if (model.Telefone != null)
+            {
+                UTIL.Validacoes.ValidaMasked(model.Telefone.ToString(), TCC.BUSINESS.UTIL.TipoMasked.tel);
+            }
+            if (model.Cep != null)
+            {
+                UTIL.Validacoes.ValidaMasked(model.Cep.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cep);
+            }
+            if (model.Cpf != null)
+            {
+                UTIL.Validacoes.ValidaMasked(model.Cpf.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cpf);
+            }
+            if (model.Email != null)
+            {
+                string email = Convert.ToString(model.Email);
+                UTIL.Validacoes.ValidaEmail(email);
+            }
         }
 
         private bool ExisteCpfColaborador(string cpf)
