@@ -145,7 +145,6 @@
             this.hid_forn.Name = "hid_forn";
             this.hid_forn.ReadOnly = true;
             this.hid_forn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hid_forn.Visible = false;
             this.hid_forn.Width = 21;
             // 
             // hPais

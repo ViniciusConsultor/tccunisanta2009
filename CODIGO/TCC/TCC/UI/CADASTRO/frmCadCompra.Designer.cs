@@ -46,7 +46,6 @@
             this.txtValor = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.lblValor = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
-            this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gpbOrdemCompra = new System.Windows.Forms.GroupBox();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
@@ -54,15 +53,15 @@
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
-            this.lblQtdPeca = new System.Windows.Forms.Label();
-            this.rdbMotor = new System.Windows.Forms.RadioButton();
-            this.rdbPeca = new System.Windows.Forms.RadioButton();
             this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hNomeItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hFlg_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNovoRegistro = new System.Windows.Forms.Button();
+            this.lblQtdPeca = new System.Windows.Forms.Label();
+            this.rdbMotor = new System.Windows.Forms.RadioButton();
+            this.rdbPeca = new System.Windows.Forms.RadioButton();
+            this.txtDataCompra = new System.Windows.Forms.MaskedTextBox();
             this.gpbOrdemCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +116,7 @@
             this.btnAceitar.TabIndex = 13;
             this.toolTipLegenda.SetToolTip(this.btnAceitar, "Cadastrar");
             this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
             // 
             // btnBuscaFornecedor
             // 
@@ -152,6 +152,7 @@
             this.btnRemoveItem.TabIndex = 44;
             this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
             this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnAdicionaItem
             // 
@@ -178,7 +179,7 @@
             // 
             this.txtValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValor.Location = new System.Drawing.Point(369, 46);
-            this.txtValor.MaxLength = 2;
+            this.txtValor.MaxLength = 14;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(85, 20);
             this.txtValor.TabIndex = 2;
@@ -202,15 +203,6 @@
             this.txtObs.Size = new System.Drawing.Size(267, 34);
             this.txtObs.TabIndex = 1;
             // 
-            // txtDataCompra
-            // 
-            this.txtDataCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDataCompra.Location = new System.Drawing.Point(474, 46);
-            this.txtDataCompra.Mask = "__/__/____   ";
-            this.txtDataCompra.Name = "txtDataCompra";
-            this.txtDataCompra.Size = new System.Drawing.Size(81, 20);
-            this.txtDataCompra.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -222,7 +214,6 @@
             // 
             // gpbOrdemCompra
             // 
-            this.gpbOrdemCompra.Controls.Add(this.btnNovoRegistro);
             this.gpbOrdemCompra.Controls.Add(this.btnBuscaFornecedor);
             this.gpbOrdemCompra.Controls.Add(this.txtBuscaFiltro);
             this.gpbOrdemCompra.Controls.Add(this.btnBuscarItemDtGrid);
@@ -329,38 +320,6 @@
             this.dgItems.ShowEditingIcon = false;
             this.dgItems.Size = new System.Drawing.Size(437, 153);
             this.dgItems.TabIndex = 45;
-            this.dgItems.Click += new System.EventHandler(this.dgItems_Click);
-            // 
-            // lblQtdPeca
-            // 
-            this.lblQtdPeca.AutoSize = true;
-            this.lblQtdPeca.Location = new System.Drawing.Point(257, 67);
-            this.lblQtdPeca.Name = "lblQtdPeca";
-            this.lblQtdPeca.Size = new System.Drawing.Size(62, 13);
-            this.lblQtdPeca.TabIndex = 46;
-            this.lblQtdPeca.Text = "Quantidade";
-            // 
-            // rdbMotor
-            // 
-            this.rdbMotor.AutoSize = true;
-            this.rdbMotor.Location = new System.Drawing.Point(80, 22);
-            this.rdbMotor.Name = "rdbMotor";
-            this.rdbMotor.Size = new System.Drawing.Size(52, 17);
-            this.rdbMotor.TabIndex = 38;
-            this.rdbMotor.Text = "Motor";
-            this.rdbMotor.UseVisualStyleBackColor = true;
-            // 
-            // rdbPeca
-            // 
-            this.rdbPeca.AutoSize = true;
-            this.rdbPeca.Checked = true;
-            this.rdbPeca.Location = new System.Drawing.Point(30, 22);
-            this.rdbPeca.Name = "rdbPeca";
-            this.rdbPeca.Size = new System.Drawing.Size(50, 17);
-            this.rdbPeca.TabIndex = 39;
-            this.rdbPeca.TabStop = true;
-            this.rdbPeca.Text = "Peça";
-            this.rdbPeca.UseVisualStyleBackColor = true;
             // 
             // hId
             // 
@@ -404,16 +363,46 @@
             this.hFlg_motor.Visible = false;
             this.hFlg_motor.Width = 75;
             // 
-            // btnNovoRegistro
+            // lblQtdPeca
             // 
-            this.btnNovoRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovoRegistro.Location = new System.Drawing.Point(440, 19);
-            this.btnNovoRegistro.Name = "btnNovoRegistro";
-            this.btnNovoRegistro.Size = new System.Drawing.Size(27, 23);
-            this.btnNovoRegistro.TabIndex = 47;
-            this.toolTipLegenda.SetToolTip(this.btnNovoRegistro, "Adicionar Item");
-            this.btnNovoRegistro.UseVisualStyleBackColor = true;
-            this.btnNovoRegistro.Click += new System.EventHandler(this.btnNovoRegistro_Click);
+            this.lblQtdPeca.AutoSize = true;
+            this.lblQtdPeca.Location = new System.Drawing.Point(257, 67);
+            this.lblQtdPeca.Name = "lblQtdPeca";
+            this.lblQtdPeca.Size = new System.Drawing.Size(62, 13);
+            this.lblQtdPeca.TabIndex = 46;
+            this.lblQtdPeca.Text = "Quantidade";
+            // 
+            // rdbMotor
+            // 
+            this.rdbMotor.AutoSize = true;
+            this.rdbMotor.Location = new System.Drawing.Point(80, 22);
+            this.rdbMotor.Name = "rdbMotor";
+            this.rdbMotor.Size = new System.Drawing.Size(52, 17);
+            this.rdbMotor.TabIndex = 38;
+            this.rdbMotor.Text = "Motor";
+            this.rdbMotor.UseVisualStyleBackColor = true;
+            // 
+            // rdbPeca
+            // 
+            this.rdbPeca.AutoSize = true;
+            this.rdbPeca.Checked = true;
+            this.rdbPeca.Location = new System.Drawing.Point(30, 22);
+            this.rdbPeca.Name = "rdbPeca";
+            this.rdbPeca.Size = new System.Drawing.Size(50, 17);
+            this.rdbPeca.TabIndex = 39;
+            this.rdbPeca.TabStop = true;
+            this.rdbPeca.Text = "Peça";
+            this.rdbPeca.UseVisualStyleBackColor = true;
+            // 
+            // txtDataCompra
+            // 
+            this.txtDataCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDataCompra.Location = new System.Drawing.Point(474, 45);
+            this.txtDataCompra.Mask = "00/00/0000";
+            this.txtDataCompra.Name = "txtDataCompra";
+            this.txtDataCompra.Size = new System.Drawing.Size(71, 20);
+            this.txtDataCompra.TabIndex = 41;
+            this.txtDataCompra.ValidatingType = typeof(System.DateTime);
             // 
             // frmCadCompra
             // 
@@ -423,9 +412,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.gpbOrdemCompra);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtDataCompra);
             this.Controls.Add(this.txtObs);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblValor);
@@ -458,7 +447,6 @@
         private Controles.MegaTextBox.MegaTextBox txtValor;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtObs;
-        private System.Windows.Forms.MaskedTextBox txtDataCompra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gpbOrdemCompra;
         private System.Windows.Forms.Button btnBuscaFornecedor;
@@ -478,6 +466,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn hFlg_motor;
-        private System.Windows.Forms.Button btnNovoRegistro;
+        private System.Windows.Forms.MaskedTextBox txtDataCompra;
     }
 }

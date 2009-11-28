@@ -9,7 +9,7 @@ namespace TCC.BUSINESS
 {
     class rOrdemCompra : ComandosSql
     {
-        private int BuscaIdMaximo()
+        public int BuscaIdMaximo()
         {
             try
             {
@@ -23,7 +23,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarInsere(ModelPai model)
         {
-            throw new NotImplementedException();
+            base.Insere(model);
         }
 
         public override void ValidarDeleta(ModelPai model)

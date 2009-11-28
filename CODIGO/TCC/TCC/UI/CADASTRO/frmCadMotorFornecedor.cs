@@ -206,7 +206,7 @@ namespace TCC.UI.CADASTRO
                                         //Completa Model FornecedorDepto
                                         if (this._telaMotor == false)
                                         {
-                                            modelMotorFornecedor.Id_motor = this._idMotor;
+                                            modelMotorFornecedor.Id_motor = this._modelMotor.IdMotor;
                                         }
                                         else
                                         {
@@ -219,6 +219,7 @@ namespace TCC.UI.CADASTRO
                                         if (this._listaModelMotorFornecedor == null)
                                         {
                                             this._listaModelMotorFornecedor = new List<mMotorFornecedor>();
+                                            this._listaModelMotorFornecedor.Add(modelMotorFornecedor);
                                         }
                                         else
                                         {
