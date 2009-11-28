@@ -267,6 +267,7 @@
             this.btnBuscaAlteracaoDelecao.TabIndex = 21;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
+            this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
             // 
             // btnRelacionarDepto
             // 

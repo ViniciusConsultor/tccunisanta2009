@@ -107,7 +107,7 @@ namespace TCC.BUSINESS
             }
         }
 
-        public void ValidaDados(mFornecedor model)
+        public void ValidaDados(mFornecedor model, bool alteracao)
         {
             if (model.CodPostal != null && model.Nom_pais == "Brasil")
             {
@@ -117,10 +117,6 @@ namespace TCC.BUSINESS
             if (model.Cnpj != null)
             {
                 UTIL.Validacoes.ValidaMasked(model.Cnpj, TCC.BUSINESS.UTIL.TipoMasked.cnpj);
-                if (this.ExisteCnpj(model.Cnpj) == true)
-                {
-                    throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
-                }
             }
 
             if (model.Ddi != null)
@@ -147,11 +143,21 @@ namespace TCC.BUSINESS
                 UTIL.Validacoes.ValidaEmail(email);
             }
 
-            if (this.ExisteIdentInter(model.IdentInter) == true)
+            if (alteracao == false)
             {
-                throw new BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException();
-            }
+                if (this.ExisteCnpj(model.Cnpj) == true)
+                {
+                    throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
+                }
 
+                if (model.IdentInter != null)
+                {
+                    if (this.ExisteIdentInter(model.IdentInter) == true)
+                    {
+                        throw new BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException();
+                    }
+                }
+            }
         }
 
         private bool ExisteIdentInter(string identInter)
@@ -232,7 +238,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarAltera(ModelPai model)
         {
-            throw new NotImplementedException();
+            base.Altera(model);
         }
     }
 }

@@ -145,7 +145,8 @@
             this.hid_forn.Name = "hid_forn";
             this.hid_forn.ReadOnly = true;
             this.hid_forn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hid_forn.Width = 21;
+            this.hid_forn.Visible = false;
+            this.hid_forn.Width = 19;
             // 
             // hPais
             // 
@@ -153,7 +154,7 @@
             this.hPais.HeaderText = "Pais";
             this.hPais.Name = "hPais";
             this.hPais.ReadOnly = true;
-            this.hPais.Width = 52;
+            this.hPais.Width = 50;
             // 
             // hnom
             // 
@@ -162,7 +163,7 @@
             this.hnom.Name = "hnom";
             this.hnom.ReadOnly = true;
             this.hnom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hnom.Width = 67;
+            this.hnom.Width = 65;
             // 
             // frmBuscaFornecedor
             // 
