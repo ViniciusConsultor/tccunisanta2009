@@ -314,6 +314,11 @@ namespace TCC.UI
                 MessageBox.Show("Código de Identificação Internacional já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdentInter.Focus();
             }
+            catch (BUSINESS.Exceptions.Validacoes.EmailInvalidoException)
+            {
+                MessageBox.Show("Campo E-mail incorreto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtIdentInter.Focus();
+            }
             catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
             {
                 MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);

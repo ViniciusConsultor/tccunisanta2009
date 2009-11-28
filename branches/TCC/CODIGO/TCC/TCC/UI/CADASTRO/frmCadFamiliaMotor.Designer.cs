@@ -195,6 +195,7 @@
             this.btnRemoveKit.TabIndex = 12;
             this.toolTipLegenda.SetToolTip(this.btnRemoveKit, "Remover Kits");
             this.btnRemoveKit.UseVisualStyleBackColor = true;
+            this.btnRemoveKit.Click += new System.EventHandler(this.btnRemoveKit_Click);
             // 
             // btnBuscaNumMotor
             // 

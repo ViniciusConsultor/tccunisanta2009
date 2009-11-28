@@ -95,7 +95,7 @@
             // 
             this.btnBuscarProduto.BackgroundImage = global::TCC.resImg.btnBusca;
             this.btnBuscarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarProduto.Location = new System.Drawing.Point(379, 60);
+            this.btnBuscarProduto.Location = new System.Drawing.Point(291, 65);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarProduto.TabIndex = 38;
@@ -141,7 +141,7 @@
             this.txtFiltroBusca.Location = new System.Drawing.Point(56, 65);
             this.txtFiltroBusca.MaxLength = 25;
             this.txtFiltroBusca.Name = "txtFiltroBusca";
-            this.txtFiltroBusca.Size = new System.Drawing.Size(262, 20);
+            this.txtFiltroBusca.Size = new System.Drawing.Size(229, 20);
             this.txtFiltroBusca.TabIndex = 3;
             this.txtFiltroBusca.TabStop = false;
             this.txtFiltroBusca.TextChanged += new System.EventHandler(this.txtFiltroBusca_TextChanged);

@@ -287,7 +287,7 @@ namespace TCC.UI
         private void ComparaDadosGrid()
         {
             DataTable dtSource = null;
-            int indice;
+            int indice=0;
             try
             {
                 dtSource = (DataTable)this.dgItems.DataSource;

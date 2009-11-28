@@ -79,6 +79,13 @@ namespace TCC.UI
         }
         #endregion btnAdicionaItem Click
 
+        #region btnRemoveItem Click
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            this.RemoveItem();
+        }
+        #endregion btnRemoveItem Click
+
         #region txtCodigoKit TextChanged
         private void txtCodigoKit_TextChanged(object sender, EventArgs e)
         {
@@ -349,6 +356,34 @@ namespace TCC.UI
         }
         #endregion Adicionar Item Lista
 
+        #region Remove Item
+        /// <summary>
+        /// Remove item da lista
+        /// </summary>
+        private void RemoveItem()
+        {
+            int indice;
+            try
+            {
+                indice = this.ExisteModelItemKit(this._idItem);
+                if (indice > -1)
+                {
+                    this.txtQtdItem.Text = "0";
+                    this._modelItemKit.RemoveAt(indice);
+                    this.AtualizaGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Item não associado ao Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Remove Peca
+
         #region Popula Model Item Kit
         /// <summary>
         /// Popula o model item kit com os dados que estão no painel da tela
@@ -424,9 +459,9 @@ namespace TCC.UI
         {
             try
             {
-                this.ComparaDadosGrid();
                 if (this.dgItems.Rows.Count > 0)
                 {
+                    this.ComparaDadosGrid();
                     int indice = this.dgItems.CurrentRow.Index;
                     this.TxtNmItem.Text = this.dgItems["hNome", indice].Value.ToString();
                     this.txtQtdItem.Text = this.dgItems["hQtd", indice].Value.ToString();
