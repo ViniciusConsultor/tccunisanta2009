@@ -144,7 +144,7 @@ INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr
 INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de aneiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj', 'Brasil', NULL);
 
 --Numero Motor
-INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (1,'366','Default' , 1);
+INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (1,'366','Motor 366' , 1);
 INSERT INTO Numeromotor(id_num_motor ,id_num_motor_real ,dsc_num_motor ,flg_ativo) VALUES (2,'447','Moto Bomba' ,1);
 
 --TipoMotor
@@ -228,3 +228,54 @@ INSERT INTO Colaborador(id_colab, nom, dat_nasc, rua, nro_ende, compl, cep, bair
 
 --cliente
 INSERT INTO Cliente(id_cli, nom, tel, rua, nro_ende, compl, cod_post, bairr, cid, cpf, dat_atl, flg_ativo, mail, ddd, nom_pais, slg_est, ddi) VALUES (1, 'Jose', 32324251, 'Ana Costa', 75, 'APTO 35', 11060002, 'Gonzaga', 'Santos', 12345678901, GETDATE(), 1, 'kauepaulo@hotmail.com', '13', 'Brasil', 'SP', 55)
+
+--itemkit
+INSERT INTO Itemkit(id_item, id_kit, dat_alt, qtd_item, flg_ativo)VALUES (1,1,GETDATE(),3,1)
+INSERT INTO Itemkit(id_item, id_kit, dat_alt, qtd_item, flg_ativo)VALUES (2,2,GETDATE(),2,1)
+INSERT INTO Itemkit(id_item, id_kit, dat_alt, qtd_item, flg_ativo)VALUES (3,1,GETDATE(),1,1)
+
+--itempeca
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (1,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (2,GETDATE(),1,1,2)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (3,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (4,GETDATE(),1,3,2)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (5,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (6,GETDATE(),1,1,1)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (7,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (8,GETDATE(),1,3,1)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (9,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (10,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (11,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (12,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (13,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (14,GETDATE(),1,3,5)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (15,GETDATE(),1,3,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (16,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (17,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (18,GETDATE(),1,1,5)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (19,GETDATE(),1,3,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (20,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (21,GETDATE(),1,3,5)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (22,GETDATE(),1,3,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (23,GETDATE(),1,2,1)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (24,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (25,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (26,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (27,GETDATE(),1,1,2)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (28,GETDATE(),1,3,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (29,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (30,GETDATE(),1,2,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (31,GETDATE(),1,2,5)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (32,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (33,GETDATE(),1,3,4)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (34,GETDATE(),1,1,3)
+INSERT INTO Itempeca(id_peca,dat_alt,flg_ativo,id_item,qtd_peca)VALUES (35,GETDATE(),1,3,5)
+
+--FAMILHA MOTOR
+INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_motor,id_estoque,id_fam_motor_real,id_tipo_motor)VALUES (1,1,'366',1,1,2,'366LA',1)
+INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_motor,id_estoque,id_fam_motor_real,id_tipo_motor)VALUES (2,1,'366',1,2,1,'447A',2)
+
+
+--kit familha
+INSERT INTO Kitfamilia(id_kit,id_fam_motor,dat_alt,qtd_kit,flg_ativo)VALUES(1,1,GETDATE(),2,1)
+INSERT INTO Kitfamilia(id_kit,id_fam_motor,dat_alt,qtd_kit,flg_ativo)VALUES(2,2,GETDATE(),1,1)
