@@ -131,6 +131,7 @@
             this.btnBuscaPeca.TabIndex = 2;
             this.toolTipLegenda.SetToolTip(this.btnBuscaPeca, "Buscar Peça");
             this.btnBuscaPeca.UseVisualStyleBackColor = true;
+            this.btnBuscaPeca.Click += new System.EventHandler(this.btnBuscaPeca_Click);
             // 
             // button1
             // 

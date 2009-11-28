@@ -126,6 +126,7 @@ namespace TCC.UI
                 if (this.rdbMotor.Checked == true)
                 {
                     this.AbreTelaBuscaMotor();
+                    this.txtBuscaFiltro.Text = string.Empty;
                 }
                 else
                 {

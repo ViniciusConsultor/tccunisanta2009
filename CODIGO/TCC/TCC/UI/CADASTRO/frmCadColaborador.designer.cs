@@ -265,7 +265,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(7, 127);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(40, 35);
-            this.btnVoltar.TabIndex = 20;
+            this.btnVoltar.TabIndex = 21;
             this.toolTipLegenda.SetToolTip(this.btnVoltar, "Fechar");
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -277,7 +277,7 @@
             this.btnApaga.Location = new System.Drawing.Point(7, 45);
             this.btnApaga.Name = "btnApaga";
             this.btnApaga.Size = new System.Drawing.Size(40, 35);
-            this.btnApaga.TabIndex = 18;
+            this.btnApaga.TabIndex = 19;
             this.toolTipLegenda.SetToolTip(this.btnApaga, "Limpar");
             this.btnApaga.UseVisualStyleBackColor = true;
             this.btnApaga.Click += new System.EventHandler(this.btnApaga_Click);
@@ -380,7 +380,7 @@
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 86);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
             this.btnBuscaAlteracaoDelecao.Size = new System.Drawing.Size(40, 35);
-            this.btnBuscaAlteracaoDelecao.TabIndex = 19;
+            this.btnBuscaAlteracaoDelecao.TabIndex = 20;
             this.toolTipLegenda.SetToolTip(this.btnBuscaAlteracaoDelecao, "Alterar");
             this.btnBuscaAlteracaoDelecao.UseVisualStyleBackColor = true;
             this.btnBuscaAlteracaoDelecao.Click += new System.EventHandler(this.btnBuscaAlteracaoDelecao_Click);
@@ -392,7 +392,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(7, 6);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(40, 35);
-            this.btnConfirma.TabIndex = 17;
+            this.btnConfirma.TabIndex = 18;
             this.toolTipLegenda.SetToolTip(this.btnConfirma, "Salvar");
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);

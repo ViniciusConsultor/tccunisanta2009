@@ -109,6 +109,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelNumeroMotor = null;
+                    this.txtNumeroMotor.Text = string.Empty;
                 }
                 else
                 {
@@ -138,6 +139,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelMotor = null;
+                    this.txtDsMotor.Text = string.Empty;
                 }
                 else
                 {
@@ -166,6 +168,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelTipoMotor = null;
+                    this.txtTipoMotor.Text = string.Empty;
                 }
                 else
                 {
@@ -195,6 +198,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelEstoque = null;
+                    this.txtEstoque.Text = string.Empty;
                 }
                 else
                 {

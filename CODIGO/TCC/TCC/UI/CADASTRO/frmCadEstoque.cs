@@ -50,6 +50,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelDepartamento = null;
+                    this.txtCdDepartamento.Text = string.Empty;
                 }
                 else
                 {

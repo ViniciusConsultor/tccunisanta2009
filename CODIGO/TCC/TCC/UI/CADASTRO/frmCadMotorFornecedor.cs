@@ -99,6 +99,7 @@ namespace TCC.UI.CADASTRO
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelMotor = null;
+                    this.txtDescMotor.Text = string.Empty;
                 }
                 else
                 {

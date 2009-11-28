@@ -59,6 +59,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelPerfil = null;
+                     this.txtPerfilUsuario.Text = string.Empty;
                 }
                 else
                 {
