@@ -156,46 +156,15 @@ namespace TCC.UI
             try
             {
                 model.IdColab = regra.BuscaIdMaximo();
-                model.BairrEnd = txtBairro.Text;
-                if (this.txtCep.Modified == false)
+                model.NomeColab = txtNome.Text;
+
+                if (string.IsNullOrEmpty(this.txtDataNasc.Text) != null)
                 {
-                    string cep = txtCep.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
-                    model.Cep = Convert.ToInt32(cep);
-                }
-                else
-                {
-                    model.Cep = null;
-                }
-                model.Cidade = txtCidade.Text;
-                model.ComplEnd = txtComplemento.Text;
-                string cpf = this.txtCpf.Text.Replace(".", string.Empty);
-                cpf = cpf.Replace("-", string.Empty);
-                    model.Cpf = txtCpf.Text;
                     BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
                     model.DatNasc = Convert.ToDateTime(this.txtDataNasc.Text);
-                model.Estado = this.cbEstado.SelectedValue.ToString();
-                model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
-                if (this._modelUsuario != null)
-                {
-                    model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
-                }
-                else
-                {
-                    model.IdUsuario = null;
-                }
-                model.NomeColab = txtNome.Text;
-                model.NomeRua = txtRua.Text;
-                if (string.IsNullOrEmpty(txtNumero.Text) == true)
-                {
-                    model.NroEnd = null;
-                }
-                else
-                {
-                    model.NroEnd = Convert.ToInt32(txtNumero.Text);
                 }
                 model.Sexo = CbSexo.Text;
-                model.Rg = txtRg.Text;
-                model.DatAtl = DateTime.Now;
+                
                 if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
                     model.Ddd = null;
@@ -215,6 +184,28 @@ namespace TCC.UI
                 {
                     model.Telefone = Convert.ToInt32(tel);
                 }
+                model.NomeRua = txtRua.Text;
+                if (string.IsNullOrEmpty(txtNumero.Text) == true)
+                {
+                    model.NroEnd = null;
+                }
+                else
+                {
+                    model.NroEnd = Convert.ToInt32(txtNumero.Text);
+                }
+                model.ComplEnd = txtComplemento.Text;
+                model.BairrEnd = txtBairro.Text;
+                if (this.txtCep.Modified == false)
+                {
+                    string cep = txtCep.Text.Replace("-", string.Empty).Replace(" ", string.Empty);
+                    model.Cep = Convert.ToInt32(cep);
+                }
+                else
+                {
+                    model.Cep = null;
+                }
+                model.Cidade = txtCidade.Text;
+                model.Estado = this.cbEstado.SelectedValue.ToString();
                 if (string.IsNullOrEmpty(this.txtEmail.Text) == true)
                 {
                     model.Email = null;
@@ -223,6 +214,23 @@ namespace TCC.UI
                 {
                     model.Email = this.txtEmail.Text;
                 }
+                model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
+                if (this._modelUsuario != null)
+                {
+                    model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
+                }
+                else
+                {
+                    model.IdUsuario = null;
+                }
+                model.Rg = txtRg.Text;
+
+                string cpf = this.txtCpf.Text.Replace(".", string.Empty);
+                cpf = cpf.Replace("-", string.Empty);
+                cpf = cpf.Replace(" ", string.Empty);
+                model.Cpf = cpf;
+
+                model.DatAtl = DateTime.Now;
                 if (base.Alteracao == true)
                 {
                     model.IdColab = this._modelColaborador.IdColab;
@@ -248,27 +256,23 @@ namespace TCC.UI
                 string cpf = this.txtCpf.Text.Replace(".", string.Empty);
                 cpf = cpf.Replace("-", string.Empty);
                 cpf = cpf.Replace(" ", string.Empty);
+
                 string cep = this.txtCep.Text.Replace("-", string.Empty);
                 cep = cep.Replace(" ", string.Empty);
+
                 string telefone = this.txtTelefone.Text.Replace("-", string.Empty);
                 telefone = telefone.Replace(" ", string.Empty);
+
                 string data = this.txtDataNasc.Text.Replace("/", string.Empty);
                 data = data.Replace(" ", string.Empty);
-                if (this._modelDepartamento == null)
+
+                if (string.IsNullOrEmpty(this.txtNome.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+                    throw new BUSINESS.Exceptions.Colaborador.NomeVazioExeption();
                 }
                 else if (string.IsNullOrEmpty(data) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException();
-                }
-                else if (string.IsNullOrEmpty(cep) == true)
-                {
-                    throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
-                }
-                else if (string.IsNullOrEmpty(this.txtNome.Text) == true)
-                {
-                    throw new BUSINESS.Exceptions.Colaborador.NomeVazioExeption();
                 }
                 else if (string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
@@ -290,9 +294,17 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.BairroVazioExeption();
                 }
+                else if (string.IsNullOrEmpty(cep) == true)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CepVazioException();
+                }
                 else if (string.IsNullOrEmpty(this.txtCidade.Text) == true)
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CidadeVazioExeption();
+                }
+                else if (this._modelDepartamento == null)
+                {
+                    throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtRg.Text) == true)
                 {
@@ -357,6 +369,7 @@ namespace TCC.UI
             try
             {
                 this.ValidaDadosNulos();
+                modelColaborador = this.PegaDadosTela();
                 if (base.Alteracao == false)
                 {
                     //Verifica se existe usuario para associar
@@ -366,7 +379,6 @@ namespace TCC.UI
                         regraUsuario = new rUsuario();
                         regraUsuario.ValidarInsere(this._modelUsuario);
                     }
-                    modelColaborador = this.PegaDadosTela();
                     if (modelColaborador != null)
                     {
                         regraColaborador.ValidarInsere(modelColaborador);
@@ -389,30 +401,20 @@ namespace TCC.UI
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            catch (BUSINESS.Exceptions.Colaborador.NomeVazioExeption)
             {
-                MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdDepartamento.Focus();
-            }
-            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
-            {
-                MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDataNasc.Focus();
-            }
-            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
-            {
-                MessageBox.Show("É Necessário Preencher o campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCep.Focus();
+                MessageBox.Show("É Necessário Preencher o campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNome.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.DataNascimentoVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Data Nascimento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataNasc.Focus();
             }
-            catch (BUSINESS.Exceptions.Colaborador.NomeVazioExeption)
+            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
             {
-                MessageBox.Show("É Necessário Preencher o campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtNome.Focus();
+                MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataNasc.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.DDDVazioExeption)
             {
@@ -439,10 +441,20 @@ namespace TCC.UI
                 MessageBox.Show("É Necessário Preencher o campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtBairro.Focus();
             }
+            catch (BUSINESS.Exceptions.Colaborador.CepVazioException)
+            {
+                MessageBox.Show("É Necessário Preencher o campo Cep", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCep.Focus();
+            }
             catch (BUSINESS.Exceptions.Colaborador.CidadeVazioExeption)
             {
                 MessageBox.Show("É Necessário Preencher o campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCidade.Focus();
+            }
+            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            {
+                MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCdDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.RgVazioExeption)
             {

@@ -47,11 +47,13 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Item.NomeItemVazioException)
             {
-                MessageBox.Show("É Necessário preencher o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário preencher o nome do Item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtNmItem.Focus();
             }
             catch (BUSINESS.Exceptions.Item.CodigoRealItemVazioException)
             {
-                MessageBox.Show("É Necessário preencher o código da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário preencher o código do Item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtCodigoItem.Focus();
             }
             catch (BUSINESS.Exceptions.Item.TelaResumoCanceladaException)
             {
@@ -455,9 +457,9 @@ namespace TCC.UI
         {
             try
             {
-                this.ComparaDadosGrid();
                 if (this.dgItems.Rows.Count > 0)
                 {
+                    this.ComparaDadosGrid();
                     int indice = this.dgItems.CurrentRow.Index;
                     this.TxtNmPeca.Text = this.dgItems["hNome", indice].Value.ToString();
                     this.txtQtdPeca.Text = this.dgItems["hQtd", indice].Value.ToString();

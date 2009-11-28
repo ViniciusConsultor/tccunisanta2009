@@ -91,6 +91,13 @@ namespace TCC.UI
         }
         #endregion  btnAdicionaKit Click
 
+        #region btnRemoveKit Click
+        private void btnRemoveKit_Click(object sender, EventArgs e)
+        {
+            this.RemoveKit();
+        }
+        #endregion btnRemoveKit Click
+
         #region btnBuscaNumMotor Click
         private void btnBuscaNumMotor_Click(object sender, EventArgs e)
         {
@@ -239,7 +246,7 @@ namespace TCC.UI
                 resultado = ResumoKit.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
-                    throw new BUSINESS.Exceptions.Item.TelaResumoCanceladaException();
+                    throw new BUSINESS.Exceptions.FamiliaMotor.TelaResumoCanceladaException();
                 }
             }
             catch (Exception e)
@@ -278,6 +285,16 @@ namespace TCC.UI
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
+            catch (BUSINESS.Exceptions.CodigoNumeroMotorVazioException)
+            {
+                MessageBox.Show("É Necessário Associar um Número de Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaNumMotor.Focus();
+            }
+            catch (BUSINESS.Exceptions.CodigoTipoMotorVazioExeception)
+            {
+                MessageBox.Show("É Necessário Associar um Tipo de Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaTipoMotor.Focus();
+            }
             catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
             {
                 MessageBox.Show("É Necessário Associar um Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
@@ -293,7 +310,7 @@ namespace TCC.UI
                 MessageBox.Show("O Número de Motor e o Tipo de Motor não podem ser vazios", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaNumMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.FamiliaMotor.FamiliaSemKitsException)
+            catch (BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException)
             {
                 MessageBox.Show("É Necessário Associar um Kit a Familias de Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarKitDtGrid.Focus();
@@ -321,11 +338,7 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (this._listaKitFamilia == null)
-            {
-                throw new BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException();
-            }
-            else if (this._modelMotor == null)
+            if (this._modelMotor == null)
             {
                 throw new BUSINESS.Exceptions.CodigoMotorVazioExeception();
             }
@@ -336,6 +349,10 @@ namespace TCC.UI
             else if (this._modelTipoMotor == null)
             {
                 throw new BUSINESS.Exceptions.CodigoTipoMotorVazioExeception();
+            }
+            else if (this._listaKitFamilia == null)
+            {
+                throw new BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException();
             }
         }
         #endregion Valida Dados Nulos
@@ -489,6 +506,34 @@ namespace TCC.UI
         }
         #endregion Adicionar Kit Lista
 
+        #region Remove Kit
+        /// <summary>
+        /// Remove kit da lista
+        /// </summary>
+        private void RemoveKit()
+        {
+            int indice;
+            try
+            {
+                indice = this.ExisteModelKitFamilia(this._idKit);
+                if (indice > -1)
+                {
+                    this.txtQtdKit.Text = "0";
+                    this._listaKitFamilia.RemoveAt(indice);
+                    this.AtualizaGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Kit não associado a Familia", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Remove Peca
+
         #region Popula Model Kit Familia
         /// <summary>
         /// Popula o model kit familia com os dados que estão no painel da tela
@@ -564,9 +609,9 @@ namespace TCC.UI
         {
             try
             {
-                this.ComparaDadosGrid();
                 if (this.dgKits.Rows.Count > 0)
                 {
+                    this.ComparaDadosGrid();
                     int indice = this.dgKits.CurrentRow.Index;
                     this.TxtNmKit.Text = this.dgKits["hNome", indice].Value.ToString();
                     this.txtQtdKit.Text = this.dgKits["hQtd", indice].Value.ToString();

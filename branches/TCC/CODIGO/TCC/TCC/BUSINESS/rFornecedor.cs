@@ -109,6 +109,11 @@ namespace TCC.BUSINESS
 
         public void ValidaDados(mFornecedor model)
         {
+            if (model.CodPostal != null && model.Nom_pais == "Brasil")
+            {
+                UTIL.Validacoes.ValidaMasked(model.CodPostal, TCC.BUSINESS.UTIL.TipoMasked.cep);
+            }
+
             if (model.Cnpj != null)
             {
                 UTIL.Validacoes.ValidaMasked(model.Cnpj, TCC.BUSINESS.UTIL.TipoMasked.cnpj);
@@ -117,13 +122,36 @@ namespace TCC.BUSINESS
                     throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
                 }
             }
-            else
+
+            if (model.Ddi != null)
             {
-                if (this.ExisteIdentInter(model.IdentInter) == true)
-                {
-                    throw new BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException();
-                }
-            }            
+                string ddi = Convert.ToString(model.Ddi);
+                UTIL.Validacoes.ValidaMasked(ddi, TCC.BUSINESS.UTIL.TipoMasked.ddd);
+            }
+
+            if (model.Ddd != null && model.Nom_pais == "Brasil")
+            {
+                string ddd = Convert.ToString(model.Ddd);
+                UTIL.Validacoes.ValidaMasked(ddd, TCC.BUSINESS.UTIL.TipoMasked.ddd);
+            }
+
+            if (model.Telefone != null && model.Nom_pais == "Brasil")
+            {
+                string tel = Convert.ToString(model.Telefone);
+                UTIL.Validacoes.ValidaMasked(tel, TCC.BUSINESS.UTIL.TipoMasked.tel);
+            }
+
+            if (model.Email != null)
+            {
+                string email = Convert.ToString(model.Email);
+                UTIL.Validacoes.ValidaEmail(email);
+            }
+
+            if (this.ExisteIdentInter(model.IdentInter) == true)
+            {
+                throw new BUSINESS.Exceptions.Fornecedor.IdentInterExistenteException();
+            }
+
         }
 
         private bool ExisteIdentInter(string identInter)

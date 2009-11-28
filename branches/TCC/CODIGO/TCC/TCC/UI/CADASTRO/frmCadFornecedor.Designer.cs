@@ -521,6 +521,7 @@
             // 
             this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumeroEndereco.Location = new System.Drawing.Point(150, 194);
+            this.txtNumeroEndereco.MaxLength = 5;
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroEndereco.TabIndex = 9;

@@ -54,10 +54,7 @@ namespace TCC.BUSINESS
             UTIL.Validacoes.ValidaMasked(model.Cep.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cep);
             UTIL.Validacoes.ValidaMasked(model.Ddd.ToString(), TCC.BUSINESS.UTIL.TipoMasked.ddd);
             UTIL.Validacoes.ValidaMasked(model.Telefone.ToString(), TCC.BUSINESS.UTIL.TipoMasked.tel);
-            if (this.ExisteCpfColaborador(model.Cpf) == true)
-            {
-                throw new Exceptions.Colaborador.CpfExistenteException();
-            }
+            string data = Convert.ToString(model.DatNasc);
         }
 
         private bool ExisteCpfColaborador(string cpf)

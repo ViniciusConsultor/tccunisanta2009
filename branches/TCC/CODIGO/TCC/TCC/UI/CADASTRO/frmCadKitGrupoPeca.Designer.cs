@@ -143,6 +143,7 @@
             this.btnRemoveItem.TabIndex = 9;
             this.toolTipLegenda.SetToolTip(this.btnRemoveItem, "Remover Item");
             this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnAceitar
             // 
@@ -261,7 +262,7 @@
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
             this.hCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hCodigo.Width = 46;
+            this.hCodigo.Width = 44;
             // 
             // hNome
             // 
@@ -270,7 +271,7 @@
             this.hNome.Name = "hNome";
             this.hNome.ReadOnly = true;
             this.hNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hNome.Width = 41;
+            this.hNome.Width = 39;
             // 
             // hQtd
             // 
@@ -279,7 +280,7 @@
             this.hQtd.Name = "hQtd";
             this.hQtd.ReadOnly = true;
             this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQtd.Width = 68;
+            this.hQtd.Width = 66;
             // 
             // txtBuscaFiltro
             // 

@@ -231,12 +231,12 @@ namespace TCC.UI
             }
             catch (BUSINESS.Exceptions.Motor.DescMotorExistenteException)
             {
-                MessageBox.Show("Descrição para o Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Nome do Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();
             }
             catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
             {
-                MessageBox.Show("É Necessário Digitar uma Descrição para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("É Necessário Digitar um Nome para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();
             }
             catch (Exception ex)

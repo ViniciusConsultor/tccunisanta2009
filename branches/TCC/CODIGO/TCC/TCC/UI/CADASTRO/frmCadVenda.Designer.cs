@@ -42,7 +42,6 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnVolta = new System.Windows.Forms.Button();
             this.btnCdCliente = new System.Windows.Forms.Button();
-            this.txtDataVenda = new System.Windows.Forms.MaskedTextBox();
             this.toolTipLegenda = new System.Windows.Forms.ToolTip(this.components);
             this.btnAdicionaProdutos = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
@@ -54,6 +53,9 @@
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
             this.lblTipoProduto = new System.Windows.Forms.Label();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
+            this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscaFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
             this.btnBuscarItemDtGrid = new System.Windows.Forms.Button();
@@ -61,9 +63,7 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
-            this.hId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDataVenda = new Controles.MegaMaskedTextBox.MegaMaskedTextBox(this.components);
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             // txtCdCliente
             // 
             this.txtCdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCdCliente.Enabled = false;
             this.txtCdCliente.Location = new System.Drawing.Point(188, 18);
             this.txtCdCliente.Name = "txtCdCliente";
             this.txtCdCliente.ReadOnly = true;
@@ -157,15 +158,6 @@
             this.toolTipLegenda.SetToolTip(this.btnCdCliente, "Buscar Cliente");
             this.btnCdCliente.UseVisualStyleBackColor = true;
             this.btnCdCliente.Click += new System.EventHandler(this.btnCdCliente_Click);
-            // 
-            // txtDataVenda
-            // 
-            this.txtDataVenda.Location = new System.Drawing.Point(188, 51);
-            this.txtDataVenda.Mask = "00/00/0000";
-            this.txtDataVenda.Name = "txtDataVenda";
-            this.txtDataVenda.Size = new System.Drawing.Size(75, 20);
-            this.txtDataVenda.TabIndex = 2;
-            this.txtDataVenda.ValidatingType = typeof(System.DateTime);
             // 
             // btnAdicionaProdutos
             // 
@@ -322,6 +314,34 @@
             this.dgProdutos.TabIndex = 9;
             this.dgProdutos.SelectionChanged += new System.EventHandler(this.dgProdutos_SelectionChanged);
             // 
+            // hId
+            // 
+            this.hId.DataPropertyName = "id_prdto";
+            this.hId.HeaderText = "Id";
+            this.hId.Name = "hId";
+            this.hId.ReadOnly = true;
+            this.hId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hId.Visible = false;
+            this.hId.Width = 22;
+            // 
+            // hDescricao
+            // 
+            this.hDescricao.DataPropertyName = "dsc_prdto";
+            this.hDescricao.HeaderText = "Descrição";
+            this.hDescricao.Name = "hDescricao";
+            this.hDescricao.ReadOnly = true;
+            this.hDescricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hDescricao.Width = 59;
+            // 
+            // hQtd
+            // 
+            this.hQtd.DataPropertyName = "Qtd";
+            this.hQtd.HeaderText = "Quantidade";
+            this.hQtd.Name = "hQtd";
+            this.hQtd.ReadOnly = true;
+            this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hQtd.Width = 66;
+            // 
             // txtBuscaFiltro
             // 
             this.txtBuscaFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -392,33 +412,15 @@
             this.TxtNmProduto.Size = new System.Drawing.Size(102, 20);
             this.TxtNmProduto.TabIndex = 14;
             // 
-            // hId
+            // txtDataVenda
             // 
-            this.hId.DataPropertyName = "id_prdto";
-            this.hId.HeaderText = "Id";
-            this.hId.Name = "hId";
-            this.hId.ReadOnly = true;
-            this.hId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hId.Visible = false;
-            this.hId.Width = 22;
-            // 
-            // hDescricao
-            // 
-            this.hDescricao.DataPropertyName = "dsc_prdto";
-            this.hDescricao.HeaderText = "Descrição";
-            this.hDescricao.Name = "hDescricao";
-            this.hDescricao.ReadOnly = true;
-            this.hDescricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hDescricao.Width = 61;
-            // 
-            // hQtd
-            // 
-            this.hQtd.DataPropertyName = "Qtd";
-            this.hQtd.HeaderText = "Quantidade";
-            this.hQtd.Name = "hQtd";
-            this.hQtd.ReadOnly = true;
-            this.hQtd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hQtd.Width = 68;
+            this.txtDataVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDataVenda.Location = new System.Drawing.Point(209, 50);
+            this.txtDataVenda.Mask = "00/00/0000";
+            this.txtDataVenda.Name = "txtDataVenda";
+            this.txtDataVenda.Size = new System.Drawing.Size(77, 20);
+            this.txtDataVenda.TabIndex = 17;
+            this.txtDataVenda.ValidatingType = typeof(System.DateTime);
             // 
             // frmCadVenda
             // 
@@ -428,10 +430,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDataVenda);
             this.Controls.Add(this.btnBuscaAlteracaoDelecao);
             this.Controls.Add(this.gbBuscaItem);
             this.Controls.Add(this.txtValorVenda);
-            this.Controls.Add(this.txtDataVenda);
             this.Controls.Add(this.btnVolta);
             this.Controls.Add(this.btnLimpa);
             this.Controls.Add(this.btnCdCliente);
@@ -467,7 +469,6 @@
         private System.Windows.Forms.Button btnLimpa;
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnCdCliente;
-        private System.Windows.Forms.MaskedTextBox txtDataVenda;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private Controles.MegaTextBox.MegaTextBox txtValorVenda;
         private System.Windows.Forms.GroupBox gbBuscaItem;
@@ -488,5 +489,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hId;
         private System.Windows.Forms.DataGridViewTextBoxColumn hDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
+        private Controles.MegaMaskedTextBox.MegaMaskedTextBox txtDataVenda;
     }
 }
