@@ -157,13 +157,55 @@ INSERT INTO Kitgrupopeca(id_kit, id_kit_real,nom, flg_ativo,dat_alt) VALUES (2 ,
 
 --tipo peca
 INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(1,'Pequenas',1);
-INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(2,'rosquiaveis',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(2,'Rosquiaveis',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(3,'Medias',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(4,'Grandes',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(5,'Internas',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(6,'Externas',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(7,'Suportes',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(8,'Calço',1);
+INSERT INTO tipoPeca(id_tipo_peca,dsc_tipo_peca,flg_ativo)VALUES(9,'Tubos',1);
+
+
 
 --Peças
-INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (1 ,'0.0', 'Solenóide', GETDATE() , 1.0, 1, 'SOLENÓIDE DO MOTOR 366 LA',5, 1 );
-INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (2 ,'1.0', 'Porca', GETDATE() , 0.1, 1, 'PORCA DO MOTOR 366 LA',10, 2 );
-INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (3 ,'0.0', 'Filtro de Ar', GETDATE() , 0.5, 1, 'FILTRO DE AR  DO MOTOR 447 A',8, 1 );
-INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (4 ,'0.0', 'Solenóide de Parada', GETDATE() , 1.0, 1, 'SOLENÓIDE DE PARADA DO MOTOR 447 A',6, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (1 ,'0.0', 'Carcaça', GETDATE() , 1.0, 1, 'CARCAÇA PARA MOTOR 366 LA',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (2 ,'1.0', 'Tampa', GETDATE() , 1.0, 1, 'TAMPA DA BOMBA ',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (3 ,'1.1', 'Parafuso', GETDATE() , 1.0, 1, 'PARAFUSO  ',10, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (4 ,'1.2', 'arruela', GETDATE() , 1.0, 1, 'CASQUILHO',10, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (5 ,'2.0', 'casquilho', GETDATE() , 1.0, 1, 'casquilho',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (6 ,'2.1', 'parafuso', GETDATE() , 1.0, 1, 'PARAFUSO',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (7 ,'2.2', 'arruela', GETDATE() , 1.0, 1, 'ARRUELA',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (8 ,'3.0', 'rotor', GETDATE() , 1.0, 1, 'ROTOR',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (9 ,'4.0', 'anel de vedação', GETDATE() , 1.0, 1, 'ANEL DE VEDAÇÃO',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (10 ,'5.0', 'parafuso', GETDATE() , 1.0, 1, 'PARAFUSO',4, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (11 ,'6.0', 'arruela', GETDATE() , 1.0, 1, 'ARRUELA',4, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (12 ,'7.0', 'respiro', GETDATE() , 1.0, 1, 'RESPIRO',2, 1 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (13 ,'8.0', 'eixo', GETDATE() , 1.0, 1, 'EIXO',2, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (14 ,'9.0', 'rolamento', GETDATE() , 1.0, 1, 'rolamento',2, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (15 ,'9.1', 'selo mecanico', GETDATE() , 1.0, 1, 'selomecanico',10, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (16 ,'9.2', 'retentor', GETDATE() , 1.0, 1, 'RETENTOR',10, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (17 ,'9.3', 'calço', GETDATE() , 1.0, 1, 'CALÇO',2, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (18 ,'9.4', 'chaveta', GETDATE() , 1.0, 1, 'CHAVETA',2, 2 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (19 ,'9.5', 'polia', GETDATE() , 1.0, 1, 'POLIA',2, 3 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (20 ,'10.0', 'porca', GETDATE() , 1.0, 1, 'PORCA	',2, 3 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (21 ,'10.1', 'arruela', GETDATE() , 1.0, 1, 'ARRUELA',4, 3 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (22 ,'10.2', 'tubo flexivel', GETDATE() , 1.0, 1, 'TUBO FLEXIVEL',4, 4 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (23 ,'10.3', 'abraçadeira', GETDATE() , 1.0, 1, 'ABRAÇADEIRA',2, 4 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (24 ,'11.0', 'sapata', GETDATE() , 1.0, 1, 'SAPATA',2, 5 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (25 ,'11.1', 'porca', GETDATE() , 1.0, 1, 'PORCA ',2, 5 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (26 ,'11.2', 'arruela', GETDATE() , 1.0, 1, 'ARRUELA',10, 6 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (27 ,'11.3', 'calço', GETDATE() , 1.0, 1, 'CALÇO',10, 6 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (28 ,'11.4', 'prisioneiro', GETDATE() , 1.0, 1, 'PRISIONEIRO',2, 6 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (29 ,'11.5', 'porca', GETDATE() , 1.0, 1, 'PORCA',2, 7 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (30 ,'12.0', 'suporte do esticador', GETDATE() , 1.0, 1, 'SUPORTE DO ESTICADOR',2, 7 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (31 ,'12.1', 'parafuso', GETDATE() , 1.0, 1, 'PARAFUSO',2, 7 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (32 ,'12.2', 'polia', GETDATE() , 1.0, 1, 'POLIA',4, 8 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (33 ,'12.3', 'parafuso', GETDATE() , 1.0, 1, 'PARAFUSO',4, 8 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (34 ,'12.4', 'arruela', GETDATE() , 1.0, 1, 'ARRUELA',2, 8 );
+INSERT INTO Peca( id_peca,id_peca_real ,nom ,dat_alt ,peso ,flg_ativo ,dsc_peca,qtd_min,id_tipo_peca) VALUES (35 ,'12.5', 'correia', GETDATE() , 1.0, 1, 'CORREIA',2, 9 );
+
+
 
 --DEPARTAMENTO
 INSERT INTO Departamento (id_depto,dsc_depto ,dat_atl,nom ,flg_ativo) 	VALUES (1 ,'estoque de peças',GETDATE() , 'Almoxarifado', 1);
