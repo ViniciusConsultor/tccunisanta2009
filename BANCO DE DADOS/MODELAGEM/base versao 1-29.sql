@@ -100,7 +100,7 @@ DROP TABLE Ordemcompra
 go
 
 CREATE TABLE Ordemcompra (
-       id_peca              integer NOT NULL,
+       id_peca              integer NULL,
        ultim_preco          numeric(15,2) NULL,
        id_ordem_compra      integer NOT NULL,
        id_motor             integer NULL,

@@ -10,14 +10,21 @@ using TCC.MODEL;
 
 namespace TCC.UI
 {
-    public partial class frmBuscaFamiliaMotor : Form
+    public partial class frmBuscaFamiliaMotor : FormPai
     {
         #region Atributos
         mFamiliaMotor _model;
         bool _alteracao;
+        bool _buscaMenu;
         #endregion
 
         #region Construtor
+        public frmBuscaFamiliaMotor()
+        {
+            InitializeComponent();
+            this._buscaMenu = true;
+        }
+
         public frmBuscaFamiliaMotor(mFamiliaMotor modelFamilia)
         {
             InitializeComponent();
@@ -47,12 +54,21 @@ namespace TCC.UI
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            base.FechaTela(this);
         }
 
         private void frmBuscaFamiliaMotor_Load(object sender, EventArgs e)
         {
-            this.HabilitaBotoes();
+            if (this._buscaMenu == true)
+            {
+                this.btnAlterar.Visible = false;
+                this.btnExcluir.Visible = false;
+                this.btnOK.Visible = false;
+            }
+            else
+            {
+                this.HabilitaBotoes();
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
