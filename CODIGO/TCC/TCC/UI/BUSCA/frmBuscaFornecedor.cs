@@ -262,6 +262,30 @@ namespace TCC.UI
             }
         }
 
+        private void PopulaModelCompletoAlteracao()
+        {
+            rFornecedor regraFornecedor = new rFornecedor();
+            DataTable dtRegistroFornecedor = null;
+            try
+            {
+                dtRegistroFornecedor = regraFornecedor.BuscaUmRegistro(this._model);
+                this._model.Deserialize(dtRegistroFornecedor);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                regraFornecedor = null;
+                if (dtRegistroFornecedor != null)
+                {
+                    dtRegistroFornecedor.Dispose();
+                    dtRegistroFornecedor = null;
+                }
+            }
+        }
+
         private void DeletaCadastro()
         {
             rFornecedor regraFornecedor = new rFornecedor();
@@ -293,29 +317,6 @@ namespace TCC.UI
             }
         }
 
-        private void PopulaModelCompletoAlteracao()
-        {
-            rFornecedor regraFornecedor = new rFornecedor();
-            DataTable dtRegistroFornecedor = null;
-            try
-            {
-                dtRegistroFornecedor = regraFornecedor.BuscaUmRegistro(this._model);
-                this._model.Deserialize(dtRegistroFornecedor);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                regraFornecedor = null;
-                if (dtRegistroFornecedor != null)
-                {
-                    dtRegistroFornecedor.Dispose();
-                    dtRegistroFornecedor = null;
-                }
-            }
-        }
         #endregion
 
         #region Executa Busca Fornecedores Associados

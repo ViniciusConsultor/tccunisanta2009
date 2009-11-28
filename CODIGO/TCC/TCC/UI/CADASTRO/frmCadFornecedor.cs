@@ -24,6 +24,167 @@ namespace TCC.UI
         }
         #endregion Construtor
 
+        #region Eventos
+
+        #region Form Load
+        private void frmCadFornecedor_Load(object sender, EventArgs e)
+        {
+            this.BuscaEstado();
+
+            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Brasil)
+            //-------------------------------------------------------------------------------
+            this.txtPais.Enabled = false;
+            this.txtEstado.Enabled = false;
+
+            this.lblCodPostal.Visible = false;
+            this.txtCodPostal.Visible = false;
+
+            this.lblIdentInter.Visible = false;
+            this.txtIdentInter.Visible = false;
+
+            this.txtDDI.Text = "55";
+            this.txtDDI.Enabled = false;
+
+            this.txtTelefoneInter.Visible = false;
+        }
+        #endregion Form Load
+
+        #region btnInsere Click
+        private void btnInsere_Click(object sender, EventArgs e)
+        {
+            this.Insere();
+        }
+        #endregion btnInsere Click
+
+        #region btnlimpar Click
+        private void btnlimpar_Click(object sender, EventArgs e)
+        {
+            base.LimpaDadosTela(this);
+            this.rdbBrasil.Checked = true;
+            this._listaModelFornecedorDepto = null;
+            this._modelFornecedor = null;
+            base.Alteracao = false;
+        }
+        #endregion btnlimpar Click
+
+        #region btnVolta Click
+        private void btnVolta_Click(object sender, EventArgs e)
+        {
+            base.FechaTela(this);
+        }
+        #endregion btnVolta Click
+
+        #region txtNomeFornecedor TextChanged
+        private void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
+        {
+            this.btnInsere.Enabled = true;
+        }
+        #endregion txtNomeFornecedor TextChanged
+
+        #region btnRelacionarDepto Click
+        private void btnRelacionarDepto_Click(object sender, EventArgs e)
+        {
+            this.AbreTelaReleacionarDepartamento();
+        }
+        #endregion btnRelacionarDepto Click
+
+        #region rdbBrasil CheckedChanged
+        private void rdbBrasil_CheckedChanged(object sender, EventArgs e)
+        {
+            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Brasil)
+            //-------------------------------------------------------------------------------
+            this.cboEstado.Enabled = true;
+
+            this.txtPais.Enabled = false;
+            this.txtPais.Text = "";
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Text = "";
+
+            this.lblCodPostal.Visible = false;
+            this.txtCodPostal.Visible = false;
+            this.txtCodPostal.Text = "";
+            this.lblCep.Visible = true;
+            this.txtCep.Visible = true;
+
+            this.lblIdentInter.Visible = false;
+            this.txtIdentInter.Visible = false;
+            this.txtIdentInter.Text = "";
+            this.lblcnpj.Visible = true;
+            this.txtCnpj.Visible = true;
+
+            this.txtDDI.Text = "55";
+            this.txtDDI.Enabled = false;
+
+            this.txtTelefone.Visible = true;
+            this.txtTelefoneInter.Visible = false;
+            this.txtTelefoneInter.Text = "";
+        }
+        #endregion rdbBrasil CheckedChanged
+
+        #region rdbOutros CheckedChanged
+        private void rdbOutros_CheckedChanged(object sender, EventArgs e)
+        {
+            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Internacional)
+            //---------------------------------------------------------------------------------------
+            this.cboEstado.Enabled = false;
+            this.cboEstado.SelectedIndex = 0;
+
+            this.txtPais.Enabled = true;
+            this.txtEstado.Enabled = true;
+
+            this.lblCodPostal.Visible = true;
+            this.txtCodPostal.Visible = true;
+            this.lblCep.Visible = false;
+            this.txtCep.Visible = false;
+            this.txtCep.Text = "";
+
+            this.lblcnpj.Visible = false;
+            this.txtCnpj.Visible = false;
+            this.txtCnpj.Text = "";
+            this.lblIdentInter.Visible = true;
+            this.txtIdentInter.Visible = true;
+
+            this.txtDDI.Text = "";
+            this.txtDDI.Enabled = true;
+
+            this.txtTelefone.Visible = false;
+            this.txtTelefone.Text = "";
+            this.txtTelefoneInter.Visible = true;
+        }
+        #endregion rdbOutros CheckedChanged
+
+        #region btnBuscaAlteracaoDelecao Click
+        private void btnBuscaAlteracaoDelecao_Click(object sender, EventArgs e)
+        {
+            this.btnlimpar_Click(null, null);
+            this._modelFornecedor = new mFornecedor();
+            frmBuscaFornecedor objFornecedor = new frmBuscaFornecedor(this._modelFornecedor, true);
+            try
+            {
+                DialogResult resultado = objFornecedor.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    this._modelFornecedor = null;
+                }
+                else
+                {
+                    this.PopulaTelaComModelAlteracao();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objFornecedor = null;
+            }
+        }
+        #endregion btnBuscaAlteracaoDelecao Click
+
+        #endregion Eventos
+
         #region Metodos
 
         #region Busca Estado
@@ -62,7 +223,14 @@ namespace TCC.UI
 
             try
             {
-                model.IdFornecedor = regra.BuscaIdMaximo();
+                if (base.Alteracao == true)
+                {
+                    model.IdFornecedor = this._modelFornecedor.IdFornecedor;
+                }
+                else
+                {
+                    model.IdFornecedor = regra.BuscaIdMaximo();
+                }
                 model.NomeFornecedor = this.txtNomeFornecedor.Text;
                 model.RuaFornecedor = this.txtRua.Text;
                 if (string.IsNullOrEmpty(this.txtNumeroEndereco.Text) == true)
@@ -216,21 +384,28 @@ namespace TCC.UI
             {
                 this.ValidaDadosNulos();
                 model = this.PegaDadosTela();
-                regra.ValidaDados(model);
-                regra.ValidarInsere(model);
-                if (this._listaModelFornecedorDepto != null)
+                regra.ValidaDados(model, base.Alteracao);
+                if (base.Alteracao == false)
                 {
-                    if (this._listaModelFornecedorDepto.Count > 0)
+                    regra.ValidarInsere(model);
+                    if (this._listaModelFornecedorDepto != null)
                     {
-                        this.PopulaListaFornecedorDeptoIdForn(Convert.ToInt32(model.IdFornecedor));
-                        foreach (mFornecedorDepto modelFornecedorDepto in this._listaModelFornecedorDepto)
+                        if (this._listaModelFornecedorDepto.Count > 0)
                         {
-                            regraFornecedorDepto.ValidarInsere(modelFornecedorDepto);
+                            this.PopulaListaFornecedorDeptoIdForn(Convert.ToInt32(model.IdFornecedor));
+                            foreach (mFornecedorDepto modelFornecedorDepto in this._listaModelFornecedorDepto)
+                            {
+                                regraFornecedorDepto.ValidarInsere(modelFornecedorDepto);
+                            }
                         }
                     }
                 }
-
-                base.LimpaDadosTela(this);
+                else
+                {
+                    model = this.PegaDadosTela();
+                    regra.ValidarAltera(model);
+                }
+                this.btnlimpar_Click(null, null);
                 this.btnInsere.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -544,136 +719,48 @@ namespace TCC.UI
         }
         #endregion Popula Lista Fornecedor Depto Id Forn
 
-        #endregion Metodos
-
-        #region Eventos
-
-        #region Form Load
-        private void frmCadFornecedor_Load(object sender, EventArgs e)
+        #region Popula Tela Com Model Alteracao
+        /// <summary>
+        /// Popula a tela com o model buscado em alteração
+        /// </summary>
+        private void PopulaTelaComModelAlteracao()
         {
-            this.BuscaEstado();
+            if (this._modelFornecedor != null)
+            {
+                base.Alteracao = true;
+                
 
-            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Brasil)
-            //-------------------------------------------------------------------------------
-            this.txtPais.Enabled = false;
-            this.txtEstado.Enabled = false;
+                this.txtNomeFornecedor.Text = this._modelFornecedor.NomeFornecedor;
+                this.txtCidade.Text = this._modelFornecedor.Cidade;
+                this.txtRua.Text = this._modelFornecedor.RuaFornecedor;
+                this.txtNumeroEndereco.Text = Convert.ToString(this._modelFornecedor.NroFornecedor);
+                this.txtBairro.Text = this._modelFornecedor.Bairro;
+                this.txtDDD.Text = Convert.ToString(this._modelFornecedor.Ddd);
+                this.txtEmail.Text = this._modelFornecedor.Email;
 
-            this.lblCodPostal.Visible = false;
-            this.txtCodPostal.Visible = false;
-
-            this.lblIdentInter.Visible = false;
-            this.txtIdentInter.Visible = false;
-
-            this.txtDDI.Text = "55";
-            this.txtDDI.Enabled = false;
-
-            this.txtTelefoneInter.Visible = false;
+                if (_modelFornecedor.Nom_pais == "Brasil")
+                {
+                    this.rdbBrasil.Checked = true;
+                    this.cboEstado.SelectedIndex = this.cboEstado.FindString(this._modelFornecedor.SlgEstado);
+                    this.txtCep.Text = this._modelFornecedor.CodPostal;
+                    this.txtCnpj.Text = this._modelFornecedor.Cnpj;
+                    this.txtDDI.Text = this._modelFornecedor.Ddi;
+                    this.txtTelefone.Text = Convert.ToString(this._modelFornecedor.Telefone);
+                }
+                else
+                {
+                    this.rdbOutros.Checked = true;
+                    this.txtPais.Text = _modelFornecedor.Nom_pais;
+                    this.txtEstado.Text = _modelFornecedor.Nom_est_inter;
+                    this.txtCodPostal.Text = this._modelFornecedor.CodPostal;
+                    this.txtIdentInter.Text = this._modelFornecedor.IdentInter;
+                    this.txtDDI.Text = this._modelFornecedor.Ddi;
+                    this.txtTelefoneInter.Text = Convert.ToString(this._modelFornecedor.Telefone);
+                }
+            }
         }
-        #endregion Form Load
+        #endregion Popula Tela Com Model Alteracao
 
-        #region btnInsere Click
-        private void btnInsere_Click(object sender, EventArgs e)
-        {
-            this.Insere();
-        }
-        #endregion btnInsere Click
-
-        #region btnlimpar Click
-        private void btnlimpar_Click(object sender, EventArgs e)
-        {
-            base.LimpaDadosTela(this);
-            this.rdbBrasil.Checked = true;
-            this._listaModelFornecedorDepto = null;
-            this._modelFornecedor = null;
-        }
-        #endregion btnlimpar Click
-
-        #region btnVolta Click
-        private void btnVolta_Click(object sender, EventArgs e)
-        {
-            base.FechaTela(this);
-        }
-        #endregion btnVolta Click 
-
-        #region txtNomeFornecedor TextChanged
-        private void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
-        {
-            this.btnInsere.Enabled = true;
-        }
-        #endregion txtNomeFornecedor TextChanged
-
-        #region btnRelacionarDepto Click
-        private void btnRelacionarDepto_Click(object sender, EventArgs e)
-        {
-            this.AbreTelaReleacionarDepartamento();
-        }
-        #endregion btnRelacionarDepto Click
-
-        #region rdbBrasil CheckedChanged
-        private void rdbBrasil_CheckedChanged(object sender, EventArgs e)
-        {
-            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Brasil)
-            //-------------------------------------------------------------------------------
-            this.cboEstado.Enabled = true;
-
-            this.txtPais.Enabled = false;
-            this.txtPais.Text = "";
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Text = "";
-
-            this.lblCodPostal.Visible = false;
-            this.txtCodPostal.Visible = false;
-            this.txtCodPostal.Text = "";
-            this.lblCep.Visible = true;
-            this.txtCep.Visible = true;
-
-            this.lblIdentInter.Visible = false;
-            this.txtIdentInter.Visible = false;
-            this.txtIdentInter.Text = "";
-            this.lblcnpj.Visible = true;
-            this.txtCnpj.Visible = true;
-
-            this.txtDDI.Text = "55";
-            this.txtDDI.Enabled = false;
-
-            this.txtTelefone.Visible = true;
-            this.txtTelefoneInter.Visible = false;
-            this.txtTelefoneInter.Text = "";
-        }
-        #endregion rdbBrasil CheckedChanged
-
-        #region rdbOutros CheckedChanged
-        private void rdbOutros_CheckedChanged(object sender, EventArgs e)
-        {
-            //Desabilita/Torna invisíveis campos estrangeiros ao iniciar a tela(padrão Internacional)
-            //---------------------------------------------------------------------------------------
-            this.cboEstado.Enabled = false;
-            this.cboEstado.SelectedIndex = 0;
-
-            this.txtPais.Enabled = true;
-            this.txtEstado.Enabled = true;
-
-            this.lblCodPostal.Visible = true;
-            this.txtCodPostal.Visible = true;
-            this.lblCep.Visible = false;
-            this.txtCep.Visible = false;
-            this.txtCep.Text = "";
-
-            this.lblcnpj.Visible = false;
-            this.txtCnpj.Visible = false;
-            this.txtCnpj.Text = "";
-            this.lblIdentInter.Visible = true;
-            this.txtIdentInter.Visible = true;
-
-            this.txtDDI.Text = "";
-            this.txtDDI.Enabled = true;
-
-            this.txtTelefone.Visible = false;
-            this.txtTelefone.Text = "";
-            this.txtTelefoneInter.Visible = true;
-        }
-        #endregion rdbOutros CheckedChanged
-
-        #endregion Eventos
+        #endregion Metodos        
     }
 }

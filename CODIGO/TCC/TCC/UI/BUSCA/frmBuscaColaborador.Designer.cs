@@ -143,20 +143,22 @@
             // 
             // hid_colab
             // 
+            this.hid_colab.DataPropertyName = "id_colab";
             this.hid_colab.HeaderText = "id";
             this.hid_colab.Name = "hid_colab";
             this.hid_colab.ReadOnly = true;
             this.hid_colab.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.hid_colab.Visible = false;
-            this.hid_colab.Width = 21;
+            this.hid_colab.Width = 19;
             // 
             // hColaborador
             // 
+            this.hColaborador.DataPropertyName = "Colaborador";
             this.hColaborador.HeaderText = "Funcionario";
             this.hColaborador.Name = "hColaborador";
             this.hColaborador.ReadOnly = true;
             this.hColaborador.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hColaborador.Width = 68;
+            this.hColaborador.Width = 66;
             // 
             // frmBuscaColaborador
             // 

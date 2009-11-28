@@ -202,9 +202,9 @@ namespace TCC.UI
                     {
                         if (this.dgColaborador.CurrentRow != null)
                         {
-                            dvc = this.dgColaborador["id_colab", this.dgColaborador.CurrentRow.Index];
+                            dvc = this.dgColaborador["hid_colab", this.dgColaborador.CurrentRow.Index];
                             this._model.IdColab = Convert.ToInt32(dvc.Value);
-                            dvc = this.dgColaborador["Colaborador", this.dgColaborador.CurrentRow.Index];
+                            dvc = this.dgColaborador["hColaborador", this.dgColaborador.CurrentRow.Index];
                             this._model.NomeColab = dvc.Value.ToString();
                         }
                         else
