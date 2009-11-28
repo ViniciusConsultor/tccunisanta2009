@@ -38,7 +38,14 @@ namespace TCC.UI
             IniciaDataTable();
         }
         #endregion Form Load
-        
+
+        #region btnRemoveItem Click
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            this.RemoveOrdemCompra();
+        }
+        #endregion btnRemoveItem Click
+
         #region btnAdicionaItem Click
         private void btnAdicionaItem_Click(object sender, EventArgs e)
         {
@@ -181,6 +188,67 @@ namespace TCC.UI
             this.PopulaTelaOrdemCompra();
         }
         #endregion dgItems Click
+
+        #region btnAceitar Click
+        private void btnAceitar_Click(object sender, EventArgs e)
+        {
+            rCompra regraCompra = new rCompra();
+            mCompra modelCompra = null;
+            rOrdemCompra regraOrdemCompra = new rOrdemCompra();
+            rCompraOrdemCompra regraCompraOrdemCompra = new rCompraOrdemCompra();
+            mCompraOrdemCompra modelCompraOrdemCompra = null;
+            try
+            {
+                this.ValidaDadosNulos();
+                //Insere compra
+                //-------------
+                modelCompra = this.PegaDadosTelaCompra();
+                regraCompra.ValidarInsere(modelCompra);
+
+                //Insere ordem Compra
+                //-------------------
+                foreach (mOrdemCompra modelOrdemCompra in this._listaOrdemCompra)
+                {
+                    this.PegaIdMaximoOrdemCompra(modelOrdemCompra);
+                    regraOrdemCompra.ValidarInsere(modelOrdemCompra);
+                    modelCompraOrdemCompra = this.PegaDadosTelaCompraOrdemCompra(Convert.ToInt32(modelCompra.IdCompra), Convert.ToInt32(modelOrdemCompra.Id_ordem_compra));
+                    regraCompraOrdemCompra.ValidarInsere(modelCompraOrdemCompra);
+                }
+                this.btnLimpar_Click(null, null);
+            }
+            catch (BUSINESS.Exceptions.Compra.OrdemCompraSemDadosException)
+            {
+                MessageBox.Show("É necessário adicionar itens para a compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            catch (BUSINESS.Exceptions.Compra.CompraValorVazioException)
+            {
+                MessageBox.Show("É Necessário ter um valor de compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtValor.Focus();
+            }
+            catch (BUSINESS.Exceptions.Compra.DataCompraVaziaException)
+            {
+                MessageBox.Show("É Necessário ter a data de Compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataCompra.Focus();
+            }
+            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
+            {
+                MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDataCompra.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                regraCompra = null;
+                modelCompra = null;
+                regraOrdemCompra = null;
+                regraCompraOrdemCompra = null;
+                modelCompraOrdemCompra = null;
+            }
+        }
+        #endregion btnAceitar Click
 
         #endregion Eventos
 
@@ -448,10 +516,12 @@ namespace TCC.UI
                 if (this.rdbMotor.Checked == true)
                 {
                     modelOrdemCompra.Id_motor = Convert.ToInt32(this._modelMotor.IdMotor);
+                    modelOrdemCompra.Id_peca = null;
                 }
                 else
                 {
                     modelOrdemCompra.Id_peca = Convert.ToInt32(this._modelPeca.IdPeca);
+                    modelOrdemCompra.Id_motor = null;
                 }
 
                 return modelOrdemCompra;
@@ -476,6 +546,7 @@ namespace TCC.UI
         {
             string data = this.txtDataCompra.Text.Replace("/", string.Empty);
             data = data.Replace(" ", string.Empty);
+            data = data.Replace("_", string.Empty);
             if (string.IsNullOrEmpty(this.txtValor.Text) == true)
             {
                 throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
@@ -487,18 +558,17 @@ namespace TCC.UI
             else
             {
                 BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataCompra.Text);
-            } 
-            if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
+            }
+            if (this._listaOrdemCompra != null)
             {
-                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+                if (this._listaOrdemCompra.Count < 1)
+                {
+                    throw new BUSINESS.Exceptions.Compra.OrdemCompraSemDadosException();
+                }
             }
             else
             {
-                int qtd = Convert.ToInt32(this.txtQtdItem.Text);
-                if (qtd < 1)
-                {
-                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
-                }
+                throw new BUSINESS.Exceptions.Compra.OrdemCompraSemDadosException();
             }
         }
         #endregion Valida Dados Nulos
@@ -550,6 +620,10 @@ namespace TCC.UI
         }
         #endregion Valida Buscas
 
+        #region Inicia Data Table
+        /// <summary>
+        /// Atribui as Colunas no DataTable que servirá de dataSource
+        /// </summary>
         private void IniciaDataTable()
         {
             this._dtSource = new DataTable();
@@ -573,7 +647,13 @@ namespace TCC.UI
                 dtColuna = null;
             }
         }
+        #endregion Inicia Data Table
 
+        #region Popula Data Table Model Ordem Compra
+        /// <summary>
+        /// Popula o datatable com o model que foi populado anteriormente
+        /// </summary>
+        /// <param name="model">model que será utilizado para popular o DataTable</param>
         private void PopulaDataTableModelOrdemCompra(mOrdemCompra model)
         {
             DataRow linha;
@@ -605,7 +685,13 @@ namespace TCC.UI
                 linha = null;
             }
         }
+        #endregion Popula Data Table Model Ordem Compra
 
+        #region Pega Dados Tela Compra Ordem Compra
+        /// <summary>
+        /// Pega os dados da tela relacionados com ordem de compra
+        /// </summary>
+        /// <returns>model populado</returns>
         private mCompraOrdemCompra PegaDadosTelaCompraOrdemCompra()
         {
             mCompraOrdemCompra model = new mCompraOrdemCompra();
@@ -627,14 +713,19 @@ namespace TCC.UI
                 model = null;
             }
         }
+        #endregion Pega Dados Tela Compra Ordem Compra
 
+        #region Limpa Grupo Ordem Compra
+        /// <summary>
+        /// Limpa a parte da tela de Ordem Compra
+        /// </summary>
         private void LimpaGrupoOrdemCompra()
         {
             try
             {
                 foreach (Control controle in this.gpbOrdemCompra.Controls)
                 {
-                    Type tipo= controle.GetType();
+                    Type tipo = controle.GetType();
                     if (tipo.Equals(typeof(TextBox)) == true || tipo.Equals(typeof(Controles.MegaTextBox.MegaTextBox)) == true)
                     {
                         controle.Text = string.Empty;
@@ -651,6 +742,98 @@ namespace TCC.UI
                 throw e;
             }
         }
+        #endregion Limpa Grupo Ordem Compra
+
+        #region Remove Ordem Compra
+        /// <summary>
+        /// Remove peça da lista
+        /// </summary>
+        private void RemoveOrdemCompra()
+        {
+            int indice;
+            int linhaAtual;
+            DataTable dtSource = null;
+            try
+            {
+                dtSource = (DataTable)this.dgItems.DataSource;
+                if (dtSource != null)
+                {
+                    if (dtSource.Rows.Count > 0)
+                    {
+                        linhaAtual = this.dgItems.CurrentRow.Index;
+                        int id = Convert.ToInt32(this.dgItems["hId", linhaAtual].Value);
+                        bool motor = Convert.ToBoolean(this.dgItems["hFlg_motor", linhaAtual].Value);
+                        indice = this.ExisteModelOrdemCompra(id, motor);
+                        if (indice > -1)
+                        {
+                            this.txtQtdItem.Text = "0";
+                            this._listaOrdemCompra.RemoveAt(indice);
+                            this._dtSource.Rows.RemoveAt(indice);
+                            this.dgItems.DataSource = this._dtSource;
+                            this.LimpaGrupoOrdemCompra();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Peça não associada ao Item", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Remove Ordem Compra
+
+        #region Pega Dados Tela Compra Ordem Compra
+        /// <summary>
+        /// Pega os dados dos models gravados
+        /// </summary>
+        /// <param name="idCompra">id da compra</param>
+        /// <param name="idOrdemCompra">id da ordem de compra</param>
+        /// <returns>retorna o model populado</returns>
+        private mCompraOrdemCompra PegaDadosTelaCompraOrdemCompra(int idCompra, int idOrdemCompra)
+        {
+            mCompraOrdemCompra model = new mCompraOrdemCompra();
+            try
+            {
+                model.Dat_alt = DateTime.Now;
+                model.Flg_ativo = true;
+                model.Id_compra = idCompra;
+                model.Id_ordem_compra = idOrdemCompra;
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                model = null;
+            }
+        }
+        #endregion Pega Dados Tela Compra Ordem Compra
+
+        #region Pega Id Maximo Ordem Compra
+        /// <summary>
+        /// Busca atribui o idmaximo de ordem de compras
+        /// </summary>
+        /// <param name="model">model com os dados sem o id</param>
+        private void PegaIdMaximoOrdemCompra(mOrdemCompra model)
+        {
+            rOrdemCompra regraOrdemCompra = new rOrdemCompra();
+            try
+            {
+                model.Id_ordem_compra = regraOrdemCompra.BuscaIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Pega Id Maximo Ordem Compra
 
         #endregion Metodos
     }

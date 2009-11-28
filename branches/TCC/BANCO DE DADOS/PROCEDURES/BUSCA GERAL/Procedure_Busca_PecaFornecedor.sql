@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_busca_pecaFornecedor
 @id_peca INT
 AS
-SELECT f.nom, f.nom_pais
+SELECT f.id_forn, f.nom, f.nom_pais
 FROM Fornecedor f
 INNER JOIN Pecafornecedor pf
 ON f.id_forn = pf.id_forn

@@ -16,8 +16,6 @@ IF(@dat='')
    RAISERROR('Informe a data da compra!',16,1)
 ELSE IF(CONVERT(VARCHAR(15), @valor)='')
    RAISERROR('Informe o valor da compra!',16,1)
-ELSE IF(@obs='')
-   RAISERROR('Informe alguma observacao para a compra!',16,1)
 ELSE
 
 BEGIN

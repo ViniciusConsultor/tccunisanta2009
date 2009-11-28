@@ -129,6 +129,7 @@
     <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Compra\DataCompraVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\OrdemCompraSemDadosException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoExistenteException.cs" />
     <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoVazioException.cs" />
     <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueExistenteException.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="BUSINESS\rCliente.cs" />
     <Compile Include="BUSINESS\rColaborador.cs" />
     <Compile Include="BUSINESS\rCompra.cs" />
+    <Compile Include="BUSINESS\rCompraOrdemCompra.cs" />
     <Compile Include="BUSINESS\rCompraPeca.cs" />
     <Compile Include="BUSINESS\rDepartamento.cs" />
     <Compile Include="BUSINESS\rEstado.cs" />
