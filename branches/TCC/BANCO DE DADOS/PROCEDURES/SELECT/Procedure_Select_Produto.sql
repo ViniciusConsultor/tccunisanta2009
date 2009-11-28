@@ -8,7 +8,7 @@ GO
 CREATE PROCEDURE sp_select_produto
 @id_prdto INT
 AS
-SELECT id_prdto, dsc_prdto, id_fam_motor, id_kit, id_tipo_produto
+SELECT id_prdto, dsc_prdto, id_fam_motor, id_kit, id_tipo_produto, flg_ativo, dat_alt
 FROM Produto
 WHERE id_prdto = @id_prdto
 AND flg_ativo = 1
