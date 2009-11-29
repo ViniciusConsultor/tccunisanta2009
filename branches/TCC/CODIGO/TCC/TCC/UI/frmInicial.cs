@@ -20,6 +20,7 @@ namespace TCC.UI
         private Dictionary<string, object> _dicEventos = new Dictionary<string, object>();
         private const string _NAMESPACEFORMS = "TCC.UI.";
         public static List<string> listaTelasAbertas = new List<string>();
+        int qtdDeslogar;
         #endregion Atributos
 
         #region Propriedades
@@ -44,6 +45,7 @@ namespace TCC.UI
         #region Form Load
         private void frmInicial_Load(object sender, EventArgs e)
         {
+            this.CriaItemDeslogar();
             this.CarregaMenu(frmInicial._idPerfil);
         }
         #endregion Form Load
@@ -206,7 +208,7 @@ namespace TCC.UI
                 dtMenu = regraMenu.BuscaMenu(idPerfil);
                 //Declara o tamanho do Array baseado no tamanho do DataTable com os menus
                 //-----------------------------------------------------------------------
-                itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count];
+                itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count + 1];
                 for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
                     itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["Menu"].ToString());
@@ -225,6 +227,7 @@ namespace TCC.UI
                 
                     
                 }
+                this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { this.deslogarToolStripMenuItem });
             }
             catch (Exception ex)
             {
@@ -302,11 +305,46 @@ namespace TCC.UI
 
         private void frmInicial_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DAL.ConectaBanco.DesconectaBanco();
-            GC.Collect();
-            this.DialogResult = DialogResult.Cancel;
+            if (this.DialogResult != DialogResult.Retry)
+            {
+                DAL.ConectaBanco.DesconectaBanco();
+                GC.Collect();
+                this.DialogResult = DialogResult.Cancel;
+            }
+        }
+
+        private void CriaItemDeslogar()
+        {
+            // 
+            // deslogarToolStripMenuItem
+            // 
+            this.deslogarToolStripMenuItem.Name = "deslogarToolStripMenuItem";
+            this.deslogarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.deslogarToolStripMenuItem.Text = "Deslogar";
+            this.deslogarToolStripMenuItem.Click += new System.EventHandler(this.deslogarToolStripMenuItem_Click);
         }
 
         #endregion Metodos
+
+        private void deslogarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (qtdDeslogar <= 0)
+            {
+                DialogResult resultado = MessageBox.Show("Deseja Realmente deslogar do sistema?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                if (resultado == DialogResult.Yes)
+                {
+                    this.DialogResult = DialogResult.Retry;
+                    qtdDeslogar++;
+                }
+                else
+                {
+                    qtdDeslogar++;
+                }
+            }
+            else
+            {
+                qtdDeslogar = 0;
+            }
+        }
     }
 }
