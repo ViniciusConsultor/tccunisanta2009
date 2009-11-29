@@ -39,6 +39,7 @@ namespace TCC.UI
                 if (idUsuario == 0)
                 {
                     MessageBox.Show("Usuário ou Senha inválidos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnLimpar_Click(null, null);
                 }
                 else
                 {

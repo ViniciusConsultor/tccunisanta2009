@@ -178,7 +178,6 @@ namespace TCC.UI
                 if (this._telaPeca == false)
                 {
                     this.ValidaDadosNulos();
-
                     // exclui antes tudo antes de inserir
                     this.DeletaTudoPorPeca();
 
@@ -199,10 +198,6 @@ namespace TCC.UI
             {
                 MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPeca.Focus();
-            }
-            catch (BUSINESS.Exceptions.PecaEstoque.EstoqueNaoEscolhidoException)
-            {
-                MessageBox.Show("É Necessário Selecionar um Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
@@ -236,7 +231,7 @@ namespace TCC.UI
                             {
                                 //Verifica se a quantidade é maior que Zero
                                 //-----------------------------------------
-                                if (Convert.ToInt32(linha.Cells["hQuantidade"].Value) > 0)
+                                if (Convert.ToInt32(linha.Cells["hQuantidade"].Value) >= 0)
                                 {
                                     modelPecaEstoque = new mPecaEstoque();
 
@@ -367,10 +362,6 @@ namespace TCC.UI
             if (this._modelPeca == null)
             {
                 throw new BUSINESS.Exceptions.PecaEstoque.PecaVazioException();
-            }
-            else if (this._listaModelPecaEstoque == null)
-            {
-                throw new BUSINESS.Exceptions.PecaEstoque.EstoqueNaoEscolhidoException();
             }
         }
         #endregion Valida Dados Nulos

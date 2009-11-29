@@ -87,7 +87,7 @@
             this.hCodigo.HeaderText = "Codigo";
             this.hCodigo.Name = "hCodigo";
             this.hCodigo.ReadOnly = true;
-            this.hCodigo.Width = 65;
+            this.hCodigo.Width = 63;
             // 
             // hItem
             // 
@@ -95,7 +95,7 @@
             this.hItem.HeaderText = "Item";
             this.hItem.Name = "hItem";
             this.hItem.ReadOnly = true;
-            this.hItem.Width = 52;
+            this.hItem.Width = 50;
             // 
             // hQtd
             // 
@@ -149,7 +149,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgItem);
             this.Name = "frmBuscaItem";
-            this.Text = "frmBuscaItem";
+            this.Text = "Busca Itens";
             ((System.ComponentModel.ISupportInitialize)(this.dgItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
