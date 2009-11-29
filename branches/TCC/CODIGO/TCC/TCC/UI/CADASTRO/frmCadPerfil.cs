@@ -90,10 +90,12 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
             {
                 MessageBox.Show("É Necessário Informar a descrição do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDescPerfil.Focus();
             }
             catch (BUSINESS.Exceptions.Perfil.DescPerfilExistenteException)
             {
                 MessageBox.Show("Descrição do Perfil já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDescPerfil.Focus();
             }
             catch (Exception ex)
             {
@@ -126,7 +128,6 @@ namespace TCC.UI
             }
         }
         #endregion Abre tela Relaciona PerfilMenu
-
 
         #endregion
     }

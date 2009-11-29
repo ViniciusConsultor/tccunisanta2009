@@ -155,7 +155,14 @@ namespace TCC.UI
 
             try
             {
-                model.IdColab = regra.BuscaIdMaximo();
+                if (base.Alteracao == true)
+                {
+                    model.IdColab = this._modelColaborador.IdColab;
+                }
+                else
+                {
+                    model.IdColab = regra.BuscaIdMaximo();
+                }
                 model.NomeColab = txtNome.Text;
 
                 if (string.IsNullOrEmpty(this.txtDataNasc.Text) != true)
@@ -218,7 +225,7 @@ namespace TCC.UI
                     model.Email = this.txtEmail.Text;
                 }
                 model.IdDepto = Convert.ToInt32(this._modelDepartamento.IdDepto);
-                if (this._modelUsuario != null)
+                if (this._modelUsuario.IdUsuario > 0)
                 {
                     model.IdUsuario = Convert.ToInt32(this._modelUsuario.IdUsuario);
                 }
@@ -240,10 +247,7 @@ namespace TCC.UI
                     model.Cpf = cpf;
                 }
                 model.DatAtl = DateTime.Now;
-                if (base.Alteracao == true)
-                {
-                    model.IdColab = this._modelColaborador.IdColab;
-                }
+
                 model.FlgAtivo = true;
                 return model;
             }
@@ -323,7 +327,12 @@ namespace TCC.UI
                 {
                     throw new BUSINESS.Exceptions.Colaborador.CpfVazioExeption();
                 }
-                BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
+                else
+                {
+
+                    BUSINESS.UTIL.Validacoes.ValidaMasked(data, TCC.BUSINESS.UTIL.TipoMasked.data);
+                    BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataNasc.Text);
+                }
             }
             catch (Exception ex)
             {
@@ -341,7 +350,14 @@ namespace TCC.UI
             if (this._modelColaborador != null)
             {
                 this._modelUsuario = new mUsuario();
-                this._modelUsuario.IdUsuario = this._modelColaborador.IdUsuario;
+                if (this._modelColaborador.IdUsuario != null)
+                {
+                    this._modelUsuario.IdUsuario = this._modelColaborador.IdUsuario;
+                }
+                else
+                {
+                    this._modelUsuario.IdUsuario = null;
+                }
                 this._modelDepartamento = new mDepartamento();
                 this._modelDepartamento.IdDepto = this._modelColaborador.IdDepto;
 
@@ -380,7 +396,7 @@ namespace TCC.UI
             {
                 this.ValidaDadosNulos();
                 modelColaborador = this.PegaDadosTela();
-                regraColaborador.ValidaDados(modelColaborador);
+                regraColaborador.ValidaDados(modelColaborador, base.Alteracao);
                 if (base.Alteracao == false)
                 {
                     //Verifica se existe usuario para associar
@@ -465,7 +481,7 @@ namespace TCC.UI
             catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
             {
                 MessageBox.Show("Buscar Codigo Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtCdDepartamento.Focus();
+                this.btnBuscaDepartamento.Focus();
             }
             catch (BUSINESS.Exceptions.Colaborador.RgVazioExeption)
             {

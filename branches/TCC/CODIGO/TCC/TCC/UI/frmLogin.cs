@@ -40,6 +40,7 @@ namespace TCC.UI
                 {
                     MessageBox.Show("Usuário ou Senha inválidos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.btnLimpar_Click(null, null);
+                    this.txtLogin.Focus();
                 }
                 else
                 {

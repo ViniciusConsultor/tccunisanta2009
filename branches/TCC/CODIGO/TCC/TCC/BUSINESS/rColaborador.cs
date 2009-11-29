@@ -48,7 +48,7 @@ namespace TCC.BUSINESS
             }
         }
 
-        public void ValidaDados(mColaborador model)
+        public void ValidaDados(mColaborador model, bool alteracao)
         {
             if (model.Ddd != null)
             {
@@ -65,6 +65,10 @@ namespace TCC.BUSINESS
             if (model.Cpf != null)
             {
                 UTIL.Validacoes.ValidaMasked(model.Cpf.ToString(), TCC.BUSINESS.UTIL.TipoMasked.cpf);
+                if (this.ExisteCpfColaborador(model.Cpf) == true && alteracao == false)
+                {
+                    throw new BUSINESS.Exceptions.Colaborador.CpfExistenteException();
+                }
             }
             if (model.Email != null)
             {
@@ -107,7 +111,7 @@ namespace TCC.BUSINESS
 
         public override void ValidarInsere(ModelPai model)
         {
-            this.ValidaDados((mColaborador)model);
+            this.ValidaDados((mColaborador)model, false);
             base.Insere(model);
         }
 

@@ -117,9 +117,9 @@
             this.lblIdReal.AutoSize = true;
             this.lblIdReal.Location = new System.Drawing.Point(74, 35);
             this.lblIdReal.Name = "lblIdReal";
-            this.lblIdReal.Size = new System.Drawing.Size(124, 13);
+            this.lblIdReal.Size = new System.Drawing.Size(197, 13);
             this.lblIdReal.TabIndex = 19;
-            this.lblIdReal.Text = "Código do Tipo do Motor";
+            this.lblIdReal.Text = "Código do Tipo do Motor (Apenas letras)";
             // 
             // txtIdReal
             // 

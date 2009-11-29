@@ -107,7 +107,7 @@ namespace TCC.UI
             try
             {
                 model.IdTipoMotor = regra.BuscaMaxId();
-                model.IdTipoMotorReal = this.txtIdReal.Text;
+                model.IdTipoMotorReal = this.txtIdReal.Text.ToUpper();
                 model.DscTipoMotor = this.txtNmTipoMotor.Text;
                 model.FlgAtivo = true;
 

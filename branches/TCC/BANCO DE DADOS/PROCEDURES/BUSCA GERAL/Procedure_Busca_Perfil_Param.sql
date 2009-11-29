@@ -9,5 +9,5 @@
  AS
  SELECT id_perfil, dsc_perfil as 'Perfil'
  FROM Perfil
- WHERE dsc_perfil LIKE '%' + @dsc_perfil + '%'
+ WHERE dsc_perfil LIKE '%' + @dsc_perfil + '%' AND dsc_perfil != 'DEFAULT'
  AND flg_ativo = 1

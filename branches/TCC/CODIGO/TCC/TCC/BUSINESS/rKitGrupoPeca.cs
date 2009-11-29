@@ -100,7 +100,7 @@ namespace TCC.BUSINESS
                 }
                 else
                 {
-                    param = new SqlParameter("@id_item_real", parametro);
+                    param = new SqlParameter("@id_kit_real", parametro);
                     return base.BuscaDados("sp_busca_kitGrupoPeca_param_codigo", param);
                 }
             }
