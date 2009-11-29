@@ -72,6 +72,9 @@ namespace TCC.UI
                 if (this._listaKitFamilia.Count > 0)
                 {
                     this.ComparaDadosGrid();
+                    this.txtBuscaFiltro.Text = string.Empty;
+                    this.txtQtdKit.Text = string.Empty;
+                    this.TxtNmKit.Text = string.Empty;
                 }
             }
         }

@@ -99,8 +99,11 @@ namespace TCC.UI
         {
             try
             {
+                this.txtQtdItem.Text = string.Empty;
+                this.txtFornecedor.Text = string.Empty;
                 this.ValidaBuscas();
                 this.AbreTelaBuscaFornecedor();
+
             }
             catch (BUSINESS.Exceptions.Compra.BuscaMotorPecaException)
             {
@@ -126,7 +129,7 @@ namespace TCC.UI
                 if (this.rdbMotor.Checked == true)
                 {
                     this.AbreTelaBuscaMotor();
-                    this.txtBuscaFiltro.Text = string.Empty;
+
                 }
                 else
                 {
@@ -448,6 +451,7 @@ namespace TCC.UI
                 if (resultado == DialogResult.Cancel)
                 {
                     this._modelMotor = null;
+                    this.txtBuscaFiltro.Text = string.Empty;
                 }
                 else
                 {
