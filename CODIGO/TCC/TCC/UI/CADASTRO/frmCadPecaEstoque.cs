@@ -129,7 +129,20 @@ namespace TCC.UI
         #region btnAdicionar_Click
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            this.AtualizaGrid();
+            try
+            {
+                this.ValidaAdicaoItems();
+                this.AtualizaGrid();
+            }
+            catch (BUSINESS.Exceptions.PecaEstoque.QuantidadeVaziaZeroException)
+            {
+                MessageBox.Show("Quantidade não pode ser menor que um ou Vazia", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtQtde.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            }
         }
         #endregion btnAdicionar_Click
 
@@ -174,24 +187,32 @@ namespace TCC.UI
 
             try
             {
-                this.PopulaListaModel();
-                if (this._telaPeca == false)
+                if (this._modelPeca == null)
                 {
-                    this.ValidaDadosNulos();
-                    // exclui antes tudo antes de inserir
-                    this.DeletaTudoPorPeca();
-
-                    foreach (mPecaEstoque modelPecaEstoque in this._listaModelPecaEstoque)
-                    {
-                        regra.ValidarInsere(modelPecaEstoque);
-                    }
-                    this.btnLimpa_Click(null, null);
-                    MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
-                    this.DialogResult = DialogResult.OK;
-                    base.FechaTela(this);
+                    this.PopulaListaModel();
+                    this.ValidaDadosNulos();
+                    if (this._telaPeca == false)
+                    {
+                        // exclui antes tudo antes de inserir
+                        this.DeletaTudoPorPeca();
+
+                        foreach (mPecaEstoque modelPecaEstoque in this._listaModelPecaEstoque)
+                        {
+                            regra.ValidarInsere(modelPecaEstoque);
+                        }
+                        this.btnLimpa_Click(null, null);
+                        MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+
+                    }
+                    else
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        base.FechaTela(this);
+                    }
                 }
             }
             catch (BUSINESS.Exceptions.PecaEstoque.PecaVazioException)
@@ -457,10 +478,16 @@ namespace TCC.UI
             DataTable dtSource = null;
             try
             {
+                this.ValidaDadosNulos();
                 dtSource = (DataTable)this.dgEstoques.DataSource;
                 dtSource.Columns["qtd_peca"].ReadOnly = false;
                 dtSource.Rows[this.dgEstoques.CurrentRow.Index]["qtd_peca"] = this.txtQtde.Text;
                 this.dgEstoques.DataSource = dtSource;
+            }
+            catch (BUSINESS.Exceptions.PecaEstoque.PecaVazioException)
+            {
+                MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnBuscaPeca.Focus();
             }
             catch (Exception ex)
             {
@@ -476,6 +503,21 @@ namespace TCC.UI
             }
         }
         #endregion Atualiza Grid
+
+        private void ValidaAdicaoItems()
+        {
+            if (string.IsNullOrEmpty(this.txtQtde.Text) == true)
+            {
+                throw new BUSINESS.Exceptions.PecaEstoque.QuantidadeVaziaZeroException();
+            }
+            else
+            {
+                if (Convert.ToInt32(this.txtQtde.Text) <= 0)
+                {
+                    throw new BUSINESS.Exceptions.PecaEstoque.QuantidadeVaziaZeroException();
+                }
+            }
+        }
         
         #endregion Metodos
     }
