@@ -229,7 +229,7 @@ namespace TCC.UI
                             {
                                 //Verifica se a quantidade é maior que Zero
                                 //-----------------------------------------
-                                if (Convert.ToInt32(linha.Cells["hQuantidade"].Value) > 0)
+                                if (Convert.ToInt32(linha.Cells["qtd_peca"].Value) > 0)
                                 {
                                     modelMotorEstoque = new mMotorEstoque();
 
@@ -239,7 +239,7 @@ namespace TCC.UI
                                     dvC = linha.Cells["hIdEstoque"];
                                     modelMotorEstoque.Id_estoq = Convert.ToInt32(dvC.Value);
                                     //Pega resto model
-                                    dvC = linha.Cells["hQuantidade"]; // Qtde
+                                    dvC = linha.Cells["qtd_peca"]; // Qtde
                                     modelMotorEstoque.Qtd = Convert.ToInt32(dvC.Value);
                                     if (this._telaMotor == true)
                                     {
@@ -460,8 +460,8 @@ namespace TCC.UI
             try
             {
                 dtSource = (DataTable)this.dgEstoques.DataSource;
-                dtSource.Columns["qtd"].ReadOnly = false;
-                dtSource.Rows[this.dgEstoques.CurrentRow.Index]["qtd"] = this.txtQtde.Text;
+                dtSource.Columns["qtd_peca"].ReadOnly = false;
+                dtSource.Rows[this.dgEstoques.CurrentRow.Index]["qtd_peca"] = this.txtQtde.Text;
                 this.dgEstoques.DataSource = dtSource;
             }
             catch (Exception ex)
