@@ -62,8 +62,11 @@ namespace TCC.DAL
             }
             finally
             {
-                conexao.Dispose();
-                conexao = null;
+                if (conexao != null)
+                {
+                    conexao.Dispose();
+                    conexao = null;
+                }
             }
         }
         #endregion Desconecta Banco
