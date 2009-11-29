@@ -126,6 +126,7 @@ namespace TCC.DAL
                 comando.Parameters.Add(parametro);
                 dataR = comando.ExecuteReader();
                 dt.Load(dataR);
+                dataR.Close();
                 return dt;
             }
             catch (Exception ex)
