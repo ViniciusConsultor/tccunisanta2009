@@ -120,6 +120,20 @@ namespace TCC.UI
         }
         #endregion txtFiltroBusca TextChanged
 
+        #region rdbKit CheckedChanged
+        private void rdbKit_CheckedChanged(object sender, EventArgs e)
+        {
+            this.txtFiltroBusca.Text = "";
+        }
+        #endregion rdbKit CheckedChanged
+
+        #region rdbFamMotor CheckedChanged
+        private void rdbFamMotor_CheckedChanged(object sender, EventArgs e)
+        {
+            this.txtFiltroBusca.Text = "";
+        }
+        #endregion rdbFamMotor CheckedChanged
+
         #endregion Eventos
 
         #region Metodos
@@ -138,15 +152,15 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException)
-            {
-                MessageBox.Show("Informe uma Descrição para o Produto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.txtDescProduto.Focus();
-            }
             catch (BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException)
             {
                 MessageBox.Show("É Necessário Buscar uma Familia de Motores ou um Kit de Peças!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarProduto.Focus();
+            }
+            catch (BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException)
+            {
+                MessageBox.Show("Informe uma Descrição para o Produto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.txtDescProduto.Focus();
             }
             catch (Exception ex)
             {
@@ -163,14 +177,14 @@ namespace TCC.UI
         #region ValidaDadosNulos
         private void ValidaDadosNulos()
         {
-            if (string.IsNullOrEmpty(this.txtDescProduto.Text) == true)
+            if (this._modelFamMotor == null && this._modelKit == null)
+            {
+                throw new BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException();
+            }
+            else if (string.IsNullOrEmpty(this.txtDescProduto.Text) == true)
             {
                 throw new BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException();
             }
-            else if (this._modelFamMotor == null && this._modelKit == null)
-            {
-                throw new BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException();
-            }            
         }
         #endregion ValidaDadosNulos
 

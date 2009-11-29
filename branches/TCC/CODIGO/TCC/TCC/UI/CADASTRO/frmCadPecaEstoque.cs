@@ -364,13 +364,13 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (this._listaModelPecaEstoque == null)
-            {
-                throw new BUSINESS.Exceptions.PecaEstoque.EstoqueNaoEscolhidoException();
-            }
-            else if (this._modelPeca == null)
+            if (this._modelPeca == null)
             {
                 throw new BUSINESS.Exceptions.PecaEstoque.PecaVazioException();
+            }
+            else if (this._listaModelPecaEstoque == null)
+            {
+                throw new BUSINESS.Exceptions.PecaEstoque.EstoqueNaoEscolhidoException();
             }
         }
         #endregion Valida Dados Nulos

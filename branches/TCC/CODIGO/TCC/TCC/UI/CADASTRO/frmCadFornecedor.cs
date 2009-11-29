@@ -61,6 +61,7 @@ namespace TCC.UI
         {
             base.LimpaDadosTela(this);
             this.rdbBrasil.Checked = true;
+            this.txtDDI.Text = "55";
             this._listaModelFornecedorDepto = null;
             this._modelFornecedor = null;
             base.Alteracao = false;
