@@ -56,6 +56,7 @@ namespace TCC.UI.CADASTRO
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             this.Insere();
+            this.DialogResult = DialogResult.OK;
         }
         #endregion btnConfirma Click
 
@@ -229,8 +230,6 @@ namespace TCC.UI.CADASTRO
                                     }
                                 }
                             }
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
                         }
                         else
                         {

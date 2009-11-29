@@ -61,6 +61,7 @@ namespace TCC.UI
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             this.Insere();
+            this.DialogResult = DialogResult.OK;
         }
         #endregion btnConfirma Click
 
@@ -120,13 +121,20 @@ namespace TCC.UI
         #region btnBuscarFornecedorDtGrid Click
         private void btnBuscarFornecedorDtGrid_Click(object sender, EventArgs e)
         {
-            if (this._modelPeca == null)
+            try
             {
-                MessageBox.Show("É Necessário Buscar a peça antes dos fornecedores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                if (this._modelPeca == null)
+                {
+                    MessageBox.Show("É necessário buscar uma peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                }
+                else
+                {
+                    this.PopulaGrid();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                this.PopulaGrid();
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
         }
         #endregion btnBuscarFornecedorDtGrid Click
@@ -145,18 +153,29 @@ namespace TCC.UI
 
             try
             {
-                regra.DeletaPecasAssociadasFornecedor(Convert.ToInt32(this._modelPeca.IdPeca));
-                this.PopulaListaModel();
-                this.ValidaDadosNulos();
-                if (this._telaPeca == false)
+                if (this._modelPeca == null)
                 {
-                    foreach (mPecaFornecedor modelPecaFornecedor in this._listaModelPecaFornecedor)
-                    {
-                        regra.ValidarInsere(modelPecaFornecedor);
-                    }
-                    MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                    this.btnLimpa_Click(null, null);
+                    MessageBox.Show("É necessário buscar uma peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
+                else
+                {
+                    this.PopulaListaModel();
+                    this.ValidaDadosNulos();
+                    regra.DeletaPecasAssociadasFornecedor(Convert.ToInt32(this._modelPeca.IdPeca));
+                    if (this._telaPeca == false)
+                    {
+                        foreach (mPecaFornecedor modelPecaFornecedor in this._listaModelPecaFornecedor)
+                        {
+                            regra.ValidarInsere(modelPecaFornecedor);
+                        }
+                        MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        this.btnLimpa_Click(null, null);
+                    }
+                }
+            }
+            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            {
+                MessageBox.Show("É necessário buscar uma peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (BUSINESS.Exceptions.PecaFornecedor.PecaVazioException)
             {
@@ -238,22 +257,22 @@ namespace TCC.UI
                                     }
                                 }
                             }
-                            this.DialogResult = DialogResult.OK;
+                            //this.DialogResult = DialogResult.OK;
                             //this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                            //MessageBox.Show("É necessário Selecionar uma linha", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("É necessário Cadastrar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        //MessageBox.Show("É necessário Cadastrar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário Buscar e Selecionar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    //MessageBox.Show("É necessário Buscar e Selecionar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (Exception ex)
@@ -340,13 +359,13 @@ namespace TCC.UI
         /// </summary>
         private void ValidaDadosNulos()
         {
-            if (this._listaModelPecaFornecedor == null)
-            {
-                throw new BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException();
-            }
-            else if (this._modelPeca == null)
+            if (this._modelPeca == null)
             {
                 throw new BUSINESS.Exceptions.PecaFornecedor.PecaVazioException();
+            }
+            else if (this._listaModelPecaFornecedor == null)
+            {
+                throw new BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException();
             }
         }
         #endregion Valida Dados Nulos
