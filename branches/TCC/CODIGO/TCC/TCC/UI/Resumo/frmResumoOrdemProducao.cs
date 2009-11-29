@@ -102,8 +102,8 @@ namespace TCC.UI.Resumo
 
                     if (linha["id_fam_motor"] != DBNull.Value)
                     {
-                        this.CriaNoFamiliaMotor(Convert.ToInt32(linha["id_fam_motor"]),qtdeProduto, noProduto);
-                        //noProduto.Nodes.Add(noFamiliaMotor);
+                        noFamiliaMotor = this.CriaNoFamiliaMotor(Convert.ToInt32(linha["id_fam_motor"]),qtdeProduto);
+                        noProduto.Nodes.Add(noFamiliaMotor);
                     }
                     else if (linha["id_kit"] != DBNull.Value)
                     {
@@ -134,7 +134,7 @@ namespace TCC.UI.Resumo
         #endregion Cria No Produto
 
         #region Cria No Familia Motor
-        private void CriaNoFamiliaMotor(int idFamiliaMotor, int qtdeProduto, TreeNode noProduto)
+        private TreeNode CriaNoFamiliaMotor(int idFamiliaMotor, int qtdeProduto)
         {
             DataTable dtFamiliaMotor = null;
             TreeNode noFamiliaMotor = null, noKitGrupoPeca = null;
@@ -148,10 +148,9 @@ namespace TCC.UI.Resumo
                     noFamiliaMotor = new TreeNode(linhaFamMotor["id_fam_motor_real"].ToString());
                     qtde = Convert.ToInt32(linhaFamMotor["qtd_kit"]) * qtdeProduto;
                     this.CriaNoKitGrupoPeca(Convert.ToInt32(linhaFamMotor["id_kit"]), qtde, noFamiliaMotor);
-                    noProduto.Nodes.Add(noFamiliaMotor);
                     //noFamiliaMotor.Nodes.Add(noKitGrupoPeca);
                 }
-                //return noFamiliaMotor;
+                return noFamiliaMotor;
             }
             catch (Exception ex)
             {
@@ -172,7 +171,7 @@ namespace TCC.UI.Resumo
         #endregion Cria No Familia Motor
 
         #region Cria No Kit Grupo Peca
-        private void CriaNoKitGrupoPeca(int idKitGrupoPeca, int qtdeProduto, TreeNode noProduto)
+        private void CriaNoKitGrupoPeca(int idKitGrupoPeca, int qtdeProduto, TreeNode noP)
         {
             DataTable dtKitGrupoPeca = null;
             TreeNode noKitGrupoPeca = null, noItem = null;
@@ -184,7 +183,7 @@ namespace TCC.UI.Resumo
                 {
                     noKitGrupoPeca = new TreeNode(linha["id_kit_real"].ToString());
                     this.CriaNoItemKit(Convert.ToInt32(linha["id_kit"]), qtdeProduto, noKitGrupoPeca);
-                    noProduto.Nodes.Add(noKitGrupoPeca);
+                    noP.Nodes.Add(noKitGrupoPeca);
                     //noKitGrupoPeca.Nodes.Add(noItem);
                 }
                 //return noKitGrupoPeca;
