@@ -296,15 +296,15 @@ namespace TCC.UI
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
-            {
-                MessageBox.Show("O código do Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
-                this.btnCdTipoPeca.Focus();
-            }
             catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
             {
                 MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
+            }
+            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            {
+                MessageBox.Show("O Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                this.btnCdTipoPeca.Focus();
             }
             catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
             {

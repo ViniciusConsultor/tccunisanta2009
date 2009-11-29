@@ -7,4 +7,4 @@
  CREATE PROCEDURE sp_busca_perfil
  AS
  SELECT id_perfil, dsc_perfil as 'Perfil' FROM Perfil
- WHERE flg_ativo = 1
+ WHERE flg_ativo = 1 and dsc_perfil != 'DEFAULT'

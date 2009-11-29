@@ -145,11 +145,13 @@ namespace TCC.BUSINESS
 
             if (alteracao == false)
             {
-                if (this.ExisteCnpj(model.Cnpj) == true)
+                if (model.Cnpj != null)
                 {
-                    throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
+                    if (this.ExisteCnpj(model.Cnpj) == true)
+                    {
+                        throw new BUSINESS.Exceptions.Fornecedor.CNPJFornecedorExistente();
+                    }
                 }
-
                 if (model.IdentInter != null)
                 {
                     if (this.ExisteIdentInter(model.IdentInter) == true)
