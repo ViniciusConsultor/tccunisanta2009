@@ -33,10 +33,14 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuPrincipal
             // 
+            this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deslogarToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Size = new System.Drawing.Size(794, 24);
@@ -57,6 +61,13 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(38, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // deslogarToolStripMenuItem
+            // 
+            this.deslogarToolStripMenuItem.Name = "deslogarToolStripMenuItem";
+            this.deslogarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.deslogarToolStripMenuItem.Text = "Deslogar";
+            this.deslogarToolStripMenuItem.Click += new System.EventHandler(this.deslogarToolStripMenuItem_Click);
+            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,6 +87,8 @@
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.frmInicial_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInicial_FormClosing);
+            this.mnuPrincipal.ResumeLayout(false);
+            this.mnuPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,6 +100,7 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem deslogarToolStripMenuItem;
     }
 }
 

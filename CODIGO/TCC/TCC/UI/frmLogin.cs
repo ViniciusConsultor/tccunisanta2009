@@ -66,6 +66,12 @@ namespace TCC.UI
                             {
                                 Application.Exit();
                             }
+                            else
+                            {
+                                this.btnLimpar_Click(null, null);
+                                this.Visible = true;
+                                this.txtLogin.Focus();
+                            }
                         }
                     }
                 }
