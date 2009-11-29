@@ -7,6 +7,6 @@
  CREATE PROCEDURE sp_busca_peca_param_codigo
 @id_peca_real VARCHAR(25)
  AS
- SELECT id_peca, id_peca_real as 'Codigo', nom as 'Peça', 0 as 'qtd' FROM Peca
+ SELECT id_peca, id_peca_real, nom, 0 as 'qtd' FROM Peca
  WHERE id_peca_real LIKE '%' + @id_peca_real + '%'
  AND flg_ativo = 1
