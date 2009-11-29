@@ -137,8 +137,8 @@ INSERT INTO Perfilmenu (id_perfil, id_menu, dat_alt, flg_ativo) VALUES (1, 5, GE
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Motor', 1, GETDATE());
 INSERT INTO Tipoproduto (nom, flg_ativo, dat_alt) VALUES ('Kit', 1, GETDATE());
 
---INSERT TABELA USUARIO senha: 123
-INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'kaue', 'MTIz', 'SEI LA', 1, 1);
+--INSERT TABELA USUARIO
+INSERT INTO Usuario (id_usu, log_usu, senha, obs_usu, flg_ativo, id_perfil) VALUES (1, 'megatech', 'YWRtaW5tZWdhdGV', 'Administrador do sistema', 1, 1);
 --fornecedor
 INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter,ddi,ident_inter)VALUES (1,'Peças & Equips', 'Dom Bosco', 357,'Apartamento', 11070098, 33, 'Vila Nova', 56985880, 'Manaus', 'peçasequips@mail.com','123468579', GETDATE(), 1, 'am', 'Brasil', NULL,55,'123456789');
 INSERT INTO Fornecedor( id_forn, nom, rua, nro_ende, compl, cod_post, ddd, bairr, tel, cid, mail, cnpj, dat_alt, flg_ativo, slg_est, nom_pais, nom_est_inter,ddi,ident_inter)VALUES (2,'Mercedes', 'Vinicius de Morais', 1085,'casa', 11070000, 25, 'Rio de Janeiro', 56556680, 'Rio de Janeiro', 'bwm@mail.com','123468579', GETDATE(), 1, 'rj', 'Brasil', NULL,55,'321654987');
@@ -285,7 +285,7 @@ INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_m
 INSERT INTO Familiamotor (id_fam_motor,id_num_motor,dsc_fam_motor,flg_ativo,id_motor,id_estoque,id_fam_motor_real,id_tipo_motor)VALUES (2,1,'366',1,2,1,'447A',2)
 
 
---kit familha
+--kit familia
 INSERT INTO Kitfamilia(id_kit,id_fam_motor,dat_alt,qtd_kit,flg_ativo)VALUES(1,1,GETDATE(),2,1)
 INSERT INTO Kitfamilia(id_kit,id_fam_motor,dat_alt,qtd_kit,flg_ativo)VALUES(2,2,GETDATE(),1,1)
 

@@ -128,6 +128,7 @@
             this.rdbFamMotor.TabStop = true;
             this.rdbFamMotor.Text = "Familia de Motor";
             this.rdbFamMotor.UseVisualStyleBackColor = true;
+            this.rdbFamMotor.CheckedChanged += new System.EventHandler(this.rdbFamMotor_CheckedChanged);
             // 
             // rdbKit
             // 
@@ -138,6 +139,7 @@
             this.rdbKit.TabIndex = 2;
             this.rdbKit.Text = "Kit de Peças";
             this.rdbKit.UseVisualStyleBackColor = true;
+            this.rdbKit.CheckedChanged += new System.EventHandler(this.rdbKit_CheckedChanged);
             // 
             // txtFiltroBusca
             // 

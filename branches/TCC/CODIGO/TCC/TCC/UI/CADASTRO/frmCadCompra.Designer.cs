@@ -229,7 +229,7 @@
             this.gpbOrdemCompra.Location = new System.Drawing.Point(88, 87);
             this.gpbOrdemCompra.Name = "gpbOrdemCompra";
             this.gpbOrdemCompra.Size = new System.Drawing.Size(492, 269);
-            this.gpbOrdemCompra.TabIndex = 39;
+            this.gpbOrdemCompra.TabIndex = 4;
             this.gpbOrdemCompra.TabStop = false;
             this.gpbOrdemCompra.Text = "Ordem de Compra";
             // 
@@ -268,7 +268,7 @@
             // 
             this.txtQtdItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQtdItem.Location = new System.Drawing.Point(260, 83);
-            this.txtQtdItem.MaxLength = 2;
+            this.txtQtdItem.MaxLength = 4;
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(141, 20);
             this.txtQtdItem.TabIndex = 10;
@@ -336,7 +336,7 @@
             this.hNomeItem.HeaderText = "Item";
             this.hNomeItem.Name = "hNomeItem";
             this.hNomeItem.ReadOnly = true;
-            this.hNomeItem.Width = 52;
+            this.hNomeItem.Width = 50;
             // 
             // hFornecedor
             // 
@@ -344,7 +344,7 @@
             this.hFornecedor.HeaderText = "Fornecedor";
             this.hFornecedor.Name = "hFornecedor";
             this.hFornecedor.ReadOnly = true;
-            this.hFornecedor.Width = 86;
+            this.hFornecedor.Width = 84;
             // 
             // hQuantidade
             // 
@@ -352,7 +352,7 @@
             this.hQuantidade.HeaderText = "Quantidade";
             this.hQuantidade.Name = "hQuantidade";
             this.hQuantidade.ReadOnly = true;
-            this.hQuantidade.Width = 87;
+            this.hQuantidade.Width = 85;
             // 
             // hFlg_motor
             // 

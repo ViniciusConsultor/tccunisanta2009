@@ -61,7 +61,14 @@ namespace TCC.UI
 
             try
             {
-                model.IdCliente = regra.BuscaIdMaximo();
+                if (base.Alteracao == true)
+                {
+                    model.IdCliente = this._modelCliente.IdCliente;
+                }
+                else
+                {
+                    model.IdCliente = regra.BuscaIdMaximo();
+                }
                 model.NomeCliente = this.txtNome.Text;
 
                 if (string.IsNullOrEmpty(this.txtDDI.Text) == true)
@@ -193,11 +200,6 @@ namespace TCC.UI
                 else
                 {
                     model.SlgEstado = null;
-                }
-
-                if (base.Alteracao == true)
-                {
-                    model.IdCliente = this._modelCliente.IdCliente;
                 }
 
                 return model;
