@@ -23,3 +23,8 @@ C:\Users\Kaue\Documents\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\Loa
 C:\Users\Kaue\Documents\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Kaue\Documents\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
 C:\Users\Kaue\Documents\tccunisanta2009\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb
+C:\Users\Kauê\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.dll
+C:\Users\Kauê\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.pdb
+C:\Users\Kauê\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kauê\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
+C:\Users\Kauê\TCC\CODIGO\AUXILIARES\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb

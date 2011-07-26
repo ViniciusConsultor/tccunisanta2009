@@ -22,7 +22,7 @@ namespace How_to_use
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ConnectionStringSettings settConex = ConfigurationManager.ConnectionStrings["TCC.Properties.Settings.MegatechConnectionString"];
+            ConnectionStringSettings settConex = ConfigurationManager.ConnectionStrings["How_to_use.Properties.Settings.MegatechdatabaseConnectionString"];
             OpenFileDialog busca = new OpenFileDialog();
             if (String.IsNullOrEmpty(textBox1.Text.Trim()) == false)
             {
