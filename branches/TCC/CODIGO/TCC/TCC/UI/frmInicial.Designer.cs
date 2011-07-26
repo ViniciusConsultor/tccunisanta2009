@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,13 @@
             this.mnuPrincipal.Size = new System.Drawing.Size(794, 24);
             this.mnuPrincipal.TabIndex = 0;
             this.mnuPrincipal.Text = "MenuStrip";
+            // 
+            // deslogarToolStripMenuItem
+            // 
+            this.deslogarToolStripMenuItem.Name = "deslogarToolStripMenuItem";
+            this.deslogarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.deslogarToolStripMenuItem.Text = "Deslogar";
+            this.deslogarToolStripMenuItem.Click += new System.EventHandler(this.deslogarToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -60,13 +67,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(38, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // deslogarToolStripMenuItem
-            // 
-            this.deslogarToolStripMenuItem.Name = "deslogarToolStripMenuItem";
-            this.deslogarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.deslogarToolStripMenuItem.Text = "Deslogar";
-            this.deslogarToolStripMenuItem.Click += new System.EventHandler(this.deslogarToolStripMenuItem_Click);
             // 
             // frmInicial
             // 
