@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B17058D-21FF-42FF-BDDA-B7722F76C23A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCC.Regra</RootNamespace>
+    <AssemblyName>TCC.Regra</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\Busca\CadastrarDadoException.cs" />
+    <Compile Include="Exceptions\Busca\LinhaSemSelecionarException.cs" />
+    <Compile Include="Exceptions\Busca\SemBuscaESelecionarException.cs" />
+    <Compile Include="Exceptions\Cliente\BairroClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\CEPVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\CidadeClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\CNPJClienteExistente.cs" />
+    <Compile Include="Exceptions\Cliente\CodigoClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\CodigoPostalVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\CPFClienteExistente.cs" />
+    <Compile Include="Exceptions\Cliente\CpfCnpjVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\DadosComunicacaoVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\DDDClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\DDIClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\EmailClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\EstadoVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\IdentidadeInterVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\IdentInterExistenteException.cs" />
+    <Compile Include="Exceptions\Cliente\NomeClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\NroEnderecoClienteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\paisVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\RuaClieteVazioException.cs" />
+    <Compile Include="Exceptions\Cliente\TelefoneClienteVazioException.cs" />
+    <Compile Include="Exceptions\CodigoClienteVazioException.cs" />
+    <Compile Include="Exceptions\CodigoCompraVazioException.cs" />
+    <Compile Include="Exceptions\CodigoDepartamentoVazioException.cs" />
+    <Compile Include="Exceptions\CodigoEstoqueVazioException.cs" />
+    <Compile Include="Exceptions\CodigoFamiliaMotorVazioException.cs" />
+    <Compile Include="Exceptions\CodigoFornecedorVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoItemPecaVazioException.cs" />
+    <Compile Include="Exceptions\CodigoKitGrupoPecaVazioException.cs" />
+    <Compile Include="Exceptions\CodigoMenuVazioException.cs" />
+    <Compile Include="Exceptions\CodigoMotorVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoNumeroMotorVazioException.cs" />
+    <Compile Include="Exceptions\CodigoOrdemProducaoVazioException.cs" />
+    <Compile Include="Exceptions\CodigoPecaVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoPerfilVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoTipoMotorVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoTipoPecaVazioException.cs" />
+    <Compile Include="Exceptions\CodigoTipoProdutoVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoUsuarioVazioExeception.cs" />
+    <Compile Include="Exceptions\CodigoVendaVazioException.cs" />
+    <Compile Include="Exceptions\Colaborador\BairroVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\CepVazioException.cs" />
+    <Compile Include="Exceptions\Colaborador\CidadeVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\CpfExistenteException.cs" />
+    <Compile Include="Exceptions\Colaborador\CpfVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\DataNascimentoVazioException.cs" />
+    <Compile Include="Exceptions\Colaborador\DDDVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\NomeVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\NumeroVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\RgVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\RuaVazioExeption.cs" />
+    <Compile Include="Exceptions\Colaborador\TelefoneVazioExeption.cs" />
+    <Compile Include="Exceptions\CompraPeca\UltimoPrecoVazioException.cs" />
+    <Compile Include="Exceptions\Compra\BuscaFornecedorException.cs" />
+    <Compile Include="Exceptions\Compra\BuscaMotorException.cs" />
+    <Compile Include="Exceptions\Compra\BuscaMotorPecaException.cs" />
+    <Compile Include="Exceptions\Compra\BuscaPecaException.cs" />
+    <Compile Include="Exceptions\Compra\CompraMotorPecaVazioException.cs" />
+    <Compile Include="Exceptions\Compra\CompraQuantidadeMenorQueUmException.cs" />
+    <Compile Include="Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
+    <Compile Include="Exceptions\Compra\CompraValorVazioException.cs" />
+    <Compile Include="Exceptions\Compra\DataCompraVaziaException.cs" />
+    <Compile Include="Exceptions\Compra\OrdemCompraSemDadosException.cs" />
+    <Compile Include="Exceptions\Departamento\NomeDepartamentoExistenteException.cs" />
+    <Compile Include="Exceptions\Departamento\NomeDepartamentoVazioException.cs" />
+    <Compile Include="Exceptions\Estoque\NomEstoqueExistenteException.cs" />
+    <Compile Include="Exceptions\Estoque\NomEstoqueVazioException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\CodigoRealFamiliaExistenteException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\CodigoRealFamiliaVazioException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\FamiliaSemKitsException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\GridKitsSemDadosException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\NomeFamiliaVazioException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\QuantidadeMenorZeroException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\QuantidadeVaziaException.cs" />
+    <Compile Include="Exceptions\FamiliaMotor\TelaResumoCanceladaException.cs" />
+    <Compile Include="Exceptions\FornecedorDepto\DepartamentoNaoEscolhidoException.cs" />
+    <Compile Include="Exceptions\FornecedorDepto\FornecedorVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\CEPVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\CidadeVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\CNPJFornecedorExistente.cs" />
+    <Compile Include="Exceptions\Fornecedor\CnpjVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\CodigoPostalVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\DadosComunicacaoVazioExeception.cs" />
+    <Compile Include="Exceptions\Fornecedor\DddVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\DDIVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\EmailFornecedorVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\EstadoVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\FornecedorSemIdExecption.cs" />
+    <Compile Include="Exceptions\Fornecedor\IdentidadeInterVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\IdentInterExistenteException.cs" />
+    <Compile Include="Exceptions\Fornecedor\NomeFornecedorVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\paisVazioException.cs" />
+    <Compile Include="Exceptions\Fornecedor\TelefoneVazioException.cs" />
+    <Compile Include="Exceptions\Item\CodigoRealItemExistenteException.cs" />
+    <Compile Include="Exceptions\Item\CodigoRealItemVazioException.cs" />
+    <Compile Include="Exceptions\Item\GridPecaSemDadosException.cs" />
+    <Compile Include="Exceptions\Item\ItemSemPecaException.cs" />
+    <Compile Include="Exceptions\Item\NomeItemExistenteException.cs" />
+    <Compile Include="Exceptions\Item\NomeItemVazioException.cs" />
+    <Compile Include="Exceptions\Item\QuantidadeMenorZeroException.cs" />
+    <Compile Include="Exceptions\Item\QuantidadeVaziaException.cs" />
+    <Compile Include="Exceptions\Item\TelaResumoCanceladaException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\CodigoRealKitExistenteException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\CodigoRealKitVazioException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\GridItemSemDadosException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\KitSemItemException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\NomeKitExistenteException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\NomeKitVazioException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\QuantidadeMenorZeroException.cs" />
+    <Compile Include="Exceptions\KitGrupoPeca\TelaResumoCanceladaException.cs" />
+    <Compile Include="Exceptions\Login\LoginExistenteException.cs" />
+    <Compile Include="Exceptions\Login\LoginVazioException.cs" />
+    <Compile Include="Exceptions\Login\SenhaVaziaException.cs" />
+    <Compile Include="Exceptions\MotorEstoque\EstoqueNaoEscolhidoException.cs" />
+    <Compile Include="Exceptions\MotorEstoque\MotorVazioException.cs" />
+    <Compile Include="Exceptions\MotorFornecedor\FornecedorNaoEscolhidoException.cs" />
+    <Compile Include="Exceptions\MotorFornecedor\MotorVazioException.cs" />
+    <Compile Include="Exceptions\Motor\DescMotorExistenteException.cs" />
+    <Compile Include="Exceptions\Motor\DescMotorVazioException.cs" />
+    <Compile Include="Exceptions\NumeroMotor\CodigoNumeroMotorExistenteException.cs" />
+    <Compile Include="Exceptions\NumeroMotor\DescMotorVazioException.cs" />
+    <Compile Include="Exceptions\NumeroMotor\NumeroMotorVazioExeption.cs" />
+    <Compile Include="Exceptions\PecaEstoque\EstoqueNaoEscolhidoException.cs" />
+    <Compile Include="Exceptions\PecaEstoque\PecaVazioException.cs" />
+    <Compile Include="Exceptions\PecaEstoque\QuantidadeVaziaZeroException.cs" />
+    <Compile Include="Exceptions\PecaFornecedor\FornecedorNaoEscolhidoException.cs" />
+    <Compile Include="Exceptions\PecaFornecedor\PecaVazioException.cs" />
+    <Compile Include="Exceptions\Peca\CodigoPecaVazioException.cs" />
+    <Compile Include="Exceptions\Peca\NomePecaVazioException.cs" />
+    <Compile Include="Exceptions\Peca\PecaJaExistenteException.cs" />
+    <Compile Include="Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
+    <Compile Include="Exceptions\PerfilMenu\MenuNaoEscolhidoException.cs" />
+    <Compile Include="Exceptions\PerfilMenu\PerfilVazioException.cs" />
+    <Compile Include="Exceptions\Perfil\DescPerfilExistenteException.cs" />
+    <Compile Include="Exceptions\Perfil\DescPerfilVazioException.cs" />
+    <Compile Include="Exceptions\Produto\DescricaoProdutoVazioException.cs" />
+    <Compile Include="Exceptions\Produto\FamiliaOuKitVazioException.cs" />
+    <Compile Include="Exceptions\TipoMotor\CodigoTipoMotorExistenteException.cs" />
+    <Compile Include="Exceptions\TipoMotor\DescTipoMotorVazioException.cs" />
+    <Compile Include="Exceptions\TipoMotor\NumeroTipoMotorVazioExeption.cs" />
+    <Compile Include="Exceptions\tipoPeca\TipoPecaExistenteException.cs" />
+    <Compile Include="Exceptions\tipoPeca\tipoPecaVazioExeption.cs" />
+    <Compile Include="Exceptions\Usinagem\CheckBoxPecaOKVazioException.cs" />
+    <Compile Include="Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />
+    <Compile Include="Exceptions\Validacoes\CheckBoxSemSelecaoException.cs" />
+    <Compile Include="Exceptions\Validacoes\DataInvalidaException.cs" />
+    <Compile Include="Exceptions\Validacoes\EmailInvalidoException.cs" />
+    <Compile Include="Exceptions\Validacoes\MaskedInvalidaException.cs" />
+    <Compile Include="Exceptions\Venda\DataVaziaException.cs" />
+    <Compile Include="Exceptions\Venda\GridProdutoSemDadosException.cs" />
+    <Compile Include="Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
+    <Compile Include="Exceptions\Venda\ValorVendaVaziaException.cs" />
+    <Compile Include="Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
+    <Compile Include="Exceptions\Venda\VendaMotorGrupoVazioException.cs" />
+    <Compile Include="Exceptions\Venda\VendaSemProdutoException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rCliente.cs" />
+    <Compile Include="rColaborador.cs" />
+    <Compile Include="rCompra.cs" />
+    <Compile Include="rCompraOrdemCompra.cs" />
+    <Compile Include="rCompraPeca.cs" />
+    <Compile Include="rDepartamento.cs" />
+    <Compile Include="rEstado.cs" />
+    <Compile Include="rEstoque.cs" />
+    <Compile Include="rFamiliaMotor.cs" />
+    <Compile Include="rFornecedor.cs" />
+    <Compile Include="rFornecedorDepto.cs" />
+    <Compile Include="rInicio.cs" />
+    <Compile Include="rItem.cs" />
+    <Compile Include="rItemKit.cs" />
+    <Compile Include="rItemPeca.cs" />
+    <Compile Include="rKitFamilia.cs" />
+    <Compile Include="rKitGrupoPeca.cs" />
+    <Compile Include="rMenu.cs" />
+    <Compile Include="rMotor.cs" />
+    <Compile Include="rMotorEstoque.cs" />
+    <Compile Include="rMotorFornecedor.cs" />
+    <Compile Include="rNumeroMotor.cs" />
+    <Compile Include="rOrdemCompra.cs" />
+    <Compile Include="rOrdemServico.cs" />
+    <Compile Include="rPeca.cs" />
+    <Compile Include="rPecaEstoque.cs" />
+    <Compile Include="rPecaFornecedor.cs" />
+    <Compile Include="rPerfil.cs" />
+    <Compile Include="rPerfilMenu.cs" />
+    <Compile Include="rProduto.cs" />
+    <Compile Include="rSubMenu.cs" />
+    <Compile Include="rTipoMotor.cs" />
+    <Compile Include="rTipoPeca.cs" />
+    <Compile Include="rTipoProduto.cs" />
+    <Compile Include="rTipoUsuario.cs" />
+    <Compile Include="rUsinagem.cs" />
+    <Compile Include="rUsuario.cs" />
+    <Compile Include="rVenda.cs" />
+    <Compile Include="rVendaProduto.cs" />
+    <Compile Include="Util\Auxiliar.cs" />
+    <Compile Include="Util\rMotorFornecedor.cs" />
+    <Compile Include="Util\rProduto.cs" />
+    <Compile Include="Util\Validacoes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TCC.AcessoDados\TCC.AcessoDados.csproj">
+      <Project>{200968A6-8FA6-437D-9CFA-2DF55ACBE8C3}</Project>
+      <Name>TCC.AcessoDados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCC.Mapper\TCC.Mapper.csproj">
+      <Project>{D5CFFF7C-E379-498E-AA51-6798420EAC12}</Project>
+      <Name>TCC.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

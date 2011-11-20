@@ -1,0 +1,9 @@
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\bin\Debug\TCC.AcessoDados.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\bin\Debug\TCC.AcessoDados.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\bin\Debug\Kaue.Reflection.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\bin\Debug\TCC.Mapper.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\bin\Debug\TCC.Mapper.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\bin\Debug\Kaue.Reflection.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\obj\Debug\TCC.AcessoDados.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.AcessoDados\obj\Debug\TCC.AcessoDados.pdb

@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Kaue.Reflection;
+
+namespace TCC.Mapper
+{
+    public class mUsuario : ModelPai
+    {
+        private int? idUsuario;
+        private string login;
+        private string senha;
+        private string obsUsuario;
+        private bool flgAtivo;
+        private int id_perfil;
+        private string nomeTabela = "usuario";
+
+        [ColunasBancoDados("flg_ativo", System.Data.SqlDbType.Bit, false)]
+        public bool FlgAtivo
+        {
+            get { return flgAtivo; }
+            set { flgAtivo = value; }
+        }
+
+        [ColunasBancoDados("Id_perfil", System.Data.SqlDbType.Int, false)]
+        public int Id_perfil
+        {
+            get { return id_perfil; }
+            set { id_perfil = value; }
+        }
+        [ColunasBancoDados("obs_usu", System.Data.SqlDbType.VarChar, false)]
+        public string ObsUsuario
+        {
+            get { return obsUsuario; }
+            set { obsUsuario = value; }
+        }
+
+        [ColunasBancoDados("senha", System.Data.SqlDbType.VarChar, false)]
+        public string Senha
+        {
+            get { return senha; }
+            set { senha = value; }
+        }
+
+        [ColunasBancoDados("log_usu", System.Data.SqlDbType.VarChar, false)]
+        public string Login
+        {
+            get { return login; }
+            set { login = value; }
+        }
+
+        [ColunasBancoDados("id_usu", System.Data.SqlDbType.Int, true)]
+        public int? IdUsuario
+        {
+            get { return idUsuario; }
+            set { idUsuario = value; }
+        }
+
+        public override string getNomeTabela()
+        {
+            return this.nomeTabela;
+        }
+    }
+}
