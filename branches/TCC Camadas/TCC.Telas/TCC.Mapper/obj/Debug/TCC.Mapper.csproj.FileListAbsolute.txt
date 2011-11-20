@@ -1,0 +1,7 @@
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\bin\Debug\TCC.Mapper.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\bin\Debug\TCC.Mapper.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\bin\Debug\Kaue.Reflection.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\bin\Debug\Kaue.Reflection.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\obj\Debug\TCC.Mapper.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Mapper\obj\Debug\TCC.Mapper.pdb

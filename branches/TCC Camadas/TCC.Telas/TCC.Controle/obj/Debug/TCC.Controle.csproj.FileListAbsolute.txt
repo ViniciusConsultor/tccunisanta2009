@@ -1,0 +1,5 @@
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Controle\bin\Debug\TCC.Controle.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Controle\bin\Debug\TCC.Controle.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Controle\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Controle\obj\Debug\TCC.Controle.dll
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Controle\obj\Debug\TCC.Controle.pdb
