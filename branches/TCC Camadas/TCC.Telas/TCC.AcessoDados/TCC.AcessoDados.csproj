@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{200968A6-8FA6-437D-9CFA-2DF55ACBE8C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCC.AcessoDados</RootNamespace>
+    <AssemblyName>TCC.AcessoDados</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcessoDados.cs" />
+    <Compile Include="ComandosSql.cs" />
+    <Compile Include="ConexaoBanco.cs" />
+    <Compile Include="dCadColaborador.cs" />
+    <Compile Include="dCliente.cs" />
+    <Compile Include="dColaborador.cs" />
+    <Compile Include="dDepartamento.cs" />
+    <Compile Include="dEstado.cs" />
+    <Compile Include="dEstoque.cs" />
+    <Compile Include="dFornecedor.cs" />
+    <Compile Include="dMenu.cs" />
+    <Compile Include="dMenuSubMenu.cs" />
+    <Compile Include="dPecaFornecedor.cs" />
+    <Compile Include="dPerfil.cs" />
+    <Compile Include="dPerfilMenu.cs" />
+    <Compile Include="dSubMenu.cs" />
+    <Compile Include="dTipoUsuario.cs" />
+    <Compile Include="dUsuario.cs" />
+    <Compile Include="dUsuarioPerfil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kaue.Reflection\Kaue.Reflection.csproj">
+      <Project>{062BB35D-1DAD-41B8-8B0B-365731C9D994}</Project>
+      <Name>Kaue.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCC.Mapper\TCC.Mapper.csproj">
+      <Project>{D5CFFF7C-E379-498E-AA51-6798420EAC12}</Project>
+      <Name>TCC.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
