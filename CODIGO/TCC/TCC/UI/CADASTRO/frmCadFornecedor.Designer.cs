@@ -52,7 +52,7 @@
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnRelacionarDepto = new System.Windows.Forms.Button();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
-            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtDDD = new TCC.Controle.MegaTextBox(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxEscolhePaisEstado = new System.Windows.Forms.GroupBox();
@@ -66,16 +66,16 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
-            this.txtDDI = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtDDI = new TCC.Controle.MegaTextBox(this.components);
             this.lblDDI = new System.Windows.Forms.Label();
             this.lblIdentInter = new System.Windows.Forms.Label();
-            this.txtTelefoneInter = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtTelefoneInter = new TCC.Controle.MegaTextBox(this.components);
             this.txtIdentInter = new System.Windows.Forms.TextBox();
             this.lblCodPostal = new System.Windows.Forms.Label();
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.lblCep = new System.Windows.Forms.Label();
-            this.txtNumeroEndereco = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtNumeroEndereco = new TCC.Controle.MegaTextBox(this.components);
             this.gbxEscolhePaisEstado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,7 +172,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 128);
             this.btnVolta.Name = "btnVolta";
@@ -247,7 +247,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnInsere.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsere.Location = new System.Drawing.Point(7, 5);
             this.btnInsere.Name = "btnInsere";
@@ -259,7 +259,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -271,7 +271,7 @@
             // 
             // btnRelacionarDepto
             // 
-            this.btnRelacionarDepto.BackgroundImage = global::TCC.resImg.btnFornecedorDepto;
+            this.btnRelacionarDepto.BackgroundImage = global::TCC.Telas.resImg.btnFornecedorDepto;
             this.btnRelacionarDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRelacionarDepto.Location = new System.Drawing.Point(540, 321);
             this.btnRelacionarDepto.Name = "btnRelacionarDepto";
@@ -299,7 +299,7 @@
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(35, 20);
             this.txtDDD.TabIndex = 15;
-            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtDDD.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // label2
             // 
@@ -442,7 +442,7 @@
             this.txtDDI.Name = "txtDDI";
             this.txtDDI.Size = new System.Drawing.Size(35, 20);
             this.txtDDI.TabIndex = 14;
-            this.txtDDI.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtDDI.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // lblDDI
             // 
@@ -470,7 +470,7 @@
             this.txtTelefoneInter.Name = "txtTelefoneInter";
             this.txtTelefoneInter.Size = new System.Drawing.Size(66, 20);
             this.txtTelefoneInter.TabIndex = 16;
-            this.txtTelefoneInter.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtTelefoneInter.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // txtIdentInter
             // 
@@ -526,13 +526,13 @@
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroEndereco.TabIndex = 9;
-            this.txtNumeroEndereco.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtNumeroEndereco.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // frmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(593, 368);
             this.ControlBox = false;
@@ -605,7 +605,7 @@
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
-        private Controles.MegaTextBox.MegaTextBox txtDDD;
+        private TCC.Controle.MegaTextBox txtDDD;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.Button btnRelacionarDepto;
         private System.Windows.Forms.Label label2;
@@ -621,15 +621,15 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtCidade;
-        private Controles.MegaTextBox.MegaTextBox txtDDI;
+        private TCC.Controle.MegaTextBox txtDDI;
         private System.Windows.Forms.Label lblDDI;
         private System.Windows.Forms.Label lblIdentInter;
-        private Controles.MegaTextBox.MegaTextBox txtTelefoneInter;
+        private TCC.Controle.MegaTextBox txtTelefoneInter;
         private System.Windows.Forms.TextBox txtIdentInter;
         private System.Windows.Forms.Label lblCodPostal;
         private System.Windows.Forms.TextBox txtCodPostal;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Label lblCep;
-        private Controles.MegaTextBox.MegaTextBox txtNumeroEndereco;
+        private TCC.Controle.MegaTextBox txtNumeroEndereco;
     }
 }

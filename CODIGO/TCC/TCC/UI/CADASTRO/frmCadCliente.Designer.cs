@@ -55,7 +55,7 @@
             this.btnLimpa = new System.Windows.Forms.Button();
             this.btnInsere = new System.Windows.Forms.Button();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtDDD = new TCC.Controle.MegaTextBox(this.components);
             this.gbxEscolhePaisEstado = new System.Windows.Forms.GroupBox();
             this.lblNmPais = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
@@ -65,8 +65,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.lblCodPostal = new System.Windows.Forms.Label();
-            this.txtTelefoneInter = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtDDI = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtTelefoneInter = new TCC.Controle.MegaTextBox(this.components);
+            this.txtDDI = new TCC.Controle.MegaTextBox(this.components);
             this.lblDDI = new System.Windows.Forms.Label();
             this.panelBrasil = new System.Windows.Forms.Panel();
             this.rdbPessoaJuridica = new System.Windows.Forms.RadioButton();
@@ -78,7 +78,7 @@
             this.panelOutros = new System.Windows.Forms.Panel();
             this.txtIdentInter = new System.Windows.Forms.TextBox();
             this.lblIdentInter = new System.Windows.Forms.Label();
-            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtNumero = new TCC.Controle.MegaTextBox(this.components);
             this.gbxEscolhePaisEstado.SuspendLayout();
             this.panelBrasil.SuspendLayout();
             this.panelOutros.SuspendLayout();
@@ -216,7 +216,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(6, 129);
             this.btnVolta.Name = "btnVolta";
@@ -279,7 +279,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 88);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -303,7 +303,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnInsere.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsere.Location = new System.Drawing.Point(6, 6);
             this.btnInsere.Name = "btnInsere";
@@ -331,7 +331,7 @@
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 14;
-            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtDDD.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // gbxEscolhePaisEstado
             // 
@@ -435,7 +435,7 @@
             this.txtTelefoneInter.Name = "txtTelefoneInter";
             this.txtTelefoneInter.Size = new System.Drawing.Size(66, 20);
             this.txtTelefoneInter.TabIndex = 15;
-            this.txtTelefoneInter.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtTelefoneInter.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // txtDDI
             // 
@@ -445,7 +445,7 @@
             this.txtDDI.Name = "txtDDI";
             this.txtDDI.Size = new System.Drawing.Size(35, 20);
             this.txtDDI.TabIndex = 13;
-            this.txtDDI.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtDDI.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // lblDDI
             // 
@@ -566,13 +566,13 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(74, 20);
             this.txtNumero.TabIndex = 8;
-            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtNumero.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -649,7 +649,7 @@
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
-        private Controles.MegaTextBox.MegaTextBox txtDDD;
+        private TCC.Controle.MegaTextBox txtDDD;
         private System.Windows.Forms.GroupBox gbxEscolhePaisEstado;
         private System.Windows.Forms.RadioButton rdbOutros;
         private System.Windows.Forms.RadioButton rdbBrasil;
@@ -659,8 +659,8 @@
         private System.Windows.Forms.Label lblNmPais;
         private System.Windows.Forms.TextBox txtCodPostal;
         private System.Windows.Forms.Label lblCodPostal;
-        private Controles.MegaTextBox.MegaTextBox txtTelefoneInter;
-        private Controles.MegaTextBox.MegaTextBox txtDDI;
+        private TCC.Controle.MegaTextBox txtTelefoneInter;
+        private TCC.Controle.MegaTextBox txtDDI;
         private System.Windows.Forms.Label lblDDI;
         private System.Windows.Forms.Panel panelBrasil;
         private System.Windows.Forms.RadioButton rdbPessoaJuridica;
@@ -672,6 +672,6 @@
         private System.Windows.Forms.Panel panelOutros;
         private System.Windows.Forms.TextBox txtIdentInter;
         private System.Windows.Forms.Label lblIdentInter;
-        private Controles.MegaTextBox.MegaTextBox txtNumero;
+        private TCC.Controle.MegaTextBox txtNumero;
     }
 }

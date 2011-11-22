@@ -48,7 +48,7 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.gbBuscaKit = new System.Windows.Forms.GroupBox();
-            this.txtQtdKit = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtdKit = new TCC.Controle.MegaTextBox(this.components);
             this.dgKits = new System.Windows.Forms.DataGridView();
             this.hIdKit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,7 +110,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 129);
             this.btnVolta.Name = "btnVolta";
@@ -127,7 +127,7 @@
             // 
             // btnAdicionaKit
             // 
-            this.btnAdicionaKit.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaKit.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionaKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaKit.Location = new System.Drawing.Point(36, 172);
             this.btnAdicionaKit.Name = "btnAdicionaKit";
@@ -139,7 +139,7 @@
             // 
             // btnBuscarKitDtGrid
             // 
-            this.btnBuscarKitDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarKitDtGrid.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscarKitDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarKitDtGrid.Location = new System.Drawing.Point(439, 23);
             this.btnBuscarKitDtGrid.Name = "btnBuscarKitDtGrid";
@@ -151,7 +151,7 @@
             // 
             // btnBuscaEstoque
             // 
-            this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaEstoque.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaEstoque.Location = new System.Drawing.Point(548, 42);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
@@ -163,7 +163,7 @@
             // 
             // btnBuscaMotorCompra
             // 
-            this.btnBuscaMotorCompra.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaMotorCompra.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaMotorCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaMotorCompra.Location = new System.Drawing.Point(196, 21);
             this.btnBuscaMotorCompra.Name = "btnBuscaMotorCompra";
@@ -175,7 +175,7 @@
             // 
             // btnBuscaTipoMotor
             // 
-            this.btnBuscaTipoMotor.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaTipoMotor.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaTipoMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaTipoMotor.Location = new System.Drawing.Point(465, 37);
             this.btnBuscaTipoMotor.Name = "btnBuscaTipoMotor";
@@ -187,7 +187,7 @@
             // 
             // btnRemoveKit
             // 
-            this.btnRemoveKit.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemoveKit.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemoveKit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemoveKit.Location = new System.Drawing.Point(98, 172);
             this.btnRemoveKit.Name = "btnRemoveKit";
@@ -199,7 +199,7 @@
             // 
             // btnBuscaNumMotor
             // 
-            this.btnBuscaNumMotor.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaNumMotor.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaNumMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaNumMotor.Location = new System.Drawing.Point(466, 8);
             this.btnBuscaNumMotor.Name = "btnBuscaNumMotor";
@@ -211,7 +211,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(7, 4);
             this.btnConfirma.Name = "btnConfirma";
@@ -223,7 +223,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 87);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -260,7 +260,7 @@
             this.txtQtdKit.Name = "txtQtdKit";
             this.txtQtdKit.Size = new System.Drawing.Size(100, 20);
             this.txtQtdKit.TabIndex = 10;
-            this.txtQtdKit.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtdKit.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // dgKits
             // 
@@ -526,7 +526,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -590,7 +590,7 @@
         private System.Windows.Forms.Button btnBuscaNumMotor;
         private System.Windows.Forms.TextBox txtNumeroMotor;
         private System.Windows.Forms.Label lblNumeroMotor;
-        private Controles.MegaTextBox.MegaTextBox txtQtdKit;
+        private TCC.Controle.MegaTextBox txtQtdKit;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.Label lblCodigoFamMotor;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdKit;

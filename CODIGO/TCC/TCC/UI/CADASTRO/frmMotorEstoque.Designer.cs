@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMotorEstoque));
             this.btnRemover = new System.Windows.Forms.Button();
-            this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtde = new TCC.Controle.MegaTextBox(this.components);
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgEstoques = new System.Windows.Forms.DataGridView();
@@ -54,7 +54,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemover.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemover.Location = new System.Drawing.Point(495, 33);
             this.btnRemover.Name = "btnRemover";
@@ -72,11 +72,11 @@
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(94, 20);
             this.txtQtde.TabIndex = 3;
-            this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtde.TipoTexto = TCC.Controle.TipoTexto.Numerico; //TCC.Controle.MegaTextBox.TipoTexto.Numerico;
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionar.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionar.Location = new System.Drawing.Point(462, 33);
             this.btnAdicionar.Name = "btnAdicionar";
@@ -171,7 +171,7 @@
             // 
             // btnBuscaMotor
             // 
-            this.btnBuscaMotor.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaMotor.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaMotor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaMotor.Location = new System.Drawing.Point(298, 33);
             this.btnBuscaMotor.Name = "btnBuscaMotor";
@@ -203,7 +203,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 84);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -215,7 +215,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(6, 125);
             this.btnVolta.Name = "btnVolta";
@@ -239,7 +239,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(6, 2);
             this.btnConfirma.Name = "btnConfirma";
@@ -258,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -288,7 +288,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnRemover;
-        private Controles.MegaTextBox.MegaTextBox txtQtde;
+        private TCC.Controle.MegaTextBox txtQtde;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgEstoques;

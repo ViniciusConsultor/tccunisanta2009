@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI.CADASTRO
 {
@@ -147,12 +147,12 @@ namespace TCC.UI.CADASTRO
                     base.FechaTela(this);
                 }
             }
-            catch (BUSINESS.Exceptions.FornecedorDepto.FornecedorVazioException)
+            catch (TCC.Regra.Exceptions.FornecedorDepto.FornecedorVazioException)
             {
                 MessageBox.Show("É Necessário Buscar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaFornecedor.Focus();
             }
-            catch (BUSINESS.Exceptions.FornecedorDepto.DepartamentoNaoEscolhidoException)
+            catch (TCC.Regra.Exceptions.FornecedorDepto.DepartamentoNaoEscolhidoException)
             {
                 MessageBox.Show("É Necessário Selecionar um Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarDepartamentoDtGrid.Focus();
@@ -323,11 +323,11 @@ namespace TCC.UI.CADASTRO
         {
             if (this._listaModelFornecedorDepto == null)
             {
-                throw new BUSINESS.Exceptions.FornecedorDepto.DepartamentoNaoEscolhidoException();
+                throw new TCC.Regra.Exceptions.FornecedorDepto.DepartamentoNaoEscolhidoException();
             }
             else if (this._modelFornecedor == null)
             {
-                throw new BUSINESS.Exceptions.FornecedorDepto.FornecedorVazioException();
+                throw new TCC.Regra.Exceptions.FornecedorDepto.FornecedorVazioException();
             }
         }
         #endregion Valida Dados Nulos

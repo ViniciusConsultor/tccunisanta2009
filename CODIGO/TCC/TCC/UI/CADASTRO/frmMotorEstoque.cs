@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.MODEL;
-using TCC.BUSINESS;
+using TCC.Mapper;
+using TCC.Regra;
 
 namespace TCC.UI
 {
@@ -188,12 +188,12 @@ namespace TCC.UI
                     base.FechaTela(this);
                 }
             }
-            catch (BUSINESS.Exceptions.MotorEstoque.MotorVazioException)
+            catch (TCC.Regra.Exceptions.MotorEstoque.MotorVazioException)
             {
                 MessageBox.Show("É Necessário Buscar um Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.MotorEstoque.EstoqueNaoEscolhidoException)
+            catch (TCC.Regra.Exceptions.MotorEstoque.EstoqueNaoEscolhidoException)
             {
                 MessageBox.Show("É Necessário Selecionar um Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -359,11 +359,11 @@ namespace TCC.UI
         {
             if (this._listaModelMotorEstoque == null)
             {
-                throw new BUSINESS.Exceptions.MotorEstoque.EstoqueNaoEscolhidoException();
+                throw new TCC.Regra.Exceptions.MotorEstoque.EstoqueNaoEscolhidoException();
             }
             else if (this._modelMotor == null)
             {
-                throw new BUSINESS.Exceptions.MotorEstoque.MotorVazioException();
+                throw new TCC.Regra.Exceptions.MotorEstoque.MotorVazioException();
             }
         }
         #endregion Valida Dados Nulos

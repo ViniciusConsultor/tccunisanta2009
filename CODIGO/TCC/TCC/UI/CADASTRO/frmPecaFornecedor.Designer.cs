@@ -80,7 +80,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 61);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -91,7 +91,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(2, 90);
             this.btnVolta.Name = "btnVolta";
@@ -113,7 +113,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(2, 3);
             this.btnConfirma.Name = "btnConfirma";
@@ -124,7 +124,7 @@
             // 
             // btnBuscarFornecedorDtGrid
             // 
-            this.btnBuscarFornecedorDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarFornecedorDtGrid.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscarFornecedorDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarFornecedorDtGrid.Location = new System.Drawing.Point(310, 65);
             this.btnBuscarFornecedorDtGrid.Name = "btnBuscarFornecedorDtGrid";
@@ -223,7 +223,7 @@
             // 
             // btnBuscaPeca
             // 
-            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaPeca.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPeca.Location = new System.Drawing.Point(310, 22);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
@@ -236,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 243);
             this.ControlBox = false;

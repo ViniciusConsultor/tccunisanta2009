@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -125,22 +125,22 @@ namespace TCC.UI
                     this._listaPecaFornecedor = null;
                 }
             }
-            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            catch (TCC.Regra.Exceptions.CodigoTipoPecaVazioException)
             {
                 MessageBox.Show("O código do Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnCdTipoPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
+            catch (TCC.Regra.Exceptions.Peca.CodigoPecaVazioException)
             {
                 MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
+            catch (TCC.Regra.Exceptions.Peca.NomePecaVazioException)
             {
                 MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            catch (TCC.Regra.Exceptions.Peca.QtdMinimaNuloOuZeroException)
             {
                 MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdPeca.Focus();
@@ -177,22 +177,22 @@ namespace TCC.UI
                     this._listaPecaEstoque = null;
                 }
             }
-            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            catch (TCC.Regra.Exceptions.CodigoTipoPecaVazioException)
             {
                 MessageBox.Show("O código do Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnCdTipoPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
+            catch (TCC.Regra.Exceptions.Peca.CodigoPecaVazioException)
             {
                 MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
+            catch (TCC.Regra.Exceptions.Peca.NomePecaVazioException)
             {
                 MessageBox.Show("Digitar o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            catch (TCC.Regra.Exceptions.Peca.QtdMinimaNuloOuZeroException)
             {
                 MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdPeca.Focus();
@@ -296,27 +296,27 @@ namespace TCC.UI
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Peca.CodigoPecaVazioException)
+            catch (TCC.Regra.Exceptions.Peca.CodigoPecaVazioException)
             {
                 MessageBox.Show("O código da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoTipoPecaVazioException)
+            catch (TCC.Regra.Exceptions.CodigoTipoPecaVazioException)
             {
                 MessageBox.Show("O Tipo da Peça não pode ser vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnCdTipoPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.NomePecaVazioException)
+            catch (TCC.Regra.Exceptions.Peca.NomePecaVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o nome da Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException)
+            catch (TCC.Regra.Exceptions.Peca.QtdMinimaNuloOuZeroException)
             {
                 MessageBox.Show("A quantidade mínima da Peça deve ser maior que zero", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.Peca.PecaJaExistenteException)
+            catch (TCC.Regra.Exceptions.Peca.PecaJaExistenteException)
             {
                 MessageBox.Show("Peça já existente! Favor Cadastrar outro Código Real", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoReal.Focus();
@@ -339,19 +339,19 @@ namespace TCC.UI
         {
             if (this._modelTipoPeca == null)
             {
-                throw new BUSINESS.Exceptions.CodigoTipoPecaVazioException();
+                throw new TCC.Regra.Exceptions.CodigoTipoPecaVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtCodigoReal.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Peca.CodigoPecaVazioException();
+                throw new TCC.Regra.Exceptions.Peca.CodigoPecaVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtNmPeca.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Peca.NomePecaVazioException();
+                throw new TCC.Regra.Exceptions.Peca.NomePecaVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtQtdPeca.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Peca.QtdMinimaNuloOuZeroException();
+                throw new TCC.Regra.Exceptions.Peca.QtdMinimaNuloOuZeroException();
             }
         }
         #endregion ValidaDadosNulos

@@ -108,7 +108,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
+            this.btnFechar.BackgroundImage = global::TCC.Telas.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.Location = new System.Drawing.Point(111, 223);
             this.btnFechar.Name = "btnFechar";
@@ -120,7 +120,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscar.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(245, 16);
             this.btnBuscar.Name = "btnBuscar";

@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.MODEL;
-using TCC.BUSINESS;
+using TCC.Mapper;
+using TCC.Regra;
 
 namespace TCC.UI
 {
@@ -87,12 +87,12 @@ namespace TCC.UI
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Perfil.DescPerfilVazioException)
+            catch (TCC.Regra.Exceptions.Perfil.DescPerfilVazioException)
             {
                 MessageBox.Show("É Necessário Informar a descrição do Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDescPerfil.Focus();
             }
-            catch (BUSINESS.Exceptions.Perfil.DescPerfilExistenteException)
+            catch (TCC.Regra.Exceptions.Perfil.DescPerfilExistenteException)
             {
                 MessageBox.Show("Descrição do Perfil já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDescPerfil.Focus();
@@ -109,7 +109,7 @@ namespace TCC.UI
         {
             if (string.IsNullOrEmpty(this.txtDescPerfil.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Perfil.DescPerfilVazioException();
+                throw new TCC.Regra.Exceptions.Perfil.DescPerfilVazioException();
             }
         }
         #endregion ValidaDadosNulos
