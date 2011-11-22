@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace TCC.Regra
 {
-    public class rPerfil : ComandosSql
+    public class rPerfil : ComandoSql
     {
 
         public DataTable BuscaPerfil(string Descricao)

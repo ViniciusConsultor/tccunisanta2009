@@ -7,7 +7,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rCompraPeca : ComandosSql
+    public class rCompraPeca : ComandoSql
     {
 
         public override void ValidarInsere(ModelPai model)

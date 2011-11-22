@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data;
 using System.Reflection;
-using TCC.Mapper;
 using Kaue.Reflection;
+using TCC.AcessoDados;
+using TCC.Mapper;
 
-namespace TCC.AcessoDados
+namespace TCC.Regra
 {
     public enum TipoComando
     {
@@ -16,8 +18,10 @@ namespace TCC.AcessoDados
         update
     }
 
-    public abstract class ComandosSql : AcessoDados
+    public abstract class ComandoSql
     {
+        private AcessoDados.AcessoDados objAcesso = new TCC.AcessoDados.AcessoDados();
+
         public abstract void ValidarInsere(ModelPai model);
         public abstract void ValidarDeleta(ModelPai model);
         public abstract void ValidarAltera(ModelPai model);
@@ -46,7 +50,7 @@ namespace TCC.AcessoDados
                 param[0].SqlDbType = SqlDbType.VarChar;
                 param[1] = new SqlParameter("@campo_tabela", idTabela);
                 param[1].SqlDbType = SqlDbType.VarChar;
-                dtId = base.BuscaDados("sp_busca_maxId", param);
+                dtId = objAcesso.BuscaDados("sp_busca_maxId", param);
                 if (dtId.Rows[0]["max"] == DBNull.Value || dtId.Rows[0]["max"] == null)
                 {
                     id = 0;
@@ -230,7 +234,7 @@ namespace TCC.AcessoDados
             {
                 parametros = this.BuscaNomeParametrosChavePrimaria(model);
                 string nomeProc = INICIO_PROC_BUSCAR + model.getNomeTabela();
-                return this.BuscaDados(nomeProc, parametros);
+                return this.objAcesso.BuscaDados(nomeProc, parametros);
             }
             catch (Exception ex)
             {
@@ -247,26 +251,26 @@ namespace TCC.AcessoDados
             SqlParameter[] parametros = null;
             try
             {
-                switch ( com )
+                switch (com)
                 {
                     case TipoComando.insert:
-                    parametros = this.BuscaNomeParametros(model, com);
-                    nomeProc = INICIO_PROC_INSERIR + model.getNomeTabela();
-                    break;
+                        parametros = this.BuscaNomeParametros(model, com);
+                        nomeProc = INICIO_PROC_INSERIR + model.getNomeTabela();
+                        break;
                     case TipoComando.update:
-                    parametros = this.BuscaNomeParametros(model, com);
-                    nomeProc = INICIO_PROC_ALTERAR + model.getNomeTabela();
-                    break;
+                        parametros = this.BuscaNomeParametros(model, com);
+                        nomeProc = INICIO_PROC_ALTERAR + model.getNomeTabela();
+                        break;
 
                     case TipoComando.delete:
-                    parametros = this.BuscaNomeParametrosChavePrimaria(model);
-                    nomeProc = INICIO_PROC_EXCLUIR + model.getNomeTabela();
-                    break;
+                        parametros = this.BuscaNomeParametrosChavePrimaria(model);
+                        nomeProc = INICIO_PROC_EXCLUIR + model.getNomeTabela();
+                        break;
 
 
 
                 }
-                base.ExecutaProcedure(nomeProc, parametros);
+                this.objAcesso.ExecutaProcedure(nomeProc, parametros);
             }
             catch (Exception ex)
             {
@@ -314,6 +318,42 @@ namespace TCC.AcessoDados
             finally
             {
                 param = null;
+            }
+        }
+
+        public DataTable BuscaDados(string nomeProc)
+        {
+            try
+            {
+                return this.objAcesso.BuscaDados(nomeProc);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable BuscaDados(string nomeProc, SqlParameter parametro)
+        {
+            try
+            {
+                return this.objAcesso.BuscaDados(nomeProc, parametro);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable BuscaDados(string nomeProc, SqlParameter[] parametros)
+        {
+            try
+            {
+                return this.objAcesso.BuscaDados(nomeProc, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

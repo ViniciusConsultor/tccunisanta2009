@@ -118,61 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bg_telas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>TCC.Telas\img\bg_telas.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnVoltaCad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnVoltaCad.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnLixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnLixo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnBusca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnBusca.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnOP.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnSalvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnSalvar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnVenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\BtnVenda.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnLess" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnLess.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnalterar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnalterar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdd_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnAdd+.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bg_login.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\bg_principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>Resources\bg_principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_principal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bg_principal1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_telas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>img\bg_telas.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdd_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnAdd+.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnalterar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnalterar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBusca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnBusca.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnFornecedorDepto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\btnFornecedorDepto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnRlacionaEstoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnRlacionaEstoque.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnLess.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\bg_login.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLimpa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnLimpa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnOk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnOk.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnLixo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnNovoUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\btnNovoUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnOk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnOk.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnOP.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnRlacionaEstoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnRlacionaEstoque.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSalvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnSalvar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnVenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BtnVenda.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVoltaCad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnVoltaCad.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnVoltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnVoltar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnLimpa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\btnLimpa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bg_principal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>UI\img\bg_principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>Resources\btnVoltar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

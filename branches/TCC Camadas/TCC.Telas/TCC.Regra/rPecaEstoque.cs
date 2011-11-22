@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rPecaEstoque : ComandosSql
+    public class rPecaEstoque : ComandoSql
     {
         public override void ValidarInsere(ModelPai model)
         {

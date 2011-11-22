@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoDados.cs" />
-    <Compile Include="ComandosSql.cs" />
     <Compile Include="ConexaoBanco.cs" />
     <Compile Include="dCadColaborador.cs" />
     <Compile Include="dCliente.cs" />

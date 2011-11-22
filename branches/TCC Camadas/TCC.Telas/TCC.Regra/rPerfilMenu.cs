@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rPerfilMenu : ComandosSql
+    public class rPerfilMenu : ComandoSql
     {
         public override void ValidarInsere(ModelPai model)
         {

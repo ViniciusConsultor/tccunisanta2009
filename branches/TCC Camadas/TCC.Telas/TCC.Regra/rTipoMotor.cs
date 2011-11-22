@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rTipoMotor : ComandosSql
+    public class rTipoMotor : ComandoSql
     {
         public DataTable BuscaTipoMotor(string parametro)
         {

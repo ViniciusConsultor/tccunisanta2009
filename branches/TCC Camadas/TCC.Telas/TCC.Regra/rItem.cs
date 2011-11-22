@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rItem : ComandosSql
+    public class rItem : ComandoSql
     {
         public mItem BuscaUnicoRegistro(int idItem)
         {

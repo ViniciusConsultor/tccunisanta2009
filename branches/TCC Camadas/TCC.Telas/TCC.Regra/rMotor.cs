@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rMotor: ComandosSql
+    public class rMotor: ComandoSql
     {
         private void ValidaDados(mMotor model)
         {

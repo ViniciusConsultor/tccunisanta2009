@@ -8,7 +8,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rDepartamento :ComandosSql
+    public class rDepartamento :ComandoSql
     {
         public int BuscaIdMaximo()
         {

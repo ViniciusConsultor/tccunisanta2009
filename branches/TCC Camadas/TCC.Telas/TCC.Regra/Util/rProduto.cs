@@ -7,7 +7,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rOrdemProducao : ComandosSql
+    public class rOrdemProducao : ComandoSql
     {
         public DataTable BuscaOrdemProducao(string ParametroBusca)
         {
