@@ -6,7 +6,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rFornecedorDepto : ComandosSql
+    public class rFornecedorDepto : ComandoSql
     {
         public override void ValidarInsere(ModelPai model)
         {

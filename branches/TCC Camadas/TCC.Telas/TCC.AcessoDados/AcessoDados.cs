@@ -18,12 +18,13 @@ namespace TCC.AcessoDados
         #region Metodos
 
         #region Execute Sql
+
         /// <summary>
         /// Executa a query
         /// </summary>
         /// <param name="query">query desejada</param>
         /// <returns>DataTable populado com o retorno do banco de dados</returns>
-        protected DataTable ExecuteSql(string query)
+        public DataTable ExecuteSql(string query)
         {
             DataTable dtRetorno = new DataTable();
             try
@@ -46,7 +47,7 @@ namespace TCC.AcessoDados
         }
         #endregion Execute Sql
 
-        protected void ExecutaProcedure(string nomeProc, SqlParameter parametros)
+        public void ExecutaProcedure(string nomeProc, SqlParameter parametros)
         {
             SqlParameter[] param = new SqlParameter[1];
             try
@@ -64,7 +65,7 @@ namespace TCC.AcessoDados
             }
         }
 
-        protected void ExecutaProcedure(string nomeProc, SqlParameter[] parametros)
+        public void ExecutaProcedure(string nomeProc, SqlParameter[] parametros)
         {
             try
             {
@@ -87,7 +88,7 @@ namespace TCC.AcessoDados
             }
         }
 
-        protected DataTable BuscaDados(string nomeProc)
+        public DataTable BuscaDados(string nomeProc)
         {
             SqlDataReader dataR;
             DataTable dt = new DataTable();
@@ -112,7 +113,7 @@ namespace TCC.AcessoDados
             }
         }
 
-        protected DataTable BuscaDados(string nomeProc, SqlParameter parametro)
+        public DataTable BuscaDados(string nomeProc, SqlParameter parametro)
         {
             SqlDataReader dataR;
             DataTable dt = new DataTable();
@@ -139,7 +140,7 @@ namespace TCC.AcessoDados
             }
         }
 
-        protected DataTable BuscaDados(string nomeProc, SqlParameter[] parametros)
+        public DataTable BuscaDados(string nomeProc, SqlParameter[] parametros)
         {
             SqlDataReader dataR;
             DataTable dt = new DataTable();

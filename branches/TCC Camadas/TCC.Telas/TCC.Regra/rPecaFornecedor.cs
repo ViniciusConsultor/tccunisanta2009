@@ -8,7 +8,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rPecaFornecedor : ComandosSql
+    public class rPecaFornecedor : ComandoSql
     {
         public DataTable BuscaFornecedoresAssociadosPeca(int idPeca)
         {

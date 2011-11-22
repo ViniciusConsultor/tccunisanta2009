@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComandoSql.cs" />
     <Compile Include="Exceptions\Busca\CadastrarDadoException.cs" />
     <Compile Include="Exceptions\Busca\LinhaSemSelecionarException.cs" />
     <Compile Include="Exceptions\Busca\SemBuscaESelecionarException.cs" />
@@ -248,6 +249,10 @@
     <Compile Include="Util\Validacoes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Kaue.Reflection\Kaue.Reflection.csproj">
+      <Project>{062BB35D-1DAD-41B8-8B0B-365731C9D994}</Project>
+      <Name>Kaue.Reflection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCC.AcessoDados\TCC.AcessoDados.csproj">
       <Project>{200968A6-8FA6-437D-9CFA-2DF55ACBE8C3}</Project>
       <Name>TCC.AcessoDados</Name>

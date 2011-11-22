@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rVenda : ComandosSql
+    public class rVenda : ComandoSql
     {
 
         public DataTable buscaVenda(string data, string cliente)

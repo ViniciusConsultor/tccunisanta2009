@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rFamiliaMotor : ComandosSql
+    public class rFamiliaMotor : ComandoSql
     {
         /// <summary>
         /// Método utilziado pelo Tree View em "ResumoOrdemProducao"

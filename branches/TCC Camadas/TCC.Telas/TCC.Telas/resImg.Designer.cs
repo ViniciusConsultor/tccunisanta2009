@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCC {
+namespace TCC.Telas {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TCC {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TCC.resImg", typeof(resImg).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TCC.Telas.resImg", typeof(resImg).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

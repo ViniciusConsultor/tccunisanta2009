@@ -8,7 +8,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rItemKit : ComandosSql
+    public class rItemKit : ComandoSql
     {
         public DataTable BuscaItemKit(string parametro)
         {

@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rMotorEstoque : ComandosSql
+    public class rMotorEstoque : ComandoSql
     {
         public override void ValidarDeleta(ModelPai model)
         {

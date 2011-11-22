@@ -8,7 +8,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rUsinagem : ComandosSql
+    public class rUsinagem : ComandoSql
     {
 
         public DataTable BuscaUsinagem(string parametro)
