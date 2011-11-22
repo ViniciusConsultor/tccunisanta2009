@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using TCC.Regra;
 
-namespace TCC.UI
+namespace TCC.Telas
 {
     static class Program
     {
@@ -16,9 +16,10 @@ namespace TCC.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (rInicio.ConectarBanco())
+            if (rInicio.ConectarBanco() == true)
             {
-                Application.Run(new frmLogin());
+                //Application.Run(new UI.frmInicial ());
+                Application.Run(new UI.frmLogin());
             }
             else
             {
