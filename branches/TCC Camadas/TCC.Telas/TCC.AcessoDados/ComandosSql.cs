@@ -22,12 +22,13 @@ namespace TCC.AcessoDados
         public abstract void ValidarDeleta(ModelPai model);
         public abstract void ValidarAltera(ModelPai model);
 
-        const string INICIO_PROC_INSERIR = "sp_insert_";
-        const string INICIO_PROC_ALTERAR = "sp_update_";
-        const string INICIO_PROC_EXCLUIR = "sp_delete_";
-        const string INICIO_PROC_BUSCAR = "sp_select_";
+        private const string INICIO_PROC_INSERIR = "sp_insert_";
+        private const string INICIO_PROC_ALTERAR = "sp_update_";
+        private const string INICIO_PROC_EXCLUIR = "sp_delete_";
+        private const string INICIO_PROC_BUSCAR = "sp_select_";
 
         #region Busca Id Maximo Tabelas
+
         /// <summary>
         /// Busca o id Maximo da tabela passada por parametro.
         /// </summary>
@@ -66,9 +67,12 @@ namespace TCC.AcessoDados
                 param = null;
             }
         }
+
         #endregion Busca Id Maximo Tabelas
 
+
         #region Busca Nome Parametros
+
         /// <summary>
         /// Varre o nome dos Parametros que estão no model através dos atributos
         /// </summary>
@@ -120,9 +124,11 @@ namespace TCC.AcessoDados
                 valor = null;
             }
         }
+
         #endregion Busca Nome Parametros
 
         #region Busca Nome Parametros Chave Primaria
+
         /// <summary>
         /// Busca os parametros que são Chave Primaria
         /// </summary>
@@ -173,9 +179,11 @@ namespace TCC.AcessoDados
                 prop = null;
             }
         }
+
         #endregion Busca Nome Parametros Chave Primaria
 
         #region Insere
+
         /// <summary>
         /// Insere os dados no banco.
         /// </summary>
@@ -184,6 +192,7 @@ namespace TCC.AcessoDados
         {
             this.ExecutaComandoSql(model, TipoComando.insert);
         }
+
         #endregion Insere
 
         #region Deleta
@@ -209,6 +218,7 @@ namespace TCC.AcessoDados
         #endregion Altera
 
         #region Busca
+
         /// <summary>
         /// Busca apenas um registro do banco
         /// </summary>
@@ -227,6 +237,7 @@ namespace TCC.AcessoDados
                 throw ex;
             }
         }
+
         #endregion Busca
 
         #region Executa Comando Sql
