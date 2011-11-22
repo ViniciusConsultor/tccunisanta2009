@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rKitGrupoPeca:ComandosSql
+    public class rKitGrupoPeca:ComandoSql
     {
         public mKitGrupoPeca BuscaUnicoRegistro(int idKit)
         {

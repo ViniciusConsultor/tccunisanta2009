@@ -8,7 +8,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rEstado : ComandosSql
+    public class rEstado : ComandoSql
     {
         public DataTable BuscaEstado()
         {

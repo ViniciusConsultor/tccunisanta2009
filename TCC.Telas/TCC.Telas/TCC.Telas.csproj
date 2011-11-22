@@ -604,6 +604,7 @@
     <Content Include="img\btnOP.png" />
     <Content Include="img\btnRlacionaEstoque.png" />
     <Content Include="img\btnSalvar.png" />
+    <None Include="App.config" />
     <None Include="Resources\btnVoltar.png" />
     <None Include="Resources\btnVoltaCad.png" />
     <None Include="Resources\BtnVenda.png" />

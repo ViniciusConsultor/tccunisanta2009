@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rTipoPeca : ComandosSql
+    public class rTipoPeca : ComandoSql
     {
         public DataTable BuscaTipoPeca(string Descricao)
         {

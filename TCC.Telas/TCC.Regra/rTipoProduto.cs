@@ -8,7 +8,7 @@ using TCC.Mapper;
 
 namespace TCC.Regra
 {
-    public class rTipoProduto : ComandosSql
+    public class rTipoProduto : ComandoSql
     {
         public DataTable BuscaTipoProduto(string parametro)
         {

@@ -8,7 +8,7 @@ using TCC.AcessoDados;
 
 namespace TCC.Regra
 {
-    public class rColaborador : ComandosSql
+    public class rColaborador : ComandoSql
     {
         public int BuscaIdMaximo()
         {
