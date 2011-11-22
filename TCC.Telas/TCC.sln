@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Telas", "TCC.Telas\TCC.Telas.csproj", "{F1E96BAF-D623-45F9-89D5-3142E53C4C24}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Mapper", "TCC.Mapper\TCC.Mapper.csproj", "{D5CFFF7C-E379-498E-AA51-6798420EAC12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Regra", "TCC.Regra\TCC.Regra.csproj", "{4B17058D-21FF-42FF-BDDA-B7722F76C23A}"
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Controle", "TCC.Control
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaue.Reflection", "Kaue.Reflection\Kaue.Reflection.csproj", "{062BB35D-1DAD-41B8-8B0B-365731C9D994}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Telas", "TCC.Telas\TCC.Telas.csproj", "{171A9749-5EB9-4E94-9A82-B3C4C3D1078E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F1E96BAF-D623-45F9-89D5-3142E53C4C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1E96BAF-D623-45F9-89D5-3142E53C4C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1E96BAF-D623-45F9-89D5-3142E53C4C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1E96BAF-D623-45F9-89D5-3142E53C4C24}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5CFFF7C-E379-498E-AA51-6798420EAC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5CFFF7C-E379-498E-AA51-6798420EAC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5CFFF7C-E379-498E-AA51-6798420EAC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +39,10 @@ Global
 		{062BB35D-1DAD-41B8-8B0B-365731C9D994}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{062BB35D-1DAD-41B8-8B0B-365731C9D994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{062BB35D-1DAD-41B8-8B0B-365731C9D994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171A9749-5EB9-4E94-9A82-B3C4C3D1078E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171A9749-5EB9-4E94-9A82-B3C4C3D1078E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171A9749-5EB9-4E94-9A82-B3C4C3D1078E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171A9749-5EB9-4E94-9A82-B3C4C3D1078E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

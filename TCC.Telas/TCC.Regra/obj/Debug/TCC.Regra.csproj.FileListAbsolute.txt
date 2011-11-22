@@ -1,4 +1,3 @@
-C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\TCC.Regra.dll
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\TCC.Regra.pdb
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\TCC.AcessoDados.dll
@@ -7,5 +6,6 @@ C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\K
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\TCC.Mapper.pdb
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\Kaue.Reflection.pdb
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\bin\Debug\TCC.AcessoDados.pdb
+C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\obj\Debug\TCC.Regra.dll
 C:\Users\Kaue\Desenvolvimento\C#\TCC\TCC Camadas\TCC.Telas\TCC.Regra\obj\Debug\TCC.Regra.pdb
