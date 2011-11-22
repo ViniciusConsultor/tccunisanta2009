@@ -44,7 +44,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
+            this.btnExcluir.BackgroundImage = global::TCC.Telas.resImg.btnLixo;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcluir.Location = new System.Drawing.Point(195, 228);
             this.btnExcluir.Name = "btnExcluir";
@@ -57,7 +57,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnAlterar.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAlterar.Location = new System.Drawing.Point(149, 228);
             this.btnAlterar.Name = "btnAlterar";
@@ -105,7 +105,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
+            this.btnFechar.BackgroundImage = global::TCC.Telas.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.Location = new System.Drawing.Point(57, 227);
             this.btnFechar.Name = "btnFechar";
@@ -118,7 +118,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
+            this.btnOK.BackgroundImage = global::TCC.Telas.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOK.Location = new System.Drawing.Point(103, 227);
             this.btnOK.Name = "btnOK";
@@ -131,7 +131,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscar.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(249, 11);
             this.btnBuscar.Name = "btnBuscar";

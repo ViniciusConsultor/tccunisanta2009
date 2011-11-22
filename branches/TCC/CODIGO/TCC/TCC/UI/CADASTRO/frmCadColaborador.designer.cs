@@ -65,9 +65,9 @@
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtDDD = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtNumero = new Controles.MegaTextBox.MegaTextBox(this.components);
-            this.txtRg = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtDDD = new TCC.Controle.MegaTextBox(this.components);
+            this.txtNumero = new TCC.Controle.MegaTextBox(this.components);
+            this.txtRg = new TCC.Controle.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // lblCdDepart
@@ -260,7 +260,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVoltar.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(7, 127);
             this.btnVoltar.Name = "btnVoltar";
@@ -293,7 +293,7 @@
             // 
             // btnBuscaDepartamento
             // 
-            this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaDepartamento.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(534, 280);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
@@ -375,7 +375,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 86);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -387,7 +387,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(7, 6);
             this.btnConfirma.Name = "btnConfirma";
@@ -415,7 +415,7 @@
             this.txtDDD.Name = "txtDDD";
             this.txtDDD.Size = new System.Drawing.Size(31, 20);
             this.txtDDD.TabIndex = 4;
-            this.txtDDD.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtDDD.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // txtNumero
             // 
@@ -425,7 +425,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(76, 20);
             this.txtNumero.TabIndex = 7;
-            this.txtNumero.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtNumero.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // txtRg
             // 
@@ -435,13 +435,13 @@
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(114, 20);
             this.txtRg.TabIndex = 16;
-            this.txtRg.TipoTexto = Controles.MegaTextBox.TipoTexto.Rg;
+            this.txtRg.TipoTexto = TCC.Controle.TipoTexto.Rg;
             // 
             // frmCadColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -524,13 +524,13 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtDataNasc;
-        private Controles.MegaTextBox.MegaTextBox txtNumero;
+        private TCC.Controle.MegaTextBox txtNumero;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private Controles.MegaTextBox.MegaTextBox txtDDD;
+        private TCC.Controle.MegaTextBox txtDDD;
         private System.Windows.Forms.MaskedTextBox txtCpf;
-        private Controles.MegaTextBox.MegaTextBox txtRg;
+        private TCC.Controle.MegaTextBox txtRg;
     }
 }

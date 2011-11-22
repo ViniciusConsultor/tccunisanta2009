@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -65,7 +65,7 @@ namespace TCC.UI
         /// </summary>
         private void Insere()
         {
-            BUSINESS.rDepartamento regraDep = new TCC.BUSINESS.rDepartamento();
+            TCC.Regra.rDepartamento regraDep = new TCC.Regra.rDepartamento();
             try
             {
                 this.ValidaDadosNulos();
@@ -76,12 +76,12 @@ namespace TCC.UI
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
 
             }
-            catch (BUSINESS.Exceptions.Departamento.NomeDepartamentoExistenteException)
+            catch (TCC.Regra.Exceptions.Departamento.NomeDepartamentoExistenteException)
             {
                 MessageBox.Show("Nome do Departamento já Cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNomeDepartamento.Focus();
             }
-            catch (BUSINESS.Exceptions.Departamento.NomeDepartamentoVazioException)
+            catch (TCC.Regra.Exceptions.Departamento.NomeDepartamentoVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Nome do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNomeDepartamento.Focus();
@@ -127,7 +127,7 @@ namespace TCC.UI
         {
             if (string.IsNullOrEmpty(this.txtNomeDepartamento.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Departamento.NomeDepartamentoVazioException();
+                throw new TCC.Regra.Exceptions.Departamento.NomeDepartamentoVazioException();
             }
         }
         #endregion Valida Dados Nulos 

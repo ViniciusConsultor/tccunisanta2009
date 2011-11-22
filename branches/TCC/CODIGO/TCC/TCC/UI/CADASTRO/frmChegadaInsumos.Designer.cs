@@ -57,9 +57,9 @@
             this.txtInsumoRecebido = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
-            this.megaTextBox2 = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.megaTextBox2 = new TCC.Controle.MegaTextBox(this.components);
             this.lblUltimoPreco = new System.Windows.Forms.Label();
-            this.txtQtdRecebida = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtdRecebida = new TCC.Controle.MegaTextBox(this.components);
             this.lblQtdChegada = new System.Windows.Forms.Label();
             this.txtNotaFiscal = new System.Windows.Forms.TextBox();
             this.lblNotaFiscal = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(5, 88);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -86,7 +86,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVoltar.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(5, 129);
             this.btnVoltar.Name = "btnVoltar";
@@ -110,7 +110,7 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceitar.Location = new System.Drawing.Point(5, 6);
             this.btnAceitar.Name = "btnAceitar";
@@ -122,7 +122,7 @@
             // 
             // btnBuscarOrdemServDtGrid
             // 
-            this.btnBuscarOrdemServDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarOrdemServDtGrid.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscarOrdemServDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarOrdemServDtGrid.Location = new System.Drawing.Point(289, 54);
             this.btnBuscarOrdemServDtGrid.Name = "btnBuscarOrdemServDtGrid";
@@ -134,7 +134,7 @@
             // 
             // btnBuscaEstoque
             // 
-            this.btnBuscaEstoque.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaEstoque.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaEstoque.Location = new System.Drawing.Point(560, 296);
             this.btnBuscaEstoque.Name = "btnBuscaEstoque";
@@ -146,7 +146,7 @@
             // 
             // btnRemovePeca
             // 
-            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemovePeca.Location = new System.Drawing.Point(519, 325);
             this.btnRemovePeca.Name = "btnRemovePeca";
@@ -158,7 +158,7 @@
             // 
             // btnAdicionaPeca
             // 
-            this.btnAdicionaPeca.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaPeca.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaPeca.Location = new System.Drawing.Point(459, 325);
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
@@ -357,7 +357,7 @@
             this.megaTextBox2.Name = "megaTextBox2";
             this.megaTextBox2.Size = new System.Drawing.Size(149, 20);
             this.megaTextBox2.TabIndex = 6;
-            this.megaTextBox2.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            this.megaTextBox2.TipoTexto = TCC.Controle.TipoTexto.Decimal;
             // 
             // lblUltimoPreco
             // 
@@ -375,7 +375,7 @@
             this.txtQtdRecebida.Name = "txtQtdRecebida";
             this.txtQtdRecebida.Size = new System.Drawing.Size(149, 20);
             this.txtQtdRecebida.TabIndex = 7;
-            this.txtQtdRecebida.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtdRecebida.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // lblQtdChegada
             // 
@@ -407,7 +407,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(590, 366);
             this.ControlBox = false;
@@ -460,9 +460,9 @@
         private System.Windows.Forms.TextBox txtEstoque;
         private System.Windows.Forms.Button btnBuscaEstoque;
         private System.Windows.Forms.RadioButton rdbBuscarCompra;
-        private Controles.MegaTextBox.MegaTextBox megaTextBox2;
+        private TCC.Controle.MegaTextBox megaTextBox2;
         private System.Windows.Forms.Label lblUltimoPreco;
-        private Controles.MegaTextBox.MegaTextBox txtQtdRecebida;
+        private TCC.Controle.MegaTextBox txtQtdRecebida;
         private System.Windows.Forms.Label lblQtdChegada;
         private System.Windows.Forms.TextBox txtNotaFiscal;
         private System.Windows.Forms.Label lblNotaFiscal;

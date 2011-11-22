@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Transactions;
-using TCC.MODEL;
-using TCC.BUSINESS;
+using TCC.Mapper;
+using TCC.Regra;
 
 namespace TCC.UI
 {
@@ -118,24 +118,24 @@ namespace TCC.UI
                 base.FechaTela(this);
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoPerfilVazioExeception)
+            catch (TCC.Regra.Exceptions.CodigoPerfilVazioExeception)
             {
                 MessageBox.Show("É Necessário Buscar um Perfil para o usuário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPerfilUsuario.Focus();
                 // this.btnBuscaPerfilUsuario.PerformClick();
             }
-            catch (BUSINESS.Exceptions.Login.LoginVazioException)
+            catch (TCC.Regra.Exceptions.Login.LoginVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Login", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Focus();
             }
-            catch (BUSINESS.Exceptions.Login.LoginExistenteException)
+            catch (TCC.Regra.Exceptions.Login.LoginExistenteException)
             {
                 MessageBox.Show("Usuário já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtLogin.Text = string.Empty;
                 this.txtLogin.Focus();
             }
-            catch (BUSINESS.Exceptions.Login.SenhaVaziaException)
+            catch (TCC.Regra.Exceptions.Login.SenhaVaziaException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Senha", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtSenha.Focus();
@@ -156,15 +156,15 @@ namespace TCC.UI
         {
             if (string.IsNullOrEmpty(this.txtPerfilUsuario.Text) == true)
             {
-                throw new BUSINESS.Exceptions.CodigoPerfilVazioExeception();
+                throw new TCC.Regra.Exceptions.CodigoPerfilVazioExeception();
             }
             else if (string.IsNullOrEmpty(this.txtLogin.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Login.LoginVazioException();
+                throw new TCC.Regra.Exceptions.Login.LoginVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtSenha.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Login.SenhaVaziaException();
+                throw new TCC.Regra.Exceptions.Login.SenhaVaziaException();
             }
         }
         #endregion ValidaDadosNulos
@@ -177,7 +177,7 @@ namespace TCC.UI
             this._modelUsuario.Id_perfil = Convert.ToInt32(this._modelPerfil.IdPerfil);
             this._modelUsuario.Login = this.txtLogin.Text;
             this._modelUsuario.ObsUsuario = this.txtObservacao.Text;
-            this._modelUsuario.Senha = TCC.BUSINESS.UTIL.Auxiliar.CriptografaSenha(this.txtSenha.Text);
+            this._modelUsuario.Senha = TCC.Regra.Util.Auxiliar.CriptografaSenha(this.txtSenha.Text);
             this._modelUsuario.FlgAtivo = true;
         }
         #endregion Pega Dados Tela

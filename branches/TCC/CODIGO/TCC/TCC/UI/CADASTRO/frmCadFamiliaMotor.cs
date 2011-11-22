@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -253,7 +253,7 @@ namespace TCC.UI
                 resultado = ResumoKit.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
-                    throw new BUSINESS.Exceptions.FamiliaMotor.TelaResumoCanceladaException();
+                    throw new TCC.Regra.Exceptions.FamiliaMotor.TelaResumoCanceladaException();
                 }
             }
             catch (Exception e)
@@ -292,37 +292,37 @@ namespace TCC.UI
                 this.btnConfirma.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoNumeroMotorVazioException)
+            catch (TCC.Regra.Exceptions.CodigoNumeroMotorVazioException)
             {
                 MessageBox.Show("É Necessário Associar um Número de Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaNumMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoTipoMotorVazioExeception)
+            catch (TCC.Regra.Exceptions.CodigoTipoMotorVazioExeception)
             {
                 MessageBox.Show("É Necessário Associar um Tipo de Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaTipoMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoMotorVazioExeception)
+            catch (TCC.Regra.Exceptions.CodigoMotorVazioExeception)
             {
                 MessageBox.Show("É Necessário Associar um Motor a Familia de Motores", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaMotorCompra.Focus();
             }
-            catch (BUSINESS.Exceptions.FamiliaMotor.CodigoRealFamiliaExistenteException)
+            catch (TCC.Regra.Exceptions.FamiliaMotor.CodigoRealFamiliaExistenteException)
             {
                 MessageBox.Show("Código da Familias de Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaNumMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.FamiliaMotor.CodigoRealFamiliaVazioException)
+            catch (TCC.Regra.Exceptions.FamiliaMotor.CodigoRealFamiliaVazioException)
             {
                 MessageBox.Show("O Número de Motor e o Tipo de Motor não podem ser vazios", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaNumMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException)
+            catch (TCC.Regra.Exceptions.CodigoKitGrupoPecaVazioException)
             {
                 MessageBox.Show("É Necessário Associar um Kit a Familias de Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarKitDtGrid.Focus();
             }
-            catch (BUSINESS.Exceptions.FamiliaMotor.TelaResumoCanceladaException)
+            catch (TCC.Regra.Exceptions.FamiliaMotor.TelaResumoCanceladaException)
             {
 
             }
@@ -347,19 +347,19 @@ namespace TCC.UI
         {
             if (this._modelMotor == null)
             {
-                throw new BUSINESS.Exceptions.CodigoMotorVazioExeception();
+                throw new TCC.Regra.Exceptions.CodigoMotorVazioExeception();
             }
             else if (this._modelNumeroMotor == null)
             {
-                throw new BUSINESS.Exceptions.CodigoNumeroMotorVazioException();
+                throw new TCC.Regra.Exceptions.CodigoNumeroMotorVazioException();
             }
             else if (this._modelTipoMotor == null)
             {
-                throw new BUSINESS.Exceptions.CodigoTipoMotorVazioExeception();
+                throw new TCC.Regra.Exceptions.CodigoTipoMotorVazioExeception();
             }
             else if (this._listaKitFamilia == null)
             {
-                throw new BUSINESS.Exceptions.CodigoKitGrupoPecaVazioException();
+                throw new TCC.Regra.Exceptions.CodigoKitGrupoPecaVazioException();
             }
         }
         #endregion Valida Dados Nulos
@@ -500,12 +500,12 @@ namespace TCC.UI
                 this.TxtNmKit.Text = "";
                 this.txtQtdKit.Text = "";
             }
-            catch (BUSINESS.Exceptions.FamiliaMotor.GridKitsSemDadosException)
+            catch (TCC.Regra.Exceptions.FamiliaMotor.GridKitsSemDadosException)
             {
                 MessageBox.Show("É Necessario buscar Kits", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarKitDtGrid.Focus();
             }
-            catch (BUSINESS.Exceptions.FamiliaMotor.QuantidadeMenorZeroException)
+            catch (TCC.Regra.Exceptions.FamiliaMotor.QuantidadeMenorZeroException)
             {
                 MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdKit.Focus();
@@ -733,12 +733,12 @@ namespace TCC.UI
         {
             if (this.dgKits.DataSource == null)
             {
-                throw new BUSINESS.Exceptions.FamiliaMotor.GridKitsSemDadosException();
+                throw new TCC.Regra.Exceptions.FamiliaMotor.GridKitsSemDadosException();
             }
             int quantidade = Convert.ToInt32(this.txtQtdKit.Text);
             if (quantidade < 1)
             {
-                throw new BUSINESS.Exceptions.FamiliaMotor.QuantidadeMenorZeroException();
+                throw new TCC.Regra.Exceptions.FamiliaMotor.QuantidadeMenorZeroException();
             }
         }
         #endregion Valida Adicao Kit

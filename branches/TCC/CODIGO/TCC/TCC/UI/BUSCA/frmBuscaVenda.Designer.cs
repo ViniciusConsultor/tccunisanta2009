@@ -42,13 +42,13 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDataVenda = new Controles.MegaMaskedTextBox.MegaMaskedTextBox(this.components);
+            this.txtDataVenda = new TCC.Controle.MegaMaskedTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
             // 
-            this.btnOK.BackgroundImage = global::TCC.resImg.btnOk;
+            this.btnOK.BackgroundImage = global::TCC.Telas.resImg.btnOk;
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOK.Location = new System.Drawing.Point(107, 225);
             this.btnOK.Name = "btnOK";
@@ -69,7 +69,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscar.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(249, 61);
             this.btnBuscar.Name = "btnBuscar";
@@ -123,7 +123,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltaCad;
+            this.btnFechar.BackgroundImage = global::TCC.Telas.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.Location = new System.Drawing.Point(61, 225);
             this.btnFechar.Name = "btnFechar";
@@ -140,7 +140,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackgroundImage = global::TCC.resImg.btnLixo;
+            this.btnExcluir.BackgroundImage = global::TCC.Telas.resImg.btnLixo;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcluir.Location = new System.Drawing.Point(199, 225);
             this.btnExcluir.Name = "btnExcluir";
@@ -152,7 +152,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnAlterar.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAlterar.Location = new System.Drawing.Point(153, 225);
             this.btnAlterar.Name = "btnAlterar";
@@ -230,7 +230,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Controles.MegaMaskedTextBox.MegaMaskedTextBox txtDataVenda;
+        private TCC.Controle.MegaMaskedTextBox txtDataVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn hVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn hData;

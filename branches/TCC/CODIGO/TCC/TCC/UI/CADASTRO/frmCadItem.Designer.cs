@@ -46,7 +46,7 @@
             this.txtCodigoItem = new System.Windows.Forms.TextBox();
             this.lblCdItemReal = new System.Windows.Forms.Label();
             this.gbBuscaPecaItem = new System.Windows.Forms.GroupBox();
-            this.txtQtdPeca = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtdPeca = new TCC.Controle.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblQtdPeca = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 126);
             this.btnVolta.Name = "btnVolta";
@@ -111,7 +111,7 @@
             // 
             // btnAdicionaPeca
             // 
-            this.btnAdicionaPeca.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaPeca.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaPeca.Location = new System.Drawing.Point(36, 157);
             this.btnAdicionaPeca.Name = "btnAdicionaPeca";
@@ -123,7 +123,7 @@
             // 
             // btnRemovePeca
             // 
-            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemovePeca.Location = new System.Drawing.Point(96, 157);
             this.btnRemovePeca.Name = "btnRemovePeca";
@@ -135,7 +135,7 @@
             // 
             // btnBuscarPecaDtGrid
             // 
-            this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarPecaDtGrid.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscarPecaDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarPecaDtGrid.Location = new System.Drawing.Point(456, 34);
             this.btnBuscarPecaDtGrid.Name = "btnBuscarPecaDtGrid";
@@ -147,7 +147,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirmar.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirmar.Location = new System.Drawing.Point(6, 4);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -159,7 +159,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 85);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -215,7 +215,7 @@
             this.txtQtdPeca.Name = "txtQtdPeca";
             this.txtQtdPeca.Size = new System.Drawing.Size(100, 20);
             this.txtQtdPeca.TabIndex = 7;
-            this.txtQtdPeca.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtdPeca.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // dgItems
             // 
@@ -365,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -411,7 +411,7 @@
         private System.Windows.Forms.RadioButton rdbNome;
         private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.TextBox TxtNmPeca;
-        private Controles.MegaTextBox.MegaTextBox txtQtdPeca;
+        private TCC.Controle.MegaTextBox txtQtdPeca;
         private System.Windows.Forms.Button btnRemovePeca;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdPeca;

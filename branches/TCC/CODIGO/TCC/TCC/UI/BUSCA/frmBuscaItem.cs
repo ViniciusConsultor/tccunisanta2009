@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.DAL;
+using TCC.Regra;
+
 
 namespace TCC.UI
 {

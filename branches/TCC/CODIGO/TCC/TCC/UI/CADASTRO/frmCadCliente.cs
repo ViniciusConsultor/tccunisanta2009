@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -243,67 +243,67 @@ namespace TCC.UI
                 this.txtCnpj.Text = "";
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Cliente.NomeClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.NomeClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Nome", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNome.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.paisVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.paisVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo País", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtPais.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.EstadoVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.EstadoVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Estado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtEstado.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CidadeClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.CidadeClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Cidade", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCidade.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.RuaClieteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.RuaClieteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Rua", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtRua.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.NroEnderecoClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.NroEnderecoClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Número", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNumero.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.BairroClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.BairroClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Bairro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtBairro.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CEPVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.CEPVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo CEP", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCep.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CodigoPostalVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.CodigoPostalVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo Código Postal", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodPostal.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.DadosComunicacaoVazioException)
             {
                 MessageBox.Show("É Necessário Preencher um dos campos para contato ('DDI, DDD e Telefone' ou 'E-mail')", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDI.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.DDIClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.DDIClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo DDI", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDD.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.DDDClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.DDDClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo DDD", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDDD.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.TelefoneClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo telefone", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 if (this.txtTelefone.Visible == true)
@@ -315,42 +315,42 @@ namespace TCC.UI
                     this.txtTelefoneInter.Focus();
                 }
             }
-            catch (BUSINESS.Exceptions.Cliente.EmailClienteVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.EmailClienteVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo E-mail", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtTelefone.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CpfCnpjVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.CpfCnpjVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o campo CPF ou o CNPJ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.rdbPessoaFisica.Checked = true;
             }
-            catch (BUSINESS.Exceptions.Cliente.IdentidadeInterVazioException)
+            catch (TCC.Regra.Exceptions.Cliente.IdentidadeInterVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o código de Identificação Internacional", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdentInter.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CPFClienteExistente)
+            catch (TCC.Regra.Exceptions.Cliente.CPFClienteExistente)
             {
                 MessageBox.Show("Código de CPF já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCPF.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.CNPJClienteExistente)
+            catch (TCC.Regra.Exceptions.Cliente.CNPJClienteExistente)
             {
                 MessageBox.Show("Código de CNPJ já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCnpj.Focus();
             }
-            catch (BUSINESS.Exceptions.Cliente.IdentInterExistenteException)
+            catch (TCC.Regra.Exceptions.Cliente.IdentInterExistenteException)
             {
                 MessageBox.Show("Código de Identificação Internacional já existente. Favor Informar ou código.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdentInter.Focus();
             }
-            catch (BUSINESS.Exceptions.Validacoes.EmailInvalidoException)
+            catch (TCC.Regra.Exceptions.Validacoes.EmailInvalidoException)
             {
                 MessageBox.Show("Campo E-mail incorreto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtEmail.Focus();
             }
-            catch (BUSINESS.Exceptions.Validacoes.MaskedInvalidaException ex)
+            catch (TCC.Regra.Exceptions.Validacoes.MaskedInvalidaException ex)
             {
                 MessageBox.Show(ex.Mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -416,67 +416,67 @@ namespace TCC.UI
             {
                 if (string.IsNullOrEmpty(this.txtNome.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.NomeClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.NomeClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtPais.Text) == true && this.txtPais.Enabled == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.paisVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.paisVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtEstado.Text) == true && this.txtEstado.Enabled == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.EstadoVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.EstadoVazioException();
                 }
                 else if (string.IsNullOrEmpty(txtCidade.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.CidadeClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.CidadeClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(txtRua.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.RuaClieteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.RuaClieteVazioException();
                 }
                 else if (string.IsNullOrEmpty(txtNumero.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.NroEnderecoClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.NroEnderecoClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(txtBairro.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.BairroClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.BairroClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(cep) == true && this.txtCep.Visible == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.CEPVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.CEPVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtCodPostal.Text) == true && this.txtCodPostal.Visible == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.CodigoPostalVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.CodigoPostalVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDI.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true && string.IsNullOrEmpty(tel) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.DadosComunicacaoVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.DadosComunicacaoVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDI.Text) == true && this.txtDDI.Enabled == true)
                 {
-                    throw new BUSINESS.Exceptions.Fornecedor.DDIVazioException();
+                    throw new TCC.Regra.Exceptions.Fornecedor.DDIVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtDDD.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.DDDClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.DDDClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(tel) == true && this.txtTelefone.Visible == true || string.IsNullOrEmpty(this.txtEmail.Text) == true && string.IsNullOrEmpty(this.txtTelefoneInter.Text) == true && this.txtTelefoneInter.Visible == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.TelefoneClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.TelefoneClienteVazioException();
                 }
                 else if (string.IsNullOrEmpty(txtEmail.Text) == true && string.IsNullOrEmpty(txtDDD.Text) == true && string.IsNullOrEmpty(tel) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.EmailClienteVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.EmailClienteVazioException();
                 }
                 else if (this.panelOutros.Visible == false && string.IsNullOrEmpty(cnpj) == true && string.IsNullOrEmpty(cpf) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.CpfCnpjVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.CpfCnpjVazioException();
                 }
                 else if (this.panelOutros.Visible == true && string.IsNullOrEmpty(this.txtIdentInter.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.Cliente.IdentidadeInterVazioException();
+                    throw new TCC.Regra.Exceptions.Cliente.IdentidadeInterVazioException();
                 }
             }
             catch (Exception ex)

@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -46,30 +46,30 @@ namespace TCC.UI
                 this.Insere(ref modelVenda);
                 this.AbrirOrdemProducao(ref modelVenda);
             }
-            catch (BUSINESS.Exceptions.Venda.DataVaziaException)
+            catch (TCC.Regra.Exceptions.Venda.DataVaziaException)
             {
                 MessageBox.Show("É necessário preencher o campo data de venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataVenda.Focus();
             }
-            catch (BUSINESS.Exceptions.Venda.ValorVendaVaziaException)
+            catch (TCC.Regra.Exceptions.Venda.ValorVendaVaziaException)
             {
                 MessageBox.Show("É necessário preencher o campo valor de venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtValorVenda.Focus();
             }
-            catch (BUSINESS.Exceptions.Venda.VendaSemProdutoException)
+            catch (TCC.Regra.Exceptions.Venda.VendaSemProdutoException)
             {
                 MessageBox.Show("É necessário associar um Produto a venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarItemDtGrid.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoClienteVazioException)
+            catch (TCC.Regra.Exceptions.CodigoClienteVazioException)
             {
                 MessageBox.Show("É Necessário Buscar o código do Cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Venda.ValorVendaZeroOuNuloException)
+            catch (TCC.Regra.Exceptions.Venda.ValorVendaZeroOuNuloException)
             {
                 MessageBox.Show("Valor da Venda não pode ser menor que 0(zero)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Item.TelaResumoCanceladaException)
+            catch (TCC.Regra.Exceptions.Item.TelaResumoCanceladaException)
             {
 
             }
@@ -173,12 +173,12 @@ namespace TCC.UI
                 }
                 this.AtualizaGrid();
             }
-            catch (BUSINESS.Exceptions.Venda.QuantidadeVendaZeroOuNuloException)
+            catch (TCC.Regra.Exceptions.Venda.QuantidadeVendaZeroOuNuloException)
             {
                 MessageBox.Show("Campo quantidade não pode ser 0 (Zero) ou Vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdProdutos.Focus();
             }
-            catch (BUSINESS.Exceptions.Venda.GridProdutoSemDadosException)
+            catch (TCC.Regra.Exceptions.Venda.GridProdutoSemDadosException)
             {
                 MessageBox.Show("É Necessário buscar Produtos para adicionar a Venda.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarItemDtGrid.Focus();
@@ -362,21 +362,21 @@ namespace TCC.UI
         {
             if (this._modelCliente == null)
             {
-                throw new BUSINESS.Exceptions.CodigoClienteVazioException();
+                throw new TCC.Regra.Exceptions.CodigoClienteVazioException();
             }
             string data = this.txtDataVenda.Text.Replace("/", string.Empty);
             data = data.Replace(" ", string.Empty);
             if(string.IsNullOrEmpty(data) == true)
             {
-                throw new BUSINESS.Exceptions.Venda.DataVaziaException();
+                throw new TCC.Regra.Exceptions.Venda.DataVaziaException();
             }
             else if (string.IsNullOrEmpty(this.txtValorVenda.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Venda.ValorVendaVaziaException();
+                throw new TCC.Regra.Exceptions.Venda.ValorVendaVaziaException();
             }
             else if (this._listaModelVendaProduto == null)
             {
-                throw new BUSINESS.Exceptions.Venda.VendaSemProdutoException();
+                throw new TCC.Regra.Exceptions.Venda.VendaSemProdutoException();
             }
 
         }
@@ -471,16 +471,16 @@ namespace TCC.UI
         {
             if (this.dgProdutos.DataSource == null)
             {
-                throw new BUSINESS.Exceptions.Venda.GridProdutoSemDadosException();
+                throw new TCC.Regra.Exceptions.Venda.GridProdutoSemDadosException();
             }
             else if (string.IsNullOrEmpty(this.txtQtdProdutos.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Venda.QuantidadeVendaZeroOuNuloException();
+                throw new TCC.Regra.Exceptions.Venda.QuantidadeVendaZeroOuNuloException();
             }
             int quantidade = Convert.ToInt32(this.txtQtdProdutos.Text);
             if (quantidade < 1)
             {
-                throw new BUSINESS.Exceptions.Venda.QuantidadeVendaZeroOuNuloException();
+                throw new TCC.Regra.Exceptions.Venda.QuantidadeVendaZeroOuNuloException();
             }
         }
         #endregion Valida Adicao Produto
@@ -740,7 +740,7 @@ namespace TCC.UI
                 resultado = ResumoPeca.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
-                    throw new BUSINESS.Exceptions.Item.TelaResumoCanceladaException();
+                    throw new TCC.Regra.Exceptions.Item.TelaResumoCanceladaException();
                 }
             }
             catch (Exception e)

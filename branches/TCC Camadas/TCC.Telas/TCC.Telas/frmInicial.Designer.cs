@@ -3,7 +3,7 @@
     partial class frmInicial
     {
         /// <summary>
-        /// ReqUIred designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -23,14 +23,14 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// ReqUIred method for Designer support - do not modify
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.deslogarToolStripMenUItem = new System.Windows.Forms.ToolStripMenUItem();
+            this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -40,19 +40,19 @@
             // mnuPrincipal
             // 
             this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deslogarToolStripMenUItem});
+            this.deslogarToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Size = new System.Drawing.Size(794, 24);
             this.mnuPrincipal.TabIndex = 0;
             this.mnuPrincipal.Text = "MenuStrip";
             // 
-            // deslogarToolStripMenUItem
+            // deslogarToolStripMenuItem
             // 
-            this.deslogarToolStripMenUItem.Name = "deslogarToolStripMenUItem";
-            this.deslogarToolStripMenUItem.Size = new System.Drawing.Size(65, 20);
-            this.deslogarToolStripMenUItem.Text = "Deslogar";
-            this.deslogarToolStripMenUItem.Click += new System.EventHandler(this.deslogarToolStripMenUItem_Click);
+            this.deslogarToolStripMenuItem.Name = "deslogarToolStripMenuItem";
+            this.deslogarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.deslogarToolStripMenuItem.Text = "Deslogar";
+            this.deslogarToolStripMenuItem.Click += new System.EventHandler(this.deslogarToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -73,7 +73,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::TCC.UI.resImg.bg_principal;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_principal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(794, 574);
             this.Controls.Add(this.statusStrip);
@@ -100,7 +100,7 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenUItem deslogarToolStripMenUItem;
+        private System.Windows.Forms.ToolStripMenuItem deslogarToolStripMenuItem;
     }
 }
 

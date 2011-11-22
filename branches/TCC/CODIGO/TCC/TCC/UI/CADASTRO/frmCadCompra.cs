@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-using TCC.BUSINESS;
+using TCC.Regra;
 using System.Windows.Forms;
-using TCC.MODEL;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -64,20 +64,20 @@ namespace TCC.UI
                 this.dgItems.DataSource = this._dtSource;
                 this.LimpaGrupoOrdemCompra();
             }
-            catch (BUSINESS.Exceptions.Compra.BuscaMotorException)
+            catch (TCC.Regra.Exceptions.Compra.BuscaMotorException)
             {
                 MessageBox.Show("É necessário busca um motor para compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Compra.BuscaPecaException)
+            catch (TCC.Regra.Exceptions.Compra.BuscaPecaException)
             {
                 MessageBox.Show("É necessário buscar uma peça para compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException)
+            catch (TCC.Regra.Exceptions.Compra.CompraQuantidadeVaziaException)
             {
                 MessageBox.Show("Quantidade não pode ser vazia", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdItem.Focus();
             }
-            catch (BUSINESS.Exceptions.Compra.CompraQuantidadeMenorQueUmException)
+            catch (TCC.Regra.Exceptions.Compra.CompraQuantidadeMenorQueUmException)
             {
                 MessageBox.Show("Quantidade não pode ser 0(zero)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdItem.Focus();
@@ -105,7 +105,7 @@ namespace TCC.UI
                 this.AbreTelaBuscaFornecedor();
 
             }
-            catch (BUSINESS.Exceptions.Compra.BuscaMotorPecaException)
+            catch (TCC.Regra.Exceptions.Compra.BuscaMotorPecaException)
             {
                 MessageBox.Show("É Necessário buscar um Motor ou uma Peça antes de Buscar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarItemDtGrid.Focus();
@@ -220,21 +220,21 @@ namespace TCC.UI
                 }
                 this.btnLimpar_Click(null, null);
             }
-            catch (BUSINESS.Exceptions.Compra.OrdemCompraSemDadosException)
+            catch (TCC.Regra.Exceptions.Compra.OrdemCompraSemDadosException)
             {
                 MessageBox.Show("É necessário adicionar itens para a compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Compra.CompraValorVazioException)
+            catch (TCC.Regra.Exceptions.Compra.CompraValorVazioException)
             {
                 MessageBox.Show("É Necessário ter um valor de compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtValor.Focus();
             }
-            catch (BUSINESS.Exceptions.Compra.DataCompraVaziaException)
+            catch (TCC.Regra.Exceptions.Compra.DataCompraVaziaException)
             {
                 MessageBox.Show("É Necessário ter a data de Compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataCompra.Focus();
             }
-            catch (BUSINESS.Exceptions.Validacoes.DataInvalidaException ex)
+            catch (TCC.Regra.Exceptions.Validacoes.DataInvalidaException ex)
             {
                 MessageBox.Show("Erro no " + ex.TipoErro.ToString() + " da Data: " + ex.DataErrada, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDataCompra.Focus();
@@ -554,26 +554,26 @@ namespace TCC.UI
             data = data.Replace("_", string.Empty);
             if (string.IsNullOrEmpty(this.txtValor.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
+                throw new TCC.Regra.Exceptions.Compra.CompraValorVazioException();
             }
             else if (string.IsNullOrEmpty(data) == true)
             {
-                throw new BUSINESS.Exceptions.Compra.DataCompraVaziaException();
+                throw new TCC.Regra.Exceptions.Compra.DataCompraVaziaException();
             }
             else
             {
-                BUSINESS.UTIL.Validacoes.ValidaData(this.txtDataCompra.Text);
+                TCC.Regra.Util.Validacoes.ValidaData(this.txtDataCompra.Text);
             }
             if (this._listaOrdemCompra != null)
             {
                 if (this._listaOrdemCompra.Count < 1)
                 {
-                    throw new BUSINESS.Exceptions.Compra.OrdemCompraSemDadosException();
+                    throw new TCC.Regra.Exceptions.Compra.OrdemCompraSemDadosException();
                 }
             }
             else
             {
-                throw new BUSINESS.Exceptions.Compra.OrdemCompraSemDadosException();
+                throw new TCC.Regra.Exceptions.Compra.OrdemCompraSemDadosException();
             }
         }
         #endregion Valida Dados Nulos
@@ -588,25 +588,25 @@ namespace TCC.UI
             {
                 if (this._modelMotor == null)
                 {
-                    throw new BUSINESS.Exceptions.Compra.BuscaMotorException();
+                    throw new TCC.Regra.Exceptions.Compra.BuscaMotorException();
                 }
             }
             else
             {
                 if (this._modelPeca == null)
                 {
-                    throw new BUSINESS.Exceptions.Compra.BuscaPecaException();
+                    throw new TCC.Regra.Exceptions.Compra.BuscaPecaException();
                 }
             }
             if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+                throw new TCC.Regra.Exceptions.Compra.CompraQuantidadeVaziaException();
             }
             else
             {
                 if (Convert.ToInt32(this.txtQtdItem.Text) < 1)
                 {
-                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeMenorQueUmException();
+                    throw new TCC.Regra.Exceptions.Compra.CompraQuantidadeMenorQueUmException();
                 }
             }
         }
@@ -620,7 +620,7 @@ namespace TCC.UI
         {
             if (this._modelMotor == null && this._modelPeca == null)
             {
-                throw new BUSINESS.Exceptions.Compra.BuscaMotorPecaException();
+                throw new TCC.Regra.Exceptions.Compra.BuscaMotorPecaException();
             }
         }
         #endregion Valida Buscas
@@ -731,7 +731,7 @@ namespace TCC.UI
                 foreach (Control controle in this.gpbOrdemCompra.Controls)
                 {
                     Type tipo = controle.GetType();
-                    if (tipo.Equals(typeof(TextBox)) == true || tipo.Equals(typeof(Controles.MegaTextBox.MegaTextBox)) == true)
+                    if (tipo.Equals(typeof(TextBox)) == true || tipo.Equals(typeof(TCC.Controle.MegaTextBox)) == true)
                     {
                         controle.Text = string.Empty;
                     }

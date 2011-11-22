@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.MODEL;
-using TCC.BUSINESS;
+using TCC.Mapper;
+using TCC.Regra;
 
 namespace TCC.UI.CADASTRO
 {
@@ -150,12 +150,12 @@ namespace TCC.UI.CADASTRO
                     base.FechaTela(this);
                 }
             }
-            catch (BUSINESS.Exceptions.MotorFornecedor.MotorVazioException)
+            catch (TCC.Regra.Exceptions.MotorFornecedor.MotorVazioException)
             {
                 MessageBox.Show("É Necessário Buscar um Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.MotorFornecedor.FornecedorNaoEscolhidoException)
+            catch (TCC.Regra.Exceptions.MotorFornecedor.FornecedorNaoEscolhidoException)
             {
                 MessageBox.Show("É Necessário Selecionar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarFornecedorDtGrid.Focus();
@@ -325,11 +325,11 @@ namespace TCC.UI.CADASTRO
         {
             if (this._listaModelMotorFornecedor == null)
             {
-                throw new BUSINESS.Exceptions.MotorFornecedor.FornecedorNaoEscolhidoException();
+                throw new TCC.Regra.Exceptions.MotorFornecedor.FornecedorNaoEscolhidoException();
             }
             else if (this._modelMotor == null)
             {
-                throw new BUSINESS.Exceptions.MotorFornecedor.MotorVazioException();
+                throw new TCC.Regra.Exceptions.MotorFornecedor.MotorVazioException();
             }
         }
         #endregion Valida Dados Nulos

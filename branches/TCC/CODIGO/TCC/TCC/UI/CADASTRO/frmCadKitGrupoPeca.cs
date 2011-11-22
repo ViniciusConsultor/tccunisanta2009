@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -117,7 +117,7 @@ namespace TCC.UI
                 resultado = ResumoItem.ShowDialog();
                 if (resultado == DialogResult.Cancel)
                 {
-                    throw new BUSINESS.Exceptions.KitGrupoPeca.TelaResumoCanceladaException();
+                    throw new TCC.Regra.Exceptions.KitGrupoPeca.TelaResumoCanceladaException();
                 }
             }
             catch (Exception e)
@@ -156,32 +156,32 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitExistenteException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.NomeKitExistenteException)
             {
                 MessageBox.Show("Nome do Kit já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmKit.Focus();
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitExistenteException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.CodigoRealKitExistenteException)
             {
                 MessageBox.Show("Código do Kit já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoKit.Focus();
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.KitSemItemException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.KitSemItemException)
             {
                 MessageBox.Show("É Necessário Associar um Item ao Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarItemDtGrid.Focus();
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.NomeKitVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o Nome do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmKit.Focus();
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.CodigoRealKitVazioException)
             {
                 MessageBox.Show("É Necessário Preencher o código do Kit", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtCodigoKit.Focus();
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.TelaResumoCanceladaException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.TelaResumoCanceladaException)
             {
 
             }
@@ -206,15 +206,15 @@ namespace TCC.UI
         {
             if (string.IsNullOrEmpty(this.txtCodigoKit.Text) == true)
             {
-                throw new BUSINESS.Exceptions.KitGrupoPeca.CodigoRealKitVazioException();
+                throw new TCC.Regra.Exceptions.KitGrupoPeca.CodigoRealKitVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtNmKit.Text) == true)
             {
-                throw new BUSINESS.Exceptions.KitGrupoPeca.NomeKitVazioException();
+                throw new TCC.Regra.Exceptions.KitGrupoPeca.NomeKitVazioException();
             }
             else if (this._modelItemKit == null)
             {
-                throw new BUSINESS.Exceptions.KitGrupoPeca.KitSemItemException();
+                throw new TCC.Regra.Exceptions.KitGrupoPeca.KitSemItemException();
             }
         }
         #endregion Valida Dados Nulos
@@ -343,12 +343,12 @@ namespace TCC.UI
                 this.TxtNmItem.Text = "";
                 this.txtQtdItem.Text = "";
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.GridItemSemDadosException)
             {
                 MessageBox.Show("É Necessario buscar itens.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarItemDtGrid.Focus();
             }
-            catch (BUSINESS.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException)
+            catch (TCC.Regra.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException)
             {
                 MessageBox.Show("Quantidade deve ser Maior que zero.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtdItem.Focus();
@@ -576,12 +576,12 @@ namespace TCC.UI
         {
             if (this.dgItems.DataSource == null)
             {
-                throw new BUSINESS.Exceptions.KitGrupoPeca.GridItemSemDadosException();
+                throw new TCC.Regra.Exceptions.KitGrupoPeca.GridItemSemDadosException();
             }
             int quantidade = Convert.ToInt32(this.txtQtdItem.Text);
             if (quantidade < 1)
             {
-                throw new BUSINESS.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException();
+                throw new TCC.Regra.Exceptions.KitGrupoPeca.QuantidadeMenorZeroException();
             }
         }
         #endregion Valida Adicao Item

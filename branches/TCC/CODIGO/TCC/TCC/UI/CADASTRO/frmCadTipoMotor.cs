@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.MODEL;
-using TCC.BUSINESS;
+using TCC.Mapper;
+using TCC.Regra;
 
 namespace TCC.UI
 {
@@ -71,17 +71,17 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.TipoMotor.CodigoTipoMotorExistenteException)
+            catch (TCC.Regra.Exceptions.TipoMotor.CodigoTipoMotorExistenteException)
             {
                 MessageBox.Show("Código do Tipo do Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdReal.Focus();
             }
-            catch (BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption)
+            catch (TCC.Regra.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption)
             {
                 MessageBox.Show("É Necessário Informar o código do Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtIdReal.Focus();
             }
-            catch (BUSINESS.Exceptions.TipoMotor.DescTipoMotorVazioException)
+            catch (TCC.Regra.Exceptions.TipoMotor.DescTipoMotorVazioException)
             {
                 MessageBox.Show("É Necessário Informar Descrição para o Tipo do Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNmTipoMotor.Focus();
@@ -131,11 +131,11 @@ namespace TCC.UI
             {
                 if (string.IsNullOrEmpty(this.txtIdReal.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption();
+                    throw new TCC.Regra.Exceptions.TipoMotor.NumeroTipoMotorVazioExeption();
                 }
                 else if (string.IsNullOrEmpty(this.txtNmTipoMotor.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.TipoMotor.DescTipoMotorVazioException();
+                    throw new TCC.Regra.Exceptions.TipoMotor.DescTipoMotorVazioException();
                 }
             }
             catch (Exception ex)

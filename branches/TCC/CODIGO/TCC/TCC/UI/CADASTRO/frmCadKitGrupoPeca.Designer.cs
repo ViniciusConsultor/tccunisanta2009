@@ -44,7 +44,7 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
-            this.txtQtdItem = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtdItem = new TCC.Controle.MegaTextBox(this.components);
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.hIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +64,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVoltar.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(6, 126);
             this.btnVoltar.Name = "btnVoltar";
@@ -111,7 +111,7 @@
             // 
             // btnAdicionaItem
             // 
-            this.btnAdicionaItem.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaItem.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionaItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaItem.Location = new System.Drawing.Point(36, 170);
             this.btnAdicionaItem.Name = "btnAdicionaItem";
@@ -123,7 +123,7 @@
             // 
             // btnBuscarItemDtGrid
             // 
-            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(460, 35);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
@@ -135,7 +135,7 @@
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemoveItem.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemoveItem.Location = new System.Drawing.Point(98, 170);
             this.btnRemoveItem.Name = "btnRemoveItem";
@@ -147,7 +147,7 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceitar.Location = new System.Drawing.Point(6, 4);
             this.btnAceitar.Name = "btnAceitar";
@@ -159,7 +159,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 85);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -196,7 +196,7 @@
             this.txtQtdItem.Name = "txtQtdItem";
             this.txtQtdItem.Size = new System.Drawing.Size(100, 20);
             this.txtQtdItem.TabIndex = 7;
-            this.txtQtdItem.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtdItem.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // dgItems
             // 
@@ -365,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -412,7 +412,7 @@
         private System.Windows.Forms.Label lblCdKitReal;
         private System.Windows.Forms.TextBox txtCodigoKit;
         private System.Windows.Forms.Button btnRemoveItem;
-        private Controles.MegaTextBox.MegaTextBox txtQtdItem;
+        private TCC.Controle.MegaTextBox txtQtdItem;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCodigo;

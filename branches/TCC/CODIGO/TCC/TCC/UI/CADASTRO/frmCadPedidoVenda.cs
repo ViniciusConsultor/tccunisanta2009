@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -147,11 +147,11 @@ namespace TCC.UI
                 this.btnLimpar_Click(null, null);
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            catch (TCC.Regra.Exceptions.CodigoDepartamentoVazioException)
             {
                 MessageBox.Show("É Necessário Buscar o código do Departamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.CodigoVendaVazioException)
+            catch (TCC.Regra.Exceptions.CodigoVendaVazioException)
             {
                 MessageBox.Show("É Necessário Buscar o código da Venda", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -170,11 +170,11 @@ namespace TCC.UI
         {
             if (this._modelDepartamento == null)
             {
-                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+                throw new TCC.Regra.Exceptions.CodigoDepartamentoVazioException();
             }
             else if (this._modelVenda == null)
             {
-                throw new BUSINESS.Exceptions.CodigoVendaVazioException();
+                throw new TCC.Regra.Exceptions.CodigoVendaVazioException();
             }
         }
 

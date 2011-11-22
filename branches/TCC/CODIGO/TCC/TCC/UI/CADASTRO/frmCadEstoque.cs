@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -110,17 +110,17 @@ namespace TCC.UI
                 this.rdbDefeitoNao.Checked = true;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Estoque.NomEstoqueExistenteException)
+            catch (TCC.Regra.Exceptions.Estoque.NomEstoqueExistenteException)
             {
                 MessageBox.Show("Nome do Estoque já Cadastrado!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaDepartamento.Focus();
             }
-            catch (BUSINESS.Exceptions.CodigoDepartamentoVazioException)
+            catch (TCC.Regra.Exceptions.CodigoDepartamentoVazioException)
             {
                 MessageBox.Show("É Necessário Informar o Departamento do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaDepartamento.Focus();
             }
-            catch (BUSINESS.Exceptions.Estoque.NomEstoqueVazioException)
+            catch (TCC.Regra.Exceptions.Estoque.NomEstoqueVazioException)
             {
                 MessageBox.Show("É Necessário Cadastrar o nome do Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtNome.Focus();
@@ -178,11 +178,11 @@ namespace TCC.UI
         {
             if (this._modelDepartamento == null)
             {
-                throw new BUSINESS.Exceptions.CodigoDepartamentoVazioException();
+                throw new TCC.Regra.Exceptions.CodigoDepartamentoVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtNome.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Estoque.NomEstoqueVazioException();
+                throw new TCC.Regra.Exceptions.Estoque.NomEstoqueVazioException();
             }
         }
         #endregion Valida Campos Nulos

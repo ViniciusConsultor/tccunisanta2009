@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -115,12 +115,12 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.TipoPeca.TipoPecaExistenteException)
+            catch (TCC.Regra.Exceptions.TipoPeca.TipoPecaExistenteException)
             {
                 MessageBox.Show("Tipo de Peça já cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption)
+            catch (TCC.Regra.Exceptions.TipoPeca.tipoPecaVazioExeption)
             {
                 MessageBox.Show("É Necessário Preencher o campo Nome do tipo de Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsTipoPeca.Focus();
@@ -144,7 +144,7 @@ namespace TCC.UI
             {
                 if (string.IsNullOrEmpty(this.txtDsTipoPeca.Text) == true)
                 {
-                    throw new BUSINESS.Exceptions.TipoPeca.tipoPecaVazioExeption();
+                    throw new TCC.Regra.Exceptions.TipoPeca.tipoPecaVazioExeption();
                 }
             }
             catch (Exception ex)
