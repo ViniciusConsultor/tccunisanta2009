@@ -221,5 +221,10 @@ namespace TCC.Regra
         {
             base.Altera(model);
         }
+
+        public DataTable BuscaUmRegistro(ModelPai model)
+        {
+            return base.BuscaUmRegistro(model);
+        }
     }
 }
