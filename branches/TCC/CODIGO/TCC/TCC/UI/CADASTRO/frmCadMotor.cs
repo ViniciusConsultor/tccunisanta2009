@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -92,7 +92,7 @@ namespace TCC.UI
                     this._listaModelMotorFornecedor = null;
                 }
             }
-            catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
+            catch (TCC.Regra.Exceptions.Motor.DescMotorVazioException)
             {
                 MessageBox.Show("É necessário digitar uma Descrição para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();
@@ -129,12 +129,12 @@ namespace TCC.UI
                     this._listaModelMotorEstoque = null;
                 }
             }
-            catch (BUSINESS.Exceptions.Motor.DescMotorExistenteException)
+            catch (TCC.Regra.Exceptions.Motor.DescMotorExistenteException)
             {
                 MessageBox.Show("Descrição para o Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
+            catch (TCC.Regra.Exceptions.Motor.DescMotorVazioException)
             {
                 MessageBox.Show("É Necessário Digitar uma Descrição para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();
@@ -181,7 +181,7 @@ namespace TCC.UI
         {
             if (string.IsNullOrEmpty(this.txtDsMotor.Text))
             {
-                throw new BUSINESS.Exceptions.Motor.DescMotorVazioException();
+                throw new TCC.Regra.Exceptions.Motor.DescMotorVazioException();
             }
         }
         #endregion ValidaDadosNulos
@@ -229,12 +229,12 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro Salvo com Sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Motor.DescMotorExistenteException)
+            catch (TCC.Regra.Exceptions.Motor.DescMotorExistenteException)
             {
                 MessageBox.Show("Nome do Motor já existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.Motor.DescMotorVazioException)
+            catch (TCC.Regra.Exceptions.Motor.DescMotorVazioException)
             {
                 MessageBox.Show("É Necessário Digitar um Nome para o Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDsMotor.Focus();

@@ -39,7 +39,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnFechar.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.Location = new System.Drawing.Point(2, 63);
             this.btnFechar.Name = "btnFechar";
@@ -51,7 +51,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = global::TCC.Telas.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(2, 34);
             this.btnLimpar.Name = "btnLimpar";
@@ -86,7 +86,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(2, 5);
             this.btnConfirma.Name = "btnConfirma";
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;

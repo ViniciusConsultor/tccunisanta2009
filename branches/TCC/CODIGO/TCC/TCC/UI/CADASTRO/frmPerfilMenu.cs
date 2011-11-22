@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 
 namespace TCC.UI
@@ -284,7 +284,7 @@ namespace TCC.UI
         {
             if (this._listaModelPerfilMenu == null || this._listaModelPerfilMenu.Count<=0)
             {
-                throw new BUSINESS.Exceptions.PerfilMenu.MenuNaoEscolhidoException();
+                throw new TCC.Regra.Exceptions.PerfilMenu.MenuNaoEscolhidoException();
             }
         }
         #endregion Valida Lista model
@@ -297,7 +297,7 @@ namespace TCC.UI
         {
             if (this._modelPerfil == null)
             {
-                throw new BUSINESS.Exceptions.PerfilMenu.PerfilVazioException();
+                throw new TCC.Regra.Exceptions.PerfilMenu.PerfilVazioException();
             }
         }
         #endregion Valida Model
@@ -330,12 +330,12 @@ namespace TCC.UI
                     base.FechaTela(this);
                 }
             }
-            catch (BUSINESS.Exceptions.PerfilMenu.PerfilVazioException)
+            catch (TCC.Regra.Exceptions.PerfilMenu.PerfilVazioException)
             {
                 MessageBox.Show("É Necessário Buscar um Perfil", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarPerfil.Focus();
             }
-            catch (BUSINESS.Exceptions.PerfilMenu.MenuNaoEscolhidoException)
+            catch (TCC.Regra.Exceptions.PerfilMenu.MenuNaoEscolhidoException)
             {
                 MessageBox.Show("É Necessário Selecionar um Menu", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }

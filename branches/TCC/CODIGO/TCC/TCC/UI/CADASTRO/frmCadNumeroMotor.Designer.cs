@@ -38,7 +38,7 @@
             this.btnAceitar = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
             this.lblIdReal = new System.Windows.Forms.Label();
-            this.txtIdRealMotor = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtIdRealMotor = new TCC.Controle.MegaTextBox(this.components);
             this.SuspendLayout();
             // 
             // txtDscNumeroMotor
@@ -62,7 +62,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVoltar.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Location = new System.Drawing.Point(2, 80);
             this.btnVoltar.Name = "btnVoltar";
@@ -91,7 +91,7 @@
             // 
             // btnAceitar
             // 
-            this.btnAceitar.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnAceitar.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnAceitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceitar.Location = new System.Drawing.Point(2, 4);
             this.btnAceitar.Name = "btnAceitar";
@@ -103,7 +103,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(2, 54);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -128,13 +128,13 @@
             this.txtIdRealMotor.Name = "txtIdRealMotor";
             this.txtIdRealMotor.Size = new System.Drawing.Size(260, 20);
             this.txtIdRealMotor.TabIndex = 1;
-            this.txtIdRealMotor.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtIdRealMotor.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // frmCadNumeroMotor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 218);
             this.ControlBox = false;
@@ -165,6 +165,6 @@
         private System.Windows.Forms.ToolTip toolTipLegenda;
         private System.Windows.Forms.Label lblIdReal;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
-        private Controles.MegaTextBox.MegaTextBox txtIdRealMotor;
+        private TCC.Controle.MegaTextBox txtIdRealMotor;
     }
 }

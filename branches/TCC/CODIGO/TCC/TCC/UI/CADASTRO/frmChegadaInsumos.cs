@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -135,12 +135,12 @@ namespace TCC.UI
                     base.FechaTela(this);
                 }
             }
-            catch (BUSINESS.Exceptions.MotorEstoque.MotorVazioException)
+            catch (TCC.Regra.Exceptions.MotorEstoque.MotorVazioException)
             {
                 MessageBox.Show("É Necessário Buscar um Motor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaMotor.Focus();
             }
-            catch (BUSINESS.Exceptions.MotorEstoque.EstoqueNaoEscolhidoException)
+            catch (TCC.Regra.Exceptions.MotorEstoque.EstoqueNaoEscolhidoException)
             {
                 MessageBox.Show("É Necessário Selecionar um Estoque", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -281,11 +281,11 @@ namespace TCC.UI
             data = data.Replace(" ", string.Empty);
             if (string.IsNullOrEmpty(this.txtValor.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Compra.CompraValorVazioException();
+                throw new TCC.Regra.Exceptions.Compra.CompraValorVazioException();
             }
             else if (string.IsNullOrEmpty(data) == true)
             {
-                throw new BUSINESS.Exceptions.Compra.DataCompraVaziaException();
+                throw new TCC.Regra.Exceptions.Compra.DataCompraVaziaException();
             }
             else
             {
@@ -293,14 +293,14 @@ namespace TCC.UI
             }
             if (string.IsNullOrEmpty(this.txtQtdItem.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+                throw new TCC.Regra.Exceptions.Compra.CompraQuantidadeVaziaException();
             }
             else
             {
                 int qtd = Convert.ToInt32(this.txtQtdItem.Text);
                 if (qtd < 1)
                 {
-                    throw new BUSINESS.Exceptions.Compra.CompraQuantidadeVaziaException();
+                    throw new TCC.Regra.Exceptions.Compra.CompraQuantidadeVaziaException();
                 }
             }*/
 

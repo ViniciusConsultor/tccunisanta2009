@@ -56,7 +56,7 @@ namespace TCC.UI
                         // Valida perifl do usuario
                         if (idPerfil == 0)
                         {
-                            MessageBox.Show("Usuário não possUI um perfil!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Usuário não possui um perfil!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {

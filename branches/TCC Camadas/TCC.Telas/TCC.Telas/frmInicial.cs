@@ -19,7 +19,7 @@ namespace TCC.UI
         /// </summary>
         private Dictionary<string, object> _dicEventos = new Dictionary<string, object>();
         private const string _NAMESPACEFORMS = "TCC.UI.";
-        public static List<string> listaUIAbertas = new List<string>();
+        public static List<string> listaTelasAbertas = new List<string>();
         int qtdDeslogar;
         #endregion Atributos
 
@@ -53,7 +53,7 @@ namespace TCC.UI
         void frmInicial_Click(object sender, EventArgs e)
         {
             string endereco = this._dicEventos[sender.ToString()].ToString();
-            if (listaUIAbertas.Contains(endereco) == false)
+            if (listaTelasAbertas.Contains(endereco) == false)
             {
                 Assembly ass = Assembly.GetExecutingAssembly();
                 if (this._dicEventos.ContainsKey(sender.ToString()) == true)
@@ -61,7 +61,7 @@ namespace TCC.UI
                     Form objFormDinamico = (Form)ass.CreateInstance(_NAMESPACEFORMS + endereco);
                     if (objFormDinamico != null)
                     {
-                        listaUIAbertas.Add(endereco);
+                        listaTelasAbertas.Add(endereco);
                         if (sender.ToString().Equals("LOGIN") == true)
                         {
 
@@ -106,8 +106,8 @@ namespace TCC.UI
         }
         #endregion openToolStripButton Click
 
-        #region SaveAsToolStripMenUItem Click
-        private void SaveAsToolStripMenUItem_Click(object sender, EventArgs e)
+        #region SaveAsToolStripMenuItem Click
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -117,70 +117,70 @@ namespace TCC.UI
                 string FileName = saveFileDialog.FileName;
             }
         }
-        #endregion SaveAsToolStripMenUItem Click
+        #endregion SaveAsToolStripMenuItem Click
 
-        #region ExitToolsStripMenUItem Click
-        private void ExitToolsStripMenUItem_Click(object sender, EventArgs e)
+        #region ExitToolsStripMenuItem Click
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #endregion ExitToolsStripMenUItem Click
+        #endregion ExitToolsStripMenuItem Click
 
-        #region CutToolStripMenUItem Click
-        private void CutToolStripMenUItem_Click(object sender, EventArgs e)
+        #region CutToolStripMenuItem Click
+        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-        #endregion CutToolStripMenUItem Click
+        #endregion CutToolStripMenuItem Click
 
-        #region CopyToolStripMenUItem Click
-        private void CopyToolStripMenUItem_Click(object sender, EventArgs e)
+        #region CopyToolStripMenuItem Click
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-        #endregion CopyToolStripMenUItem Click
+        #endregion CopyToolStripMenuItem Click
 
-        #region PasteToolStripMenUItem Click
-        private void PasteToolStripMenUItem_Click(object sender, EventArgs e)
+        #region PasteToolStripMenuItem Click
+        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-        #endregion PasteToolStripMenUItem Click
+        #endregion PasteToolStripMenuItem Click
 
-        #region CascadeToolStripMenUItem Click
-        private void CascadeToolStripMenUItem_Click(object sender, EventArgs e)
+        #region CascadeToolStripMenuItem Click
+        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
-        #endregion CascadeToolStripMenUItem Click
+        #endregion CascadeToolStripMenuItem Click
 
-        #region TileVerticalToolStripMenUItem Click
-        private void TileVerticalToolStripMenUItem_Click(object sender, EventArgs e)
+        #region TileVerticalToolStripMenuItem Click
+        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
-        #endregion TileVerticalToolStripMenUItem Click
+        #endregion TileVerticalToolStripMenuItem Click
 
-        #region TileHorizontalToolStripMenUItem Click
-        private void TileHorizontalToolStripMenUItem_Click(object sender, EventArgs e)
+        #region TileHorizontalToolStripMenuItem Click
+        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
         }
-        #endregion TileHorizontalToolStripMenUItem Click
+        #endregion TileHorizontalToolStripMenuItem Click
 
-        #region ArrangeIconsToolStripMenUItem Click
-        private void ArrangeIconsToolStripMenUItem_Click(object sender, EventArgs e)
+        #region ArrangeIconsToolStripMenuItem Click
+        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.ArrangeIcons);
         }
-        #endregion ArrangeIconsToolStripMenUItem Click
+        #endregion ArrangeIconsToolStripMenuItem Click
 
-        #region CloseAllToolStripMenUItem Click
-        private void CloseAllToolStripMenUItem_Click(object sender, EventArgs e)
+        #region CloseAllToolStripMenuItem Click
+        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form childForm in MdiChildren)
             {
                 childForm.Close();
             }
         }
-        #endregion CloseAllToolStripMenUItem Click
+        #endregion CloseAllToolStripMenuItem Click
         #endregion Eventos
 
         #region Metodos
@@ -199,7 +199,7 @@ namespace TCC.UI
             DataTable dtMenu;
             //Array para armazenar os itens do menu
             //-------------------------------------
-            ToolStripMenUItem[] itemMenuP;
+            ToolStripMenuItem[] itemMenuP;
             try
             {
                 this.ApagaMenu();
@@ -208,11 +208,11 @@ namespace TCC.UI
                 dtMenu = regraMenu.BuscaMenu(idPerfil);
                 //Declara o tamanho do Array baseado no tamanho do DataTable com os menus
                 //-----------------------------------------------------------------------
-                itemMenuP = new ToolStripMenUItem[dtMenu.Rows.Count + 1];
+                itemMenuP = new ToolStripMenuItem[dtMenu.Rows.Count + 1];
                 for (int contador = 0; contador < dtMenu.Rows.Count; contador++)
                 {
-                    itemMenuP[contador] = new ToolStripMenUItem(dtMenu.Rows[contador]["Menu"].ToString());
-                    this.mnuPrincipal.Items.AddRange(new ToolStripMenUItem[] { itemMenuP[contador] });
+                    itemMenuP[contador] = new ToolStripMenuItem(dtMenu.Rows[contador]["Menu"].ToString());
+                    this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { itemMenuP[contador] });
 
                     if (dtMenu.Rows[contador]["ende"] != DBNull.Value)
                     {
@@ -227,7 +227,7 @@ namespace TCC.UI
                 
                     
                 }
-                this.mnuPrincipal.Items.AddRange(new ToolStripMenUItem[] { this.deslogarToolStripMenUItem });
+                this.mnuPrincipal.Items.AddRange(new ToolStripMenuItem[] { this.deslogarToolStripMenuItem });
             }
             catch (Exception ex)
             {
@@ -244,11 +244,11 @@ namespace TCC.UI
 
         #endregion Carrega Menu
 
-        private void PreencheSubMenu(ToolStripMenUItem itemMenuPai, DataRow drLinha)
+        private void PreencheSubMenu(ToolStripMenuItem itemMenuPai, DataRow drLinha)
         {
             rMenu regraSubMenu;
             DataTable dtSubMenu;
-            ToolStripMenUItem itemSubMenu;
+            ToolStripMenuItem itemSubMenu;
             int idMenu;
             try
             {
@@ -259,8 +259,8 @@ namespace TCC.UI
                 {
                     for (int i = 0; i < dtSubMenu.Rows.Count; i++)
                     {
-                        itemSubMenu = new ToolStripMenUItem(dtSubMenu.Rows[i]["dsc_menu"].ToString());
-                        itemMenuPai.DropDownItems.AddRange(new ToolStripMenUItem[] { itemSubMenu });
+                        itemSubMenu = new ToolStripMenuItem(dtSubMenu.Rows[i]["dsc_menu"].ToString());
+                        itemMenuPai.DropDownItems.AddRange(new ToolStripMenuItem[] { itemSubMenu });
 
                         if (dtSubMenu.Rows[i]["ende"] != DBNull.Value)
                         {
@@ -307,7 +307,7 @@ namespace TCC.UI
         {
             if (this.DialogResult != DialogResult.Retry)
             {
-                DAL.ConectaBanco.DesconectaBanco();
+                TCC.Regra.rInicio.DesconectarBanco();
                 GC.Collect();
                 this.DialogResult = DialogResult.Cancel;
             }
@@ -316,17 +316,17 @@ namespace TCC.UI
         private void CriaItemDeslogar()
         {
             // 
-            // deslogarToolStripMenUItem
+            // deslogarToolStripMenuItem
             // 
-            this.deslogarToolStripMenUItem.Name = "deslogarToolStripMenUItem";
-            this.deslogarToolStripMenUItem.Size = new System.Drawing.Size(65, 20);
-            this.deslogarToolStripMenUItem.Text = "Deslogar";
-            this.deslogarToolStripMenUItem.Click += new System.EventHandler(this.deslogarToolStripMenUItem_Click);
+            this.deslogarToolStripMenuItem.Name = "deslogarToolStripMenuItem";
+            this.deslogarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.deslogarToolStripMenuItem.Text = "Deslogar";
+            this.deslogarToolStripMenuItem.Click += new System.EventHandler(this.deslogarToolStripMenuItem_Click);
         }
 
         #endregion Metodos
 
-        private void deslogarToolStripMenUItem_Click(object sender, EventArgs e)
+        private void deslogarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (qtdDeslogar <= 0)
             {

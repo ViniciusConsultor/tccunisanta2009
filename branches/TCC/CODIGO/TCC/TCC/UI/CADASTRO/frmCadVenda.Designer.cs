@@ -47,9 +47,9 @@
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnRemovePeca = new System.Windows.Forms.Button();
             this.btnBuscaAlteracaoDelecao = new System.Windows.Forms.Button();
-            this.txtValorVenda = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtValorVenda = new TCC.Controle.MegaTextBox(this.components);
             this.gbBuscaItem = new System.Windows.Forms.GroupBox();
-            this.txtQtdProdutos = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtdProdutos = new TCC.Controle.MegaTextBox(this.components);
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
             this.lblTipoProduto = new System.Windows.Forms.Label();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
@@ -63,7 +63,7 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.TxtNmProduto = new System.Windows.Forms.TextBox();
-            this.txtDataVenda = new Controles.MegaMaskedTextBox.MegaMaskedTextBox(this.components);
+            this.txtDataVenda = new TCC.Controle.MegaMaskedTextBox(this.components);
             this.gbBuscaItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +137,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(7, 132);
             this.btnVolta.Name = "btnVolta";
@@ -149,7 +149,7 @@
             // 
             // btnCdCliente
             // 
-            this.btnCdCliente.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnCdCliente.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnCdCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCdCliente.Location = new System.Drawing.Point(522, 15);
             this.btnCdCliente.Name = "btnCdCliente";
@@ -161,7 +161,7 @@
             // 
             // btnAdicionaProdutos
             // 
-            this.btnAdicionaProdutos.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionaProdutos.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionaProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionaProdutos.Location = new System.Drawing.Point(31, 183);
             this.btnAdicionaProdutos.Name = "btnAdicionaProdutos";
@@ -173,7 +173,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(7, 7);
             this.btnConfirma.Name = "btnConfirma";
@@ -185,7 +185,7 @@
             // 
             // btnRemovePeca
             // 
-            this.btnRemovePeca.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemovePeca.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemovePeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemovePeca.Location = new System.Drawing.Point(93, 183);
             this.btnRemovePeca.Name = "btnRemovePeca";
@@ -197,7 +197,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(7, 89);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -215,7 +215,7 @@
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(100, 20);
             this.txtValorVenda.TabIndex = 4;
-            this.txtValorVenda.TipoTexto = Controles.MegaTextBox.TipoTexto.Decimal;
+            this.txtValorVenda.TipoTexto = TCC.Controle.TipoTexto.Decimal;
             // 
             // gbBuscaItem
             // 
@@ -247,7 +247,7 @@
             this.txtQtdProdutos.Name = "txtQtdProdutos";
             this.txtQtdProdutos.Size = new System.Drawing.Size(100, 20);
             this.txtQtdProdutos.TabIndex = 10;
-            this.txtQtdProdutos.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtdProdutos.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // cboTipoProduto
             // 
@@ -362,7 +362,7 @@
             // 
             // btnBuscarItemDtGrid
             // 
-            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscarItemDtGrid.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscarItemDtGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarItemDtGrid.Location = new System.Drawing.Point(440, 29);
             this.btnBuscarItemDtGrid.Name = "btnBuscarItemDtGrid";
@@ -426,7 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 368);
             this.ControlBox = false;
@@ -470,7 +470,7 @@
         private System.Windows.Forms.Button btnVolta;
         private System.Windows.Forms.Button btnCdCliente;
         private System.Windows.Forms.ToolTip toolTipLegenda;
-        private Controles.MegaTextBox.MegaTextBox txtValorVenda;
+        private TCC.Controle.MegaTextBox txtValorVenda;
         private System.Windows.Forms.GroupBox gbBuscaItem;
         private System.Windows.Forms.Button btnAdicionaProdutos;
         private System.Windows.Forms.DataGridView dgProdutos;
@@ -484,11 +484,11 @@
         private System.Windows.Forms.ComboBox cboTipoProduto;
         private System.Windows.Forms.Label lblTipoProduto;
         private System.Windows.Forms.Button btnRemovePeca;
-        private Controles.MegaTextBox.MegaTextBox txtQtdProdutos;
+        private TCC.Controle.MegaTextBox txtQtdProdutos;
         private System.Windows.Forms.Button btnBuscaAlteracaoDelecao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hId;
         private System.Windows.Forms.DataGridViewTextBoxColumn hDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn hQtd;
-        private Controles.MegaMaskedTextBox.MegaMaskedTextBox txtDataVenda;
+        private TCC.Controle.MegaMaskedTextBox txtDataVenda;
     }
 }

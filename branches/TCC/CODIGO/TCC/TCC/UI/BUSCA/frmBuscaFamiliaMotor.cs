@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -80,15 +80,15 @@ namespace TCC.UI
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            catch (TCC.Regra.Exceptions.Busca.LinhaSemSelecionarException ex)
             {
                 MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            catch (TCC.Regra.Exceptions.Busca.CadastrarDadoException ex)
             {
                 MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            catch (TCC.Regra.Exceptions.Busca.SemBuscaESelecionarException ex)
             {
                 MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
@@ -106,15 +106,15 @@ namespace TCC.UI
                 this.DeletaCadastro();
                 this.PopulaGrid();
             }
-            catch (BUSINESS.Exceptions.Busca.LinhaSemSelecionarException ex)
+            catch (TCC.Regra.Exceptions.Busca.LinhaSemSelecionarException ex)
             {
                 MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Busca.CadastrarDadoException ex)
+            catch (TCC.Regra.Exceptions.Busca.CadastrarDadoException ex)
             {
                 MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Busca.SemBuscaESelecionarException ex)
+            catch (TCC.Regra.Exceptions.Busca.SemBuscaESelecionarException ex)
             {
                 MessageBox.Show(ex.Mensagem, "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }

@@ -102,7 +102,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(1, 82);
             this.btnVolta.Name = "btnVolta";
@@ -114,7 +114,7 @@
             // 
             // btnBuscaDepartamento
             // 
-            this.btnBuscaDepartamento.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaDepartamento.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaDepartamento.Location = new System.Drawing.Point(262, 35);
             this.btnBuscaDepartamento.Name = "btnBuscaDepartamento";
@@ -131,7 +131,7 @@
             // 
             // btnInsere
             // 
-            this.btnInsere.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnInsere.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnInsere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsere.Location = new System.Drawing.Point(1, 2);
             this.btnInsere.Name = "btnInsere";
@@ -143,7 +143,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(1, 54);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 243);
             this.ControlBox = false;

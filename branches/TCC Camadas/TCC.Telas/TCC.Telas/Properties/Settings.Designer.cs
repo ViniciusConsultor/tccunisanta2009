@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCC.UI.Properties
+namespace TCC.Telas.Properties
 {
 
 

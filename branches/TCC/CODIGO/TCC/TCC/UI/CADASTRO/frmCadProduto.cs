@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -152,12 +152,12 @@ namespace TCC.UI
                 this.btnAceitar.Enabled = false;
                 MessageBox.Show("Registro salvo com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException)
+            catch (TCC.Regra.Exceptions.Produto.FamiliaOuKitVazioException)
             {
                 MessageBox.Show("É Necessário Buscar uma Familia de Motores ou um Kit de Peças!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarProduto.Focus();
             }
-            catch (BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException)
+            catch (TCC.Regra.Exceptions.Produto.DescricaoProdutoVazioException)
             {
                 MessageBox.Show("Informe uma Descrição para o Produto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtDescProduto.Focus();
@@ -179,11 +179,11 @@ namespace TCC.UI
         {
             if (this._modelFamMotor == null && this._modelKit == null)
             {
-                throw new BUSINESS.Exceptions.Produto.FamiliaOuKitVazioException();
+                throw new TCC.Regra.Exceptions.Produto.FamiliaOuKitVazioException();
             }
             else if (string.IsNullOrEmpty(this.txtDescProduto.Text) == true)
             {
-                throw new BUSINESS.Exceptions.Produto.DescricaoProdutoVazioException();
+                throw new TCC.Regra.Exceptions.Produto.DescricaoProdutoVazioException();
             }
         }
         #endregion ValidaDadosNulos

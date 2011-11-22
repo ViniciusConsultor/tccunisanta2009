@@ -3,7 +3,7 @@
     partial class frmLogin
     {
         /// <summary>
-        /// ReqUIred designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -23,7 +23,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// ReqUIred method for Designer support - do not modify
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -76,7 +76,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackgroundImage = global::TCC.UI.resImg.btnOk;
+            this.btnLogin.BackgroundImage = global::TCC.Telas.resImg.btnOk;
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogin.Location = new System.Drawing.Point(147, 166);
             this.btnLogin.Name = "btnLogin";
@@ -87,7 +87,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackgroundImage = global::TCC.UI.resImg.btnLimpa;
+            this.btnLimpar.BackgroundImage = global::TCC.Telas.resImg.btnLimpa;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Location = new System.Drawing.Point(101, 166);
             this.btnLimpar.Name = "btnLimpar";
@@ -98,7 +98,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.BackgroundImage = global::TCC.UI.resImg.btnVoltaCad;
+            this.btnFechar.BackgroundImage = global::TCC.Telas.resImg.btnVoltaCad;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.Location = new System.Drawing.Point(55, 166);
             this.btnFechar.Name = "btnFechar";
@@ -112,7 +112,7 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.UI.resImg.bg_login;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_login;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(251, 218);
             this.Controls.Add(this.btnFechar);

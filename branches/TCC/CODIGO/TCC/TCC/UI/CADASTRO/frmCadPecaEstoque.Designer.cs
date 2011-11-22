@@ -48,7 +48,7 @@
             this.hNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtQtde = new Controles.MegaTextBox.MegaTextBox(this.components);
+            this.txtQtde = new TCC.Controle.MegaTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoques)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             // 
             // btnBuscaPeca
             // 
-            this.btnBuscaPeca.BackgroundImage = global::TCC.resImg.btnBusca;
+            this.btnBuscaPeca.BackgroundImage = global::TCC.Telas.resImg.btnBusca;
             this.btnBuscaPeca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaPeca.Location = new System.Drawing.Point(300, 32);
             this.btnBuscaPeca.Name = "btnBuscaPeca";
@@ -91,7 +91,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackgroundImage = global::TCC.resImg.btnAdd_;
+            this.btnAdicionar.BackgroundImage = global::TCC.Telas.resImg.btnAdd_;
             this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionar.Location = new System.Drawing.Point(464, 32);
             this.btnAdicionar.Name = "btnAdicionar";
@@ -103,7 +103,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.BackgroundImage = global::TCC.resImg.btnLess;
+            this.btnRemover.BackgroundImage = global::TCC.Telas.resImg.btnLess;
             this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemover.Location = new System.Drawing.Point(497, 32);
             this.btnRemover.Name = "btnRemover";
@@ -115,7 +115,7 @@
             // 
             // btnBuscaAlteracaoDelecao
             // 
-            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.resImg.btnalterar;
+            this.btnBuscaAlteracaoDelecao.BackgroundImage = global::TCC.Telas.resImg.btnalterar;
             this.btnBuscaAlteracaoDelecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscaAlteracaoDelecao.Location = new System.Drawing.Point(6, 85);
             this.btnBuscaAlteracaoDelecao.Name = "btnBuscaAlteracaoDelecao";
@@ -127,7 +127,7 @@
             // 
             // btnVolta
             // 
-            this.btnVolta.BackgroundImage = global::TCC.resImg.btnVoltar;
+            this.btnVolta.BackgroundImage = global::TCC.Telas.resImg.btnVoltar;
             this.btnVolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolta.Location = new System.Drawing.Point(6, 126);
             this.btnVolta.Name = "btnVolta";
@@ -151,7 +151,7 @@
             // 
             // btnConfirma
             // 
-            this.btnConfirma.BackgroundImage = global::TCC.resImg.btnSalvar;
+            this.btnConfirma.BackgroundImage = global::TCC.Telas.resImg.btnSalvar;
             this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirma.Location = new System.Drawing.Point(6, 3);
             this.btnConfirma.Name = "btnConfirma";
@@ -252,13 +252,13 @@
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(94, 20);
             this.txtQtde.TabIndex = 3;
-            this.txtQtde.TipoTexto = Controles.MegaTextBox.TipoTexto.Numerico;
+            this.txtQtde.TipoTexto = TCC.Controle.TipoTexto.Numerico;
             // 
             // frmCadPecaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TCC.resImg.bg_telas;
+            this.BackgroundImage = global::TCC.Telas.resImg.bg_telas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(590, 366);
             this.ControlBox = false;
@@ -299,7 +299,7 @@
         private System.Windows.Forms.DataGridView dgEstoques;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Label label1;
-        private Controles.MegaTextBox.MegaTextBox txtQtde;
+        private TCC.Controle.MegaTextBox txtQtde;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.DataGridViewTextBoxColumn hIdEstoque;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNome;

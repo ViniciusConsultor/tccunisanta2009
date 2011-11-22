@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.BUSINESS;
-using TCC.MODEL;
+using TCC.Regra;
+using TCC.Mapper;
 
 namespace TCC.UI
 {
@@ -173,16 +173,16 @@ namespace TCC.UI
                     }
                 }
             }
-            catch (BUSINESS.Exceptions.CodigoPecaVazioExeception)
+            catch (TCC.Regra.Exceptions.CodigoPecaVazioExeception)
             {
                 MessageBox.Show("É necessário buscar uma peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
-            catch (BUSINESS.Exceptions.PecaFornecedor.PecaVazioException)
+            catch (TCC.Regra.Exceptions.PecaFornecedor.PecaVazioException)
             {
                 MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPeca.Focus();
             }
-            catch (BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException)
+            catch (TCC.Regra.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException)
             {
                 MessageBox.Show("É Necessário Selecionar um Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscarFornecedorDtGrid.Focus();
@@ -361,11 +361,11 @@ namespace TCC.UI
         {
             if (this._modelPeca == null)
             {
-                throw new BUSINESS.Exceptions.PecaFornecedor.PecaVazioException();
+                throw new TCC.Regra.Exceptions.PecaFornecedor.PecaVazioException();
             }
             else if (this._listaModelPecaFornecedor == null)
             {
-                throw new BUSINESS.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException();
+                throw new TCC.Regra.Exceptions.PecaFornecedor.FornecedorNaoEscolhidoException();
             }
         }
         #endregion Valida Dados Nulos

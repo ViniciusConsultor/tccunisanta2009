@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TCC.MODEL;
-using TCC.BUSINESS;
+using TCC.Mapper;
+using TCC.Regra;
 
 namespace TCC.UI
 {
@@ -134,7 +134,7 @@ namespace TCC.UI
                 this.ValidaAdicaoItems();
                 this.AtualizaGrid();
             }
-            catch (BUSINESS.Exceptions.PecaEstoque.QuantidadeVaziaZeroException)
+            catch (TCC.Regra.Exceptions.PecaEstoque.QuantidadeVaziaZeroException)
             {
                 MessageBox.Show("Quantidade não pode ser menor que um ou Vazia", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.txtQtde.Focus();
@@ -215,7 +215,7 @@ namespace TCC.UI
                     }
                 }
             }
-            catch (BUSINESS.Exceptions.PecaEstoque.PecaVazioException)
+            catch (TCC.Regra.Exceptions.PecaEstoque.PecaVazioException)
             {
                 MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPeca.Focus();
@@ -382,7 +382,7 @@ namespace TCC.UI
         {
             if (this._modelPeca == null)
             {
-                throw new BUSINESS.Exceptions.PecaEstoque.PecaVazioException();
+                throw new TCC.Regra.Exceptions.PecaEstoque.PecaVazioException();
             }
         }
         #endregion Valida Dados Nulos
@@ -484,7 +484,7 @@ namespace TCC.UI
                 dtSource.Rows[this.dgEstoques.CurrentRow.Index]["qtd_peca"] = this.txtQtde.Text;
                 this.dgEstoques.DataSource = dtSource;
             }
-            catch (BUSINESS.Exceptions.PecaEstoque.PecaVazioException)
+            catch (TCC.Regra.Exceptions.PecaEstoque.PecaVazioException)
             {
                 MessageBox.Show("É Necessário Buscar uma Peça", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 this.btnBuscaPeca.Focus();
@@ -508,13 +508,13 @@ namespace TCC.UI
         {
             if (string.IsNullOrEmpty(this.txtQtde.Text) == true)
             {
-                throw new BUSINESS.Exceptions.PecaEstoque.QuantidadeVaziaZeroException();
+                throw new TCC.Regra.Exceptions.PecaEstoque.QuantidadeVaziaZeroException();
             }
             else
             {
                 if (Convert.ToInt32(this.txtQtde.Text) <= 0)
                 {
-                    throw new BUSINESS.Exceptions.PecaEstoque.QuantidadeVaziaZeroException();
+                    throw new TCC.Regra.Exceptions.PecaEstoque.QuantidadeVaziaZeroException();
                 }
             }
         }
