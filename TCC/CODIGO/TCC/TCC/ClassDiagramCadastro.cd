@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TCC.UI.frmCadCliente" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCgUCUIkfTANGBABoACiYRAjoAACAIBjDUyEIpiCBIA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadColaborador" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAcgEEENLiNSAiQARCAoDgCgCQCAIAjGAiIIjCAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadColaborador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadCompra" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>igACEHAElSALwBiIAgCIABADQCAIAAAUAIAQAjAqAQA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadDepartamento" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAEAAACAJSAgQAAGQABADQAAAAQAAEAAAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadDepartamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadEstoque" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CABQQEAAAKABSAAQAACDQBADACAAQAAJAAQAAwCAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadFamiliaMotor" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAVAgEiAYCYJGEmKEASCABALYGQACilEFAUyAhKFkkI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadFamiliaMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadFornecedor" Collapsed="true">
+    <Position X="1.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAwYCUIkNTgtGBoBgAGAYBCCoBBCAMAiDUgAJoCCAIg=</HashCode>
+      <FileName>UI\CADASTRO\frmCadFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadItem" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAESAEAAQCKJwFmAACKKQHMDAIACDMkAAAAAElACBkM=</HashCode>
+      <FileName>UI\CADASTRO\frmCadItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadKitGrupoPeca" Collapsed="true">
+    <Position X="6.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAFAgwCADTFg4AiSQQBATQSAADkhQBABQBjAKAgI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadKitGrupoPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadMotor" Collapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABTFgIAACEARADQABAQCBQgAAwAgAIIAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadNumeroMotor" Collapsed="true">
+    <Position X="1.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAiADTAAIAADAABADQAAAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadNumeroMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPeca" Collapsed="true">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFCgIEGGACAJyBgAAECOEBADQACQACBQUAAADgAAAAQ=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPecaEstoque" Collapsed="true">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SEAJAUIgwiAJARwAEECCABADAAEAQAwAEAoAAgAAAIM=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPecaEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPedidoVenda" Collapsed="true">
+    <Position X="6.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEgACKABTAgYAACAABADQiAIAAIAkAAABACAAIA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPedidoVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadPerfil" Collapsed="true">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAJWAgAAACAARBDQAAAAAAAEABAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadPerfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadProduto" Collapsed="true">
+    <Position X="10.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAkAAACABTBgYEACAABADQAAAgAAQAIAAAgAQAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadTipoMotor" Collapsed="true">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgEAAAiABTAgIAACAABAHYAAAAAAAAAAACgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadTipoMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadTipoPeca" Collapsed="true">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQBXAgIAACAAREDQAAAIAAAAAAAAgAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadTipoPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadTipoProduto" Collapsed="true">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEAAACAIKAAAAACAABADRAAAAACAEAAAAQAAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadTipoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadUsuario" Collapsed="true">
+    <Position X="6.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAEEAAKCBXEiIAQCAABADQgAAAAAAAAAAAgBAAAA=</HashCode>
+      <FileName>UI\CADASTRO\frmCadUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmCadVenda" Collapsed="true">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iACAMEAAQCAJ0W4gEACOQRIbECIESEgAESoABjiAFAY=</HashCode>
+      <FileName>UI\CADASTRO\frmCadVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmMotorEstoque" Collapsed="true">
+    <Position X="1.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAIAEIQQaAJAVgAEECCABADAAEAQAgAEAAQggAACAM=</HashCode>
+      <FileName>UI\CADASTRO\frmMotorEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmPecaFornecedor" Collapsed="true">
+    <Position X="3.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAAGAhgiBJABwAAAKyUAADAAAAAAgAEAAAAgAABII=</HashCode>
+      <FileName>UI\CADASTRO\frmPecaFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmPerfilMenu" Collapsed="true">
+    <Position X="5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAQkAAAjAJCAAgAASCAAADABAAIAggEAAEAAMAEEI=</HashCode>
+      <FileName>UI\CADASTRO\frmPerfilMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmCadfornecedorDepto" Collapsed="true">
+    <Position X="3.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAGAAIyQJAQoAAACCABADAeQAAAgAEIAAAgAhAAI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadFornecedorDepto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmCadMotorFornecedor" Collapsed="true">
+    <Position X="10.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgQAGAAA6AZIBgBAACyABADACAAAAgAEAAwggAAAAI=</HashCode>
+      <FileName>UI\CADASTRO\frmCadMotorFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.CADASTRO.frmChegadaInsumos" Collapsed="true">
+    <Position X="10.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAEIAAGABQACYAACAABAbACAIAAgAhCUABgASEoA=</HashCode>
+      <FileName>UI\CADASTRO\frmChegadaInsumos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.FormPai" Collapsed="true">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACgAAAAAAAAAAAAAAACAAAIAAAAAAAAAAAAABA=</HashCode>
+      <FileName>UI\FormPai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmInicial" Collapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JCAAAAkAASAAEAEACCCVAAILkAABAUgQAAAAAwEAAAE=</HashCode>
+      <FileName>UI\frmInicial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.UI.frmLogin" Collapsed="true">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACCAAACAAACAAAADRQAACAAAAAAAAQBAAAA=</HashCode>
+      <FileName>UI\frmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

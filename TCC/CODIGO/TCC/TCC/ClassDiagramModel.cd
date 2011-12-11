@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="TCC.MODEL.ColunasBancoDados">
+    <Position X="44" Y="12.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAIAAAQAAAAAAIAAACAAAAAACAAAAAA=</HashCode>
+      <FileName>MODEL\ColunasBancoDados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mCliente" Collapsed="true">
+    <Position X="36.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SQBAIAkAQSAEAEEgCAAEAAmABQAIgEEHAIAEB0SQACA=</HashCode>
+      <FileName>MODEL\mCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mColaborador" Collapsed="true">
+    <Position X="25.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgASAQAgSCEAIBsggAETCOEAQAAjCACAIAkAmCQAEg=</HashCode>
+      <FileName>MODEL\mColaborador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mCompra" Collapsed="true">
+    <Position X="38.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAIAAAIAAAACAAAAEEAAAABAAAAAAAAAAQBAA=</HashCode>
+      <FileName>MODEL\mCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mCompraOrdemCompra" Collapsed="true">
+    <Position X="27.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEAAIAAAACAAAAAAAAAEAgAAIAIAAAAgAAAAQABA=</HashCode>
+      <FileName>MODEL\mCompraOrdemCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mCompraPeca" Collapsed="true">
+    <Position X="41.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAIEgAAAAIAAAAAAAAIAQBAA=</HashCode>
+      <FileName>MODEL\mCompraPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mDepartamento" Collapsed="true">
+    <Position X="30.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASEAAAAAAAAESAEAAAAEAAgBAQAAAAAQAAA=</HashCode>
+      <FileName>MODEL\mDepartamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mEstado" Collapsed="true">
+    <Position X="25.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAEQAAA=</HashCode>
+      <FileName>MODEL\mEstado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mEstoque" Collapsed="true">
+    <Position X="39" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAAABAAAAAEAEACAAIAAwAAAgEEAAQBAA=</HashCode>
+      <FileName>MODEL\mEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mFamiliaMotor" Collapsed="true">
+    <Position X="27.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEAAFAAAABQAAAAAAAECAEAAAkIQAAAAEgEAAAYAAA=</HashCode>
+      <FileName>MODEL\mFamiliaMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mFornecedor" Collapsed="true">
+    <Position X="41" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SIBAYAgA4SAAAOEiAIAEQgmAAQAIgEEBCAAEAUAQACA=</HashCode>
+      <FileName>MODEL\mFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mFornecedorDepto" Collapsed="true">
+    <Position X="30" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAIAAAECAEAAQAIAAAACAAEAAAQAAA=</HashCode>
+      <FileName>MODEL\mFornecedorDepto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mItem" Collapsed="true">
+    <Position X="43.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAAAAAAIAQIAGAACAIAAAAEAgAABAAAAA=</HashCode>
+      <FileName>MODEL\mItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mItemKit" Collapsed="true">
+    <Position X="32.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAgAAAAIAAIAAAAGAgAAIAIAAAAgAAAAQAAA=</HashCode>
+      <FileName>MODEL\mItemKit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mItemPeca" Collapsed="true">
+    <Position X="27.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAIAAEAAAABAIAAAAGAAAAIAAAAAAgAAAAQAgA=</HashCode>
+      <FileName>MODEL\mItemPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mKitFamilia" Collapsed="true">
+    <Position X="41.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAgAAAAIAAAAAAAEAAAAIAAAAAogAAAKQAAA=</HashCode>
+      <FileName>MODEL\mKitFamilia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mKitGrupoPeca" Collapsed="true">
+    <Position X="29.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEABIABAAAAAAAAAAAAEAAAAIAAAAAEgAAABQAAA=</HashCode>
+      <FileName>MODEL\mKitGrupoPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mMenu" Collapsed="true">
+    <Position X="43.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAQAAAAAAAAEUAAEAEQAAAAAAAAEEAAAQAEA=</HashCode>
+      <FileName>MODEL\mMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mMotor" Collapsed="true">
+    <Position X="32.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAAAAAAEAEEAAAAAAAAAAAAEAAAQAAA=</HashCode>
+      <FileName>MODEL\mMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mMotorEstoque" Collapsed="true">
+    <Position X="43.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAAAAAAAAwAAEAoAAIAIAAAAgABAAAAAQ=</HashCode>
+      <FileName>MODEL\mMotorEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mMotorFornecedor" Collapsed="true">
+    <Position X="34.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAAAAAAAAAAAEAAAAIAAAAAAhABAAQQAQ=</HashCode>
+      <FileName>MODEL\mMotorFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mNumMotor" Collapsed="true">
+    <Position X="30" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAqACAAAgAAAAAAAAEAAAAAAAAAACgAAAAQAAA=</HashCode>
+      <FileName>MODEL\mNumMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.ModelPai" Collapsed="true">
+    <Position X="24" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MODEL\ModelPai.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mOrdemCompra" Collapsed="true">
+    <Position X="32" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACkAAIAIAAAAAAAAAAAAEAAACIAAAAgAhABAAQQhQ=</HashCode>
+      <FileName>MODEL\mOrdemCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mOrdemDepartamento" Collapsed="true">
+    <Position X="45.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIABAAAAAQAAAAAAEACAAIAAgAAAgAAAAQAAA=</HashCode>
+      <FileName>MODEL\mOrdemDepartamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mPeca" Collapsed="true">
+    <Position X="34.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAEAAAgBAAAAAAAEGIAEgACUAIAAAAAAEAAAQAAU=</HashCode>
+      <FileName>MODEL\mPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mPecaEstoque" Collapsed="true">
+    <Position X="25.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAIAAEAAAABAAAgAAEAIAAIAAAAAAgAAAAQAgA=</HashCode>
+      <FileName>MODEL\mPecaEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mPecaFornecedor" Collapsed="true">
+    <Position X="37" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAAAEAAEAAAAAAAAAQABEAAAQQgA=</HashCode>
+      <FileName>MODEL\mPecaFornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mPedidoVenda" Collapsed="true">
+    <Position X="32.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAAAAEAAAiIAAEAiAEACAAAAAgAAEAAAABQCAA=</HashCode>
+      <FileName>MODEL\mPedidoVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mPerfil" Collapsed="true">
+    <Position X="43.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAACAAQQAAAAAAAAAEAAEAAQAAAAAAAAAEAAAQAAA=</HashCode>
+      <FileName>MODEL\mPerfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mPerfilMenu" Collapsed="true">
+    <Position X="34.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQACAAAAAAAAAAAAAUAAEAEAAAABAAAAAEAAAQAAA=</HashCode>
+      <FileName>MODEL\mPerfilMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mProduto" Collapsed="true">
+    <Position X="41.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQEAAAEBAAAAAAEMAAEAGAAAAAAAAEAEAABQEAA=</HashCode>
+      <FileName>MODEL\mProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mSubMenu" Collapsed="true">
+    <Position X="36.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAQAAAAAAAAAgAQAAEAEAAAAAAAABAAAAAQAAA=</HashCode>
+      <FileName>MODEL\mSubMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mTipoMotor" Collapsed="true">
+    <Position X="28" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAgAAIAAAAAAAAAEAAEAAIAIAAAACAAEAAAQAAA=</HashCode>
+      <FileName>MODEL\mTipoMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mTipoPeca" Collapsed="true">
+    <Position X="39.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAEAAEAAIEAAAAAAAAEAAAQAAE=</HashCode>
+      <FileName>MODEL\mTipoPeca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mTipoProduto" Collapsed="true">
+    <Position X="34.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAABAAAAAAEEIAEAACAAAAAAAAAEAAEQAAA=</HashCode>
+      <FileName>MODEL\mTipoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mUsinagem">
+    <Position X="45.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAEAAAAAAADAAAAAUgEAAAIAAAAAAAAAAQAAA=</HashCode>
+      <FileName>MODEL\mUsinagem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mUsuario" Collapsed="true">
+    <Position X="36.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAEAAAAAIAEIAGAACAAAAAAAAAUCAAQEAg=</HashCode>
+      <FileName>MODEL\mUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mVenda" Collapsed="true">
+    <Position X="25.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAABAAAAEAAEABACAAAAEECAAABEgAAAAAAAAQAAA=</HashCode>
+      <FileName>MODEL\mVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCC.MODEL.mVendaProduto" Collapsed="true">
+    <Position X="39" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAEMAAEAiAAAAIgAAAAEAAAQAAA=</HashCode>
+      <FileName>MODEL\mVendaProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

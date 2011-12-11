@@ -1,0 +1,1023 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8BEE396-9AB4-4EA5-8F18-AF5771221F22}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCC</RootNamespace>
+    <AssemblyName>TCC</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUSINESS\Exceptions\Busca\CadastrarDadoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Busca\LinhaSemSelecionarException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Busca\SemBuscaESelecionarException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\BairroClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CEPVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CidadeClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CNPJClienteExistente.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CodigoClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CodigoPostalVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CPFClienteExistente.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\CpfCnpjVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\DadosComunicacaoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\DDDClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\DDIClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\EmailClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\EstadoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\IdentidadeInterVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\IdentInterExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\NomeClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\NroEnderecoClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\paisVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\RuaClieteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Cliente\TelefoneClienteVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoEstoqueVazioException.cs" />
+    <Compile Include="BUSINESS\ComandosSql.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoCompraVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoDepartamentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoFamiliaMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoFornecedorVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoItemPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoKitGrupoPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoMenuVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoMotorVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoNumeroMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoOrdemProducaoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoPecaVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoPerfilVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoTipoMotorVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoTipoPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoTipoProdutoVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoUsuarioVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\CodigoVendaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\BairroVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CepVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CidadeVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CpfExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\CpfVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\DataNascimentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\DDDVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\NomeVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\NumeroVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\RgVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\RuaVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Colaborador\TelefoneVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\CompraPeca\UltimoPrecoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaFornecedorException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaMotorException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaMotorPecaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\BuscaPecaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\CompraMotorPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeMenorQueUmException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\CompraQuantidadeVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\CompraValorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\DataCompraVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Compra\OrdemCompraSemDadosException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Departamento\NomeDepartamentoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\CodigoRealFamiliaExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\CodigoRealFamiliaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\FamiliaSemKitsException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\GridKitsSemDadosException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\NomeFamiliaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\QuantidadeMenorZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\QuantidadeVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FamiliaMotor\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FornecedorDepto\DepartamentoNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\FornecedorDepto\FornecedorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\CEPVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\CNPJFornecedorExistente.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\CodigoPostalVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\DDIVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\EmailFornecedorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\EstadoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\IdentidadeInterVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\IdentInterExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\paisVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\CodigoRealItemVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\GridPecaSemDadosException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\ItemSemPecaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\NomeItemExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\NomeItemVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\QuantidadeMenorZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\QuantidadeVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Item\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\CodigoRealKitExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\CodigoRealKitVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\GridItemSemDadosException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\KitSemItemException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\NomeKitExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\NomeKitVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\QuantidadeMenorZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\KitGrupoPeca\TelaResumoCanceladaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorEstoque\EstoqueNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorEstoque\MotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaEstoque\EstoqueNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaEstoque\PecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaEstoque\QuantidadeVaziaZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaFornecedor\FornecedorNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PecaFornecedor\PecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Motor\DescMotorExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\NumeroMotor\CodigoNumeroMotorExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PerfilMenu\MenuNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\PerfilMenu\PerfilVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorFornecedor\FornecedorNaoEscolhidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\MotorFornecedor\MotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Perfil\DescPerfilVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Estoque\NomEstoqueVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\CidadeVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\CnpjVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\DadosComunicacaoVazioExeception.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\DddVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\FornecedorSemIdExecption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\NomeFornecedorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Fornecedor\TelefoneVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Login\LoginExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Login\LoginVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Login\SenhaVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Motor\DescMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\NumeroMotor\DescMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\NumeroMotor\NumeroMotorVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Peca\CodigoPecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Peca\NomePecaVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Peca\PecaJaExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Peca\QtdMinimaNuloOuZeroException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Produto\DescricaoProdutoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Produto\FamiliaOuKitVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoMotor\CodigoTipoMotorExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoMotor\DescTipoMotorVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoMotor\NumeroTipoMotorVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoPeca\TipoPecaExistenteException.cs" />
+    <Compile Include="BUSINESS\Exceptions\TipoPeca\tipoPecaVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Usinagem\CheckBoxPecaOKVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Usuario\perfilUsuarioVazioExeption.cs" />
+    <Compile Include="BUSINESS\Exceptions\Validacoes\DataInvalidaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Validacoes\EmailInvalidoException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Validacoes\MaskedInvalidaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\DataVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\GridProdutoSemDadosException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\QuantidadeVendaZeroOuNuloException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaVaziaException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\ValorVendaZeroOuNuloException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\VendaMotorGrupoVazioException.cs" />
+    <Compile Include="BUSINESS\Exceptions\Venda\VendaSemProdutoException.cs" />
+    <Compile Include="BUSINESS\rCliente.cs" />
+    <Compile Include="BUSINESS\rColaborador.cs" />
+    <Compile Include="BUSINESS\rCompra.cs" />
+    <Compile Include="BUSINESS\rCompraOrdemCompra.cs" />
+    <Compile Include="BUSINESS\rCompraPeca.cs" />
+    <Compile Include="BUSINESS\rDepartamento.cs" />
+    <Compile Include="BUSINESS\rEstado.cs" />
+    <Compile Include="BUSINESS\rEstoque.cs" />
+    <Compile Include="BUSINESS\rFamiliaMotor.cs" />
+    <Compile Include="BUSINESS\rFornecedor.cs" />
+    <Compile Include="BUSINESS\rFornecedorDepto.cs" />
+    <Compile Include="BUSINESS\rItem.cs" />
+    <Compile Include="BUSINESS\rItemKit.cs" />
+    <Compile Include="BUSINESS\rItemPeca.cs" />
+    <Compile Include="BUSINESS\rKitFamilia.cs" />
+    <Compile Include="BUSINESS\rKitGrupoPeca.cs" />
+    <Compile Include="BUSINESS\rMenu.cs" />
+    <Compile Include="BUSINESS\rMotor.cs" />
+    <Compile Include="BUSINESS\rMotorEstoque.cs" />
+    <Compile Include="BUSINESS\rMotorFornecedor.cs" />
+    <Compile Include="BUSINESS\rNumeroMotor.cs" />
+    <Compile Include="BUSINESS\rOrdemCompra.cs" />
+    <Compile Include="BUSINESS\rOrdemProducao.cs" />
+    <Compile Include="BUSINESS\rOrdemServico.cs" />
+    <Compile Include="BUSINESS\rPeca.cs" />
+    <Compile Include="BUSINESS\rPecaEstoque.cs" />
+    <Compile Include="BUSINESS\rPecaFornecedor.cs" />
+    <Compile Include="BUSINESS\rPerfil.cs" />
+    <Compile Include="BUSINESS\rPerfilMenu.cs" />
+    <Compile Include="BUSINESS\rProduto.cs" />
+    <Compile Include="BUSINESS\rTipoMotor.cs" />
+    <Compile Include="BUSINESS\rTipoPeca.cs" />
+    <Compile Include="BUSINESS\rTipoProduto.cs" />
+    <Compile Include="BUSINESS\rTipoUsuario.cs" />
+    <Compile Include="BUSINESS\rUsinagem.cs" />
+    <Compile Include="BUSINESS\rUsuario.cs" />
+    <Compile Include="BUSINESS\rVenda.cs" />
+    <Compile Include="BUSINESS\rVendaProduto.cs" />
+    <Compile Include="BUSINESS\UTIL\Auxiliar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BUSINESS\UTIL\rMotorFornecedor.cs" />
+    <Compile Include="BUSINESS\UTIL\rProduto.cs" />
+    <Compile Include="BUSINESS\UTIL\Validacoes.cs" />
+    <Compile Include="DAL\AcessoDados.cs" />
+    <Compile Include="DAL\ConectaBanco.cs" />
+    <Compile Include="DAL\dCadColaborador.cs" />
+    <Compile Include="DAL\dColaborador.cs" />
+    <Compile Include="DAL\dCliente.cs" />
+    <Compile Include="DAL\dDepartamento.cs" />
+    <Compile Include="DAL\dEstado.cs" />
+    <Compile Include="DAL\dEstoque.cs" />
+    <Compile Include="DAL\dFornecedor.cs" />
+    <Compile Include="DAL\dMenu.cs" />
+    <Compile Include="DAL\dMenuSubMenu.cs" />
+    <Compile Include="DAL\dOrdemProducao.cs" />
+    <Compile Include="DAL\dPecaFornecedor.cs" />
+    <Compile Include="DAL\dPerfil.cs" />
+    <Compile Include="DAL\dPerfilMenu.cs" />
+    <Compile Include="DAL\dTipoUsuario.cs" />
+    <Compile Include="DAL\dUsuario.cs" />
+    <Compile Include="DAL\dUsuarioPerfil.cs" />
+    <Compile Include="MODEL\ColunasBancoDados.cs" />
+    <Compile Include="MODEL\mCompra.cs" />
+    <Compile Include="MODEL\mCompraOrdemCompra.cs" />
+    <Compile Include="MODEL\mCompraPeca.cs" />
+    <Compile Include="MODEL\mFamiliaMotor.cs" />
+    <Compile Include="MODEL\mFornecedorDepto.cs" />
+    <Compile Include="MODEL\mItem.cs" />
+    <Compile Include="MODEL\mItemKit.cs" />
+    <Compile Include="MODEL\mItemPeca.cs" />
+    <Compile Include="MODEL\mCliente.cs" />
+    <Compile Include="MODEL\mColaborador.cs" />
+    <Compile Include="MODEL\mDepartamento.cs" />
+    <Compile Include="MODEL\mEstado.cs" />
+    <Compile Include="MODEL\mEstoque.cs" />
+    <Compile Include="MODEL\mFornecedor.cs" />
+    <Compile Include="MODEL\mKitFamilia.cs" />
+    <Compile Include="MODEL\mKitGrupoPeca.cs" />
+    <Compile Include="MODEL\mMotorEstoque.cs" />
+    <Compile Include="MODEL\mOrdemDepartamento.cs" />
+    <Compile Include="MODEL\mMenu.cs" />
+    <Compile Include="MODEL\mMotor.cs" />
+    <Compile Include="MODEL\mMotorFornecedor.cs" />
+    <Compile Include="MODEL\mNumMotor.cs" />
+    <Compile Include="MODEL\ModelPai.cs" />
+    <Compile Include="MODEL\mOrdemCompra.cs" />
+    <Compile Include="MODEL\mOrdemProducao.cs" />
+    <Compile Include="MODEL\mOrdemServico.cs" />
+    <Compile Include="MODEL\mPeca.cs" />
+    <Compile Include="MODEL\mPecaEstoque.cs" />
+    <Compile Include="MODEL\mPecaFornecedor.cs" />
+    <Compile Include="MODEL\mPedidoVenda.cs" />
+    <Compile Include="MODEL\mPerfil.cs" />
+    <Compile Include="MODEL\mPerfilMenu.cs" />
+    <Compile Include="MODEL\mProduto.cs" />
+    <Compile Include="MODEL\mSubMenu.cs" />
+    <Compile Include="MODEL\mTipoMotor.cs" />
+    <Compile Include="MODEL\mTipoPeca.cs" />
+    <Compile Include="MODEL\mTipoProduto.cs" />
+    <Compile Include="MODEL\mUsinagem.cs" />
+    <Compile Include="MODEL\mUsuario.cs" />
+    <Compile Include="MODEL\mVenda.cs" />
+    <Compile Include="MODEL\mVendaProduto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resImg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>resImg.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaCliente.resx">
+      <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaColaborador.resx">
+      <DependentUpon>frmBuscaColaborador.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaCompra.resx">
+      <DependentUpon>frmBuscaCompra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaFamiliaMotor.resx">
+      <DependentUpon>frmBuscaFamiliaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaFornecedor.resx">
+      <DependentUpon>frmBuscaFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaItem.resx">
+      <DependentUpon>frmBuscaItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaItemPeca.resx">
+      <DependentUpon>frmBuscaItemPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaDepartamento.resx">
+      <DependentUpon>frmBuscaDepartamento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaMenu.resx">
+      <DependentUpon>frmBuscaMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaMotor.resx">
+      <DependentUpon>frmBuscaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaOrdemServico.resx">
+      <DependentUpon>frmBuscaOrdemServico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaPeca.resx">
+      <DependentUpon>frmBuscaPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaPerfil.resx">
+      <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaTipoPeca.resx">
+      <DependentUpon>frmBuscaTipoPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaTipoProduto.resx">
+      <DependentUpon>frmBuscaTipoProduto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaUsinagem.resx">
+      <DependentUpon>frmBuscaUsinagem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaUsuario.resx">
+      <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaEstoque.resx">
+      <DependentUpon>frmBuscaEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaKit.resx">
+      <DependentUpon>frmBuscaKit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaNumMotor.resx">
+      <DependentUpon>frmBuscaNumMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaTipoMotor.resx">
+      <DependentUpon>frmBuscaTipoMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BUSCA\frmBuscaVenda.resx">
+      <DependentUpon>frmBuscaVenda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadCliente.resx">
+      <DependentUpon>frmCadCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadColaborador.resx">
+      <DependentUpon>frmCadColaborador.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadCompra.resx">
+      <DependentUpon>frmCadCompra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadDepartamento.resx">
+      <DependentUpon>frmCadDepartamento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadEstoque.resx">
+      <DependentUpon>frmCadEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadFamiliaMotor.resx">
+      <DependentUpon>frmCadFamiliaMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadFornecedor.resx">
+      <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadFornecedorDepto.resx">
+      <DependentUpon>frmCadFornecedorDepto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadItem.resx">
+      <DependentUpon>frmCadItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadKitGrupoPeca.resx">
+      <DependentUpon>frmCadKitGrupoPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadMotor.resx">
+      <DependentUpon>frmCadMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadMotorFornecedor.resx">
+      <DependentUpon>frmCadMotorFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadNumeroMotor.resx">
+      <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadPeca.resx">
+      <DependentUpon>frmCadPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadPecaEstoque.resx">
+      <DependentUpon>frmCadPecaEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadPedidoVenda.resx">
+      <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadPerfil.resx">
+      <DependentUpon>frmCadPerfil.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadProduto.resx">
+      <DependentUpon>frmCadProduto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadTipoMotor.resx">
+      <DependentUpon>frmCadTipoMotor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadTipoPeca.resx">
+      <DependentUpon>frmCadTipoPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadTipoProduto.resx">
+      <DependentUpon>frmCadTipoProduto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadUsuario.resx">
+      <DependentUpon>frmCadUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmCadVenda.resx">
+      <DependentUpon>frmCadVenda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmChegadaInsumos.resx">
+      <DependentUpon>frmChegadaInsumos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmMotorEstoque.resx">
+      <DependentUpon>frmMotorEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmPecaFornecedor.resx">
+      <DependentUpon>frmPecaFornecedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CADASTRO\frmPerfilMenu.resx">
+      <DependentUpon>frmPerfilMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPai.resx">
+      <DependentUpon>FormPai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInicial.resx">
+      <DependentUpon>frmInicial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoItemKit.resx">
+      <DependentUpon>frmResumoItemKit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoItemPeca.resx">
+      <DependentUpon>frmResumoItemPeca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoKitFamilia.resx">
+      <DependentUpon>frmResumoKitFamilia.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoOrdemProducao.resx">
+      <DependentUpon>frmResumoOrdemProducao.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Resumo\frmResumoVendaProduto.resx">
+      <DependentUpon>frmResumoVendaProduto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="resImg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resImg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCliente.Designer.cs">
+      <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaColaborador.Designer.cs">
+      <DependentUpon>frmBuscaColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaCompra.Designer.cs">
+      <DependentUpon>frmBuscaCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaFamiliaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaFamiliaMotor.Designer.cs">
+      <DependentUpon>frmBuscaFamiliaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaFornecedor.Designer.cs">
+      <DependentUpon>frmBuscaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItem.Designer.cs">
+      <DependentUpon>frmBuscaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItemPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaItemPeca.Designer.cs">
+      <DependentUpon>frmBuscaItemPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaDepartamento.Designer.cs">
+      <DependentUpon>frmBuscaDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMenu.Designer.cs">
+      <DependentUpon>frmBuscaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaMotor.Designer.cs">
+      <DependentUpon>frmBuscaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaOrdemServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaOrdemServico.Designer.cs">
+      <DependentUpon>frmBuscaOrdemServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPeca.Designer.cs">
+      <DependentUpon>frmBuscaPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaPerfil.Designer.cs">
+      <DependentUpon>frmBuscaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoPeca.Designer.cs">
+      <DependentUpon>frmBuscaTipoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoProduto.Designer.cs">
+      <DependentUpon>frmBuscaTipoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaUsinagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaUsinagem.Designer.cs">
+      <DependentUpon>frmBuscaUsinagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaUsuario.Designer.cs">
+      <DependentUpon>frmBuscaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaEstoque.Designer.cs">
+      <DependentUpon>frmBuscaEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaKit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaKit.Designer.cs">
+      <DependentUpon>frmBuscaKit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaNumMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaNumMotor.Designer.cs">
+      <DependentUpon>frmBuscaNumMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaTipoMotor.Designer.cs">
+      <DependentUpon>frmBuscaTipoMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BUSCA\frmBuscaVenda.Designer.cs">
+      <DependentUpon>frmBuscaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadCliente.Designer.cs">
+      <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadColaborador.designer.cs">
+      <DependentUpon>frmCadColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadCompra.Designer.cs">
+      <DependentUpon>frmCadCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadDepartamento.designer.cs">
+      <DependentUpon>frmCadDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadEstoque.Designer.cs">
+      <DependentUpon>frmCadEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadFamiliaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadFamiliaMotor.Designer.cs">
+      <DependentUpon>frmCadFamiliaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadFornecedor.Designer.cs">
+      <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadFornecedorDepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadFornecedorDepto.designer.cs">
+      <DependentUpon>frmCadFornecedorDepto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadItem.Designer.cs">
+      <DependentUpon>frmCadItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadKitGrupoPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadKitGrupoPeca.Designer.cs">
+      <DependentUpon>frmCadKitGrupoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadMotor.Designer.cs">
+      <DependentUpon>frmCadMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadMotorFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadMotorFornecedor.Designer.cs">
+      <DependentUpon>frmCadMotorFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadNumeroMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadNumeroMotor.Designer.cs">
+      <DependentUpon>frmCadNumeroMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPeca.Designer.cs">
+      <DependentUpon>frmCadPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPecaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPecaEstoque.Designer.cs">
+      <DependentUpon>frmCadPecaEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPedidoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPedidoVenda.Designer.cs">
+      <DependentUpon>frmCadPedidoVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadPerfil.designer.cs">
+      <DependentUpon>frmCadPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadProduto.Designer.cs">
+      <DependentUpon>frmCadProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoMotor.Designer.cs">
+      <DependentUpon>frmCadTipoMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoPeca.Designer.cs">
+      <DependentUpon>frmCadTipoPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadTipoProduto.Designer.cs">
+      <DependentUpon>frmCadTipoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadUsuario.Designer.cs">
+      <DependentUpon>frmCadUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmCadVenda.Designer.cs">
+      <DependentUpon>frmCadVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmChegadaInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmChegadaInsumos.Designer.cs">
+      <DependentUpon>frmChegadaInsumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmMotorEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmMotorEstoque.Designer.cs">
+      <DependentUpon>frmMotorEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPecaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPecaFornecedor.Designer.cs">
+      <DependentUpon>frmPecaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPerfilMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CADASTRO\frmPerfilMenu.Designer.cs">
+      <DependentUpon>frmPerfilMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInicial.Designer.cs">
+      <DependentUpon>frmInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoItemKit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoItemKit.Designer.cs">
+      <DependentUpon>frmResumoItemKit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoItemPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoItemPeca.Designer.cs">
+      <DependentUpon>frmResumoItemPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoKitFamilia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoKitFamilia.Designer.cs">
+      <DependentUpon>frmResumoKitFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoOrdemProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoOrdemProducao.Designer.cs">
+      <DependentUpon>frmResumoOrdemProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoVendaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Resumo\frmResumoVendaProduto.Designer.cs">
+      <DependentUpon>frmResumoVendaProduto.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2C97DFB1-3649-478D-A09C-1D8F39FFFA89}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnAdd+.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnalterar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnBusca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnOk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\bg_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\bg_principal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\bg_telas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnSalvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\BtnVenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnVoltaCad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnLimpa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnLixo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnOP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnRlacionaEstoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnVoltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\img\btnLess.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNovoUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\btnFornecedorDepto.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

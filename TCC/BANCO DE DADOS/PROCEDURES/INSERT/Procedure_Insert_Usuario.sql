@@ -1,0 +1,48 @@
+USE Megatechdatabase
+IF OBJECT_ID('sp_insert_usuario', 'P')IS NOT NULL
+	DROP PROCEDURE sp_insert_usuario;
+GO
+
+CREATE PROCEDURE sp_insert_usuario
+@id_usu		   INT,
+@id_perfil	   INT,
+@log_usu       VARCHAR(20),
+@senha         VARCHAR(15),
+@obs_usu       VARCHAR(100),
+@flg_ativo     BIT
+AS
+
+BEGIN TRY
+--Validações na tabela  usuario
+IF(@log_usu='')
+  RAISERROR('Informe o login do usuário!',16,1)
+ELSE IF(@senha='')
+  RAISERROR('Informe a senha do usuário!',16,1)
+ELSE
+
+BEGIN
+--Insert na tabela usuario
+INSERT INTO 
+Usuario(id_usu, id_perfil, log_usu, senha, obs_usu, flg_ativo)
+VALUES(@id_usu, @id_perfil, @log_usu, @senha, @obs_usu, @flg_ativo)
+END
+END TRY
+
+BEGIN CATCH
+DECLARE @ErrorMessage NVARCHAR(4000);
+DECLARE @ErrorSeverity INT;
+DECLARE @ErrorState INT;
+
+SELECT
+@ErrorMessage = ERROR_MESSAGE(),
+@ErrorSeverity = ERROR_SEVERITY(),
+@ErrorState = ERROR_STATE();
+--Use RAISERROR inside the CATCH block to return error
+--information about the original error that caused
+--execution to jump to the CATCH block.
+RAISERROR(
+@ErrorMessage, --Message text
+@ErrorSeverity, --Severity
+@ErrorState --State
+);
+END CATCH;
