@@ -1,0 +1,12 @@
+Produto: Nome do kit espefico | Qtde: 1
+     015
+          Item: 2. | Qtde: 2
+               Peça: 1.1 | Qtde: 6
+               Peça: 5.0 | Qtde: 6
+               Peça: 6.0 | Qtde: 6
+               Peça: 7.0 | Qtde: 6
+               Peça: 9.2 | Qtde: 6
+               Peça: 10.3 | Qtde: 2
+               Peça: 11.0 | Qtde: 6
+               Peça: 12.0 | Qtde: 6
+               Peça: 12.1 | Qtde: 10
