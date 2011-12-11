@@ -1,0 +1,5 @@
+D:\Chicken\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.dll
+D:\Chicken\LoadProcedures\LoadProcedures\bin\Debug\LoadProcedures.pdb
+D:\Chicken\LoadProcedures\LoadProcedures\obj\Debug\ResolveAssemblyReference.cache
+D:\Chicken\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.dll
+D:\Chicken\LoadProcedures\LoadProcedures\obj\Debug\LoadProcedures.pdb
